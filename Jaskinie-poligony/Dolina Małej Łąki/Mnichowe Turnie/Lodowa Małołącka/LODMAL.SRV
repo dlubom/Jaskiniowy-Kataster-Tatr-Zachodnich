@@ -1,0 +1,16 @@
+;Lodowa Malolacka
+#Units Meters Order=dav
+#fix	lm0 	421998.38 	5455028.28 	1634.13
+#note	lm0	/Lodowa Malolacka
+#flag	lm0	/Lodowa Malolacka
+lm0	lm1	4.51	93.81	0.00
+lm1	lm2	4.69	88.78	0.00
+lm2	lm3	4.00	236.19	-7.32
+lm1	lm3	2.57	146.50	-11.23
+lm3	lm4	1.80	123.69	0.00
+lm4	lm5	3.65	82.11	-1.57
+lm5	lm6	2.00	0.00	-90.00
+lm6	lm7	2.11	81.83	0.00
+lm7	lm8	1.50	0.00	-90.00
+lm8	lm9	8.27	83.74	-2.84
+lm9	lm10	8.30	0.00	-90.00

@@ -1,0 +1,274 @@
+;LTsbb Bielskie nowe
+#Units DECL=3.5
+#u meters
+#units order=dva
+#note LTsbb0   -113,0m
+#note LTsbb26  Kolektor
+sbb0	sbb0a	7.34	-25	153	#s domiar
+sbb0a	sbb1	7.59	26	212
+sbb1	sbb2	12.51	-42	170	#s domiar
+sbb2	sbb2a	16.18	35	320	#s domiar
+sbb2	sbb2b	11.21	-33	100	#s domiar
+sbb2	sbb2c	6.10	0	200	#s domiar
+sbb2	sbb3	17.98	42	274
+sbb3	sbb4	4.29	10	235
+sbb4	sbb4a	1.60	0	115	#s domiar
+sbb4	sbb4b	15.80	10	30	#s domiar
+sbb4	sbb5	14.63	36	5
+sbb5	sbb6	8.60	10	0
+sbb6	sbb7	3.60	25	345
+sbb4	sbb8	3.82	11	188
+sbb8	sbb9	9.53	41	279
+sbb9	sbb10	7.54	43	305
+sbb8	sbb11	4.57	20	200
+sbb11	sbb12	6.40	42	245
+sbb12	sbb13	6.76	42	300
+sbb12	sbb14	2.95	0	158
+sbb14	sbb15	4.25	-30	140
+sbb2	sbb16	28.00	-48	110
+sbb16	sbb17	4.07	-23	110
+sbb16	sbb16a	7.10	-35	90	#s domiar
+sbb17	sbb18	2.57	-28	140
+sbb18	sbb19	6.30	-90	0
+sbb19	sbb20	5.07	5	122
+sbb20	sbb21	11.84	-46	130
+sbb21	sbb22	3.89	-57	147
+sbb22	sbb23	11.10	-26	180
+sbb23	sbb24	5.93	-10	215
+sbb24	sbb25	4.27	-37	185
+sbb25	sbb26	6.46	1	220
+sbb26	sbb27	3.23	8	190
+sbb27	sbb28	6.98	-20	280
+sbb28	sbb29	3.47	4	327
+sbb29	sbb30	3.56	29	287
+sbb30	sbb31	11.77	53	271
+sbb31	sbb32	7.27	24	301
+sbb32	sbb33	5.06	58	222
+sbb33	sbb34	5.47	19	320
+sbb34	sbb35	9.49	-6	306
+sbb35	sbb36	9.26	62	280
+sbb36	sbb37	6.01	39	286
+sbb37	sbb38	17.76	37	305
+sbb38	sbb39	4.30	12	315
+sbb39	sbb40	11.13	46	312
+sbb40	sbb41	7.87	47	298
+sbb41	sbb42	25.03	49	296
+sbb30	sbbb1	4.48	36	175
+sbbb1	sbbb2	15.09	86	180
+sbbb2	sbbb3	13.20	88	330
+sbbb3	sbbb4	1.54	90	0
+sbbb4	sbbb5	2.31	15	40
+sbbb5	sbbb6	1.25	23	90
+sbbb6	sbbb7	5.20	-57	76
+sbbb7	sbbb7a	3.00	42	305
+sbbb7	sbbb8	2.54	-26	45
+sbbb8	sbbb8a	2.60	49	325
+sbbb8a	sbbb8b	2.55	51	310
+sbbb8a	sbbb8c	8.00	-50	130
+sbbb8	sbbb9	6.36	49	290
+sbbb9	sbbb10	2.64	43	260
+sbbb10	sbbb11	7.27	42	275
+sbbb11	sbbb12	4.65	51	300
+sbbb8	sbbb13	18.36	-55	120
+sbbb13	sbbb14	1.50	-16	180
+sbbb14	sbbb14a	4.50	50	260
+sbbb14	sbbb15	5.45	-29	158
+sbbb15	sbbb15a	2.60	15	260
+sbbb15a	sbbb15b	4.70	15	190	#s domiar
+sbbb15a	sbbb15c	4.40	5	240	#s domiar
+sbbb15a	sbbb15d	5.70	-20	280	#s domiar
+sbbb15a	sbbb15e	2.40	0	150
+sbbb15e	sbbb15f	4.70	-90	0
+sbbb15f	sbbb15g	4.53	-30	300
+sbbb15g	sbbb15h	3.62	27	185
+sbbb15h	sbbb15i	2.90	20	200
+sbbb15i	sbbb15j	2.10	0	200
+sbbb15h	sbbb15h1	2.60	-49	315
+sbbb15	sbbb16	3.60	-49	20
+sbbb16	sbbb17	5.36	-68	357
+sbbb17	sbbb18	2.07	-52	108
+sbbb18	sbbb19	3.80	-55	18
+sbbb19	sbbb20	1.33	-7	140
+sbbb20	sbbb21	4.17	3	85
+sbbb21	sbbb21a	5.64	0	120
+sbbb21	sbbb22	4.26	18	330
+sbbb22	sbb26	12.60	11	285
+sbb33	sbb50	1.58	-16	174
+sbb50	sbb51	8.35	-21	153
+sbb51	sbb52	5.53	19	132
+sbb52	sbb53	13.23	-18	125
+sbb53	sbb53a	5.10	33	120	#s domiar
+sbb53a	sbb53b	3.70	0	128	#s domiar
+sbb53b	sbb53c	2.56	-7	145
+sbb53c	sbb53d	2.49	-54	193
+sbb53d	sbb53e	3.86	-48	65
+sbb53	sbb54	7.20	46	175
+sbb54	sbb55	3.89	90	0
+sbb55	sbb56	2.03	48	275
+sbb56	sbb57	5.16	39	308
+sbb57	sbb58	6.00	38	320
+sbb58	sbb59	4.80	39	300
+sbb56	sbb60	2.50	0	205	#s domiar
+sbb60	sbb61	4.13	-80	228
+sbb61	sbb62	3.23	-60	5
+sbb51	sbb63	5.06	60	182
+sbb63	sbb64	8.07	14	286
+sbb64	sbb65	3.61	35	75
+sbb65	sbb66	4.94	36	110
+sbb66	sbb67	6.08	16	320
+sbb67	sbb68	2.37	7	290
+sbb68	sbb69	1.12	-39	237
+sbb69	sbb70	3.71	14	316
+sbb70	sbb71	3.06	46	3
+sbb71	sbb72	3.30	36	300
+sbb72	sbb73	3.96	0	304
+sbb73	sbb74	1.13	-8	8
+sbb74	sbb37	3.08	-29	295
+sbb66	sbb66a	2.27	6	125
+sbb66a	sbb66b	8.26	-5	130
+sbb66	sbb66c	1.36	-63	50	#s domiar
+sbb66c	sbb66d	3.20	-10	120
+sbb66d	sbb52k	4.15	30	7
+sbb52k	sbb52k4	1.4	0	280	#s domiar
+sbb52k4	sbb52k5	2.0	70	230
+sbb52k5	sbb52k6	3.65	44	180
+sbb52k6	sbb52k7	2.62	-35	123
+sbb52k7	sbb52k8	4.24	74	205
+sbb52k8	sbb52k9	4.35	52	250
+sbb52k9	sbb52k10	4.97	54	255
+sbb52k10	sbb52k11	1.28	72	242
+sbb52k8	sbb52k12	2.80	5	140
+sbb52k12	sbb52k13	3.75	0	125
+sbb52k8	sbb52k14	2.74	0	320	#s domiar
+sbb52k14	sbb52k15	2.50	0	320
+sbb52k15	sbb52k16	4.24	2	320
+sbb52k16	sbb52k17	1.14	18	270
+sbb52k17	sbb52k18	3.18	50	320
+sbb52k18	sbb52k19	4.47	9	320
+sbb52k19	sbb52k20	0.54	0	250	#s domiar
+sbb52k20	sbb52k21	7.19	1	305
+sbb52k21	sbb52k22	3.85	21	310
+sbb52k22	sbb52k23	8.40	90	0
+sbb52k23	sbb73	6.5	-90	0
+sbb38	sbb38a	1.51	-23	143	#s domiar
+sbb38a	sbb38b	11.0	75	158
+sbb37	sbbr6d	7.70	-2	284	#s domiar
+sbbr6d	sbbr6	14.60	44	38	#s domiar
+sbbr6d	sbbv1	5.73	-26	147	#s domiar
+sbbv1	sbbv2	15.01	82	180
+sbbv2	sbbv3	2.66	28	177
+sbbv3	sbbv4	9.70	68	257
+sbbv1	sbbv5	11.52	65	285	#s domiar
+sbbv5	sbbv6	5.60	51	260
+sbbv6	sbbv7	7.53	42	312
+sbbv7	sbbv8	2.67	-28	278	#s domiar
+sbbv7	sbbv9	10.20	33	295
+sbbv9	sbbv10	3.50	0	290
+sbbv8	sbbv11	4.00	-58	305
+sbbv11	sbbv16	1.25	-27	155	#s domiar
+sbbv16	sbbv15	1.73	-36	24
+sbbv15	sbbv14	5.07	-32	320
+sbbv14	sbbv13	11.50	-24	306
+sbbv13	sbbv12	10.43	-35	260
+sbbv11	sbbv17	12.50	28	304
+sbbv17	sbbv18	2.116	27	332
+sbbv18	sbbv19	3.31	86	290
+sbbv19	sbbv20	1.96	8	255
+sbbv20	sbbv21	4.75	17	310
+sbbv21	sbbv22	6.60	0	310
+sbb40	sbbr1	1.88	-17	52
+sbbr1	sbbr2	3.50	-11	61
+sbbr2	sbbr3	9.83	36	303
+sbbr3	sbbr4	4.96	40	295
+sbbr3	sbbr3a	1.72	5	28
+sbbr3a	sbbr3b	3.60	-48	124
+sbbr2	sbbr5	9.03	-15	128
+sbbr5	sbbr5a	4.00	-41	120	#s domiar
+sbbr5a	sbbr5b	3.20	0	125
+sbbr5	sbbr6	8.64	-26	118
+sbbr5	sbbr7	2.05	-33	325
+sbbr7	sbbr8	3.48	-90	0
+sbbr8	sbbr9	2.25	-10	275
+sbbr9	sbbr10	4.00	23	265
+sbb41	sbbcc	4.30	15	280	#s domiar
+sbbcc	sbbc1	12.0	83	160
+sbb41	sbb41a	8.85	22	295	#s domiar
+sbb41a	sbb41b	4.70	29	273
+sbb41b	sbb41c	1.40	0	10
+sbb41c	sbb41d	2.00	90	0
+sbb41d	sbb41e	2.20	30	295
+sbb41e	sbb41f	1.40	63	100
+sbb41f	sbb41g	3.20	15	305
+sbb42	sbbz1	0.91	10	210
+sbbz1	sbbz2	1.50	9	330
+sbbz2	sbbz3	2.19	24	250
+sbbz3	sbbz4	2.24	-11	355
+sbbz4	sbbz5	3.71	-34	341
+sbbz5	sbbz6	8.84	-53	222
+sbbz6	sbbz7	1.40	11	300
+sbbz7	sbbz8	5.60	-60	330
+sbbz6	sbbz6a	4.80	56	330	#s domiar
+sbbz6a	sbbz6b	6.50	30	295
+sbbz6b	sbbz6b1	4.50	90	0
+sbbz6a	sbbz6c	5.50	65	220
+sbbz6c	sbbz6c1	4.00	25	150
+sbbz5	sbbz9	3.96	48	70
+sbbz9	sbbz10	3.25	50	64
+sbbz10	sbbz11	0.77	90	0
+sbbz11	sbbz12	0.92	7	340
+sbbz12	sbbz13	5.23	50	306
+sbbz13	sbbz14	0.93	28	105
+sbbz14	sbbz15	2.27	25	130
+sbbz15	sbbz16	2.75	20	78
+sbbz16	sbbz17	1.41	-42	30
+sbbz17	sbbz18	2.83	26	262
+sbbz18	sbbz19	3.5	58	254
+sbbz19	sbbz20	1.89	37	40
+sbbz20	sbbz21	1.00	90	0
+sbbz3	sbbz22	4.00	86	250
+sbbz22	sbbz23	2.95	-8	122
+sbbz23	sbbz24	3.36	21	30
+sbbz24	sbbz25	2.26	5	265
+sbbz25	sbbz26	2.96	8	343
+sbbz26	sbbz26a	4.74	31	92
+sbbz26a	sbbz26b	2.70	44	153
+sbbz26	sbbz27	3.56	-36	325
+sbbz27	sbbz28	2.30	0	275
+sbbz28	sbbz29	4.00	52	305
+sbbz23	sbbz30	0.90	75	110
+sbbz30	sbbz31	3.64	77	168
+sbbz31	sbbz32	4.50	32	25
+sbb42	sbbz33	4.50	-12	112	#s domiar
+sbbz33	sbbz33a	5.00	-15	115
+sbbz33a	sbbz33b	3.10	-90	0
+sbbz33b	sbbz33c	5.40	0	110
+sbb53	sbb53k	13.8	78	330
+sbb53	sbb53z	8.90	60	10	#s domiar
+;sbb52	sbb52k	10.56	60	328	#s domiar wylaczony
+sbb52k	sbb52k1	4.0	0	300
+sbb52k	sbb52k2	3.50	0	100	#s domiar
+sbb52k2	sbb52k3	5.00	0	130
+sbb27	sbb27k	16.0	75	243
+sbb27	sbb27o	4.63	37	200	#s domiar
+sbb27o	sbb27o1	6.00	83	158
+sbb27	sbb27d	10.0	74	215	#s domiar
+sbb27o1	sbb27d	2.00	0	0
+sbb24	sbb24k	8.38	65	282
+sbb24k	sbb24k1	6.90	70	265
+sbb24k1	sbb24k2	5.80	60	305
+sbb24k2	sbb24k3	3.30	35	280
+sbb21	sbb21m1	4.70	8	30	#s domiar
+sbb21m1	sbb21m2	2.60	6	70
+sbb21m2	sbb21m3	2.50	0	350
+sbb21	sbb21m4	7.15	27	357	#s domiar
+sbb21m4	sbb21m5	10.02	55	297
+sbb21m5	sbb21m6	4.10	35	323
+sbb19	sbb19s	1.22	-8	215	#s domiar
+sbb19s	sbb19s1	13.6	-49	192
+sbb16	sbb16b	3.77	-4	28	#s domiar
+sbb16b	sbb16c	2.80	34	302
+sbb16c	sbb16d	5.0	32	320
+sbb16c	sbb16e	5.80	0	30
+sbb16c	sbb16f	3.7	0	30	#s domiar
+sbb16f	sbb16g	9.4	32	320
+sbb16b	sbb16h	5.4	-34	130

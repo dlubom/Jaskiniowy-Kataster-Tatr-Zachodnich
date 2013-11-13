@@ -1,0 +1,25 @@
+;Bielskie stare-nowe pomiary
+#Units Meters Order=avd
+#note  LTII20 /  punkt -160
+#note  LTsb0 /  punkt -102
+LTll20	LTbie1	110	18	5.60
+LTbie1	LTbie2	148	-7	3.83
+LTbie2	LTbie3	163	5	4.43
+LTbie3	LTbie4	102	4	3.11
+LTbie4	LTbie5	148	4	2.84
+LTbie5	LTbie6	120	6	3.55
+LTbie6	LTbie7	142	1	3.61
+LTbie7	LTbie8	40	16	3.07
+LTbie8	LTbie9	150	2	2.74
+LTbie9	LTbie10	74	-6	2.58
+LTbie10	LTbie11	166	-4	5.18
+LTbie11	LTbie12	105	19	2.52
+LTbie12	LTbie13	264	26	5.06
+LTbie13	LTbie14	328	25	4.13
+LTbie14	LTbie15	282	25	10.84
+LTbie15	LTbie16	273	35	13.02
+LTbie16	LTbie17	255	42	8.96
+LTbie17	LTbie18	173	56	7.60
+LTbie18	LTbie19	165	31	6.72
+LTbie19	LTbie20	290	31	10.80
+LTbie20	sbb0	270	36	11.93

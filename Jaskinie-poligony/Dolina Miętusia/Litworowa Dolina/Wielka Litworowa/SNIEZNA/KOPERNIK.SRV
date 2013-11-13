@@ -1,0 +1,40 @@
+#u meters
+;sala kopernika i okolice
+;pomiary: Czeslaw Szura, Artur Zera
+;
+LTkf9	lkop8	8.3	290	31	#seg sala pochyla; dolna czesc poloczenie
+lkop8	lkop9	3.8	292	16	#seg sala pochyla
+lkop9	lkop10	2.55	293	22
+lkop10	lkop11	1.85	265	15
+lkop11	lkop12	4.95	335	77
+lkop12	lkop13	1.87	57	63
+lkop13	lkop14	3.92	310	62
+lkop14	lkop15	3.6	3	7
+lkop15	lkop16	2.85	10	-34
+lkop16	lkop17	2.2	30	-22
+lkop17	lkop17a	3.5	325	35
+lkop17	lkop18	10.3	150	-64
+lkop18	lkop19	2.2	15	-42
+lkop19	lkop19a	3	150	-60	#seg domiar	;insynulacje
+lkop14	lkop20	6.25	323	62
+lkop20	lkop20a	2.75	210	-24
+lkop20	lkop21	4.6	15	16
+lkop21	lkop22	4.3	345	-13
+lkop22	lkop23	7.32	307	-12
+lkop23	lkop24	1.3	228	0
+lkop24	lkop25	4.4	0	-90
+lkop25	lkop26	2.4	310	0
+lkop25	lkop25a	3	90	0	#seg domiar
+lkop22	lkop27	3.55	280	60
+lkop27	lkop28	7.25	320	35
+lkop28	lkop29	12.4	308	50
+lkop29	lkop30	3	335	7.5
+lkop28	lkop31	4.5	45	45	#seg domiar
+lkop31	lkop32	4	20	21
+lkop32	lkop33	4.5	25	17
+lkop33	lkop34	3.3	320	40
+lkop34	lkop34a	2.5	335	40	#seg domiar
+lkop34	lkop35	5	15	30
+;do lufcika
+lkop20a	lufcik	7.9	220	-24	#seg domiar
+lufcik	LTkf10	4	45	0	#seg domiar

@@ -1,0 +1,17 @@
+;
+#units v=d
+#units a=d
+#Units Meters Order=avd
+LTpwh	LTpwg	161	34	2.1
+LTpwg	LTpwg1	0	90	3.5
+LTpwg1	LTpwg2	320	11	1.70
+LTpwg2	LTpwg3	65	70	0.80
+LTpwg3	LTpwg4	290	0	1.25
+LTpwg4	LTpwg5	76	0	0.60
+LTpwg5	LTpwg6	320	38	8.35
+LTpwg6	LTpwg7	322	0	1.60
+LTpwg6	LTpwg8	0	90	3.80
+LTpwg5	LTpwg9	0	90	4.90
+LTpwg9	LTpwg10	315	34	2.70
+LTpwg9	LTpwg11	108	0	2.00
+LTpwa	LTpwaa	0	90	2.00

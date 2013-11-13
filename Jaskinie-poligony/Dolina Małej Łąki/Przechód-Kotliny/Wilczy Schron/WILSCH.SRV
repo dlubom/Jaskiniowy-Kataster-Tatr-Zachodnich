@@ -1,0 +1,7 @@
+;Wilczy Schron
+#Units Meters Order=dav
+#fix 	wsn0 	421693.35 	5454837.72 	1635.04
+#note	wsn0	/Wilczy Schron
+#flag	wsn0	/Wilczy Schron
+wsn0 	wsn1 	2.66 	169.33	 6.26
+wsn1 	wsn2 	3.35 	84.81 	-8.41

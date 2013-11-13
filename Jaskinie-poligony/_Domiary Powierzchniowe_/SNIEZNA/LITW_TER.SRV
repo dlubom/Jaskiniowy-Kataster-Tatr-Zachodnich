@@ -1,0 +1,19 @@
+;LTsbb teren
+#Units DECL=3.69
+#u meters
+#units order=dva
+#note LT58 Wielka Litworowa
+#note ter0 Wyznia Litworowa
+#note ter3 Dziuraw Grzedzie
+#note ter7b Szczelinanad Litworowa
+ter0	ter1	2.56	47	160
+ter1	ter2	26.21	10	165
+ter2	ter3	2.18	-57	170
+ter3	ter4	2.05	-42	117
+ter4	ter5	5.38	-75	150
+ter2	ter6	2.63	9	211
+ter6	ter7	60.0	-14	192
+ter7	ter8	33.5	18	226
+ter8	LT58	3.18	-28	210
+ter7	ter7a	28.07	48	140
+ter7a	ter7b	5.0	7	165

@@ -1,0 +1,582 @@
+;WALLS Project file
+.BOOK	KATASTER Project
+.NAME	KATASTER
+.STATUS	3
+.SURVEY	_Informacje_
+.NAME	INFO
+.STATUS	1354
+.BOOK	Jaskinie-poligony
+.NAME	JSURVEY
+.PATH	Jaskinie-poligony
+.STATUS	1289
+.BOOK	Dolina Bystra
+.NAME	DBYS
+.PATH	Dolina Bystra
+.STATUS	9
+.BOOK	Jaskinia Kalacka
+.NAME	JKAL
+.PATH	Jaskinia Kalacka
+.STATUS	1289
+.SURVEY	Jaskinia Kalacka
+.NAME	KALACKA
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
+.BOOK	Dolina Goryczkowa
+.NAME	DGOR
+.PATH	Dolina Goryczkowa
+.STATUS	8
+.BOOK	Jaskinia Goryczkowa
+.NAME	JGOR
+.PATH	Jaskinia Goryczkowa
+.STATUS	8
+.SURVEY	g5
+.NAME	G5
+.STATUS	8
+.SURVEY	g4
+.NAME	G4
+.STATUS	8
+.SURVEY	g3
+.NAME	G3
+.STATUS	8
+.SURVEY	g2
+.NAME	G2
+.STATUS	8
+.SURVEY	g1
+.NAME	G1
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
+.BOOK	_Domiary Powierzchniowe_
+.NAME	DOMPOW
+.PATH	_Domiary Powierzchniowe_
+.STATUS	8
+.SURVEY	LTsbb teren
+.NAME	LITW_TER
+.PATH	SNIEZNA
+.STATUS	8
+.ENDBOOK
+.BOOK	Dolina Ma³ej £¹ki
+.NAME	D-MALLAK
+.PATH	Dolina Ma³ej £¹ki
+.STATUS	8
+.BOOK	Przechód-Kotliny
+.NAME	P-KOTLIN
+.PATH	Przechód-Kotliny
+.STATUS	8
+.BOOK	Up³azkowa
+.NAME	UPLAZK
+.PATH	Up³azkowa
+.STATUS	8
+.SURVEY	Up³azkowa
+.NAME	UPLAZKOW
+.STATUS	8
+.ENDBOOK
+.BOOK	Wilczy Schron
+.NAME	WILCZSCH
+.PATH	Wilczy Schron
+.STATUS	8
+.SURVEY	Wilczy Schron
+.NAME	WILSCH
+.STATUS	8
+.ENDBOOK
+.BOOK	Studnia Przy Przechodzie
+.NAME	STPPRZCH
+.PATH	Studnia Przy Przechodzie
+.STATUS	8
+.SURVEY	Studnia przy Przechodzie
+.NAME	STUDPRZE
+.STATUS	8
+.ENDBOOK
+.BOOK	Schron Pod Jêdrusiow¹
+.NAME	SCHPJEDR
+.PATH	Schron Pod Jêdrusiow¹
+.STATUS	8
+.SURVEY	Schron pod Jêdrusiow¹
+.NAME	SCHJED
+.STATUS	8
+.ENDBOOK
+.BOOK	Przy Jêdrusiowej
+.NAME	PJEDRUS
+.PATH	Przy Jêdrusiowej
+.STATUS	8
+.SURVEY	Przy Jêdrusiowej
+.NAME	PZRYJEDR
+.STATUS	8
+.ENDBOOK
+.BOOK	Dziura Pod Œwistow¹
+.NAME	DZPSWIST
+.PATH	Dziura Pod Œwistow¹
+.STATUS	8
+.SURVEY	Dziura pod Œwistow¹
+.NAME	DZISWI
+.STATUS	8
+.ENDBOOK
+.BOOK	Ma³o³¹cka
+.NAME	MALOLOCK
+.PATH	Ma³o³¹cka
+.STATUS	8
+.SURVEY	Ma³o³¹cka
+.NAME	MALOLACK
+.STATUS	8
+.ENDBOOK
+.BOOK	Przy Przechodzie
+.NAME	PPRZECHO
+.PATH	Przy Przechodzie
+.STATUS	8
+.SURVEY	Przy Przechodzie
+.NAME	PRZYPRZE
+.STATUS	8
+.ENDBOOK
+.BOOK	Œnie¿na Studnia
+.NAME	SSTUDNIA
+.PATH	Œnie¿na Studnia
+.STATUS	8
+.SURVEY	snie¿na studnia
+.NAME	SS
+.STATUS	8
+.ENDBOOK
+.BOOK	System Wielkiej Œnie¿nej
+.NAME	WSNIEZNA
+.PATH	System Wielkiej Œnie¿nej
+.STATUS	8
+.BOOK	Wielka Œnie¿na
+.NAME	SNIEZNA
+.PATH	sniezna
+.STATUS	8
+.SURVEY	20130713
+.NAME	20130713
+.STATUS	8
+.SURVEY	Warszawskie kaskady
+.NAME	WARSZAW
+.STATUS	8
+.SURVEY	wroclawskie kominy
+.NAME	WROCL
+.STATUS	8
+.SURVEY	Syfon Krakowski
+.NAME	SYFONKRA
+.STATUS	8
+.SURVEY	Biala Woda
+.NAME	PRZEMKOW
+.STATUS	8
+.SURVEY	Litworowa
+.NAME	LITWOR
+.STATUS	10
+.SURVEY	Galeria Krokodyla
+.NAME	KROKODYL
+.STATUS	8
+.SURVEY	Jasny Awen
+.NAME	JASNYA
+.STATUS	8
+.SURVEY	Kominy krakowskie
+.NAME	KRAKOW
+.STATUS	8
+.SURVEY	Kolanko
+.NAME	KOLANKO
+.STATUS	8
+.SURVEY	amoki i partie animatorow
+.NAME	AMOKI
+.STATUS	8
+.SURVEY	ci¹g g³ówny
+.NAME	MAIN
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
+.ENDBOOK
+.BOOK	Mnichowe Turnie
+.NAME	MNICHTUR
+.PATH	Mnichowe Turnie
+.STATUS	8
+.BOOK	Lodowa Ma³o³¹cka
+.NAME	LMALOL
+.PATH	Lodowa Ma³o³¹cka
+.STATUS	8
+.SURVEY	Lodowa Ma³o³¹cka
+.NAME	LODMAL
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
+.BOOK	Wy¿nia Œwistówka
+.NAME	WSWISTOW
+.PATH	Wy¿nia Œwistówka
+.STATUS	8
+.BOOK	Zaspa³kowa Szczelina
+.NAME	ZASPALKS
+.PATH	Zaspa³kowa Szczelina
+.STATUS	8
+.SURVEY	Zaspa³kowa Szczelina
+.NAME	ZASSZC
+.STATUS	8
+.ENDBOOK
+.BOOK	Koprowa Studnia
+.NAME	KOPROWA
+.PATH	Koprowa Studnia
+.STATUS	8
+.SURVEY	Koprowa Studnia
+.NAME	KOPRSTUD
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
+.ENDBOOK
+.BOOK	Dolina Koœcieliska
+.NAME	D-KOSCIE
+.PATH	Dolina Koœcieliska
+.STATUS	8
+.BOOK	Wysoki Grzbiet
+.NAME	WGRZBIET
+.PATH	Wysoki Grzbiet
+.STATUS	8
+.BOOK	Wysoka-Za 7 Progami
+.NAME	WYS-7PR
+.PATH	Wysoka-7 Progów
+.STATUS	8
+.BOOK	aveny
+.NAME	AVENY
+.STATUS	8
+.SURVEY	PIONY
+.NAME	PIONY
+.STATUS	8
+.SURVEY	7PROGOW
+.NAME	7PROGOW
+.STATUS	8
+.ENDBOOK
+.BOOK	pietra
+.NAME	PIETRA
+.STATUS	8
+.SURVEY	V
+.NAME	V
+.STATUS	8
+.SURVEY	IV
+.NAME	IV
+.STATUS	8
+.SURVEY	III
+.NAME	III
+.STATUS	8
+.SURVEY	II
+.NAME	II
+.STATUS	8
+.SURVEY	I
+.NAME	I
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
+.ENDBOOK
+.BOOK	Kominiarski Wierch
+.NAME	KMWIERCH
+.PATH	Kominiarski Wierch
+.STATUS	8
+.BOOK	Raptawicka Turnia
+.NAME	RAPTAWT
+.PATH	Raptawicka Turnia
+.STATUS	8
+.BOOK	Mylna
+.NAME	MYLNA
+.PATH	Mylna
+.STATUS	544840
+.BOOK	Ciag Glowny
+.NAME	MCG
+.PATH	Mylna
+.STATUS	544832
+.SURVEY	Ciag Glowny
+.NAME	CG
+.STATUS	64
+.SURVEY	drobne odga³êzienia od Ciagu Glownego
+.NAME	BOKI_CG
+.STATUS	8
+.ENDBOOK
+.BOOK	Wielka Szczelina
+.NAME	WLKSZCZ
+.PATH	Mylna
+.STATUS	8
+.SURVEY	Wielka Szczelina-CG
+.NAME	WSZCZCG
+.STATUS	8
+.SURVEY	Wielka Szczelina-CB
+.NAME	WSZCZCB
+.STATUS	8
+.ENDBOOK
+.BOOK	Ulica Pawlikowskiego
+.NAME	ULPAWL
+.STATUS	8
+.SURVEY	Ulica Pawlikowskiego-CG
+.NAME	ULPAWLCG
+.PATH	Mylna
+.STATUS	8
+.SURVEY	Ulica Pawlikowskiego-CB
+.NAME	ULPAWLCB
+.PATH	Mylna
+.STATUS	8
+.ENDBOOK
+.BOOK	Boczny Ciag do Chorow
+.NAME	BCDCH
+.STATUS	8
+.SURVEY	Boczny Ciag do Chorow
+.NAME	BCDCHCG
+.PATH	Mylna
+.STATUS	8
+.ENDBOOK
+.BOOK	Wielka Izba i Skosna Komora
+.NAME	WIISK
+.STATUS	8
+.SURVEY	Skosna Komora i okolice
+.NAME	SKIOKOL
+.PATH	Mylna
+.STATUS	8
+.SURVEY	Wielka Izba i okolice
+.NAME	WIIOKOL
+.PATH	Mylna
+.STATUS	8
+.ENDBOOK
+.BOOK	Ciagi boczne w polnocnej czesci
+.NAME	CBWPOLCZ
+.STATUS	8
+.SURVEY	Boczne ciagi w okolicy Wyjscia
+.NAME	BCWOKWYJ
+.PATH	Mylna
+.STATUS	8
+.ENDBOOK
+.BOOK	Ciagi przy Bialej Ulicy
+.NAME	CPBU
+.STATUS	8
+.SURVEY	Ciagi przy Bialej Ulicy
+.NAME	CPBUL
+.PATH	Mylna
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
+.ENDBOOK
+.BOOK	Bandzioch Kominiarski
+.NAME	BANDZK
+.PATH	Bandzioch Kominiarski
+.STATUS	1352
+.BOOK	Ciag 7 Dna
+.NAME	BK-C7D
+.STATUS	8
+.SURVEY	Boki Ciagu 7 Dna - Grady
+.NAME	BK-B7D-G
+.STATUS	8
+.SURVEY	Ciag 7 Dna - Grady
+.NAME	BK-C7D-G
+.STATUS	8
+.ENDBOOK
+.BOOK	Ciag 6 Dna
+.NAME	BK-C6D
+.STATUS	8
+.SURVEY	Boki Ciagu 6 Dna - Stopnie
+.NAME	BK-B6D-S
+.STATUS	8
+.SURVEY	Ciag 6 Dna - Stopnie
+.NAME	BK-C6D-S
+.STATUS	8
+.ENDBOOK
+.BOOK	Ciag 5 Dna
+.NAME	BK-C5D
+.STATUS	8
+.SURVEY	Boki Ciagu 5 Dna - Stopnie
+.NAME	BK-B5D-S
+.STATUS	8
+.SURVEY	Ciag 5 Dna - Stopnie
+.NAME	BK-C5D-S
+.STATUS	8
+.ENDBOOK
+.BOOK	Ciag 4 Dna
+.NAME	BK-C4D
+.STATUS	8
+.BOOK	Ciag 3 Dna
+.NAME	BK-C3D
+.STATUS	8
+.SURVEY	Boki Ciagu 3 Dna - Grady
+.NAME	BK-B3D-G
+.STATUS	8
+.SURVEY	Boki Ciagu 3 Dna - Stopnie
+.NAME	BK-B3D-S
+.STATUS	8
+.SURVEY	Ciag 3 Dna - Stopnie
+.NAME	BK-C3D-S
+.STATUS	8
+.REF	5455060.050 416262.210 34 -0.871 1457 1 49 14 33.300 19 50 58.320 27 ""
+.ENDBOOK
+.SURVEY	Boki Ciagu 4 Dna - Grady
+.NAME	BK-B4D-G
+.STATUS	8
+.SURVEY	Boki Ciagu 4 Dna - Stopnie
+.NAME	BK-B4D-S
+.STATUS	8
+.SURVEY	Ciag 4 Dna - Grady
+.NAME	BK-C4D-G
+.STATUS	8
+.SURVEY	Ciag 4 Dna - Stopnie
+.NAME	BK-C4D-S
+.STATUS	8
+.ENDBOOK
+.BOOK	Ciag 2 Dna (Nowe Dno-Syf.KKTJ)
+.NAME	BK-C2D
+.STATUS	8
+.SURVEY	Ciag 2 Dna - Grady
+.NAME	BK-C2D-G
+.STATUS	8
+.SURVEY	Ciag 2 Dna - Stopnie
+.NAME	BK-C2D-S
+.STATUS	8
+.SURVEY	Boki Ciagu 2 Dna - Grady
+.NAME	BK-B2D-G
+.STATUS	8
+.SURVEY	Boki Ciagu 2 Dna - Stopnie
+.NAME	BK-B2D-S
+.STATUS	8
+.ENDBOOK
+.BOOK	Ciag 1 Dna (Stare Dno)
+.NAME	BK-C1D
+.STATUS	8
+.SURVEY	Boki Ciagu Starego Dna - Grady
+.NAME	BK-BSD-G
+.STATUS	8
+.SURVEY	Boki Ciagu Starego Dna - Stopnie
+.NAME	BK-BSD-S
+.STATUS	8
+.SURVEY	Ciag Starego Dna - Stopnie
+.NAME	BK-CSD-S
+.STATUS	8
+.SURVEY	Ciag Starego Dna - Grady
+.NAME	BK-CSD-G
+.STATUS	8
+.ENDBOOK
+.BOOK	Ciag Glowny Miedzyotworowy
+.NAME	BK-CGM
+.STATUS	1352
+.SURVEY	Ciag Glowny - Dolny Otwór - Gorny Otwor
+.NAME	BK-CG
+.STATUS	1352
+.SURVEY	Boki Ciagu Glownego - Grady
+.NAME	BK-BCG-G
+.STATUS	8
+.SURVEY	Boki Ciagu Glownego - Stopnie
+.NAME	BK-BCG-S
+.STATUS	8
+.ENDBOOK
+.SURVEY	Bandzioch Kominiarski - Wprowadzenie
+.NAME	BK-W
+.STATUS	10
+.ENDBOOK
+.ENDBOOK
+.ENDBOOK
+.BOOK	Dolina Miêtusia
+.NAME	D-MIET
+.PATH	Dolina Miêtusia
+.STATUS	8
+.BOOK	Kazalnica Miêtusia
+.NAME	KAZALMIE
+.PATH	Kazalnica Miêtusia
+.STATUS	8
+.BOOK	Marmurowa
+.NAME	MARMUR
+.PATH	Marmurowa
+.STATUS	8
+.SURVEY	Marmurowa
+.NAME	JMARMUR
+.STATUS	8
+.ENDBOOK
+.BOOK	Studnia w Kazalnicy
+.NAME	STKAZALN
+.PATH	Studnia w Kazalnicy
+.STATUS	8
+.SURVEY	Jaskinia Studnia w Kazalnicy
+.NAME	GLOWNYSK
+.STATUS	8
+.SURVEY	Jaskinia Studnia w Kazalnicy_2
+.NAME	BOKISK
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
+.BOOK	Mu³owa Dolina
+.NAME	MULODOL
+.PATH	Mu³owa Dolina
+.STATUS	8
+.ENDBOOK
+.BOOK	Litworowa Dolina
+.NAME	LITWODOL
+.PATH	Litworowa Dolina
+.STATUS	8
+.BOOK	Wielka Litworowa
+.NAME	WLITWOR
+.PATH	Wielka Litworowa
+.STATUS	8
+.SURVEY	Litworowa
+.NAME	LITSTARE
+.PATH	SNIEZNA
+.STATUS	8
+.SURVEY	kopernik
+.NAME	KOPERNIK
+.PATH	SNIEZNA
+.STATUS	8
+.SURVEY	LTPSB
+.NAME	LTPSB
+.PATH	SNIEZNA
+.STATUS	8
+.SURVEY	LTPWG
+.NAME	LTPWG
+.PATH	SNIEZNA
+.STATUS	8
+.SURVEY	Bielskie stare-nowe pomiary
+.NAME	LITPLYTB
+.PATH	SNIEZNA
+.STATUS	8
+.SURVEY	slepe
+.NAME	SLEPE
+.PATH	SNIEZNA
+.STATUS	8
+.SURVEY	lit99
+.NAME	LIT99
+.PATH	SNIEZNA
+.STATUS	8
+.SURVEY	LTsbb Bielsk nowe
+.NAME	SBB2
+.PATH	SNIEZNA
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
+.BOOK	Kozi Grzbiet
+.NAME	KGRZBIET
+.PATH	Kozi Grzbiet
+.STATUS	8
+.BOOK	Kozia
+.NAME	KOZIAA
+.PATH	Kozia
+.STATUS	8
+.SURVEY	Kozia
+.NAME	KOZIA
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
+.ENDBOOK
+.ENDBOOK
+.BOOK	Inne dokumenty
+.NAME	INNEDOK
+.PATH	Inne Dokumenty
+.STATUS	8
+.ENDBOOK
+.BOOK	Mapy terenowe
+.NAME	MAPYTER
+.PATH	Mapy Terenowe
+.STATUS	8
+.ENDBOOK
+.BOOK	Powierzchnia
+.NAME	AREA
+.PATH	Powierzchnia
+.STATUS	8
+.BOOK	Teren 10x10
+.NAME	TER1010
+.PATH	Teren 10x10
+.STATUS	8
+.SURVEY	Poziomice
+.NAME	POZIOM
+.STATUS	8
+.SURVEY	Po³udniki
+.NAME	POLUDN
+.STATUS	10
+.SURVEY	Równole¿niki
+.NAME	ROWNOL
+.STATUS	10
+.ENDBOOK
+.ENDBOOK
+.ENDBOOK

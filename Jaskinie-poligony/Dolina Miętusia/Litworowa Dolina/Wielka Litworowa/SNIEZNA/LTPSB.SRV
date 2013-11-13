@@ -1,0 +1,57 @@
+#u meters
+#units order=dav
+LTpsb0	LTsb1	2.1	0	-90
+LTsb1	LTpsb2	1.65	132	-36
+LTpsb2	LTpsb3	1.05	58	-59
+LTpsb3	LTpsb4	2.04	3	1
+LTpsb4	LTpsb5	2	112	-19
+LTpsb5	LTpsb6	3.45	268	-22
+LTpsb6	LTpsb7	5.75	240	-59
+LTpsb7	LTpsb8	2.6	125	45
+LTpsb8	LTpsb9	3.9	318	-26
+LTpsb9	LTpsb10	2.66	182	-27
+LTpsb10	LTpsb11	6.14	235	-55
+LTpsb11	LTpsb12	5.08	3	-15
+LTpsb12	LTpsb13	5.47	147	-22
+LTpsb13	LTpsb14	3.6	124	-8
+LTpsb14a	LTpsb15	1.3	110	-12
+LTpsb15	LTpsb16	0.8	105	90
+LTpsb16	LTpsb17	2	105	0
+LTpsb17	LTpsb18	0.8	105	-90
+LTpsb18	LTpsb19	2	105	-4
+LTpsb5	LTpsb5a	4.7	130	32
+LTpsb6	LTpsb6a	3.15	320	29
+LTpsb6a	LTpsb6b	4.25	305	40
+LTpsb7	LTpsb7a	4.3	108	-16
+LTpsb7a	LTpsb7b	1.3	150	-11
+LTpsb7b	LTpsb7c	7	124	-39
+LTpsb14	LTpsb14a	3.3	110	-12
+LTpsb14a	LTpsb14b	1.04	24	-78
+LTpsb14b	LTpsb14c	1.9	105	-4
+LTpsb14c	LTpsb14d	0.7	162	-48
+LTpsb14d	LTpsb14e	1.94	106	-4
+LTpsb0	LTpsbg1	4.3	134	-24
+LTpsbg1	LTpsbg2	2.6	28	+50
+LTpsbg2	LTpsbg3	1.5	72	-1
+LTpsbg3	LTpsbg4	2.95	125	+52
+LTpsbg4	LTpsbg5	2.2	195	9
+LTpsbg5	LTpsbg6	3.9	90	35
+LTpsbg6	LTpsbg7	2.3	342	11
+LTpsbg7	LTpsbg8	3.4	225	48
+LTpsbg8	LTpsbg9	2.4	10	33
+LTpsbg9	LTpsbg10	4.1	90	37
+LTpsbg10	LTpsbg11	5	255	48
+LTpsbg5	LTpsbgd5	2.9	325	11	#s domiar
+LTpsbg8	LTpsbg8a	2.95	118	-8
+LTpsbg8a	LTpsbg6	3.1	352	-75
+LTpsbg8	LTpsbg8d	2.45	304	40
+LTpsbg8d	LTpsba1a	3	325	5
+LTpsbg9	LTpsbg9a	3.25	350	13
+LTpsbg9a	LTpsbg9b	.8	290	25
+LTpsbg9b	LTpsbg9c	1.1	0	+90
+LTpsbg9c	LTpsbg9d	2.4	0	0
+LTpsbg3	LTpsbgi1	4.9	344	65
+LTpsbgi1	LTpsbgi2	2.8	310	4
+LTpsbgi2	LTpsbgi3	1.85	320	-8
+LTpsbgi3	LTsb2	4.35	210	-6	#s domiar
+LTsb2	LTpsb0	4.3	0	-90	#s domiar
