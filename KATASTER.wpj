@@ -8,15 +8,15 @@
 .BOOK	Jaskinie-poligony
 .NAME	JSURVEY
 .PATH	Jaskinie-poligony
-.STATUS	1289
+.STATUS	1288
 .BOOK	Dolina Bystra
 .NAME	DBYS
 .PATH	Dolina Bystra
-.STATUS	9
+.STATUS	8
 .BOOK	Jaskinia Kalacka
 .NAME	JKAL
 .PATH	Jaskinia Kalacka
-.STATUS	1289
+.STATUS	1288
 .SURVEY	Jaskinia Kalacka
 .NAME	KALACKA
 .STATUS	8
