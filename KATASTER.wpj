@@ -26,6 +26,13 @@
 .NAME	DGOR
 .PATH	Dolina Goryczkowa
 .STATUS	8
+.BOOK	Jaskinia Zwolinskiego
+.NAME	JZWOL
+.STATUS	8
+.SURVEY	Jaskinia Zwolinskiego
+.NAME	JZWOLIN
+.STATUS	8
+.ENDBOOK
 .BOOK	Jaskinia Goryczkowa
 .NAME	JGOR
 .PATH	Jaskinia Goryczkowa
