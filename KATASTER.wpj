@@ -28,6 +28,7 @@
 .STATUS	8
 .BOOK	Jaskinia Zwolinskiego
 .NAME	JZWOL
+.PATH	Jaskinia Zwolinskiego
 .STATUS	8
 .SURVEY	Jaskinia Zwolinskiego
 .NAME	JZWOLIN
@@ -67,6 +68,16 @@
 .NAME	D-MALLAK
 .PATH	Dolina Ma³ej £¹ki
 .STATUS	8
+.BOOK	Czerwony Grzbiet
+.NAME	CZGRZB
+.PATH	Czerwony Grzbiet
+.STATUS	8
+.BOOK	Jaskinia Zoœka - Zagonna Studnia
+.NAME	JZZS
+.PATH	Jaskinia Zoœka - Zagonna Studnia
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
 .BOOK	Przechód-Kotliny
 .NAME	P-KOTLIN
 .PATH	Przechód-Kotliny
@@ -207,6 +218,15 @@
 .NAME	WSWISTOW
 .PATH	Wy¿nia Œwistówka
 .STATUS	8
+.BOOK	Jaskinia Swistacza
+.NAME	JSWIS
+.PATH	Jaskinia Swistacza
+.STATUS	8
+.SURVEY	Jaskinia Swistacza
+.NAME	SWIST
+.PATH	Jaskinia Swistacza
+.STATUS	8
+.ENDBOOK
 .BOOK	Zaspa³kowa Szczelina
 .NAME	ZASPALKS
 .PATH	Zaspa³kowa Szczelina
