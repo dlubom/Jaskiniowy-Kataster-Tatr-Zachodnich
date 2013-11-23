@@ -76,6 +76,9 @@
 .NAME	JZZS
 .PATH	Jaskinia Zoœka - Zagonna Studnia
 .STATUS	8
+.SURVEY	1
+.NAME	1
+.STATUS	8
 .ENDBOOK
 .ENDBOOK
 .BOOK	Przechód-Kotliny
