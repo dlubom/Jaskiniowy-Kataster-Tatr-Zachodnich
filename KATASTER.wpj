@@ -8,7 +8,7 @@
 .BOOK	Jaskinie-poligony
 .NAME	JSURVEY
 .PATH	Jaskinie-poligony
-.STATUS	1289
+.STATUS	1288
 .BOOK	Dolina Bystra
 .NAME	DBYS
 .PATH	Dolina Bystra
@@ -67,15 +67,15 @@
 .BOOK	Dolina Ma³ej £¹ki
 .NAME	D-MALLAK
 .PATH	Dolina Ma³ej £¹ki
-.STATUS	9
+.STATUS	8
 .BOOK	Czerwony Grzbiet
 .NAME	CZGRZB
 .PATH	Czerwony Grzbiet
-.STATUS	9
+.STATUS	8
 .BOOK	Jaskinia Zoœka - Zagonna Studnia
 .NAME	JZZS
 .PATH	Jaskinia Zoœka - Zagonna Studnia
-.STATUS	9
+.STATUS	8
 .SURVEY	1
 .NAME	1
 .STATUS	8
