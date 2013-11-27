@@ -1,4 +1,4 @@
-"Jaskinie Tatrzanskie" - v.0.10
+"Jaskinie Tatrzanskie" - v.0.11
 
 Historia wersji:
 v0.00  (rok 2010-2011)  - projekt wstepny, brak koordynatora, dane haotyczne
@@ -12,7 +12,7 @@ v0.07 (04.11.2013) - dodano jaskinie Goryczkowa
 v0.08 (13.11.2013) - dodano jaskinie Kalacka, dodano jaskinie Studnia w Kazalnicy, poprawka w Koziej
 v0.09 (20.11.2013) - dodano jaskinie Zwolinskiego, dodano jaskinie Swistacza(brak wspolrzednych GPS), nowe pomiary Koprowej Studni
 v0.10 (24.11.2013) - dodano system Zoska - Zagonna Studnia
-
+v0.11 (27.11.2013) - Coordinates UTM/UPS grid-relative; Declinations Derive from #DATE
 
 
 

@@ -1,14 +1,15 @@
 ;WALLS Project file
 .BOOK	KATASTER Project
 .NAME	KATASTER
-.STATUS	3
+.STATUS	2563
+.REF	5444258.858 420990.593 34 -0.819 1800 2 49 8 45.850 19 54 59.787 27 "WGS 1984"
 .SURVEY	_Informacje_
 .NAME	INFO
 .STATUS	1354
 .BOOK	Jaskinie-poligony
 .NAME	JSURVEY
 .PATH	Jaskinie-poligony
-.STATUS	1288
+.STATUS	8
 .BOOK	Dolina Bystra
 .NAME	DBYS
 .PATH	Dolina Bystra
@@ -16,7 +17,7 @@
 .BOOK	Jaskinia Kalacka
 .NAME	JKAL
 .PATH	Jaskinia Kalacka
-.STATUS	1288
+.STATUS	8
 .SURVEY	Jaskinia Kalacka
 .NAME	KALACKA
 .STATUS	8
@@ -302,14 +303,13 @@
 .BOOK	Mylna
 .NAME	MYLNA
 .PATH	Mylna
-.STATUS	544840
+.STATUS	544776
 .BOOK	Ciag Glowny
 .NAME	MCG
 .PATH	Mylna
-.STATUS	544832
+.STATUS	544768
 .SURVEY	Ciag Glowny
 .NAME	CG
-.STATUS	64
 .SURVEY	drobne odga³êzienia od Ciagu Glownego
 .NAME	BOKI_CG
 .STATUS	8
@@ -378,7 +378,7 @@
 .BOOK	Bandzioch Kominiarski
 .NAME	BANDZK
 .PATH	Bandzioch Kominiarski
-.STATUS	1352
+.STATUS	8
 .BOOK	Ciag 7 Dna
 .NAME	BK-C7D
 .STATUS	8
@@ -473,10 +473,10 @@
 .ENDBOOK
 .BOOK	Ciag Glowny Miedzyotworowy
 .NAME	BK-CGM
-.STATUS	1352
+.STATUS	8
 .SURVEY	Ciag Glowny - Dolny Otwór - Gorny Otwor
 .NAME	BK-CG
-.STATUS	1352
+.STATUS	8
 .SURVEY	Boki Ciagu Glownego - Grady
 .NAME	BK-BCG-G
 .STATUS	8

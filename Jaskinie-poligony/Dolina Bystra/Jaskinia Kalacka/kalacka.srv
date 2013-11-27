@@ -2,7 +2,7 @@
 #units A=D V=D
 #date 2013-11-09
 #prefix kalacka
-#fix 	1.0	424901.005	5456352.043	1230m
+#FIX  1.0   E19:58:04.647  N49:15:19.167   1230m
 #note	1.0	/Kalacka
 #flag	1.0	/Kalacka
 ;Kalacka
