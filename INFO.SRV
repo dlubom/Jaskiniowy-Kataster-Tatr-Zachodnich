@@ -1,4 +1,4 @@
-"Jaskinie Tatrzanskie" - v.0.11
+"Jaskinie Tatrzanskie" - v.0.12
 
 Historia wersji:
 v0.00  (rok 2010-2011)  - projekt wstepny, brak koordynatora, dane haotyczne
@@ -10,11 +10,11 @@ v0.05 (14.05.2012) - dodano jaskinie Mylna
 v0.06 (18.10.2013) - przejecie koordynacji - Dariusz Lubomski; dodano ciag pomiarowy w Snieznej - 20130713 - autorzy pomiarow Karol Makowski; Marcin Slowik
 v0.07 (04.11.2013) - dodano jaskinie Goryczkowa
 v0.08 (13.11.2013) - dodano jaskinie Kalacka, dodano jaskinie Studnia w Kazalnicy, poprawka w Koziej
-v0.09 (20.11.2013) - dodano jaskinie Zwolinskiego, dodano jaskinie Swistacza(brak wspolrzednych GPS), nowe pomiary Koprowej Studni
+v0.09 (20.11.2013) - dodano jaskinie Zwolinskiego, dodano jaskinie Swistacza(brak wsp GPS), nowe pomiary Koprowej Studni
 v0.10 (24.11.2013) - dodano system Zoska - Zagonna Studnia
 v0.11 (27.11.2013) - Coordinates UTM/UPS grid-relative; Declinations Derive from #DATE
-
-
+v0.12 (02.12.2013) - dodano jaskinie Harda (ciag glowny), dodano jaskinie Kamienne Mleko, dodano jaskinie Dmuchawa(brak wsp GPS), zrobiono porzadek w nazwiskach
+		     ponizej wypisane sa osoby ktore bezposrednio wsparly projekt, zas nazwiska kartujacych wypisane sa w plikach poszczegolnych sesji pomiarowych
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -30,11 +30,12 @@ NOWE DANE PRZESYLALI DO KOORDYNATORA. ON PO ICH WPROWADZENIU ROZESLE POPRAWIONY 
 DO WSZYSTKICH ZAINTERESOWANYCH. ZACHOWAMY WTEDY JEDNOLITOSC
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 * nowy koordynator projektu: Dariusz Lubomski (SKTJ)
-* koordynator projektu: Krzysztof "chomik" Borgiel (SBB)
+* koordynator projektu: Krzysztof "Chomik" Borgiel (SBB)
 * konsultacje i wsparcie: Piotr "Kierownik" Stelmach (WKTJ)
 * przygotowanie Numerycznego Modelu Terenu: Jacek "Maly" Szczygiel (KKS)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-* osoby, których dane pomiarowe sa obecnie w projekcie (dziekujemy im za ich prace):
+* osoby ktore bezposrednio wsparly projekt (dziekujemy im za ich prace):
+
 Czeslaw Szura
 Artur Zera
 Alan Zera
@@ -43,9 +44,9 @@ Jacek Szczygiel
 Piotr Stelmach
 Dariusz Bartoszewski
 Filip Filar
-Karol Makowski; Marcin Slowik
-Peter Imrich; Tina Majerníèková; Jan Šmoll; Krysztof Dudzinski; Gabika Majerníèková; Juraj Szunyog
-Krysztof Dudzinski; Tomasz Kozica-Zwijacz
-Krysztof Dudzinski; Zbigniew Tabaczynski
-Emanuel Soja; Jacek Szczygiel, M. Rembecki
-D. Fuja, B Zwijacz- Kozica;W. Gozdz; A. Lezlii; Z. Tabaczynski; Janusz Wilk
+Karol Makowski
+Krysztof Dudzinski
+Emanuel Soja
+Pawel Ramatowski
+Jakub Nowak
+Rafal Klimara

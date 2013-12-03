@@ -9,7 +9,33 @@
 .BOOK	Jaskinie-poligony
 .NAME	JSURVEY
 .PATH	Jaskinie-poligony
+.STATUS	9
+.BOOK	Dolina Chocho這wska
+.NAME	DCHOCH
+.PATH	Dolina Chocho這wska
+.STATUS	9
+.BOOK	Jaskinia Dmuchawa
+.NAME	JDMUCHB
+.PATH	Jaskinia Dmuchawa
+.STATUS	9
+.SURVEY	Dmuchawa
+.NAME	DMUCH
 .STATUS	8
+.ENDBOOK
+.BOOK	Wy積ia Brama Chocho這wska
+.NAME	WBCHO
+.PATH	Wy積ia Brama Chocho這wska
+.STATUS	8
+.BOOK	Jaskinia Kamienne Mleko
+.NAME	JKMLEK
+.PATH	Kamienne Mleko
+.STATUS	8
+.SURVEY	Jaskinia Kamienne Mleko
+.NAME	JKM
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
+.ENDBOOK
 .BOOK	Dolina Bystra
 .NAME	DBYS
 .PATH	Dolina Bystra
@@ -494,6 +520,22 @@
 .NAME	D-MIET
 .PATH	Dolina Mi皻usia
 .STATUS	8
+.BOOK	Litworowy Grzbiet
+.NAME	LITGRZ
+.PATH	Litworowy Grzbiet
+.STATUS	8
+.BOOK	Jaskinia Harda
+.NAME	JHARDA
+.PATH	Harda
+.STATUS	8
+.SURVEY	Jaskinia Harda - 01
+.NAME	POMIAR
+.STATUS	8
+.SURVEY	Jaskinia Harda - 02
+.NAME	DNO
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
 .BOOK	Kazalnica Mi皻usia
 .NAME	KAZALMIE
 .PATH	Kazalnica Mi皻usia
