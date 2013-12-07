@@ -1,7 +1,10 @@
 #units meters order=DAV
 #prefix kml
+#date 2008-12-01;TODO dzien nieznany
 #FIX  0   E19:48:39.780  N49:14:43.080   1096m
-;Jakub Nowak
+#note	0	/Kamienne Mleko
+#flag	0	/Kamienne Mleko
+;team Jakub Nowak, Sylwia Golosz, Michal Romanski
 0	0'	6.56	242	0
 0	0''	7.00	273	0
 0	0'''	3.20	81	0

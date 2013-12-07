@@ -9,15 +9,23 @@
 .BOOK	Jaskinie-poligony
 .NAME	JSURVEY
 .PATH	Jaskinie-poligony
-.STATUS	9
+.STATUS	8
 .BOOK	Dolina Chocho³owska
 .NAME	DCHOCH
 .PATH	Dolina Chocho³owska
-.STATUS	9
+.STATUS	8
+.BOOK	Zbójecka Dziura
+.NAME	ZBDZ
+.PATH	Zbójecka Dziura
+.STATUS	8
+.SURVEY	Zbójecka Dziura
+.NAME	ZBDZIU
+.STATUS	8
+.ENDBOOK
 .BOOK	Jaskinia Dmuchawa
 .NAME	JDMUCHB
 .PATH	Jaskinia Dmuchawa
-.STATUS	9
+.STATUS	8
 .SURVEY	Dmuchawa
 .NAME	DMUCH
 .STATUS	8
