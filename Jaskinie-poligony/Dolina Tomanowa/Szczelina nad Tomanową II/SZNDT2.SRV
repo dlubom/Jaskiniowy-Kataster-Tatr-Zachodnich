@@ -1,0 +1,12 @@
+#units meters order=DAV
+#prefix sznt1
+#note	0	/Szczelina nad Tomanowa II
+#flag	0	/Szczelina nad Tomanowa II
+#date 2008-10-18
+;TODO brak wspolrzednych otworu, wysokosc ok 2020 m npm
+;team J. i J. Nowak
+;Wys. nad dnem Doliny Tomanowej: ok. 480 m
+0	1	3.90	118	-40
+1	2	2.70	115	-70
+2	3	3.00	102	-10
+3	4	2.50	115	0

@@ -10,6 +10,43 @@
 .NAME	JSURVEY
 .PATH	Jaskinie-poligony
 .STATUS	8
+.BOOK	Dolina Tomanowa
+.NAME	DTOMAN
+.PATH	Dolina Tomanowa
+.STATUS	8
+.BOOK	Szczelina nad Tomanow¹ II
+.NAME	SNT2
+.PATH	Szczelina nad Tomanow¹ II
+.STATUS	8
+.SURVEY	Szczelina nad Tomanow¹ II
+.NAME	SZNDT2
+.STATUS	8
+.ENDBOOK
+.BOOK	Szczelina nad Tomanow¹ I
+.NAME	SNT1
+.PATH	Szczelina nad Tomanow¹ I
+.STATUS	8
+.SURVEY	Szczelina nad Tomanow¹ I
+.NAME	SZNDT1
+.STATUS	8
+.ENDBOOK
+.BOOK	Dziura w Stole
+.NAME	DWS
+.PATH	Dziura w Stole
+.STATUS	8
+.SURVEY	Dziura w Stole
+.NAME	DZWS
+.STATUS	8
+.ENDBOOK
+.BOOK	Jaskinia Zawaliskowa Tomanowa
+.NAME	JZTOM
+.PATH	Jaskinia Zawaliskowa Tomanowa
+.STATUS	8
+.SURVEY	Jaskinia Zawaliskowa Tomanowa
+.NAME	JZAWTOM
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
 .BOOK	Dolina Chocho³owska
 .NAME	DCHOCH
 .PATH	Dolina Chocho³owska
@@ -287,6 +324,104 @@
 .NAME	D-KOSCIE
 .PATH	Dolina Koœcieliska
 .STATUS	8
+.BOOK	W¹wóz Kraków
+.NAME	WK
+.PATH	W¹wóz Kraków
+.STATUS	8
+.BOOK	Gawra
+.NAME	GAWRA
+.PATH	Gawra
+.STATUS	8
+.SURVEY	Gawra
+.NAME	JGAWR
+.STATUS	8
+.ENDBOOK
+.BOOK	Rura przy Oknie
+.NAME	RPO
+.PATH	Rura przy Oknie
+.STATUS	8
+.SURVEY	Rura przy Oknie
+.NAME	RUPRZYOK
+.STATUS	8
+.ENDBOOK
+.BOOK	Lustrzany Korytarz
+.NAME	LKOR
+.PATH	Lustrzany Korytarz
+.STATUS	8
+.SURVEY	Lustrzany Korytarz
+.NAME	LUKOR
+.STATUS	8
+.ENDBOOK
+.BOOK	Jaskinia nad Perci¹
+.NAME	JNADP
+.PATH	Jaskinia nad Perci¹
+.STATUS	8
+.SURVEY	Jaskinia nad Perci¹
+.NAME	JNADPE
+.STATUS	8
+.ENDBOOK
+.BOOK	Jaskinia nad Beczk¹
+.NAME	JNB
+.PATH	Jaskinia nad Beczk¹
+.STATUS	8
+.SURVEY	Jaskinia nad Beczk¹
+.NAME	JASNADB
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
+.BOOK	¯ar
+.NAME	ZAR
+.PATH	¯ar
+.STATUS	8
+.BOOK	Jaskinia Poszukiwaczy Skarbów
+.NAME	JPS
+.PATH	Jaskinia Poszukiwaczy Skarbów
+.STATUS	8
+.SURVEY	Jaskinia Poszukiwaczy Skarbów
+.NAME	JASPOS
+.STATUS	8
+.ENDBOOK
+.BOOK	Jaskinia Pod Zamkiem
+.NAME	JPZ
+.PATH	Jaskinia Pod Zamkiem
+.STATUS	8
+.SURVEY	Jaskinia Pod Zamkiem
+.NAME	JPODZ
+.STATUS	8
+.ENDBOOK
+.BOOK	Jaskinia w Zbójnickiej Turni
+.NAME	JWZT
+.PATH	Jaskinia w Zbójnickiej Turni
+.STATUS	8
+.SURVEY	Jaskinia w Zbójnickiej Turni
+.NAME	JASWZT
+.STATUS	8
+.ENDBOOK
+.BOOK	Zbójnicka Piwnica
+.NAME	ZBPIWN
+.PATH	Zbójnicka Piwnica
+.STATUS	8
+.SURVEY	Zbójnicka Piwnica
+.NAME	ZP
+.STATUS	8
+.ENDBOOK
+.BOOK	Jaskinia Ziobrowa
+.NAME	JZIOB
+.PATH	Jaskinia Ziobrowa
+.STATUS	8
+.SURVEY	Jaskinia Ziobrowa
+.NAME	JZ
+.STATUS	8
+.ENDBOOK
+.BOOK	Jaskinia Ciep³a
+.NAME	JCI
+.STATUS	8
+.SURVEY	Jaskinia Ciep³a
+.NAME	JCIEPLA
+.PATH	Jaskinia Ciep³a
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
 .BOOK	Wysoki Grzbiet
 .NAME	WGRZBIET
 .PATH	Wysoki Grzbiet

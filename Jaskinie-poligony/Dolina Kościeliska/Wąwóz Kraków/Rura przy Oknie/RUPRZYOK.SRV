@@ -1,0 +1,15 @@
+#units meters order=DAV
+#prefix rurap
+#note	0	/Rura przy Oknie
+#flag	0	/Rura przy Oknie
+#date 2006-09-09
+;TODO brak wspolrzednych otworu, wysokosc ok 1200 m npm
+;team J. Nowak, M. Czart
+;Wys. nad dnem wawozu ok. 65 m
+0	1	2.34	65	82
+1	2	5.54	62	39
+2	3	3.60	60	13
+3	4	1.80	40	20
+
+1	1.1	4.28	0	90
+1.1	1.2	7.61	62	32

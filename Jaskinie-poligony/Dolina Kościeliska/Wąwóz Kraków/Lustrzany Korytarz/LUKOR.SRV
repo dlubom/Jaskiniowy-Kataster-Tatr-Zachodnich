@@ -1,0 +1,10 @@
+#units meters order=DAV
+#prefix lukor
+#note	0	/Lustrzany Korytarz
+#flag	0	/Lustrzany Korytarz
+#date 2006-08-26
+;TODO brak wspolrzednych otworu, wysokosc ok 1530 m npm
+;team J. Nowak, J. Matras
+;Wys. nad dnem wawozu ok. 360 m
+0	1	3.8	20	48
+1	2	11.2	125	45

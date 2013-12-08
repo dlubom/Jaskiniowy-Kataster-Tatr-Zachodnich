@@ -1,0 +1,11 @@
+#units meters order=DAV
+#prefix jnadp
+#note	0	/Jaskinia nad Percia
+#flag	0	/Jaskinia nad Percia
+#date 2006-11-04
+;TODO brak wspolrzednych otworu, wysokosc ok 1240 m npm
+;team J. Nowak, J. Slusarczyk
+;Wys. nad dnem wawozu ok. 75 m
+0	1	5.45	50	53
+1	2	2.35	34	26
+2	3	7.40	34	0

@@ -1,0 +1,15 @@
+#units meters order=DAV
+#prefix ciepla
+#note	0	/Jaskinia Ciepla
+#flag	0	/Jaskinia Ciepla
+#date 2007-12-01
+;TODO brak wspolrzednych otworu, wysokosc ok 1400
+;team Jakub Nowak, E. Wojcik
+0	1	2.90	78	-22
+1	2	3.00	17	-17
+2	3	3.10	22	27
+3	4	1.80	35	-25
+4	5	2.85	70	-38
+5	6	3.00	152	-50
+
+1	1.1	2.50	110	-25
