@@ -9,7 +9,7 @@
 .BOOK	Jaskinie-poligony
 .NAME	JSURVEY
 .PATH	Jaskinie-poligony
-.STATUS	8
+.STATUS	9
 .BOOK	Dolina Tomanowa
 .NAME	DTOMAN
 .PATH	Dolina Tomanowa
@@ -139,7 +139,20 @@
 .BOOK	Dolina Ma³ej £¹ki
 .NAME	D-MALLAK
 .PATH	Dolina Ma³ej £¹ki
+.STATUS	9
+.BOOK	Ma³y Giewont
+.NAME	MGIEW
+.PATH	Ma³y Giewont
+.STATUS	9
+.BOOK	Jaskinia Œpi¹cych Rycerzy
+.NAME	JSR
+.PATH	Jaskinia Œpi¹cych Rycerzy
+.STATUS	9
+.SURVEY	Jaskinia Œpi¹cych Rycerzy
+.NAME	JASSR
 .STATUS	8
+.ENDBOOK
+.ENDBOOK
 .BOOK	Czerwony Grzbiet
 .NAME	CZGRZB
 .PATH	Czerwony Grzbiet
@@ -683,6 +696,22 @@
 .NAME	KAZALMIE
 .PATH	Kazalnica Miêtusia
 .STATUS	8
+.BOOK	Jaskinia Lodowa Miêtusia
+.NAME	JLM
+.PATH	Jaskinia Lodowa Miêtusia
+.STATUS	8
+.SURVEY	Jaskinia Lodowa Miêtusia
+.NAME	JASLODM
+.STATUS	8
+.ENDBOOK
+.BOOK	Szczelina Miêtusia
+.NAME	SZMI
+.PATH	Szczelina Miêtusia
+.STATUS	8
+.SURVEY	Szczelina Miêtusia
+.NAME	SZCZM
+.STATUS	8
+.ENDBOOK
 .BOOK	Marmurowa
 .NAME	MARMUR
 .PATH	Marmurowa

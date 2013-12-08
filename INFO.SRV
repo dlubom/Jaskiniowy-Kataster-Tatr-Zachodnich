@@ -1,4 +1,4 @@
-"Jaskinie Tatrzanskie" - v.0.12
+"Jaskinie Tatrzanskie" - v.0.13
 
 Historia wersji:
 v0.00  (rok 2010-2011)  - projekt wstepny, brak koordynatora, dane haotyczne
@@ -15,7 +15,11 @@ v0.10 (24.11.2013) - dodano system Zoska - Zagonna Studnia
 v0.11 (27.11.2013) - Coordinates UTM/UPS grid-relative; Declinations Derive from #DATE
 v0.12 (02.12.2013) - dodano jaskinie Harda (ciag glowny), dodano jaskinie Kamienne Mleko, dodano jaskinie Dmuchawa(brak wsp GPS), zrobiono porzadek w nazwiskach
 		     ponizej wypisane sa osoby ktore bezposrednio wsparly projekt, zas nazwiska kartujacych wypisane sa w plikach poszczegolnych sesji pomiarowych
-
+v0.13 (08.12.2013) - dodano jaskinie Spiacych Rycerzy (fragment), Jaskinia Lodowa Mietusia, Szczelina Mietusia, Zbójecka Dziura, Szczelina nad Tomanowa II (brak wsp GPS),
+		     Szczelina nad Tomanowa I (brak wsp GPS), Dziura w Stole (brak wsp GPS), Jaskinia Zawaliskowa Tomanowa (brak wsp GPS), Jaskinia Poszukiwaczy Skarbow (fragment)
+		     Jaskinia Pod Zamkiem(fragment), Jaskinia w Zbójnickiej Turni (brak wsp GPS), Zbójnicka Piwnica (brak wsp GPS), Jaskinia Ziobrowa i Jaskinia pod Niznia Zbojnicka Turnia,
+		     Jaskinia Ciepla (brak wsp GPS), Gawra, Rura przy Oknie (brak wsp GPS), Lustrzany Korytarz (brak wsp GPS), Jaskinia nad Percia (brak wsp GPS), Jaskinia nad Beczka (brak wsp GPS),
+		     Ponad to dodano ciag powierzchniowy od Koprowej Studni do Jaskini Swistaczej
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 Projekt "Jaskinie Tatrzanskie" ma celu zebranie jak najwiecej
@@ -50,3 +54,4 @@ Emanuel Soja
 Pawel Ramatowski
 Jakub Nowak
 Rafal Klimara
+Piotr Sienkiewicz
