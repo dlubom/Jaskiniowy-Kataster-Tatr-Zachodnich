@@ -4,11 +4,12 @@
 #flag	0	/Dmuchawa
 #date 2008-11-15
 ;TODO brak wspolrzednych otworu, wysokosc ok 1300
+;Wysokosc nad dnem doliny ok. 300 m
 ;team Jakub Nowak, R. Goralczyk
 0	1	1.20	130	0
 1	2	4.00	0	-90
 2	3	4.65	148	-22
-3	4	1.80	130	-4
+3	4	1.80	130	-4;spit
 4	5	7.05	0	-90
 5	6	2.45	144	-9
 6	7	2.65	133	-15
