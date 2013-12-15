@@ -2,9 +2,10 @@
 #prefix ryc
 #note	1	/Jaskinia Spiacych Rycerzy
 #flag	1	/Jaskinia Spiacych Rycerzy
-;TODO brak daty
+#date 2009-01-01
+;TODO Piotr daty nie pamietal, jedynie wiadomo ze 4 lata temu
 #FIX  1   E19:55:24.300  N49:14:59.660   1397.8m
-;team P. Sienkiewicz + TODO ?
+;team P. Sienkiewicz, M. Kurylowicz
 ;Jest to tylko czesc jaskini
 1	2	2.22	81.2	-6.9
 2	3	4.67	57.9	-29.5
