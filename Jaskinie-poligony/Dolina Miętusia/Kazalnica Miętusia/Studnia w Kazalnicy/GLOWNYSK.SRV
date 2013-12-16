@@ -1,6 +1,7 @@
 ;Jaskinia Studnia w Kazalnicy
 ;glowny ciag
-;pomiary: Krzysztof Dudzinski, Tomasz Kozica-Zwijacz 30.06.1996
+;pomiary: Krzysztof Dudzinski, Tomasz Kozica-Zwijacz
+#DATE 1995-12-17
 ;wektoryzacja Jacek Szczygiel
 #UNITS D=M A=D V=D Order=DAV
 #note	SwK0	/Studnia w Kazalnicy

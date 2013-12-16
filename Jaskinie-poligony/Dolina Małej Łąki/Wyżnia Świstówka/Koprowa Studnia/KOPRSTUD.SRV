@@ -6,8 +6,7 @@
 #<L,R,U,D>
 #note	ks0	/Koprowa Studnia
 #flag	ks0	/Koprowa Studnia
-#fix	 ks0 	422143.04 	5454747.64 	1807.10
-;TODO wspolrzedne prawdopodobnie bledne
+#FIX	ks0	E19:55:49.09736	N49:14:21.55262	1807.10
 ks0	ks10	1.28	224.1	-36.9	<0.85,,,>
 ks10	ks11	31.16	225.3	-85.7	<0,0.73,,>
 ks11	ks12	4.58	257.5	3.4	<0.34,1.63,5.6,0>
@@ -25,7 +24,7 @@ ks22	ks23	2.39	97.7	-45.8
 ks23	ks24	3.24	86.6	41.4	<0.29,0.45,4.42,0>
 ks25	ks11	5.41	259.3	-69.1	<0,1.45,,1.47>
 ks25	ks26	3.47	49.5	28.2	<0,0.8,,0.5>
-;TODO ciag prwdopodobnie po pow do otworu j. Swistaczej
+;TODO ciag prawdopodobnie po pow do otworu j. Swistaczej
 ks0	ks1	2.10	226	0
 ks1	ks2	4.98	172	-80.9	<0,0.4,0.5,8,2>
 ks3	ks2	3.24	80.9	20.2	<0.66,0.72,4.15,4.96>

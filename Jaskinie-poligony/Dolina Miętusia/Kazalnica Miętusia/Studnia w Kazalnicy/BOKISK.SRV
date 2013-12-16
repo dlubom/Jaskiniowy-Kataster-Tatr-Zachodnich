@@ -1,9 +1,8 @@
 ;Jaskinia Studnia w Kazalnicy
-;glowny ciag
+#DATE 1996-06-30	;brak pewnosci co do tej daty
 ;pomiary: Krzysztof Dudzinski, Tomasz Kozica-Zwijacz 30.06.1996
 ;wektoryzacja Jacek Szczygiel
 #UNITS D=M A=D V=D Order=DAV
-;#DATE 2011-04-11 ;TODO: data pomiaru czy wektoryzacj?
 SwK13	SwK101	4.9776	127	37
 SwK101	SwK102	2.7642	145	0
 SwK102	SwK103	11.636	175	60
