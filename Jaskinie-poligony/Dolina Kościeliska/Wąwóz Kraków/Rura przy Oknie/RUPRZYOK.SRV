@@ -3,7 +3,7 @@
 #note	0	/Rura przy Oknie
 #flag	0	/Rura przy Oknie
 #date 2006-09-09
-;TODO brak wspolrzednych otworu, wysokosc ok 1200 m npm
+#FIX  0   E19:52:14.500  N49:14:09.700   1210.0m
 ;team J. Nowak, M. Czart
 ;Wys. nad dnem wawozu ok. 65 m
 0	1	2.34	65	82

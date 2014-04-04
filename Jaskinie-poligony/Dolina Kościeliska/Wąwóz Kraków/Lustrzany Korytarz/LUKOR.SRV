@@ -3,7 +3,7 @@
 #note	0	/Lustrzany Korytarz
 #flag	0	/Lustrzany Korytarz
 #date 2006-08-26
-;TODO brak wspolrzednych otworu, wysokosc ok 1530 m npm
+#FIX  0   E19:52:42.060  N49:14:15.108   1530.0m
 ;team J. Nowak, J. Matras
 ;Wys. nad dnem wawozu ok. 360 m
 0	1	3.8	20	48

@@ -3,7 +3,7 @@
 #note	0	/Jaskinia nad Beczka
 #flag	0	/Jaskinia nad Beczka
 #date 2005-07-23
-;TODO brak wspolrzednych otworu, wysokosc ok 1450
+#FIX  0   E19:53:01.428  N49:14:01.968   1450.0m
 ;team J. Nowak, M. Szot
 ;Wys. nad Beczka: ok.. 10 m
 0	1	2.5	58	35

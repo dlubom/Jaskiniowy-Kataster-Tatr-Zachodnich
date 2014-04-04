@@ -3,7 +3,7 @@
 #note	0	/Jaskinia Ciepla
 #flag	0	/Jaskinia Ciepla
 #date 2007-12-01
-;TODO brak wspolrzednych otworu, wysokosc ok 1400 m npm
+#FIX  0   E19:51:56.088  N49:14:00.492   1331.0m
 ;team Jakub Nowak, E. Wojcik
 0	1	2.90	78	-22
 1	2	3.00	17	-17

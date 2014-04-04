@@ -3,7 +3,7 @@
 #note	0	/Zbójnicka Piwnica
 #flag	0	/Zbójnicka Piwnica
 #date 2007-07-15
-;TODO brak wspolrzednych otworu, wysokosc ok 1240 m npm
+#FIX  0   E19:51:55.008  N49:14:11.148   1250.0m
 ;team  J. Nowak, J. Slusarczyk
 ;Wys. nad dnem wawozu ok. 140 m
 0	1	1.30	0	-90

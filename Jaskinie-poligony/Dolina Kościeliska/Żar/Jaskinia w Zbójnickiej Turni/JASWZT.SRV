@@ -3,7 +3,7 @@
 #note	0	/Jaskinia w Zbójnickiej Turni
 #flag	0	/Jaskinia w Zbójnickiej Turni
 #date 2007-07-15
-;TODO brak wspolrzednych otworu, wysokosc ok 1250 m npm
+#FIX  0   E19:51:55.008  N49:14:11.148   1260.0m
 ;team  J. Nowak, J. Wolek
 ;Wys. nad dnem wawozu ok. 150 m
 0	1	3.00	223	10

@@ -3,7 +3,7 @@
 #note	0	/Jaskinia nad Percia
 #flag	0	/Jaskinia nad Percia
 #date 2006-11-04
-;TODO brak wspolrzednych otworu, wysokosc ok 1240 m npm
+#FIX  0   E19:52:26.436  N49:14:11.868   1240.0m
 ;team J. Nowak, J. Slusarczyk
 ;Wys. nad dnem wawozu ok. 75 m
 0	1	5.45	50	53
