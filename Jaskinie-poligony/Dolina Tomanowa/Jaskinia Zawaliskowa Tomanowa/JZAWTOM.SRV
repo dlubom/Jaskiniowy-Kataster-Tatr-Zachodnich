@@ -3,7 +3,7 @@
 #note	0	/Jaskinia Zawaliskowa Tomanowa
 #flag	0	/Jaskinia Zawaliskowa Tomanowa
 #date 2009-07-12
-;TODO brak wspolrzednych otworu, wysokosc ok 1760
+#FIX  0   E19:53:44.088  N49:13:45.588   1757.0m
 ;team J. i J. Nowak
 ;Wys. nad dnem Doliny Tomanowej: ok. 250 m
 1	2	3.70	2	21

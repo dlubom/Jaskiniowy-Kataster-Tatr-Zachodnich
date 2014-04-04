@@ -3,7 +3,7 @@
 #note	0	/Dziura w Stole
 #flag	0	/Dziura w Stole
 #date 2009-07-11
-;TODO brak wspolrzednych otworu, wysokosc ok 1900 m npm
+#FIX  0   E19:54:17.380  N49:13:26.388   1905.0m
 ;team J. i J. Nowak
 ;Wys. nad dnem Doliny Tomanowej: ok. 400 m
 0	1	2.80	225	-75
