@@ -437,6 +437,14 @@
 .NAME	CZGRZB
 .PATH	Czerwony Grzbiet
 .STATUS	8
+.BOOK	Czerwona Studzienka
+.NAME	CZSTD
+.PATH	Czerwona Studzienka
+.STATUS	8
+.SURVEY	Czerwona Studzienka
+.NAME	CZSTD1
+.STATUS	8
+.ENDBOOK
 .BOOK	Jaskinia Zoœka - Zagonna Studnia
 .NAME	JZZS
 .PATH	Jaskinia Zoœka - Zagonna Studnia
@@ -630,6 +638,19 @@
 .NAME	D-MIET
 .PATH	Dolina Miêtusia
 .STATUS	8
+.BOOK	Szary ¯leb
+.NAME	SZZL
+.PATH	Szary ¯leb
+.STATUS	8
+.BOOK	Dziurka w Trawce
+.NAME	DWT
+.PATH	Dziurka w Trawce
+.STATUS	8
+.SURVEY	DWT1
+.NAME	DWT1
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
 .BOOK	Kazalnica Miêtusia
 .NAME	KAZALMIE
 .PATH	Kazalnica Miêtusia
@@ -807,7 +828,7 @@
 .BOOK	Powierzchnia
 .NAME	AREA
 .PATH	Powierzchnia
-.STATUS	8
+.STATUS	9
 .BOOK	Teren 10x10
 .NAME	TER1010
 .PATH	Teren 10x10

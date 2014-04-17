@@ -1,0 +1,10 @@
+#units meters order=DAV
+#units A=D V=D
+#prefix czer
+#FIX  0   E19:54:50.03  N49:14:41.2   1811.0m
+#note	0	/Czerwona Studzienka
+#flag	0	/Czerwona Studzienka
+;Z. Tabaczynski
+;TODO date
+;TODO wysokosc
+0	1	12	0	-90
