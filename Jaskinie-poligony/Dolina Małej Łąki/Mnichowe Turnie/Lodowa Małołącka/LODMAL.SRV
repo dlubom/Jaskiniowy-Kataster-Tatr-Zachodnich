@@ -1,4 +1,5 @@
 ;Lodowa Malolacka
+;TODO jest to fragment jaskini
 #Units Meters Order=dav
 #fix	lm0 	421998.38 	5455028.28 	1634.13
 #note	lm0	/Lodowa Malolacka
