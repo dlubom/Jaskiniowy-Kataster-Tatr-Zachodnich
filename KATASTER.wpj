@@ -94,6 +94,19 @@
 .NAME	D-KOSCIE
 .PATH	Dolina Koœcieliska
 .STATUS	8
+.BOOK	Organy
+.NAME	ORGANY
+.PATH	Organy
+.STATUS	8
+.BOOK	Jaskinia Zimna
+.NAME	JZIMNA
+.PATH	Jaskinia Zimna
+.STATUS	8
+.SURVEY	Jaskinia Bia³a
+.NAME	JBIALA
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
 .BOOK	¯ar
 .NAME	ZAR
 .PATH	¯ar
