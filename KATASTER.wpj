@@ -9,7 +9,7 @@
 .BOOK	Jaskinie-poligony
 .NAME	JSURVEY
 .PATH	Jaskinie-poligony
-.STATUS	9
+.STATUS	8
 .BOOK	Dolina Bystra
 .NAME	DBYS
 .PATH	Dolina Bystra
@@ -432,15 +432,15 @@
 .BOOK	Dolina Ma³ej £¹ki
 .NAME	D-MALLAK
 .PATH	Dolina Ma³ej £¹ki
-.STATUS	9
+.STATUS	8
 .BOOK	Wielka Turnia
 .NAME	WT
 .PATH	Wielka Turnia
-.STATUS	9
+.STATUS	8
 .BOOK	Jaskinia w Wielkiej Turni
 .NAME	JWWT
 .PATH	Jaskinia w Wielkiej Turni
-.STATUS	9
+.STATUS	8
 .SURVEY	Jaskinia w Wielkiej Turni
 .NAME	JWWT1
 .STATUS	8
@@ -651,6 +651,19 @@
 .NAME	D-MIET
 .PATH	Dolina Miêtusia
 .STATUS	8
+.BOOK	Kobylarzowy ¯leb
+.NAME	KOBZL
+.PATH	Kobylarzowy ¯leb
+.STATUS	8
+.BOOK	Szara Studnia
+.NAME	SZARSTD
+.PATH	Szara Studnia
+.STATUS	8
+.SURVEY	Szara Studnia
+.NAME	SZARST1
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
 .BOOK	Szary ¯leb
 .NAME	SZZL
 .PATH	Szary ¯leb
