@@ -1,7 +1,8 @@
 #units meters order=DAV
 #units A=D V=D
 #prefix zoska
-#fix	0	420990.593	5455258.858	1800.0
+#FIX  0   E19:54:52.55  N49:14:41.46   1790.00m
+;#FIX  1Z   E19:54:52.88  N49:14:41.7 1773.00m
 #note	0	/Zoska
 #flag	0	/Zoska
 #note	1Z	/Zagonna Studnia
