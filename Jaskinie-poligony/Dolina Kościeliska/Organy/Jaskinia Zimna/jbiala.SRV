@@ -1,12 +1,11 @@
 #units meters order=DAV
 #units A=D V=D
 #prefix jbiala
-#FIX  0   E19:52:10.88  N49:14:49.99   1260.0m
+#FIX  0   E19:52:10.88  N49:14:49.99   1283.0m
 #note	0	/Jaskinia Biala
 #flag	0	/Jaskinia Biala
-;Z. Tabaczynski
-;TODO date
-;TODO wysokosc
+;M. Nawrot, T. Tomaszek, Z. Tabaczynski
+#date 2003-06-20
 0	1	2.1	335	-5
 1	2	4.54	50	-31
 2	3	2.31	100	-34
