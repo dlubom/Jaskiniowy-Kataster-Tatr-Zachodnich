@@ -1,11 +1,12 @@
 #units meters order=DAV
 #units A=D V=D
 #prefix dwt1
-#FIX  0   E19:54:34.66  N49:14:33.000   1750.0m;TODO odczytac wys z dem file
+#FIX  0   E19:54:34.66  N49:14:33.000   1762.55m
 #note	0	/Dziurka w Trawce
 #flag	0	/Dziurka w Trawce
 ;Dziurka w Trawce
-;Z. Tabaczynski
+#date 2000-06-06; oraz 2000-06-30
+;P. Orawiec i Z. Tabaczynski
 0	1	4.14	103	-61
 1	2	4.98	259	-26
 2	3	4.77	106	-72
