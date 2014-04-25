@@ -446,6 +446,19 @@
 .NAME	D-MALLAK
 .PATH	Dolina Ma³ej £¹ki
 .STATUS	8
+.BOOK	Lewe zbocze
+.NAME	LZ
+.PATH	Lewe zbocze
+.STATUS	8
+.BOOK	Jaskinia pod Progiem
+.NAME	JPPR
+.PATH	Jaskinia pod Progiem
+.STATUS	8
+.SURVEY	Jaskinia pod Progiem
+.NAME	JPP
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
 .BOOK	Wielka Turnia
 .NAME	WT
 .PATH	Wielka Turnia
@@ -871,7 +884,7 @@
 .BOOK	Teren 10x10
 .NAME	TER1010
 .PATH	Teren 10x10
-.STATUS	8
+.STATUS	10
 .SURVEY	Poziomice
 .NAME	POZIOM
 .STATUS	8
