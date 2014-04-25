@@ -1,0 +1,26 @@
+#units meters order=DAV
+#units A=D V=D
+#prefix msw
+#FIX  0   E19:55:46.690   N49:14:35.660  1685m
+#note	0	/Mnichowa Studnia Wyznia
+#flag	0	/Mnichowa Studnia Wyznia
+;K. Dudzinski i Z. Tabaczynski
+#DATE 2002-02-03
+0	1	2.19	280	-30
+1	2	7.82	265	-57
+2	3	19.15	285	-88
+3	4	9.01	270	54
+
+3	5	1.99	321	-9
+5	6	4.35	338	-69
+6	7	1.87	284	-17
+7	8	6.96	270	44
+8	9	12.39	60	82
+
+7	10	3.84	60	47
+
+0	B	16.38	27	-52
+B	11	13.32	272	-30
+
+11	12	4.39	228	-40
+12	13	4.88	114	25
