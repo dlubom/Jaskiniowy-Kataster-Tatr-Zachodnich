@@ -1,0 +1,9 @@
+#units meters order=DAV
+#units A=D V=D
+#prefix stnsz
+#FIX  0   E19:54:47.59  N49:14:39.55   1799.50m
+#note	0	/Studnia na Szlaku
+#flag	0	/Studnia na Szlaku
+;TODO #date
+;Z. Tabaczynski
+0	1	5	270	-89

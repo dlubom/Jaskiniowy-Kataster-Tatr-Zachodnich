@@ -445,15 +445,15 @@
 .BOOK	Dolina Ma³ej £¹ki
 .NAME	D-MALLAK
 .PATH	Dolina Ma³ej £¹ki
-.STATUS	9
+.STATUS	8
 .BOOK	Prawe zbocze
 .NAME	PZM
 .PATH	Prawe zbocze
-.STATUS	9
+.STATUS	8
 .BOOK	Mnichowa Studnia Wy¿nia
 .NAME	MSW
 .PATH	Mnichowa Studnia Wy¿nia
-.STATUS	9
+.STATUS	8
 .SURVEY	Mnichowa Studnia Wy¿nia
 .NAME	MSW1
 .STATUS	8
@@ -689,11 +689,19 @@
 .BOOK	Dolina Miêtusia
 .NAME	D-MIET
 .PATH	Dolina Miêtusia
-.STATUS	8
+.STATUS	9
 .BOOK	Kobylarzowy ¯leb
 .NAME	KOBZL
 .PATH	Kobylarzowy ¯leb
+.STATUS	9
+.BOOK	Studnia na Szlaku
+.NAME	SNASZ
+.PATH	Studnia na Szlaku
+.STATUS	9
+.SURVEY	Studnia na Szlaku
+.NAME	STNASZ1
 .STATUS	8
+.ENDBOOK
 .BOOK	Szara Studnia
 .NAME	SZARSTD
 .PATH	Szara Studnia
