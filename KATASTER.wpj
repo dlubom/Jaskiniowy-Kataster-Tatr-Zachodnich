@@ -690,14 +690,22 @@
 .NAME	D-MIET
 .PATH	Dolina Miêtusia
 .STATUS	9
+.BOOK	Meander w Ma³o³¹ckim Siodle
+.NAME	MWMS
+.PATH	Meander w Ma³o³¹ckim Siodle
+.STATUS	9
+.SURVEY	Meander w Ma³o³¹ckim Siodle
+.NAME	MWMS1
+.STATUS	8
+.ENDBOOK
 .BOOK	Kobylarzowy ¯leb
 .NAME	KOBZL
 .PATH	Kobylarzowy ¯leb
-.STATUS	9
+.STATUS	8
 .BOOK	Studnia na Szlaku
 .NAME	SNASZ
 .PATH	Studnia na Szlaku
-.STATUS	9
+.STATUS	8
 .SURVEY	Studnia na Szlaku
 .NAME	STNASZ1
 .STATUS	8
@@ -908,7 +916,7 @@
 .STATUS	8
 .SURVEY	Poziomice
 .NAME	POZIOM
-.STATUS	8
+.STATUS	10
 .SURVEY	Po³udniki
 .NAME	POLUDN
 .STATUS	10
