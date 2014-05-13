@@ -1,0 +1,21 @@
+#PREFIX mala
+a35	m1	5.50	270	0
+m1	m2	1.6	250	-6
+m2	m3	6.1	262	-36
+m3	m4	4.9	222	-28
+m4	m5	6.55	201	-56	;granitowe otoczaki , duzo i do 10cm sr.
+m5	m6	4.2	284	-10
+m6	m7	1.5	200	-50	;7-8 miedzy nimi sa formy grzybków naciekowych z gliny
+m7	m8	2.95	282	-4
+m8	m9	1.95	204	-40
+m9	m10	2.65	262	-12	;pkt m10 spit na poczatku zjazdu
+m10	m11	1.5	216	-22
+m11	m12	3.10	208	-52
+m12	m13	13.0	0	-90
+m13	m14	2.7	244	0	;pkt m13 na dnie studni w pionie pod zjazdem odl do wezla przepinki do dna
+m14	m15	2.9	232	-32
+m15	m16	1.5	240	-22
+m16	m17	6.5	0	-90	;6mpróg w dwóch odcinkach
+m17	m18	3.20	248	12
+m18	m19	1.1	234	0	;pkt m19 na odpeknietej 5 cm plycie na lewej scianie nad zejœciem do szczeliny, opisany olówkiem
+m19	m20	2.35	278	-50	;pkt 20na lewej scianie obtluczony znak ok 3cm srednicy 1,3m nad dnem

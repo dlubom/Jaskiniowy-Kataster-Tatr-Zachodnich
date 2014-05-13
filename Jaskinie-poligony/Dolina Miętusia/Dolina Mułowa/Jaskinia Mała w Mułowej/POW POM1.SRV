@@ -1,0 +1,19 @@
+#DATE 2003-07-29
+#UNITS meters order=DAV
+#Units A=D V=D
+#PREFIX mala_pow
+;#Fix P1 0 0 0 /Mala w Mulowej
+mala:1	P2	2	200	65
+P2	P3	8.5	340	12
+P3	P4	0.3	0	90
+P4	P5	17.8	303	30
+P5	P6	15.4	350	-17
+P6	P7	0.4	0	90
+P7	P8	20	305	28
+P8	P9	18.6	290	23
+P9	P10	17.64	256	32
+P10	P11	15	261	41
+P11	P12	17.02	229	36
+P12	P13	14.1	320	14
+;P13	P14	1.86	146	-54	;P14otwór lejbusiowej
+P13	lejb:A1	1.86	146	-54	;P14otwór lejbusiowej

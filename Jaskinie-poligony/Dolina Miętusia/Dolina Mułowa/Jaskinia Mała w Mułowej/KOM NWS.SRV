@@ -1,0 +1,25 @@
+#DATE 2008-06-29
+#UNITS meters order=DAV
+;ciagi komina niedouczonych wspinaczy, Bardzo krucho !!!!!
+;#Fix 12 -18.65 -27.26 -37.31
+#PREFIX mala
+12	1r	3.18	210	-6	;start na mostku nad swistakowa paryja
+1r	2r	9.6	0	90
+2r	3r	15.25	128	70
+3r	4r	0.4	340	6	;4r na gorze komina
+4r	5r	3.83	42	30
+4r	4r1	5.54	216	-19	;znad komina do studni
+4r1	4r2	6.9	216	-44
+4r2	4r3	1.7	250	-35
+4r3	4r4	6.75	0	-90
+4r4	4r5	9.5	211	-2
+4r5	4r6	3.68	203	-13
+4r6	4r7	2.18	190	-46	; w dnie zasypanej szczeliny, do gory kontynuuje sie komin oko³o 12-15m na gorze dochodzi poprzeczna szelina z przewiewem i kapiaca woda
+4r5	4r5a	5.69	24	-31
+4r5a	4r5b	3.3	68	-43
+4r5b	4rbc	3.6	74	-43	;pkt 4r5c jest na spagu w korytarzu schodzacym do szczeliny w ktorej po scianie sp³ywa woda, kamiendobrze wrzucony leci kilka kilkanascie metrow
+5r	6r	2.43	60	51
+6r	7r	1.55	43	55
+7r	8r	3.75	21	33
+8r	9r	4.75	18	20
+9r	10r	10	25	19	;koniec szczeliny odchodzacej od salki ciasno

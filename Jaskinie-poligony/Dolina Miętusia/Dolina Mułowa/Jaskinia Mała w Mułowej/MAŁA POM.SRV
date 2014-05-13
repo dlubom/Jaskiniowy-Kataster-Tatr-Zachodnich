@@ -1,0 +1,524 @@
+#DATE 2003-07-29
+#UNITS meters order=DAV
+#Units A=D V=D
+#PREFIX mala
+;#Fix 1 0 0 0 /Mala w Mulowej; GPS  49o 14, 17,5,, N ,  19o 54, 08,2,, E
+;#Flag 1 0 0 0
+#FIX  1   E19:54:04.200  N49:14:17.140   1757m
+;pomiary ciagu glownego od otworu do dna  z domiarami sali Fakro
+1	2	6.4	0	-90	;studzienka wlotowa
+;ciag 2-f... korytarz boczny
+2	h1	2.6	270	0
+h1	h2	4.4	240	49
+h2	h3	3.2	248	0
+h3	h4	2.8	0	90
+;ciag 2-g... pochylnia wykopana w namulisku dna studni wlotowej
+2	g1	1	68	0
+g1	g2	4	68	-50
+;ciag do studni anki
+2	3	4.08	196	-20
+3	4	2.9	210	-29
+4	5	2.98	188	-10
+5	6	5.65	210	-42
+6	7	10.5	276	-78
+7	8	2.45	197	-74
+8	9	4.84	243	-46
+9	10	2.25	212	-18
+10	11	7.35	222	-16
+11	12	8.10	204	-38
+12	13	11.75	240	-49
+13	14	10.3	0	-90
+14	15	2.5	101	-36
+15	16	2.4	77	-16
+16	17	2.15	81	-32
+;ciag od trawersu w studni anki do korytarz samych zbojcow
+17	a1	2.3	90	-65
+a1	a2	2.6	58	-15
+a2	a3	5.6	62	38
+a3	a4	2.5	75	0
+a4	a5	4.2	80	34
+a5	a6	5.9	50	40
+a6	a7	2.2	110	32
+;punkt a7a domiar pochylni
+a7	a7a	8.2	353	39
+a7	a8	3	158	-30
+;studnie urodzinowe, punkt a8 jest tez poczatkiem ciagu do drugiego dna przez setke
+a8	d1	7.6	202	-84
+d1	d2	1.02	240	0
+d2	d3	44.6	0	-90
+d3	d4	3.08	252	-36
+d4	d5	19.6	0	-90
+d5	d6	6.86	258	29
+;punkt d6 okno w studni Geriawitow
+a8	e1	10.3	46	19
+e1	e2	6.8	23	36
+e2	e3	8	31	24
+e3	e4	5.2	28	20
+e4	e5	4.1	356	31
+e5	e6	5.7	30	18
+e6	e7	4.7	26	18
+e7	e8	3.42	356	15
+;e8 koniec korytarza
+17	18	3.15	0	-90
+18	19	1.05	96	-4
+19	19a1	28.85	0	-90
+19a1	19a2	3.9	304	-29
+19a2	19a3	3.6	269	-43
+19a3	20	4.48	253	-21
+20	21	6.4	232	-38
+;ciag do stropu sali Fakro
+21	c1	10.4	246	-80
+c1	c2	9.12	282	-57
+c2	c3	6.63	0	-90
+c3	c4	70	0	-90
+c4	b23	15.85	84	-25
+;gora geriawitow
+21	22	28.4	148	-82
+22	23	6.9	59	-13
+23	24	3.8	89	-65
+;studnia geriawitow
+24	25	28.25	0	-90
+25	26	3.9	0	-90
+26	27	29.75	0	-90
+27	28	12.25	0	-90
+28	29	8.9	170	-6
+29	30	13.03	238	7
+;obrys sali FAKRO
+28	b1	7.96	174	8
+b1	b2	12.54	240	8
+;punkt b2 i punkt 30 pokrywaja sie, ale aby poprawka nie nakladala sie na ciag glowny do obliczen pominieto ten fakt
+b2	b3	5.63	286	11
+b3	b4	9.36	252	32
+b4	b5	9	252	22
+b5	b6	9.1	278	-8
+b6	b7	12.14	340	-5
+b7	b8	4.51	330	18
+b8	b9	7.57	308	11
+b9	b10	16.2	295	1
+b10	b11	5.7	340	-16
+b11	b12	8.55	96	-6
+b12	b13	2.03	77	27
+b13	b14	3.4	38	18
+b14	b15	8.13	293	45
+b15	b16	5.05	345	20
+b16	b17	10.98	95	-28
+b17	b18	7.16	110	-30
+b18	b18a	22	0	-90
+b18	b19	13.1	115	-23
+b19	b20	7.7	130	-14
+b20	b21	10.9	142	-1
+b21	b22	3.2	162	-3
+b22	b23	12.42	100	-22
+b23	b24	2.67	158	-25
+b24	28	8	66	-22
+;ciag somsiadow od punktu 29 do 40 w ciagu do lubinki
+i0	29	0	0	0
+;#Fix i0  -17.71 -40.65 -208.87
+i0	i1	2.1	110	0
+i1	i2	3.5	194	-40
+i2	i3	1.4	0	-90
+i3	i4	1.1	214	-4
+i4	i5	4.3	178	-62
+i5	i6	1.38	162	1
+i6	i7	16.35	0	-90
+i7	i8	3.1	240	-10
+i8	i9	3.33	248	-18
+i9	i9a	5.85	132	52	;ciag w gore  Ku Pieterku
+i9a	i9b	4.6	212	42
+i9b	i9c	1.35	228	-20
+i9c	i9d	10.45	0	90
+i9d	i9e	1.75	0	90
+i9e	i9f	3.55	310	66
+i9f	i9g	2.32	30	10
+i9	i10	18.6	0	-90
+i10	i11	3.54	22	28
+i11	i12	2.45	52	2	;pkt i12 = pkt 40 w ciagu do dna LUBINKI
+;#Fix i12 -16.23 -46.34 -249.45
+i12	40	0	0	0
+;ciag sala FAKRO -LUBINKA
+30	31	3.05	180	-51
+31	32	14.2	0	-90
+32	33	3.03	246	-32
+33	34	15.4	0	-90
+34	35	4.10	30	0
+35	36	1.55	104	8
+36	37	5.52	130	-57
+37	38	1	0	90
+38	39	8.6	92	-32
+39	40	3.6	28	-10
+40	41	16.25	97	-69
+41	42	5.5	18	-69
+42	43	2.87	45	6
+43	44	6.63	65	-64
+44	45	2.5	114	-33
+45	46	4.4	56	-33
+46	47	0.6	84	0
+47	48	2.73	0	-90
+48	49	2.27	24	-26
+49	50	12.53	333	-66
+50	51	3.64	328	-55
+51	52	3.2	333	-72
+52	53	18.58	0	-90
+53	54	9.48	290	-28
+54	55	4.4	0	-90
+55	56	17.4	346	-50
+56	57	12.4	348	-55
+57	58	13	286	-34
+58	59	8.2	328	-44	;dol Lubinki
+;59-... Ale cyry...
+59	60	1.65	346	-59
+60	61	3.2	286	29
+61	62	0.9	196	0
+62	63	2.4	289	22
+63	64	2.7	264	20
+64	64a	4.7	326	-80
+64a	64b	2	56	-30	; do syfonu Krasnala
+64	65	2.1	207	23
+65	66	2.05	320	25
+66	67	0.9	50	0
+67	68	3.8	301	-34	;salka HTS
+;ciag od st anki do drugiego dna przez meander pokuty,punkt a8 jest punktem na poczatku trawersu
+a8	a9	0.4	0	-90
+a9	a10	6.8	224	-38
+a10	a11	5.26	238	-44	;grobla za studna urodzinowa
+a11	a12	2.72	281	14
+a12	a13	2.02	233	-44
+a13	a14	7.01	251	-9
+a14	a15	1.86	260	-26
+a15	a16	3.68	240	-11	;zacisk t
+a16	a17	3.3	253	-18
+a17	a18	9.27	242	-38
+a18	a19	2.1	275	-42
+a19	a20	9.71	243	-49
+a20	a21	4.2	210	-48
+a21	a22	2.2	280	-54	;a21-a23 studnia gazdzinki
+a22	a23	5.65	28	-70
+a23	a24	13.4	0	-90
+a24	a25	3.95	57	28
+a25	a26	4.14	114	-20
+a26	a27	5.8	0	-90
+a27	a28	3.6	181	-5	; w dnie wlot studni do sali Fakro
+a27	a27a	3.77	296	-13	; punkt a27a nad sala Fakro do dna Sali jest pion pomiar przyblizony
+a27a	a27a1	80	0	-90
+a28	a29	4.75	238	-38
+a29	a30	1.88	238	-14
+a30	a31	8.3	214	-32
+a31	a32	4.95	246	-24
+a32	a33	9.3	227	-32
+a33	a34	2.1	166	-12
+a34	a35	6.3	164	-22
+a35	a36	2.4	68	-64	;punkt a35 pocz¹tek zjazdu z sali Ósemki
+a36	a37	8.2	172	-66
+a37	a38	5.12	132	-70	;punkt a37 poczatek studni Czesanka
+a38	a39	13.1	184	-54
+a39	a40	2.55	186	-4
+a40	a41	9.32	168	-74	;punkt a41 jest nad zjazdem do czesanki
+a41	a42	107	0	-90	;dno czesanki jest o 1 m nizej pomiary byly na wysokosci 1 m nad dnem
+;ciag do straconego meandra
+a41	a41a	6.1	258	-30
+a41a	a41b	3.5	250	-64
+a41b	a41c	2.8	272	-12
+a41c	a41d	2.85	0	-90
+a41d	a41e	2	270	-20
+a41e 	a41f	2.5	0	-90	;dno studzienki , wzdluz niej odchodzi 15 cm szczelina, w dnie jeszcze studzienka okolo 1.5 m rowniez ze szczelina
+;ciag do czarnego ladu
+a42	a43	14.68	289	0	;pomiar jest 16.68 i taka jest dlugosc dna punkt z pomiaru studni jest dwa metry blizej stad odleglosc jest 14.68
+a43	a44	8.72	119	-9
+a44	a45	3.65	246	-19
+a45	a46	7.4	274	-74	;poczatek zawaliska
+a46	a47	2.5	174	-40
+a47	a48	1.3	0	-90
+a48	a49	2.85	64	-62	;wyjscie z zawaliska
+a49	a50	4.8	250	-30
+a50	a51	8	278	-71	;pierwszy prog na czarnym ladzie
+a51	a52	6.4	274	-20
+a52	a53	2.9	282	-50
+a53	a54	5.4	295	-14
+a54	a55	7.5	277	-41
+a55	a56	8.9	285	-30
+a56	a57	19	0	-90	;wodospad wiktorii
+a57	a58	3.9	260	-4
+a58	a59	14.1	255	-30
+a58	f1	13.7	228	-39	;ciag do zrodel Nilu i z ciekiem szczelina
+f1	f2	2.45	223	-47
+f2	f3	2.8	180	-46
+f3	f4	5	153	-25
+f4	f5	16.65	110	-6	;punkt f5 jest na stropie tunelu zrodel Nilu
+f4	f4a	6.4	262	-38	;pomiar w strone obejscia progu wzdluz cieku zwanego Nilem
+a59	a60	6.4	278	-25
+a60	a61	6.3	224	-12
+a61	a62	3.2	272	-5
+a62	a63	2.9	255	28
+a63	a64	0.4	4	0
+a64	a65	3.2	307	-12
+a65	a66	8.4	0	-90
+a66	a66a	10	129	-2	;domiar do wylotu obejscia ciagiem Nilu od punktu f5a
+a66	a67	2.3	266	-8
+a67	a68	10.4	298	-28
+a68	a69	9.3	330	-7
+a69	a70	10.6	292	-11
+a70	a71	9.2	245	-28
+a71	a72	8.3	274	-22
+a72	a72a	7.1	160	-31	;pomiar wzdluz szczeliny
+a72	a73	13	281	-5
+a73	a74	6.5	318	-16
+a74	a75	12	272	7
+a75	a76	5.8	308	2	;salka z tam-tamem
+a76	a77	4.3	115	18
+a77	a78	3	28	40
+a78	a79	5.85	30	11
+a79	a80	3.6	294	-16
+a80	a81	9.4	295	-38	;punkt a81 punkt zwornikowy w Sali na Wielkim Luzie
+;ciag do dna Sali na Wielkim Luzie
+a81	a81a	11.35	184	-42
+a81a	a82a	14.58	290	-43
+a82a	a83a	12.58	285	-27
+a83a	a84a	6.65	295	-5
+a84a	a85a	5.15	275	-32
+a85a	a85b	2.1	0	-90
+a85a	a86a	4	275	-12	;pomiar azymutu i kata na oko w celu domiaru do dna studzienki
+a86a	a87a	3	0	-90	; do kopania!
+;ciag w strone sali na Luzie czyli do nowego dna
+a81	a82	4.55	308	25
+a82	a83	8.54	280	-18
+a83	a84	5.15	292	-45
+a84	a85	9.2	248	-49
+a85	a86	11.64	273	-32	;sala Na Luzie , poczatek meandra do Nilu
+a86	a87	0.1	0	-90
+a87	a88	4.9	295	-27
+a88	a89	4.1	255	-35
+a89	a90	3.45	190	-13
+a90	a91	2.5	222	2
+a91	a92	1.6	0	-90
+a92	a93	1.15	262	-16
+a93	a94	3.5	212	-12
+a94	a95	3.25	230	-11
+a95	a96	3.7	215	-9
+a96	a97	3	250	-22
+a97	a98	2.95	240	-21
+a98	a99	4.85	12	-20
+a99	a100	3	352	-54
+a100	a101	1.75	285	-21
+a101	a102	3.8	202	13
+a102	a103	5.3	276	5
+a103	a104	4.3	236	-16
+a104	a105	2	262	9
+a105	a106	3.8	5	-7
+a106	a107	4	37	-18
+a107	a108	5.5	25	8
+a108	a109	5.1	8	-56
+a109	a110	3.05	24	-6
+a110	a111	1	334	8
+a111	a112	4.3	0	-90
+a112	a113	1.8	318	-6
+a113	a113a	10.8	228	-4
+a113a	a113b	6.9	188	-28	;punkty a113-a113b domiary do wodospadu  i cieku do dna
+a113	a114	1.3	315	22
+a114	a115	2.8	233	20
+a115	a116	1.7	314	-20
+a116	a117	2.4	9	-18
+a117	a118	2.45	0	-90
+a118	a119	0.7	310	0
+a119	a120	5.5	270	-18
+a120	a121	1.5	342	14
+a121	a122	2.25	232	44
+a122	a123	4.1	280	-32
+a123	a124	3.1	4	3
+a124	a125	4.5	325	-15
+a125	a126	3.8	290	42
+a126	a127	7.2	282	-18
+a127	a128	2.8	320	0
+a128	a129	4.3	237	-28
+a129	a130	4.8	276	-18
+a130	a131	3.1	351	-8
+a131	a132	7.15	0	-90
+a132	a133	7.30	327	-41
+a133	a134	2.85	283	-16
+a134	a135	6.5	278	1
+a135	a136	7.35	210	23
+a136	a137	8.8	0	-90
+a137	a138	2	312	9
+a138	a139	2.9	308	-24
+a139	a140	7	222	46
+a140	a141	7.6	282	-4
+a141	a142	5.95	295	-25
+a142	a143	8.6	287	-12
+a143	a144	5.4	354	-12
+a144	a145	3.45	260	-10
+a145	a146	7	340	-13
+a146	a147	4.65	284	-42	; syfon sadeczoków
+a127	j1	6.02	68	12	; meander ebola  do przyszlego dna
+j1	j2	4.1	34	66
+j2	j3	4.5	282	6
+j3	j4	4.25	350	7
+j4	j5	10.52	296	-8
+j5	j6	6.02	292	6
+j6	j7	7.52	250	-8
+j7	j8	3.32	196	9
+j8	j9	10.29	306	6
+j9	j10	15.42	284	-4
+j10	j11	6.5	330	-6
+j11	j12	6.51	38	-28
+j12	j13	7.24	31	-8
+j13	j14	10	50	-7
+j14	j15	7.91	36	4
+j15	j16	2.28	348	20
+j16	j17	5.39	322	-17
+j17	j18	10.88	322	-30
+j18	j19	6.32	334	32
+j19	j20	1.6	6	41
+j20	j21	7.28	329	-12
+j21	j22	1.97	213	-27
+j22	j23	4.9	326	-26
+j23	j24	5.27	334	12
+j24	j25	2.11	350	16
+j25	j26	2.65	240	28
+j26	j27	3.75	334	32
+j27	j28	4.02	318	23
+j28	j29	2.5	350	-18
+j29	j30	5.18	308	-31
+j30	j31	4.68	20	2
+j31	j32	1.27	44	-18
+j32	j33	7.1	17	-44
+j33	j34	3.8	297	-26
+j34	j35	8.15	308	4
+j35	j36	6.1	268	-22
+j36	j37	7	0	-90
+j37	j38	1.35	320	0
+j38	j39	7.22	8	-10
+j39	j40	3.95	306	26
+j40	j41	6.65	284	-48
+j41	j42	5.3	312	-8
+j42	j43	4.01	216	-11
+j43	j44	1.93	86	-55
+j44	j45	7.05	0	-90
+j45	j46	6.18	36	-29
+j46	j47	9.45	344	-18
+j47	j48	3.2	18	-10
+j48	j49	6.3	40	-15
+j49	j50	5.95	28	-16
+j50	j51	4.65	108	-18
+j51	j52	13.68	36	-8
+j52	j53	8.35	296	0
+j53	j54	5.8	62	2
+j54	j55	5.81	346	2
+j55	j56	6.35	271	6
+j56	j57	6.2	334	2
+j57	j58	8.88	262	2
+j58	j59	9.46	284	1
+j59	j60	8.67	284	3
+j60	j61	6.96	266	-8
+j61	j62	8.1	214	5
+j62	j63	3.55	271	4
+j63	j64	5.2	334	24
+j64	j65	3.7	172	40
+j65	j66	5.1	243	-14
+j66	j67	2.36	318	-18
+j67	j68	4.95	258	-16
+j68	j69	7.2	260	35
+j69	j70	3.32	302	-28
+j70	j71	6.93	329	-48
+j71	j72	8.5	288	8
+j72	j73	0.87	8	0
+j73	j74	5.8	0	-90
+j74	j75	2.8	350	-20
+j75	j76	4.6	302	-8
+j76	j77	4.78	310	-25
+j77	j78	3.4	272	-18
+j78	j79	5.15	270	-8
+j79	j80	5.26	274	6
+j80	j81	3.1	248	2
+j81	j82	4.48	182	18
+j82	j83	8.45	292	26
+j83	j84	8.32	262	-22
+j84	j85	12.7	0	-90
+j85	j86	12.3	312	16
+j86	k1	4.6	266	-6
+k1	k2	2.8	291	-2
+k2	k3	5.6	310	-66
+k3	k4	9.25	270	-36
+k4	k5	9.3	232	6
+k5	k6	3.2	334	-14
+k6	k7	4.15	268	-46
+k7	k8	3.5	271	-36
+k8	k9	5.5	198	12
+k9	k10	4.8	221	-5
+k10	k11	3.25	230	4
+k11	k12	2.85	240	48
+k12	k13	3.7	223	-8
+k13	k14	6.6	254	-20
+k14	k15	5	209	-78
+k15	k16	5.78	342	-4
+k16	k17	3.3	338	2
+k17	k18	2.5	246	2
+k18	k19	3.05	2	-16
+k19	k20	6.2	278	-26
+k20	k21	0.6	316	0
+k21	k22	6.95	0	-90
+k22	k23	4.4	352	0
+k23	k24	4.85	60	-8
+k24	k25	9.5	42	2
+k25	k26	9.1	292	-6
+k26	k27	10	287	-4
+k27	k28	8.4	256	0
+k28	k29	2.75	280	-20
+k29	k30	7	226	-52
+k30	k31	2.65	298	9
+k31	k32	5.10	304	-18
+k32	k33	5.7	0	-90
+k33	k34	5.75	304	8
+k34	k35	10	280	2
+k35	k36	4.35	300	-2
+k36	k37	5.5	10	0
+k37	k38	4.1	310	0
+k38	k39	4.8	22	4
+k39	k40	4.45	356	4
+k40	k41	5.8	34	-26
+k41	k42	3.65	30	0
+k42	k43	8.6	26	-2
+k43	k44	1.65	316	4
+k44	k45	6.5	0	0
+k45	k46	4.4	138	52
+k46	k47	6.2	352	-22
+k47	k48	1.3	338	10
+k48	k49	2.9	21	-2
+k49	k50	2.85	22	-8
+k50	k51	9.3	282	-12	;rzeka zambezi, ciag jakby poprzeczny, pkt k50 na scianie przeciwnej do wejscia na wys 3 m nad dnem
+k50	k50a	7.6	146	4
+k50a	k50b	3.55	114	-15
+k50b	k50c	4	123	0	;pktk50c jest na wys 1m nad lustrem wody wszczelinie z której wyplywa
+k51	k52	1.55	168	-32
+k52	k53	4	250	-16
+k53	k54	5.5	236	0
+k54	k55	4	232	-8
+k55	k56	3.35	226	4
+k56	k57	5.9	240	-8
+k57	k58	3.45	250	16
+k58	k59	2.6	234	4
+k59	k60	4.7	280	0
+k60	k61	3.4	248	2
+k61	k62	5.25	258	4
+k62	k63	2.8	0	-90
+k63	k64	6.25	222	15
+k64	k65	2.4	222	10
+k65	k66	3.5	220	2
+k66	k67	3.2	290	-56
+k67	k68	1.05	256	15
+k68	k69	2.8	250	-8
+k69	k70	4.4	222	2
+k70	k71	5.7	253	7
+k71	k72	8.65	302	-3
+k72	k73	3.3	310	-14
+k73	l1	6	176	30	;poczatek ciagu do "rzeki pamieci"
+k73	k74	5.65	243	4
+k74	k75	1.2	355	2
+k75	k76	3.35	266	-12
+k76	k77	1.4	212	10	;pkt k76 jest nad kaskad¹a
+k77	k78	2.1	292	-2
+k78	k79	2.35	236	-14
+k79	k80	2.4	250	-14
+k80	k81	4	198	6
+k81	k82	2.3	208	4
+k82	k83	1.3	160	-52
+k83	k84	2.15	256	-56
+k84	k85	3	0	-90	;pkt k85 jest w szczelinie niedostepnej przy wodzie
