@@ -17,7 +17,9 @@ Inną dobrą przeglądarką plików wrl jest view3dscene do pobrania tu : http:/
 Na chwilę obecną projekt zawiera jaskinie :
 
 Czerwona Studzienka
+
 Dmuchawa
+
 Dziura pod Świstową Studnią
 Dziurka w Trawce
 Jaskinia Bańdzioch Kominiarski
