@@ -1,0 +1,42 @@
+#UNITS meters order=DAV
+#DATE 2004-06-30
+#Units A=D V=D
+#Fix a1 0 0 0 / PTASIA
+#Flag a1   0 0 0 Otwór Ptasiej
+a1	a2	7.2	300	-26
+a2	a3	10.2	240	-52
+a3	a4	14.2	301	-42
+a4	a5	17.6	20	-56
+a5	a6	20	356	-40
+a6	a7	20	18	-7
+a7	a8	20	79	26
+a8	a9	20	70	24
+a9	a10	6	60	16
+a10	a11	14	65	12
+a11	a12	13.8	70	9
+a12	a13	16	352	-56
+a13	a14	18	280	-42	; otwór Lodowej Litworowej
+#Fix a14 38.95 83.14 -52.26 / Lodowa Litworowa
+#Flag a14 Otwór LL
+a14	a15	9.44	328	-60
+a15	a16	8.54	311	-68
+a16	a17	13.8	290	-61
+a17	a18	16.9	293	-66
+a18	a19	9.8	266	-62
+a19	a20	4.13	218	12
+a20	a21	4.35	226	-35
+a21	a22	6.2	152	-40	; a 22 otwór Nad Dachem
+#Fix a22 14.01 84.04 -110.14 / Nad Dachem
+#Flag a22 Otwór ND
+a14	A1	2.82	62	-48
+A1	A2	7.55	64	12
+A2	A3	7.32	74	30
+A3	A4	7.85	156	10
+A4	A5	7	185	35
+A5	A6	6.3	9	45
+A6	A7	9.50	200 	25	; Jaskinia Nad LL
+#Flag A7  Otwór Nad LL
+#Note A7  otwór Nad LL
+A7	A8	3.45	203	-19
+A8	A9	4.1	159	-28
+A9	A10	5	205	-29	; A10 pocz¹tek wykopu
