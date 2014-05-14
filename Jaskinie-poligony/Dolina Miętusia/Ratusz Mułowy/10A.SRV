@@ -4,6 +4,7 @@
 #prefix ptasia
 ;#Fix m1 81.40 12.48 -53.31
 #Note m1 Kaprawa Salka
+;TODO nie jest to podl do glownego ciagu
 m1	m2	10.10	42	19
 m2	m3	1.9	339	54
 m3	m4	5.10	85	58

@@ -9,7 +9,7 @@
 .BOOK	Jaskinie-poligony
 .NAME	JSURVEY
 .PATH	Jaskinie-poligony
-.STATUS	8
+.STATUS	9
 .BOOK	Dolina Bystra
 .NAME	DBYS
 .PATH	Dolina Bystra
@@ -689,11 +689,11 @@
 .BOOK	Dolina Miêtusia
 .NAME	D-MIET
 .PATH	Dolina Miêtusia
-.STATUS	8
+.STATUS	9
 .BOOK	Ratusz Mu³owy
 .NAME	RMUL
 .PATH	Ratusz Mu³owy
-.STATUS	8
+.STATUS	9
 .SURVEY	OTW POW.SRV
 .NAME	OTW POW
 .STATUS	8

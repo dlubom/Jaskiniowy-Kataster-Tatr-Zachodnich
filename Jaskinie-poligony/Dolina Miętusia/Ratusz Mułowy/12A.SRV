@@ -4,6 +4,7 @@
 #prefix ptasia
 ;#Fix o1 -3.04 -33.25 -114.89
 #Note o1 Goracy meander
+o1	j11a	0	0	0
 o1	o2	1.75	89	51
 o2	o3	2.7	0	90
 o3	o4	5.38	68	14

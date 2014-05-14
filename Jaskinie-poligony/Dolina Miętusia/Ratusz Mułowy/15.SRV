@@ -3,6 +3,7 @@
 #prefix ptasia
 #Units A=D V=D
 ;#Fix s1 -17.08 -2.73 -183.01
+s1	i8	0	0	0
 s1 	s2	2.8	348	-27
 s2	s3	2.6	147	65
 s3	s4	3.6	92	24

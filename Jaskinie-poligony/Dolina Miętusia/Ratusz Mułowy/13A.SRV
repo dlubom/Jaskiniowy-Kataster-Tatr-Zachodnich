@@ -4,6 +4,7 @@
 #prefix ptasia
 ;#Fix p1 73.66 9.51 -65.65	; to punkt j39c w ciagu Partie Sadeckie
 p1	j39c	0	0	0
+p43	k10	0	0	0
 #Note p1 Sala Gwiazdeczki
 p1	p2	7.98	17	22
 p2	p3	2	107	25
@@ -56,4 +57,4 @@ p41	p42	4.5	230	23
 p42	p43	5.9	280	-12	; dno P57 punkt 12 ze starego k10 z ciagu Franusiowa bar zacisze
 ;#Fix p43 27.34 1.9 -153.71
 #Note  p43 Studnia P57
-p32	k10	0	0	0
+

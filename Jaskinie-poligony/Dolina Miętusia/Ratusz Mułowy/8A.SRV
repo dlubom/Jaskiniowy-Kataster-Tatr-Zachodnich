@@ -3,6 +3,9 @@
 #Units A=D V=D
 #prefix ptasia
 ;#Fix k1 49.7 7.98 -96.07/ Franusiowa
+k1	j28a	0	0	0
+;k1	o33	0	0	0	;TODO nie dokladnie o33
+k8	S36	0	0	0
 k1	k2	4.8	198	-22
 k2	k3	3.6	278	16
 k3	k4	1	332	34
