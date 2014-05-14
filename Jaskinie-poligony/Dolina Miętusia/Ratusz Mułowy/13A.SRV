@@ -40,6 +40,7 @@ p30b	p30c	1.98	288	-12
 p30c	p30d	24.1	0	-90
 p30d	p30e	3.3	304	-4
 ;#Fix p30e 46.91 14.06 -151.84	; punkt j62 w ciagu partie sadeckie
+p30e	j62	0	0	0
 p30	p31	2.8	0	90
 p31	p32	5.46	270	22
 p32	p33	2.5	355	12
@@ -55,3 +56,4 @@ p41	p42	4.5	230	23
 p42	p43	5.9	280	-12	; dno P57 punkt 12 ze starego k10 z ciagu Franusiowa bar zacisze
 ;#Fix p43 27.34 1.9 -153.71
 #Note  p43 Studnia P57
+p32	k10	0	0	0
