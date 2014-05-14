@@ -1,7 +1,8 @@
 #DATE 2004-06-30
 #UNITS meters order=DAV
 #Units A=D V=D
-#Fix j1  -14.29 -21.53 -143.37
+#prefix ptasia
+;#Fix j1  -14.29 -21.53 -143.37
 j1	j2	12	0	-90
 j2	j3	2.5	92	-36
 j3	j3a	6	22	-46	;j3a góra studni nad basenem

@@ -1,7 +1,8 @@
 #DATE 2004-06-30
 #UNITS meters order=DAV
 #Units A=D V=D
-#Fix g1 -55.85 -0.27 -195.68
+#prefix ptasia
+;#Fix g1 -55.85 -0.27 -195.68
 g1	g2	6.8	76	-32	; ciagod punktu 5 w ciagu glownym nad dachem
 g2	g3	0.6	349	0
 g3	g4	8.9	79	0
@@ -97,4 +98,5 @@ g50	g51	4.83	348	10
 g51	g52	5.02	50	10
 g52	g53	7.1	0	6
 g53	g54	4.32	320	8	;otwor LL ,spity
-#Fix g54 38.95 83.14 -52.26
+;#Fix g54 38.95 83.14 -52.26
+a14	g54	0	0	0

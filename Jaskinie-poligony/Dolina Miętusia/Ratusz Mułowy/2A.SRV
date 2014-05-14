@@ -1,7 +1,8 @@
 #DATE 2004-06-30
 #UNITS meters order=DAV
 #Units A=D V=D
-#Fix b1 0 0 0 / Ptasia
+#prefix ptasia
+;#Fix b1 0 0 0 / Ptasia
 b1	b2	4.4 	128	-43
 b2	b3	18.6	0	-90
 b3	b4	4.6	0	-90

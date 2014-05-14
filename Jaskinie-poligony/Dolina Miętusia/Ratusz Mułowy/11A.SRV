@@ -1,7 +1,8 @@
 #DATE 2004-07-01
 #UNITS meters order=DAV
 #Units A=D V=D
-#Fix n1 38.95 83.14	-52.26
+#prefix ptasia
+;#Fix n1 38.95 83.14	-52.26
 n1	n2	15.75	64	8
 n2	n3	8.72	53	8
 n3	n4	16.86	63	4

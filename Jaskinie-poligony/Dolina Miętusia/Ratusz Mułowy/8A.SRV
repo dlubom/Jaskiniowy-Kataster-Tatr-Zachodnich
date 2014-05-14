@@ -1,7 +1,8 @@
 #DATE 2004-07-01
 #UNITS meters order=DAV
 #Units A=D V=D
-#Fix k1 49.7 7.98 -96.07/ Franusiowa
+#prefix ptasia
+;#Fix k1 49.7 7.98 -96.07/ Franusiowa
 k1	k2	4.8	198	-22
 k2	k3	3.6	278	16
 k3	k4	1	332	34

@@ -1,7 +1,8 @@
 #DATE 2004-07-01
 #UNITS meters order= DAV
 #Units A=D V=D
-#Fix m1 81.40 12.48 -53.31
+#prefix ptasia
+;#Fix m1 81.40 12.48 -53.31
 #Note m1 Kaprawa Salka
 m1	m2	10.10	42	19
 m2	m3	1.9	339	54

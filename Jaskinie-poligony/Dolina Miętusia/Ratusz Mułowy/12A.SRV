@@ -1,7 +1,8 @@
 #DATE 2004-07-01
 #UNITS meters order=DAV
 #Units A=D V=D
-#Fix o1 -3.04 -33.25 -114.89
+#prefix ptasia
+;#Fix o1 -3.04 -33.25 -114.89
 #Note o1 Goracy meander
 o1	o2	1.75	89	51
 o2	o3	2.7	0	90
@@ -35,4 +36,4 @@ o29	o30	1	334	32
 o30	o31	1.6	28	18
 o31	o32	5.45	45	28
 o32	o33	5	69	0	; okno we franusiowej studni
-#Fix o33 49.7 7.98 -78.53
+;#Fix o33 49.7 7.98 -78.53

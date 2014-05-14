@@ -1,7 +1,9 @@
 #DATE 2004-06-30
 #UNITS meters order=DAV
 #Units A=D V=D
-#Fix c1 -57.91 -24.48 -142.37/ Sala Dantego
+#prefix ptasia
+;#Fix c1 -57.91 -24.48 -142.37/ Sala Dantego
+c1	b18	0	0	0
 c1	c2	8.78	314	-32
 c2	c3	1.65	218	-42
 c3	c4	25.5	0	-90

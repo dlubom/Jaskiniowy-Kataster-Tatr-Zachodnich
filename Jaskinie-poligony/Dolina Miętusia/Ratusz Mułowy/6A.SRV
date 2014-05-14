@@ -1,7 +1,9 @@
 #Date 2004-06-30
 #UNITS meters order=DAV
 #Units A=D V=D
-#Fix i1 -16.4 12.22 -195.72	; i1 = g9 z ciagu LL
+#prefix ptasia
+;#Fix i1 -16.4 12.22 -195.72	; i1 = g9 z ciagu LL
+i1	g9	0	0	0
 i1	i2	6.7	224	-47
 i2	i3	10.4	149	-71
 i3	i4	1.7	0	-90

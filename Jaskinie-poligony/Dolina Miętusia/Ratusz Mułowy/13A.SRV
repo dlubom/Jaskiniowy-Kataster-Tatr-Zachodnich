@@ -1,7 +1,9 @@
 #DATE 2004-07-01
 #UNITS meters order=DAV
 #Units A=D V=D
-#Fix p1 73.66 9.51 -65.65	; to punkt j39c w ciagu Partie Sadeckie
+#prefix ptasia
+;#Fix p1 73.66 9.51 -65.65	; to punkt j39c w ciagu Partie Sadeckie
+p1	j39c	0	0	0
 #Note p1 Sala Gwiazdeczki
 p1	p2	7.98	17	22
 p2	p3	2	107	25
@@ -37,7 +39,7 @@ p30a	p30b	1.2	4	-4
 p30b	p30c	1.98	288	-12
 p30c	p30d	24.1	0	-90
 p30d	p30e	3.3	304	-4
-#Fix p30e 46.91 14.06 -151.84	; punkt j62 w ciagu partie sadeckie
+;#Fix p30e 46.91 14.06 -151.84	; punkt j62 w ciagu partie sadeckie
 p30	p31	2.8	0	90
 p31	p32	5.46	270	22
 p32	p33	2.5	355	12
@@ -51,5 +53,5 @@ p39	p40	4.45	265	-5
 p40	p41	32.5	0	-90
 p41	p42	4.5	230	23
 p42	p43	5.9	280	-12	; dno P57 punkt 12 ze starego k10 z ciagu Franusiowa bar zacisze
-#Fix p43 27.34 1.9 -153.71
+;#Fix p43 27.34 1.9 -153.71
 #Note  p43 Studnia P57
