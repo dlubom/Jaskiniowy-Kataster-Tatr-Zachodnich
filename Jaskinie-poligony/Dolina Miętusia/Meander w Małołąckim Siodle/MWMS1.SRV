@@ -1,15 +1,15 @@
 #units meters order=DAV
 #units A=D V=D
 #prefix mwms
-#FIX  0   E19:54:45.66  N49:14:43.4   1801m
+#FIX  0   E19:54:45.66  N49:14:43.4   1794.7m
 #note	0	/Meander w Malolackim Siodle
 #flag	0	/Meander w Malolackim Siodle
 ;Meander w Malolackim Siodle
 #date 2014-04-30
 ; Z. Tabaczynski
+;DISTO X KALIBR 047
+;wspolrzedne otworu +- 4m
 ;TODO czy katalog jest wlasciwy ?
-;TODO wspolrzedne otworu +- 4m
-;TODO sprawdzic wysokosc
 0	1	4.93	311.2	-40.4
 0	1_1	1.03	357.3	-8.6
 1	2	1.22	240.0	-79.7
