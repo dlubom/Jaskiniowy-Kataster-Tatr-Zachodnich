@@ -689,7 +689,7 @@
 .BOOK	Dolina Mi皻usia
 .NAME	D-MIET
 .PATH	Dolina Mi皻usia
-.STATUS	8
+.STATUS	9
 .BOOK	Ratusz Mu這wy
 .NAME	RMUL
 .PATH	Ratusz Mu這wy
@@ -896,7 +896,15 @@
 .BOOK	Dolina Mu這wa
 .NAME	MULODOL1
 .PATH	Dolina Mu這wa
+.STATUS	9
+.BOOK	Jaskinia Lejbusiowa
+.NAME	JASLEJ
+.PATH	Jaskinia Lejbusiowa
+.STATUS	9
+.SURVEY	Jaskinia Lejbusiowa
+.NAME	LB1
 .STATUS	8
+.ENDBOOK
 .BOOK	Jaskinia Ma豉 w Mu這wej
 .NAME	JMWM
 .PATH	Jaskinia Ma豉 w Mu這wej
@@ -918,9 +926,6 @@
 .STATUS	8
 .SURVEY	POW POM1.SRV
 .NAME	POW POM1
-.STATUS	8
-.SURVEY	Jaskinia Lejbusiowa
-.NAME	LB1
 .STATUS	8
 .ENDBOOK
 .ENDBOOK

@@ -15,5 +15,4 @@ P9	P10	17.64	256	32
 P10	P11	15	261	41
 P11	P12	17.02	229	36
 P12	P13	14.1	320	14
-;P13	P14	1.86	146	-54	;P14otwór lejbusiowej
-P13	lejb:A1	1.86	146	-54	;P14otwór lejbusiowej
+P13	lejb:A1	1.86	146	-54	;lejb:A1 otwór lejbusiowej
