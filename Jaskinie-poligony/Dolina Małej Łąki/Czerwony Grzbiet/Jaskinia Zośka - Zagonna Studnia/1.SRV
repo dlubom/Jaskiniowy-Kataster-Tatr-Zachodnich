@@ -1,13 +1,14 @@
 #units meters order=DAV
 #units A=D V=D
 #prefix zoska
-#FIX  0   E19:54:52.55  N49:14:41.46   1790.00m
-;#FIX  1Z   E19:54:52.88  N49:14:41.7 1773.00m
+#FIX  0   E19:54:52.78  N49:14:41.99   1790.00m
+;#FIX  1Z   E19:54:53.21  N49:14:42.23 1773.00m
 #note	0	/Zoska
 #flag	0	/Zoska
 #note	1Z	/Zagonna Studnia
 #flag	1Z	/Zagonna Studnia
 ;pomiary z 1996 D. Fuja, B Zwijacz- Kozica
+;TODO brak #DATE
 0	1G	4.64	197	-37
 1G	2G 	8.57	0	-90
 2G 	3G	5.5	276	-15
