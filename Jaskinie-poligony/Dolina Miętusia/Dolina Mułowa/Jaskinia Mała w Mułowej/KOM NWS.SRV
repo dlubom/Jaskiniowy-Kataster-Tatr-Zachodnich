@@ -1,7 +1,6 @@
 #DATE 2008-06-29
 #UNITS meters order=DAV
 ;ciagi komina niedouczonych wspinaczy, Bardzo krucho !!!!!
-;#Fix 12 -18.65 -27.26 -37.31
 #PREFIX mala
 12	1r	3.18	210	-6	;start na mostku nad swistakowa paryja
 1r	2r	9.6	0	90

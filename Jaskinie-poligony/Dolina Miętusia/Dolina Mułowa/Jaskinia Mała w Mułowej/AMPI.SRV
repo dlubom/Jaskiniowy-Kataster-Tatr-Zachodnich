@@ -1,3 +1,5 @@
+#DATE 2008-06-29;TODO upewnic sie co do daty, pobrana z pliku KOM NWS.SRV
+#UNITS meters order=DAV
 #PREFIX mala
 k73	l1	6	180	31	; k73 poczatek ciagu do syfonu ampi
 l1	l2	6.4	146	32

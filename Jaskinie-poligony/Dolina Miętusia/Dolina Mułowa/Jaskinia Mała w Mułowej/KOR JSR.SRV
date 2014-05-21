@@ -1,3 +1,6 @@
+#DATE 2007-11-04;TODO upewnic sie co do daty, pobrana z pliku LACHONY.SRV
+#UNITS meters order=DAV
+#Units A=D V=D
 #PREFIX mala
 a35	m1	5.50	270	0
 m1	m2	1.6	250	-6
