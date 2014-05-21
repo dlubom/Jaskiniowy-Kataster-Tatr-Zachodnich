@@ -1,6 +1,6 @@
 #UNITS meters order =DAV
 #Units A=D V=D
-;TODO #DATE
+#DATE 2003-08-01;TODO data jest szacunkowa na podstawie geoportalu
 #note	A1	/Jaskinia Lejbusiowa
 #flag	A1	/Jaskinia Lejbusiowa
 #PREFIX lejb
