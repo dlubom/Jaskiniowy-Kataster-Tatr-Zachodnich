@@ -1,7 +1,8 @@
 #units meters order=DAV
 #units A=D V=D
 #prefix jpprog
-#FIX  0   E19:54:49.18  N49:14:43.14   1745.8m
+#FIX  0   E19:54:49.09  N49:14:43.14   1746.622m
+;wysokosc odczytana z pliku DEM
 #note	0	/Jaskinia pod Progiem
 #flag	0	/Jaskinia pod Progiem
 ;M. Parczewski i Z. Tabaczynski

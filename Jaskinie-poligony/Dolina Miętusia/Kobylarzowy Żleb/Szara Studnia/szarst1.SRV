@@ -1,7 +1,9 @@
 #units meters order=DAV
 #units A=D V=D
 #prefix szstd
-#FIX  0   E19:54:44.48  N49:14:38.91   1743.83m
+#FIX  0   E19:54:44.54  N49:14:38.89   1737.00m
+;pomiar otworu wykonany GPSem przez Z. Tabaczynskiego dokladnosc +-10m,
+;wysokosc odczytana altimetrem
 #note	0	/Szara Studnia
 #flag	0	/Szara Studnia
 #date 1999-05-28
