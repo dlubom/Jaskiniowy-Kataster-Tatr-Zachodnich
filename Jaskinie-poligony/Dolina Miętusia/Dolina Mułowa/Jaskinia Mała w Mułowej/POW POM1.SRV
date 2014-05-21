@@ -2,7 +2,6 @@
 #UNITS meters order=DAV
 #Units A=D V=D
 #PREFIX mala_pow
-;#Fix P1 0 0 0 /Mala w Mulowej
 mala:1	P2	2	200	65
 P2	P3	8.5	340	12
 P3	P4	0.3	0	90
