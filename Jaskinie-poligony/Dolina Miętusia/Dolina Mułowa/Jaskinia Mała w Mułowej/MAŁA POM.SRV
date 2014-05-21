@@ -2,9 +2,8 @@
 #UNITS meters order=DAV
 #Units A=D V=D
 #PREFIX mala
-;#Fix 1 0 0 0 /Mala w Mulowej; GPS  49o 14, 17,5,, N ,  19o 54, 08,2,, E
-;#Flag 1 0 0 0
-#FIX  1   E19:54:04.200  N49:14:17.140   1757m
+#FIX  1   E19:54:8.14240  N49:14:17.62617   1753.665m
+;wsp. odczyt z GPS, wysokosc odczyt z pliku DEM
 ;pomiary ciagu glownego od otworu do dna  z domiarami sali Fakro
 1	2	6.4	0	-90	;studzienka wlotowa
 ;ciag 2-f... korytarz boczny
