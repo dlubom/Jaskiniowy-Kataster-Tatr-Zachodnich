@@ -3,7 +3,7 @@
 ;
 ;
 #units order=avd
-#fix	 j0 	421502.28	5454712.58	1852
+#FIX  j0   E19:55:16.75  N49:14:22.58   1852m
 #note	j0	/Jasny Awen
 #flag	j0	/Jasny Awen
 j0	j1	0	-90	4.10
