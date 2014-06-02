@@ -1,8 +1,10 @@
 #Units Meters Order=avd
-#fix	0	421465.42	5454708.78	1875
+;#FIX  0   E19:55:15.15  N49:14:22.32   1875m
 #note	0	/Nad Kotliny
 #flag	0	/Nad Kotliny
 ;0 - otwor Nad Kotlinami
+;s68 - otwor snieznej
+#FIX  s68   E19:55:35.19  N49:14:24.66   1689.2m
 0	1	286	-28	5.40
 1	2	288	-55	10.00
 ;2 - Studnia Zlotowa
