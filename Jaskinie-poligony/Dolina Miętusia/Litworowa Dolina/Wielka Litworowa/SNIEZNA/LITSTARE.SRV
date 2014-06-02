@@ -3,7 +3,8 @@
 #units v=d
 #units a=d
 #Units Meters Order=avd
-#fix LT58	 420995.48	5454641.38	1906
+;#fix 	LT58	 0421006	5454543	1906
+#FIX  LT58  E19:54:53.26989 N49:14:18.82979 1903m
 #note	LT58	/Wielka Litworowa
 #flag	LT58	/Wielka Litworowa
 ;Ciag glówny
@@ -496,7 +497,9 @@ LTcm90	LTcm89	133	-23	4.2
 LTcm89	LTcm88	140	-44	6.2
 LTcm88	LTcm87	140	-41	6.6
 ;uwaga pomiar gkplk dopisany
-LTcm87	gkPLk	162	-52	25.2
+;TODO
+LTcm87	gkPLk	0	0	0
+;LTcm87	gkPLk	162	-52	25.2
 ;ltsa ciag boczny do studni Anielki
 LTz98	LTsa97	186	-7	6.4
 LTsa97	LTsa96	185	5	2.9
