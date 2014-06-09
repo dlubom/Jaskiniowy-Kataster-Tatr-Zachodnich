@@ -4,12 +4,12 @@
 .STATUS	2563
 .REF	5444258.858 420990.593 34 -0.819 1800 2 49 8 45.850 19 54 59.787 27 "WGS 1984"
 .SURVEY	_Informacje_
-.NAME	INFO
-.STATUS	1354
+.NAME	INFO.txt
+.STATUS	329034
 .BOOK	Jaskinie-poligony
 .NAME	JSURVEY
 .PATH	Jaskinie-poligony
-.STATUS	9
+.STATUS	8
 .BOOK	Dolina Bystra
 .NAME	DBYS
 .PATH	Dolina Bystra
@@ -689,7 +689,7 @@
 .BOOK	Dolina Mi皻usia
 .NAME	D-MIET
 .PATH	Dolina Mi皻usia
-.STATUS	9
+.STATUS	8
 .BOOK	Ratusz Mu這wy
 .NAME	RMUL
 .PATH	Ratusz Mu這wy
@@ -896,11 +896,11 @@
 .BOOK	Dolina Mu這wa
 .NAME	MULODOL1
 .PATH	Dolina Mu這wa
-.STATUS	9
+.STATUS	8
 .BOOK	Jaskinia Lejbusiowa
 .NAME	JASLEJ
 .PATH	Jaskinia Lejbusiowa
-.STATUS	9
+.STATUS	8
 .SURVEY	Jaskinia Lejbusiowa
 .NAME	LB1
 .STATUS	8
