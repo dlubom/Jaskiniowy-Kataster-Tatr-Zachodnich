@@ -977,16 +977,6 @@
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
-.BOOK	Inne dokumenty
-.NAME	INNEDOK
-.PATH	Inne Dokumenty
-.STATUS	8
-.ENDBOOK
-.BOOK	Mapy terenowe
-.NAME	MAPYTER
-.PATH	Mapy Terenowe
-.STATUS	8
-.ENDBOOK
 .BOOK	Powierzchnia
 .NAME	AREA
 .PATH	Powierzchnia
