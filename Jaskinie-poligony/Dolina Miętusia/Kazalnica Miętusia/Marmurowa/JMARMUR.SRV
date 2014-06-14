@@ -138,3 +138,17 @@ marmurowa:10	1	13.0	245	20
 8	10	10	100	40
 9	11	3.8	20	-80
 11	12	4.15	270	-55
+;okna kandydackie
+#date 1987-04-01
+#units meters order=AVD
+#units A=D V=D
+;Tomasz Pryjma, K. Wardakowski
+#prefix marm.ok1
+marmurowa:20	1	210	-87	10.4
+1	2	208	25	5
+;okna kandydackie
+#prefix marm.ok2
+marmurowa:22	1	50	82	22.7
+1	2	18	-25	3.8
+2	3	78	0	5.9
+3	4	0	90	15
