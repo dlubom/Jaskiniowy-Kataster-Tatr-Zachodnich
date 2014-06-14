@@ -1,6 +1,9 @@
 ;Studnia przy Przechodzie
 #Units Meters Order=dav
+#note	spp0	/Studnia przy Przechodzie
+#flag	spp0	/Studnia przy Przechodzie
 #fix 	spp0 	421683.32 	5454857.63 	1610.42
+;TODO poprawic wsp.
 spp0	spp1	9.80	0.00	-90.00
 spp1	spp2	3.74	254.48	-3.06
 spp2	spp3	3.06	290.25	-19.10
