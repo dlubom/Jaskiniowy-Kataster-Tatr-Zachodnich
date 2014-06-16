@@ -44,6 +44,8 @@ Jaskinia Mała w Mułowej
 
 Jaskinia Małołącka
 
+Jaskinia Marmurowa
+
 Jaskinia Mylna
 
 Jaskinia pod Progiem
