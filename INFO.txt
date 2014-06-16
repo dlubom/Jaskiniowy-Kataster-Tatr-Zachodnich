@@ -1,4 +1,4 @@
-﻿"Jaskiniowy Kataster Tatr" - v.0.18
+﻿"Jaskiniowy Kataster Tatr" - v.0.19
 
 Historia wersji:
 v0.00  (rok 2010-2011)  - projekt wstepny, brak koordynatora, dane haotyczne
@@ -26,6 +26,7 @@ v0.15 (21.04.2014) - Dodano Jaskinie Biala, Szara Studnia, Jaskinia w Wielkiej T
 v0.16 (11.05.2014) - Dodano Jaskinia pod Progiem, Michowa Studnia Wyznia, Studnia na Szlaku.
 v0.17 (21.05.2014) - Dodano Meander w Malolackim Siodle, Jaskinia Mala w Mulowej oraz Jaskinia Lejbusiowa. Dodano Ptasia Studnia (uwaga wersja robocza). Drobne aktualizacje wspolrzednych i wysokosci.
 v0.18 (09.06.2014) - Dodano nowe pomiary Jaskini Lodowa Małołącka, aktualizacja współrzędnych otworu Jaskini Śnieżna Studnia, Jaskinia Wielka Śnieżna, Lodowa Małołącka.
+v0.19 (16.06.2014) - Dodano Jaskinię Marmurową. Dodatkowo kosmetyczne poprawki.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 Projekt "Jaskiniowy Kataster Tatr" ma celu zebranie jak najwiecej
 danych kartograficznych w jednym miejscu.
