@@ -7,6 +7,7 @@
 #note	SwK0	/Studnia w Kazalnicy
 #FLAG SwK0 /Studnia w Kazalnicy
 #FIX  SwK0   E19:54:5.46  N49:14:24.19  1545m
+;wsp. odczytal K. D. z mapy.geoportal.gov.pl/imap
 SwK0	SwK1	5.2326	196	-60
 SwK1	SwK2	5.4774	0	-90
 SwK2	SwK3	3.2946	36	-14

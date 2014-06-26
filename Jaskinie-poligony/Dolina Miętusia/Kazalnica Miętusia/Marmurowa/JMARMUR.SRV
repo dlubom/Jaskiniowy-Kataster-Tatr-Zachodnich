@@ -2,6 +2,7 @@
 #units A=D V=D
 #prefix marmurowa
 #fix 	0	E19:54:2.93 N49:14:21.81   1770.6m
+;wsp. odczytal K. D. z mapy.geoportal.gov.pl/imap
 #note	0	/Marmurowa
 #flag	0	/Marmurowa
 #date 1986-05-01

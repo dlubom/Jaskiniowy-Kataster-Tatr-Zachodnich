@@ -3,7 +3,7 @@
 #Units A=D V=D
 #PREFIX mala
 #FIX  1   E19:54:7.95  N49:14:17.86   1753.665m
-;wsp. odczyt z GPS, wysokosc odczyt z pliku DEM
+;wsp. odczytal K. D. z mapy.geoportal.gov.pl/imap, wysokosc odczyt z pliku DEM
 #note	1	/Jaskinia Mala w Mulowej
 #flag	1	/Jaskinia Mala w Mulowej
 ;
