@@ -13,6 +13,8 @@ http://www.sktj.pl/pub/KATASTER.wrl
 Aby go obejrzeć możesz użyć Walls3D Viewer  - dostępnego wraz  z programem Walls. 
 Inną dobrą przeglądarką plików wrl jest view3dscene do pobrania tu : http://castle-engine.sourceforge.net/view3dscene.php
 
+Projekt można również obejrzeć online : https://sketchfab.com/models/64c9acf8f12345a3a3a4aa72df330b51
+
 
 Na chwilę obecną projekt zawiera jaskinie :
 
