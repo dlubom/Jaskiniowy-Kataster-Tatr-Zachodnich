@@ -9,7 +9,7 @@
 .BOOK	Jaskinie-poligony
 .NAME	JSURVEY
 .PATH	Jaskinie-poligony
-.STATUS	8
+.STATUS	9
 .BOOK	Dolina Bystra
 .NAME	DBYS
 .PATH	Dolina Bystra
@@ -689,7 +689,7 @@
 .BOOK	Dolina Miêtusia
 .NAME	D-MIET
 .PATH	Dolina Miêtusia
-.STATUS	8
+.STATUS	9
 .BOOK	Ratusz Mu³owy
 .NAME	RMUL
 .PATH	Ratusz Mu³owy
@@ -877,19 +877,28 @@
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
-.BOOK	Litworowy Grzbiet
-.NAME	LITGRZ
-.PATH	Litworowy Grzbiet
-.STATUS	8
+.BOOK	Wielka Œwistówka
+.NAME	WIESW
+.PATH	Wielka Œwistówka
+.STATUS	9
 .BOOK	Jaskinia Harda
 .NAME	JHARDA
 .PATH	Harda
+.STATUS	9
+.SURVEY	nad diablem
+.NAME	STARY
 .STATUS	8
-.SURVEY	Jaskinia Harda - 01
+.SURVEY	gora
 .NAME	POMIAR
 .STATUS	8
-.SURVEY	Jaskinia Harda - 02
+.SURVEY	kwadratowy
+.NAME	KWADRAT
+.STATUS	8
+.SURVEY	salazgarkiem
 .NAME	DNO
+.STATUS	8
+.SURVEY	absolut
+.NAME	BALKON
 .STATUS	8
 .ENDBOOK
 .ENDBOOK

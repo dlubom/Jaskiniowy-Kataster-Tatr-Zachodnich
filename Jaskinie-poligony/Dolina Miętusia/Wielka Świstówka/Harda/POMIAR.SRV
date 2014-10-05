@@ -2,9 +2,9 @@
 #units A=D V=D
 #date 2013-10-31
 #prefix harda
-#FIX  1.0   E19.9076611  N49.2430839   1650m
-#note	1.0	/Harda
-#flag	1.0	/Harda
+#FIX 1.0 E19.9079667 N49.24275 1665m
+#note 1.0 /Harda
+#flag 1.0 /Harda
 ;Harda
 ;Disto-X
 ;Jarek Surmacz - Disto-X
