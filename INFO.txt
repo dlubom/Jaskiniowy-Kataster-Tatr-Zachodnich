@@ -1,4 +1,4 @@
-﻿"Jaskiniowy Kataster Tatr" - v.0.20
+﻿"Jaskiniowy Kataster Tatr" - v.0.21
 
 Historia wersji:
 v0.00  (rok 2010-2011)  - projekt wstepny, brak koordynatora, dane haotyczne
@@ -28,6 +28,7 @@ v0.17 (21.05.2014) - Dodano Meander w Malolackim Siodle, Jaskinia Mala w Mulowej
 v0.18 (09.06.2014) - Dodano nowe pomiary Jaskini Lodowa Małołącka, aktualizacja współrzędnych otworu Jaskini Śnieżna Studnia, Jaskinia Wielka Śnieżna, Lodowa Małołącka.
 v0.19 (16.06.2014) - Dodano Jaskinię Marmurową. Dodatkowo kosmetyczne poprawki.
 v0.20 (26.06.2014) - Poprawka wsp. otworów Małej w Mułowej, Lodowej Miętusiej, Marmurowej i Studni w Kazalinicy. Odczytał K. D. z http://mapy.geoportal.gov.pl/imap/mapy.geoportal.gov.pl/imap
+v0.21 (21.10.2014) - Aktualizacja dla jaskini Hardej. Nowe pomiary.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 Projekt "Jaskiniowy Kataster Tatr" ma celu zebranie jak najwiecej
 danych kartograficznych w jednym miejscu.
