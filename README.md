@@ -15,6 +15,8 @@ Inną dobrą przeglądarką plików wrl jest view3dscene do pobrania tu : http:/
 
 Projekt można również obejrzeć online : https://sketchfab.com/models/64c9acf8f12345a3a3a4aa72df330b51
 
+Zapraszam chętnych do pomocy przy projekcie jak i do udostępniania swoich pomiarów.
+
 Na chwilę obecną projekt zawiera jaskinie :
 
 Czerwona Studzienka
