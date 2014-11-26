@@ -10,6 +10,37 @@
 .NAME	JSURVEY
 .PATH	Jaskinie-poligony
 .STATUS	9
+.BOOK	Jaskinie S³owacji
+.NAME	JS
+.PATH	Jaskinie S³owacji
+.STATUS	9
+.BOOK	Nova Kresanica
+.NAME	NK
+.PATH	Nova Kresanica
+.STATUS	9
+.SURVEY	Czarna Studnia
+.NAME	CZST
+.STATUS	8
+.SURVEY	Odkryte z Val
+.NAME	ODZVAL
+.STATUS	8
+.SURVEY	20 m komin
+.NAME	KOM
+.STATUS	8
+.SURVEY	Sala podwójna
+.NAME	SAPOD
+.STATUS	8
+.SURVEY	Studnia Dzwon
+.NAME	STDDZ
+.STATUS	8
+.SURVEY	Czeœæ œrodkowa
+.NAME	CZSR
+.STATUS	8
+.SURVEY	Wstêpnia czêœæ
+.NAME	WSTCZ
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
 .BOOK	Dolina Bystra
 .NAME	DBYS
 .PATH	Dolina Bystra
@@ -60,11 +91,11 @@
 .BOOK	Dolina Goryczkowa
 .NAME	DGOR
 .PATH	Dolina Goryczkowa
-.STATUS	8
+.STATUS	9
 .BOOK	Jaskinia Goryczkowa
 .NAME	JGOR
 .PATH	Jaskinia Goryczkowa
-.STATUS	8
+.STATUS	9
 .SURVEY	g5
 .NAME	G5
 .STATUS	8
@@ -689,7 +720,7 @@
 .BOOK	Dolina Miêtusia
 .NAME	D-MIET
 .PATH	Dolina Miêtusia
-.STATUS	9
+.STATUS	8
 .BOOK	Ratusz Mu³owy
 .NAME	RMUL
 .PATH	Ratusz Mu³owy
@@ -880,11 +911,11 @@
 .BOOK	Wielka Œwistówka
 .NAME	WIESW
 .PATH	Wielka Œwistówka
-.STATUS	9
+.STATUS	8
 .BOOK	Jaskinia Harda
 .NAME	JHARDA
 .PATH	Harda
-.STATUS	9
+.STATUS	8
 .SURVEY	nad diablem
 .NAME	STARY
 .STATUS	8

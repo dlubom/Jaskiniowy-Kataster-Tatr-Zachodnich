@@ -1,0 +1,10 @@
+#units meters order=AVD
+#units A=D V=D
+#date 2007-01-03
+;TODO data prawdopodobnie bledna
+;TODO brak info kto mierzyl
+#prefix nvk
+nvk123	nvk124	78.00	-16.00	3.17	<1.00,1.20,0.00,0.60>
+nvk124	nvk125	135.00	13.00	1.60	<1.10,20.00,1.30,0.00>
+nvk125	nvk126	0.00	-90.00	19.47	<20.00,0.00,4.00,1.00>
+nvk126	nvk103	42.50	15.50	5.31	<5.00,1.00,1.60,0.80>
