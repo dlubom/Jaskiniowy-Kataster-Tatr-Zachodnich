@@ -13,11 +13,11 @@
 .BOOK	Jaskinie S³owacji
 .NAME	JS
 .PATH	Jaskinie S³owacji
-.STATUS	9
+.STATUS	8
 .BOOK	Nova Kresanica
 .NAME	NK
 .PATH	Nova Kresanica
-.STATUS	9
+.STATUS	8
 .SURVEY	Czarna Studnia
 .NAME	CZST
 .STATUS	8
@@ -91,11 +91,11 @@
 .BOOK	Dolina Goryczkowa
 .NAME	DGOR
 .PATH	Dolina Goryczkowa
-.STATUS	9
+.STATUS	8
 .BOOK	Jaskinia Goryczkowa
 .NAME	JGOR
 .PATH	Jaskinia Goryczkowa
-.STATUS	9
+.STATUS	8
 .SURVEY	g5
 .NAME	G5
 .STATUS	8
@@ -124,11 +124,19 @@
 .BOOK	Dolina Koœcieliska
 .NAME	D-KOSCIE
 .PATH	Dolina Koœcieliska
-.STATUS	8
+.STATUS	9
 .BOOK	Organy
 .NAME	ORGANY
 .PATH	Organy
+.STATUS	9
+.BOOK	Jaskinia Czarna
+.NAME	JCZ
+.PATH	Jaskinia Czarna
+.STATUS	9
+.SURVEY	Fragment
+.NAME	CZ_Z
 .STATUS	8
+.ENDBOOK
 .BOOK	Jaskinia Zimna
 .NAME	JZIMNA
 .PATH	Jaskinia Zimna
