@@ -8,7 +8,7 @@
 #prefix przemko1
 1.0	:pNkk19	0	0	0
 1.0	1.1	303.59	74.15	13.684
-1.1	1.2	30.73	76.05	6.379
+1.1	1.2	30.73	76.05	6.379;1.2 do powtorki, strzal z 1.1 blisko stalowego karabinka, powtorzenie z punku ok. 0,5m nizej, NIE! BYLO CHYBA DOBRZE
 1.2	1.3	305.87	15.78	3.82
 1.3	1.4	325.05	37.26	7.167
 1.4	1.5	317.88	47.92	4.216
@@ -24,9 +24,9 @@
 1.0	-	249.09	68.23	8.771
 1.0	-	300.87	79.63	7.88
 1.0	-	10.17	81.14	18.87
-1.4	-	181.4	85.48	8.82
+1.4	-	181.4	85.48	8.82;WYSOKI MEANDER
 1.4	-	198.59	86.41	9.22
-1.4	-	23.03	2.1	1.01
+1.4	-	23.03	2.1	1.01;szerokosc meandra
 1.5	-	301.33	36.93	5.24
 1.6	-	311.4	10.6	2.5
 1.6	-	118.16	53.6	8.77
@@ -47,18 +47,18 @@
 ;delta DistoX = 0.55
 #prefix przemko2
 
-;1.0	1.1	266.65	20.79	5.25;powtorzony
-1.1	2.0	288.04	-11.81	4.847
+;1.0	1.1	266.65	20.79	5.25;Powtorzony pomiar
+1.1	2.0	288.04	-11.81	4.847;Brak zaznaczonego punktu na scianie; trzeba obic i zaporeczowac trawers studni
 1.1	1.2	20.93	36.63	8.721
 1.2	1.3	22.11	84.47	9.369
-1.3	1.4	114.12	82.83	6.723
+1.3	1.4	114.12	82.83	6.723;Wygodny balkon.
 1.4	1.5	91.61	83.12	10.388
-1.5	3.0	104.05	4.82	4.519
-1.5	1.6	350.46	78.01	10.779
+1.5	3.0	104.05	4.82	4.519;Szczelina w zacieciu komina przechodzi w niewielka, wysoka na ok. 3 m, salke kontynuujaca sie ciasna, prawdopodobnie niedostepna, szczelina - nie sprawdzone!
+1.5	1.6	350.46	78.01	10.779;Szczelina w zacieciu komina; na spagu mostek - prawdopodobnie niedostepne dla czlowieka polaczenie z salka znajdujaca sie ponizej.
 1.6	1.7	235.47	81.68	9.328
 1.7	1.8	342.96	62.37	3.385
 1.8	1.9	227.74	37.99	2.424
-1.9	1.10	189.35	-45.13	7.171
+1.9	1.10	189.35	-45.13	7.171;Kilkutonowy glaz na spagu "Zawieszonej salki"; pod nim zaczyna sie niewielki meander, z ktorego woda wyplywa i spada w postaci deszczu w kominie Totoro.
 1.1	-	299.08	-2.88	0.777
 1.1	-	324.17	1.52	5.835
 1.1	-	340.73	3.7	8.403
@@ -124,7 +124,7 @@
 1.8	-	280.73	8.4	3.334
 1.8	-	282.67	46.08	5.16
 1.8	-	284.75	48.41	4.054
-1.8	-	283.96	47.97	8.391
+1.8	-	283.96	47.97	8.391;Domiar w glab waskiej szczeliny, prawdopodobnie zbyt ciasnej dla czlowieka.
 1.9	-	81.42	-3.42	0.504
 1.9	-	216.76	-83.95	1.966
 1.9	-	189.41	-63.6	1.912
@@ -170,10 +170,12 @@
 ;Karol Makowski (kartowanie-PDA + DistoX), Marcin S³owik (Spray)
 ;delta DistoX = 0.55
 #prefix przemko3
-
-1.0	1.1	108.64	56.82	15.985
-1.1	2.0	79.93	35.64	7.196
-1.1	1.2	99.15	44.02	7.927
+;Kilkutonowy glaz na spagu "Zawieszonej salki"; pod nim zaczyna sie niewielki meander, z ktorego woda wyplywa i spada w postaci deszczu w kominie Totoro.
+1.0	1.1	108.64	56.82	15.985;Punkt pomiarowy na pochylni z kaskadowymi prozkami
+1.1	2.0	79.93	35.64	7.196;Poczatek dosc ciasnego meandra - 0,3-0,5 m szerokosci; po 10-15 m meander konczy siê niewieka kaluza; mo¿liwa kontynuacja, ale czolganie w wodzie!
+1.1	1.2	99.15	44.02	7.927;Salka o wzglednie plaskim spagu i pochylym stropie; wysokosc 6m; wejscie do salki kruche - wielkie potrzaskane wanty!
+;W najwyzszym miejscu salki  kontynnyacja bardzo ciasnym meandrem w kierunku E; w spagu meander opada w kierunku W, równolegle do kaskadowej pochylni i umozliwia zejscie do waskiej szczeliny,
+;z ktorej przez male okienko widac kolejna pustke - prawdopodbnie nastepna szczeline
 1.0	-	104.33	54.02	5.364
 1.0	-	357.36	9.76	2.135
 1.0	-	33.08	8.34	3.109
@@ -251,14 +253,14 @@
 ;delta DistoX = 0.55
 #prefix przemko4
 
-1.0	1.1	276.72	-84.49	25.806
-1.1	1.2	161.7	-74.06	4.327
-1.1	1.3	171.57	7.02	6.438
+1.0	1.1	276.72	-84.49	25.806;Punkt 1.1 z ciagu pomiarowego "przemko2" - poczatek komina Totoro.
+1.1	1.2	161.7	-74.06	4.327;Dno komina Totoro.
+1.1	1.3	171.57	7.02	6.438;Punkt na scianie przy 10-tonowej wancie.
 1.3	1.4	82.15	-40.83	4.78
 1.4	1.5	150.82	5.2	3.411
 1.5	1.6	28.75	-87.06	16.03
 1.6	1.7	241.46	-5.78	0.497
-1.1	-	260.75	21.33	2.705
+1.1	-	260.75	21.33	2.705;Domiar do studni-meandra przez okienko w zawalisku w spagu komina Totoro.
 1.1	-	235.9	10.07	3.141
 1.1	-	206.5	0.44	3.775
 1.1	-	192.46	-0.94	4.557
