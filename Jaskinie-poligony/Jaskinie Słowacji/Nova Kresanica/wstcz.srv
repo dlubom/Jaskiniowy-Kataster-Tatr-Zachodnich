@@ -3,8 +3,8 @@
 #date 2007-01-03
 ;TODO data prawdopodobnie bledna
 ;TODO brak info kto mierzyl
-;TODO brak wsp. otworu
 #prefix nvk
+#FIX  nvk0   E19.91418777  N49.22918839   2016m
 nvk0	nvk1	0.00	-90.00	2.75	<0.00,2.80,0.30,0.30>
 nvk1	nvk2	275.00	-29.00	5.88	<4.00,6.00,0.30,0.50>
 nvk2	nvk3	0.00	-90.00	4.49	<10.00,1.00,0.30,0.30>
