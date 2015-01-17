@@ -51,6 +51,8 @@ Jaskinia Marmurowa
 
 Jaskinia Mylna
 
+Jaskinia Nova Kresanica
+
 Jaskinia pod Progiem
 
 Jaskinia pod Śnieżną Studnią
