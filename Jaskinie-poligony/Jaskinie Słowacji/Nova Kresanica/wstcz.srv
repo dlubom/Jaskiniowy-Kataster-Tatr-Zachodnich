@@ -4,6 +4,8 @@
 ;TODO data prawdopodobnie bledna
 ;TODO brak info kto mierzyl
 #prefix nvk
+#note	nvk0	/Nova Kresanica
+#flag	nvk0	/Nova Kresanica
 #FIX  nvk0   E19.91418777  N49.22918839   2016m
 nvk0	nvk1	0.00	-90.00	2.75	<0.00,2.80,0.30,0.30>
 nvk1	nvk2	275.00	-29.00	5.88	<4.00,6.00,0.30,0.50>
