@@ -13,7 +13,18 @@
 .BOOK	Jaskinie S³owacji
 .NAME	JS
 .PATH	Jaskinie S³owacji
+.STATUS	9
+.BOOK	Obcasna Vyvieracka
+.NAME	OBVYV
+.PATH	Obcasna Vyvieracka
+.STATUS	9
+.SURVEY	OV_A2
+.NAME	OVA2
 .STATUS	8
+.SURVEY	OV_A1
+.NAME	OV
+.STATUS	8
+.ENDBOOK
 .BOOK	Nova Kresanica
 .NAME	NK
 .PATH	Nova Kresanica
@@ -124,15 +135,15 @@
 .BOOK	Dolina Koœcieliska
 .NAME	D-KOSCIE
 .PATH	Dolina Koœcieliska
-.STATUS	9
+.STATUS	8
 .BOOK	Organy
 .NAME	ORGANY
 .PATH	Organy
-.STATUS	9
+.STATUS	8
 .BOOK	Jaskinia Czarna
 .NAME	JCZ
 .PATH	Jaskinia Czarna
-.STATUS	9
+.STATUS	8
 .SURVEY	Fragment
 .NAME	CZ_Z
 .STATUS	8
@@ -1032,7 +1043,7 @@
 .BOOK	Teren 10x10
 .NAME	TER1010
 .PATH	Teren 10x10
-.STATUS	10
+.STATUS	8
 .SURVEY	Poziomice
 .NAME	POZIOM
 .STATUS	8

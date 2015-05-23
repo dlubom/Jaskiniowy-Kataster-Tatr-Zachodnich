@@ -1,0 +1,46 @@
+#[
+ID_serii			A2
+Opis_serii		"Ciag nurkowy"
+ID_jaskini		OV
+Nazwa_jaskini		"Obcasna Vyvieracka"
+Data_aktualizacji		2015-05-23
+Nazwa_projektu		"Kataster jaskin tatrzanskich"
+Coordinator		"Dariusz Lubomski"
+Coordinator_email	"darek.lubomski@gmail.com"
+System_odniesienia	"WGS84"
+Uklad_wspolrzednych	"UTM"
+Zrodlo_danych		"Dominik Graczyk"
+Licencja			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+team Dominik 'Honzo' Graczyk
+instrument unknown-diving
+#]
+
+#prefix OV_A2
+#date 2014-11-16
+
+#UNITS m ORDER=DA Tape=SS
+;From To Dist Az From-Depth To-Depth
+23.0	OV_A1:40	0	0	0	;?
+1.0	2.0	3	220	10.5	9
+2.0	3.0	3	140	9	8
+3.0	4.0	4	110	8	6	;azymut pomierzony byl 290, ten 110 bardziej pasowal autorowi
+4.0	5.0	5	70	6	6.8	;duza sala
+5.0	6.0	6	60	6.8	8	;lekki zakret w prawo
+6.0	7.0	4	120	8	9	;lekki zakret w prawo
+7.0	8.0	5	70	9	9.6	;azymut pomierzony byl 250 ten 70 bardziej pasowal autorowi
+8.0	9.0	10	60	9.6	8.6	;przegiecie w poziomie w polowie-gorka
+9.0	10.0	7	60	8.6	8.6
+10.0	11.0	4	80	8.6	10.5
+11.0	12.0	9	90	10.5	10.5
+12.0	13.0	3	110	10.5	8.8
+13.0	14.0	2	90	8.8	7.2
+14.0	15.0	8	75	7.2	7
+15.0	16.0	5	60	7	8.5
+16.0	17.0	6	80	8.5	10.5
+17.0	18.0	5	90	10.5	11.7
+18.0	19.0	8	100	11.7	11
+19.0	20.0	1.5	135	11	8.5
+20.0	21.0	6	105	8.5	7.5
+21.0	22.0	8	100	7.5	5.5;i lekkim zakretem w prawo do powierzchni wody
+22.0	23.0	6	150	5.5	0; pomiar podany przez Darka Lubomskiego na podstawie zdania: od jeziorka azymut 150 na plaze i prozek

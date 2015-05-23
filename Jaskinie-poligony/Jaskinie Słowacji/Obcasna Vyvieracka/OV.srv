@@ -1,0 +1,65 @@
+#[
+ID_serii			A1
+Opis_serii		"Ciag glowny"
+ID_jaskini		OV
+Nazwa_jaskini		"Obcasna Vyvieracka"
+Data_aktualizacji		2015-05-23
+Nazwa_projektu		"Kataster jaskin tatrzanskich"
+Coordinator		"Dariusz Lubomski"
+Coordinator_email	"darek.lubomski@gmail.com"
+System_odniesienia	"WGS84"
+Uklad_wspolrzednych	"UTM"
+Zrodlo_danych		"Dominik Graczyk"
+Licencja			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+team unknown
+instrument unknown
+#]
+
+#date 1979-08-13
+
+#units meters order=DVA
+#units A=D V=D
+#prefix OV_A1
+#note	o1	/Obcasna Vyvieracka
+#flag	o1	/Obcasna Vyvieracka
+#FIX  o1  E19:55:54.70  N49:13:44.11   1435m
+o1	2	2.02	-81.6	52.0	;VCHOD
+2	3	2.93	-21.2	280.0
+3	4	12.61	-0.3	272.0	;HLADINA I.SIFON
+4	5	8.26	-14.5	284.5	;I.SIFON
+5	6	12.30	9.5	245.0	;SIEN I.-II.SIF.
+6	7	11.28	-3.3	276.5
+7	8	11.61	-1.0	270.0
+8	9	7.14	-13.3	282.0;II.SIFON
+9	10	9.77	6.0	270.0
+10	11	13.28	7.3	255.0
+11	12	10.31	10.0	265.0
+12	13	17.05	90.0	259.0
+13	14	9.03	12.9	258.0;SIEN OBJAVITEL.
+14	15	3.71	-62.5	178.0;UZINA K JAZERU
+15	16	6.87	-21.0	269.0
+16	17	6.98	-16.5	324.0;JAZERO 30cm POD
+17	18	7.49	0.0	298.0;KANAL
+18	19	7.73	9.5	324.0
+19	20	10.7	-9.3	299.0
+14	21	7.11	-18.0	134.0;SIEN OBJAVITEL.
+21	22	2.44	-4.5	130.0;PIESOCNA CHODB.
+14	23	5.48	-7.5	106.0;S.O.
+14	24	5.34	-14.0	38.0;S.O.
+14	25	3.13	-21.0	339.0;S.O.
+14	26	11.07	52.5	62.0;Horne vetvy
+26	27	6.22	11.5	106.0;
+26	28	5.81	28.5	44.0;VODOPAD
+26	29	5.50	-1.0	325.0
+29	30	6.42	39.7	39.0
+30	31	4.76	31.0	84.0;SPOJENIE K B_27
+30	32	3.19	22.6	19.0
+32	33	7.26	17.6	317.0
+33	34	5.22	54.5	102.0;PRITOKOVY KOMIN
+20	35	9.94	-18.5	290.0;III.SIFON
+35	36	3.62	6.5	212.0
+36	37	7.60	42.0	240.0;REBRIK
+37	38	2.92	-1.0	230.0
+38	39	11.71	-39.0	326.0;IV.SIFON-PLAZ
+39	40	6.25	-26.1	14.0;24cm nad hladin.
