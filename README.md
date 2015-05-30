@@ -17,6 +17,8 @@ Projekt można również obejrzeć online : https://sketchfab.com/models/64c9acf
 
 Zapraszam chętnych do pomocy przy projekcie jak i do udostępniania swoich pomiarów.
 
+LICENCE http://creativecommons.org/licenses/by-sa/2.0/
+
 Na chwilę obecną projekt zawiera jaskinie :
 
 Czerwona Studzienka
@@ -52,6 +54,8 @@ Jaskinia Marmurowa
 Jaskinia Mylna
 
 Jaskinia Nova Kresanica
+
+Jaskinia Obcasna Vyvieracka
 
 Jaskinia pod Progiem
 
