@@ -1,21 +1,18 @@
 #[
-ID_serii			A2
-Opis_serii		"Ciag nurkowy"
-ID_jaskini		OV
-Nazwa_jaskini		"Obcasna Vyvieracka"
-Data_aktualizacji		2015-05-23
-Nazwa_projektu		"Kataster jaskin tatrzanskich"
-Coordinator		"Dariusz Lubomski"
-Coordinator_email	"darek.lubomski@gmail.com"
-System_odniesienia	"WGS84"
-Uklad_wspolrzednych	"UTM"
-Zrodlo_danych		"Dominik Graczyk"
-Licencja			"http://creativecommons.org/licenses/by-sa/2.0/"
+CAVE_ID			OV
+CAVE_NAME		"Obcasna Vyvieracka"
+SURVEY_ID		A2
+SURVEY_NAME		"Ciag syfonalny"
+UPDATE_DATE		2015-05-30
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"Dominik Graczyk"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
 
 team Dominik 'Honzo' Graczyk
 instrument unknown-diving
 #]
-
 #prefix OV_A2
 #date 2014-11-16
 
@@ -44,3 +41,4 @@ instrument unknown-diving
 20.0	21.0	6	105	8.5	7.5
 21.0	22.0	8	100	7.5	5.5;i lekkim zakretem w prawo do powierzchni wody
 22.0	23.0	6	150	5.5	0; pomiar podany przez Darka Lubomskiego na podstawie zdania: od jeziorka azymut 150 na plaze i prozek
+;TODO pomiary 21.0, 22.0, 23.0, OV_A1:40 wymagaja weryfikacji

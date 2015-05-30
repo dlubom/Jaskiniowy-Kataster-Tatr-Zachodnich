@@ -1,0 +1,18 @@
+#[
+CAVE_ID			OV
+CAVE_NAME		"Obcasna Vyvieracka"
+UPDATE_DATE		2015-05-30
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"Oblastna skupina SSS Ruzomberok"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "unknown"
+INSTRUMENT "unknown"
+#]
+
+#prefix OV_A1_COORD
+#FIX  o1  E19:55:47.53 N49:13:35.8   1435m

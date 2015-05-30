@@ -1,30 +1,26 @@
 #[
-ID_serii			A1
-Opis_serii		"Ciag glowny"
-ID_jaskini		OV
-Nazwa_jaskini		"Obcasna Vyvieracka"
-Data_aktualizacji		2015-05-23
-Nazwa_projektu		"Kataster jaskin tatrzanskich"
-Coordinator		"Dariusz Lubomski"
-Coordinator_email	"darek.lubomski@gmail.com"
-System_odniesienia	"WGS84"
-Uklad_wspolrzednych	"UTM"
-Zrodlo_danych		"Dominik Graczyk"
-Licencja			"http://creativecommons.org/licenses/by-sa/2.0/"
+CAVE_ID			OV
+CAVE_NAME		"Obcasna Vyvieracka"
+SURVEY_ID		A1
+SURVEY_NAME		"Ciag glowny"
+UPDATE_DATE		2015-05-30
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"Oblastna skupina SSS Ruzomberok"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
 
 team unknown
 instrument unknown
 #]
-
 #date 1979-08-13
 
 #units meters order=DVA
 #units A=D V=D
 #prefix OV_A1
-#note	o1	/Obcasna Vyvieracka
-#flag	o1	/Obcasna Vyvieracka
-#FIX  o1  E19:55:54.70  N49:13:44.11   1435m
-o1	2	2.02	-81.6	52.0	;VCHOD
+#note	OV_A1_COORD:o1	/Obcasna Vyvieracka
+#flag	OV_A1_COORD:o1	/Obcasna Vyvieracka
+OV_A1_COORD:o1	2	2.02	-81.6	52.0	;VCHOD
 2	3	2.93	-21.2	280.0
 3	4	12.61	-0.3	272.0	;HLADINA I.SIFON
 4	5	8.26	-14.5	284.5	;I.SIFON

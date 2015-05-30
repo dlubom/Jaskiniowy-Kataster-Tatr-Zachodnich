@@ -1,13 +1,27 @@
+#[
+CAVE_ID			T.C-16.01
+CAVE_NAME		"Jaskinia Kalacka"
+SURVEY_ID		A1
+SURVEY_NAME		"Ciag glowny"
+UPDATE_DATE		2015-05-24
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"Dariusz Lubomski"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "Arkadiusz Kus" "dog tape compas clino"
+TEAM "Dariusz Lubomski" "notes"
+INSTRUMENT "DistoX + PocketTopo"
+#]
+
+#date 2013-11-09
+#note	:tc1601	/Jaskinia Kalacka
+#flag	:tc1601	/Jaskinia Kalacka
 #units meters order=AVD
 #units A=D V=D
-#date 2013-11-09
-#prefix kalacka
-#FIX  1.0   E19:58:04.647  N49:15:19.167   1230m
-#note	1.0	/Kalacka
-#flag	1.0	/Kalacka
-;Kalacka
-;team Arkadiusz Kus, Dariusz Lubomski
-;Disto-X
+#prefix tc1601_A1
+1.0	:tc1601	0	0	0
 1.0	1.1	283.83	-7.69	7.511
 1.1	1.2	27.01	69.84	10.219
 1.1	1.3	179.63	47.22	6.195

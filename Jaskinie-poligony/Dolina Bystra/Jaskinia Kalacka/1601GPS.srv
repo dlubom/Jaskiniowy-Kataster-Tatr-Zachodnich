@@ -1,0 +1,17 @@
+#[
+CAVE_ID			T.C-16.01
+CAVE_NAME		"Jaskinia Kalacka"
+UPDATE_DATE		2015-05-24
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"Polskie Towarzystwo Przyjaciol Nauk o Ziemi"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "unknown"
+INSTRUMENT "unknown"
+#]
+
+#FIX  tc1601   E19:58:00.65  N49:15:22.67   1230m
