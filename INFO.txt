@@ -38,6 +38,8 @@ Projekt "Jaskiniowy Kataster Tatr" ma celu zebranie jak najwiecej
 danych kartograficznych w jednym miejscu.
 Ma to byc pomocne nam obecnie dzialajacym w jaskiniach tatrzanskich,
 ale przede wszystkim ma to byc tez dla kolejnych pokolen.
+
+LICENCE http://creativecommons.org/licenses/by-sa/2.0/
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 !! WAZNE !! ABY ZACHOWAC LAD I PORZADEK, PROSZE ABY WSZYSCY DZIALAJACY CZYNNIE W PROJEKCIE
 NOWE DANE PRZESYLALI DO KOORDYNATORA. ON PO ICH WPROWADZENIU ROZESLE POPRAWIONY PROJEKT
