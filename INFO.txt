@@ -1,4 +1,4 @@
-﻿"Jaskiniowy Kataster Tatr" - v.0.23
+﻿"Jaskiniowy Kataster Tatr" - v.0.24
 
 Historia wersji:
 v0.00  (rok 2010-2011)  - projekt wstepny, brak koordynatora, dane haotyczne
@@ -30,7 +30,8 @@ v0.19 (16.06.2014) - Dodano Jaskinię Marmurową. Dodatkowo kosmetyczne poprawki
 v0.20 (26.06.2014) - Poprawka wsp. otworów Małej w Mułowej, Lodowej Miętusiej, Marmurowej i Studni w Kazalinicy. Odczytał K. D. z http://mapy.geoportal.gov.pl/imap/mapy.geoportal.gov.pl/imap
 v0.21 (21.10.2014) - Aktualizacja dla jaskini Hardej. Nowe pomiary.
 v0.22 (30.12.2014) - Dodano jaskinię Nova Kresanica (brak wsp. otworu). Dodano fragment jaskini Czarnej z ciągiem po pow. do otworu Zimnej.
-v0.23 (17.01.2014) - Dodano ciągi w Przemkowych Partiach. Dodano wsp. otworu jaskini Nova Kresanica.
+v0.23 (17.01.2015) - Dodano ciągi w Przemkowych Partiach. Dodano wsp. otworu jaskini Nova Kresanica.
+v0.24 (30.05.2015) - Dodano jaskinię Obcasna Vyvieracka, wprowadzono nowe formatowanie plików (Obcasna Vyvieracka, Kalacka)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 Projekt "Jaskiniowy Kataster Tatr" ma celu zebranie jak najwiecej
@@ -68,3 +69,4 @@ Zbigniew Tabaczynski
 Marek Lorczyk
 Marcin Gala
 Szymon Kostka
+Dominik 'Honzo' Graczyk
