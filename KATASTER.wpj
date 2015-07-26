@@ -9,15 +9,15 @@
 .BOOK	Jaskinie-poligony
 .NAME	JSURVEY
 .PATH	Jaskinie-poligony
-.STATUS	9
+.STATUS	8
 .BOOK	Jaskinie S³owacji
 .NAME	JS
 .PATH	Jaskinie S³owacji
-.STATUS	9
+.STATUS	8
 .BOOK	Obcasna Vyvieracka
 .NAME	OBVYV
 .PATH	Obcasna Vyvieracka
-.STATUS	9
+.STATUS	8
 .SURVEY	Coordinates
 .NAME	OVGPS
 .STATUS	8
@@ -58,11 +58,11 @@
 .BOOK	Dolina Bystra
 .NAME	DBYS
 .PATH	Dolina Bystra
-.STATUS	9
+.STATUS	8
 .BOOK	Jaskinia Kalacka
 .NAME	JKAL
 .PATH	Jaskinia Kalacka
-.STATUS	9
+.STATUS	8
 .SURVEY	Coordinates
 .NAME	1601GPS
 .STATUS	8
@@ -417,6 +417,17 @@
 .NAME	WK
 .PATH	W¹wóz Kraków
 .STATUS	8
+.BOOK	Smocza Jama
+.NAME	SM
+.PATH	Smocza Jama
+.STATUS	8
+.SURVEY	Smocza Jama
+.NAME	TE0807
+.STATUS	8
+.SURVEY	Coordinates
+.NAME	0807GPS
+.STATUS	8
+.ENDBOOK
 .BOOK	Gawra
 .NAME	GAWRA
 .PATH	Gawra
