@@ -154,7 +154,7 @@
 .BOOK	Dolina Koœcieliska
 .NAME	D-KOSCIE
 .PATH	Dolina Koœcieliska
-.STATUS	8
+.STATUS	9
 .BOOK	Organy
 .NAME	ORGANY
 .PATH	Organy
@@ -239,10 +239,10 @@
 .BOOK	Kominiarski Wierch
 .NAME	KMWIERCH
 .PATH	Kominiarski Wierch
-.STATUS	8
+.STATUS	9
 .BOOK	Bandzioch Kominiarski
 .NAME	BANDZK
-.PATH	Bandzioch Kominiarski
+.PATH	Raptawicka Turnia\..\Bandzioch Kominiarski
 .STATUS	8
 .BOOK	Ciag 7 Dna
 .NAME	BK-C7D
@@ -381,7 +381,7 @@
 .BOOK	Raptawicka Turnia
 .NAME	RAPTAWT
 .PATH	Raptawicka Turnia
-.STATUS	8
+.STATUS	9
 .BOOK	Mylna
 .NAME	MYLNA
 .PATH	Mylna
@@ -392,8 +392,10 @@
 .STATUS	544768
 .SURVEY	Ciag Glowny
 .NAME	CG
+.PATH	..\..\..\..\..\Dolina Koscieliska\Kominiarski Wierch\Raptawicka Turnia\Mylna\Mylna
 .SURVEY	drobne odga³êzienia od Ciagu Glownego
 .NAME	BOKI_CG
+.PATH	..\..\..\..\..\Dolina Koscieliska\Kominiarski Wierch\Raptawicka Turnia\Mylna\Mylna
 .STATUS	8
 .ENDBOOK
 .BOOK	Wielka Szczelina
@@ -402,9 +404,11 @@
 .STATUS	8
 .SURVEY	Wielka Szczelina-CG
 .NAME	WSZCZCG
+.PATH	..\..\..\..\..\Dolina Koscieliska\Kominiarski Wierch\Raptawicka Turnia\Mylna\Mylna
 .STATUS	8
 .SURVEY	Wielka Szczelina-CB
 .NAME	WSZCZCB
+.PATH	..\..\..\..\..\Dolina Koscieliska\Kominiarski Wierch\Raptawicka Turnia\Mylna\Mylna
 .STATUS	8
 .ENDBOOK
 .BOOK	Ulica Pawlikowskiego
@@ -412,11 +416,11 @@
 .STATUS	8
 .SURVEY	Ulica Pawlikowskiego-CG
 .NAME	ULPAWLCG
-.PATH	Mylna
+.PATH	..\..\..\..\Dolina Koscieliska\Kominiarski Wierch\Raptawicka Turnia\Mylna\Mylna
 .STATUS	8
 .SURVEY	Ulica Pawlikowskiego-CB
 .NAME	ULPAWLCB
-.PATH	Mylna
+.PATH	..\..\..\..\Dolina Koscieliska\Kominiarski Wierch\Raptawicka Turnia\Mylna\Mylna
 .STATUS	8
 .ENDBOOK
 .BOOK	Boczny Ciag do Chorow
@@ -424,7 +428,7 @@
 .STATUS	8
 .SURVEY	Boczny Ciag do Chorow
 .NAME	BCDCHCG
-.PATH	Mylna
+.PATH	..\..\..\..\Dolina Koscieliska\Kominiarski Wierch\Raptawicka Turnia\Mylna\Mylna
 .STATUS	8
 .ENDBOOK
 .BOOK	Wielka Izba i Skosna Komora
@@ -432,11 +436,11 @@
 .STATUS	8
 .SURVEY	Skosna Komora i okolice
 .NAME	SKIOKOL
-.PATH	Mylna
+.PATH	..\..\..\..\Dolina Koscieliska\Kominiarski Wierch\Raptawicka Turnia\Mylna\Mylna
 .STATUS	8
 .SURVEY	Wielka Izba i okolice
 .NAME	WIIOKOL
-.PATH	Mylna
+.PATH	..\..\..\..\Dolina Koscieliska\Kominiarski Wierch\Raptawicka Turnia\Mylna\Mylna
 .STATUS	8
 .ENDBOOK
 .BOOK	Ciagi boczne w polnocnej czesci
@@ -444,7 +448,7 @@
 .STATUS	8
 .SURVEY	Boczne ciagi w okolicy Wyjscia
 .NAME	BCWOKWYJ
-.PATH	Mylna
+.PATH	..\..\..\..\Dolina Koscieliska\Kominiarski Wierch\Raptawicka Turnia\Mylna\Mylna
 .STATUS	8
 .ENDBOOK
 .BOOK	Ciagi przy Bialej Ulicy
@@ -452,10 +456,18 @@
 .STATUS	8
 .SURVEY	Ciagi przy Bialej Ulicy
 .NAME	CPBUL
-.PATH	Mylna
+.PATH	..\..\..\..\Dolina Koscieliska\Kominiarski Wierch\Raptawicka Turnia\Mylna\Mylna
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
+.SURVEY	Raptawicka
+.NAME	RAPTAW
+.PATH	..\..\..\Dolina Koscieliska\Kominiarski Wierch\Raptawicka Turnia\Raptawicka
+.STATUS	8
+.SURVEY	Oblazkowa
+.NAME	OBLAZK
+.PATH	..\..\..\Dolina Koscieliska\Kominiarski Wierch\Raptawicka Turnia\Oblazkowa
+.STATUS	8
 .ENDBOOK
 .ENDBOOK
 .BOOK	W¹wóz Kraków
@@ -845,7 +857,7 @@
 .BOOK	Dolina Miêtusia
 .NAME	D-MIET
 .PATH	Dolina Miêtusia
-.STATUS	9
+.STATUS	8
 .BOOK	Ratusz Mu³owy
 .NAME	RMUL
 .PATH	Ratusz Mu³owy
@@ -1091,11 +1103,11 @@
 .BOOK	Dolina Mu³owa
 .NAME	MULODOL1
 .PATH	Dolina Mu³owa
-.STATUS	9
+.STATUS	8
 .BOOK	Jaskinia Lejbusiowa
 .NAME	JASLEJ
 .PATH	Jaskinia Lejbusiowa
-.STATUS	9
+.STATUS	8
 .SURVEY	Jaskinia Lejbusiowa
 .NAME	LB1
 .PATH	..\..\..\Dolina Mietusia\Dolina Mulowa\Jaskinia Lejbusiowa
@@ -1104,7 +1116,7 @@
 .BOOK	Jaskinia Ma³a w Mu³owej
 .NAME	JMWM
 .PATH	Jaskinia Ma³a w Mu³owej
-.STATUS	9
+.STATUS	8
 .SURVEY	AMPI.SRV
 .NAME	AMPI
 .PATH	..\..\..\Dolina Mietusia\Dolina Mulowa\Jaskinia Mala w Mulowej
@@ -1135,11 +1147,11 @@
 .BOOK	Dolina Tomanowa
 .NAME	DTOMAN
 .PATH	Dolina Tomanowa
-.STATUS	9
+.STATUS	8
 .BOOK	Dziura w Stole
 .NAME	DWS
 .PATH	Dziura w Stole
-.STATUS	9
+.STATUS	8
 .SURVEY	Dziura w Stole
 .NAME	DZWS
 .STATUS	8
@@ -1147,7 +1159,7 @@
 .BOOK	Jaskinia Zawaliskowa Tomanowa
 .NAME	JZTOM
 .PATH	Jaskinia Zawaliskowa Tomanowa
-.STATUS	9
+.STATUS	8
 .SURVEY	Jaskinia Zawaliskowa Tomanowa
 .NAME	JZAWTOM
 .STATUS	8
@@ -1155,7 +1167,7 @@
 .BOOK	Szczelina nad Tomanow¹ I
 .NAME	SNT1
 .PATH	Szczelina nad Tomanow¹ I
-.STATUS	9
+.STATUS	8
 .SURVEY	Szczelina nad Tomanow¹ I
 .NAME	SZNDT1
 .PATH	..\Szczelina nad Tomanowa I
@@ -1164,7 +1176,7 @@
 .BOOK	Szczelina nad Tomanow¹ II
 .NAME	SNT2
 .PATH	Szczelina nad Tomanow¹ II
-.STATUS	9
+.STATUS	8
 .SURVEY	Szczelina nad Tomanow¹ II
 .NAME	SZNDT2
 .PATH	..\Szczelina nad Tomanowa II
@@ -1174,7 +1186,7 @@
 .BOOK	_Domiary Powierzchniowe_
 .NAME	DOMPOW
 .PATH	_Domiary Powierzchniowe_
-.STATUS	9
+.STATUS	8
 .SURVEY	LTsbb teren
 .NAME	LITW_TER
 .PATH	SNIEZNA
