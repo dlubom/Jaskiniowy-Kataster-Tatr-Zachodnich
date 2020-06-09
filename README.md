@@ -57,6 +57,8 @@ Jaskinia Nova Kresanica
 
 Jaskinia Obcasna Vyvieracka
 
+Jaskinia Obłazkowa
+
 Jaskinia pod Progiem
 
 Jaskinia pod Śnieżną Studnią
@@ -68,6 +70,8 @@ Jaskinia Poszukiwaczy Skarbów (fragment)
 Jaskinia przy Jędrusiowej Dziurze
 
 Jaskinia przy Przechodzie
+
+Jaskinia Raptawicka
 
 Jaskinia Świstacza
 
