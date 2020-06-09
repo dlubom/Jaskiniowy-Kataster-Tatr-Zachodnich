@@ -382,6 +382,22 @@
 .NAME	RAPTAWT
 .PATH	Raptawicka Turnia
 .STATUS	9
+.BOOK	Oblazkowa
+.NAME	OBLAZ
+.PATH	..\..\..\Dolina Koscieliska\Kominiarski Wierch\Raptawicka Turnia\Oblazkowa
+.STATUS	9
+.SURVEY	Oblazkowa
+.NAME	OBLAZK
+.STATUS	8
+.ENDBOOK
+.BOOK	Raptawicka
+.NAME	RAPT
+.PATH	..\..\..\Dolina Koscieliska\Kominiarski Wierch\Raptawicka Turnia\Raptawicka
+.STATUS	8
+.SURVEY	Raptawicka
+.NAME	RAPTAW
+.STATUS	8
+.ENDBOOK
 .BOOK	Mylna
 .NAME	MYLNA
 .PATH	Mylna
@@ -460,14 +476,6 @@
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
-.SURVEY	Raptawicka
-.NAME	RAPTAW
-.PATH	..\..\..\Dolina Koscieliska\Kominiarski Wierch\Raptawicka Turnia\Raptawicka
-.STATUS	8
-.SURVEY	Oblazkowa
-.NAME	OBLAZK
-.PATH	..\..\..\Dolina Koscieliska\Kominiarski Wierch\Raptawicka Turnia\Oblazkowa
-.STATUS	8
 .ENDBOOK
 .ENDBOOK
 .BOOK	W¹wóz Kraków
