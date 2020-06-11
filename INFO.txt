@@ -45,7 +45,8 @@ LICENCE http://creativecommons.org/licenses/by-sa/2.0/
 NOWE DANE PRZESYLALI DO KOORDYNATORA. ON PO ICH WPROWADZENIU ROZESLE POPRAWIONY PROJEKT
 DO WSZYSTKICH ZAINTERESOWANYCH. ZACHOWAMY WTEDY JEDNOLITOSC
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-* nowy koordynator projektu: Dariusz Lubomski (SKTJ)
+* koordynator projektu: Paweł Gogolak (SDG)
+* koordynator projektu: Dariusz Lubomski (SKTJ)
 * koordynator projektu: Krzysztof "Chomik" Borgiel (SBB)
 * konsultacje i wsparcie: Piotr "Kierownik" Stelmach (WKTJ)
 * przygotowanie Numerycznego Modelu Terenu: Jacek "Maly" Szczygiel (KKS)
