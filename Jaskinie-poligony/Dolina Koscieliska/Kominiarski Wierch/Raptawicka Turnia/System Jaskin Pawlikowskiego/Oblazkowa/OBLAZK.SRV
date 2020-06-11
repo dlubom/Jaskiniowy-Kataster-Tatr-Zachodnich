@@ -1,6 +1,7 @@
 #UNITS meters order=dav
 #Units A=D V=D
-
+#note	0.0	/Oblazkowa
+#flag	0.0	/Oblazkowa
 #fix	0.0	417205.0875	5454709.36	1097
 
 ;Ciag glowny do Sali Koncowej
