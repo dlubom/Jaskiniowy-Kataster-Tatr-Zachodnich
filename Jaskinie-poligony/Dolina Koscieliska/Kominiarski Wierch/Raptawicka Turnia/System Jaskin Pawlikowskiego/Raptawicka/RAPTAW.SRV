@@ -1,7 +1,7 @@
 #UNITS meters order=dav
 #Units A=D V=D
-#note	0	/Raptawicka
-#flag	0	/Raptawicka
+#note	1.0	/Raptawicka
+#flag	1.0	/Raptawicka
 #fix	1.0	417177.39	5454744.9875	1141.15
 1.0	1.1	6.00	296.41	-59.5133333333333
 1.1	1.2	6.90333333333333	209.716666666667	-26.73
