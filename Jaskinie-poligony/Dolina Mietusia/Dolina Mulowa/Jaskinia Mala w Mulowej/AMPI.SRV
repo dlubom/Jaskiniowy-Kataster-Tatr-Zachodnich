@@ -1,7 +1,7 @@
 #DATE 2008-06-29;TODO upewnic sie co do daty, pobrana z pliku KOM NWS.SRV
 #UNITS meters order=DAV
 #PREFIX mala
-k73	l1	6	180	31	; k73 poczatek ciagu do syfonu ampi
+k73	l1	6	180	31	; k73 poczatek ciagu do syfonu ampi, pomiar powtórzony w MALA POM.SRV:512
 l1	l2	6.4	146	32
 l2	l3	5.15	286	31
 l3	l4	2.2	241	20
