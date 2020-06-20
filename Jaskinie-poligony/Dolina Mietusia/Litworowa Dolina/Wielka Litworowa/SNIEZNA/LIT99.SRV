@@ -1,21 +1,22 @@
 #u meters
 #units order=dva
-sbb52k4	sbb52k5	2.0	70	230
-sbb52k5	sbb52k6	3.65	44	180
-sbb52k6	sbb52k7	2.62	-35	123
-sbb52k7	sbb52k8	4.24	74	205
-sbb52k8	sbb52k9	4.35	52	250
-sbb52k9	sbb52k10	4.97	54	255
-sbb52k10	sbb52k11	1.28	72	242
-sbb52k8	sbb52k12	2.80	5	140
-sbb52k12	sbb52k13	3.75	0	125
-sbb52k8	sbb52k14	2.74	0	320	#s domiar
-sbb52k14	sbb52k15	2.50	0	320
-sbb52k15	sbb52k16	4.24	2	320
-sbb52k16	sbb52k17	1.14	18	270
-sbb52k17	sbb52k18	3.18	50	320
-sbb52k18	sbb52k19	4.47	9	320
-sbb52k19	sbb52k20	0.54	0	250	#s domiar
-sbb52k20	sbb52k21	7.19	1	305
-sbb52k21	sbb52k22	3.85	21	310
-sbb52k22	sbb52k23	8.40	90	0
+;wszystkie pomiary zawieraja sie w pliku SBB2, intencja nieznana
+;sbb52k4	sbb52k5	2.0	70	230
+;sbb52k5	sbb52k6	3.65	44	180
+;sbb52k6	sbb52k7	2.62	-35	123
+;sbb52k7	sbb52k8	4.24	74	205
+;sbb52k8	sbb52k9	4.35	52	250
+;sbb52k9	sbb52k10	4.97	54	255
+;sbb52k10	sbb52k11	1.28	72	242
+;sbb52k8	sbb52k12	2.80	5	140
+;sbb52k12	sbb52k13	3.75	0	125
+;sbb52k8	sbb52k14	2.74	0	320	#s domiar
+;sbb52k14	sbb52k15	2.50	0	320
+;sbb52k15	sbb52k16	4.24	2	320
+;sbb52k16	sbb52k17	1.14	18	270
+;sbb52k17	sbb52k18	3.18	50	320
+;sbb52k18	sbb52k19	4.47	9	320
+;sbb52k19	sbb52k20	0.54	0	250	#s domiar
+;sbb52k20	sbb52k21	7.19	1	305
+;sbb52k21	sbb52k22	3.85	21	310
+;sbb52k22	sbb52k23	8.40	90	0

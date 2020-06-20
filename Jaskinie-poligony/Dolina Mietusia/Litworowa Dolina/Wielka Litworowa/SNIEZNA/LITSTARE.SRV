@@ -529,7 +529,7 @@ LTpwb	LTpwa	158	38	3.00
 LTpw11	LTpwj	84	25	1.8
 LTpwj	LTpwi	119	7	3.3
 LTpwi	LTpwh	129	-25	4.5
-LTpwh	LTpwg	161	34	2.1
+;LTpwh	LTpwg	161	34	2.1 ;Pierwszy pomiar pliku LTPWG
 LTpwg	LTpwgp	0	90	2.5
 ;Ltks Klatka Schodowa
 LTll5	LTks1	0	90	1.7
