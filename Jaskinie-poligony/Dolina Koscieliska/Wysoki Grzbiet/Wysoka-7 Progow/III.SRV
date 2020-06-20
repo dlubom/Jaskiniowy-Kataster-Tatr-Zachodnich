@@ -16,8 +16,10 @@ W7-12/26	W7-12/27	7.45	257	45
 W7-12/27	W7-12/28	3.9	228	-22	; => kor. polaczeniowy
 
 
-W7-500	W7-501	12.9	88	-55	;GORNY OTWOR
+W7-500	W7-501	12.9	88	-55	;GORNY OTWOR, pomiar powtórzony w PIONY.SRV:510 ale z innymi danymi
 W7-501	W7-201	6.5	255	12
+
+; pomiary powtórzone w III.SRV:60-65 z innymi danymi
 W7-501	W7-502	5.8	82	12
 W7-502	W7-503	4.3	84	-16
 W7-503	W7-504	3	60	7
@@ -54,6 +56,7 @@ W-*/2/66	W-*/2/67	5.3	246	-50
 W-*/2/67	W-*/2/68	3.7	295	-22
 W-*/2/68	W-*/2/69	8.3	282	-48
 
+; pomiary powtórzone w III.SRV:23-28 z innymi danymi
 W7-501	W7-502	7.3	309	-18
 W7-502	W7-503	2.03	28	-45
 W7-503	W7-504	3.9	315	-3
