@@ -1,4 +1,4 @@
-# Jaskiniowy Kataster Tatr | Tatra Cave Registry | Tatranský kataster jaskýň
+# Jaskiniowy Kataster Tatr [PL] | Tatra Cave Registry [EN] | Tatranský kataster jaskýň [SK]
 
 ![Walls 2D screen](walls_2d_screen.png)
 ![Walls 2D screen](walls_3d_screen.png)
