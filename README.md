@@ -17,21 +17,17 @@ Projekt ma na celu zgromadzenie w jednym miejscu wszystkich danych kartograficzn
 
 Projekt oparty jest o oprogramowanie Walls – tutaj znajdziesz [najnowszą wersję programu oraz instrukcję obsługi](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
 
-Projekt dostępny jest również online: [Zobacz model 3D jaskiń](https://sketchfab.com/models/64c9acf8f12345a3a3a4aa72df330b51).
-
 ### Project Description
 The project aims to compile all cartographic data related to the caves of the Tatra Mountains in one place. Utilizing the Walls software, the primary goal is to create a spatial compilation of measurement sequences, cave entrance coordinates, and terrain models. The project is open to all who are interested, to facilitate exploratory and educational activities, and to support scientific research. Gathering comprehensive and accurate data presents a challenge due to the diversity of methods and times of their execution.
 
 The project is based on the Walls software – you can find the [latest version of the program and its manual here](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
-
-The project is also available online: [View the 3D model of the caves](https://sketchfab.com/models/64c9acf8f12345a3a3a4aa72df330b51).
 
 ### Popis projektu
 Projekt má za cieľ zhromaždiť všetky kartografické údaje o tatranských jaskyniach na jednom mieste. Využitím softvéru Walls je hlavným cieľom vytvoriť priestorové zosumarizovanie meracích postupov, súradníc vstupov do jaskýň a modelu terénu. Projekt je otvorený pre všetkých záujemcov, aby uľahčil prieskumné, vzdelávacie a podporoval vedecký výskum. Zhromaždenie komplexných a presných údajov predstavuje výzvu kvôli rozmanitosti metód a času ich vykonávania.
 
 Projekt je založený na softvéri Walls – [tu nájdete najnovšiu verziu programu a návod na použitie](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
 
-Projekt je tiež dostupný online: [Zobraziť 3D model jaskýň](https://sketchfab.com/models/64c9acf8f12345a3a3a4aa72df330b51).
+### Projekt dostępny jest również online | The project is also available online | Projekt je tiež dostupný online: [![Zobacz model 3D jaskiń](sketchfab_3d.png)](https://sketchfab.com/models/64c9acf8f12345a3a3a4aa72df330b51)
 
 ### Jak można pomóc? | How Can You Help? | Ako môžete pomôcť?
 Zachęcamy do współpracy przy projekcie oraz do udostępniania własnych pomiarów. Kontakt: [darek.lubomski@gmail.com](mailto:darek.lubomski@gmail.com).
@@ -39,6 +35,7 @@ Zachęcamy do współpracy przy projekcie oraz do udostępniania własnych pomia
 We encourage collaboration on the project as well as sharing your own measurements. Contact: [darek.lubomski@gmail.com](mailto:darek.lubomski@gmail.com).
 
 Začleníme do projektu aj vašu spoluprácu a zdieľanie vlastných meraní. Kontaktujte: [darek.lubomski@gmail.com](mailto:darek.lubomski@gmail.com).
+
 
 ### Licencja | License | Licencia
 [Creative Commons Attribution-ShareAlike 2.0](http://creativecommons.org/licenses/by-sa/2.0/).
