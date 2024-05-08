@@ -1,5 +1,8 @@
 # Jaskiniowy Kataster Tatr | Tatra Cave Registry | Tatranský kataster jaskýň
 
+![Walls 2D screen](walls_2d_screen.png)
+![Walls 2D screen](walls_3d_screen.png)
+
 ### Opis projektu
 Projekt ma na celu zgromadzenie w jednym miejscu wszystkich danych kartograficznych dotyczących tatrzańskich jaskiń. Wykorzystując oprogramowanie Walls, głównym celem jest stworzenie zestawienia przestrzennego ciągów pomiarowych, współrzędnych wejść do jaskiń oraz modelu terenu. Projekt jest otwarty dla wszystkich zainteresowanych, by ułatwić działania eksploracyjne, edukacyjne oraz wspierać badania naukowe. Zebranie kompleksowych i dokładnych danych stanowi wyzwanie ze względu na różnorodność metod i czasu ich wykonania.
 
