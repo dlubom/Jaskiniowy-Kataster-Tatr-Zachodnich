@@ -42,7 +42,9 @@ Začleníme do projektu aj vašu spoluprácu a zdieľanie vlastných meraní. Ko
 
 ### Zawartość projektu | Project Contents | Obsah projektu
 Aktualnie projekt zawiera dane dla następujących jaskiń:
+
 Currently, the project includes data for the following caves:
+
 V súčasnosti projekt obsahuje údaje pre nasledujúce jaskyne:
 
 - Czerwona Studzienka
