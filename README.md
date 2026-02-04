@@ -49,25 +49,32 @@ V súčasnosti projekt obsahuje údaje pre nasledujúce jaskyne:
 
 - Czerwona Studzienka
 - Dmuchawa
+- Dziura
 - Dziura pod Świstową Studnią
+- Dziura w Stole
 - Dziurka w Trawce
+- Gawra
 - Jaskinia Bańdzioch Kominiarski
 - Jaskinia Biała (Zimna)
+- Jaskinia Ciepła
+- Jaskinia Czarna
 - Jaskinia Goryczkowa
 - Jaskinia Harda
 - Jaskinia Kalacka
 - Jaskinia Kozia
+- Jaskinia Lejbusiowa
 - Jaskinia Lodowa Małołącka
 - Jaskinia Lodowa Miętusia
 - Jaskinia Mała w Mułowej
 - Jaskinia Małołącka
 - Jaskinia Marmurowa
 - Jaskinia Mylna
+- Jaskinia nad Beczką
+- Jaskinia nad Percią
 - Jaskinia Nova Kresanica
 - Jaskinia Obcasna Vyvieracka
 - Jaskinia Obłazkowa
 - Jaskinia pod Progiem
-- Jaskinia pod Śnieżną Studnią
 - Jaskinia pod Zamkiem (fragment)
 - Jaskinia Poszukiwaczy Skarbów (fragment)
 - Jaskinia przy Jędrusiowej Dziurze
@@ -77,21 +84,32 @@ V súčasnosti projekt obsahuje údaje pre nasledujúce jaskyne:
 - Jaskinia Śnieżna Studnia
 - Jaskinia Śpiących Rycerzy (fragment)
 - Jaskinia w Wielkiej Turni
+- Jaskinia w Zbójnickiej Turni
 - Jaskinia Wielka Śnieżna
+- Jaskinia Zawaliskowa Tomanowa
+- Jaskinia Ziobrowa
 - Kamienne Mleko
 - Koprowa Studnia
+- Lustrzany Korytarz
+- Meander w Małołąckim Siodle
 - Mnichowa Studnia Wyżnia
 - Ptasia Studnia
+- Rura przy Oknie
 - Schron pod Jędrusiową Dziurą
+- Smocza Jama
 - Studnia na Szlaku
 - Studnia przy Przechodzie
 - Studnia w Kazalnicy
+- Szczelina Miętusia
+- Szczelina nad Tomanową I
+- Szczelina nad Tomanową II
 - System Jaskinia za Siedmiu Progami-Jaskinia Pośrednia-Jaskinia Wysoka
 - Szara Studnia
-- Szczelina Miętusia
+- Upłazkowa
+- Wielka Litworowa
 - Wilczy Schron
 - Zaspałkowa Szczelina
+- Zbójnicka Piwnica
 - Zbójecka Dziura
-- Ziobrowa i Jaskinia pod Niżnią Zbójnicką Turnią
 - Zoska - Zagonna Studnia
 - Zwolińskiego
