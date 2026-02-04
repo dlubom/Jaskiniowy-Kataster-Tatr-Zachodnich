@@ -1,4 +1,4 @@
-﻿"Jaskiniowy Kataster Tatr" - v.0.24
+﻿"Jaskiniowy Kataster Tatr" - v.0.28
 
 Historia wersji:
 v0.00  (rok 2010-2011)  - projekt wstepny, brak koordynatora, dane haotyczne
@@ -32,6 +32,11 @@ v0.21 (21.10.2014) - Aktualizacja dla jaskini Hardej. Nowe pomiary.
 v0.22 (30.12.2014) - Dodano jaskinię Nova Kresanica (brak wsp. otworu). Dodano fragment jaskini Czarnej z ciągiem po pow. do otworu Zimnej.
 v0.23 (17.01.2015) - Dodano ciągi w Przemkowych Partiach. Dodano wsp. otworu jaskini Nova Kresanica.
 v0.24 (30.05.2015) - Dodano jaskinię Obcasna Vyvieracka, wprowadzono nowe formatowanie plików (Obcasna Vyvieracka, Kalacka)
+v0.25 (26.07.2015) - Dodano jaskinie Smocza Jama, rozpoczeto prace nad jaskinia Dziura
+v0.26 (08.06.2020) - Dodano jaskinie Raptawicka oraz Oblazkowa, utworzono System Jaskin Pawlikowskiego (Mylna + Oblazkowa + Raptawicka)
+v0.27 (20.06.2020) - Wykomentowano duplikaty pomiarow w wielu jaskiniach (Wielka Sniezna, Wielka Litworowa, Wysoka Za 7 Progami,
+		     Mala w Mulowej, Przy Przechodzie, Bandzioch Kominiarski, Zaspalkowa Szczelina, Zwolinskiego), poprawki struktury
+v0.28 (08.05.2024) - Aktualizacja README i dokumentacji, dodano nowe obrazy
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 Projekt "Jaskiniowy Kataster Tatr" ma celu zebranie jak najwiecej
