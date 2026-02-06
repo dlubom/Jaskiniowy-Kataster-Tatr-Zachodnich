@@ -1,5 +1,10 @@
 #UNITS meters order=dav
 #Units A=D V=D
+#prefix dziura
+#flag	1.0	/Dziura
+#date 2014-01-06
+#FIX  1.0   E19:56:33.600  N49:16:18.860   1020.0m
+;team F. Filar i M. Parczewski
 
 1.0	1.1	2.61333333333333	86.99	-14.42
 1.1	1.2	4.46666666666667	99.2933333333333	-15.1033333333333

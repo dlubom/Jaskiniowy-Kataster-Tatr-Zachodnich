@@ -10,6 +10,19 @@
 .NAME	JSURVEY
 .PATH	Jaskinie-poligony
 .STATUS	9
+.BOOK	Dolina ku Dziurze
+.NAME	DKDZ
+.PATH	Dolina ku Dziurze
+.STATUS	8
+.BOOK	Dziura
+.NAME	DZIURA
+.PATH	Dziura
+.STATUS	8
+.SURVEY	Dziura
+.NAME	KUDZIURA
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
 .BOOK	Jaskinie Slowacji
 .NAME	JS
 .PATH	Jaskinie Slowacji
