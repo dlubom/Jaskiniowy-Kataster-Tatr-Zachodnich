@@ -1,11 +1,25 @@
-#UNITS meters order=dav
-#Units A=D V=D
-#prefix dziura
-#flag	1.0	/Dziura
-#date 2014-01-06
-#FIX  1.0   E19:56:33.600  N49:16:18.860   1020.0m
-;team F. Filar i M. Parczewski
+#[
+CAVE_ID			T.B-14.01
+CAVE_NAME		"Jaskinia Dziura"
+SURVEY_ID		A1
+SURVEY_NAME		"Ciag glowny"
+UPDATE_DATE		2026-02-07
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"Dariusz Lubomski"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
 
+TEAM "F. Filar i M. Parczewski"
+#]
+
+#date 2014-01-06
+#note	:tb1401	/Jaskinia Dziura
+#flag	:tb1401	/Jaskinia Dziura
+#units meters order=DAV
+#units A=D V=D
+#prefix tb1401_A1
+1.35	:tb1401	0	0	0
 1.0	1.1	2.61333333333333	86.99	-14.42
 1.1	1.2	4.46666666666667	99.2933333333333	-15.1033333333333
 1.2	1.3	3.33	52.8233333333333	-3.08666666666667
