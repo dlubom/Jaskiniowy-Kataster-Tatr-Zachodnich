@@ -1,0 +1,17 @@
+#[
+CAVE_ID			"T.B-14.01"
+CAVE_NAME		"Jaskinia Dziura"
+UPDATE_DATE		2026-02-07
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"Polskie Towarzystwo Przyjaciol Nauk o Ziemi"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM  "unknown"
+INSTRUMENT "unknown"
+#]
+
+#FIX  tb1401   E19:56:33.600  N49:16:18.860   1020.0m
