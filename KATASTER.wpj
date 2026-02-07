@@ -13,11 +13,11 @@
 .BOOK	Dolina ku Dziurze
 .NAME	DKDZ
 .PATH	Dolina ku Dziurze
-.STATUS	9
+.STATUS	8
 .BOOK	Dziura
 .NAME	DZIURA
 .PATH	Dziura
-.STATUS	9
+.STATUS	8
 .SURVEY	Dziura meta
 .NAME	DZIUR_M
 .STATUS	8
