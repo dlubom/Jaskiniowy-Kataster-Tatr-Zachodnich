@@ -1,5 +1,5 @@
 #[
-CAVE_ID			"unknown"
+CAVE_ID			"T.E-08.05"
 CAVE_NAME		"Jaskinia Oblazkowa"
 UPDATE_DATE		2026-02-12
 PROJECT_NAME		"Kataster jaskin tatrzanskich"
@@ -7,15 +7,10 @@ COORDINATOR		"Dariusz Lubomski"
 COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
 REFERENCE_SYSTEM	"WGS84"
 COORDINATE_SYSTEM	"UTM"
-DATA_SOURCE		"Polskie Towarzystwo Przyjaciol Nauk o Ziemi"
+DATA_SOURCE		"Panstwowy Instytut Geologiczny, F. Filar"
 LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
-
-TEAM  "unknown"
-INSTRUMENT "unknown"
 #]
 
-#UNITS meters order=dav
-#Units A=D V=D
 #prefix OBLAZK
 #note	0.0	/Oblazkowa
 #flag	0.0	/Oblazkowa

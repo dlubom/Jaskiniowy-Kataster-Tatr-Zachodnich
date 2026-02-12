@@ -1,5 +1,5 @@
 #[
-CAVE_ID			"unknown"
+CAVE_ID			"T.E-08.04"
 CAVE_NAME		"Jaskinia Mylna"
 SURVEY_ID		BCWOKWYJ
 SURVEY_NAME		"Boczne Ciagi w okolicy Wyjscia"
@@ -7,15 +7,18 @@ UPDATE_DATE		2026-02-12
 PROJECT_NAME		"Kataster jaskin tatrzanskich"
 COORDINATOR		"Dariusz Lubomski"
 COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
-DATA_SOURCE		"unknown"
+DATA_SOURCE		"F. Filar"
 LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
 
-TEAM "unknown"
+TEAM "F. Filar" TODO: reszta zespolu??
+INSTRUMENT "DistoX2"
 #]
 
+#date 2009-01-01
 #UNITS meters order=dav
 #prefix ML
 #Units A=D V=D
+
 ;rownolegly korytarz do korytarza z lancuchami
 29	500	2.72	3	-8
 500	501	3.02	62	8
