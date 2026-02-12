@@ -1,0 +1,22 @@
+#[
+CAVE_ID			"unknown"
+CAVE_NAME		"Jaskinia Raptawicka"
+UPDATE_DATE		2026-02-12
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"Polskie Towarzystwo Przyjaciol Nauk o Ziemi"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM  "unknown"
+INSTRUMENT "unknown"
+#]
+
+#UNITS meters order=dav
+#Units A=D V=D
+#prefix RAPTAW
+#note	1.0	/Raptawicka
+#flag	1.0	/Raptawicka
+#fix	1.0	417177.39	5454744.9875	1141.15

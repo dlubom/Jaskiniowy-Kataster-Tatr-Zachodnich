@@ -1,3 +1,18 @@
+#[
+CAVE_ID			"unknown"
+CAVE_NAME		"Jaskinia Mylna"
+SURVEY_ID		WSZCZCB
+SURVEY_NAME		"Wielka Szczelina-CB"
+UPDATE_DATE		2026-02-12
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"unknown"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "unknown"
+#]
+
 #UNITS meters order=dav
 #prefix ML
 #Units A=D V=D

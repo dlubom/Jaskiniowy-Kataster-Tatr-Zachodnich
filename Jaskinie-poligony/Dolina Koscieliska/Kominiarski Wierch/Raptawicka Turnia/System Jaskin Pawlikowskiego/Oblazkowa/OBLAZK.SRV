@@ -1,9 +1,21 @@
+#[
+CAVE_ID			"unknown"
+CAVE_NAME		"Jaskinia Oblazkowa"
+SURVEY_ID		OBLAZK
+SURVEY_NAME		"Oblazkowa"
+UPDATE_DATE		2026-02-12
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"unknown"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "unknown"
+#]
+
 #UNITS meters order=dav
 #Units A=D V=D
 #prefix OBLAZK
-#note	0.0	/Oblazkowa
-#flag	0.0	/Oblazkowa
-#fix	0.0	417205.0875	5454709.36	1097
 
 ;Ciag glowny do Sali Koncowej
 
@@ -225,5 +237,4 @@ a2.2.1	-	2.48	316	69
 a2.2.1	-	2.60	137	-13
 a2.2.1	-	2.01	94	-18
 a2.2.1	-	1.15	136	12
-
 
