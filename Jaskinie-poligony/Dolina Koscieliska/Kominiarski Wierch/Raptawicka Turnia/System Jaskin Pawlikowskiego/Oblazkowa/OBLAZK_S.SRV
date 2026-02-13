@@ -14,10 +14,10 @@ TEAM "F. Filar, M. Parczewski, B. Chlipała"
 INSTRUMENT "DistoX2"
 #]
 
+#prefix OBLAZK
 #date 2013-12-01
 #UNITS meters order=dav
 #Units A=D V=D
-#prefix OBLAZK
 
 ;Ciag glowny do Sali Koncowej
 

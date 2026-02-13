@@ -14,9 +14,9 @@ TEAM "F. Filar" TODO: reszta zespolu??
 INSTRUMENT "DistoX2"
 #]
 
+#prefix ML
 #date 2009-01-01
 #UNITS meters order=dav
-#prefix ML
 #Units A=D V=D
 
 ;Zachodnia czesc Chorow
@@ -61,7 +61,7 @@ INSTRUMENT "DistoX2"
 225	231	3.01	294	25
 231	232	2.73	239	13
 232	207	6.17	25	-44
-;Ciasny Kominek w Chórach
+;Ciasny Kominek w Chorach
 206	236	3.16	95	35
 236	237	1.50	312	22
 237	238	2.43	286	13

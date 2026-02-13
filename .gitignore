@@ -8,4 +8,7 @@
 *.log
 *.lst
 
+#Claude
+.claude/settings.local.json
+
 
