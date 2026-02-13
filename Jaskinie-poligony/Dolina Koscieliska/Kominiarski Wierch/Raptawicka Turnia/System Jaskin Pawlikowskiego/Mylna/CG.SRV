@@ -1,8 +1,23 @@
-#Units meters order=dav
+#[
+CAVE_ID			"T.E-08.04"
+CAVE_NAME		"Jaskinia Mylna"
+SURVEY_ID		CG
+SURVEY_NAME		"Ciag Glowny"
+UPDATE_DATE		2026-02-12
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"F. Filar"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "Filip Filar"
+INSTRUMENT "DistoX2"
+#]
+
 #prefix ML
-#flag	0	/Mylna
-#note	0	/Mylna
-#fix	0	417179.14	5454690.67	1098
+#date 2009-01-01
+#Units meters order=dav
+
 0	1	7.4	231	4
 1	2	3.98	306	8
 2	3	2.06	266	4

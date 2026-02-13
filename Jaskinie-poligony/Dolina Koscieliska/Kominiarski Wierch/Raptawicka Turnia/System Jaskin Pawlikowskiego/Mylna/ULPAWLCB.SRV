@@ -1,6 +1,24 @@
-#UNITS meters order=dav
+#[
+CAVE_ID			"T.E-08.04"
+CAVE_NAME		"Jaskinia Mylna"
+SURVEY_ID		ULPAWLCB
+SURVEY_NAME		"Ulica Pawlikowskiego-CB"
+UPDATE_DATE		2026-02-12
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"F. Filar"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "F. Filar" TODO: reszta zespolu??
+INSTRUMENT "DistoX2"
+#]
+
 #prefix ML
+#date 2009-01-01
+#UNITS meters order=dav
 #Units A=D V=D
+
 ;Zachodnia czesc Chorow
 206	207	3.49	285	2
 207	208	7.54	306	-6
@@ -43,7 +61,7 @@
 225	231	3.01	294	25
 231	232	2.73	239	13
 232	207	6.17	25	-44
-;Ciasny Kominek w Chórach
+;Ciasny Kominek w Chorach
 206	236	3.16	95	35
 236	237	1.50	312	22
 237	238	2.43	286	13

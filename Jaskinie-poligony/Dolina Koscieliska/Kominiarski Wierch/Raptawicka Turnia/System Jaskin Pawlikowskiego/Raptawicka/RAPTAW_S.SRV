@@ -1,9 +1,24 @@
+#[
+CAVE_ID			"T.E-08.03"
+CAVE_NAME		"Jaskinia Raptawicka"
+SURVEY_ID		RAPTAW
+SURVEY_NAME		"Raptawicka"
+UPDATE_DATE		2026-02-12
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"F. Filar"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "F. Filar, M. Parczewski"
+INSTRUMENT "DistoX2"
+#]
+
+#prefix RAPTAW
+#date 2014-01-01
 #UNITS meters order=dav
 #Units A=D V=D
-#prefix RAPTAW
-#note	1.0	/Raptawicka
-#flag	1.0	/Raptawicka
-#fix	1.0	417177.39	5454744.9875	1141.15
+
 1.0	1.1	6.00	296.41	-59.5133333333333
 1.1	1.2	6.90333333333333	209.716666666667	-26.73
 1.2	1.3	6.14666666666667	195.06	-27.9466666666667

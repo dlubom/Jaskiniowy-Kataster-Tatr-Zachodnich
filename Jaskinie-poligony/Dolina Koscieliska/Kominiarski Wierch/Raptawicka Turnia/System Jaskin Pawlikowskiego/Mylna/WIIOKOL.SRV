@@ -1,6 +1,24 @@
-#UNITS meters order=dav
+#[
+CAVE_ID			"T.E-08.04"
+CAVE_NAME		"Jaskinia Mylna"
+SURVEY_ID		WIIOKOL
+SURVEY_NAME		"Wielka Izba i okolice"
+UPDATE_DATE		2026-02-12
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"F. Filar"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "F. Filar" TODO: reszta zespolu??
+INSTRUMENT "DistoX2"
+#]
+
 #prefix ML
+#date 2009-01-01
+#UNITS meters order=dav
 #Units A=D V=D
+
 ;ciag szlakiem do konca sali
 7	400	7.08	45	3
 400	401	3.70	21	-1
