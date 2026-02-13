@@ -55,9 +55,9 @@ V súčasnosti projekt obsahuje údaje pre nasledujúce jaskyne:
 - Dziurka w Trawce
 - Gawra
 - Jaskinia Bańdzioch Kominiarski
-- Jaskinia Biała (Zimna)
+- Jaskinia Biała (jako fragment jaskini Zimna)
 - Jaskinia Ciepła
-- Jaskinia Czarna
+- Jaskinia Czarna (fragment)
 - Jaskinia Goryczkowa
 - Jaskinia Harda
 - Jaskinia Kalacka
