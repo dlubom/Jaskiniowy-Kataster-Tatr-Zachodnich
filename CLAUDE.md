@@ -125,10 +125,42 @@ FROM	TO	DISTANCE	AZIMUTH	INCLINATION
 
 Compiled Walls outputs are git-ignored: `*.nta`, `*.ntn`, `*.ntv`, `*.nts`, `*.ntp`, `*.wrl`, `*.log`, `*.lst`. Only `.SRV` source data and `.wpj` project file are tracked.
 
+## Documentation Resources (`doc/`)
+
+When working with this project, Claude Code can use the following reference materials:
+
+### Walls Software Documentation
+- **`doc/Walls_manual.md`** — Markdown version of the Walls cave survey software manual. Use this for details on `.SRV` file syntax, directives (`#fix`, `#units`, `#date`, etc.), project file structure, and compilation options.
+- **`doc/Walls_manual.pdf`** — Original PDF manual (same content as the markdown version).
+- **Walls source code** — For advanced or edge-case questions about Walls behavior, the source code is available at https://github.com/wallscavesurvey/walls
+
+### Polish Cave Registry Data (PIG)
+- **`doc/jaskinie_polski_pig_dump.jsonl`** — Full JSONL dump from the Polish Geological Institute cave registry (https://jaskiniepolski.pgi.gov.pl/). Each line is a JSON object with comprehensive cave data.
+
+**Use this file when:**
+- Adding new caves — search for existing official data (coordinates, dimensions, description)
+- Verifying or correcting entrance coordinates (`latitude`, `longitude`, `absolute_height_masl`)
+- Finding cave metadata (inventory number, region, length, depth, denivelation)
+- Researching documentation history (who surveyed, when, survey dates)
+- Finding alternative cave names (`other_names` field)
+- Checking geographic location and access descriptions
+
+**Example: Searching for cave "Dziura" (T.B-14.01)**
+```bash
+grep -i "T\.B-14" doc/jaskinie_polski_pig_dump.jsonl
+```
+Returns data including:
+- Official name: "Dziura" with aliases "Jaskinia Strążyska, Zbójnicka Jama"
+- Coordinates: 49.27°N, 19.92°E, 1020 m n.p.m.
+- Dimensions: length 175m, depth 15.6m, denivelation 40.4m
+- Location: Dolina ku Dziurze, TPN
+- Documentation history: survey dates and authors
+
 ## Workflow for Adding a New Cave
 
-1. Create a directory under the appropriate valley in `Jaskinie-poligony/`
-2. Create `.SRV` file(s) with metadata block and survey data (newer format: separate `_M.SRV` for coordinates and `_S.SRV` for measurements)
-3. Add `.BOOK`/`.SURVEY` entries to `KATASTER.wpj` referencing the new files
-4. Update `INFO.txt` with a new version entry
-5. All new data should be coordinated through the project coordinator (darek.lubomski@gmail.com)
+1. **Research the cave** in `doc/jaskinie_polski_pig_dump.jsonl` to find official coordinates, dimensions, and documentation history
+2. Create a directory under the appropriate valley in `Jaskinie-poligony/`
+3. Create `.SRV` file(s) with metadata block and survey data (newer format: separate `_M.SRV` for coordinates and `_S.SRV` for measurements)
+4. Add `.BOOK`/`.SURVEY` entries to `KATASTER.wpj` referencing the new files
+5. Update `INFO.txt` with a new version entry
+6. All new data should be coordinated through the project coordinator (darek.lubomski@gmail.com)
