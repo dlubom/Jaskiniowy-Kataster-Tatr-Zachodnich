@@ -1,0 +1,16 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -128.0 -128.0 1387.84 994.14
+##XTHERION## xth_me_area_zoom_to 200
+##XTHERION## xth_me_image_insert {469.92 1 1.0} {616.247 1a@gorickova1.indexext} ../output/gorickova_ext.xvi 0 {}
+
+
+
+scrap gor1_ext -projection [elevation 0] -scale [0 0 1600 0 0.0 0.0 40.64 0.0 m]
+
+point 469.92 616.247 station -name 1a@gorickova1
+
+point 413.39 649.607 station -name 1@gorickova1
+
+endscrap
+
+

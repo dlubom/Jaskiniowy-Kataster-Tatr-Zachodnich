@@ -1,0 +1,71 @@
+encoding  utf-8
+survey index \
+-title "Jaskinia Goryczkowa" 
+
+input   data/g1.th
+input   data/g2.th
+input   data/g3.th
+input   data/g4.th
+input   data/g5.th
+input   data/gorickova1.th2
+input   data/gorickova2.th2
+input   data/gorickova3.th2
+input   data/gorickova4.th2
+
+centerline
+cs UTM34
+fix 1@g1 425237 5455897 1263
+equate 1k@g1 39@g2
+equate 37@g3 37@g2
+equate 36@g3 36@g2
+equate 35@g2 35@g4
+equate 39@g3 39@g4
+equate 1@g2 1@g4
+equate 4@g2 4@g4
+equate 8@g2 8@g4
+equate 35@g2 35@g5
+equate 43@g4 43@g5
+equate 8@g2 8@g5
+equate 6@g3 6@g5
+equate 7a@g3 7a@g5
+equate 4@g2 4@g5
+equate 24@g2 24@g5
+endcenterline
+
+
+join gor1 gor2
+join gor1 gor5
+join gor7 gor8
+join gor6 gor7
+join gor5 gor10
+
+map gori
+gor4
+break
+gor1
+break
+gor2
+break
+gor3
+break
+gor10
+break
+gor5
+break
+gor7
+break
+gor8
+break
+gor11
+break
+gor6
+break
+gor9
+gor13
+break
+gor12
+endmap
+
+
+endsurvey
+
