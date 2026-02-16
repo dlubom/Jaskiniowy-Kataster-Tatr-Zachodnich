@@ -1,17 +1,17 @@
 #[
-CAVE_ID			OV
+CAVE_ID			"OV"
 CAVE_NAME		"Obcasna Vyvieracka"
 SURVEY_ID		A1
 SURVEY_NAME		"Ciag glowny"
-UPDATE_DATE		2015-05-30
+UPDATE_DATE		2025-02-14
 PROJECT_NAME		"Kataster jaskin tatrzanskich"
 COORDINATOR		"Dariusz Lubomski"
 COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
 DATA_SOURCE		"Oblastna skupina SSS Ruzomberok"
 LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
 
-team unknown
-instrument unknown
+TEAM			"unknown"
+INSTRUMENT		"unknown"
 #]
 #date 1979-08-13
 
