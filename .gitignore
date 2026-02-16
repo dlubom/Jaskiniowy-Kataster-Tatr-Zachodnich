@@ -11,4 +11,5 @@
 #Claude
 .claude/settings.local.json
 
-
+#macOS - pliki metadanych folderow
+.DS_Store

@@ -1,17 +1,17 @@
 #[
-CAVE_ID			OV
+CAVE_ID			"OV"
 CAVE_NAME		"Obcasna Vyvieracka"
 SURVEY_ID		A2
 SURVEY_NAME		"Ciag syfonalny"
-UPDATE_DATE		2015-05-30
+UPDATE_DATE		2025-02-14
 PROJECT_NAME		"Kataster jaskin tatrzanskich"
 COORDINATOR		"Dariusz Lubomski"
 COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
 DATA_SOURCE		"Dominik Graczyk"
 LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
 
-team Dominik 'Honzo' Graczyk
-instrument unknown-diving
+TEAM			"Dominik 'Honzo' Graczyk"
+INSTRUMENT		"unknown-diving"
 #]
 #prefix OV_A2
 #date 2014-11-16

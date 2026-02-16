@@ -1,0 +1,38 @@
+W dniu 9 maja 2015 Honzo:
+
+poniżej pomiary syfonu na końcu jaskini w formacie od końca jaskini do punktu wejścia do wody (powrotne):
+Azymut; Głębokość; Długość; Uwagi - w nawiasie inny azymut-bardziej pasujący- bo nie zgadzał mi się pomiar z tym co zapamiętałem)
+220;10,5;3
+140;9;3
+290(110?);8,3;4
+70;6,8;5;Duża sala
+60;8;6;lekki zakręt w prawo
+120;9;4;lekki zakręt w prawo
+250 (70?); 9,6;5
+60;8,6;10;przegięcie w poziomie w połowie-górka
+60;8,6;7
+80;10,5;4
+90;10,5;9
+110;8,8;3
+90;7,2;2
+75;7;8
+60;8,5;5
+80;10,5;6
+90;11,7;5
+100;11;8
+135;8,5;1,5
+105;7,5;6
+100;5,5;8 i lekkim zakrętem w prawo do powierzchni wody
+od jeziorka azymut 150 na plażę i prożek
+
+Potem:
+ostatni pomiar: poręczówka szła na azymut 100, ale ściana skręcała w prawo i po wynurzeniu w jeziorku plaża była na az.150 :)
+pomiary w suchych partiach pewnie były robione od otworu w głąb, moje od głębi do otworu.
+
+Potem:
+współrzędne otworu:
+x-1177998,28
+y-356750,58
+z-1453,08
+tu su suradnice v systeme JTSK,
+
