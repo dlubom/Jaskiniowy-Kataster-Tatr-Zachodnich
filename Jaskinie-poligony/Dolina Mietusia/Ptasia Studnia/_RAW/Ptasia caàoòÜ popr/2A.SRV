@@ -1,0 +1,59 @@
+#DATE 2004-06-30
+#UNITS meters order=DAV
+#Units A=D V=D
+#Fix b1 0 0 0 / Ptasia
+b1	b2	4.4 	128	-43
+b2	b3	18.6	0	-90
+b3	b4	4.6	0	-90
+b4	b5	40.45	0	-90
+b5	b6	8.1	254	-10
+b6	b7	5.35	216	-22
+b7	b8	6.2	298	6
+b8	b9	29.9	0	-90
+b9	b10	4.3	220	-9
+b10	b11	7	228	-30
+b11	b12	15.6	224	-61
+b12	b13	5.7	172	-38
+b13	b14	3.7	247	-26
+b14	b15	2.1	208	-55
+b15	b16	9.4	0	-90
+b16	b17	11.3	272	-16
+b17	b18	19	270	-18
+b18	b19	7.6	338	-43	;b18 punkt 12 w sali Dantego
+b18	b18a	4.5	44	0
+b18a	b18b	12.8	0	90
+b18b	b18c	18.9	0	90
+b18c	b18d	8.5	0	90
+b18d	b18e	12.7	0	90
+b18e	b18f	2.1	50	40
+b18e	b18A	2.55	248	28
+b18A	b18B	4.8	250	-10 	; salka z Fortepianem
+b18f	b18g	7.45	250	64
+b18g	b18h	4.8	70	60	; od b18h Meander wiadomo dokad
+b18h 	B1	5.75	59	0
+B1 	B2	3.8	164	-15
+B2	B3	5.9	67	-7
+B3	B4	6.55	0	-90
+B4	B5	1.1	312	5
+B5	B6	7.3	138	-50
+B6	B7	1.8	250	-10
+B7	B8	9.5	0	-90
+B8	B9	1	279	0
+B9	B10	42	0	-90
+b18h	b18i	13.55	20	68
+b18i	b18j	11.6	0	90
+#Note b18j Strop sali dantego
+b19	b20	7.5	63	-54
+b20	b21	37.65	0	-90
+b21	b22	41.35	0	-90
+b22	b23	2.5	127	19	;dno studni TATY
+#Note b23 Dno Studni Taty
+b23	b24	2	201	-44
+b24	b25	7.8	145	-81
+b25	b26	19.7	229	-14
+b26	b26a	4.05	212	0
+b26	b27	3.9	300	-30
+b27	b28	2.5	342	-59
+b28	b29	7	360	-4
+#Note b29 Syfon
+#Note b26 Sala Trójkatna
