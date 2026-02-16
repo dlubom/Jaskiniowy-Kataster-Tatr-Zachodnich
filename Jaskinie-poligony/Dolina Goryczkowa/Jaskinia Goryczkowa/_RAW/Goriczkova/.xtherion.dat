@@ -1,0 +1,18 @@
+set xth(ctrl,cp,datlist) {}
+xth_cp_data_tree_insert 1 {} 0   "" "" "length: 605.16m (surface 0.00m, duplicated 0.00m)\nvertical range: 31.29m (from 7d@g5.index at 1268.81m to 19@g2.index at 1237.52m)\nnorth-south range: 34.62m (from 1g@g1.index at 5455903.75m to 15a@g2.index at 5455869.12m)\neast-west range: 53.55m (from 4c@g1.index at 425273.34m to 14a@g2.index at 425219.79m)\nnumber of shots: 183\nnumber of stations: 185"
+xth_cp_data_tree_insert 9 1 1 index index "Jaskinia Goryczkowa" "Jaskinia Goryczkowa" "length: 605.16m (surface 0.00m, duplicated 0.00m)\nvertical range: 31.29m (from 7d@g5.index at 1268.81m to 19@g2.index at 1237.52m)\nnorth-south range: 34.62m (from 1g@g1.index at 5455903.75m to 15a@g2.index at 5455869.12m)\neast-west range: 53.55m (from 4c@g1.index at 425273.34m to 14a@g2.index at 425219.79m)\nnumber of shots: 183\nnumber of stations: 185"
+xth_cp_data_tree_insert 11 9 2 g1 g1.index "" "" "length: 117.49m (surface 0.00m, duplicated 0.00m)\nvertical range: 17.78m (from 1d@g1.index at 1263.79m to 4c@g1.index at 1246.01m)\nnorth-south range: 15.29m (from 1g@g1.index at 5455903.75m to 3i@g1.index at 5455888.45m)\neast-west range: 36.34m (from 4c@g1.index at 425273.34m to 1@g1.index at 425237.00m)\nnumber of shots: 42\nnumber of stations: 41"
+xth_cp_data_tree_insert 15 9 2 g2 g2.index "" "" "length: 224.45m (surface 0.00m, duplicated 0.00m)\nvertical range: 26.33m (from 119@g2.index at 1263.85m to 19@g2.index at 1237.52m)\nnorth-south range: 23.22m (from 39@g2.index at 5455892.35m to 15a@g2.index at 5455869.12m)\neast-west range: 37.86m (from 30a@g2.index at 425257.65m to 14a@g2.index at 425219.79m)\nnumber of shots: 56\nnumber of stations: 56"
+xth_cp_data_tree_insert 19 9 2 g3 g3.index "" "" "length: 51.08m (surface 0.00m, duplicated 0.00m)\nvertical range: 9.11m (from 7b@g3.index at 1266.65m to 6@g3.index at 1257.55m)\nnorth-south range: 7.42m (from 5b@g3.index at 5455889.06m to 5g@g3.index at 5455881.64m)\neast-west range: 24.14m (from 5k@g3.index at 425270.35m to 36@g3.index at 425246.21m)\nnumber of shots: 18\nnumber of stations: 20"
+xth_cp_data_tree_insert 23 9 2 g4 g4.index "" "" "length: 149.86m (surface 0.00m, duplicated 0.00m)\nvertical range: 20.07m (from 35@g4.index at 1262.08m to 52a@g4.index at 1242.01m)\nnorth-south range: 11.97m (from 59a@g4.index at 5455884.46m to 51a@g4.index at 5455872.49m)\neast-west range: 38.81m (from 55@g4.index at 425270.42m to 8@g4.index at 425231.61m)\nnumber of shots: 51\nnumber of stations: 48"
+xth_cp_data_tree_insert 27 9 2 g5 g5.index "" "" "length: 62.28m (surface 0.00m, duplicated 0.00m)\nvertical range: 25.78m (from 7d@g5.index at 1268.81m to 8@g5.index at 1243.03m)\nnorth-south range: 13.26m (from 7d@g5.index at 5455885.37m to 35d@g5.index at 5455872.11m)\neast-west range: 38.33m (from 6a@g5.index at 425269.94m to 8@g5.index at 425231.61m)\nnumber of shots: 16\nnumber of stations: 20"
+xth_cp_data_tree_create
+set xth(ctrl,cp,maplist) {}
+xth_cp_map_tree_insert projection 0 p1 {} 0 plan {} {} {}
+xth_cp_map_tree_insert projection 0 p2 {} 0 none {} {} {}
+xth_cp_map_tree_insert map 1 570X1 p1 1 gori gori@index "" ""
+xth_cp_map_tree_create
+xth_cp_comp_stat 605 20
+set xth(th_exit_state) 2
+set xth(th_exit_number) 1361966096
+

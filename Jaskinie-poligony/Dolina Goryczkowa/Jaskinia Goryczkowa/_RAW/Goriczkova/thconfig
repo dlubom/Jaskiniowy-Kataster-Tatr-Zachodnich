@@ -1,0 +1,83 @@
+encoding  utf-8
+source index.th
+#source indexext.th
+#select gori0@index
+
+layout polygon
+scale 1 90
+#color map-fg [50 50 50]
+#color map-bg 85
+#color map-fg altitude
+grid bottom
+#debug station-names 
+#survey-level 1
+language pl
+legend on
+legend-width 18 cm
+scale-bar 10 m
+map-header 18 42 s
+#statistics topo-length on
+#symbol-hide group all
+#symbol-show line wall
+#symbol-show line label
+
+code metapost
+fonts_setup(16,16,16,16,16);
+endcode
+
+#code metapost
+#     u:=50pt;
+#   endcode
+
+
+code tex-map
+\legendcontent={%
+  \hsize=\legendwidth
+  \ifnortharrow\vbox to 0pt{\line{\hfil\northarrow}\vss}\fi
+  \edef\tmp{\the\cavename} \ifx\tmp\empty \else
+    {\size[32]\the\cavename} \vskip1cm
+  \fi
+  \ifscalebar\scalebar\vskip1cm\fi
+  {\rightskip=0pt plus 3em\parskip=3bp
+    \edef\tmp{\the\comment} \ifx\tmp\empty \else
+    {\size[16]\the\comment} \par\medskip
+    \fi
+    \everypar{\hangindent=2em\hangafter=1}
+    \edef\tmp{\the\cavelength} \ifx\tmp\empty \else
+      {\size[16]\si\the\cavelengthtitle: \ss\the\cavelength\par}
+    \fi
+    \edef\tmp{\the\cavedepth} \ifx\tmp\empty \else
+      {\size[16]\si\the\cavedepthtitle: \ss\the\cavedepth\par}
+    \fi
+    \edef\tmp{\the\exploteam} \ifx\tmp\empty \else
+      {\size[16]\si\the\explotitle:
+\ss\the\exploteam\quad\si\the\explodate\par}
+    \fi
+    \edef\tmp{\the\topoteam} \ifx\tmp\empty \else
+      {\size[16]\si\the\topotitle: \ss\the\topoteam\quad\si\the\topodate\par}
+    \fi
+    \edef\tmp{\the\cartoteam} \ifx\tmp\empty \else
+      {\size[16]\si\the\cartotitle:
+\ss\the\cartoteam\quad\si\the\cartodate\par}
+    \fi
+    \edef\tmp{\the\copyrights} \ifx\tmp\empty \else
+      {\size[16]\ss\the\copyrights\par}
+    \fi
+  }
+  \formattedlegend
+}
+
+  code metapost
+  def a_water (expr p) =
+    T:=identity;
+    thfill p withcolor (0.0, 0.5, 1.0);
+  enddef;  
+
+endlayout
+
+export map -o output/gorickova_pl.pdf -layout polygon
+#export map -o output/gorickova.xvi -fmt xvi
+#export map -projection [elevation 0] -o output/gorickova_ext.pdf -layout polygon
+#export map -projection [elevation 0] -o output/gorickova_ext.xvi -fmt xvi
+#export model -o output/gorickova.lox -wall-source all
+#export map -o output/gorickova.kml

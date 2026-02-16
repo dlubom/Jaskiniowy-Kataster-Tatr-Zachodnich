@@ -1,0 +1,26 @@
+encoding  utf-8
+survey indexext \
+-title "Goryczkova"
+
+input   data/gorickova1.th
+input   data/gorickova2.th
+input   data/gorickova3.th
+input   data/gorickova4.th
+input   data/gorickova1_ext.th2
+centerline
+
+fix 1@gorickova1 0 0 1250
+equate 1k@gorickova1 39@gorickova2
+equate 37@gorickova3 37@gorickova2
+equate 36@gorickova3 36@gorickova2
+equate 35@gorickova2 35@gorickova4
+equate 39@gorickova3 39@gorickova4
+equate 1@gorickova2 1@gorickova4
+equate 4@gorickova2 4@gorickova4
+equate 8@gorickova2 8@gorickova4
+endcenterline
+
+
+
+endsurvey
+

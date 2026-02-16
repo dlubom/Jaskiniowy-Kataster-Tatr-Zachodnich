@@ -121,6 +121,14 @@ FROM	TO	DISTANCE	AZIMUTH	INCLINATION
 - Polish diacritical marks are **removed** from file/directory names but may appear in metadata
 - Files use **no BOM** encoding; some legacy files have encoding artifacts in Polish characters
 
+### Raw Source Files (`_RAW/`)
+
+Cave directories contain (or will contain) a `_RAW/` subdirectory with original source files provided by survey authors. This serves two purposes:
+1. **Archival** — preserving original data in its native format (Therion, Survex, DistoX exports, scanned notes, etc.)
+2. **Verification** — allowing later validation of the converted `.SRV` measurements against the original source data
+
+The `_RAW/` contents are not processed by Walls but are tracked in git for reference.
+
 ## .gitignore
 
 Compiled Walls outputs are git-ignored: `*.nta`, `*.ntn`, `*.ntv`, `*.nts`, `*.ntp`, `*.wrl`, `*.log`, `*.lst`. Only `.SRV` source data and `.wpj` project file are tracked.
@@ -155,6 +163,13 @@ Returns data including:
 - Dimensions: length 175m, depth 15.6m, denivelation 40.4m
 - Location: Dolina ku Dziurze, TPN
 - Documentation history: survey dates and authors
+
+## Git Commits
+
+When creating commits in this project:
+- **Do NOT add `Co-Authored-By` lines** — commit messages should not include Claude Code attribution
+- Use Polish language for commit messages when appropriate
+- Keep messages concise and descriptive
 
 ## Workflow for Adding a New Cave
 
