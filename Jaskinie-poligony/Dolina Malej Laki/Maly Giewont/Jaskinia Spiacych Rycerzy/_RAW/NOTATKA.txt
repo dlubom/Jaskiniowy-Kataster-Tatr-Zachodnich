@@ -1,0 +1,17 @@
+Jaskinia Spiacych Rycerzy - pliki zrodlowe
+============================================
+
+Zrodlo danych: Piotr Sienkiewicz <psienkiew@interia.pl>
+Data otrzymania: 2013-11-29
+Wprowadzono do projektu: v0.13 (2013-12-08)
+
+Zespol pomiarowy: P. Sienkiewicz, M. Kurylowicz
+Data pomiaru: ok. 2009 (wg korespondencji: "4 lata temu, miesiaca nie pamietam" - liczone od 2013)
+
+Uwagi:
+- Pomiar obejmuje tylko fragment jaskini: od otworu do dwoch okienek w glownej sali.
+- Brak pomierzonego ciagu od Sali do zawaliska i dolnych partii.
+
+Pliki:
+- Jaskinia Spiacych Rycerzy.csp - oryginalny plik pomiarowy
+- out2.txt - eksport danych z pliku CSP (format tabelaryczny)
