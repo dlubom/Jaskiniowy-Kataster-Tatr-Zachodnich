@@ -1,0 +1,15 @@
+Szczelina Mietusia - pliki zrodlowe
+=====================================
+
+Zrodlo danych: Piotr Sienkiewicz <psienkiew@interia.pl>
+Data otrzymania: 2013-11-29
+Wprowadzono do projektu: v0.13 (2013-12-08)
+
+Zespol pomiarowy: A. Brzoza, P. Sienkiewicz
+Data pomiaru: 2011-11-05
+
+Wspolrzedne otworu: z artykulu
+
+Pliki:
+- Jaskinia Szczelina Mietusia pomiary.doc - oryginalny plik z pomiarami (MS Word, autor: sienkiew, 2011-11-19)
+- Szczelina Mietusia - artykul.pdf - artykul/opracowanie dotyczace jaskini
