@@ -7,12 +7,12 @@ jp2	jp3	7.20	232.63	16.12
 jp3	jp200	5.22	185.60	11.04
 jp200	jp201	9.50	0.00	90.00
 jp3	jp4	3.57	261.12	24.85
-jp4	jp5	7.50	0.00	90.00 ; pomiar powtórzony w PRZYPRZE.SRV:12
-;jp5	jp6	5.74	74.57	31.63 ; pomiar powtórzony w PRZYPRZE.SRV:15
-;jp4	jp5	7.50	0.00	90.00 ; pomiar powtórzony w PRZYPRZE.SRV:10
+jp4	jp5	7.50	0.00	90.00 ; pomiar powtorzony w PRZYPRZE.SRV:12
+;jp5	jp6	5.74	74.57	31.63 ; pomiar powtorzony w PRZYPRZE.SRV:15
+;jp4	jp5	7.50	0.00	90.00 ; pomiar powtorzony w PRZYPRZE.SRV:10
 jp5	jp300	2.69	90.00	68.20
 jp5	jp400	3.64	90.00	74.05
-jp5	jp6	5.74	74.57	31.63 ; pomiar powtórzony w PRZYPRZE.SRV:11
+jp5	jp6	5.74	74.57	31.63 ; pomiar powtorzony w PRZYPRZE.SRV:11
 jp6	jp30	6.68	7.02	36.04
 jp6	jp40	6.69	52.22	75.88
 jp6	jp50	5.85	311.99	62.60
