@@ -14,7 +14,7 @@ TEAM "F. Filar, M. Parczewski, B. Chlipala"
 INSTRUMENT "DistoX2"
 #]
 
-#prefix OBLAZK
+#prefix OBLAZ
 #date 2013-12-01
 #UNITS meters order=dav
 #Units A=D V=D
