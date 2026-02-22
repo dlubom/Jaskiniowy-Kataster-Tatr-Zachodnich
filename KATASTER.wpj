@@ -170,7 +170,7 @@
 .BOOK	Dolina Koscieliska
 .NAME	D-KOSCIE
 .PATH	Dolina Koscieliska
-.STATUS	9
+.STATUS	8
 .BOOK	Organy
 .NAME	ORGANY
 .PATH	Organy
@@ -255,7 +255,7 @@
 .BOOK	Kominiarski Wierch
 .NAME	KMWIERCH
 .PATH	Kominiarski Wierch
-.STATUS	9
+.STATUS	8
 .BOOK	Bandzioch Kominiarski
 .NAME	BANDZK
 .PATH	Raptawicka Turnia\..\Bandzioch Kominiarski
@@ -397,11 +397,11 @@
 .BOOK	Raptawicka Turnia
 .NAME	RAPTAWT
 .PATH	Raptawicka Turnia
-.STATUS	9
+.STATUS	8
 .BOOK	System Jaskin Pawlikowskiego
 .NAME	SJP
 .PATH	System Jaskin Pawlikowskiego
-.STATUS	9
+.STATUS	8
 .BOOK	Powierzchnia
 .NAME	SJP_POW
 .PATH	Powierzchnia
@@ -413,7 +413,7 @@
 .BOOK	Mylna
 .NAME	MYLNA
 .PATH	Mylna
-.STATUS	544778
+.STATUS	544776
 .SURVEY	Mylna meta
 .NAME	MYLNA_M
 .STATUS	8
