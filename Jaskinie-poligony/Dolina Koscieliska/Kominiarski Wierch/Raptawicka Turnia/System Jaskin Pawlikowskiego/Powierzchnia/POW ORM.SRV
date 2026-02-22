@@ -9,9 +9,13 @@ REFERENCE_SYSTEM	"WGS84"
 COORDINATE_SYSTEM	"UTM"
 DATA_SOURCE		"Panstwowy Instytut Geologiczny, F. Filar"
 LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "F. Filar"
+INSTRUMENT "DistoX2"
 #]
 
 #prefix SJP_POW
+;TODO: #date
 #UNITS meters order=dav
 #Units A=D V=D
 
