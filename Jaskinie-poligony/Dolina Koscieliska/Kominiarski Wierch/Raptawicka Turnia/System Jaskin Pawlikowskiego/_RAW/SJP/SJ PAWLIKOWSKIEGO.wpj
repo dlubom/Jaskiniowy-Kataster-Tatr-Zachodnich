@@ -1,0 +1,91 @@
+;WALLS Project file
+.BOOK	SYSTEM JASKIN PAWLIKOWSKIEGO
+.NAME	SJPAWL
+.STATUS	3
+.SURVEY	powierzchnia
+.NAME	POW ORM
+.STATUS	10
+.BOOK	MYLNA
+.NAME	MYLNA
+.PATH	Dane
+.STATUS	9
+.BOOK	Ciagi przy Bialej Ulicy
+.NAME	CPBU
+.STATUS	8
+.SURVEY	Ciagi przy Bialej Ulicy
+.NAME	CPBUL
+.PATH	Mylna
+.STATUS	8
+.ENDBOOK
+.BOOK	Ciagi boczne w polnocnej czesci
+.NAME	CBWPOLCZ
+.STATUS	8
+.SURVEY	Boczne ciagi w okolicy Wyjscia
+.NAME	BCWOKWYJ
+.PATH	Mylna
+.STATUS	8
+.ENDBOOK
+.BOOK	Wielka Izba i Skosna Komora
+.NAME	WIISK
+.STATUS	8
+.SURVEY	Skosna Komora i okolice
+.NAME	SKIOKOL
+.PATH	Mylna
+.STATUS	8
+.SURVEY	Wielka Izba i okolice
+.NAME	WIIOKOL
+.PATH	Mylna
+.STATUS	8
+.ENDBOOK
+.BOOK	Boczny Ciag do Chorow
+.NAME	BCDCH
+.STATUS	8
+.SURVEY	Boczny Ciag do Chorow
+.NAME	BCDCHCG
+.PATH	Mylna
+.STATUS	8
+.ENDBOOK
+.BOOK	Ciag Glowny
+.NAME	MCG
+.PATH	Mylna
+.STATUS	8
+.SURVEY	Ciag Glowny
+.NAME	CG
+.STATUS	8
+.SURVEY	drobne odga³êzienia od Ciagu Glownego
+.NAME	BOKI_CG
+.STATUS	8
+.ENDBOOK
+.BOOK	Ulica Pawlikowskiego
+.NAME	ULPAWL
+.STATUS	8
+.SURVEY	Ulica Pawlikowskiego-CG
+.NAME	ULPAWLCG
+.PATH	Mylna
+.STATUS	8
+.SURVEY	Ulica Pawlikowskiego-CB
+.NAME	ULPAWLCB
+.PATH	Mylna
+.STATUS	8
+.ENDBOOK
+.BOOK	Wielka Szczelina
+.NAME	WLKSZCZ
+.PATH	Mylna
+.STATUS	8
+.SURVEY	Wielka Szczelina-CG
+.NAME	WSZCZCG
+.STATUS	8
+.SURVEY	Wielka Szczelina-CB
+.NAME	WSZCZCB
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
+.SURVEY	Raptawicka
+.NAME	RAPTAW
+.PATH	Dane
+.STATUS	8
+.SURVEY	Oblazkowa
+.NAME	OBLAZK
+.PATH	Dane
+.STATUS	8
+.ENDBOOK

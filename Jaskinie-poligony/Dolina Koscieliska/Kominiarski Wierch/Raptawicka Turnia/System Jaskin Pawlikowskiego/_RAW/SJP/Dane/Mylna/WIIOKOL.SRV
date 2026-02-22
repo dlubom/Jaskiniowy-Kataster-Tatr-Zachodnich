@@ -1,0 +1,33 @@
+#UNITS meters order=dav
+#Units A=D V=D
+;ciag szlakiem do konca sali
+7	400	7.08	45	3
+400	401	3.70	21	-1
+401	402	4.90	25	17
+402	403	2.16	336	8
+403	404	12.32	28	14
+404	405	2.19	36	42
+405	406	1.88	31	20
+406	407	1.28	55	-18
+407	408	2.00	64	2
+;komin przy koncu Wielkiej Izby
+404	409	7.87	240	59
+409	410	6.29	336	66
+410	411	4.28	359	59
+;dojscie do Wielkiej Izby od strony Ulicy Pawlikowskiego
+8	415	6.44	55	4
+415	416	5.75	35	2
+416	417	3.33	49	14
+417	403	1.61	54	25
+;polaczenie przez szczeline
+415	400	4.90	114	-1
+;petla do sali przed Biala Ulica
+415	418	3.01	335	-31
+418	419	4.18	302	-5
+419	420	4.63	279	1
+420	421	4.87	238	12
+421	10	4.55	227	-1
+;korytarz w kierunku Wielkiej Izby
+419	422	8.31	54	1
+422	423	1.80	33	2
+423	424	3.80	79	20
