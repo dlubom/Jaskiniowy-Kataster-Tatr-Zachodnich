@@ -118,7 +118,9 @@ FROM	TO	DISTANCE	AZIMUTH	INCLINATION
 - **Cave IDs** follow the pattern `T.{region}-{number}.{sub}` (e.g., `T.C-16.01` for Jaskinia Kalacka, `T.B-14.01` for Dziura)
 - **Station naming**: `{cave_id}_{survey_id}` prefix (e.g., `tb1401_A1` for Dziura survey A1)
 - **Directory hierarchy**: Valley → Mountain/Region → Cave → Survey files
-- Polish diacritical marks are **removed** from file/directory names but may appear in metadata
+- Polish and Slovak diacritical marks are **not allowed** in `.wpj` paths, `.SRV` filenames, or survey text content used by Walls
+- Use ASCII equivalents instead (e.g., `ą->a`, `ć->c`, `ł->l`, `ó->o`, `ś->s`, `ż->z`, `č->c`, `š->s`, `ť->t`, `ž->z`)
+- Keep `_RAW/` files untouched as archival originals, even if they contain non-ASCII text
 - Files use **no BOM** encoding; some legacy files have encoding artifacts in Polish characters
 
 ### Raw Source Files (`_RAW/`)
