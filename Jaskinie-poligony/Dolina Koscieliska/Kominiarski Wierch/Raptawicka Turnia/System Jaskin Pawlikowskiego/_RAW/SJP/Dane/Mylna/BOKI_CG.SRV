@@ -1,0 +1,46 @@
+#UNITS meters order=dav
+#Units A=D V=D
+#FIX	207	-64.6715015384293	-23.5130219788169	1.45763417567209
+#FIX	208	-70.7380733027464	-19.105399592844	0.669489562633982
+#FIX	209	-75.176945450717	-16.7452094058286	1.46574098968876
+#FIX	210	-78.0507611100273	-22.9081269754883	6.97229441137484
+#FIX	211	-73.5520875111197	-23.620646875654	6.08694067282767
+
+;1 bok kolo wejscia
+0	40	5.69	324	21
+;2 bok kolo wejscia
+2	41	2.8	15	8
+;kominek w Bialej Ulicy
+13	42	6.41	328	66
+;boczna petla w Bialej Ulicy
+15	43	8.1	29	9
+43	44	2.14	11	-59
+44	18	5	327	-20
+43	45	1.29	129	3
+45	46	2.67	54	3
+;petla przy Oknach Pawlikowskiego
+1	47	11.15	215	2
+47	48	3.05	211	11
+48	49	4.60	291	-9
+49	50	11.74	32	0.5
+50	3	1.41	0	-2
+;I Okno Pawlikowskiego
+47	51	3.87	91	-13
+51	52	6.76	91	-5
+;II Okno Pawlikowskiego
+47	53	6.73	155	-3
+;kominek
+48	54	5.50	351	46
+;slepy korytarz w lewo
+49	55	6.57	197	4
+;strzal przez okienko
+50	1	5.29	101	-8
+;zawal z przeswitem do powierzchni
+5	56	1.78	120	3
+56	57	2.58	124	48
+;wneka przy zawale
+56	58	3.04	34	55
+;szczelina za lancuchami
+32	59	4.85	27	0
+;boczny korytarz za wejsciem do Bialej Ulicy
+17	60	4.90	330	9

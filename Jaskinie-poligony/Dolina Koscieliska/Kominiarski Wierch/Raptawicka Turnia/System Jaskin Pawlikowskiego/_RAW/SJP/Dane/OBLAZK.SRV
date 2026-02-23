@@ -1,23 +1,7 @@
-#[
-CAVE_ID			"T.E-08.05"
-CAVE_NAME		"Jaskinia Oblazkowa"
-SURVEY_ID		OBLAZK
-SURVEY_NAME		"Oblazkowa"
-UPDATE_DATE		2026-02-12
-PROJECT_NAME		"Kataster jaskin tatrzanskich"
-COORDINATOR		"Dariusz Lubomski"
-COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
-DATA_SOURCE		"F. Filar"
-LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
-
-TEAM "F. Filar, M. Parczewski, B. Chlipala"
-INSTRUMENT "DistoX2"
-#]
-
-#prefix OBLAZ
-#date 2013-12-01
 #UNITS meters order=dav
 #Units A=D V=D
+
+#fix	0.0	24.34	24.09	-2.07
 
 ;Ciag glowny do Sali Koncowej
 
@@ -111,7 +95,7 @@ pmo0.3	pmo0.4	2.16066666666667	330.313333333333	-8.77666666666667
 pmo0.4	pmo0.5	2.15566666666667	278.583333333333	-0.443333333333333
 pmo0.5	pmo0.6	1.351	59.09	-6.68666666666667
 pmo0.6	pmo0.7	3.63466666666667	104.4	4.11666666666667
-pmo0.5	ML:638	1.78566666666667	303.16	0.116666666666667
+pmo0.5	638	1.78566666666667	303.16	0.116666666666667
 
 ;DOMIARY
 
@@ -239,4 +223,5 @@ a2.2.1	-	2.48	316	69
 a2.2.1	-	2.60	137	-13
 a2.2.1	-	2.01	94	-18
 a2.2.1	-	1.15	136	12
+
 

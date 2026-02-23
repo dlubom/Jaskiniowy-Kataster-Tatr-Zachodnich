@@ -1,0 +1,34 @@
+#UNITS meters order=dav
+#Units A=D V=D
+;ciag od Bialej Ulicy, przez Skosna Komore, do najdalszego punktu za nia
+11	450	5.98	264	16
+450	451	4.97	340	-1
+451	452	6.13	271	6
+452	453	4.68	284	-10
+453	454	3.31	292	19
+454	455	1.48	3	69
+455	456	6.60	250	1
+456	457	5.34	234	-27
+457	458	5.13	223	-1
+458	459	2.88	219	19
+459	460	1.87	271	-32
+460	461	2.61	210	-27
+461	462	3.76	240	-11
+;pochylnia w Skosnej Komorze
+450	463	11.12	194	47
+;bok w Skosnej Komorze
+451	464	2.82	25	-15
+464	465	5.14	18	0
+;prawa odnoga za Skosna Komora
+452	466	4.05	329	-4
+466	467	4.06	289	-9
+467	468	5.41	341	-25
+468	469	4.39	279	1
+;zamkniecie petli
+455	467	3.36	34	-49
+;boczny zagruzowany korytarzyk
+468	470	3.12	211	-17
+470	471	1.67	178	17
+471	472	2.04	215	8
+472	473	1.34	202	35
+473	474	2.81	238	-25

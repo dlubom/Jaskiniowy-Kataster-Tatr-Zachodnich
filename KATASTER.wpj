@@ -402,6 +402,14 @@
 .NAME	SJP
 .PATH	System Jaskin Pawlikowskiego
 .STATUS	8
+.BOOK	Powierzchnia
+.NAME	SJP_POW
+.PATH	Powierzchnia
+.STATUS	8
+.SURVEY	Powierzchnia Oblazkowa-Raptawicka
+.NAME	POW ORM
+.STATUS	8
+.ENDBOOK
 .BOOK	Mylna
 .NAME	MYLNA
 .PATH	Mylna
