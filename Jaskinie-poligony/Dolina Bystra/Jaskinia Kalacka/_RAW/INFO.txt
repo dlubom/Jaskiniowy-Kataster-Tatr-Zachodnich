@@ -1,7 +1,0 @@
-Pomiar Jaskini Kalackiej
-
-TEAM "Arkadiusz Kus" "dog tape compas clino"
-TEAM "Dariusz Lubomski" "notes"
-INSTRUMENT "DistoX + PocketTopo"
-
-Data pomiaru: 2013-11-09
