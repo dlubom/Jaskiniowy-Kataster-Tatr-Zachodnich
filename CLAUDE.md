@@ -125,11 +125,35 @@ FROM	TO	DISTANCE	AZIMUTH	INCLINATION
 
 ### Raw Source Files (`_RAW/`)
 
-Cave directories contain (or will contain) a `_RAW/` subdirectory with original source files provided by survey authors. This serves two purposes:
+Cave directories contain (or will contain) a `_RAW/` subdirectory with original, unmodified source files provided by survey authors. Purpose:
 1. **Archival** — preserving original data in its native format (Therion, Survex, DistoX exports, scanned notes, etc.)
 2. **Verification** — allowing later validation of the converted `.SRV` measurements against the original source data
+3. **Audit trail** — documenting provenance of all data in the project
 
 The `_RAW/` contents are not processed by Walls but are tracked in git for reference.
+
+**Required structure:**
+```
+<cave>/_RAW/
+  README.md              # Metadata (required)
+  source.zip             # ZIP archive (required if source has multiple files)
+  source/                # Unpacked contents (required if ZIP exists)
+    ...raw files...
+```
+
+If the source material is a single file, the ZIP + unpacked folder are not needed — just place the file directly in `_RAW/` alongside `README.md`.
+
+**README.md must contain:**
+- Source / origin of the data
+- Author(s) of the original survey
+- Date the data was obtained
+- Person who added the files to `_RAW/`
+- Notes on completeness (full dataset, partial, missing elements)
+
+**Rules:**
+- Preserve original filenames and directory structure — no renaming or reorganizing
+- Never modify raw source files (even to fix encoding, formatting, or errors)
+- Non-ASCII characters are allowed in `_RAW/` files (unlike `.SRV` files used by Walls)
 
 ## .gitignore
 
