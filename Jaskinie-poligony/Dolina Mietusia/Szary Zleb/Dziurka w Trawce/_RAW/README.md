@@ -5,3 +5,4 @@
 - **Data pozyskania**: 2014-04-14 / 2014-04-17
 - **Dodał**: Dariusz Lubomski
 - **Kompletność**: pojedynczy plik .csp z pełnym pomiarem jaskini
+- **Współrzędne otworu (wg Z. Tabaczyńskiego)**: N 49°14'33", E 19°54'34.66"
