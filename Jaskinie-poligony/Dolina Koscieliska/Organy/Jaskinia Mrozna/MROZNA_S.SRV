@@ -1,0 +1,19 @@
+#[
+CAVE_ID			"T.D-08.07"
+CAVE_NAME		"Jaskinia Mrozna"
+UPDATE_DATE		2026-02-24
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"nieznane"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "B. Chlipala, F. Filar, J. Filar, M. Parczewski"
+INSTRUMENT "nieznany"
+#]
+
+#prefix MROZN
+
+; TODO: przetworzyc pomiary z _RAW/MROZN.SRV
+; Plik zrodlowy zawiera pomiary potrójne (3 odczyty na kierunek) — wymagaja uśrednienia lub konwersji.
+; Stacje w pliku zrodlowym numerowane sa od 1.3 — numer stacji otworu nieznany.
