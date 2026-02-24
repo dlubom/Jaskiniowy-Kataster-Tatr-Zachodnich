@@ -63,7 +63,7 @@
 .NAME	KOM
 .PATH	..\..\Jaskinie Slowacji\Nova Kresanica
 .STATUS	8
-.SURVEY	Sala podwójna
+.SURVEY	Sala podwojna
 .NAME	SAPOD
 .PATH	..\..\Jaskinie Slowacji\Nova Kresanica
 .STATUS	8
@@ -71,11 +71,11 @@
 .NAME	STDDZ
 .PATH	..\..\Jaskinie Slowacji\Nova Kresanica
 .STATUS	8
-.SURVEY	Czeœæ œrodkowa
+.SURVEY	Czesc srodkowa
 .NAME	CZSR
 .PATH	..\..\Jaskinie Slowacji\Nova Kresanica
 .STATUS	8
-.SURVEY	Wstêpnia czêœæ
+.SURVEY	Wstepnia czesc
 .NAME	WSTCZ
 .PATH	..\..\Jaskinie Slowacji\Nova Kresanica
 .STATUS	8
@@ -376,7 +376,7 @@
 .BOOK	Ciag Glowny Miedzyotworowy
 .NAME	BK-CGM
 .STATUS	8
-.SURVEY	Ciag Glowny - Dolny Otwór - Gorny Otwor
+.SURVEY	Ciag Glowny - Dolny Otwor - Gorny Otwor
 .NAME	BK-CG
 .PATH	..\..\..\Dolina Koscieliska\Kominiarski Wierch\Bandzioch Kominiarski
 .STATUS	8
@@ -645,6 +645,17 @@
 .PATH	..\..\..\Dolina Malej Laki\Lewe zbocze\Jaskinia pod Progiem
 .STATUS	8
 .ENDBOOK
+.BOOK	Zawalony Schron
+.NAME	ZAWSCH
+.PATH	Zawalony Schron
+.STATUS	8
+.SURVEY	Zawalony Schron meta
+.NAME	ZAWSCH_M
+.STATUS	8
+.SURVEY	Zawalony Schron pomiary
+.NAME	ZAWSCH_S
+.STATUS	8
+.ENDBOOK
 .ENDBOOK
 .BOOK	Wielka Turnia
 .NAME	WT
@@ -719,7 +730,7 @@
 .NAME	UPLAZK
 .PATH	Uplazkowa
 .STATUS	8
-.SURVEY	Up³azkowa
+.SURVEY	Uplazkowa
 .NAME	UPLAZKOW
 .PATH	..\..\..\Dolina Malej Laki\Przechod-Kotliny\Uplazkowa
 .STATUS	8
@@ -884,6 +895,49 @@
 .SURVEY	Koprowa Studnia
 .NAME	KOPRSTUD
 .PATH	..\..\..\Dolina Malej Laki\Wyznia Swistowka\Koprowa Studnia
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
+.ENDBOOK
+.BOOK	Dolina Panszczyca
+.NAME	DPANSZ
+.PATH	Dolina Panszczyca
+.STATUS	8
+.BOOK	Mala Koszysta
+.NAME	MKOSZ
+.PATH	Mala Koszysta
+.STATUS	8
+.BOOK	Wyznia Koszowa Dziura
+.NAME	WKDZIU
+.PATH	Wyznia Koszowa Dziura
+.STATUS	8
+.SURVEY	Wyznia Koszowa Dziura meta
+.NAME	WKDZIUR_M
+.STATUS	8
+.SURVEY	Wyznia Koszowa Dziura pomiary
+.NAME	WKDZIUR_S
+.STATUS	8
+.ENDBOOK
+.BOOK	Jaskinia Koszowa
+.NAME	JKOSZ
+.PATH	Jaskinia Koszowa
+.STATUS	8
+.SURVEY	Jaskinia Koszowa meta
+.NAME	JKOSZ_M
+.STATUS	8
+.SURVEY	Jaskinia Koszowa pomiary
+.NAME	JKOSZ_S
+.STATUS	8
+.ENDBOOK
+.BOOK	Szczelina nad Lejem
+.NAME	SZNLEJ
+.PATH	Szczelina nad Lejem
+.STATUS	8
+.SURVEY	Szczelina nad Lejem meta
+.NAME	SZNLEJ_M
+.STATUS	8
+.SURVEY	Szczelina nad Lejem pomiary
+.NAME	SZNLEJ_S
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -1167,7 +1221,7 @@
 .NAME	LACHONY
 .PATH	..\..\..\Dolina Mietusia\Dolina Mulowa\Jaskinia Mala w Mulowej
 .STATUS	8
-.SURVEY	MA£A POM.SRV
+.SURVEY	MALA POM.SRV
 .NAME	MALA POM
 .PATH	..\..\..\Dolina Mietusia\Dolina Mulowa\Jaskinia Mala w Mulowej
 .STATUS	8
@@ -1238,10 +1292,10 @@
 .SURVEY	Poziomice
 .NAME	POZIOM
 .STATUS	8
-.SURVEY	Po³udniki
+.SURVEY	Poludniki
 .NAME	POLUDN
 .STATUS	10
-.SURVEY	Równole¿niki
+.SURVEY	Rownolezniki
 .NAME	ROWNOL
 .STATUS	10
 .ENDBOOK

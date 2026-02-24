@@ -1,0 +1,17 @@
+#[
+CAVE_ID			"T.D-22.02"
+CAVE_NAME		"Jaskinia Koszowa"
+UPDATE_DATE		2026-02-24
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"https://jaskiniepolski.pgi.gov.pl/, Z. Tabaczynski"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+#]
+
+#prefix jkosz
+#flag	0	/Jaskinia Koszowa
+#note	0	/Jaskinia Koszowa
+#fix	0	E20.059694	N49.249139	1790.0m

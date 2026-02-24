@@ -1,0 +1,26 @@
+#[
+CAVE_ID			"T.D-22.01"
+CAVE_NAME		"Wyznia Koszowa Dziura"
+SURVEY_ID		WKDZIUR
+SURVEY_NAME		"Wyznia Koszowa Dziura"
+UPDATE_DATE		2026-02-24
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"Z. Tabaczynski"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "Z. Tabaczynski"
+INSTRUMENT "unknown"
+#]
+
+#prefix wkdziur
+#date 2008-10-01
+#units meters order=DAV
+#units A=D V=D
+
+;Wyznia Koszowa Dziura
+
+0	1	2	210	-40
+1	2	4	300	-80
+2	3	2	270	-30

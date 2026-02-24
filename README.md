@@ -61,6 +61,7 @@ V súčasnosti projekt obsahuje údaje pre nasledujúce jaskyne:
 - Jaskinia Goryczkowa
 - Jaskinia Harda
 - Jaskinia Kalacka
+- Jaskinia Koszowa
 - Jaskinia Kozia
 - Jaskinia Lejbusiowa
 - Jaskinia Lodowa Małołącka
@@ -101,6 +102,7 @@ V súčasnosti projekt obsahuje údaje pre nasledujúce jaskyne:
 - Studnia przy Przechodzie
 - Studnia w Kazalnicy
 - Szczelina Miętusia
+- Szczelina nad Lejem
 - Szczelina nad Tomanową I
 - Szczelina nad Tomanową II
 - System Jaskinia za Siedmiu Progami-Jaskinia Pośrednia-Jaskinia Wysoka
@@ -108,6 +110,8 @@ V súčasnosti projekt obsahuje údaje pre nasledujúce jaskyne:
 - Upłazkowa
 - Wielka Litworowa
 - Wilczy Schron
+- Wyżnia Koszowa Dziura
+- Zawalony Schron
 - Zaspałkowa Szczelina
 - Zbójnicka Piwnica
 - Zbójecka Dziura

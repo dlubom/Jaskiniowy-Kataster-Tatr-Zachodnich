@@ -1,0 +1,24 @@
+#[
+CAVE_ID			"T.D-22.04"
+CAVE_NAME		"Szczelina nad Lejem"
+SURVEY_ID		SZNLEJ
+SURVEY_NAME		"Szczelina nad Lejem"
+UPDATE_DATE		2026-02-24
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"Z. Tabaczynski"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "Z. Tabaczynski"
+INSTRUMENT "unknown"
+#]
+
+#prefix sznlej
+#date 2008-10-01
+#units meters order=DAV
+#units A=D V=D
+
+;Szczelina nad Lejem
+
+0	1	2	200	0
