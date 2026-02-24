@@ -103,11 +103,18 @@ LICENSE         "http://creativecommons.org/licenses/by-sa/2.0/"
 #]
 
 #prefix <PREFIX>
-; #fix  ???  E<lon-dms>  N<lat-dms>  <elevation>m  ; TODO: uzupelnic numer stacji wejscia
+#flag   <STATION>   /<Cave Label>
+#note   <STATION>   /<Cave Label>
+#fix    <STATION>   E<lon-dms>  N<lat-dms>  <elevation>m
 ```
 
-Omit `#fix`, `#flag`, `#note` if the entrance station is unknown.
-If the entrance station IS identifiable from the source file, include them.
+`<STATION>` is the entrance station name in the survey (e.g. `td0807.1.3`).
+If the entrance station is unknown, comment out all three lines and add a TODO note:
+```
+; #flag  ???  /<Cave Label>
+; #note  ???  /<Cave Label>
+; #fix   ???  E<lon-dms>  N<lat-dms>  <elevation>m  ; TODO: uzupelnic numer stacji wejscia
+```
 
 ## Step 9 — Create CAVE_S.SRV
 
@@ -115,6 +122,8 @@ If the entrance station IS identifiable from the source file, include them.
 #[
 CAVE_ID         "T.X-NN.MM"
 CAVE_NAME       "Cave Name ASCII"
+SURVEY_ID       <PREFIX>
+SURVEY_NAME     "<Cave Name ASCII>"
 UPDATE_DATE     <today YYYY-MM-DD>
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
@@ -131,8 +140,19 @@ INSTRUMENT "<instrument or nieznany>"
 #units meters order=DAV
 #units A=D V=D
 
-; <measurements here, or TODO comment if raw file needs processing>
+;<Section description>
+
+FROM    TO      DISTANCE    AZIMUTH     INCLINATION
+0       1       4.61        293         2
+1       2       2.06        303         7
+
+;Splay shots (cross-sections)
+
+0       -       5.52        51          8
+0       -       5.47        265         76
 ```
+
+`SURVEY_ID` and `SURVEY_NAME` are inside `#[...]` which is a block comment — Walls ignores it entirely. These fields are project convention only; omit them if unknown.
 
 If the raw source file contains multiple readings per shot, note this and leave measurements as TODO:
 ```

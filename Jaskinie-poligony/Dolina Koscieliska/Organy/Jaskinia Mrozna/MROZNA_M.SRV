@@ -11,5 +11,4 @@ DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
 #]
 
-#prefix MROZN
-; #fix  ???  E19:52:01.900  N49:14:58.900  1112.2m  ; wejscie poludniowe — uzupelnic numer stacji
+#fix  td0807  E19:52:01.900  N49:14:58.900  1112.2m
