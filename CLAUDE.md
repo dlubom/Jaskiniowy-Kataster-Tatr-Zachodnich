@@ -24,17 +24,18 @@ This is a data project, not a software project. There is no build system, test s
 ```
 KATASTER.wpj              # Main Walls project file (hierarchical cave/survey tree)
 INFO.txt                  # Version history and contributor credits
-Jaskinie-poligony/        # SOURCE DATA: ~150 .SRV survey files organized by valley
-  Dolina Bystra/
-  Dolina Chocholowska/
-  Dolina Goryczkowa/
-  Dolina Koscieliska/     # Largest region (Bandzioch, System Pawlikowskiego, etc.)
-  Dolina ku Dziurze/
-  Dolina Malej Laki/      # Contains System Wielkiej Snieznej
-  Dolina Mietusia/
-  Dolina Tomanowa/
-  Jaskinie Slowacji/
-  _Domiary Powierzchniowe_/  # Surface measurement connections between caves
+Poligony/                 # SOURCE DATA: ~150 .SRV survey files organized by valley
+  D_Bystra/
+  D_Chocholowska/
+  D_Goryczkowa/
+  D_Koscieliska/          # Largest region (Bandzioch, System Pawlikowskiego, etc.)
+  D_ku_Dziurze/
+  D_Malej_Laki/           # Contains System Wielkiej Snieznej
+  D_Mietusia/
+  D_Panszczyca/
+  D_Tomanowa/
+  J_Slowacji/
+  _Domiary_Pow_/          # Surface measurement connections between caves
 Powierzchnia/             # Terrain model (DEM from contour lines)
 KATASTER/                 # COMPILED OUTPUT (git-ignored .NT* files)
 ```
@@ -118,6 +119,12 @@ FROM	TO	DISTANCE	AZIMUTH	INCLINATION
 - **Cave IDs** follow the pattern `T.{region}-{number}.{sub}` (e.g., `T.C-16.01` for Jaskinia Kalacka, `T.B-14.01` for Dziura)
 - **Station naming**: `{cave_id}_{survey_id}` prefix (e.g., `tb1401_A1` for Dziura survey A1)
 - **Directory hierarchy**: Valley → Mountain/Region → Cave → Survey files
+- **Directory naming conventions** (to keep paths short for Windows compatibility):
+  - **No spaces** — use underscores: `Studnia_na_Szlaku`, not `Studnia na Szlaku`
+  - **Valley prefix**: `D_` instead of `Dolina ` (e.g., `D_Koscieliska`, `D_Mietusia`)
+  - **Drop "Jaskinia "** from cave directories (e.g., `Kalacka` not `Jaskinia Kalacka`, `Zwolinskiego` not `Jaskinia Zwolinskiego`)
+  - **Shorten long names** where sensible (e.g., `Kom_Wierch`, `Rapt_Turnia`, `Syst_Pawlikowskiego`)
+  - These are filesystem names only — display names in `KATASTER.wpj` (`.BOOK` directives) keep their full, human-readable form
 - Polish and Slovak diacritical marks are **not allowed** in `.wpj` paths, `.SRV` filenames, or survey text content used by Walls
 - Use ASCII equivalents instead (e.g., `ą->a`, `ć->c`, `ł->l`, `ó->o`, `ś->s`, `ż->z`, `č->c`, `š->s`, `ť->t`, `ž->z`)
 - Keep `_RAW/` files untouched as archival originals, even if they contain non-ASCII text
@@ -200,7 +207,7 @@ When creating commits in this project:
 ## Workflow for Adding a New Cave
 
 1. **Research the cave** in `doc/jaskinie_polski_pig_dump.jsonl` to find official coordinates, dimensions, and documentation history
-2. Create a directory under the appropriate valley in `Jaskinie-poligony/`
+2. Create a directory under the appropriate valley in `Poligony/` (use underscores, no spaces, short names)
 3. Create `.SRV` file(s) with metadata block and survey data (newer format: separate `_M.SRV` for coordinates and `_S.SRV` for measurements)
 4. Add `.BOOK`/`.SURVEY` entries to `KATASTER.wpj` referencing the new files
 5. Update `INFO.txt` with a new version entry

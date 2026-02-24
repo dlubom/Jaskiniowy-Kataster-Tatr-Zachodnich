@@ -6,11 +6,11 @@
 [Pobierz główny projekt tutaj | Download the main project here | Stiahnite si hlavný projekt tu](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/archive/refs/heads/master.zip)
 
 ### Techniczne ostrzeżenie | Technical Warning | Technické upozornenie
-**Uwaga:** Zaleca się rozpakowanie projektu bezpośrednio na dysku C://, ponieważ w niektórych katalogach systemu Windows niektóre jaskinie mogą nie być wyświetlane prawidłowo.
+**Uwaga:** Projekt należy wypakować do krótkiej ścieżki, np. `C:\JKTZ\`. W przeciwnym razie Windows może zgłosić błąd *Path too long* (`0x80010135`).
 
-**Note:** It is recommended to unpack the project directly on the C:// drive, as some caves may not display correctly in certain Windows directories.
+**Note:** Extract the project to a short path, e.g., `C:\JKTZ\`. Otherwise Windows may report *Path too long* error (`0x80010135`).
 
-**Poznámka:** Odporúča sa rozbalenie projektu priamo na disku C://, pretože v niektorých adresároch systému Windows sa niektoré jaskyne nemusia správne zobrazovať.
+**Poznámka:** Projekt rozbaľte do krátkej cesty, napr. `C:\JKTZ\`. Inak môže Windows hlásiť chybu *Path too long* (`0x80010135`).
 
 ### Opis projektu
 Projekt ma na celu zgromadzenie w jednym miejscu wszystkich danych kartograficznych dotyczących tatrzańskich jaskiń. Wykorzystując oprogramowanie Walls, głównym celem jest stworzenie zestawienia przestrzennego ciągów pomiarowych, współrzędnych wejść do jaskiń oraz modelu terenu. Projekt jest otwarty dla wszystkich zainteresowanych, by ułatwić działania eksploracyjne, edukacyjne oraz wspierać badania naukowe. Zebranie kompleksowych i dokładnych danych stanowi wyzwanie ze względu na różnorodność metod i czasu ich wykonania.
