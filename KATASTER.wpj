@@ -36,15 +36,12 @@
 .STATUS	8
 .SURVEY	Coordinates
 .NAME	OVGPS
-.PATH	..\..\J_Slowacji\Obcasna_Vyv
 .STATUS	8
 .SURVEY	OV_A2
 .NAME	OVA2
-.PATH	..\..\J_Slowacji\Obcasna_Vyv
 .STATUS	8
 .SURVEY	OV_A1
 .NAME	OVA1
-.PATH	..\..\J_Slowacji\Obcasna_Vyv
 .STATUS	8
 .ENDBOOK
 .BOOK	Nova Kresanica
@@ -53,31 +50,24 @@
 .STATUS	8
 .SURVEY	Czarna Studnia
 .NAME	CZST
-.PATH	..\..\J_Slowacji\Nova_Kresanica
 .STATUS	8
 .SURVEY	Odkryte z Val
 .NAME	ODZVAL
-.PATH	..\..\J_Slowacji\Nova_Kresanica
 .STATUS	8
 .SURVEY	20 m komin
 .NAME	KOM
-.PATH	..\..\J_Slowacji\Nova_Kresanica
 .STATUS	8
 .SURVEY	Sala podwojna
 .NAME	SAPOD
-.PATH	..\..\J_Slowacji\Nova_Kresanica
 .STATUS	8
 .SURVEY	Studnia Dzwon
 .NAME	STDDZ
-.PATH	..\..\J_Slowacji\Nova_Kresanica
 .STATUS	8
 .SURVEY	Czesc srodkowa
 .NAME	CZSR
-.PATH	..\..\J_Slowacji\Nova_Kresanica
 .STATUS	8
 .SURVEY	Wstepnia czesc
 .NAME	WSTCZ
-.PATH	..\..\J_Slowacji\Nova_Kresanica
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -107,7 +97,6 @@
 .STATUS	8
 .SURVEY	Dmuchawa
 .NAME	DMUCH
-.PATH	..\..\D_Chocholowska\Dmuchawa
 .STATUS	8
 .ENDBOOK
 .BOOK	Wyznia Brama Chocholowska
@@ -120,7 +109,6 @@
 .STATUS	8
 .SURVEY	Jaskinia Kamienne Mleko
 .NAME	JKM
-.PATH	..\..\..\D_Chocholowska\Wyz_Brama_Choch\Kamienne_Mleko
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -130,7 +118,6 @@
 .STATUS	8
 .SURVEY	Zbojecka Dziura
 .NAME	ZBDZIU
-.PATH	..\..\D_Chocholowska\Zbojecka_Dziura
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -181,7 +168,6 @@
 .STATUS	8
 .SURVEY	Fragment
 .NAME	CZ_Z
-.PATH	..\..\..\D_Koscieliska\Organy\Czarna
 .STATUS	8
 .ENDBOOK
 .BOOK	Jaskinia Zimna
@@ -190,7 +176,6 @@
 .STATUS	8
 .SURVEY	Jaskinia Biala
 .NAME	JBIALA
-.PATH	..\..\..\D_Koscieliska\Organy\Zimna
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -212,7 +197,6 @@
 .STATUS	8
 .SURVEY	Jaskinia Pod Zamkiem
 .NAME	JPODZ
-.PATH	..\..\..\D_Koscieliska\Zar\Pod_Zamkiem
 .STATUS	8
 .ENDBOOK
 .BOOK	Jaskinia Poszukiwaczy Skarbow
@@ -221,7 +205,6 @@
 .STATUS	8
 .SURVEY	Jaskinia Poszukiwaczy Skarbow
 .NAME	JASPOS
-.PATH	..\..\..\D_Koscieliska\Zar\Poszukiwaczy_Skarbow
 .STATUS	8
 .ENDBOOK
 .BOOK	Jaskinia w Zbojnickiej Turni
@@ -230,7 +213,6 @@
 .STATUS	8
 .SURVEY	Jaskinia w Zbojnickiej Turni
 .NAME	JASWZT
-.PATH	..\..\..\D_Koscieliska\Zar\w_Zbojnickiej_Turni
 .STATUS	8
 .ENDBOOK
 .BOOK	Jaskinia Ziobrowa
@@ -239,7 +221,6 @@
 .STATUS	8
 .SURVEY	Jaskinia Ziobrowa
 .NAME	JZ
-.PATH	..\..\..\D_Koscieliska\Zar\Ziobrowa
 .STATUS	8
 .ENDBOOK
 .BOOK	Zbojnicka Piwnica
@@ -248,7 +229,6 @@
 .STATUS	8
 .SURVEY	Zbojnicka Piwnica
 .NAME	ZP
-.PATH	..\..\..\D_Koscieliska\Zar\Zbojnicka_Piwnica
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -258,18 +238,16 @@
 .STATUS	8
 .BOOK	Bandzioch Kominiarski
 .NAME	BANDZK
-.PATH	Rapt_Turnia\..\Bandzioch_Kom
+.PATH	Bandzioch_Kom
 .STATUS	8
 .BOOK	Ciag 7 Dna
 .NAME	BK-C7D
 .STATUS	8
 .SURVEY	Boki Ciagu 7 Dna - Grady
 .NAME	BK-B7D-G
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .SURVEY	Ciag 7 Dna - Grady
 .NAME	BK-C7D-G
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .ENDBOOK
 .BOOK	Ciag 6 Dna
@@ -277,11 +255,9 @@
 .STATUS	8
 .SURVEY	Boki Ciagu 6 Dna - Stopnie
 .NAME	BK-B6D-S
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .SURVEY	Ciag 6 Dna - Stopnie
 .NAME	BK-C6D-S
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .ENDBOOK
 .BOOK	Ciag 5 Dna
@@ -289,11 +265,9 @@
 .STATUS	8
 .SURVEY	Boki Ciagu 5 Dna - Stopnie
 .NAME	BK-B5D-S
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .SURVEY	Ciag 5 Dna - Stopnie
 .NAME	BK-C5D-S
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .ENDBOOK
 .BOOK	Ciag 4 Dna
@@ -304,33 +278,26 @@
 .STATUS	8
 .SURVEY	Boki Ciagu 3 Dna - Grady
 .NAME	BK-B3D-G
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .SURVEY	Boki Ciagu 3 Dna - Stopnie
 .NAME	BK-B3D-S
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .SURVEY	Ciag 3 Dna - Stopnie
 .NAME	BK-C3D-S
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .REF	5455060.050 416262.210 34 -0.871 1457 1 49 14 33.300 19 50 58.320 27 "WGS 1984"
 .ENDBOOK
 .SURVEY	Boki Ciagu 4 Dna - Grady
 .NAME	BK-B4D-G
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .SURVEY	Boki Ciagu 4 Dna - Stopnie
 .NAME	BK-B4D-S
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .SURVEY	Ciag 4 Dna - Grady
 .NAME	BK-C4D-G
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .SURVEY	Ciag 4 Dna - Stopnie
 .NAME	BK-C4D-S
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .ENDBOOK
 .BOOK	Ciag 2 Dna (Nowe Dno-Syf.KKTJ)
@@ -338,19 +305,15 @@
 .STATUS	8
 .SURVEY	Ciag 2 Dna - Grady
 .NAME	BK-C2D-G
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .SURVEY	Ciag 2 Dna - Stopnie
 .NAME	BK-C2D-S
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .SURVEY	Boki Ciagu 2 Dna - Grady
 .NAME	BK-B2D-G
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .SURVEY	Boki Ciagu 2 Dna - Stopnie
 .NAME	BK-B2D-S
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .ENDBOOK
 .BOOK	Ciag 1 Dna (Stare Dno)
@@ -358,19 +321,15 @@
 .STATUS	8
 .SURVEY	Boki Ciagu Starego Dna - Grady
 .NAME	BK-BSD-G
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .SURVEY	Boki Ciagu Starego Dna - Stopnie
 .NAME	BK-BSD-S
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .SURVEY	Ciag Starego Dna - Stopnie
 .NAME	BK-CSD-S
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .SURVEY	Ciag Starego Dna - Grady
 .NAME	BK-CSD-G
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .ENDBOOK
 .BOOK	Ciag Glowny Miedzyotworowy
@@ -378,20 +337,16 @@
 .STATUS	8
 .SURVEY	Ciag Glowny - Dolny Otwor - Gorny Otwor
 .NAME	BK-CG
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .SURVEY	Boki Ciagu Glownego - Grady
 .NAME	BK-BCG-G
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .SURVEY	Boki Ciagu Glownego - Stopnie
 .NAME	BK-BCG-S
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	8
 .ENDBOOK
 .SURVEY	Bandzioch Kominiarski - Wprowadzenie
 .NAME	BK-W
-.PATH	..\..\..\D_Koscieliska\Kom_Wierch\Bandzioch_Kom
 .STATUS	10
 .ENDBOOK
 .BOOK	Raptawicka Turnia
@@ -514,11 +469,9 @@
 .STATUS	8
 .SURVEY	Smocza Jama
 .NAME	TE0807
-.PATH	..\..\..\D_Koscieliska\Wawoz_Krakow\Smocza_Jama
 .STATUS	8
 .SURVEY	Coordinates
 .NAME	0807GPS
-.PATH	..\..\..\D_Koscieliska\Wawoz_Krakow\Smocza_Jama
 .STATUS	8
 .ENDBOOK
 .BOOK	Gawra
@@ -527,7 +480,6 @@
 .STATUS	8
 .SURVEY	Gawra
 .NAME	JGAWR
-.PATH	..\..\..\D_Koscieliska\Wawoz_Krakow\Gawra
 .STATUS	8
 .ENDBOOK
 .BOOK	Jaskinia nad Beczka
@@ -536,7 +488,6 @@
 .STATUS	8
 .SURVEY	Jaskinia nad Beczka
 .NAME	JASNADB
-.PATH	..\..\..\D_Koscieliska\Wawoz_Krakow\nad_Beczka
 .STATUS	8
 .ENDBOOK
 .BOOK	Jaskinia nad Percia
@@ -545,7 +496,6 @@
 .STATUS	8
 .SURVEY	Jaskinia nad Percia
 .NAME	JNADPE
-.PATH	..\..\..\D_Koscieliska\Wawoz_Krakow\nad_Percia
 .STATUS	8
 .ENDBOOK
 .BOOK	Lustrzany Korytarz
@@ -554,7 +504,6 @@
 .STATUS	8
 .SURVEY	Lustrzany Korytarz
 .NAME	LUKOR
-.PATH	..\..\..\D_Koscieliska\Wawoz_Krakow\Lustrzany_Korytarz
 .STATUS	8
 .ENDBOOK
 .BOOK	Rura przy Oknie
@@ -563,7 +512,6 @@
 .STATUS	8
 .SURVEY	Rura przy Oknie
 .NAME	RUPRZYOK
-.PATH	..\..\..\D_Koscieliska\Wawoz_Krakow\Rura_przy_Oknie
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -580,11 +528,9 @@
 .STATUS	8
 .SURVEY	PIONY
 .NAME	PIONY
-.PATH	..\..\..\D_Koscieliska\Wys_Grzbiet\Wysoka-7_Progow
 .STATUS	8
 .SURVEY	7PROGOW
 .NAME	7PROGOW
-.PATH	..\..\..\D_Koscieliska\Wys_Grzbiet\Wysoka-7_Progow
 .STATUS	8
 .ENDBOOK
 .BOOK	pietra
@@ -592,23 +538,18 @@
 .STATUS	8
 .SURVEY	V
 .NAME	V
-.PATH	..\..\..\D_Koscieliska\Wys_Grzbiet\Wysoka-7_Progow
 .STATUS	8
 .SURVEY	IV
 .NAME	IV
-.PATH	..\..\..\D_Koscieliska\Wys_Grzbiet\Wysoka-7_Progow
 .STATUS	8
 .SURVEY	III
 .NAME	III
-.PATH	..\..\..\D_Koscieliska\Wys_Grzbiet\Wysoka-7_Progow
 .STATUS	8
 .SURVEY	II
 .NAME	II
-.PATH	..\..\..\D_Koscieliska\Wys_Grzbiet\Wysoka-7_Progow
 .STATUS	8
 .SURVEY	I
 .NAME	I
-.PATH	..\..\..\D_Koscieliska\Wys_Grzbiet\Wysoka-7_Progow
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -628,7 +569,6 @@
 .STATUS	8
 .SURVEY	Mnichowa Studnia Wyznia
 .NAME	MSW1
-.PATH	..\..\..\D_Malej_Laki\Prawe_zb\Mnich_Studnia_Wyz
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -642,7 +582,6 @@
 .STATUS	8
 .SURVEY	Jaskinia pod Progiem
 .NAME	JPP
-.PATH	..\..\..\D_Malej_Laki\Lewe_zb\pod_Progiem
 .STATUS	8
 .ENDBOOK
 .BOOK	Zawalony Schron
@@ -667,7 +606,6 @@
 .STATUS	8
 .SURVEY	Jaskinia w Wielkiej Turni
 .NAME	JWWT1
-.PATH	..\..\..\D_Malej_Laki\W_Turnia\w_Wielkiej_Turni
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -681,7 +619,6 @@
 .STATUS	8
 .SURVEY	Czerwona Studzienka
 .NAME	CZSTD1
-.PATH	..\..\..\D_Malej_Laki\Czerw_Grzbiet\Czerw_Studzienka
 .STATUS	8
 .ENDBOOK
 .BOOK	Jaskinia Zoska - Zagonna Studnia
@@ -690,7 +627,6 @@
 .STATUS	8
 .SURVEY	1
 .NAME	1
-.PATH	..\..\..\D_Malej_Laki\Czerw_Grzbiet\Zoska-Zagonna_Studnia
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -704,7 +640,6 @@
 .STATUS	8
 .SURVEY	Jaskinia Spiacych Rycerzy
 .NAME	JASSR
-.PATH	..\..\..\D_Malej_Laki\Maly_Giewont\Spiacych_Rycerzy
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -718,7 +653,6 @@
 .STATUS	8
 .SURVEY	Lodowa Malolacka
 .NAME	LODMAL
-.PATH	..\..\..\D_Malej_Laki\Mnich_Turnie\Lodowa_Malolacka
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -732,7 +666,6 @@
 .STATUS	8
 .SURVEY	Uplazkowa
 .NAME	UPLAZKOW
-.PATH	..\..\..\D_Malej_Laki\Przechod-Kotliny\Uplazkowa
 .STATUS	8
 .ENDBOOK
 .BOOK	Wilczy Schron
@@ -741,7 +674,6 @@
 .STATUS	8
 .SURVEY	Wilczy Schron
 .NAME	WILSCH
-.PATH	..\..\..\D_Malej_Laki\Przechod-Kotliny\Wilczy_Schron
 .STATUS	8
 .ENDBOOK
 .BOOK	Studnia Przy Przechodzie
@@ -750,7 +682,6 @@
 .STATUS	8
 .SURVEY	Studnia przy Przechodzie
 .NAME	STUDPRZE
-.PATH	..\..\..\D_Malej_Laki\Przechod-Kotliny\Studnia_Przy_Przech
 .STATUS	8
 .ENDBOOK
 .BOOK	Schron Pod Jedrusiowa
@@ -759,7 +690,6 @@
 .STATUS	8
 .SURVEY	Schron pod Jedrusiowa
 .NAME	SCHJED
-.PATH	..\..\..\D_Malej_Laki\Przechod-Kotliny\Schron_Pod_Jedrus
 .STATUS	8
 .ENDBOOK
 .BOOK	Przy Jedrusiowej
@@ -768,7 +698,6 @@
 .STATUS	8
 .SURVEY	Przy Jedrusiowej
 .NAME	PZRYJEDR
-.PATH	..\..\..\D_Malej_Laki\Przechod-Kotliny\Przy_Jedrusiowej
 .STATUS	8
 .ENDBOOK
 .BOOK	Dziura Pod Swistowa
@@ -777,7 +706,6 @@
 .STATUS	8
 .SURVEY	Dziura pod Swistowa
 .NAME	DZISWI
-.PATH	..\..\..\D_Malej_Laki\Przechod-Kotliny\Dziura_Pod_Swist
 .STATUS	8
 .ENDBOOK
 .BOOK	Malolacka
@@ -786,7 +714,6 @@
 .STATUS	8
 .SURVEY	Malolacka
 .NAME	MALOLACK
-.PATH	..\..\..\D_Malej_Laki\Przechod-Kotliny\Malolacka
 .STATUS	8
 .ENDBOOK
 .BOOK	Przy Przechodzie
@@ -795,7 +722,6 @@
 .STATUS	8
 .SURVEY	Przy Przechodzie
 .NAME	PRZYPRZE
-.PATH	..\..\..\D_Malej_Laki\Przechod-Kotliny\Przy_Przechodzie
 .STATUS	8
 .ENDBOOK
 .BOOK	Sniezna Studnia
@@ -804,7 +730,6 @@
 .STATUS	8
 .SURVEY	Sniezna studnia
 .NAME	SS
-.PATH	..\..\..\D_Malej_Laki\Przechod-Kotliny\Sniezna_Studnia
 .STATUS	8
 .ENDBOOK
 .BOOK	System Wielkiej Snieznej
@@ -817,51 +742,39 @@
 .STATUS	8
 .SURVEY	20130713
 .NAME	20130713
-.PATH	..\..\..\..\D_Malej_Laki\Przechod-Kotliny\Syst_W_Snieznej\sniezna
 .STATUS	8
 .SURVEY	Warszawskie kaskady
 .NAME	WARSZAW
-.PATH	..\..\..\..\D_Malej_Laki\Przechod-Kotliny\Syst_W_Snieznej\sniezna
 .STATUS	8
 .SURVEY	wroclawskie kominy
 .NAME	WROCL
-.PATH	..\..\..\..\D_Malej_Laki\Przechod-Kotliny\Syst_W_Snieznej\sniezna
 .STATUS	8
 .SURVEY	Syfon Krakowski
 .NAME	SYFONKRA
-.PATH	..\..\..\..\D_Malej_Laki\Przechod-Kotliny\Syst_W_Snieznej\sniezna
 .STATUS	8
 .SURVEY	Biala Woda
 .NAME	PRZEMKOW
-.PATH	..\..\..\..\D_Malej_Laki\Przechod-Kotliny\Syst_W_Snieznej\sniezna
 .STATUS	8
 .SURVEY	Litworowa
 .NAME	LITWOR
-.PATH	..\..\..\..\D_Malej_Laki\Przechod-Kotliny\Syst_W_Snieznej\sniezna
 .STATUS	10
 .SURVEY	Galeria Krokodyla
 .NAME	KROKODYL
-.PATH	..\..\..\..\D_Malej_Laki\Przechod-Kotliny\Syst_W_Snieznej\sniezna
 .STATUS	8
 .SURVEY	Jasny Awen
 .NAME	JASNYA
-.PATH	..\..\..\..\D_Malej_Laki\Przechod-Kotliny\Syst_W_Snieznej\sniezna
 .STATUS	8
 .SURVEY	Kominy krakowskie
 .NAME	KRAKOW
-.PATH	..\..\..\..\D_Malej_Laki\Przechod-Kotliny\Syst_W_Snieznej\sniezna
 .STATUS	8
 .SURVEY	Kolanko
 .NAME	KOLANKO
-.PATH	..\..\..\..\D_Malej_Laki\Przechod-Kotliny\Syst_W_Snieznej\sniezna
 .STATUS	8
 .SURVEY	amoki i partie animatorow
 .NAME	AMOKI
-.PATH	..\..\..\..\D_Malej_Laki\Przechod-Kotliny\Syst_W_Snieznej\sniezna
 .STATUS	8
 .SURVEY	Ciag Glowny
 .NAME	MAIN
-.PATH	..\..\..\..\D_Malej_Laki\Przechod-Kotliny\Syst_W_Snieznej\sniezna
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -876,7 +789,7 @@
 .STATUS	8
 .SURVEY	Jaskinia Swistacza
 .NAME	SWIST
-.PATH	..\..\..\D_Malej_Laki\Wyz_Swistowka\Swistacza\Swistacza
+.PATH	Swistacza
 .STATUS	8
 .ENDBOOK
 .BOOK	Zaspalkowa Szczelina
@@ -885,7 +798,6 @@
 .STATUS	8
 .SURVEY	Zaspalkowa Szczelina
 .NAME	ZASSZC
-.PATH	..\..\..\D_Malej_Laki\Wyz_Swistowka\Zaspalkowa_Szczelina
 .STATUS	8
 .ENDBOOK
 .BOOK	Koprowa Studnia
@@ -894,7 +806,6 @@
 .STATUS	8
 .SURVEY	Koprowa Studnia
 .NAME	KOPRSTUD
-.PATH	..\..\..\D_Malej_Laki\Wyz_Swistowka\Koprowa_Studnia
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -952,63 +863,48 @@
 .STATUS	8
 .SURVEY	OTW POW.SRV
 .NAME	OTW POW
-.PATH	..\..\D_Mietusia\Ratusz_Mulowy
 .STATUS	8
 .SURVEY	15.SRV
 .NAME	15
-.PATH	..\..\D_Mietusia\Ratusz_Mulowy
 .STATUS	8
 .SURVEY	14A.SRV
 .NAME	14A
-.PATH	..\..\D_Mietusia\Ratusz_Mulowy
 .STATUS	8
 .SURVEY	13A.SRV
 .NAME	13A
-.PATH	..\..\D_Mietusia\Ratusz_Mulowy
 .STATUS	8
 .SURVEY	12A.SRV
 .NAME	12A
-.PATH	..\..\D_Mietusia\Ratusz_Mulowy
 .STATUS	8
 .SURVEY	11A.SRV
 .NAME	11A
-.PATH	..\..\D_Mietusia\Ratusz_Mulowy
 .STATUS	8
 .SURVEY	10A.SRV
 .NAME	10A
-.PATH	..\..\D_Mietusia\Ratusz_Mulowy
 .STATUS	8
 .SURVEY	9A.SRV
 .NAME	9A
-.PATH	..\..\D_Mietusia\Ratusz_Mulowy
 .STATUS	8
 .SURVEY	8A.SRV
 .NAME	8A
-.PATH	..\..\D_Mietusia\Ratusz_Mulowy
 .STATUS	8
 .SURVEY	7A.SRV
 .NAME	7A
-.PATH	..\..\D_Mietusia\Ratusz_Mulowy
 .STATUS	8
 .SURVEY	6A.SRV
 .NAME	6A
-.PATH	..\..\D_Mietusia\Ratusz_Mulowy
 .STATUS	8
 .SURVEY	5A.SRV
 .NAME	5A
-.PATH	..\..\D_Mietusia\Ratusz_Mulowy
 .STATUS	8
 .SURVEY	4A.SRV
 .NAME	4A
-.PATH	..\..\D_Mietusia\Ratusz_Mulowy
 .STATUS	8
 .SURVEY	3A.SRV
 .NAME	3A
-.PATH	..\..\D_Mietusia\Ratusz_Mulowy
 .STATUS	8
 .SURVEY	2A.SRV
 .NAME	2A
-.PATH	..\..\D_Mietusia\Ratusz_Mulowy
 .STATUS	8
 .ENDBOOK
 .BOOK	Meander w Malolackim Siodle
@@ -1017,7 +913,6 @@
 .STATUS	8
 .SURVEY	Meander w Malolackim Siodle
 .NAME	MWMS1
-.PATH	..\..\D_Mietusia\Meander_w_Mal_Siodle
 .STATUS	8
 .ENDBOOK
 .BOOK	Kobylarzowy Zleb
@@ -1030,7 +925,6 @@
 .STATUS	8
 .SURVEY	Studnia na Szlaku
 .NAME	STNASZ1
-.PATH	..\..\..\D_Mietusia\Kobylarz_Zleb\Studnia_na_Szlaku
 .STATUS	8
 .ENDBOOK
 .BOOK	Szara Studnia
@@ -1039,7 +933,6 @@
 .STATUS	8
 .SURVEY	Szara Studnia
 .NAME	SZARST1
-.PATH	..\..\..\D_Mietusia\Kobylarz_Zleb\Szara_Studnia
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -1053,7 +946,6 @@
 .STATUS	8
 .SURVEY	DWT1
 .NAME	DWT1
-.PATH	..\..\..\D_Mietusia\Szary_Zleb\Dziurka_w_Trawce
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -1067,7 +959,6 @@
 .STATUS	8
 .SURVEY	Jaskinia Lodowa Mietusia
 .NAME	JASLODM
-.PATH	..\..\..\D_Mietusia\Kazaln_Miet\Lodowa_Mietusia
 .STATUS	8
 .ENDBOOK
 .BOOK	Marmurowa
@@ -1076,7 +967,6 @@
 .STATUS	8
 .SURVEY	Marmurowa
 .NAME	JMARMUR
-.PATH	..\..\..\D_Mietusia\Kazaln_Miet\Marmurowa
 .STATUS	8
 .ENDBOOK
 .BOOK	Studnia w Kazalnicy
@@ -1085,11 +975,9 @@
 .STATUS	8
 .SURVEY	Jaskinia Studnia w Kazalnicy
 .NAME	GLOWNYSK
-.PATH	..\..\..\D_Mietusia\Kazaln_Miet\Studnia_w_Kazaln
 .STATUS	8
 .SURVEY	Jaskinia Studnia w Kazalnicy_2
 .NAME	BOKISK
-.PATH	..\..\..\D_Mietusia\Kazaln_Miet\Studnia_w_Kazaln
 .STATUS	8
 .ENDBOOK
 .BOOK	Szczelina Mietusia
@@ -1098,7 +986,6 @@
 .STATUS	8
 .SURVEY	Szczelina Mietusia
 .NAME	SZCZM
-.PATH	..\..\..\D_Mietusia\Kazaln_Miet\Szczelina_Mietusia
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -1112,7 +999,6 @@
 .STATUS	8
 .SURVEY	Kozia
 .NAME	KOZIA
-.PATH	..\..\..\D_Mietusia\Kozi_Grzbiet\Kozia
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -1126,35 +1012,35 @@
 .STATUS	8
 .SURVEY	Litworowa
 .NAME	LITSTARE
-.PATH	..\..\..\D_Mietusia\Litw_Dolina\W_Litworowa\SNIEZNA
+.PATH	SNIEZNA
 .STATUS	8
 .SURVEY	kopernik
 .NAME	KOPERNIK
-.PATH	..\..\..\D_Mietusia\Litw_Dolina\W_Litworowa\SNIEZNA
+.PATH	SNIEZNA
 .STATUS	8
 .SURVEY	LTPSB
 .NAME	LTPSB
-.PATH	..\..\..\D_Mietusia\Litw_Dolina\W_Litworowa\SNIEZNA
+.PATH	SNIEZNA
 .STATUS	8
 .SURVEY	LTPWG
 .NAME	LTPWG
-.PATH	..\..\..\D_Mietusia\Litw_Dolina\W_Litworowa\SNIEZNA
+.PATH	SNIEZNA
 .STATUS	8
 .SURVEY	Bielskie stare-nowe pomiary
 .NAME	LITPLYTB
-.PATH	..\..\..\D_Mietusia\Litw_Dolina\W_Litworowa\SNIEZNA
+.PATH	SNIEZNA
 .STATUS	8
 .SURVEY	slepe
 .NAME	SLEPE
-.PATH	..\..\..\D_Mietusia\Litw_Dolina\W_Litworowa\SNIEZNA
+.PATH	SNIEZNA
 .STATUS	8
 .SURVEY	lit99
 .NAME	LIT99
-.PATH	..\..\..\D_Mietusia\Litw_Dolina\W_Litworowa\SNIEZNA
+.PATH	SNIEZNA
 .STATUS	8
 .SURVEY	LTsbb Bielsk nowe
 .NAME	SBB2
-.PATH	..\..\..\D_Mietusia\Litw_Dolina\W_Litworowa\SNIEZNA
+.PATH	SNIEZNA
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -1168,23 +1054,18 @@
 .STATUS	8
 .SURVEY	nad diablem
 .NAME	STARY
-.PATH	..\..\..\D_Mietusia\W_Swistowka\Harda
 .STATUS	8
 .SURVEY	gora
 .NAME	POMIAR
-.PATH	..\..\..\D_Mietusia\W_Swistowka\Harda
 .STATUS	8
 .SURVEY	kwadratowy
 .NAME	KWADRAT
-.PATH	..\..\..\D_Mietusia\W_Swistowka\Harda
 .STATUS	8
 .SURVEY	salazgarkiem
 .NAME	DNO
-.PATH	..\..\..\D_Mietusia\W_Swistowka\Harda
 .STATUS	8
 .SURVEY	absolut
 .NAME	BALKON
-.PATH	..\..\..\D_Mietusia\W_Swistowka\Harda
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -1198,7 +1079,6 @@
 .STATUS	8
 .SURVEY	Jaskinia Lejbusiowa
 .NAME	LB1
-.PATH	..\..\..\D_Mietusia\D_Mulowa\Lejbusiowa
 .STATUS	8
 .ENDBOOK
 .BOOK	Jaskinia Mala w Mulowej
@@ -1207,27 +1087,21 @@
 .STATUS	8
 .SURVEY	AMPI.SRV
 .NAME	AMPI
-.PATH	..\..\..\D_Mietusia\D_Mulowa\Mala_w_Mulowej
 .STATUS	8
 .SURVEY	KOM NWS.SRV
 .NAME	KOM NWS
-.PATH	..\..\..\D_Mietusia\D_Mulowa\Mala_w_Mulowej
 .STATUS	8
 .SURVEY	KOR JSR.SRV
 .NAME	KOR JSR
-.PATH	..\..\..\D_Mietusia\D_Mulowa\Mala_w_Mulowej
 .STATUS	8
 .SURVEY	LACHONY.SRV
 .NAME	LACHONY
-.PATH	..\..\..\D_Mietusia\D_Mulowa\Mala_w_Mulowej
 .STATUS	8
 .SURVEY	MALA POM.SRV
 .NAME	MALA POM
-.PATH	..\..\..\D_Mietusia\D_Mulowa\Mala_w_Mulowej
 .STATUS	8
 .SURVEY	POW POM1.SRV
 .NAME	POW POM1
-.PATH	..\..\..\D_Mietusia\D_Mulowa\Mala_w_Mulowej
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -1258,7 +1132,6 @@
 .STATUS	8
 .SURVEY	Szczelina nad Tomanowa I
 .NAME	SZNDT1
-.PATH	..\Szczelina_nad_Tom_I
 .STATUS	8
 .ENDBOOK
 .BOOK	Szczelina nad Tomanowa II
@@ -1267,7 +1140,6 @@
 .STATUS	8
 .SURVEY	Szczelina nad Tomanowa II
 .NAME	SZNDT2
-.PATH	..\Szczelina_nad_Tom_II
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
