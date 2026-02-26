@@ -56,6 +56,7 @@ V súčasnosti projekt obsahuje údaje pre nasledujúce jaskyne:
 - Gawra
 - Jaskinia Bańdzioch Kominiarski
 - Jaskinia Biała (jako fragment jaskini Zimna)
+- Jaskinia Mroźna
 - Jaskinia Ciepła
 - Jaskinia Czarna (fragment)
 - Jaskinia Goryczkowa

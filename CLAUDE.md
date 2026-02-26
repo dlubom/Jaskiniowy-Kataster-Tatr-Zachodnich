@@ -220,6 +220,14 @@ Example:
 
 Covers: PIG lookup → coordinate conversion → directory creation → `_RAW/` + README → `_M.SRV` + `_S.SRV` skeletons → `KATASTER.wpj` entry.
 
+### `/average-shots` — `.claude/skills/average-shots/SKILL.md`
+
+Averages multiple repeat shots for the same leg (forward A→B + backward B→A) into a single measurement in a `_S.SRV` file. Use after importing raw DistoX data. Usage:
+
+```
+/average-shots <path/to/FILE_S.SRV>
+```
+
 ## Workflow for Adding a New Cave
 
 Use the `/add-cave` skill (see above) or follow these steps manually:
