@@ -193,15 +193,17 @@
 .PATH	..\..\..\Dolina Koscieliska\Organy\Jaskinia Zimna
 .STATUS	8
 .ENDBOOK
-.BOOK	Jaskinia Mrozna
+.BOOK	Mrozna
 .NAME	JMROZNA
 .PATH	Jaskinia Mrozna
 .STATUS	8
-.SURVEY	Jaskinia Mrozna meta
+.SURVEY	Mrozna meta
 .NAME	MROZNA_M
+.PATH	..\Mrozna
 .STATUS	8
-.SURVEY	Jaskinia Mrozna pomiary
+.SURVEY	Mrozna pomiary
 .NAME	MROZNA_S
+.PATH	..\Mrozna
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
