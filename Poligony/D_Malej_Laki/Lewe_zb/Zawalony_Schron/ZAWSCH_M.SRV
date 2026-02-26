@@ -1,0 +1,17 @@
+#[
+CAVE_ID			"T.E-12.59"
+CAVE_NAME		"Zawalony Schron"
+UPDATE_DATE		2026-02-24
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"https://jaskiniepolski.pgi.gov.pl/, Z. Tabaczynski"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+#]
+
+#prefix zawsch
+#flag	0	/Zawalony Schron
+#note	0	/Zawalony Schron
+#fix	0	E19.913233	N49.245394	1790.0m
