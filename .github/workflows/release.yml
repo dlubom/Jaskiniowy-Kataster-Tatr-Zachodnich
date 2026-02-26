@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+
+      - name: Build release ZIP
+        run: |
+          zip -r "JKTZ-${{ steps.version.outputs.VERSION }}.zip" . \
+            -x ".git/*" \
+            -x ".github/*" \
+            -x ".claude/*" \
+            -x "doc/*" \
+            -x "logs/*" \
+            -x "*/_RAW/*" \
+            -x "*.DS_Store" \
+            -x "*.nta" \
+            -x "*.ntn" \
+            -x "*.ntv" \
+            -x "*.nts" \
+            -x "*.ntp" \
+            -x "*.wrl" \
+            -x "*.log" \
+            -x "*.lst"
+
+      - name: Extract release notes from CHANGELOG.md
+        id: notes
+        run: |
+          # Extract content between the first ## [vX.Y.Z] header and the next ## header
+          NOTES=$(awk '/^## \['"${{ steps.version.outputs.VERSION }}"'\]/{found=1; next} found && /^## \[/{exit} found{print}' CHANGELOG.md)
+          # Write to file for the release action
+          echo "$NOTES" > release_notes.md
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          body_path: release_notes.md
+          files: JKTZ-${{ steps.version.outputs.VERSION }}.zip

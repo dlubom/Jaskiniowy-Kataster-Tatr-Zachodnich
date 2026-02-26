@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - **Coordinate system**: WGS 84, UTM projection
 - **License**: Creative Commons Attribution-ShareAlike 2.0
-- **Current version**: v0.28 (tracked in INFO.txt)
+- **Current version**: v1.0.0 — semantic versioning, tracked in `CHANGELOG.md`
 - **Language**: Polish (cave names, documentation, comments in survey files)
 
 ## Tools & Processing
@@ -23,7 +23,8 @@ This is a data project, not a software project. There is no build system, test s
 
 ```
 KATASTER.wpj              # Main Walls project file (hierarchical cave/survey tree)
-INFO.txt                  # Version history and contributor credits
+CHANGELOG.md              # Version history (semver, from v0.00 to current)
+INFO.txt                  # Project description, links, contributor credits
 Poligony/                 # SOURCE DATA: ~150 .SRV survey files organized by valley
   D_Bystra/
   D_Chocholowska/
@@ -38,6 +39,7 @@ Poligony/                 # SOURCE DATA: ~150 .SRV survey files organized by val
   _Domiary_Pow_/          # Surface measurement connections between caves
 Powierzchnia/             # Terrain model (DEM from contour lines)
 KATASTER/                 # COMPILED OUTPUT (git-ignored .NT* files)
+.github/workflows/        # GitHub Actions (automated release ZIP on tag push)
 ```
 
 ## Key File Formats
@@ -164,7 +166,21 @@ If the source material is a single file, the ZIP + unpacked folder are not neede
 
 ## .gitignore
 
-Compiled Walls outputs are git-ignored: `*.nta`, `*.ntn`, `*.ntv`, `*.nts`, `*.ntp`, `*.wrl`, `*.log`, `*.lst`. Only `.SRV` source data and `.wpj` project file are tracked.
+Compiled Walls outputs are git-ignored: `*.nta`, `*.ntn`, `*.ntv`, `*.nts`, `*.ntp`, `*.wrl`, `*.log`, `*.lst`. The `logs/` directory is also ignored. Only `.SRV` source data and `.wpj` project file are tracked.
+
+## Versioning and Releases
+
+The project uses [semantic versioning](https://semver.org/) starting from v1.0.0. All version history is in `CHANGELOG.md`.
+
+### Release process
+1. Update `CHANGELOG.md` with a new `## [vX.Y.Z] - YYYY-MM-DD` entry
+2. Update the version in `INFO.txt` header line
+3. Commit, merge to master
+4. Create an annotated tag: `git tag -a vX.Y.Z -m "vX.Y.Z - description"`
+5. Push the tag: `git push origin vX.Y.Z`
+6. GitHub Actions automatically creates a release with a ZIP archive (`JKTZ-vX.Y.Z.zip`)
+
+The release ZIP excludes: `.git/`, `.github/`, `.claude/`, `doc/`, `logs/`, `*/_RAW/*`, `.DS_Store`, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
 
 ## Documentation Resources (`doc/`)
 
@@ -203,6 +219,7 @@ When creating commits in this project:
 - **Do NOT add `Co-Authored-By` lines** — commit messages should not include Claude Code attribution
 - Use Polish language for commit messages when appropriate
 - Keep messages concise and descriptive
+- When releasing a new version, create an **annotated tag** (`git tag -a vX.Y.Z -m "..."`) on master after merging — see "Versioning and Releases" above
 
 ## Workflow for Adding a New Cave
 
@@ -210,5 +227,5 @@ When creating commits in this project:
 2. Create a directory under the appropriate valley in `Poligony/` (use underscores, no spaces, short names)
 3. Create `.SRV` file(s) with metadata block and survey data (newer format: separate `_M.SRV` for coordinates and `_S.SRV` for measurements)
 4. Add `.BOOK`/`.SURVEY` entries to `KATASTER.wpj` referencing the new files
-5. Update `INFO.txt` with a new version entry
+5. Update `CHANGELOG.md` with a new version entry (and update version in `INFO.txt` header)
 6. All new data should be coordinated through the project coordinator (darek.lubomski@gmail.com)

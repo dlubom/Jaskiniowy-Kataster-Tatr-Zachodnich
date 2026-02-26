@@ -1,48 +1,13 @@
-﻿"Jaskiniowy Kataster Tatr" - v.0.28
+"Jaskiniowy Kataster Tatr" - v1.0.0
 
-Historia wersji:
-v0.00  (rok 2010-2011)  - projekt wstepny, brak koordynatora, dane haotyczne
-v0.01 (24.04.2012) - zmieniono drzewko projektu, dodano Wysoka, Bandziocha
-v0.02 (25.04.2012) - ujednolicono sposob wpisania danych, usunieto polskie znaki z plikow
-v0.03 (26.04.2012) - zmieniono uklad drzewka plikow; dodano powierzchnie calosci
-v0.04 (04.05.2012) - dodano model terenu oparty o poziomice
-v0.05 (14.05.2012) - dodano jaskinie Mylna
-v0.06 (18.10.2013) - przejecie koordynacji - Dariusz Lubomski; dodano ciag pomiarowy w Snieznej - 20130713 - autorzy pomiarow Karol Makowski; Marcin Slowik
-v0.07 (04.11.2013) - dodano jaskinie Goryczkowa
-v0.08 (13.11.2013) - dodano jaskinie Kalacka, dodano jaskinie Studnia w Kazalnicy, poprawka w Koziej
-v0.09 (20.11.2013) - dodano jaskinie Zwolinskiego, dodano jaskinie Swistacza(brak wsp GPS), nowe pomiary Koprowej Studni
-v0.10 (24.11.2013) - dodano system Zoska - Zagonna Studnia
-v0.11 (27.11.2013) - Coordinates UTM/UPS grid-relative; Declinations Derive from #DATE
-v0.12 (02.12.2013) - dodano jaskinie Harda (ciag glowny), dodano jaskinie Kamienne Mleko, dodano jaskinie Dmuchawa(brak wsp GPS), zrobiono porzadek w nazwiskach
-		     ponizej wypisane sa osoby ktore bezposrednio wsparly projekt, zas nazwiska kartujacych wypisane sa w plikach poszczegolnych sesji pomiarowych
-v0.13 (08.12.2013) - dodano jaskinie Spiacych Rycerzy (fragment), Jaskinia Lodowa Mietusia, Szczelina Mietusia, Zb�jecka Dziura, Szczelina nad Tomanowa II (brak wsp GPS),
-		     Szczelina nad Tomanowa I (brak wsp GPS), Dziura w Stole (brak wsp GPS), Jaskinia Zawaliskowa Tomanowa (brak wsp GPS), Jaskinia Poszukiwaczy Skarbow (fragment)
-		     Jaskinia Pod Zamkiem(fragment), Jaskinia w Zb�jnickiej Turni (brak wsp GPS), Zb�jnicka Piwnica (brak wsp GPS), Jaskinia Ziobrowa i Jaskinia pod Niznia Zbojnicka Turnia,
-		     Jaskinia Ciepla (brak wsp GPS), Gawra, Rura przy Oknie (brak wsp GPS), Lustrzany Korytarz (brak wsp GPS), Jaskinia nad Percia (brak wsp GPS), Jaskinia nad Beczka (brak wsp GPS),
-		     Ponad to dodano ciag powierzchniowy od Koprowej Studni do Jaskini Swistaczej
-v0.14 (04.04.2014) - Z http://geoportal.pgi.gov.pl dodano wpolrzedne dla jaskin : Dmuchawa, Jaskinia nad Beczka, Jaskinia nad Percia, Lustrzany Korytarz, Rura przy Oknie, Jaskinia Ciepla, Jaskinia w Zbojnickiej Turni,
-		      Zbojnicka Piwnica, Dziura w Stole, Jaskinia Zawaliskowa Tomanowa, Szczelina nad Tomanowa I, Szczelina nad Tomanowa II
-v0.15 (21.04.2014) - Dodano Jaskinie Biala, Szara Studnia, Jaskinia w Wielkiej Turni, Czerwona Studzienka, Dziurka w Trawce. Drobne aktualizacje wspolrzednych i wysokosci.
-v0.16 (11.05.2014) - Dodano Jaskinia pod Progiem, Michowa Studnia Wyznia, Studnia na Szlaku.
-v0.17 (21.05.2014) - Dodano Meander w Malolackim Siodle, Jaskinia Mala w Mulowej oraz Jaskinia Lejbusiowa. Dodano Ptasia Studnia (uwaga wersja robocza). Drobne aktualizacje wspolrzednych i wysokosci.
-v0.18 (09.06.2014) - Dodano nowe pomiary Jaskini Lodowa Małołącka, aktualizacja współrzędnych otworu Jaskini Śnieżna Studnia, Jaskinia Wielka Śnieżna, Lodowa Małołącka.
-v0.19 (16.06.2014) - Dodano Jaskinię Marmurową. Dodatkowo kosmetyczne poprawki.
-v0.20 (26.06.2014) - Poprawka wsp. otworów Małej w Mułowej, Lodowej Miętusiej, Marmurowej i Studni w Kazalinicy. Odczytał K. D. z http://mapy.geoportal.gov.pl/imap/mapy.geoportal.gov.pl/imap
-v0.21 (21.10.2014) - Aktualizacja dla jaskini Hardej. Nowe pomiary.
-v0.22 (30.12.2014) - Dodano jaskinię Nova Kresanica (brak wsp. otworu). Dodano fragment jaskini Czarnej z ciągiem po pow. do otworu Zimnej.
-v0.23 (17.01.2015) - Dodano ciągi w Przemkowych Partiach. Dodano wsp. otworu jaskini Nova Kresanica.
-v0.24 (30.05.2015) - Dodano jaskinię Obcasna Vyvieracka, wprowadzono nowe formatowanie plików (Obcasna Vyvieracka, Kalacka)
-v0.25 (26.07.2015) - Dodano jaskinie Smocza Jama, rozpoczeto prace nad jaskinia Dziura
-v0.26 (08.06.2020) - Dodano jaskinie Raptawicka oraz Oblazkowa, utworzono System Jaskin Pawlikowskiego (Mylna + Oblazkowa + Raptawicka)
-v0.27 (20.06.2020) - Wykomentowano duplikaty pomiarow w wielu jaskiniach (Wielka Sniezna, Wielka Litworowa, Wysoka Za 7 Progami,
-		     Mala w Mulowej, Przy Przechodzie, Bandzioch Kominiarski, Zaspalkowa Szczelina, Zwolinskiego), poprawki struktury
-v0.28 (08.05.2024) - Aktualizacja README i dokumentacji, dodano nowe obrazy
-
----------------------------------------------------------------------------------------------------------------------------------------------------------
-Projekt "Jaskiniowy Kataster Tatr" ma celu zebranie jak najwiecej
-danych kartograficznych w jednym miejscu.
+Projekt ma celu zebranie jak najwiecej danych kartograficznych
+dotyczacych jaskin tatrzanskich w jednym miejscu.
 Ma to byc pomocne nam obecnie dzialajacym w jaskiniach tatrzanskich,
 ale przede wszystkim ma to byc tez dla kolejnych pokolen.
+
+Historia zmian: CHANGELOG.md
+Projekt: https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich
+Najnowsze wydanie: https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest
 
 LICENCE http://creativecommons.org/licenses/by-sa/2.0/
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -50,7 +15,7 @@ LICENCE http://creativecommons.org/licenses/by-sa/2.0/
 NOWE DANE PRZESYLALI DO KOORDYNATORA. ON PO ICH WPROWADZENIU ROZESLE POPRAWIONY PROJEKT
 DO WSZYSTKICH ZAINTERESOWANYCH. ZACHOWAMY WTEDY JEDNOLITOSC
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-* koordynator projektu: Paweł Gogolak (SDG)
+* koordynator projektu: Pawel Gogolak (SDG)
 * koordynator projektu: Dariusz Lubomski (SKTJ)
 * koordynator projektu: Krzysztof "Chomik" Borgiel (SBB)
 * konsultacje i wsparcie: Piotr "Kierownik" Stelmach (WKTJ)

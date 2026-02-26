@@ -3,7 +3,9 @@
 ![Walls 2D screen](walls_2d_screen.png)
 ![Walls 2D screen](walls_3d_screen.png)
 
-[Pobierz główny projekt tutaj | Download the main project here | Stiahnite si hlavný projekt tu](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/archive/refs/heads/master.zip)
+[![Latest Release](https://img.shields.io/github/v/release/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich)](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
+
+[Pobierz najnowsze wydanie | Download the latest release | Stiahnite si najnovsie vydanie](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
 
 ### Techniczne ostrzeżenie | Technical Warning | Technické upozornenie
 **Uwaga:** Projekt należy wypakować do krótkiej ścieżki, np. `C:\JKTZ\`. W przeciwnym razie Windows może zgłosić błąd *Path too long* (`0x80010135`).
