@@ -9,18 +9,13 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 Przejscie na wersjonowanie semantyczne (semver). Utworzenie CHANGELOG.md, automatyzacja wydan przez GitHub Actions.
 
 ### Dodane
-- Jaskinia Mrozna (nowa jaskinia z pelnym zestawem plikow meta + pomiary)
 - Zawalony Schron, Jaskinia Koszowa, Szczelina nad Lejem, Wyznia Koszowa Dziura (4 nowe jaskinie)
 - Pliki zrodlowe _RAW dla jaskin: Kalacka, Goryczkowa, Ptasia Studnia, Marmurowa, Szczelina Mietusia, Lodowa Mietusia, Spiacych Rycerzy, Harda, Tabaczynski, Zwolinskiego
-- Artykul o projekcie z czasopisma Jaskinie (w _RAW Zwolinskiego)
 - Plik LICENCE (Creative Commons BY-SA 2.0)
-- Plik CLAUDE.md z instrukcjami dla Claude Code
-- Dokumentacja referencyjna w doc/ (manual Walls, zrzut PIG)
 - CHANGELOG.md (ten plik) z pelna historia wersji
 - GitHub Actions workflow do automatycznego tworzenia wydan (ZIP + release notes)
 
 ### Zmienione
-- Ustandaryzowano dokumentacje _RAW: README.md zamiast TXT
 - Ujednolicono pliki WPJ/SRV do ASCII (usunieto polskie znaki)
 - Skrocono sciezki katalogow (spacje -> podkreslniki, krotsze nazwy)
 - Oczyszczono dyrektywy .PATH w KATASTER.wpj (usunieto zbedne sciezki powielajace rodzica)
