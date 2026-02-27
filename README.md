@@ -35,6 +35,7 @@ Aktualnie projekt zawiera dane dla następujących jaskiń:
 - Gawra
 - Jaskinia Bańdzioch Kominiarski
 - Jaskinia Biała (jako fragment jaskini Zimna)
+- Jaskinia Mroźna
 - Jaskinia Ciepła
 - Jaskinia Czarna (fragment)
 - Jaskinia Goryczkowa

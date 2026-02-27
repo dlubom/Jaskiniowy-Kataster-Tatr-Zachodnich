@@ -1,0 +1,14 @@
+#[
+CAVE_ID			"T.D-08.07"
+CAVE_NAME		"Jaskinia Mrozna"
+UPDATE_DATE		2026-02-24
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"Panstwowy Instytut Geologiczny"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+#]
+
+#fix  td0807  E19:52:01.900  N49:14:58.900  1112.2m

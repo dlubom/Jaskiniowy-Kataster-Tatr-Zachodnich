@@ -202,10 +202,16 @@ When working with this project, Claude Code can use the following reference mate
 - Finding alternative cave names (`other_names` field)
 - Checking geographic location and access descriptions
 
-**Example: Searching for cave "Dziura" (T.B-14.01)**
+**Always search by cave ID, not name** — the ID is ASCII and unambiguous. Cave names contain Polish diacritics (ź, ą, etc.) that cause grep to fail silently:
+
 ```bash
-grep -i "T\.B-14" doc/jaskinie_polski_pig_dump.jsonl
+# Correct — search by ID (always works)
+grep '"T.B-14.01"' doc/jaskinie_polski_pig_dump.jsonl
+
+# Avoid — searching by name may fail on diacritics
+grep -i "dziura" doc/jaskinie_polski_pig_dump.jsonl
 ```
+
 Returns data including:
 - Official name: "Dziura" with aliases "Jaskinia Strążyska, Zbójnicka Jama"
 - Coordinates: 49.27°N, 19.92°E, 1020 m n.p.m.
@@ -221,11 +227,39 @@ When creating commits in this project:
 - Keep messages concise and descriptive
 - When releasing a new version, create an **annotated tag** (`git tag -a vX.Y.Z -m "..."`) on master after merging — see "Versioning and Releases" above
 
+## Available Skills
+
+### `/add-cave` — `.claude/skills/add-cave/SKILL.md`
+
+Guides through adding a new cave end-to-end. Usage:
+
+```
+/add-cave <cave-id> "<valley/subdir/path>" [/path/to/source.zip]
+```
+
+Example:
+```
+/add-cave T.D-08.07 "Dolina Koscieliska/Organy" /tmp/MROZN.SRV.zip
+```
+
+Covers: PIG lookup → coordinate conversion → directory creation → `_RAW/` + README → `_M.SRV` + `_S.SRV` skeletons → `KATASTER.wpj` entry.
+
+### `/average-shots` — `.claude/skills/average-shots/SKILL.md`
+
+Averages multiple repeat shots for the same leg (forward A→B + backward B→A) into a single measurement in a `_S.SRV` file. Use after importing raw DistoX data. Usage:
+
+```
+/average-shots <path/to/FILE_S.SRV>
+```
+
 ## Workflow for Adding a New Cave
 
-1. **Research the cave** in `doc/jaskinie_polski_pig_dump.jsonl` to find official coordinates, dimensions, and documentation history
+Use the `/add-cave` skill (see above) or follow these steps manually:
+
+1. **Research the cave** in `doc/jaskinie_polski_pig_dump.jsonl` — search by cave ID (see PIG section above) to find official coordinates, dimensions, and documentation history
 2. Create a directory under the appropriate valley in `Poligony/` (use underscores, no spaces, short names)
 3. Create `.SRV` file(s) with metadata block and survey data (newer format: separate `_M.SRV` for coordinates and `_S.SRV` for measurements)
-4. Add `.BOOK`/`.SURVEY` entries to `KATASTER.wpj` referencing the new files
-5. Update `CHANGELOG.md` with a new version entry (and update version in `INFO.txt` header)
-6. All new data should be coordinated through the project coordinator (darek.lubomski@gmail.com)
+4. If using Claude for adding cave: **Close Walls** before editing `KATASTER.wpj` — Walls overwrites the file on save, discarding any manually added entries
+5. Add `.BOOK`/`.SURVEY` entries to `KATASTER.wpj` referencing the new files
+6. Update `CHANGELOG.md` with a new version entry (and update version in `INFO.txt` header)
+7. All new data should be coordinated through the project coordinator (darek.lubomski@gmail.com)
