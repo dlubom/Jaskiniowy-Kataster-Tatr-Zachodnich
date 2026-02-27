@@ -1,30 +1,30 @@
-🇵🇱 **Polski** | [🇬🇧 English](README.en.md) | [🇸🇰 Slovenčina](README.sk.md)
+[🇵🇱 Polski](README.md) | 🇬🇧 **English** | [🇸🇰 Slovenčina](README.sk.md)
 
-# Jaskiniowy Kataster Tatr
+# Tatra Cave Registry
 
 ![Walls 2D screen](walls_2d_screen.png)
 ![Walls 2D screen](walls_3d_screen.png)
 
 [![Latest Release](https://img.shields.io/github/v/release/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich)](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
 
-[Pobierz najnowsze wydanie](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
+[Download the latest release](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
 
-### Opis projektu
-Projekt ma na celu zgromadzenie w jednym miejscu wszystkich danych kartograficznych dotyczących tatrzańskich jaskiń. Wykorzystując oprogramowanie Walls, głównym celem jest stworzenie zestawienia przestrzennego ciągów pomiarowych, współrzędnych wejść do jaskiń oraz modelu terenu. Projekt jest otwarty dla wszystkich zainteresowanych, by ułatwić działania eksploracyjne, edukacyjne oraz wspierać badania naukowe. Zebranie kompleksowych i dokładnych danych stanowi wyzwanie ze względu na różnorodność metod i czasu ich wykonania.
+### Project Description
+The project aims to compile all cartographic data related to the caves of the Tatra Mountains in one place. Utilizing the Walls software, the primary goal is to create a spatial compilation of measurement sequences, cave entrance coordinates, and terrain models. The project is open to all who are interested, to facilitate exploratory and educational activities, and to support scientific research. Gathering comprehensive and accurate data presents a challenge due to the diversity of methods and times of their execution.
 
-Projekt oparty jest o oprogramowanie Walls – tutaj znajdziesz [najnowszą wersję programu oraz instrukcję obsługi](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
+The project is based on the Walls software – you can find the [latest version of the program and its manual here](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
 
-### Model 3D online
-[![Zobacz model 3D jaskiń](sketchfab_3d.png)](https://sketchfab.com/models/64c9acf8f12345a3a3a4aa72df330b51)
+### 3D Model Online
+[![View 3D cave model](sketchfab_3d.png)](https://sketchfab.com/models/64c9acf8f12345a3a3a4aa72df330b51)
 
-### Jak można pomóc?
-Zachęcamy do współpracy przy projekcie oraz do udostępniania własnych pomiarów. Kontakt: [darek.lubomski@gmail.com](mailto:darek.lubomski@gmail.com).
+### How Can You Help?
+We encourage collaboration on the project as well as sharing your own measurements. Contact: [darek.lubomski@gmail.com](mailto:darek.lubomski@gmail.com).
 
-### Licencja
+### License
 [Creative Commons Attribution-ShareAlike 2.0](http://creativecommons.org/licenses/by-sa/2.0/).
 
-### Zawartość projektu
-Aktualnie projekt zawiera dane dla następujących jaskiń:
+### Project Contents
+Currently, the project includes data for the following caves:
 
 - Czerwona Studzienka
 - Dmuchawa
@@ -97,5 +97,5 @@ Aktualnie projekt zawiera dane dla następujących jaskiń:
 - Zoska - Zagonna Studnia
 - Zwolińskiego
 
-### Pliki źródłowe `_RAW/`
-Paczka ZIP z wydania nie zawiera katalogów `_RAW/` z oryginalnymi plikami źródłowymi pomiarów. Służą one do weryfikacji i archiwizacji danych. Aby je uzyskać, sklonuj repozytorium lub pobierz [branch master](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/archive/refs/heads/master.zip).
+### Raw source files `_RAW/`
+The release ZIP does not include `_RAW/` directories with original survey source files. These are used for data verification and archival purposes. To access them, clone the repository or download the [master branch](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/archive/refs/heads/master.zip).
