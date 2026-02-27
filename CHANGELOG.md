@@ -4,6 +4,14 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.1.0] - 2026-02-27
+
+### Dodane
+- Jaskinia Mrozna
+- Claude skills:
+  - add-cave - dodawanie jaskini
+  - average-shots - uśrednianie wielokrotnych strzałów
+
 ## [v1.0.0] - 2026-02-26
 
 Przejscie na wersjonowanie semantyczne (semver). Utworzenie CHANGELOG.md, automatyzacja wydan przez GitHub Actions.
