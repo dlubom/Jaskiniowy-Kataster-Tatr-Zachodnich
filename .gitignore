@@ -13,3 +13,6 @@
 
 #macOS - pliki metadanych folderow
 .DS_Store
+
+#Logs
+logs/

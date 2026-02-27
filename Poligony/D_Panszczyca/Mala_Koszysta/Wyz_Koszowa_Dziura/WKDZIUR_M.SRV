@@ -1,0 +1,17 @@
+#[
+CAVE_ID			"T.D-22.01"
+CAVE_NAME		"Wyznia Koszowa Dziura"
+UPDATE_DATE		2026-02-24
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"https://jaskiniepolski.pgi.gov.pl/, Z. Tabaczynski"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+#]
+
+#prefix wkdziur
+#flag	0	/Wyznia Koszowa Dziura
+#note	0	/Wyznia Koszowa Dziura
+#fix	0	E20.058694	N49.248722	1800.0m

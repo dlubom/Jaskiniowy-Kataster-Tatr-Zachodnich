@@ -1,30 +1,30 @@
-🇵🇱 **Polski** | [🇬🇧 English](README.en.md) | [🇸🇰 Slovenčina](README.sk.md)
+[🇵🇱 Polski](README.md) | [🇬🇧 English](README.en.md) | 🇸🇰 **Slovenčina**
 
-# Jaskiniowy Kataster Tatr
+# Tatranský kataster jaskýň
 
 ![Walls 2D screen](walls_2d_screen.png)
 ![Walls 2D screen](walls_3d_screen.png)
 
 [![Latest Release](https://img.shields.io/github/v/release/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich)](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
 
-[Pobierz najnowsze wydanie](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
+[Stiahnite si najnovšie vydanie](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
 
-### Opis projektu
-Projekt ma na celu zgromadzenie w jednym miejscu wszystkich danych kartograficznych dotyczących tatrzańskich jaskiń. Wykorzystując oprogramowanie Walls, głównym celem jest stworzenie zestawienia przestrzennego ciągów pomiarowych, współrzędnych wejść do jaskiń oraz modelu terenu. Projekt jest otwarty dla wszystkich zainteresowanych, by ułatwić działania eksploracyjne, edukacyjne oraz wspierać badania naukowe. Zebranie kompleksowych i dokładnych danych stanowi wyzwanie ze względu na różnorodność metod i czasu ich wykonania.
+### Popis projektu
+Projekt má za cieľ zhromaždiť všetky kartografické údaje o tatranských jaskyniach na jednom mieste. Využitím softvéru Walls je hlavným cieľom vytvoriť priestorové zosumarizovanie meracích postupov, súradníc vstupov do jaskýň a modelu terénu. Projekt je otvorený pre všetkých záujemcov, aby uľahčil prieskumné, vzdelávacie a podporoval vedecký výskum. Zhromaždenie komplexných a presných údajov predstavuje výzvu kvôli rozmanitosti metód a času ich vykonávania.
 
-Projekt oparty jest o oprogramowanie Walls – tutaj znajdziesz [najnowszą wersję programu oraz instrukcję obsługi](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
+Projekt je založený na softvéri Walls – [tu nájdete najnovšiu verziu programu a návod na použitie](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
 
-### Model 3D online
-[![Zobacz model 3D jaskiń](sketchfab_3d.png)](https://sketchfab.com/models/64c9acf8f12345a3a3a4aa72df330b51)
+### 3D model online
+[![Pozrite si 3D model jaskýň](sketchfab_3d.png)](https://sketchfab.com/models/64c9acf8f12345a3a3a4aa72df330b51)
 
-### Jak można pomóc?
-Zachęcamy do współpracy przy projekcie oraz do udostępniania własnych pomiarów. Kontakt: [darek.lubomski@gmail.com](mailto:darek.lubomski@gmail.com).
+### Ako môžete pomôcť?
+Začleníme do projektu aj vašu spoluprácu a zdieľanie vlastných meraní. Kontaktujte: [darek.lubomski@gmail.com](mailto:darek.lubomski@gmail.com).
 
-### Licencja
+### Licencia
 [Creative Commons Attribution-ShareAlike 2.0](http://creativecommons.org/licenses/by-sa/2.0/).
 
-### Zawartość projektu
-Aktualnie projekt zawiera dane dla następujących jaskiń:
+### Obsah projektu
+V súčasnosti projekt obsahuje údaje pre nasledujúce jaskyne:
 
 - Czerwona Studzienka
 - Dmuchawa
@@ -35,7 +35,6 @@ Aktualnie projekt zawiera dane dla następujących jaskiń:
 - Gawra
 - Jaskinia Bańdzioch Kominiarski
 - Jaskinia Biała (jako fragment jaskini Zimna)
-- Jaskinia Mroźna
 - Jaskinia Ciepła
 - Jaskinia Czarna (fragment)
 - Jaskinia Goryczkowa
@@ -98,5 +97,5 @@ Aktualnie projekt zawiera dane dla następujących jaskiń:
 - Zoska - Zagonna Studnia
 - Zwolińskiego
 
-### Pliki źródłowe `_RAW/`
-Paczka ZIP z wydania nie zawiera katalogów `_RAW/` z oryginalnymi plikami źródłowymi pomiarów. Służą one do weryfikacji i archiwizacji danych. Aby je uzyskać, sklonuj repozytorium lub pobierz [branch master](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/archive/refs/heads/master.zip).
+### Zdrojové súbory `_RAW/`
+Vydanie vo formáte ZIP neobsahuje adresáre `_RAW/` s pôvodnými zdrojovými súbormi meraní. Tieto slúžia na overenie a archiváciu údajov. Ak ich chcete získať, naklonujte repozitár alebo si stiahnite [vetvu master](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/archive/refs/heads/master.zip).
