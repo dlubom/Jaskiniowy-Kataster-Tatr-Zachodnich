@@ -1,6 +1,6 @@
 # Jaskinia Mroźna — surowe materiały źródłowe
 
-- **Źródło**: nieznane (plik MROZN.SRV.zip)
+- **Źródło**: Mail od F.Filar
 - **Autorzy pomiarów**: B. Chlipała, F. Filar, J. Filar, M. Parczewski (reinwentaryzacja 2013/2014)
 - **Data pomiaru**: 2013/2014 (wg PIG)
 - **Data pozyskania**: 2026-02-12
