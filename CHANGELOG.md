@@ -7,7 +7,7 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 ## [v1.1.0] - 2026-02-27
 
 ### Dodane
-- Jaskinia Mrozna
+- Jaskinia Mroźna
 - Claude skills:
   - add-cave - dodawanie jaskini
   - average-shots - uśrednianie wielokrotnych strzałów
