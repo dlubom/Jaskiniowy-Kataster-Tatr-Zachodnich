@@ -1,19 +1,17 @@
-"Jaskiniowy Kataster Tatr" - v1.0.0
+"Jaskiniowy Kataster Tatr Zachodnich" - v1.0.0
 
-Projekt ma celu zebranie jak najwiecej danych kartograficznych
-dotyczacych jaskin tatrzanskich w jednym miejscu.
-Ma to byc pomocne nam obecnie dzialajacym w jaskiniach tatrzanskich,
-ale przede wszystkim ma to byc tez dla kolejnych pokolen.
+Ta notka jest jedynie informacyjna. Pelny opis projektu znajduje sie w pliku README.md
+lub na stronie: https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich
 
-Historia zmian: CHANGELOG.md
-Projekt: https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich
+Projekt ma na celu zgromadzenie w jednym miejscu wszystkich danych kartograficznych
+dotyczacych jaskin tatrzanskich. Wykorzystujac oprogramowanie Walls, glownym celem jest
+stworzenie zestawienia przestrzennego ciagow pomiarowych, wspolrzednych wejsc do jaskin
+oraz modelu terenu. Projekt jest otwarty dla wszystkich zainteresowanych, by ulatwic
+dzialania eksploracyjne, edukacyjne oraz wspierac badania naukowe.
+
+Historia zmian: https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/blob/master/CHANGELOG.md
 Najnowsze wydanie: https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest
-
-LICENCE http://creativecommons.org/licenses/by-sa/2.0/
----------------------------------------------------------------------------------------------------------------------------------------------------------
-!! WAZNE !! ABY ZACHOWAC LAD I PORZADEK, PROSZE ABY WSZYSCY DZIALAJACY CZYNNIE W PROJEKCIE
-NOWE DANE PRZESYLALI DO KOORDYNATORA. ON PO ICH WPROWADZENIU ROZESLE POPRAWIONY PROJEKT
-DO WSZYSTKICH ZAINTERESOWANYCH. ZACHOWAMY WTEDY JEDNOLITOSC
+Licencja: http://creativecommons.org/licenses/by-sa/2.0/
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 * koordynator projektu: Pawel Gogolak (SDG)
 * koordynator projektu: Dariusz Lubomski (SKTJ)

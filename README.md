@@ -7,13 +7,6 @@
 
 [Pobierz najnowsze wydanie | Download the latest release | Stiahnite si najnovsie vydanie](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
 
-### Techniczne ostrzeżenie | Technical Warning | Technické upozornenie
-**Uwaga:** Projekt należy wypakować do krótkiej ścieżki, np. `C:\JKTZ\`. W przeciwnym razie Windows może zgłosić błąd *Path too long* (`0x80010135`).
-
-**Note:** Extract the project to a short path, e.g., `C:\JKTZ\`. Otherwise Windows may report *Path too long* error (`0x80010135`).
-
-**Poznámka:** Projekt rozbaľte do krátkej cesty, napr. `C:\JKTZ\`. Inak môže Windows hlásiť chybu *Path too long* (`0x80010135`).
-
 ### Opis projektu
 Projekt ma na celu zgromadzenie w jednym miejscu wszystkich danych kartograficznych dotyczących tatrzańskich jaskiń. Wykorzystując oprogramowanie Walls, głównym celem jest stworzenie zestawienia przestrzennego ciągów pomiarowych, współrzędnych wejść do jaskiń oraz modelu terenu. Projekt jest otwarty dla wszystkich zainteresowanych, by ułatwić działania eksploracyjne, edukacyjne oraz wspierać badania naukowe. Zebranie kompleksowych i dokładnych danych stanowi wyzwanie ze względu na różnorodność metod i czasu ich wykonania.
 
@@ -119,3 +112,8 @@ V súčasnosti projekt obsahuje údaje pre nasledujúce jaskyne:
 - Zbójecka Dziura
 - Zoska - Zagonna Studnia
 - Zwolińskiego
+
+### Pliki źródłowe `_RAW/` | Raw source files | Zdrojové súbory
+Paczka ZIP z wydania nie zawiera katalogów `_RAW/` z oryginalnymi plikami źródłowymi pomiarów. Służą one do weryfikacji i archiwizacji danych. Aby je uzyskać, sklonuj repozytorium lub pobierz [branch master](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/archive/refs/heads/master.zip).
+
+The release ZIP does not include `_RAW/` directories with original survey source files. These are used for data verification and archival purposes. To access them, clone the repository or download the [master branch](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/archive/refs/heads/master.zip).
