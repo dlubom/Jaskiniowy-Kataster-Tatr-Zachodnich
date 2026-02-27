@@ -14,5 +14,8 @@
 #macOS - pliki metadanych folderow
 .DS_Store
 
+#idea
+.idea
+
 #Logs
 logs/
