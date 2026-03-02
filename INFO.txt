@@ -1,4 +1,4 @@
-"Jaskiniowy Kataster Tatr Zachodnich" - v1.0.0
+"Jaskiniowy Kataster Tatr Zachodnich" - __VERSION__
 
 Ta notka jest jedynie informacyjna. Pelny opis projektu znajduje sie w pliku README.md
 lub na stronie: https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich
