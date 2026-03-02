@@ -97,5 +97,8 @@ Currently, the project includes data for the following caves:
 - Zoska - Zagonna Studnia
 - Zwolińskiego
 
+### Changelog
+All project changes are documented in the [CHANGELOG.md](CHANGELOG.md).
+
 ### Raw source files `_RAW/`
 The release ZIP does not include `_RAW/` directories with original survey source files. These are used for data verification and archival purposes. To access them, clone the repository or download the [master branch](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/archive/refs/heads/master.zip).

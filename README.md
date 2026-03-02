@@ -98,5 +98,8 @@ Aktualnie projekt zawiera dane dla następujących jaskiń:
 - Zoska - Zagonna Studnia
 - Zwolińskiego
 
+### Historia zmian
+Wszystkie zmiany w projekcie są dokumentowane w pliku [CHANGELOG.md](CHANGELOG.md).
+
 ### Pliki źródłowe `_RAW/`
 Paczka ZIP z wydania nie zawiera katalogów `_RAW/` z oryginalnymi plikami źródłowymi pomiarów. Służą one do weryfikacji i archiwizacji danych. Aby je uzyskać, sklonuj repozytorium lub pobierz [branch master](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/archive/refs/heads/master.zip).

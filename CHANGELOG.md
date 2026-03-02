@@ -4,6 +4,17 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.1.1] - 2026-03-02
+
+### Dodane
+- Zoska-Zagonna Studnia — archiwalne pliki źródłowe _RAW (szkice CDR, pomiary XLS)
+- Harda — archiwalne pliki źródłowe _RAW (Harda_old.zip)
+- Link do CHANGELOG.md w README
+
+### Zmienione
+- INFO.txt — automatyczna wersja z taga (placeholder __VERSION__ podmieniany przez GitHub Actions)
+- Aktualizacja bazy jaskin PIG (jaskinie_polski_pig_dump.jsonl)
+
 ## [v1.1.0] - 2026-02-27
 
 ### Dodane

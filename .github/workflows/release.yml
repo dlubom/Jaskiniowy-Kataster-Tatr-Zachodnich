@@ -19,6 +19,9 @@ jobs:
         id: version
         run: echo "VERSION=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
 
+      - name: Set version in INFO.txt
+        run: sed -i 's/__VERSION__/${{ steps.version.outputs.VERSION }}/' INFO.txt
+
       - name: Build release ZIP
         run: |
           zip -r "JKTZ-${{ steps.version.outputs.VERSION }}.zip" . \

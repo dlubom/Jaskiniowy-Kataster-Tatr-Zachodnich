@@ -97,5 +97,8 @@ V súčasnosti projekt obsahuje údaje pre nasledujúce jaskyne:
 - Zoska - Zagonna Studnia
 - Zwolińskiego
 
+### História zmien
+Všetky zmeny v projekte sú zdokumentované v súbore [CHANGELOG.md](CHANGELOG.md).
+
 ### Zdrojové súbory `_RAW/`
 Vydanie vo formáte ZIP neobsahuje adresáre `_RAW/` s pôvodnými zdrojovými súbormi meraní. Tieto slúžia na overenie a archiváciu údajov. Ak ich chcete získať, naklonujte repozitár alebo si stiahnite [vetvu master](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/archive/refs/heads/master.zip).
