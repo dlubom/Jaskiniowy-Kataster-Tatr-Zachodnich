@@ -174,11 +174,12 @@ The project uses [semantic versioning](https://semver.org/) starting from v1.0.0
 
 ### Release process
 1. Update `CHANGELOG.md` with a new `## [vX.Y.Z] - YYYY-MM-DD` entry
-2. Update the version in `INFO.txt` header line
-3. Commit, merge to master
-4. Create an annotated tag: `git tag -a vX.Y.Z -m "vX.Y.Z - description"`
-5. Push the tag: `git push origin vX.Y.Z`
-6. GitHub Actions automatically creates a release with a ZIP archive (`JKTZ-vX.Y.Z.zip`)
+2. Commit, merge to master
+3. Create an annotated tag: `git tag -a vX.Y.Z -m "vX.Y.Z - description"`
+4. Push the tag: `git push origin vX.Y.Z`
+5. GitHub Actions automatically creates a release with a ZIP archive (`JKTZ-vX.Y.Z.zip`)
+
+The version in `INFO.txt` is set automatically — the `__VERSION__` placeholder is replaced with the tag name during the release build.
 
 The release ZIP excludes: `.git/`, `.github/`, `.claude/`, `doc/`, `logs/`, `*/_RAW/*`, `.DS_Store`, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
 
@@ -261,5 +262,5 @@ Use the `/add-cave` skill (see above) or follow these steps manually:
 3. Create `.SRV` file(s) with metadata block and survey data (newer format: separate `_M.SRV` for coordinates and `_S.SRV` for measurements)
 4. If using Claude for adding cave: **Close Walls** before editing `KATASTER.wpj` — Walls overwrites the file on save, discarding any manually added entries
 5. Add `.BOOK`/`.SURVEY` entries to `KATASTER.wpj` referencing the new files
-6. Update `CHANGELOG.md` with a new version entry (and update version in `INFO.txt` header)
+6. Update `CHANGELOG.md` with a new version entry
 7. All new data should be coordinated through the project coordinator (darek.lubomski@gmail.com)
