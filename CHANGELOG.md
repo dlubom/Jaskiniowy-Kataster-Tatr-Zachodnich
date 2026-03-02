@@ -4,7 +4,7 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
-## [v1.0.2] - 2026-03-02
+## [v1.1.1] - 2026-03-02
 
 ### Dodane
 - Zoska-Zagonna Studnia — archiwalne pliki źródłowe _RAW (szkice CDR, pomiary XLS)
