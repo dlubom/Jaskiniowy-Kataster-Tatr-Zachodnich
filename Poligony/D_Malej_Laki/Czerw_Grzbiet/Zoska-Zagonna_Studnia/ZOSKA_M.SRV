@@ -1,0 +1,20 @@
+#[
+CAVE_ID			"T.E-12.58"
+CAVE_NAME		"Jaskinia Zoska - Zagonna Studnia"
+UPDATE_DATE		2026-03-04
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"https://jaskiniepolski.pgi.gov.pl/"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+#]
+
+#prefix zoska
+#flag	0	/Jaskinia Zoska
+#note	0	/Jaskinia Zoska
+#flag	1Z	/Zagonna Studnia
+#note	1Z	/Zagonna Studnia
+#fix	0	E19.914661	N49.244998	1790.0m
+#fix	1Z	E19.914781	N49.245064	1773.0m	(R50,R50)
