@@ -36,8 +36,8 @@ jobs:
           cd "survex-${SURVEX_VERSION}"
           autoreconf -fi
           ./configure
-          make -C src thgeomagdata.h
-          make -C src -j"$(nproc)" cavern
+          make -C src thgeomagdata.h >/dev/null
+          make -C src -j"$(nproc)" cavern >/dev/null
           sudo install -m 0755 src/cavern /usr/local/bin/cavern
           sudo mkdir -p /usr/local/share
           sudo ln -sfn /usr/share/survex /usr/local/share/survex
@@ -79,7 +79,11 @@ jobs:
 
           while IFS= read -r -d '' f; do
             base=$(basename "$f" .SRV)
-            if ! cavern -q -o "$tmpdir/$base.3d" "$f" >/dev/null 2>&1; then
+            log="$tmpdir/$base.log"
+            if ! cavern -o "$tmpdir/$base.3d" "$f" >"$log" 2>&1; then
+              echo "::group::cavern failure: $f"
+              cat "$log"
+              echo "::endgroup::"
               echo "::error file=$f::cavern compilation failed"
               failures=$((failures + 1))
             fi
@@ -104,22 +108,35 @@ jobs:
         shell: pwsh
         run: |
           Add-Type -AssemblyName System.Windows.Forms
+          $wshell = New-Object -ComObject WScript.Shell
 
-          $wallsExe = Join-Path $env:ProgramFiles 'Walls\Walls32.exe'
-          if (-not (Test-Path $wallsExe)) {
-            throw "Walls32.exe not found at $wallsExe"
+          $candidates = @(
+            (Join-Path $env:ProgramFiles 'Walls\Walls32.exe'),
+            (Join-Path ${env:ProgramFiles(x86)} 'Walls\Walls32.exe')
+          )
+          $wallsExe = $candidates | Where-Object { Test-Path $_ } | Select-Object -First 1
+          if (-not $wallsExe) {
+            throw "Walls32.exe not found in standard install paths"
           }
 
           $proj = Join-Path $env:GITHUB_WORKSPACE 'KATASTER.wpj'
-          $proc = Start-Process -FilePath $wallsExe -ArgumentList @($proj) -PassThru
+          $proc = Start-Process -FilePath $wallsExe -ArgumentList @($proj) -WorkingDirectory $env:GITHUB_WORKSPACE -PassThru
 
-          Start-Sleep -Seconds 10
-          [System.Windows.Forms.SendKeys]::SendWait('{F9}')
-          Start-Sleep -Seconds 35
-          [System.Windows.Forms.SendKeys]::SendWait('%{F4}')
+          Start-Sleep -Seconds 15
+          $activated = $wshell.AppActivate($proc.Id)
+          if (-not $activated) {
+            Write-Warning "Could not AppActivate Walls PID $($proc.Id); trying SendKeys anyway"
+          }
 
-          try { $proc.WaitForExit(30 * 1000) } catch { }
+          $wshell.SendKeys('{F9}')
+          Start-Sleep -Seconds 45
+          $wshell.SendKeys('%{F4}')
 
-          if (-not (Test-Path (Join-Path $env:GITHUB_WORKSPACE 'KATASTER'))) {
+          try { $proc.WaitForExit(60 * 1000) } catch { }
+          if (-not $proc.HasExited) { Stop-Process -Id $proc.Id -Force }
+
+          $outDir = Join-Path $env:GITHUB_WORKSPACE 'KATASTER'
+          if (-not (Test-Path $outDir)) {
+            Get-ChildItem -Path $env:GITHUB_WORKSPACE -Force | Format-Table -AutoSize | Out-String | Write-Host
             throw 'Expected KATASTER output directory was not created by Walls compilation'
           }
