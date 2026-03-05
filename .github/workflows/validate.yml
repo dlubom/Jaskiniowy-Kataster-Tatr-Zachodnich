@@ -1,0 +1,46 @@
+name: Validate (cavern)
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  validate:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Survex (Linux)
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y survex
+
+      - name: Install Survex (Windows)
+        if: runner.os == 'Windows'
+        run: choco install survex -y
+
+      - name: Check SRV file naming
+        if: runner.os == 'Linux'
+        run: |
+          bad=$(find Poligony -name "*.srv" -not -path "*/_RAW/*" -type f)
+          if [ -n "$bad" ]; then
+            echo "::error::Lowercase .srv files found (should be .SRV):"
+            echo "$bad"
+            exit 1
+          fi
+
+      - name: Check for invalid directives
+        if: runner.os == 'Linux'
+        run: |
+          if grep -r '#<' Poligony/; then
+            echo "::error::Invalid #< directive found"
+            exit 1
+          fi
+
+      - name: Compile with cavern
+        run: cavern KATASTER.wpj
