@@ -1,0 +1,130 @@
+name: Validate (cavern)
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+env:
+  SURVEX_VERSION: "1.4.20"
+
+jobs:
+  validate:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Survex (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update && sudo apt-get install -y build-essential libwxgtk3.2-dev libproj-dev libgdal-dev
+          wget https://survex.com/software/${{ env.SURVEX_VERSION }}/survex-${{ env.SURVEX_VERSION }}.tar.gz
+          tar xf survex-${{ env.SURVEX_VERSION }}.tar.gz
+          cd survex-${{ env.SURVEX_VERSION }}
+          ./configure
+          make
+          sudo make install
+
+      - name: Install Survex (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          Invoke-WebRequest -Uri "https://survex.com/software/${{ env.SURVEX_VERSION }}/survex-microsoft-windows-${{ env.SURVEX_VERSION }}.exe" -OutFile survex-installer.exe
+          Start-Process -Wait -FilePath .\survex-installer.exe -ArgumentList '/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART'
+          echo "C:\Program Files (x86)\Survex" >> $env:GITHUB_PATH
+
+      - name: Check SRV file naming
+        if: runner.os == 'Linux'
+        run: |
+          bad=$(find Poligony -name "*.srv" -not -path "*/_RAW/*" -type f)
+          if [ -n "$bad" ]; then
+            echo "::error::Lowercase .srv files found (should be .SRV):"
+            echo "$bad"
+            exit 1
+          fi
+
+      - name: Check for invalid directives
+        if: runner.os == 'Linux'
+        run: |
+          if grep -r --include='*.SRV' '#<' Poligony/; then
+            echo "::error::Invalid #< directive found"
+            exit 1
+          fi
+
+      - name: Compile with cavern
+        run: cavern KATASTER.wpj
+
+      # --- Walls GUI automation (DISABLED) ---
+      # Status: Walls installs and launches OK on GitHub runners.
+      # AppActivate works, F9 (compile) is sent, but no output is produced.
+      # Likely cause: F9 opens a compile dialog requiring mouse interaction,
+      # or the project tree node isn't selected. Walls has no CLI mode.
+      # Since cavern validates the same data, this adds no value until
+      # Walls gets a command-line compile option.
+      #
+      # Install path: C:\Program Files (x86)\Walls Cave Survey\Walls v2\Walls32.exe
+      # MSI: https://github.com/wallscavesurvey/walls/releases/download/v2.2/WallsInstaller-2.2-2024-12-21.msi
+      #
+      # To re-enable: uncomment the steps below.
+      #
+      # - name: Install Walls (Windows, experimental)
+      #   if: runner.os == 'Windows'
+      #   continue-on-error: true
+      #   shell: pwsh
+      #   run: |
+      #     $msiUrl = 'https://github.com/wallscavesurvey/walls/releases/download/v2.2/WallsInstaller-2.2-2024-12-21.msi'
+      #     $msiPath = Join-Path $env:RUNNER_TEMP 'walls.msi'
+      #     Invoke-WebRequest -Uri $msiUrl -OutFile $msiPath
+      #     Start-Process msiexec.exe -ArgumentList @('/i', $msiPath, '/qn', '/norestart') -Wait
+      #     $candidates = @(
+      #       (Join-Path $env:ProgramFiles 'Walls Cave Survey\Walls v2\Walls32.exe'),
+      #       (Join-Path ${env:ProgramFiles(x86)} 'Walls Cave Survey\Walls v2\Walls32.exe')
+      #     )
+      #     $wallsExe = $candidates | Where-Object { Test-Path $_ } | Select-Object -First 1
+      #     if ($wallsExe) {
+      #       Write-Host "Walls installed at: $wallsExe"
+      #     } else {
+      #       Write-Host "::warning::Walls32.exe not found"
+      #     }
+      #
+      # - name: Compile with Walls (Windows, experimental)
+      #   if: runner.os == 'Windows'
+      #   continue-on-error: true
+      #   shell: pwsh
+      #   run: |
+      #     Add-Type -AssemblyName System.Windows.Forms
+      #     $wshell = New-Object -ComObject WScript.Shell
+      #     $candidates = @(
+      #       (Join-Path $env:ProgramFiles 'Walls Cave Survey\Walls v2\Walls32.exe'),
+      #       (Join-Path ${env:ProgramFiles(x86)} 'Walls Cave Survey\Walls v2\Walls32.exe')
+      #     )
+      #     $wallsExe = $candidates | Where-Object { Test-Path $_ } | Select-Object -First 1
+      #     if (-not $wallsExe) { throw "Walls32.exe not found" }
+      #     $proj = Join-Path $env:GITHUB_WORKSPACE 'KATASTER.wpj'
+      #     $proc = Start-Process -FilePath $wallsExe -ArgumentList @($proj) -WorkingDirectory $env:GITHUB_WORKSPACE -PassThru
+      #     Start-Sleep -Seconds 20
+      #     $wshell.AppActivate($proc.Id)
+      #     $wshell.SendKeys('{F9}')
+      #     Start-Sleep -Seconds 60
+      #     $wshell.SendKeys('%{F4}')
+      #     try { $proc.WaitForExit(30000) } catch { }
+      #     if (-not $proc.HasExited) { Stop-Process -Id $proc.Id -Force }
+      #
+      # - name: List Walls output (Windows, experimental)
+      #   if: runner.os == 'Windows'
+      #   continue-on-error: true
+      #   shell: pwsh
+      #   run: |
+      #     $outDir = Join-Path $env:GITHUB_WORKSPACE 'KATASTER'
+      #     if (Test-Path $outDir) {
+      #       Write-Host "=== KATASTER/ output files ==="
+      #       Get-ChildItem $outDir -Recurse | Format-Table Name, Length, LastWriteTime -AutoSize
+      #     } else {
+      #       Write-Host "::warning::KATASTER/ directory not created"
+      #     }
