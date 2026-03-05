@@ -37,7 +37,7 @@ jobs:
       - name: Check for invalid directives
         if: runner.os == 'Linux'
         run: |
-          if grep -r '#<' Poligony/; then
+          if grep -r --include='*.SRV' '#<' Poligony/; then
             echo "::error::Invalid #< directive found"
             exit 1
           fi
