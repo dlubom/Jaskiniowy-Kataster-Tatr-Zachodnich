@@ -20,9 +20,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Survex (Linux)
+      - name: Install latest Survex (Linux)
         if: runner.os == 'Linux'
-        run: sudo apt-get update && sudo apt-get install -y survex
+        run: |
+          set -euxo pipefail
+          sudo apt-get update
+          sudo apt-get install -y \
+            autoconf automake libtool pkg-config make g++ gettext \
+            libwxgtk3.2-dev libproj-dev
+
+          SURVEX_VERSION=1.4.20
+          curl -fsSL "https://github.com/ojwb/survex/archive/refs/tags/v${SURVEX_VERSION}.tar.gz" -o survex.tar.gz
+          tar -xzf survex.tar.gz
+          cd "survex-${SURVEX_VERSION}"
+          autoreconf -fi
+          ./configure
+          make -C src -j"$(nproc)" cavern
+          sudo install -m 0755 src/cavern /usr/local/bin/cavern
 
       - name: Install Survex (Windows)
         if: runner.os == 'Windows'
@@ -32,8 +46,7 @@ jobs:
 
       - name: Check Survex version
         shell: bash
-        run: |
-          cavern --version
+        run: cavern --version
 
       - name: Check SRV file naming
         if: runner.os == 'Linux'
@@ -53,32 +66,22 @@ jobs:
             exit 1
           fi
 
-      - name: Compile Walls project (Windows, experimental)
-        if: runner.os == 'Windows'
-        shell: pwsh
+      - name: Compile all surveys with cavern (Linux)
+        if: runner.os == 'Linux'
         run: |
-          $msiUrl = 'https://github.com/wallscavesurvey/walls/releases/download/v2.2/WallsInstaller-2.2-2024-12-21.msi'
-          $msiPath = Join-Path $env:RUNNER_TEMP 'walls.msi'
-          Invoke-WebRequest -Uri $msiUrl -OutFile $msiPath
-          Start-Process msiexec.exe -ArgumentList @('/i', $msiPath, '/qn', '/norestart') -Wait
+          set -euo pipefail
+          tmpdir=$(mktemp -d)
+          failures=0
 
-          Add-Type -AssemblyName System.Windows.Forms
+          while IFS= read -r -d '' f; do
+            base=$(basename "$f" .SRV)
+            if ! cavern -q -o "$tmpdir/$base.3d" "$f" >/dev/null 2>&1; then
+              echo "::error file=$f::cavern compilation failed"
+              failures=$((failures + 1))
+            fi
+          done < <(find Poligony -name '*.SRV' -not -path '*/_RAW/*' -type f -print0)
 
-          $wallsExe = Join-Path $env:ProgramFiles 'Walls\Walls32.exe'
-          if (-not (Test-Path $wallsExe)) {
-            throw "Walls32.exe not found at $wallsExe"
-          }
-
-          $proj = Join-Path $env:GITHUB_WORKSPACE 'KATASTER.wpj'
-          $proc = Start-Process -FilePath $wallsExe -ArgumentList @($proj) -PassThru
-
-          Start-Sleep -Seconds 8
-          [System.Windows.Forms.SendKeys]::SendWait('{F9}')
-          Start-Sleep -Seconds 25
-          [System.Windows.Forms.SendKeys]::SendWait('%{F4}')
-
-          try { $proc.WaitForExit(30 * 1000) } catch { }
-
-          if (-not (Test-Path (Join-Path $env:GITHUB_WORKSPACE 'KATASTER'))) {
-            throw 'Expected KATASTER output directory was not created by Walls compilation'
-          }
+          if [ "$failures" -ne 0 ]; then
+            echo "Total cavern failures: $failures"
+            exit 1
+          fi
