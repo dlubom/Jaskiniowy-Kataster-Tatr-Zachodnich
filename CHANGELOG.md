@@ -4,6 +4,11 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.1.3] - 2026-03-06
+
+### Zmienione
+- Zoska-Zagonna Studnia: konwersja z formatu jednoplikowego (1.SRV) na nowy format dwuplikowy (ZOSKA_M.SRV + ZOSKA_S.SRV) z pelnym blokiem metadanych, datami pomiarow (poprawne obliczanie deklinacji magnetycznej) i segmentami
+
 ## [v1.1.2] - 2026-03-05
 
 Wprowadzono wsparcie dla kompilacji Survex (cavern) na Linux i Windows.
