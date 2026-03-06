@@ -3,7 +3,7 @@
 ;wektoryzacja Szczygiel J.
 #UNITS D=M A=D V=D Order=DAV
 #DATE 2011-09-09
-#<L,R,U,D>
+;LRUD: L,R,U,D
 #note	ks0	/Koprowa Studnia
 #flag	ks0	/Koprowa Studnia
 #FIX	ks0	E19:55:49.09736	N49:14:21.55262	1807.10
