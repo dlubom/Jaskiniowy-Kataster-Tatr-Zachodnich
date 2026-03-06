@@ -1167,7 +1167,7 @@
 .BOOK	Powierzchnia
 .NAME	AREA
 .PATH	Powierzchnia
-.STATUS	9
+.STATUS	10
 .BOOK	Teren 10x10
 .NAME	TER1010
 .PATH	Teren_10x10

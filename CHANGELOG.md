@@ -4,6 +4,18 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.1.2] - 2026-03-05
+
+Wprowadzono wsparcie dla kompilacji Survex (cavern) na Linux i Windows.
+
+### Dodane
+- CI: walidacja cavern (Survex 1.4.20) na Linux i Windows — blokuje merge przy bledach kompilacji
+
+### Zmienione
+- Normalizacja nazw plikow SRV (24 pliki) — UPPERCASE basename + .SRV dla kompatybilnosci z Linux (case-sensitive FS)
+- Usuniecie niepoprawnej dyrektywy `#<L,R,U,D>` z SWIST.SRV i KOPRSTUD.SRV
+- Powierzchnia/Teren: STATUS 9 → 10 (detach, pomijane przez cavern)
+
 ## [v1.1.1] - 2026-03-02
 
 ### Dodane
