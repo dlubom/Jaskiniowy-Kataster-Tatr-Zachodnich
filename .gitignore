@@ -8,6 +8,10 @@
 *.log
 *.lst
 
+#Survex
+*.3d
+*.err
+
 #Claude
 .claude/settings.local.json
 

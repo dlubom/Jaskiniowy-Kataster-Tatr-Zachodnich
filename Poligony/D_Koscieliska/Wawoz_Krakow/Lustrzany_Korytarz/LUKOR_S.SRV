@@ -1,0 +1,25 @@
+#[
+CAVE_ID			"T.E-09.45"
+CAVE_NAME		"Lustrzany Korytarz"
+SURVEY_ID		LUKOR
+SURVEY_NAME		"Lustrzany Korytarz"
+UPDATE_DATE		2026-03-07
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"J. Nowak"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "J. Nowak, J. Matras"
+INSTRUMENT "nieznany"
+#]
+
+#prefix lustkor
+#date 2006-08-26
+#units meters order=DAV
+#units A=D V=D
+
+;Wys. nad dnem wawozu ok. 360 m
+
+0	1	3.8	20	48
+1	2	11.2	125	45

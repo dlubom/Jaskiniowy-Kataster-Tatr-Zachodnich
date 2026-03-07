@@ -1,0 +1,17 @@
+#[
+CAVE_ID			"T.E-08.70"
+CAVE_NAME		"Jaskinia w Zbojnickiej Turni"
+UPDATE_DATE		2026-03-07
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"Panstwowy Instytut Geologiczny"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+#]
+
+#prefix zbturnia
+#flag	0	/Jaskinia w Zbojnickiej Turni
+#note	0	/Jaskinia w Zbojnickiej Turni
+#fix	0	E19.865280	N49.236430	1260.0m
