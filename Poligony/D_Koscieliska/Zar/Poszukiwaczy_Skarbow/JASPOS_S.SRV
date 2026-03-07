@@ -1,11 +1,26 @@
+#[
+CAVE_ID			"T.E-08.18"
+CAVE_NAME		"Jaskinia Poszukiwaczy Skarbow"
+SURVEY_ID		JASPOS
+SURVEY_NAME		"Jaskinia Poszukiwaczy Skarbow"
+UPDATE_DATE		2026-03-07
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"J. Nowak"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "J. Nowak, J. Slusarczyk"
+INSTRUMENT "nieznany"
+#]
+
+#prefix poszuk
+#date 2006-12-16
 #units meters order=DAV
-#prefix posz
-#DATE 2006-12-16
+#units A=D V=D
+
 ;TODO jest to czesc jaskini
-;team J. Nowak, J. Slusarczyk
-#note	0	/Jaskinia Poszukiwaczy Skarbow
-#flag	0	/Jaskinia Poszukiwaczy Skarbow
-#FIX  0   E19.865643	N49.236768   1211.0m	;wsp. wg PIG (T.E-08.18)
+
 0	1	11.15	206	-5
 1	2	8.30	212	15
 2	3	4.25	274	-11
@@ -14,15 +29,17 @@
 5	6	6.13	268	25
 6	7	3.60	257	-8
 7	8	3.85	0	-90
-8	9	1.65	0	-90;spag - koniec wg I. Luty
+8	9	1.65	0	-90	;spag - koniec wg I. Luty
 
-8	8.11	2.40	235	-42;29.05.2011
-8.11	8.12	1.80	0	-90;29.05.2011
-8.12	8.13	2.00	290	-50;29.05.2011
-8.13	8.14	1.50	270	20;29.05.2011
+#date 2011-05-29
+8	8.11	2.40	235	-42
+8.11	8.12	1.80	0	-90
+8.12	8.13	2.00	290	-50
+8.13	8.14	1.50	270	20
 
-8.12	8.12.1	1.60	90	0;29.05.2011
+8.12	8.12.1	1.60	90	0
 
+#date 2006-12-16
 8	8.01	3.57	127	-12
 8.01	8.02	3.03	88	0
 
@@ -37,11 +54,11 @@
 8.2	8.2.1	5.10	33	-31
 8.2.1	8.2.2	3.25	332	-50
 8.2.2	8.2.3	5.10	58	-23
-8.2.3	8.2.4	2.08	57	0;grzybowa szczelina
+8.2.3	8.2.4	2.08	57	0	;grzybowa szczelina
 8.2.4	8.2.5	4.75	97	-30
 8.2.5	8.2.6	3.80	86	0
 8.2.6	8.2.7	5.50	77	6
-8.2.7	8.2.8	7.00	65	45;29.05.2011
+8.2.7	8.2.8	7.00	65	45	;29.05.2011
 
 ;Sala Zlomisk
 8.2.3	8.2.3.1	1.75	307	8
@@ -56,7 +73,7 @@
 82321.1	82321.2	2.00	50	0
 
 ;prog - petla
-8.2.3.3	8233.1	1.95	165	3;zacisk
+8.2.3.3	8233.1	1.95	165	3	;zacisk
 8233.1	8233.2	2.65	196	15
 8233.2	8233.3	3.15	191	35
 8233.3	8233.4	4.85	173	61

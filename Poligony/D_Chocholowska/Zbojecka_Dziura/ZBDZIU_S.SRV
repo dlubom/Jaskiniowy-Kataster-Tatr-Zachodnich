@@ -1,10 +1,24 @@
-#units meters order=DAV
+#[
+CAVE_ID			"T.D-04.01"
+CAVE_NAME		"Zbojecka Dziura"
+SURVEY_ID		ZBDZIU
+SURVEY_NAME		"Zbojecka Dziura"
+UPDATE_DATE		2026-03-07
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"J. Nowak"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "J. Nowak, J. Slusarczyk"
+INSTRUMENT "nieznany"
+#]
+
+#prefix zbdziu
 #date 2004-06-19
-#prefix zboj;
-#note	0	/Zbojecka Dziura
-#flag	0	/Zbojecka Dziura
-#FIX  0   E19.811731	N49.247769   1143.0m	;wsp. wg PIG (T.D-04.01)
-;team Jakub Nowak, J. Slusarczyk
+#units meters order=DAV
+#units A=D V=D
+
 0	1	13.30	297	-19
 1	2	10.15	287	-9
 2	3	9.15	343	-7

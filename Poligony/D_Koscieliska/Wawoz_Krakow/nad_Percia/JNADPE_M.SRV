@@ -1,0 +1,17 @@
+#[
+CAVE_ID			"T.E-09.40"
+CAVE_NAME		"Jaskinia nad Percia"
+UPDATE_DATE		2026-03-07
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"Panstwowy Instytut Geologiczny, J. Nowak"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+#]
+
+#prefix nadperc
+#flag	0	/Jaskinia nad Percia
+#note	0	/Jaskinia nad Percia
+#fix	0	E19.874010	N49.236630	1240.0m	;wsp. wg PIG (T.E-09.40)

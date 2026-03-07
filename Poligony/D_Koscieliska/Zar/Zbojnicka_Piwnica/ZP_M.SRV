@@ -1,0 +1,17 @@
+#[
+CAVE_ID			"T.E-08.73"
+CAVE_NAME		"Zbojnicka Piwnica"
+UPDATE_DATE		2026-03-07
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"Panstwowy Instytut Geologiczny, J. Nowak"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+#]
+
+#prefix zbpiwn
+#flag	0	/Zbojnicka Piwnica
+#note	0	/Zbojnicka Piwnica
+#fix	0	E19.865280	N49.236430	1250.0m	;wsp. wg PIG (T.E-08.73)

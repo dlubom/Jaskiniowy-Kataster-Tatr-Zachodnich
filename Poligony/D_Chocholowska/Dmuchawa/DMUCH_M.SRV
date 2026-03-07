@@ -1,0 +1,17 @@
+#[
+CAVE_ID			"T.D-05.14"
+CAVE_NAME		"Dmuchawa"
+UPDATE_DATE		2026-03-07
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"Panstwowy Instytut Geologiczny, J. Nowak"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+#]
+
+#prefix dmuch
+#flag	0	/Dmuchawa
+#note	0	/Dmuchawa
+#fix	0	E19.821000	N49.246111	1300.0m	;wsp. wg PIG (T.D-05.14)

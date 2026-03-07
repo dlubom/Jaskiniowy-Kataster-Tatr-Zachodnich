@@ -1,0 +1,17 @@
+#[
+CAVE_ID			"T.F-11.21"
+CAVE_NAME		"Szczelina nad Tomanowa I"
+UPDATE_DATE		2026-03-07
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"Panstwowy Instytut Geologiczny, J. Nowak"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+#]
+
+#prefix szcztom1
+#flag	0	/Szczelina nad Tomanowa I
+#note	0	/Szczelina nad Tomanowa I
+#fix	0	E19.903410	N49.229640	2065.0m	;wsp. wg PIG (T.F-11.21)
