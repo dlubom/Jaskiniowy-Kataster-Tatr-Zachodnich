@@ -7,11 +7,11 @@ COORDINATOR		"Dariusz Lubomski"
 COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
 REFERENCE_SYSTEM	"WGS84"
 COORDINATE_SYSTEM	"UTM"
-DATA_SOURCE		"Panstwowy Instytut Geologiczny, J. Nowak"
+DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
 #]
 
 #prefix ciepla
 #flag	0	/Jaskinia Ciepla
 #note	0	/Jaskinia Ciepla
-#fix	0	E19.865580	N49.233470	1331.0m	;wsp. wg PIG (T.F-08.06)
+#fix	0	E19.865580	N49.233470	1331.0m

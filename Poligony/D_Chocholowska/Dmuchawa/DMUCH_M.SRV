@@ -7,11 +7,11 @@ COORDINATOR		"Dariusz Lubomski"
 COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
 REFERENCE_SYSTEM	"WGS84"
 COORDINATE_SYSTEM	"UTM"
-DATA_SOURCE		"Panstwowy Instytut Geologiczny, J. Nowak"
+DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
 #]
 
 #prefix dmuch
 #flag	0	/Dmuchawa
 #note	0	/Dmuchawa
-#fix	0	E19.821000	N49.246111	1300.0m	;wsp. wg PIG (T.D-05.14)
+#fix	0	E19.821000	N49.246111	1300.0m

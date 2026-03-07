@@ -7,11 +7,11 @@ COORDINATOR		"Dariusz Lubomski"
 COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
 REFERENCE_SYSTEM	"WGS84"
 COORDINATE_SYSTEM	"UTM"
-DATA_SOURCE		"Panstwowy Instytut Geologiczny, J. Nowak"
+DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
 #]
 
 #prefix dzstole
 #flag	0	/Dziura w Stole
 #note	0	/Dziura w Stole
-#fix	0	E19.905089	N49.223997	1905.0m	;wsp. wg PIG (T.G-11.01)
+#fix	0	E19.905089	N49.223997	1905.0m

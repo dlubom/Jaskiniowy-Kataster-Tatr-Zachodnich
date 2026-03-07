@@ -7,11 +7,11 @@ COORDINATOR		"Dariusz Lubomski"
 COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
 REFERENCE_SYSTEM	"WGS84"
 COORDINATE_SYSTEM	"UTM"
-DATA_SOURCE		"Panstwowy Instytut Geologiczny, J. Nowak"
+DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
 #]
 
 #prefix zawtom
 #flag	0	/Jaskinia Zawaliskowa Tomanowa
 #note	0	/Jaskinia Zawaliskowa Tomanowa
-#fix	0	E19.895580	N49.229330	1757.0m	;wsp. wg PIG (T.F-10.21)
+#fix	0	E19.895580	N49.229330	1757.0m
