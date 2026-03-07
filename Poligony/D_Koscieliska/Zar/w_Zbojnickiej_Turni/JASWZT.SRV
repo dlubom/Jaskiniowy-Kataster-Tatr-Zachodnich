@@ -1,9 +1,9 @@
 #units meters order=DAV
 #prefix jaswzt
-#note	0	/Jaskinia w Zbójnickiej Turni
-#flag	0	/Jaskinia w Zbójnickiej Turni
+#note	0	/Jaskinia w Zbï¿½jnickiej Turni
+#flag	0	/Jaskinia w Zbï¿½jnickiej Turni
 #date 2007-07-15
-#FIX  0   E19:51:55.008  N49:14:11.148   1260.0m
+#FIX  0   E19.865280	N49.236430   1260.0m
 ;team  J. Nowak, J. Wolek
 ;Wys. nad dnem wawozu ok. 150 m
 0	1	3.00	223	10

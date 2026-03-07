@@ -1,17 +1,17 @@
 #units meters order=DAV
 #prefix zp
-#note	0	/Zbójnicka Piwnica
-#flag	0	/Zbójnicka Piwnica
+#note	0	/Zbï¿½jnicka Piwnica
+#flag	0	/Zbï¿½jnicka Piwnica
 #date 2007-07-15
-#FIX  0   E19:51:55.008  N49:14:11.148   1250.0m
+#FIX  0   E19.865280	N49.236430   1250.0m
 ;team  J. Nowak, J. Slusarczyk
 ;Wys. nad dnem wawozu ok. 140 m
 0	1	1.30	0	-90
 1	2	2.35	117	0
-2	3	4.30	37	-4;II otwór
+2	3	4.30	37	-4;II otwï¿½r
 3	4	1.15	175	0
 4	5	2.70	102	-12
-5	6	2.20	340	-25;III otwór
+5	6	2.20	340	-25;III otwï¿½r
 
 2	2.1	2.35	0	-90;dolne pietro
 2.1	2.2	2.00	63	-15
