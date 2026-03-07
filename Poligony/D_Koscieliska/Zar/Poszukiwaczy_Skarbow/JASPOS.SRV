@@ -5,7 +5,7 @@
 ;team J. Nowak, J. Slusarczyk
 #note	0	/Jaskinia Poszukiwaczy Skarbow
 #flag	0	/Jaskinia Poszukiwaczy Skarbow
-#FIX  0   E19.865643	N49.236768   1211.0m
+#FIX  0   E19.865643	N49.236768   1211.0m	;wsp. wg PIG (T.E-08.18)
 0	1	11.15	206	-5
 1	2	8.30	212	15
 2	3	4.25	274	-11

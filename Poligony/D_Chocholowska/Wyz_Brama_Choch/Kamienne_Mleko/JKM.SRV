@@ -1,7 +1,7 @@
 #units meters order=DAV
 #prefix kml
 #date 2008-12-01;TODO dzien nieznany
-#FIX  0   E19.811050	N49.245300   1096m
+#FIX  0   E19.811050	N49.245300   1096.0m	;wsp. wg PIG (T.D-04.03)
 #note	0	/Kamienne Mleko
 #flag	0	/Kamienne Mleko
 ;team Jakub Nowak, Sylwia Golosz, Michal Romanski
