@@ -52,7 +52,7 @@
 5.20	5.21	2.50	205	10
 5.21	5.22	2.50	245	0
 5.22	5.23	2.00	235	18;za zaciskiem, pod kominem
-5.23	5.24	7.90	220	0;otw�r JPNZT
+5.23	5.24	7.90	220	0;otwor JPNZT
 
 5.15	5.15.1	3.30	53	0
 
@@ -60,7 +60,7 @@
 
 5.16	5.16.1	5.50	60	28
 5.16.1	5.16.2	4.20	38	-7
-5.16.2	5.16.3	5.15	42	0;Salka bez Klock�w
+5.16.2	5.16.3	5.15	42	0;Salka bez Klockow
 
 5.17	5.17.1	2.20	190	12
 5.17.1	5.17.2	5.80	207	0
@@ -68,7 +68,7 @@
 5.17.3	5.17.4	3.00	196	0
 
 5.17.1	5.17.1.1	4.50	37	0;salka wstecz, domiar,
-				; laczy sie ze szczelina do Sali bez Klock�w
+				; laczy sie ze szczelina do Sali bez Klockow
 
 5.16	5.18	5.10	225	4;domiar
 5.18	5.18.1	4.80	242	0;laczy sie z 15', doliczyc do dl.

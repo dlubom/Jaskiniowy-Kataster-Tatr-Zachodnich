@@ -3,8 +3,8 @@
 #DATE 2006-12-16
 ;TODO jest to czesc jaskini
 ;team J. Nowak, J. Slusarczyk
-#note	0	/Jaskinia Poszukiwaczy Skarb�w
-#flag	0	/Jaskinia Poszukiwaczy Skarb�w
+#note	0	/Jaskinia Poszukiwaczy Skarbow
+#flag	0	/Jaskinia Poszukiwaczy Skarbow
 #FIX  0   E19.865643	N49.236768   1211.0m
 0	1	11.15	206	-5
 1	2	8.30	212	15
@@ -55,7 +55,7 @@
 8232.1	82321.1	2.50	35	-59
 82321.1	82321.2	2.00	50	0
 
-;pr�g - petla
+;prog - petla
 8.2.3.3	8233.1	1.95	165	3;zacisk
 8233.1	8233.2	2.65	196	15
 8233.2	8233.3	3.15	191	35
