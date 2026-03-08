@@ -4,6 +4,16 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.1.4] - 2026-03-08
+
+### Dodane
+- Jaskinia Miętusia Wyżnia (T.D-10.01) — nowa jaskinia w Dolinie Miętusiej
+  - Zrodlo: projekt Survex Speleoklub Warszawski (https://github.com/RadostW/jaskinie)
+  - Pomiary z 2024-02 instrumentem DistoX2
+  - 17 plików pomiarowych SRV (16 ciagow: otwor, suche dno, mylna rura i inne)
+  - Pliki źródłowe w _RAW/ (18 plikow .svx + GPS)
+  - Współrzędne otworu: E19.894900 N49.245399, ok. 1377 m n.p.m. (średnia z 5 GPS)
+
 ## [v1.1.3] - 2026-03-06
 
 ### Zmienione

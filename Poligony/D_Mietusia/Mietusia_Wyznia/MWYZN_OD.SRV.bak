@@ -1,0 +1,56 @@
+#[
+CAVE_ID		"T.D-10.01"
+CAVE_NAME		"Jaskinia Mietusia Wyznia"
+SURVEY_ID		OD
+SURVEY_NAME		"Odejscie L2"
+UPDATE_DATE		2026-03-08
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"https://github.com/RadostW/jaskinie"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "K.T ,K.K, M.W"
+INSTRUMENT "DistoXBLE"
+#]
+
+#prefix td1001
+#units meters order=DAV
+#units A=D V=D
+; Deklinacja magnetyczna z pliku asemblera: -6.1 stopnia
+#dec -6.1
+#date 2024-07-06
+
+; === Polaczenia z innymi cigami (z *equate w pliku asemblera) ===
+ot_10	od_0	0	0	0
+ot_11	od_1	0	0	0
+ot_12	od_2	0	0	0
+
+; === Pomiary ===
+od_1	-	0.33	120.4	2.0
+od_1	-	1.63	16.2	6.8
+od_1	-	1.36	351.9	4.4
+od_1	-	1.66	1.3	9.5
+od_1	-	0.71	49.6	56.7
+od_1	-	0.9	21.4	29.8
+od_1	-	1.2	11.8	20.3
+od_1	-	1.68	5.7	5.8
+od_1	-	1.32	0.5	-8.1
+od_1	-	0.98	356.6	-20.9
+od_1	-	0.72	355.7	-42.4
+od_1	-	0.48	287.0	-82.2
+od_1	od_4	0.5	144.6	-33.8
+od_4	-	2.03	209.2	-32.6
+od_4	-	1.89	212.9	-30.2
+od_4	-	1.34	211.4	-16.2
+od_4	-	1.17	218.9	4.8
+od_4	-	1.02	240.9	-24.2
+od_4	-	0.74	276.9	-21.8
+od_4	-	1.27	195.4	-32.8
+od_4	-	0.56	246.0	23.9
+od_4	-	0.36	302.5	-64.7
+od_4	-	0.84	229.6	-41.3
+od_4	-	1.31	203.1	-21.1
+od_4	-	1.2	212.6	-4.5
+
+od_4	od_5	2.01	210.0	-33.0	; koniec odnogi

@@ -1,0 +1,76 @@
+;  OBLIGATORY FIELDS
+;    Cave_name         Jaskinia Mietusia Wyznia
+;    Section_name      Druga kiszka z lewej
+;    Entry_last_update 2024-07-06
+;    Author            Konrad Teleman - Speleoklub Warszawski
+;    Author            Karolina Kowalczyk - Speleoklub Warszawski
+;    Author            Marek Wągrodzki - Speleoklub Warszawski
+;    Author            Stanisław Mielczarek - Speleoklub Warszawski
+;    Licence           CC BY SA 4.0
+;    Survey_device     DistoXble - 0109 - JG
+
+
+; 2024.07.09 created by TopoDroid v 6.2.44
+; obejście_L2 - 4027
+; Instrument: DistoXBLE 0109 - Pixel 6a
+
+*begin odejscie_l2
+  *date 2024.07.06 
+  *team "K.T ,K.K, M.W" 
+  *units tape meters
+  *units compass degrees
+  *units clino degrees
+  *alias station - ..
+  *flags not splay
+  *data normal from to tape compass clino
+  *flags duplicate
+    0 1   4.82 250.5 -1.2  ; ciąg główny obok starego punktu nr 10
+    1 2   3.04 333.8 33.3  ; ciąg główny obok starego punktu nr 10 
+    2 3   2.01 187.9 -26.9  ; 3 stary punkt 10
+  *flags not duplicate    
+  1 - 0.33 120.4 2.0
+  1 - 1.63 16.2 6.8
+  1 - 1.36 351.9 4.4
+  1 - 1.66 1.3 9.5
+  1 - 0.71 49.6 56.7
+  1 - 0.90 21.4 29.8
+  1 - 1.20 11.8 20.3
+  1 - 1.68 5.7 5.8
+  1 - 1.32 0.5 -8.1
+  1 - 0.98 356.6 -20.9
+  1 - 0.72 355.7 -42.4
+  1 - 0.48 287.0 -82.2
+    1 4   0.50 144.6 -33.8
+  4 - 2.03 209.2 -32.6
+  4 - 1.89 212.9 -30.2
+  4 - 1.34 211.4 -16.2
+  4 - 1.17 218.9 4.8
+  4 - 1.02 240.9 -24.2
+  4 - 0.74 276.9 -21.8
+  4 - 1.27 195.4 -32.8
+  4 - 0.56 246.0 23.9
+  4 - 0.36 302.5 -64.7
+  4 - 0.84 229.6 -41.3
+  4 - 1.31 203.1 -21.1
+  4 - 1.20 212.6 -4.5
+    4 5   2.01 210.0 -33.0  ; koniec odnogi
+  *flags not splay
+*units left meters
+*units right meters
+*units up meters
+*units down meters
+*data passage station left right up down
+1  0.25 1.53 0.59 0.49
+0  0.00 0.00 0.00 0.00
+
+*data passage station left right up down
+1  0.05 1.09 0.59 0.49
+2  0.00 0.00 0.00 0.00
+3  0.00 0.00 0.00 0.00
+
+*data passage station left right up down
+1  1.27 0.04 0.59 0.49
+4  0.00 1.54 0.23 1.09
+5  0.00 0.00 0.00 0.00
+
+*end odejscie_l2
