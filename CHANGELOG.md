@@ -4,15 +4,32 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
-## [v1.1.4] - 2026-03-08
+## [v1.1.5] - 2026-03-08
 
 ### Dodane
 - Jaskinia Miętusia Wyżnia (T.D-10.01) — nowa jaskinia w Dolinie Miętusiej
-  - Zrodlo: projekt Survex Speleoklub Warszawski (https://github.com/RadostW/jaskinie)
-  - Pomiary z 2024-02 instrumentem DistoX2
-  - 17 plików pomiarowych SRV (16 ciagow: otwor, suche dno, mylna rura i inne)
-  - Pliki źródłowe w _RAW/ (18 plikow .svx + GPS)
-  - Współrzędne otworu: E19.894900 N49.245399, ok. 1377 m n.p.m. (średnia z 5 GPS)
+    - Zrodlo: projekt Survex Speleoklub Warszawski (https://github.com/RadostW/jaskinie)
+    - Pomiary z 2024-02 instrumentem DistoX2
+    - 17 plików pomiarowych SRV (16 ciagow: otwor, suche dno, mylna rura i inne)
+    - Pliki źródłowe w _RAW/ (18 plikow .svx + GPS)
+    - Współrzędne otworu: E19.894900 N49.245399, ok. 1377 m n.p.m. (średnia z 5 GPS)
+
+
+## [v1.1.4] - 2026-03-07
+
+### Dodane
+- Dane surowe (xlsx) Jakuba Nowaka dla 18 jaskin — katalogi _RAW/ z README
+- .gitignore: pliki wyjsciowe Survex (*.3d, *.err)
+
+### Zmienione
+- 18 jaskin J. Nowaka: konwersja z formatu jednoplikowego na dwuplikowy (_M.SRV + _S.SRV) z pelnym blokiem metadanych
+  - D. Chocholowska: Dmuchawa, Kamienne Mleko, Zbojecka Dziura
+  - D. Koscieliska / Wawoz Krakowski: Gawra, Lustrzany Korytarz, Rura przy Oknie, J. nad Beczka, J. nad Percia
+  - D. Koscieliska / Zar: Ciepla, Pod Zamkiem, Poszukiwaczy Skarbow, Zbojnicka Piwnica, Ziobrowa, w Zbojnickiej Turni
+  - D. Tomanowa: Dziura w Stole, Szczelina nad Tomanowa I/II, J. Zawaliskowa Tomanowa
+- Korekta wspolrzednych i wysokosci wg PIG (m.in. Zbojecka Dziura 1230→1143 m n.p.m.)
+- Uzupelnienie brakujacych odcinkow pomiarowych (Kamienne Mleko, J. Zawaliskowa Tomanowa)
+- Usuniecie artefaktow kodowania (non-ASCII → ASCII) w plikach z rejonu Zaru
 
 ## [v1.1.3] - 2026-03-06
 

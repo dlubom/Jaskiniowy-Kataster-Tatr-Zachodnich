@@ -1,0 +1,26 @@
+#[
+CAVE_ID			"T.E-09.40"
+CAVE_NAME		"Jaskinia nad Percia"
+SURVEY_ID		JNADPE
+SURVEY_NAME		"Jaskinia nad Percia"
+UPDATE_DATE		2026-03-07
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"J. Nowak"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "J. Nowak, J. Slusarczyk"
+INSTRUMENT "nieznany"
+#]
+
+#prefix nadperc
+#date 2006-11-04
+#units meters order=DAV
+#units A=D V=D
+
+;Wys. nad dnem wawozu ok. 75 m
+
+0	1	5.45	50	53
+1	2	2.35	34	26
+2	3	7.40	34	0

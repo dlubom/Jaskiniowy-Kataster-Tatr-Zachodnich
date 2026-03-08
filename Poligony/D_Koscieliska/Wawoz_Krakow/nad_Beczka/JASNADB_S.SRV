@@ -1,0 +1,29 @@
+#[
+CAVE_ID			"T.F-09.43"
+CAVE_NAME		"Jaskinia nad Beczka"
+SURVEY_ID		JASNADB
+SURVEY_NAME		"Jaskinia nad Beczka"
+UPDATE_DATE		2026-03-07
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"J. Nowak"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "J. Nowak, M. Szot"
+INSTRUMENT "nieznany"
+#]
+
+#prefix nadbecz
+#date 2005-07-23
+#units meters order=DAV
+#units A=D V=D
+
+;Wys. nad Beczka: ok. 10 m
+
+0	1	2.5	58	35
+1	2	7.0	78	0
+2	3	2.0	192	10
+3	4	4.6	54	65
+
+2	2.1	1.0	78	0

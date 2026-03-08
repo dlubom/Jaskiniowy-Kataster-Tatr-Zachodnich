@@ -95,8 +95,11 @@
 .NAME	JDMUCHB
 .PATH	Dmuchawa
 .STATUS	8
-.SURVEY	Dmuchawa
-.NAME	DMUCH
+.SURVEY	Dmuchawa meta
+.NAME	DMUCH_M
+.STATUS	8
+.SURVEY	Dmuchawa pomiary
+.NAME	DMUCH_S
 .STATUS	8
 .ENDBOOK
 .BOOK	Wyznia Brama Chocholowska
@@ -107,8 +110,11 @@
 .NAME	JKMLEK
 .PATH	Kamienne_Mleko
 .STATUS	8
-.SURVEY	Jaskinia Kamienne Mleko
-.NAME	JKM
+.SURVEY	Jaskinia Kamienne Mleko meta
+.NAME	JKM_M
+.STATUS	8
+.SURVEY	Jaskinia Kamienne Mleko pomiary
+.NAME	JKM_S
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -116,8 +122,11 @@
 .NAME	ZBDZ
 .PATH	Zbojecka_Dziura
 .STATUS	8
-.SURVEY	Zbojecka Dziura
-.NAME	ZBDZIU
+.SURVEY	Zbojecka Dziura meta
+.NAME	ZBDZIU_M
+.STATUS	8
+.SURVEY	Zbojecka Dziura pomiary
+.NAME	ZBDZIU_S
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -198,48 +207,66 @@
 .NAME	JCI
 .PATH	Ciepla
 .STATUS	8
-.SURVEY	Jaskinia Ciepla
-.NAME	JCIEPLA
+.SURVEY	Jaskinia Ciepla meta
+.NAME	JCIEPLA_M
+.STATUS	8
+.SURVEY	Jaskinia Ciepla pomiary
+.NAME	JCIEPLA_S
 .STATUS	8
 .ENDBOOK
 .BOOK	Jaskinia Pod Zamkiem
 .NAME	JPZ
 .PATH	Pod_Zamkiem
 .STATUS	8
-.SURVEY	Jaskinia Pod Zamkiem
-.NAME	JPODZ
+.SURVEY	Jaskinia Pod Zamkiem meta
+.NAME	JPODZ_M
+.STATUS	8
+.SURVEY	Jaskinia Pod Zamkiem pomiary
+.NAME	JPODZ_S
 .STATUS	8
 .ENDBOOK
 .BOOK	Jaskinia Poszukiwaczy Skarbow
 .NAME	JPS
 .PATH	Poszukiwaczy_Skarbow
 .STATUS	8
-.SURVEY	Jaskinia Poszukiwaczy Skarbow
-.NAME	JASPOS
+.SURVEY	Jaskinia Poszukiwaczy Skarbow meta
+.NAME	JASPOS_M
+.STATUS	8
+.SURVEY	Jaskinia Poszukiwaczy Skarbow pomiary
+.NAME	JASPOS_S
 .STATUS	8
 .ENDBOOK
 .BOOK	Jaskinia w Zbojnickiej Turni
 .NAME	JWZT
 .PATH	w_Zbojnickiej_Turni
 .STATUS	8
-.SURVEY	Jaskinia w Zbojnickiej Turni
-.NAME	JASWZT
+.SURVEY	Jaskinia w Zbojnickiej Turni meta
+.NAME	JASWZT_M
+.STATUS	8
+.SURVEY	Jaskinia w Zbojnickiej Turni pomiary
+.NAME	JASWZT_S
 .STATUS	8
 .ENDBOOK
 .BOOK	Jaskinia Ziobrowa
 .NAME	JZIOB
 .PATH	Ziobrowa
 .STATUS	8
-.SURVEY	Jaskinia Ziobrowa
-.NAME	JZ
+.SURVEY	Jaskinia Ziobrowa meta
+.NAME	JZ_M
+.STATUS	8
+.SURVEY	Jaskinia Ziobrowa pomiary
+.NAME	JZ_S
 .STATUS	8
 .ENDBOOK
 .BOOK	Zbojnicka Piwnica
 .NAME	ZBPIWN
 .PATH	Zbojnicka_Piwnica
 .STATUS	8
-.SURVEY	Zbojnicka Piwnica
-.NAME	ZP
+.SURVEY	Zbojnicka Piwnica meta
+.NAME	ZP_M
+.STATUS	8
+.SURVEY	Zbojnicka Piwnica pomiary
+.NAME	ZP_S
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -489,40 +516,55 @@
 .NAME	GAWRA
 .PATH	Gawra
 .STATUS	8
-.SURVEY	Gawra
-.NAME	JGAWR
+.SURVEY	Gawra meta
+.NAME	JGAWR_M
+.STATUS	8
+.SURVEY	Gawra pomiary
+.NAME	JGAWR_S
 .STATUS	8
 .ENDBOOK
 .BOOK	Jaskinia nad Beczka
 .NAME	JNB
 .PATH	nad_Beczka
 .STATUS	8
-.SURVEY	Jaskinia nad Beczka
-.NAME	JASNADB
+.SURVEY	Jaskinia nad Beczka meta
+.NAME	JASNADB_M
+.STATUS	8
+.SURVEY	Jaskinia nad Beczka pomiary
+.NAME	JASNADB_S
 .STATUS	8
 .ENDBOOK
 .BOOK	Jaskinia nad Percia
 .NAME	JNADP
 .PATH	nad_Percia
 .STATUS	8
-.SURVEY	Jaskinia nad Percia
-.NAME	JNADPE
+.SURVEY	Jaskinia nad Percia meta
+.NAME	JNADPE_M
+.STATUS	8
+.SURVEY	Jaskinia nad Percia pomiary
+.NAME	JNADPE_S
 .STATUS	8
 .ENDBOOK
 .BOOK	Lustrzany Korytarz
 .NAME	LKOR
 .PATH	Lustrzany_Korytarz
 .STATUS	8
-.SURVEY	Lustrzany Korytarz
-.NAME	LUKOR
+.SURVEY	Lustrzany Korytarz meta
+.NAME	LUKOR_M
+.STATUS	8
+.SURVEY	Lustrzany Korytarz pomiary
+.NAME	LUKOR_S
 .STATUS	8
 .ENDBOOK
 .BOOK	Rura przy Oknie
 .NAME	RPO
 .PATH	Rura_przy_Oknie
 .STATUS	8
-.SURVEY	Rura przy Oknie
-.NAME	RUPRZYOK
+.SURVEY	Rura przy Oknie meta
+.NAME	RUPRZYOK_M
+.STATUS	8
+.SURVEY	Rura przy Oknie pomiary
+.NAME	RUPRZYOK_S
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -1184,32 +1226,44 @@
 .NAME	DWS
 .PATH	Dziura_w_Stole
 .STATUS	8
-.SURVEY	Dziura w Stole
-.NAME	DZWS
+.SURVEY	Dziura w Stole meta
+.NAME	DZWS_M
+.STATUS	8
+.SURVEY	Dziura w Stole pomiary
+.NAME	DZWS_S
 .STATUS	8
 .ENDBOOK
 .BOOK	Jaskinia Zawaliskowa Tomanowa
 .NAME	JZTOM
 .PATH	Zawaliskowa_Tom
 .STATUS	8
-.SURVEY	Jaskinia Zawaliskowa Tomanowa
-.NAME	JZAWTOM
+.SURVEY	Jaskinia Zawaliskowa Tomanowa meta
+.NAME	JZAWTOM_M
+.STATUS	8
+.SURVEY	Jaskinia Zawaliskowa Tomanowa pomiary
+.NAME	JZAWTOM_S
 .STATUS	8
 .ENDBOOK
 .BOOK	Szczelina nad Tomanowa I
 .NAME	SNT1
 .PATH	Szczelina_nad_Tom_I
 .STATUS	8
-.SURVEY	Szczelina nad Tomanowa I
-.NAME	SZNDT1
+.SURVEY	Szczelina nad Tomanowa I meta
+.NAME	SZNDT1_M
+.STATUS	8
+.SURVEY	Szczelina nad Tomanowa I pomiary
+.NAME	SZNDT1_S
 .STATUS	8
 .ENDBOOK
 .BOOK	Szczelina nad Tomanowa II
 .NAME	SNT2
 .PATH	Szczelina_nad_Tom_II
 .STATUS	8
-.SURVEY	Szczelina nad Tomanowa II
-.NAME	SZNDT2
+.SURVEY	Szczelina nad Tomanowa II meta
+.NAME	SZNDT2_M
+.STATUS	8
+.SURVEY	Szczelina nad Tomanowa II pomiary
+.NAME	SZNDT2_S
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
