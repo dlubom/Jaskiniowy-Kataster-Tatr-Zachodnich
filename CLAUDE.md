@@ -183,7 +183,7 @@ The project uses [semantic versioning](https://semver.org/) starting from v1.0.0
 
 The version in `INFO.txt` is set automatically — the `__VERSION__` placeholder is replaced with the tag name during the release build.
 
-The release ZIP excludes: `.git/`, `.github/`, `.claude/`, `doc/`, `logs/`, `*/_RAW/*`, `.DS_Store`, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
+The release ZIP excludes: `.git/`, `.github/`, `.claude/`, `.gitignore`, `CLAUDE.md`, `doc/`, `logs/`, `*/_RAW/*`, `.DS_Store`, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
 
 ## Documentation Resources (`doc/`)
 
