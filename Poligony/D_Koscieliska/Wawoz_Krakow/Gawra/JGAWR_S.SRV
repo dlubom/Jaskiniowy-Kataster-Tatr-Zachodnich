@@ -1,0 +1,30 @@
+#[
+CAVE_ID			"T.E-09.01"
+CAVE_NAME		"Gawra"
+SURVEY_ID		JGAWR
+SURVEY_NAME		"Gawra - domiary"
+UPDATE_DATE		2026-03-07
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"J. Nowak"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "J. Nowak"
+INSTRUMENT "nieznany"
+#]
+
+#prefix gawra
+#date 2008-11-11
+#units meters order=DAV
+#units A=D V=D
+
+;Wys. nad dnem wawozu ok. 130 m
+
+0	1	3.10	26	-13	;8 m nowego
+1	2	2.00	50	-26	;razem 9+8=17 m
+2	3	2.35	41	-5
+3	4	2.40	350	30
+4	5	3.00	80	0
+
+4	4.1	2.60	222	7

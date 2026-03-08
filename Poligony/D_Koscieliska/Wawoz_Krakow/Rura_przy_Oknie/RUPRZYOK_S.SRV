@@ -1,0 +1,30 @@
+#[
+CAVE_ID			"T.E-09.39"
+CAVE_NAME		"Rura przy Oknie"
+SURVEY_ID		RUPRZYOK
+SURVEY_NAME		"Rura przy Oknie"
+UPDATE_DATE		2026-03-07
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"J. Nowak"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+
+TEAM "J. Nowak, M. Czart"
+INSTRUMENT "nieznany"
+#]
+
+#prefix ruraokn
+#date 2006-09-09
+#units meters order=DAV
+#units A=D V=D
+
+;Wys. nad dnem wawozu ok. 65 m
+
+0	1	2.34	65	82
+1	2	5.54	62	39
+2	3	3.60	60	13
+3	4	1.80	40	20
+
+1	1.1	4.28	0	90
+1.1	1.2	7.61	62	32

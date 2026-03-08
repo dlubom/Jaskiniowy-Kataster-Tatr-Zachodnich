@@ -1,0 +1,17 @@
+#[
+CAVE_ID			"T.F-09.43"
+CAVE_NAME		"Jaskinia nad Beczka"
+UPDATE_DATE		2026-03-07
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"Panstwowy Instytut Geologiczny"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+#]
+
+#prefix nadbecz
+#flag	0	/Jaskinia nad Beczka
+#note	0	/Jaskinia nad Beczka
+#fix	0	E19.883730	N49.233880	1450.0m

@@ -1,0 +1,17 @@
+#[
+CAVE_ID			"T.E-09.01"
+CAVE_NAME		"Gawra"
+UPDATE_DATE		2026-03-07
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"Panstwowy Instytut Geologiczny"
+LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+#]
+
+#prefix gawra
+#flag	0	/Gawra
+#note	0	/Gawra
+#fix	0	E19.874903	N49.237146	1303.0m
