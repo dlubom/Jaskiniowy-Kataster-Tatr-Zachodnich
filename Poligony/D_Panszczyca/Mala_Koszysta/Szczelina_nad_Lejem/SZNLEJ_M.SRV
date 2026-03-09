@@ -8,7 +8,7 @@ COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
 REFERENCE_SYSTEM	"WGS84"
 COORDINATE_SYSTEM	"UTM"
 DATA_SOURCE		"https://jaskiniepolski.pgi.gov.pl/, Z. Tabaczynski"
-LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
 #prefix sznlej

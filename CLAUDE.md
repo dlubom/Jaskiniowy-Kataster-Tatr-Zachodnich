@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **Jaskiniowy Kataster Tatr Zachodnich** (Tatra Cave Registry) is a speleological cave survey data project for the Western Tatra Mountains. It compiles cartographic data (survey measurements, cave entrance coordinates, terrain models) using the **Walls** cave survey software by Texas Speleological Survey.
 
 - **Coordinate system**: WGS 84, UTM projection
-- **License**: Creative Commons Attribution-ShareAlike 2.0
+- **License**: Creative Commons Attribution-ShareAlike 4.0
 - **Current version**: v1.0.0 — semantic versioning, tracked in `CHANGELOG.md`
 - **Language**: Polish (cave names, documentation, comments in survey files)
 
@@ -72,7 +72,7 @@ COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
 REFERENCE_SYSTEM	"WGS84"
 COORDINATE_SYSTEM	"UTM"
 DATA_SOURCE		"source name"
-LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
 #prefix PREFIX
@@ -93,7 +93,7 @@ PROJECT_NAME		"Kataster jaskin tatrzanskich"
 COORDINATOR		"Dariusz Lubomski"
 COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
 DATA_SOURCE		"source name"
-LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM "team member names"
 INSTRUMENT "instrument name"
