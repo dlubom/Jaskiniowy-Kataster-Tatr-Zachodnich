@@ -134,6 +134,30 @@ FROM	TO	DISTANCE	AZIMUTH	INCLINATION
 - Keep `_RAW/` files untouched as archival originals, even if they contain non-ASCII text
 - Files use **no BOM** encoding; some legacy files have encoding artifacts in Polish characters
 
+### Detecting Data Quality Issues in SRV Files
+
+**Important:** SRV files may contain non-UTF-8 bytes (CP1250/Latin-1 legacy encoding). Always use `LC_ALL=C` with grep/sed to handle these correctly. The Edit tool (which operates in UTF-8) will corrupt these bytes — use `LC_ALL=C sed -i ''` instead for byte-safe replacements.
+
+**Decimal comma (,) instead of dot (.)** — Walls treats comma as whitespace, shifting all subsequent fields:
+```bash
+# Detect: comma between digits in measurement fields (excluding comments, LRUD, metadata, _RAW/)
+LC_ALL=C grep -rn '[0-9],[0-9]' Poligony/ --include='*.SRV' | grep -v '/_RAW/' | grep -v ':#\|:;' | grep -v '<.*,.*>'
+```
+
+**Non-ASCII characters** — Polish diacritics that should have been replaced with ASCII:
+```bash
+# Detect: any non-ASCII bytes in SRV files (excluding _RAW/)
+LC_ALL=C grep -rn '[^[:print:][:space:]]' Poligony/ --include='*.SRV' | grep -v '/_RAW/'
+
+# Fix: replace CP1250 Polish characters with ASCII equivalents
+LC_ALL=C sed -i '' \
+  -e "$(printf 's/\xf3/o/g')" -e "$(printf 's/\xd3/O/g')" \
+  -e "$(printf 's/\xb9/a/g')" -e "$(printf 's/\xb3/l/g')" \
+  -e "$(printf 's/\xea/e/g')" -e "$(printf 's/\xe6/c/g')" \
+  -e "$(printf 's/\xbf/z/g')" -e "$(printf 's/\x9c/s/g')" \
+  -e "$(printf 's/\xf1/n/g')" FILE.SRV
+```
+
 ### Raw Source Files (`_RAW/`)
 
 Cave directories contain (or will contain) a `_RAW/` subdirectory with original, unmodified source files provided by survey authors. Purpose:
