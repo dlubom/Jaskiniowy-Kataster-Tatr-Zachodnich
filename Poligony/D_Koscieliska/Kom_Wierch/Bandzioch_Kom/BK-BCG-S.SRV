@@ -21,12 +21,12 @@ D002003	D002004	3.8	195	-35
 D	021002	8.4	347	34
 
 ;Lazaret - Sliski Komin
-;Pom. A.Ciszewski, E.Wójcik 1982
+;Pom. A.Ciszewski, E.Wojcik 1982
 H	H001	2.00	18	-5
 H001	H002	9.95	152	-54
 H002	H003	4.55	56	-4
 
-;Pom. A.Ciszewski, E.Wójcik 1982
+;Pom. A.Ciszewski, E.Wojcik 1982
 I	I001	4.75	130	-37
 I001	I002	3.99	152	36
 I002	I003	3.49	212	-8
@@ -37,7 +37,7 @@ I005	I006	3.56	185	-23
 I002	I002001	2.52	89	32
 I002001	I002002	8.5	0	59
 
-;Pom. A.Ciszewski E.Wójcik 1982
+;Pom. A.Ciszewski E.Wojcik 1982
 073	073001	4.62	216	9
 073001	073002	3.08	242	12
 073002	073003	2.19	167	-14
