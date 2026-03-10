@@ -175,8 +175,11 @@
 .NAME	JCZ
 .PATH	Czarna
 .STATUS	8
-.SURVEY	Fragment
-.NAME	CZ_Z
+.SURVEY	Czarna meta
+.NAME	CZ_Z_M
+.STATUS	8
+.SURVEY	Fragment Jaskini Czarnej
+.NAME	CZ_Z_S
 .STATUS	8
 .ENDBOOK
 .BOOK	Jaskinia Zimna
