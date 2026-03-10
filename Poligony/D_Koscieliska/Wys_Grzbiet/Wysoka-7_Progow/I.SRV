@@ -1,6 +1,6 @@
 ;Jaskinia Wysoka-Za Siedmiu Progami
 ;KKS
-;Wyk. Jacek Szczygie³
+;Wyk. Jacek Szczygieï¿½
 #UNITS D=M A=D V=D Order=DAV
 
 W7-250	W7-251	8.3	28	-43	;PARTIE ZA SIEDMIOMA ZACISKAMI
@@ -118,6 +118,7 @@ W7-300	W7-289	3.5	108	20
 W7-289	W7-290	1	0	90
 W7-290	W7-291	3.9	106	-21
 
+;poprawka: bylo "-357/22" (brakujacy prefiks W), zmieniono na W-357/22
 W-357/22	W-357/23	13.6	296	-32
 W-357/23	W-357/24	2	295	-47
 W-357/22	W-357/25	10	250	28
