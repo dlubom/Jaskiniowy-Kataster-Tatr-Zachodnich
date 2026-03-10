@@ -79,7 +79,8 @@ sle70a	sle70b	3.5	48	49
 sle70	sle71	7.3	146	24
 sle71	sle72	3.7	115	13
 sle72	sle73	8.1	93	83
-5a	j3	2.82	92	-17
+;poprawka: bylo "5a" (stacja nie istniala), zmieniono na sle5a
+sle5a	j3	2.82	92	-17
 j3	j2	5.32	135	-48
 j2	j1	4.89	158	-37
 j3	j4	3.13	53	21
