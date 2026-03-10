@@ -12,6 +12,6 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
 #prefix czarna
-#flag	1.92	/Jaskinia Czarna
-#note	1.92	/Jaskinia Czarna
-#fix	1.92	E19.87037222	N49.24438611	1326.0m
+#flag	otwor1	/Jaskinia Czarna
+#note	otwor1	/Jaskinia Czarna
+#fix	otwor1	E19.87037222	N49.24438611	1326.0m

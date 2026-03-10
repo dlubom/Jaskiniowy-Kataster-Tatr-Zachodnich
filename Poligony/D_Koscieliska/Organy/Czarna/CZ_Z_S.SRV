@@ -19,7 +19,7 @@ INSTRUMENT "DistoX"
 #date 2011-10-02
 #units meters order=AVD
 #units A=D V=D
-
+otwor1 1.92 0.0 0.0 0.0
 1.0	-	80.63	27.62	5.51
 1.0	-	16.48	83.56	0.66
 1.0	1.1	219.47	-7.05	2.313
