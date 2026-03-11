@@ -58,10 +58,12 @@ jobs:
           fi
 
       - name: Compile with cavern
+        shell: bash
         run: |
           cavern KATASTER.wpj 2>&1 | tee cavern_output.txt
 
       - name: Check for unattached stations
+        shell: bash
         run: |
           if grep -q "not attached to a fixed point" cavern_output.txt; then
             echo "::error::Cavern detected survey stations not attached to a fixed point:"
