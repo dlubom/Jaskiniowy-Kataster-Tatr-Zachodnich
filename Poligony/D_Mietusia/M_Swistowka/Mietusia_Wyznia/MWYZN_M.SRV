@@ -1,0 +1,19 @@
+#[
+CAVE_ID			"T.D-10.01"
+CAVE_NAME		"Jaskinia Mietusia Wyznia"
+UPDATE_DATE		2026-03-08
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"https://github.com/RadostW/jaskinie"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+#]
+
+#prefix td1001
+#flag	ot_gps	/Jaskinia Mietusia Wyznia
+#note	ot_gps	/Jaskinia Mietusia Wyznia
+; GPS - srednia z 5 pomiarow (etrex, telefon x2, zegarek, garmin66i)
+; Wysokosc: srednia z etrex=1352m i garmin66i=1402m
+#fix	ot_gps	E19.894900	N49.245399	1377.0m

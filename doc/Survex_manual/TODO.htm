@@ -1,0 +1,335 @@
+<HTML><HEAD>
+<TITLE>Survex To-Do List</TITLE>
+<STYLE type="text/css"><!--
+BODY, TD, CENTER, UL, OL {font-family: sans-serif;}
+-->
+</STYLE>
+</HEAD><BODY BGCOLOR=white TEXT=black>
+<H1>Survex To-Do List</H1>
+
+<H2>3d format</H2>
+
+<ul>
+
+<li>sort out XSECT - I'm sure I meant there to be 1 and 2 byte forms, not 2
+and 4 - 4 byte is only useful if a passage dimension is &gt; 327.67m!
+
+<li>store equated stations in some way
+
+<li>store legs by end stations rather than repeating coordinates over and
+over?
+
+</ul>
+
+<H2>Aven</H2>
+
+<ul>
+
+<li>loading a .3d file with no survey data (or which has a valid header but is broken later) with a survey already loaded doesn't work well.
+
+<li>After keyboard controlled movement, the measuring line/circle doesn't
+reappear until the mouse is moved (e.g. plan/elevation transition with P/L).
+
+<li>Fix depth clipping on grid
+
+<li>Does anyone use Controls-&gt;"Reverse Sense"?  It made some sense with
+caverot but now seeing the mouse pointer makes people expect the default
+motions (for right button drag particularly).
+
+<li>Clean up export.cc and allow line width, etc to be specified
+
+<li>Better handling of missing LRUD values
+
+<li>Smooth wrinkles in presentation code (stop pres on Open or
+New, changing focus on listctrl as presentation plays doesn't really work
+properly)
+
+<li>Draw the measuring line directly onto the front buffer, so we can remove it
+with a copy from the back buffer and redraw it in the new position without a
+re-render.
+
+<li>Process all pending input before rerendering to improve responsiveness.
+
+<li>Check timing code - we need to glFinish to ensure it's all drawn, and that
+may be needed to get meaningful timing info.
+
+<li>Allow control of colours in "colour by survey"; allow controlling what level
+colours are applied at e.g. colour by cave (and more generally by sub-prefix)
+
+<li>Implement "Skip blank pages" in aven printing
+
+<li>different keyboard layouts mean that some key choices don't make much sense...
+
+<li>File-&gt;Extended Elevation - provide a way to specify a spec file?  Or
+better a UI to control the extending.
+
+<li>Optional lazy label redraw during drags?  Or turn on at some redraw time
+threshold...
+
+<li>Some way to view older/newer version of survey
+
+<li>Label lengths aren't considered when working out image size when
+printing so a long label can spill off the edge of the printout
+
+<li>print to an image file?
+
+<li>grid on printouts
+<ul>
+<li>grid crosses option (only draw cross at intersections, not a full grid).
+<li>[(x,y) of a point to go through (easting, northing)
+<li>x spacing, y spacing (default to x spacing)
+<li>orientation (bearing of y-axis?) (defaults to 0)]
+</ul>
+
+<li>Profile aven further (for both speed and memory usage)
+
+<li>by default put crosses on those points with no legs attached (unused
+fixed points)?
+
+<li>label junctions/dead ends?
+
+<li>section colouring/selective labelling
+
+<li>clipping - want to select a clip sphere (or maybe cube) centred on
+centre on rotation I think.
+
+<li>Some way to display all the names of an equated station (e.g. in pop-up
+window or the info panel).
+
+<li>check on monochrome, 16, and 256 colour displays - especially that depth
+colouring looks OK
+
+<li>Feed back redraw time to key based movement as in caverot?  Or perhaps best
+not to?  It depends on whether we expect people to hold down keys or not...
+Perhaps something smart where the first press is a fixed size, then after that
+it depends on the redraw?
+
+<li>improve .plt export to include less crude survey structure.
+
+<li>If multiple methods for drawing crosses and/or blobs pass the
+visual fidelity check, check which is fastest.
+
+<li>Lots of aven things need documenting.
+
+<li>Stats reporting in aven - more helpful there than at end of cavern run as
+user can check at any point and we can report for a subsurvey.  NSEWUD-most
+stations; node stats; count of stations with other than two legs or which are
+fixed?; flag counts (#fixed stations, #exported stations, etc) with way to see
+list of all such stations.
+</ul>
+
+<H2>Documentation</H2>
+
+<ul>
+
+<li>Platform specific versions of docs?
+
+<li>Put more terms in terminology in docs ? trip, instrument, ...
+
+<li>Finish off manual loose ends.
+
+<li>Look at rewording extend.sgml (AndyA comments)
+
+</ul>
+
+<H2>Internationalisation and Localisation</H2>
+
+<ul>
+
+<li>Update translations.
+
+<li>length units in .err file?
+
+</ul>
+
+<H2>Test Suite</H2>
+
+<ul>
+
+<li>test diving data with compass omitted (plumbed)
+
+<li>more tests for direction
+
+<li>improve 3d torture test and try to automate its use if possible.
+
+</ul>
+
+<H2>Miscellaneous</H2>
+
+<ul>
+
+<li>resolve FIXMEs in code
+
+<li>diffpos: compare connectivity (i.e legs as well as stations) - e.g.
+
+<pre>
+foo.1 moved by (0.02, 0.10, -0.06)
+leg between foo.1 and bar.2 removed
+...
+bar.2 moved by (-0.02, -0.05, 0.03)
+</pre>
+
+</ul>
+
+<H2>Cavern</H2>
+
+<ul>
+
+<li>This gives "*** Singular!!!" warning with DEBUG_INVALID on:
+<pre>
+1 2 50000 0 -
+1 2 5 0 -30
+</pre>
+
+<li>Default variance for topofil counter? (currently same as that of tape)
+
+<li>Don't split other traverses at articulating traverses when reporting error
+stats.
+
+<li>sort out title which goes in .3d file for this (if no *includes in ...
+it gets the title of the leafname of this .svx file, otherwise it's the
+leafnames of the *include-d files, comma-separated):
+
+<pre>
+*begin mycave
+*title "My Cave"
+...
+*end mycave
+</pre>
+
+<li>look at solution by QR factorisation in matrix.c more
+
+<li>consider disabling the more expensive asserts - turning them all off
+speeds up cavern by about 10%.
+
+<li>
+Warn bearings not 3 digits, gradient not &lt;sign&gt;&lt;digit&gt;&lt;digit&gt;
+
+<li>Sort out gross error detection code
+
+<li>For warnings such as "Negative adjusted tape reading" report the
+value of the adjusted tape reading (currently we just highlight the
+reading as it appears in the Survex file).
+
+<li>legs: implied flags: inloop/plumb
+
+<li>legs: "dubious" for "tapeless" legs - bearing along continuation...
+
+<li>station flags: "important" - e.g. top camp "fixed" point /
+junction,deadend (implied by order) /
+articulation pt (know for nodes I think a station is if at least one
+of its nodes is)
+
+<li>Maybe station lists should know how long they are?
+
+<li>Articulation point code: ideally the articulation point code should allow
+further network reductions to happen after splitting at articulation
+points?
+
+</ul>
+
+<H2>Survex file format</H2>
+
+<ul>
+
+<li>*data chamber ...
+
+<li>*data nsew ... for pitches (bearings rather than having to be NSEW)
+
+<li>Allow angles as deg/min/sec (for theodolite data) (060&deg;10'15" as 060 10
+15, or 060.1005 (crap notation))
+
+<li>should % after a clino reading work?
+
+<li>Fixing a point by triangulation?
+
+<li>multiple readings:
+<p>
+average bearings specially - they don't average like normal numbers
+<p>
+%age gradients should probably average the same as angle gradients
+<p>
+Document - works like so:
+<pre>
+*set open {
+*set close }
+*calibrate compass {000.5 001.0 001.25}
+1 2 10.23 {000 001} -02
+2 3 {10.16 10.17} 127 {+06 +05}
+3 4 11.98 007 {+03 +03}
+</pre>
+Implement as extension to number format so any suitable numeric value to be
+repeated?
+<li>Theodolite + level:
+<ul>
+  <li>delta(bearing (relative to 0 at start)
+  <li>delta(horizontal)
+  <li>delta(vertical) / maybe "clino" instead
+</ul>
+
+<li>Theodolite only:
+<ul>
+  <li>delta(bearing (relative to 0 at start)
+  <li>delta(horizontal)
+  <li>infinite sd for z
+</ul>
+
+<li>Infinite sds so we can fix in x and y only (or z only)?
+
+<li>legs: hydrology - fossil/active/not recorded/static water/underwater
+(sump) [diving underwater by default? except style can mean altimeter
+too...]
+
+<li>legs: floor type - mud/sand/breakdown/flowstone/etc and can then used
+LRUD to draw crude survey...
+
+<li>Allow valid range for an instrument to be specified.  Tie in with
+*instrument.  *units date - ranges for dates - e.g. "1990-" or
+"jun-aug"...
+
+<li>cope with any combination of readings which gives enough info ???
+
+<li>leg and station "comments":
+
+<pre>*data passage station left right up down comment
+
+1 1.0 - 50+ 0.5 "large cairn"
+
+2 ...
+
+*data normal station l r u d comment newline tape compass clino
+
+1 1.0 - 50+ 0.5 "large cairn"
+
+  10.78 123 -03
+
+2 ...
+</pre>
+
+comment can be omitted "-" or not present if at end of line...?
+commentall?
+
+<li>Allow covariances to be specified in cartesian style?
+
+<li>flag legs as "skeletal" or something? (i.e. not in the cave passage) -
+e.g. a radiolocation leg from one passage to another isn't surface,
+but it isn't in the cave itself either (it's through rock).  You could
+just call it surface but maybe later we want to use the surface
+flag to produce points for a surface triangulation...
+
+<li>?outlaw prefixes on stations in data legs (as Todd has lobbied for)
+and then the prefix of a leg == prefix of each end...?
+
+<li>Units in *fix (currently metres)
+
+</ul>
+
+<H2>img library</H2>
+
+<ul>
+
+<li>make img more modular (convert to C++?)
+
+</ul>
+
+</BODY></HTML>

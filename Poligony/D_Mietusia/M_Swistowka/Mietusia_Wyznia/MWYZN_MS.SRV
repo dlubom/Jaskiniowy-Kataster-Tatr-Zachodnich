@@ -1,0 +1,54 @@
+#[
+CAVE_ID		"T.D-10.01"
+CAVE_NAME		"Jaskinia Mietusia Wyznia"
+SURVEY_ID		MS
+SURVEY_NAME		"MR Studnia"
+UPDATE_DATE		2026-03-08
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"https://github.com/RadostW/jaskinie"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM "Konrad Teleman, Karolina Kowalczyk, Marek Wagrodzki"
+INSTRUMENT "DistoXBLE"
+#]
+
+#prefix td1001
+#units meters order=DAV
+#units A=D V=D
+#units DECL=-6.1
+#date 2024-07-06
+
+; === Polaczenia z innymi cigami ===
+ot_16	ms_0	0	0	0
+ot_17	ms_2	0	0	0
+ot_18	ms_5	0	0	0
+ot_19	ms_6	0	0	0
+
+; === Pomiary ===
+ms_0	ms_2	4.33	18.0	27.2
+
+ms_2	ms_3	2.62	204.2	-62.2
+
+ms_3	ms_4	2.66	307.5	-69.1
+
+ms_2	ms_5	3.44	269.1	17.3	; ciąg główny 
+
+ms_5	ms_6	5.6	52.9	25.3
+ms_5	ms_7	2.5	333.6	-41.4
+
+ms_7	ms_8	1.53	351.5	-47.3
+
+ms_5	ms_9	1.59	333.8	-31.5
+
+ms_9	ms_10	3.61	276.4	1.4
+ms_10	-	1.08	286.0	-19.6
+ms_10	-	1.41	204.0	-26.0
+ms_10	-	1.94	220.4	-53.1
+ms_10	-	0.76	246.6	-15.1
+
+ms_5	ms_11	2.03	19.0	-7.7
+ms_11	-	3.32	3.0	-70.1
+
+ms_11	ms_12	3.4	3.8	-71.5	; głębokość studzienki

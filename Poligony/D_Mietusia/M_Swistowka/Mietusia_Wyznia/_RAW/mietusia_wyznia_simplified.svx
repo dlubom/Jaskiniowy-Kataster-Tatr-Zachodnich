@@ -1,0 +1,96 @@
+;  OBLIGATORY FIELDS
+;    Cave_name         Jaskinia Mietusia Wyznia - simplified for elevation
+;    Section_name      Main
+;    Entry_last_update 2024-01-01
+;    Author            Radost Waszkiewicz - Speleoklub Warszawski
+;    Licence           CC BY SA 4.0
+;    Survey_device     None
+
+*equate gps_mietusia_wyznia mietusia_wyznia.otwor.gps
+
+*begin mietusia_wyznia
+
+    ; manual setting, 
+    ; auto avaliable with GPS data only
+    *calibrate declination -6.1
+
+    *title "Jaskinia Mietusia Wyznia"
+
+    ; ===================
+    ; 2024 measurements
+    ; ===================
+    *include otwor
+    *include suche_dno
+    *include mylna_rura
+    *include wyznia_matka
+    *include problem_speleoklubu
+    *include traba
+    *include trzy_syfony
+    
+    *include detektor_lawinowy
+    *include pawlacz
+    
+    *include komin
+    ;*include obejscie
+    ;*include odejscie_l2
+    ;*include mr_studnia
+    
+    *include urlop_tacierzynski
+    *include perystaltyka
+
+    *equate mylna_rura.19 otwor.19
+    *equate mylna_rura.20 otwor.20
+    *equate mylna_rura.21 otwor.21
+    *equate mylna_rura.22 otwor.22
+    *equate mylna_rura.a otwor.a
+
+    *equate wyznia_matka.19 mylna_rura.28
+
+    *equate suche_dno.12 wyznia_matka.1
+
+    *equate problem_speleoklubu.0 suche_dno.29
+    *equate problem_speleoklubu.1 suche_dno.30
+
+    *equate traba.0 suche_dno.12
+    *equate traba.2 suche_dno.14
+    
+    *equate trzy_syfony.0 suche_dno.30
+    *equate trzy_syfony.1 suche_dno.29
+
+    *equate suche_dno.3 detektor_lawinowy.1
+
+    *equate trzy_syfony.34 pawlacz.8
+
+    *equate wyznia_matka.19 komin.0
+    *equate mylna_rura.b komin.2
+    *equate mylna_rura.27 komin.1
+
+    ;*equate obejscie.0 otwor.1
+    ;*equate obejscie.1 otwor.2
+    ;*equate obejscie.2 otwor.3
+    ;*equate obejscie.4 otwor.4
+    ;*equate obejscie.5 otwor.5
+    ;*equate obejscie.6 otwor.6
+    ;*equate obejscie.7 otwor.7
+    ;*equate obejscie.8 otwor.8
+    
+    ;*equate odejscie_l2.2 otwor.12
+    ;*equate odejscie_l2.1 otwor.11
+    ;*equate odejscie_l2.0 otwor.10
+    
+    ;*equate mr_studnia.5 otwor.18
+    ;*equate mr_studnia.2 otwor.17
+    ;*equate mr_studnia.0 otwor.16
+    ;*equate mr_studnia.6 otwor.19
+    
+    *equate urlop_tacierzynski.0 pawlacz.7
+    
+    *equate mylna_rura.23 perystaltyka.2
+       
+    ; ===================
+    ; Digitized from plan and elevation
+    ; ===================
+    ;*include ./Digitized/glowny.svx    
+    ;*equate problem_speleoklubu.0 glowny.c44
+    
+*end mietusia_wyznia
