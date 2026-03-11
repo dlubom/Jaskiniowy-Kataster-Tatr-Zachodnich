@@ -1,0 +1,394 @@
+<!DOCTYPE HTML PUBLIC "-//W4C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<TITLE>Survex 3d Format Specification</TITLE>
+<STYLE type="text/css"><!--
+BODY, TD, TH, CENTER, UL, OL {font-family: sans-serif;}
+TD, TH {font-size: 11pt; vertical-align: top;}
+TH {white-space: nowrap; background-color: #ffc;}
+.code {text-align: center; white-space: nowrap;}
+.type {text-align: center; white-space: nowrap;}
+.data {text-align: left; white-space: nowrap;}
+.desc {text-align: left; white-space: wrap;}
+.version {text-align: center; white-space: wrap;}
+TH.data, TH.desc {text-align: center;}
+.reserved {background-color: #ddd;}
+-->
+</STYLE>
+</HEAD><BODY BGCOLOR=white TEXT=black>
+<H1>Survex 3d Format Specification</H1>
+
+<P>If you're writing in C or C++ it's <b>strongly</b> recommended
+that you use the img routine provided with Survex to read and write
+3d files.  Doing so means that you can take advantage of any revisions
+to the 3d format by simply rebuilding your software with the updated
+img routines, rather than having to update your own code.  It also
+allows you to read other processed survey data formats (those from
+Larry Fish's Compass and from Bob Thrun's CMAP), and allows reading
+a sub-set of the data in a file, restricted by survey prefix.</P>
+
+<P>This document only describes the most recent revision of the 3d format
+(version 8) which is produced by versions from 1.2.7.  A <a
+href="3dformat-old.htm">separate document</a> describes older versions.
+</P>
+
+<P>If you try to use this specification and find details which aren't
+spelled out clearly enough (or at all!) or any errors, please let us know.
+At least two people have successfully written code to read 3d files
+using this document, but that doesn't mean it can't be improved.
+</P>
+
+<H2>File Header</H2>
+
+<P>This consists of:</P>
+
+<ul>
+<li> File ID: the string "Survex 3D Image File" followed by a linefeed
+(decimal 10, hex 0a). [Note: v0.01 files can have a carriage return
+before this and other linefeeds - this is a file format error in any
+other format version].
+<li> File format version: "v8" followed by a linefeed.
+Any future versions will be "v9", "v10", "v11", etc.
+<li> Assorted string metadata - the sublist below lists these, and they
+must appear in the order given, separated by zero bytes, with the end of
+the metadata marked by a linefeed.  More items may be added, so ignore any
+additional ones which are present.  Any trailing items with empty values
+can be omitted along with the separating zero byte before them.
+ <ul>
+  <li>Survey title: Human readable description of the data in the file.
+There's no length limit on this string.
+  <li>Coordinate system: string describing the coordinate system in use
+which can be passed to PROJ.  For a coordinate system with an EPSG code
+<code>EPSG:</code> followed by the code number can be used (we recommend
+using this if an EPSG code exists).  Similarly, an ESRI code can be specified
+with <code>ESRI:</code> followed by the code number.
+  <li>Survey hierarchy separator character.  Survey station names form a
+hierarchy, and this character separates levels in the hierarchy.  E.g.
+<code>161.entrance.6</code>.  Defaults to <code>.</code> if this item is not
+specified, which is also the recommended character to use unless <code>.</code>
+is used in survey or station names (especially as older software will not see
+this metadata and will use <code>.</code> unconditionally).
+ </ul>
+<li> Timestamp: A string consisting of an '@' followed by a count of
+seconds since the start of 1970 in UTC ("Unix time_t") as a string
+(for example: "@1371300355"), followed by a linefeed.  This is intended to be
+the time the file was generated, rather than the time the survey data was
+collected.
+<li> File-wide flags: a single byte.  If bit 7 is set, this is an extended
+elevation.  All other bits are reserved - set them to 0 when writing, and
+ignore them when reading.
+</ul>
+
+<H2>Items</H2>
+
+<P>Following the header are a number of items.  The last item must be a 0x00
+byte when the current label is empty, which marks the end of the data.  The
+first byte of an item is a code identifying what the item is:</P>
+
+<table border="1" cellpadding="1" cellspacing="0" width="100%">
+<tr>
+    <th class="code">Code</th>
+    <th class="code">Type</th>
+    <th class="data">Data</th>
+    <th class="desc" colspan="2">Meaning</th>
+    <th class="version">Version</th>
+</tr>
+<tr>
+    <td class="code">0x00</td>
+    <td class="type">STYLE_NORMAL / STOP</td>
+    <td class="data">&nbsp;</td>
+    <td colspan="2">
+    Set style for following legs to tape, compass and clino.
+<p>
+    If the style is already set to STYLE_NORMAL, this code signifies the
+    end of the data in the 3d file.</td>
+    <td class="version">&ge;8</td>
+</tr>
+<tr>
+    <td class="code">0x01</td>
+    <td class="type">STYLE_DIVING</td>
+    <td class="data">&nbsp;</td>
+    <td colspan="2">
+    Set style for following legs to diving data</td>
+    <td class="version">&ge;8</td>
+</tr>
+<tr>
+    <td class="code">0x02</td>
+    <td class="type">STYLE_CARTESIAN</td>
+    <td class="data">&nbsp;</td>
+    <td colspan="2">
+    Set style for following legs to cartesian data</td>
+    <td class="version">&ge;8</td>
+</tr>
+<tr>
+    <td class="code">0x03</td>
+    <td class="type">STYLE_CYLPOLAR</td>
+    <td class="data">&nbsp;</td>
+    <td colspan="2">
+    Set style for following legs to cylindrical polar data</td>
+    <td class="version">&ge;8</td>
+</tr>
+<tr>
+    <td class="code">0x04</td>
+    <td class="type">STYLE_NOSURVEY</td>
+    <td class="data">&nbsp;</td>
+    <td colspan="2">
+    Set style for following legs to unsurveyed</td>
+    <td class="version">&ge;8</td>
+</tr>
+<tr class="reserved">
+    <td class="code">0x05 - 0x0e</td>
+    <td class="type">&nbsp;</td>
+    <td class="data">&nbsp;</td>
+    <td class="desc" colspan="3">Reserved</td>
+</tr>
+<tr>
+    <td class="code">0x0f</td>
+    <td class="type">MOVE</td>
+    <td class="data">&lt;x&gt; &lt;y&gt; &lt;z&gt;</td>
+    <td class="desc" colspan="2">
+    Set current position to the coordinates given. Coordinates
+    are 4 byte little-endian signed integers representing
+    values in centimetres (0.01 metres).</td>
+    <td class="version">&ge;8</td>
+</tr>
+<tr>
+    <td class="code">0x10</td>
+    <td class="type">DATE</td>
+    <td class="data">&nbsp;</td>
+    <td colspan="2">
+    No survey date information was specified.</td>
+    <td class="version">&ge;8</td>
+</tr>
+<tr>
+    <td class="code">0x11</td>
+    <td class="type">DATE</td>
+    <td class="data">&lt;date&gt;</td>
+    <td colspan="2">
+    Set survey date of legs: date is a 2 byte little-endian unsigned integer
+    counting days from the start of 1900.</td>
+    <td class="version">&ge;8</td>
+</tr>
+<tr>
+    <td class="code">0x12</td>
+    <td class="type">DATE</td>
+    <td class="data">&lt;date1&gt;&lt;datespan&gt;</td>
+    <td colspan="2">
+    Set survey date of legs to a range: date1 is a
+    2 byte little-endian unsigned integer counting days since the start of
+    1900, and datespan is an unsigned byte counting days from date1.</td>
+    <td class="version">&ge;8</td>
+</tr>
+<tr>
+    <td class="code">0x13</td>
+    <td class="type">DATE</td>
+    <td class="data">&lt;date1&gt;&lt;date2&gt;</td>
+    <td colspan="2">
+    Set survey date of legs to a range: date1, date2 are
+    2 byte little-endian unsigned integers counting days since the
+    start of 1900.</td>
+    <td class="version">&ge;8</td>
+</tr>
+<tr class="reserved">
+    <td class="code">0x14 - 0x1e</td>
+    <td class="type">&nbsp;</td>
+    <td class="data">&nbsp;</td>
+    <td colspan="3">Reserved</td>
+</tr>
+<tr>
+    <td class="code">0x1f</td>
+    <td class="type">ERROR</td>
+    <td class="data">&lt;legs&gt;&lt;length&gt;&lt;E&gt;&lt;H&gt;&lt;V&gt;</td>
+    <td colspan="2">
+    Error information for the current traverse.  &lt;legs&gt; is the number of
+    legs. &lt;length&gt; is the total length of the
+    traverse in cm (0.01m). E, H and V are the error and the horizontal and
+    vertical components in cm. (All values are 4 byte little-endian signed integers) </td>
+    <td class="version">&ge;8</td>
+</tr>
+<tr class="reserved">
+    <td class="code">0x20 - 0x2f</td>
+    <td class="type">&nbsp;</td>
+    <td class="data">&nbsp;</td>
+    <td colspan="3">Reserved</td>
+</tr>
+<tr>
+    <td class="code" rowspan="3">0x30 - 0x31</td>
+    <td class="type" rowspan="3">XSECT</td>
+    <td class="data" rowspan="3">&lt;label&gt; &lt;L&gt; &lt;R&gt; &lt;U&gt; &lt;D&gt;</td>
+    <td colspan="2">
+    Modify the current label buffer according to &lt;label&gt; (see below for
+    details). The updated contents of the label buffer give the full name of
+    the survey station which these dimensions were measured at.  Dimensions are
+    2 byte little-endian signed integers representing values in centimetres
+    (0.01 metres). Omitted dimensions are encoded as 0xffff.  Station flags are
+    (N &amp; 0x01):
+    </td>
+    <td class="version" rowspan="3">&ge;8</td>
+</tr>
+<tr>
+    <th>Flag (N &amp; 0x01)</th>
+    <th>Meaning</th>
+</tr>
+<tr>
+    <td>0x01</td>
+    <td>Station is last one in this passage</td>
+</tr>
+<tr>
+    <td class="code" rowspan="3">0x32 - 0x33</td>
+    <td class="type" rowspan="3">XSECT</td>
+    <td class="data" rowspan="3">&lt;label&gt; &lt;L&gt; &lt;R&gt; &lt;U&gt; &lt;D&gt;</td>
+    <td colspan="2">
+    Modify the current label buffer according to &lt;label&gt; (see below for
+    details). The updated contents of the label buffer give the full name of
+    the survey station which these dimensions were measured at.  Dimensions are
+    4 byte little-endian signed integers representing values in centimetres
+    (0.01 metres). Omitted dimensions are encoded as 0xffffffff.
+    </td>
+    <td class="version" rowspan="3">&ge;8</td>
+</tr>
+<tr>
+    <th>Flag (N &amp; 0x01)</th>
+    <th>Meaning</th>
+</tr>
+<tr>
+    <td>0x01</td>
+    <td>Station is last one in this passage</td>
+</tr>
+<tr class="reserved">
+    <td class="code">0x34 - 0x3f</td>
+    <td class="type">&nbsp;</td>
+    <td class="data">&nbsp;</td>
+    <td colspan="3">Reserved</td>
+</tr>
+<!-- Checked to here! -->
+<tr>
+    <td class="code" rowspan="8">0x40 - 0x7f</td>
+    <td class="type" rowspan="8">LINE</td>
+    <td class="data" rowspan="8">&lt;label&gt; &lt;x&gt; &lt;y&gt; &lt;z&gt;</td>
+    <td colspan="2">
+    Modify the current label buffer according to &lt;label&gt; (see below for
+    details) - if &lt;label&gt; is omitted due to flag bit 0x20 being set then
+    the current label buffer is used unmodified. The updated contents of the
+    label buffer give the survey that the leg is in. Return leg from current
+    position to coordinates given, and update current position to coordinates
+    given.
+    </td>
+    <td class="version" rowspan="5">&ge;8</td>
+</tr>
+<tr>
+    <th>Flag (N &amp; 0x3f)</th>
+    <th>Meaning</th>
+</tr>
+<tr>
+    <td>0x01</td>
+    <td>Leg is above ground</td>
+</tr>
+<tr>
+    <td>0x02</td>
+    <td>Leg duplicates data in another leg (e.g. resurvey along a passage to
+    tie into a known station)</td>
+</tr>
+<tr>
+    <td>0x04</td>
+    <td>Leg is a splay shot in a chamber (radial shots from a central point)</td>
+</tr>
+<tr class="reserved">
+    <td>0x08</td>
+    <td colspan="2">Reserved</td>
+</tr>
+<tr class="reserved">
+    <td>0x10</td>
+    <td colspan="2">Reserved</td>
+</tr>
+<tr>
+    <td>0x20</td>
+    <td>No change to label (&lt;label&gt; omitted entirely)</td>
+    <td class="version">&ge;8</td>
+</tr>
+<tr>
+    <td class="code" rowspan="10">0x80 - 0xff</td>
+    <td class="type" rowspan="10">LABEL</td>
+    <td class="data" rowspan="10">&lt;label&gt; &lt;x&gt; &lt;y&gt; &lt;z&gt;</td>
+    <td colspan="2">
+    Modify the current label buffer according to &lt;label&gt; (see below for
+    details). The updated contents of the label buffer give the survey
+    station's full name.
+    </td>
+    <td class="version" rowspan="10">&ge;8</td>
+</tr>
+<tr>
+    <td colspan="2">
+    The station flags are encoded in the bottom 7 bits of the item code:</td>
+</tr>
+<tr>
+    <th>Flag (N &amp; 0x7f)</th>
+    <th>Meaning</th>
+</tr>
+<tr>
+    <td>0x01</td>
+    <td>Station is on leg above ground</td>
+</tr>
+<tr>
+    <td>0x02</td>
+    <td>Station is on an underground leg (both may be true at an entrance)</td>
+</tr>
+<tr>
+    <td>0x04</td>
+    <td>Station is marked as an entrance (with *entrance)</td>
+</tr>
+<tr>
+    <td>0x08</td>
+    <td>Station is exported (i.e. may be used as a connection point to other
+    surveys)</td>
+</tr>
+<tr>
+    <td>0x10</td>
+    <td>Station is a fixed point (control point)</td>
+</tr>
+<tr>
+    <td>0x20</td>
+    <td>Station is anonymous</td>
+</tr>
+<tr>
+    <td>0x40</td>
+    <td>Station is on the passage wall</td>
+</tr>
+</table>
+
+<p>A &lt;label&gt; value in the table above encodes modifications to the
+current label buffer, which consist of removing the last <i>D</i> bytes
+from the buffer, and then appending the next <i>A</i> bytes from the file
+to the buffer.  <i>D</i> and <i>A</i> are encoded as follows:</p>
+
+<ul>
+<li>Read a byte - if it is non-zero then: <i>D</i> = <code>byte &gt;&gt; 4</code>, <i>A</i> = <code>byte &amp; 0x0f</code>
+<li>Otherwise (i.e. the first byte is zero):
+  <ul>
+  <li>Read a byte and:
+    <ul>
+    <li>If it is not 255 then <i>D</i> = <code>byte</code>
+    <li>Otherwise, <i>D</i> = 4 byte unsigned integer read from the file
+    </ul>
+  <li>Read a byte and:
+    <ul>
+    <li>If it is not 255 then <i>A</i> = <code>byte</code>
+    <li>Otherwise, <i>A</i> = 4 byte unsigned integer read from the file
+    </ul>
+  </ul>
+</ul>
+
+<H2>Item order</H2>
+<ul>
+<li>A continuous section of centreline is defined by a &lt;MOVE&gt; item, followed
+by one or more &lt;LINE&gt; items.</li>
+<li>&lt;LABEL&gt; items may appear anywhere in the file after the header,
+including within a &lt;MOVE&gt;&lt;LINE&gt;... sequence.</li>
+<li>Duplicate &lt;LABEL&gt; items are permitted provided they also have identical
+coordinate values. (The same coordinate values may also be shared by any
+number of different &lt;LABEL&gt; items).</li>
+<li>Stations must be defined in a &lt;LABEL&gt; item <u>before</u> being
+referenced (e.g. in &lt;XSECT&gt; items)</li>
+</ul>
+
+<P>Authors: Olly Betts and Mike McCombe, last updated: 2025-01-13</P>
+</BODY></HTML>
