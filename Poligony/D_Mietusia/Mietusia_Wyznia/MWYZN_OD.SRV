@@ -8,7 +8,7 @@ PROJECT_NAME		"Kataster jaskin tatrzanskich"
 COORDINATOR		"Dariusz Lubomski"
 COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
 DATA_SOURCE		"https://github.com/RadostW/jaskinie"
-LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM "K.T ,K.K, M.W"
 INSTRUMENT "DistoXBLE"
