@@ -1,0 +1,62 @@
+;  OBLIGATORY FIELDS
+;    Cave_name         Jaskinia Mietusia Wyznia
+;    Section_name      Detektor Lawinowy
+;    Entry_last_update 2024-05-30
+;    Author            Radost Waszkiewicz - Speleoklub Warszawski
+;    Author            Michał Smaga - Speleoklub Warszawski
+;    Licence           CC BY SA 4.0
+;    Survey_device     DistoXble - 4057 - SW
+
+; 2024.05.30 created by TopoDroid v 6.2.44
+; detektor_lawinowy
+; Instrument: DistoXBLE 0457 - SM-N9005
+
+*begin detektor_lawinowy 
+  *date 2024.05.30 
+  *team "rw ms" 
+  *units tape meters
+  *units compass degrees
+  *units clino degrees
+  *alias station - ..
+  *flags not splay
+  *data normal from to tape compass clino
+    0 1   4.87 101.3 50.3
+  0 - 1.34 7.4 -31.8
+  0 - 1.19 28.4 -26.3
+  0 - 1.24 353.2 -53.5
+  0 - 1.97 73.5 41.3
+  0 - 1.66 94.8 45.8
+  0 - 0.94 12.9 -52.1
+  0 - 1.13 309.2 -77.4
+  0 - 1.88 239.5 -50.2
+  0 - 2.45 152.2 48.0
+  0 - 1.10 184.7 38.6
+  0 - 1.11 218.4 -9.6
+  0 - 1.48 225.4 -20.7
+  0 - 2.39 233.6 -31.9
+    0 2   2.21 233.6 -32.1
+    2 3   2.34 258.1 -68.5
+  2 - 0.88 229.6 -56.9
+  2 - 0.67 235.4 -74.6
+  2 - 1.10 302.8 -77.1
+  2 - 1.89 276.3 -63.0
+  2 - 0.82 23.0 -67.7
+  2 - 0.89 353.8 -52.1
+  2 - 0.55 189.2 10.2
+  2 - 0.71 214.3 -42.1
+  2 - 0.80 227.4 -46.9
+  2 - 1.85 240.0 -65.1
+    99 3   1.05 67.0 48.9
+  *flags not splay
+*units left meters
+*units right meters
+*units up meters
+*units down meters
+*data passage station left right up down
+99  0.00 0.00 0.00 0.00
+3  0.00 0.00 0.00 0.00
+2  0.51 0.55 0.10 1.69
+0  1.62 0.82 1.82 1.44
+1  0.00 0.00 0.00 0.00
+
+*end detektor_lawinowy

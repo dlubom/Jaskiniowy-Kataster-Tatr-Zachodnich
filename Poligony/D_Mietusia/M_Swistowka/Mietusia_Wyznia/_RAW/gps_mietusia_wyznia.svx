@@ -1,0 +1,45 @@
+;  OBLIGATORY FIELDS
+;    Cave_name         Jaskinia Mietusia Wyznia
+;    Section_name      GPS data
+;    Entry_last_update 2024-02-13
+;    Author            Radost Waszkiewicz - Speleoklub Warszawski
+;    Author            Stanislaw Mielczarek - Speleoklub Warszawski
+;    Author            Michał Smaga - Speleoklub Warszawski
+;    Author            Weronika Gutfeter - Speleoklub Warszawski
+;    Author            Paweł Jarosz - Speleoklub Warszawski
+;    Licence           CC BY SA 4.0
+;    Survey_device     Specified with measurement
+;
+;    Geodetic_datum    WGS84
+;    Coordinate_system LATLON
+
+*cs out UTM34N
+*cs LONG-LAT
+
+;    Survey_device     etrex - Speleoklub Warszawski
+;    Note              N 49* 14' 42.7"
+;    Note              E 19* 53' 42.3"
+;    Note              alt 1352
+*fix mietusia_wyznia_etrex 19.895083 49.245194 1000
+
+;    Survey_device     telefon - Pawel Jarosz
+;    Note              N 49* 14.7275'
+;    Note              E 19* 53.6873'
+*fix mietusia_wyznia_pawel 19.894788 49.245458 1000
+
+;    Survey_device     zegarek - Weronika Gutfeter
+;    Note              N 49* 14.7246'
+;    Note              E 19* 53.6917'
+*fix mietusia_wyznia_weronika 19.894862 49.245410 1000
+
+;    Survey_device     telefon - Radost Waszkiewicz
+;    Note              N 49.245374*
+;    Note              E 19.895031*
+*fix mietusia_wyznia_radost 19.895031 49.245374 1000
+
+;    Survey_device     garmin66i - Michal Smaga
+;    Note              N 49.245561* 
+;    Note              E 19.894735*
+;    Note              alt 1402
+*fix mietusia_wyznia_michal 19.894735 49.245561 1000
+

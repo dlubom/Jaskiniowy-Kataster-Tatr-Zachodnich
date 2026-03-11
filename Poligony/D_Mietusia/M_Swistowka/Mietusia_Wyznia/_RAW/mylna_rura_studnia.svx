@@ -1,0 +1,78 @@
+;  OBLIGATORY FIELDS
+;    Cave_name         Jaskinia Mietusia Wyznia
+;    Section_name      Sudzienka koło Mylnej Rury 
+;    Entry_last_update 2024-07-06
+;    Author            Konrad Teleman - Speleoklub Warszawski
+;    Author            Karolina Kowalczyk - Speleoklub Warszawski
+;    Author            Marek Wągrodzki - Speleoklub Warszawski
+;    Author            Stanisław Mielczarek - Speleoklub Warszawski
+;    Licence           CC BY SA 4.0
+;    Survey_device     DistoXble - 0109 - JG
+
+; 2024.07.09 created by TopoDroid v 6.2.44
+; mylna_rura_studnia
+; Instrument: DistoXBLE 0109 - Pixel 6a
+
+*begin mr_studnia 
+  *date 2024.07.06 
+  *team "K.T, K.K, M.W" 
+  *units tape meters
+  *units compass degrees
+  *units clino degrees
+  *alias station - ..
+  *flags not splay
+  *data normal from to tape compass clino
+    0 2   4.33 18.0 27.2
+    2 3   2.62 204.2 -62.2
+    3 4   2.66 307.5 -69.1
+    2 5   3.44 269.1 17.3  ; ciąg główny 
+    5 6   5.60 52.9 25.3
+    5 7   2.50 333.6 -41.4
+    7 8   1.53 351.5 -47.3
+    5 9   1.59 333.8 -31.5
+    9 10   3.61 276.4 1.4
+  10 - 1.08 286.0 -19.6
+  10 - 1.41 204.0 -26.0
+  10 - 1.94 220.4 -53.1
+  10 - 0.76 246.6 -15.1
+    5 11   2.03 19.0 -7.7
+  11 - 3.32 3.0 -70.1
+    11 12   3.40 3.8 -71.5  ; głębokość studzienki
+  *flags not splay
+*units left meters
+*units right meters
+*units up meters
+*units down meters
+*data passage station left right up down
+2  0.00 0.00 0.00 0.00
+0  0.00 0.00 0.00 0.00
+
+*data passage station left right up down
+2  0.00 0.00 0.00 0.00
+3  0.00 0.00 0.00 0.00
+4  0.00 0.00 0.00 0.00
+
+*data passage station left right up down
+2  0.00 0.00 0.00 0.00
+5  0.00 0.00 0.00 0.00
+
+*data passage station left right up down
+5  0.00 0.00 0.00 0.00
+6  0.00 0.00 0.00 0.00
+
+*data passage station left right up down
+5  0.00 0.00 0.00 0.00
+7  0.00 0.00 0.00 0.00
+8  0.00 0.00 0.00 0.00
+
+*data passage station left right up down
+5  0.00 0.00 0.00 0.00
+9  0.00 0.00 0.00 0.00
+10  1.21 0.17 0.00 1.55
+
+*data passage station left right up down
+5  0.00 0.00 0.00 0.00
+11  0.31 0.00 0.00 3.12
+12  0.00 0.00 0.00 0.00
+
+*end mr_studnia

@@ -1,0 +1,80 @@
+;  OBLIGATORY FIELDS
+;    Cave_name         Jaskinia Mietusia Wyznia
+;    Section_name      Perystaltyka
+;    Entry_last_update 2024-12-07
+;    Author            Radost Waszkiewicz - Speleoklub Warszawski
+;    Author            Michał Smaga - Speleoklub Warszawski
+;    Author            Krzysztof Chojnacki - Speleoklub Warszawski
+;    Author            Marek Wągrodzki - Speleoklub Warszawski
+;    Licence           CC BY SA 4.0
+;    Survey_device     DistoXble - sw
+
+; 2024.12.30 created by TopoDroid v 6.2.44
+; perystaltyka
+; Instrument: DistoXBLE 0108 - Pixel 6a
+
+*begin perystaltyka 
+  *date 2024.12.07 
+  *team "rw kc mw" 
+  *units tape meters
+  *units compass degrees
+  *units clino degrees
+  *alias station - ..
+  *flags not splay
+  *data normal from to tape compass clino
+  *flags duplicate
+    1 2   4.56 281.9 -8.9
+    2 3   3.16 328.6 -45.2
+  *flags not duplicate    
+    3 4   1.64 84.8 -19.4
+    4 5   2.16 323.6 -71.2
+    5 6   5.05 55.2 -57.0
+    6 7   2.87 326.2 -60.0
+  6 - 1.89 274.4 -22.8
+  6 - 2.39 303.1 -51.5
+  6 - 0.72 293.1 2.8
+  6 - 2.40 255.2 19.9
+  6 - 4.07 167.0 71.7
+  6 - 5.15 211.5 66.8
+  6 - 6.01 216.7 59.4
+  6 - 2.88 160.1 64.7
+  6 - 2.28 215.9 43.8
+  6 - 2.68 234.8 32.3
+  6 - 1.46 307.6 -45.1
+  6 - 0.55 300.3 0.0
+  6 - 1.22 258.6 72.3
+    7 8   2.97 350.8 -43.4
+    1 9   0.86 243.2 9.8
+    9 10   3.99 7.8 -68.7
+    10 11   3.52 127.3 -77.3
+  10 - 1.15 160.1 -2.0
+  10 - 0.71 183.3 -3.7
+  10 - 0.58 120.4 6.7
+  10 - 3.75 155.8 -73.3
+  10 - 2.82 156.3 -65.6
+  10 - 3.22 158.3 -56.6
+  10 - 3.13 157.9 -50.8
+  10 - 1.70 160.3 -45.0
+  10 - 1.27 164.8 -22.1
+  10 - 1.30 177.1 -51.6
+  10 - 2.19 164.8 -68.0
+  10 - 2.12 129.3 -63.0
+  *flags not splay
+*units left meters
+*units right meters
+*units up meters
+*units down meters
+*data passage station left right up down
+7  0.00 0.00 0.00 0.00
+8  0.00 0.00 0.00 0.00
+6  2.88 0.00 5.18 1.87
+5  0.00 0.00 0.00 0.00
+4  0.00 0.00 0.00 0.00
+3  0.00 0.00 0.00 0.00
+2  0.00 0.00 0.00 0.00
+1  0.00 0.00 0.00 0.00
+9  0.00 0.00 0.00 0.00
+10  0.00 0.95 0.07 3.59
+11  0.00 0.00 0.00 0.00
+
+*end perystaltyka
