@@ -20,7 +20,7 @@ INSTRUMENT "DistoXBLE"
 #units DECL=-6.1
 #date 2024-12-07
 
-; === Polaczenia z innymi cigami (z *equate w pliku asemblera) ===
+; === Polaczenia z innymi cigami ===
 pw_7	ut_0	0	0	0
 
 ; === Pomiary ===

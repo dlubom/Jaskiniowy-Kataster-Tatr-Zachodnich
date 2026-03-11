@@ -20,7 +20,7 @@ INSTRUMENT "DistoX2"
 #units DECL=-6.1
 #date 2024-02-13
 
-; === Polaczenia z innymi cigami (z *equate w pliku asemblera) ===
+; === Polaczenia z innymi cigami ===
 ot_19	mr_19	0	0	0
 ot_20	mr_20	0	0	0
 ot_21	mr_21	0	0	0
