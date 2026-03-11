@@ -20,6 +20,12 @@ INSTRUMENT "DistoXBLE"
 #units DECL=-6.1
 #date 2024-07-06
 
+; === Polaczenia z innymi cigami ===
+ot_18	mrs_5	0	0	0
+ot_17	mrs_2	0	0	0
+ot_16	mrs_0	0	0	0
+ot_19	mrs_6	0	0	0
+
 ; === Pomiary ===
 mrs_0	mrs_2	4.33	18.0	27.2
 

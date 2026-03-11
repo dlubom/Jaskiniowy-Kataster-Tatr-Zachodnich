@@ -24,6 +24,9 @@ INSTRUMENT "DistoXBLE"
 mr_23	pe_2	0	0	0
 
 ; === Pomiary ===
+pe_1	pe_2	4.56	281.9	-8.9	#S L
+pe_2	pe_3	3.16	328.6	-45.2	#S L
+
 pe_3	pe_4	1.64	84.8	-19.4
 
 pe_4	pe_5	2.16	323.6	-71.2
