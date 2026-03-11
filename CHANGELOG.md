@@ -4,6 +4,16 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.1.5] - 2026-03-11
+
+### Dodane
+- Dane wysokosciowe Viewfinder Panoramas 1 arc-second (N49E019_VF1.hgt) do wizualizacji terenu w Survex
+
+### Zmienione
+- Licencja projektu CC BY-SA 2.0 → 4.0 — zaktualizowano LICENCE, INFO.txt, README i wszystkie pliki SRV
+- Poprawki danych SRV: przecinki dziesietne → kropki (Bandzioch Kominiarski, Wysoka-7 Progow, System Wielkiej Snieznej, Mala w Mulowej, Ratusz Mulowy)
+- Usuniecie artefaktow kodowania (non-ASCII → ASCII) w komentarzach plikow SRV (Bandzioch, Mylna, Wysoka-7 Progow, Mala w Mulowej, Ratusz Mulowy)
+
 ## [v1.1.4] - 2026-03-07
 
 ### Dodane
