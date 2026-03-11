@@ -28,6 +28,8 @@ jobs:
             -x ".git/*" \
             -x ".github/*" \
             -x ".claude/*" \
+            -x ".gitignore" \
+            -x "CLAUDE.md" \
             -x "doc/*" \
             -x "logs/*" \
             -x "*/_RAW/*" \

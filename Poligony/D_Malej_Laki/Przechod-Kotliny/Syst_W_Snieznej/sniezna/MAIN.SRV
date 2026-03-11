@@ -274,7 +274,7 @@ g25	g25a	0	90	1.30
 ;g25a haki nad st wiatrow
 g25a	g24	124	-26	4.30
 g24	g23	166	-75	8.60
-;g24 spit nad studnia wiatrów
+;g24 spit nad studnia wiatrow
 g23	g22	0	-90	1.50
 g22	g21	0	-90	25.50
 ;g21 dno st wiatrow - pod lina
@@ -308,7 +308,7 @@ g1	g0	86	0	6.85
 #flag	g0	/Syfon Dominiki
 ;
 ;
-;		Od trawersu Studni Wiatrów za syfon dziadka
+;		Od trawersu Studni Wiatrow za syfon dziadka
 ;		Blotne Laznie
 ;
 ;

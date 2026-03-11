@@ -21,7 +21,7 @@ Projekt oparty jest o oprogramowanie Walls – tutaj znajdziesz [najnowszą wers
 Zachęcamy do współpracy przy projekcie oraz do udostępniania własnych pomiarów. Kontakt: [darek.lubomski@gmail.com](mailto:darek.lubomski@gmail.com).
 
 ### Licencja
-[Creative Commons Attribution-ShareAlike 2.0](http://creativecommons.org/licenses/by-sa/2.0/).
+[Creative Commons Attribution-ShareAlike 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
 
 ### Zawartość projektu
 Aktualnie projekt zawiera dane dla następujących jaskiń:

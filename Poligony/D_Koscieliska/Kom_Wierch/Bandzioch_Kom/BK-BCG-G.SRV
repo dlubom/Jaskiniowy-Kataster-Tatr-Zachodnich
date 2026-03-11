@@ -23,7 +23,7 @@ A003       	A003001	2.7	56	0
 A003001	A003002	4	0	-100
 
 ;MPO
-;Pom. J. Matysiak, B. Madej 09.02.1983 ,W ciagu dokonano korekty wspólrzednych X, Y
+;Pom. J. Matysiak, B. Madej 09.02.1983 ,W ciagu dokonano korekty wspolrzednych X, Y
 024	024001	3.44	275	47
 024001	024002	3.15	199	13
 024002	024003	3	260	-27
@@ -37,7 +37,7 @@ A003001	A003002	4	0	-100
 024010	024011	10.6	0	-100
 
 ;Ciag do Szczeliny Mekkiego
-;Pom. S. Kotarba, A Chorabik 25.02.83, Korekta wspólzednych na odcinku E-E004
+;Pom. S. Kotarba, A Chorabik 25.02.83, Korekta wspolzednych na odcinku E-E004
 E	E001	3.15	376	64
 E001	E002	4	390	54
 E002	E003	3.1	20	68
@@ -159,7 +159,7 @@ KA010009	KA010010	2.28	85	85
 KA010010	KA010011	7.03	23	26
 
 ;Fragment polaczenia Lazaret-Cicha Sala + Boki
-;Pom. J.Zygmunt, P. Paulus 1979; S. Kotarba, A. Balas 1982, Wspólzedne po korekcie
+;Pom. J.Zygmunt, P. Paulus 1979; S. Kotarba, A. Balas 1982, Wspolzedne po korekcie
 GA	GA001	8.35	199	-50
 GA001	GA002	4.6	268	-41.5
 GA002	GA003	5.2	247	27
@@ -216,7 +216,7 @@ GB001	GB002	4.2	385	72
 GB002	GB003	6.2	110	70
 
 GB002    	GB002001	4.5	10	50
-GB002001	GB002002	5,00	0	30
+GB002001	GB002002	5.00	0	30
 
 G002       	G002001	9.00	178	-50
 G002001	G002002	7.6	90	-46
@@ -238,9 +238,9 @@ GC010	GC011	5.7	86	-65
 GC011	GCA	4.4	258	-45
 GCA	GC013	5.9	292	-54
 GC013	GC014	1.00	280	-36
-;GC014	GC015	8.4	320	-90 ; pomiar powtórzony w BK-BCG-G.SRV:243
+;GC014	GC015	8.4	320	-90 ; pomiar powtorzony w BK-BCG-G.SRV:243
 ;Pom. S.Kotarba, M. Milewska 08.02.83
-GC014	GC015	8.4	320	-90 ; pomiar powtórzony w BK-BCG-G.SRV:241
+GC014	GC015	8.4	320	-90 ; pomiar powtorzony w BK-BCG-G.SRV:241
 GC015	GC016	2.35	240	-74
 GC016	GC017	11.3	312	-76
 GC017	GC018	9.00	0	-60
@@ -267,7 +267,7 @@ GCA013	GCA014	4.2	225	18
 GCA014	GCA015	2.9	170	-6
 GCA015	GCA016	2.35	240	-74
 GCA016	GCA017	11.3	312	-76
-GCA017	GCA018	9,00	0	-60
+GCA017	GCA018	9.00	0	-60
 GCA018	GCA019	3.9	344	-72
 GCA019	GCA020	7.3	310	-74
 GCA020	026	1.7	45	-29
@@ -334,7 +334,7 @@ K006       	K006001	5.84	216	-18
 K006001	K006002	2.45	226	-6
 K006002	K006003	3	216	34
 
-;Byrcynowe Ciagi - Obejœcie Sliskiego Komina
+;Byrcynowe Ciagi - Obejscie Sliskiego Komina
 ;Pom. S. Kotarba E. Matysiak 1982
 KA	KA001	3.6	139	-6
 KA001	KA002	2.3	98	-42

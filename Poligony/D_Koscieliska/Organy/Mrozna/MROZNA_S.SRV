@@ -8,7 +8,7 @@ PROJECT_NAME		"Kataster jaskin tatrzanskich"
 COORDINATOR		"Dariusz Lubomski"
 COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
 DATA_SOURCE		"F.Filar"
-LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM "B. Chlipala, F. Filar, J. Filar, M. Parczewski"
 INSTRUMENT "DistoX"
