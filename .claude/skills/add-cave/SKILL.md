@@ -99,7 +99,7 @@ COORDINATOR_EMAIL "darek.lubomski@gmail.com"
 REFERENCE_SYSTEM "WGS84"
 COORDINATE_SYSTEM "UTM"
 DATA_SOURCE     "Panstwowy Instytut Geologiczny"
-LICENSE         "http://creativecommons.org/licenses/by-sa/2.0/"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
 #prefix <PREFIX>
@@ -129,7 +129,7 @@ PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
 DATA_SOURCE     "<source or nieznane>"
-LICENSE         "http://creativecommons.org/licenses/by-sa/2.0/"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM "<authors from PIG or nieznany>"
 INSTRUMENT "<instrument or nieznany>"

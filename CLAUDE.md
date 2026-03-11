@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **Jaskiniowy Kataster Tatr Zachodnich** (Tatra Cave Registry) is a speleological cave survey data project for the Western Tatra Mountains. It compiles cartographic data (survey measurements, cave entrance coordinates, terrain models) using the **Walls** cave survey software by Texas Speleological Survey.
 
 - **Coordinate system**: WGS 84, UTM projection
-- **License**: Creative Commons Attribution-ShareAlike 2.0
+- **License**: Creative Commons Attribution-ShareAlike 4.0
 - **Current version**: v1.0.0 — semantic versioning, tracked in `CHANGELOG.md`
 - **Language**: Polish (cave names, documentation, comments in survey files)
 
@@ -72,7 +72,7 @@ COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
 REFERENCE_SYSTEM	"WGS84"
 COORDINATE_SYSTEM	"UTM"
 DATA_SOURCE		"source name"
-LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
 #prefix PREFIX
@@ -93,7 +93,7 @@ PROJECT_NAME		"Kataster jaskin tatrzanskich"
 COORDINATOR		"Dariusz Lubomski"
 COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
 DATA_SOURCE		"source name"
-LICENSE			"http://creativecommons.org/licenses/by-sa/2.0/"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM "team member names"
 INSTRUMENT "instrument name"
@@ -133,6 +133,30 @@ FROM	TO	DISTANCE	AZIMUTH	INCLINATION
 - Use ASCII equivalents instead (e.g., `ą->a`, `ć->c`, `ł->l`, `ó->o`, `ś->s`, `ż->z`, `č->c`, `š->s`, `ť->t`, `ž->z`)
 - Keep `_RAW/` files untouched as archival originals, even if they contain non-ASCII text
 - Files use **no BOM** encoding; some legacy files have encoding artifacts in Polish characters
+
+### Detecting Data Quality Issues in SRV Files
+
+**Important:** SRV files may contain non-UTF-8 bytes (CP1250/Latin-1 legacy encoding). Always use `LC_ALL=C` with grep/sed to handle these correctly. The Edit tool (which operates in UTF-8) will corrupt these bytes — use `LC_ALL=C sed -i ''` instead for byte-safe replacements.
+
+**Decimal comma (,) instead of dot (.)** — Walls treats comma as whitespace, shifting all subsequent fields:
+```bash
+# Detect: comma between digits in measurement fields (excluding comments, LRUD, metadata, _RAW/)
+LC_ALL=C grep -rn '[0-9],[0-9]' Poligony/ --include='*.SRV' | grep -v '/_RAW/' | grep -v ':#\|:;' | grep -v '<.*,.*>'
+```
+
+**Non-ASCII characters** — Polish diacritics that should have been replaced with ASCII:
+```bash
+# Detect: any non-ASCII bytes in SRV files (excluding _RAW/)
+LC_ALL=C grep -rn '[^[:print:][:space:]]' Poligony/ --include='*.SRV' | grep -v '/_RAW/'
+
+# Fix: replace CP1250 Polish characters with ASCII equivalents
+LC_ALL=C sed -i '' \
+  -e "$(printf 's/\xf3/o/g')" -e "$(printf 's/\xd3/O/g')" \
+  -e "$(printf 's/\xb9/a/g')" -e "$(printf 's/\xb3/l/g')" \
+  -e "$(printf 's/\xea/e/g')" -e "$(printf 's/\xe6/c/g')" \
+  -e "$(printf 's/\xbf/z/g')" -e "$(printf 's/\x9c/s/g')" \
+  -e "$(printf 's/\xf1/n/g')" FILE.SRV
+```
 
 ### Raw Source Files (`_RAW/`)
 
@@ -183,7 +207,7 @@ The project uses [semantic versioning](https://semver.org/) starting from v1.0.0
 
 The version in `INFO.txt` is set automatically — the `__VERSION__` placeholder is replaced with the tag name during the release build.
 
-The release ZIP excludes: `.git/`, `.github/`, `.claude/`, `doc/`, `logs/`, `*/_RAW/*`, `.DS_Store`, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
+The release ZIP excludes: `.git/`, `.github/`, `.claude/`, `.gitignore`, `CLAUDE.md`, `doc/`, `logs/`, `*/_RAW/*`, `.DS_Store`, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
 
 ## Documentation Resources (`doc/`)
 

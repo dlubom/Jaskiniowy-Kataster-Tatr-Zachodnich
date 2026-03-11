@@ -1,7 +1,7 @@
 #DATE 2008-06-29;TODO upewnic sie co do daty, pobrana z pliku KOM NWS.SRV
 #UNITS meters order=DAV
 #PREFIX mala
-k73	l1	6	180	31	; k73 poczatek ciagu do syfonu ampi, pomiar powtórzony w MALA POM.SRV:512
+k73	l1	6	180	31	; k73 poczatek ciagu do syfonu ampi, pomiar powtorzony w MALA POM.SRV:512
 l1	l2	6.4	146	32
 l2	l3	5.15	286	31
 l3	l4	2.2	241	20
@@ -35,13 +35,13 @@ l26	l27	2.8	262	-27
 l27	l28	2.75	310	-18
 l28	l29	4.35	22	-51
 l29	l30	3.7	61	16
-l30	l31	4.4	54	14	;pkt 31 na krawêdzi sali
+l30	l31	4.4	54	14	;pkt 31 na krawedzi sali
 l31	l32	4.05	46	4
 l32	l33	0.9	348	0
 l33	l34	6.5	350	-48
 l34	l35	3.2	11	8
 l35	l36	5.8	4	64
-l36	l37	5.9	10	32	; próg z polewami naciekowymi
+l36	l37	5.9	10	32	; prog z polewami naciekowymi
 l37	l38	4.85	14	12
 l38	l39	6.80	19	-66
 l39	l40	2.45	4	-18

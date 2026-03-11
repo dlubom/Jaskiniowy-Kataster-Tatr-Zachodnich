@@ -7,7 +7,7 @@
 #FIX  LT58  E19:54:53.26989 N49:14:18.82979 1903m
 #note	LT58	/Wielka Litworowa
 #flag	LT58	/Wielka Litworowa
-;Ci¹g g³ówny
+;Ciag glowny
 LT58	LT57	52	-81	13.20
 LT57	LT56	343	-9	6.90
 ; lt56 szczelina z dna studni wlotowej
@@ -41,16 +41,16 @@ LT34	LT35	85	-32	6.40
 LT33	LT30a1	237	-17	3.10
 LT30a1	LT30a	0	-90	50.00
 LT30a	LT30	115	0	1.70
-;Lt30 partie za II piêædziesi¹tk¹
+;Lt30 partie za II piecdziesiatka
 LT30	LT31	179	4	6.90
 LT31	LT32	287	32	10.90
 LT30	LT29	295	-13	5.40
-;lt29 ci¹g do III p³ytowca
+;lt29 ciag do III plytowca
 LT29	LT5a	235	0	6.10
 LT5a	LT6a	290	-12	4.50
 LT6a	LT7a	270	-20	5.75
 LT7a	LT27	275	-38	7.10
-;lt7a sala pod p³ytowcem
+;lt7a sala pod plytowcem
 LT27	LT26	80	-22	5.50
 LT26	LT25	182	-44	14.40
 LT25	LT24	93	-36	8.20
@@ -61,11 +61,11 @@ LT21	LT17	122	-34	16.10
 LT17	LT18	239	-5	11.90
 LT18	LT19	164	-36	19.30
 LT19	LT4	208	-38	12.40
-;lt4 ci¹g do biwaku, partie szeptane
+;lt4 ciag do biwaku, partie szeptane
 LT4	LT5	124	14	13.30
 LT5	LT6	41	-41	7.90
 LT6	LT7	43	11	6.30
-;lt 7 ci¹g pod zawalisko sali pod p³ytowcem
+;lt 7 ciag pod zawalisko sali pod plytowcem
 LT7	LT14	13	35	10.90
 LT14	LT15	341	27	22.10
 LT15	LT17	288	48	5.30
@@ -128,16 +128,16 @@ LTz80	LTz81	179	-45	7.40
 LTz81	LTz82	128	-58	3.50
 LTz82	LTz83	92	-42	9.10
 LTz83	LTz84	110	-43	13.80
-;ltz83 ci¹g do bubusiowej studni
+;ltz83 ciag do bubusiowej studni
 LTz84	LTz85	92	-28	9.20
 LTz85	LTz86	138	-42	12.10
 LTz86	LTz93	178	-37	19.80
-;ltz93 ci¹g do magla
+;ltz93 ciag do magla
 LTz93	LTz98	159	-23	8.50
 LTz98	LTz99	222	27	4.50
-;ltz98 ci¹g do studni Anielki
+;ltz98 ciag do studni Anielki
 LTz99	LTz100	290	41	17.20
-;ltw ci¹g od szczeliny w studni wlotowej
+;ltw ciag od szczeliny w studni wlotowej
 LT56	LTw7	162	-13	4.40
 LTw7	LTw6	173	23	4.00
 LTw6	LTw5	132	44	5.30
@@ -175,7 +175,7 @@ LTf1	LTf3	258	-13	8.50
 LTf1	LTf4	202	-23	9.60
 LTf1	LTf5	144	-5	4.30
 LTf1	LTf6	46	16	4.70
-;ltll partie za II piêædziesi¹tk¹
+;ltll partie za II piecdziesiatka
 LT30	LTll2	220	24	9.10
 LTll2	LTll3	0	90	14.30
 LTll3	LTll4	127	33	10.20
@@ -216,7 +216,7 @@ LTll37	LTll38	227	-54	3.30
 LTll38	LTll39	0	-90	26.00
 LTll39	LT4	171	-21	10.70
 LTll8	LTll8a	27	-12	3.90
-;LTt ci¹g boczny do III p³ytowca
+;LTt ciag boczny do III plytowca
 LT29	LTt3A	55	-17	9.90
 LTt3A	LTt2A	56	-36	8.30
 LTt2A	LTt1A	55	-29	9.50
@@ -225,7 +225,7 @@ LTt3	LTt2	140	-44	7.30
 LTt2	LTt1	200	-41	6.55
 LTt1A	LTt4	14	45	20.65
 LTt4	LTt5	340	44	11.80
-;LTn sala nad p³ytowcem
+;LTn sala nad plytowcem
 LT7a	LTn12	59	32	2.60
 LTn12	LTn0	322	27	6.55
 LTn0	LTn1	62	0	2.70
@@ -239,7 +239,7 @@ LTn0	LTn10	274	19	8.50
 LTn0	LTn11	228	0	3.00
 LTn0	LTn6	336	32	8.40
 LTn6	LTnA	322	35	4.60
-;ltp Podp³ytowiec
+;ltp Podplytowiec
 LT7a	LTpE	210	-43	10.40
 LTpE	LTpD	303	-46	9.10
 LTpD	LTpC	143	-21	9.40
@@ -284,7 +284,7 @@ LTsz4	LTsz3	306	50	2.30
 LTsz3	LTsz2	267	37	4.00
 LTsz2	LTsz1	7	44	4.90
 LTsz1	LTsz0	14	37	7.20
-;LTsz14 ci¹g boczny Korytarz Matki
+;LTsz14 ciag boczny Korytarz Matki
 LTsz14	LTsz15	351	49	15.90
 LTsz15	LTsz16	292	51	5.90
 LTsz16	LTsz17	304	55	5.05
@@ -297,12 +297,12 @@ LTsz22	LTsz23	309	46	3.70
 LTsz23	LTsz24	317	49	3.50
 LTsz24	LTsz25	348	46	2.40
 LTsz25	LTsz26	301	35	5.30
-;ltb Ci¹g boczny do biwaku
+;ltb Ciag boczny do biwaku
 LT4	LTb3	179	-22	8.60
 LTb3	LTb2	234	-8	7.80
 LTb2	LTb1	324	-38	2.80
 LTb1	LTb0	273	14	3.20
-;ltdb Ci¹g boczny do balkonu
+;ltdb Ciag boczny do balkonu
 LT4	LTdb8	280	26	5.30
 LTdb8	LTdb7	314	37	10.80
 LTdb7	LTdb6	314	56	7.30
@@ -312,14 +312,14 @@ LTdb4	LTdb1	292	24	4.70
 LTdb1	LTdb0	237	-69	6.60
 LTdb1	LTdb3	96	52	7.70
 LTdb3	LTdb2	134	-40	6.00
-;ltzs ci¹g boczny zawalisko sali pod P³ytowcem
+;ltzs ciag boczny zawalisko sali pod Plytowcem
 LT7	LTzs8	104	-42	7.80
 LTzs8	LTzs9	3	22	14.10
 LTzs9	LTzs10	53	-46	6.60
 LTzs10	LTzs12	31	-8	6.80
 LTzs12	LTzs13	248	20	9.40
 LTzs10	LTzs11	150	-45	6.70
-;Ltnb partie nad Studni¹ Bociana
+;Ltnb partie nad Studnia Bociana
 LT4	LTnb1	278	29	10.80
 LTnb1	LTnb2	229	18	12.5
 LTnb2	LTnb3	310	14	17.5
@@ -345,7 +345,7 @@ LTnb2a	LTnb3a	301	29	4.8
 LTnb3a	LTnb4a	289	39	2.4
 LTnb4a	LTnb5a	333	32	2.2
 LTnb5a	LTnb6a	95	-23	3.55
-;LTdp II P³ytowiec
+;LTdp II Plytowiec
 LT4	LTdp20	287	22	3.60
 LTdp20	LTdp19	246	31	11.00
 LTdp19	LTdp17	270	14	18.70
@@ -372,11 +372,11 @@ LTdp16p	LT4	85	-32	14.4
 LTdp17	LTdp18	47	15	17.2
 LTdp8	LTdp10	32	-8	5.8
 LTdp8	LTdp9	147	-18	5.2
-;LTdp9 Korytarz z Fajk¹
+;LTdp9 Korytarz z Fajka
 LTdp3	LTdp2	267	41	6.2
 LTdp2	LTdp1	313	40	7
 LTdp1	LTdp0p	300	47	2.9
-;LTpd Partie pod II P³ytowcem
+;LTpd Partie pod II Plytowcem
 LTdp0p	LTpd1	299	-37	4.9
 LTpd1	LTpd2	187	2	3.5
 LTpd2	LTpd3	277	-41	3.55
@@ -393,7 +393,7 @@ LTpd10	LTpd11	250	-42	3.7
 LTpd12	LTpd13	55	-23	3.8
 LTpd13	LTpd14	348	-38	3.5
 LTpd13	LTpd15	25	-32	4.55
-;LTnp Nadp³ytowiec
+;LTnp Nadplytowiec
 LTdp0p	LTnp27	166	-3	5.7
 LTnp27	LTnp26	336	10	6.3
 LTnp26	LTnp25	0	90	12.3
@@ -457,7 +457,7 @@ LTsb4	LTsb3	62	-24	2.70
 LTsb3	LTsb2	184	-32	4.20
 LTsb2	LTsb1	0	-90	5
 LTsb1	LTsb0	141	-41	5.1
-;LTkf Korytarz z Fajk¹
+;LTkf Korytarz z Fajka
 LTdp9	LTkf1	77	14	5.8
 LTkf1	LTkf2	145	25	4.5
 LTkf2	LTkf5	325	52	12.9
@@ -477,7 +477,7 @@ LTkf6	LTkf8	29	33	4.6
 LTkf8	LTkf9	99	-36	13
 LTkf8	LTkf10	342	54	5.1
 LTkf10	LTkf11	271	28	7.5
-;LTcb Ci¹g boczny do Bubusiowej Studni
+;LTcb Ciag boczny do Bubusiowej Studni
 LTz83	LTcb10	44	21	7.6
 LTcb10	LTcb9	9	15	6.5
 LTcb9	LTcb8	75	-39	8.7
@@ -489,7 +489,7 @@ LTcb4	LTcb3	0	-90	28.5
 LTcb3	LTcb2	29	-47	9.3
 LTcb2	LTcb1	5	43	22.7
 LTcb1	LTcb0	0	90	14
-;ltcm ci¹g boczny do magla
+;ltcm ciag boczny do magla
 LTz93	LTcm92	65	-20	9.5
 LTcm92	LTcm91	149	-35	3.1
 LTcm91	LTcm90	127	-33	4.6
@@ -500,7 +500,7 @@ LTcm88	LTcm87	140	-41	6.6
 ;TODO
 LTcm87	gkPLk	0	0	0
 ;LTcm87	gkPLk	162	-52	25.2
-;ltsa ci¹g boczny do studni Anielki
+;ltsa ciag boczny do studni Anielki
 LTz98	LTsa97	186	-7	6.4
 LTsa97	LTsa96	185	5	2.9
 LTsa96	LTsa95	187	14	3.7
@@ -541,7 +541,7 @@ LTks5	LTks6	67	58	1.6
 LTks6	LTks7	0	-90	0.7
 LTks7	LTks8	28	32	4.15
 LTks8	LTks9	3	-3	5.2
-;Ltnss ci¹g boczny nad sal¹ suse³ka
+;Ltnss ciag boczny nad sala suselka
 LTll11	LTnss1	250	67	4.35
 LTnss1	LTnss2	217	54	5.65
 LTnss2	LTnss3	248	52	8.45
@@ -549,7 +549,7 @@ LTnss3	LTnss3a	291	48	5.10
 LTnss3a	LTnss4	238	49	2.75
 LTnss4	LTnss5	302	14	4.30
 LTnss5	LTnss6	322	14	3.00
-;LTss korytarz miêdzy sal¹ suse³ka a smuk³¹ osiemnastk¹
+;LTss korytarz miedzy sala suselka a smukla osiemnastka
 LTll11	LTss2	329	0	3.05
 LTss2	LTss3a	47	18	2.20
 LTss3a	LTss4a	86	-39	3.40
@@ -561,7 +561,7 @@ LTss2	LTss3	32	76	4.60
 LTss3	LTss4	23	-27	0.90
 LTss4	LTss5	311	-73	6.00
 LTss5	LTss6	324	0	2.50
-;LTms meander za Smuk³¹ Osiemnastk¹
+;LTms meander za Smukla Osiemnastka
 LTll20	LTms201	114	0	4.20
 LTms201	LTms202	60	9	3.30
 LTms202	LTms203	336	81	2.20

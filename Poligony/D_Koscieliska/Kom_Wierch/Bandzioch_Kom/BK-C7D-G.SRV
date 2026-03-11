@@ -3,7 +3,7 @@
 #Units A=G V=G
 #Flag	BE047
 #Note	BE047	7 Dno
-;Pom. A. Antkiewicz, przy wspólpracy M. Dolny, J. Godula, P. Materniak 1980
+;Pom. A. Antkiewicz, przy wspolpracy M. Dolny, J. Godula, P. Materniak 1980
 BE	BE001	1	280	0
 BE001	BE002	0.9	0	-100
 BE002	BE003	2.5	0	-100

@@ -1,9 +1,9 @@
 #units meters order=AVD
 #units A=D V=D
 
-;title: "Meander Miko³ajkowy"
+;title: "Meander Mikolajkowy"
 #date 2013-07-13
-;Marcin S³owik (kartowanie-PDA + spray), Karol Makowski (DistoX)
+;Marcin Slowik (kartowanie-PDA + spray), Karol Makowski (DistoX)
 ;delta DistoX = ?
 #prefix przemko1
 1.0	:pNkk19	0	0	0
@@ -43,7 +43,7 @@
 
 ;title "komin Totoro"
 #date 2015-01-04
-;Karol Makowski (kartowanie-PDA + DistoX), Marcin S³owik (Spray)
+;Karol Makowski (kartowanie-PDA + DistoX), Marcin Slowik (Spray)
 ;delta DistoX = 0.55
 #prefix przemko2
 
@@ -167,14 +167,14 @@
 
 ;title "Zawieszona salka"
 #date 2015-01-04
-;Karol Makowski (kartowanie-PDA + DistoX), Marcin S³owik (Spray)
+;Karol Makowski (kartowanie-PDA + DistoX), Marcin Slowik (Spray)
 ;delta DistoX = 0.55
 #prefix przemko3
 ;Kilkutonowy glaz na spagu "Zawieszonej salki"; pod nim zaczyna sie niewielki meander, z ktorego woda wyplywa i spada w postaci deszczu w kominie Totoro.
 1.0	1.1	108.64	56.82	15.985;Punkt pomiarowy na pochylni z kaskadowymi prozkami
-1.1	2.0	79.93	35.64	7.196;Poczatek dosc ciasnego meandra - 0,3-0,5 m szerokosci; po 10-15 m meander konczy siê niewieka kaluza; mo¿liwa kontynuacja, ale czolganie w wodzie!
+1.1	2.0	79.93	35.64	7.196;Poczatek dosc ciasnego meandra - 0,3-0,5 m szerokosci; po 10-15 m meander konczy sie niewieka kaluza; mozliwa kontynuacja, ale czolganie w wodzie!
 1.1	1.2	99.15	44.02	7.927;Salka o wzglednie plaskim spagu i pochylym stropie; wysokosc 6m; wejscie do salki kruche - wielkie potrzaskane wanty!
-;W najwyzszym miejscu salki  kontynnyacja bardzo ciasnym meandrem w kierunku E; w spagu meander opada w kierunku W, równolegle do kaskadowej pochylni i umozliwia zejscie do waskiej szczeliny,
+;W najwyzszym miejscu salki  kontynnyacja bardzo ciasnym meandrem w kierunku E; w spagu meander opada w kierunku W, rownolegle do kaskadowej pochylni i umozliwia zejscie do waskiej szczeliny,
 ;z ktorej przez male okienko widac kolejna pustke - prawdopodbnie nastepna szczeline
 1.0	-	104.33	54.02	5.364
 1.0	-	357.36	9.76	2.135
@@ -249,7 +249,7 @@
 
 ;title "Dno Komina Totoro"
 #date 2015-01-05
-;Karol Makowski (kartowanie-PDA + DistoX), Marcin S³owik (Spray)
+;Karol Makowski (kartowanie-PDA + DistoX), Marcin Slowik (Spray)
 ;delta DistoX = 0.55
 #prefix przemko4
 
