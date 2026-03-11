@@ -48,6 +48,8 @@ Currently, the project includes data for the following caves:
 - Jaskinia Mała w Mułowej
 - Jaskinia Małołącka
 - Jaskinia Marmurowa
+- Jaskinia Miętusia Wyżnia
+- Jaskinia Mroźna
 - Jaskinia Mylna
 - Jaskinia nad Beczką
 - Jaskinia nad Percią
