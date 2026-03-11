@@ -14,8 +14,6 @@ INSTRUMENT "DistoX"
 #]
 
 #prefix czarna
-;TODO data odczytana z pliku PocketTopo -- moze byc bledna
-;     (slaba bateria w palmach); potwierdzic z Szymonem Kostka
 #date 2011-10-02
 #units meters order=AVD
 #units A=D V=D
