@@ -10,7 +10,7 @@ COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
 DATA_SOURCE		"https://github.com/RadostW/jaskinie"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM "MK JG MP"
+TEAM "Marcin Kobus, Jan Grzeszek, Malgorzata Pawlak"
 INSTRUMENT "DistoXBLE"
 #]
 
