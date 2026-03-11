@@ -21,7 +21,7 @@ The project is based on the Walls software – you can find the [latest version 
 We encourage collaboration on the project as well as sharing your own measurements. Contact: [darek.lubomski@gmail.com](mailto:darek.lubomski@gmail.com).
 
 ### License
-[Creative Commons Attribution-ShareAlike 2.0](http://creativecommons.org/licenses/by-sa/2.0/).
+[Creative Commons Attribution-ShareAlike 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
 
 ### Project Contents
 Currently, the project includes data for the following caves:

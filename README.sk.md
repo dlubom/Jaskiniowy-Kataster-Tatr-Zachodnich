@@ -21,7 +21,7 @@ Projekt je založený na softvéri Walls – [tu nájdete najnovšiu verziu prog
 Začleníme do projektu aj vašu spoluprácu a zdieľanie vlastných meraní. Kontaktujte: [darek.lubomski@gmail.com](mailto:darek.lubomski@gmail.com).
 
 ### Licencia
-[Creative Commons Attribution-ShareAlike 2.0](http://creativecommons.org/licenses/by-sa/2.0/).
+[Creative Commons Attribution-ShareAlike 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
 
 ### Obsah projektu
 V súčasnosti projekt obsahuje údaje pre nasledujúce jaskyne:

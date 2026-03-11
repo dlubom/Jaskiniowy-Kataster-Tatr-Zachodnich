@@ -5,7 +5,7 @@
 B067       	B067001	14	65	-38
 B067001	B067002	6.3	162	-32
 ;Rejon Sali ze Stolem - Rozdroze
-;od BB004 do B003 - Dane przyblizone, odczytane ze szkiców nagietych do ciagu glównego (notka z orginalow)
+;od BB004 do B003 - Dane przyblizone, odczytane ze szkicow nagietych do ciagu glownego (notka z orginalow)
 BB004	BB005	10	0	-90
 BB005	BB006	3.8	340	0
 BB006	BB007	8.4	340	0
@@ -34,7 +34,7 @@ BB014006	BB014007	9.8	291	40
 BB014007	BB014008	3.4	203	28
 
 ;Partie Zamkowe
-;Pom. K. Kleszyñski, B. Sanborski oraz K. Mazik, A. Grabsk 7-8.02.81
+;Pom. K. Kleszynski, B. Sanborski oraz K. Mazik, A. Grabsk 7-8.02.81
 ;Na odcinku od BAA003 do BAA006 poprawka na petli laczacej pozostale dwa wejscia do Partii Zamkowych
 BAA	BAA001	5.9	219	33
 BAA001	BAA002	6.1	32	4
@@ -76,7 +76,7 @@ BC004	BC005	5.8	43	-72
 BC005	BC006	4.2	106	-11
 BC006	BC007	7	90	-54
 BC007	BC008	2.5	83	4
-;Pom. A. Antkiewicz, przy wspólpracy M. Dolny, J. Godula, P. Materniak 1980, Dane przyblizone
+;Pom. A. Antkiewicz, przy wspolpracy M. Dolny, J. Godula, P. Materniak 1980, Dane przyblizone
 BC008	BC009	6.6	90	0
 BC009	BC010	15.55	36	-87
 BC010	BC011	3	277	0

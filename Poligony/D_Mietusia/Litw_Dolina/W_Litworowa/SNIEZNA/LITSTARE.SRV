@@ -7,7 +7,7 @@
 #FIX  LT58  E19:54:53.26989 N49:14:18.82979 1903m
 #note	LT58	/Wielka Litworowa
 #flag	LT58	/Wielka Litworowa
-;Ciag glówny
+;Ciag glowny
 LT58	LT57	52	-81	13.20
 LT57	LT56	343	-9	6.90
 ; lt56 szczelina z dna studni wlotowej
@@ -549,7 +549,7 @@ LTnss3	LTnss3a	291	48	5.10
 LTnss3a	LTnss4	238	49	2.75
 LTnss4	LTnss5	302	14	4.30
 LTnss5	LTnss6	322	14	3.00
-;LTss korytarz miedzy sala suselka a smula¹ osiemnastka
+;LTss korytarz miedzy sala suselka a smulaa osiemnastka
 LTll11	LTss2	329	0	3.05
 LTss2	LTss3a	47	18	2.20
 LTss3a	LTss4a	86	-39	3.40
