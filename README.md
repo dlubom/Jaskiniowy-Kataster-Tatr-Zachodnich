@@ -35,7 +35,6 @@ Aktualnie projekt zawiera dane dla następujących jaskiń:
 - Gawra
 - Jaskinia Bańdzioch Kominiarski
 - Jaskinia Biała (jako fragment jaskini Zimna)
-- Jaskinia Mroźna
 - Jaskinia Ciepła
 - Jaskinia Czarna (fragment)
 - Jaskinia Goryczkowa
@@ -49,6 +48,8 @@ Aktualnie projekt zawiera dane dla następujących jaskiń:
 - Jaskinia Mała w Mułowej
 - Jaskinia Małołącka
 - Jaskinia Marmurowa
+- Jaskinia Miętusia Wyżnia
+- Jaskinia Mroźna
 - Jaskinia Mylna
 - Jaskinia nad Beczką
 - Jaskinia nad Percią
