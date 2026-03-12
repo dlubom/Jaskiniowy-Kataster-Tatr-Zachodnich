@@ -99,6 +99,9 @@ Currently, the project includes data for the following caves:
 - Zoska - Zagonna Studnia
 - Zwolińskiego
 
+### Related Projects
+Worth mentioning is the [Caves of the Tatra Mountains](https://github.com/RadostW/jaskinie) project run by Speleoklub Warszawski. They follow a different philosophy — relying on their own contemporary field surveys rather than sourcing data from historical records. They also use secondary digitization of cave plans, without depth information. It's an interesting approach, though surveying all Tatra caves this way will be a significant challenge. The project uses the Survex format and is licensed under CC BY-SA 4.0.
+
 ### Changelog
 All project changes are documented in the [CHANGELOG.md](CHANGELOG.md).
 

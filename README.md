@@ -99,6 +99,9 @@ Aktualnie projekt zawiera dane dla następujących jaskiń:
 - Zoska - Zagonna Studnia
 - Zwolińskiego
 
+### Pokrewne projekty
+Warto wspomnieć o projekcie [Caves of the Tatra Mountains](https://github.com/RadostW/jaskinie) prowadzonym przez Speleoklub Warszawski. Stosują oni odmienną filozofię — bazują na własnych pomiarach terenowych wykonywanych współcześnie, a nie na pozyskiwaniu danych z historycznych źródeł. Wykorzystują również wtórną digitalizację planów jaskiń, bez informacji o głębokości. To ciekawe podejście, choć pomierzenie w ten sposób wszystkich tatrzańskich jaskiń będzie dużym wyzwaniem. Projekt korzysta z formatu Survex i jest udostępniany na licencji CC BY-SA 4.0.
+
 ### Historia zmian
 Wszystkie zmiany w projekcie są dokumentowane w pliku [CHANGELOG.md](CHANGELOG.md).
 

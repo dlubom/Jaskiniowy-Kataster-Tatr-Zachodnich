@@ -99,6 +99,9 @@ V súčasnosti projekt obsahuje údaje pre nasledujúce jaskyne:
 - Zoska - Zagonna Studnia
 - Zwolińskiego
 
+### Súvisiace projekty
+Stojí za zmienku projekt [Caves of the Tatra Mountains](https://github.com/RadostW/jaskinie) vedený Speleoklubu Warszawski. Uplatňujú odlišnú filozofiu — vychádzajú z vlastných súčasných terénnych meraní, nie zo získavania údajov z historických zdrojov. Využívajú tiež sekundárnu digitalizáciu plánov jaskýň, bez informácií o hĺbke. Je to zaujímavý prístup, hoci zamerať takto všetky tatranské jaskyne bude veľkou výzvou. Projekt používa formát Survex a je licencovaný pod CC BY-SA 4.0.
+
 ### História zmien
 Všetky zmeny v projekte sú zdokumentované v súbore [CHANGELOG.md](CHANGELOG.md).
 
