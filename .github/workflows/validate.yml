@@ -65,9 +65,9 @@ jobs:
       - name: Check for unattached stations
         shell: bash
         run: |
-          if grep -q "not attached to a fixed point" cavern_output.txt; then
+          if grep -qE "not attached to a (fixed|control) point" cavern_output.txt; then
             echo "::error::Cavern detected survey stations not attached to a fixed point:"
-            sed -n '/not attached to a fixed point/,/^$/p' cavern_output.txt
+            sed -n '/not attached to a .* point/,/^$/p' cavern_output.txt
             exit 1
           fi
 
