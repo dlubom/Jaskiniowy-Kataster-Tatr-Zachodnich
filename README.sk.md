@@ -4,6 +4,7 @@
 
 ![Walls 2D screen](walls_2d_screen.png)
 ![Walls 2D screen](walls_3d_screen.png)
+![Survex Aven](Survex.jpeg)
 
 [![Latest Release](https://img.shields.io/github/v/release/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich)](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
 
@@ -15,9 +16,6 @@ Projekt má za cieľ zhromaždiť všetky kartografické údaje o tatranských j
 Projekt je založený na softvéri Walls – [tu nájdete najnovšiu verziu programu a návod na použitie](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
 
 Projekt funguje aj v programe [Survex](https://survex.com/) — stačí nainštalovať najnovšiu verziu a otvoriť súbor `KATASTER.wpj` v programe Aven alebo skompilovať z príkazového riadku: `cavern KATASTER.wpj`. V programe Aven je možné načítať aj model terénu `Powierzchnia/Survex/N49E019_VF1.hgt`.
-
-### 3D model online
-[![Pozrite si 3D model jaskýň](sketchfab_3d.png)](https://sketchfab.com/models/64c9acf8f12345a3a3a4aa72df330b51)
 
 ### Ako môžete pomôcť?
 Začleníme do projektu aj vašu spoluprácu a zdieľanie vlastných meraní. Kontaktujte: [darek.lubomski@gmail.com](mailto:darek.lubomski@gmail.com).

@@ -4,6 +4,7 @@
 
 ![Walls 2D screen](walls_2d_screen.png)
 ![Walls 2D screen](walls_3d_screen.png)
+![Survex Aven](Survex.jpeg)
 
 [![Latest Release](https://img.shields.io/github/v/release/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich)](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
 
@@ -15,9 +16,6 @@ Projekt ma na celu zgromadzenie w jednym miejscu wszystkich danych kartograficzn
 Projekt oparty jest o oprogramowanie Walls – tutaj znajdziesz [najnowszą wersję programu oraz instrukcję obsługi](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
 
 Projekt działa również w [Survex](https://survex.com/) — wystarczy zainstalować najnowszą wersję i wczytać plik `KATASTER.wpj` w programie Aven lub skompilować z linii poleceń: `cavern KATASTER.wpj`. W Aven można też wczytać model terenu `Powierzchnia/Survex/N49E019_VF1.hgt`.
-
-### Model 3D online
-[![Zobacz model 3D jaskiń](sketchfab_3d.png)](https://sketchfab.com/models/64c9acf8f12345a3a3a4aa72df330b51)
 
 ### Jak można pomóc?
 Zachęcamy do współpracy przy projekcie oraz do udostępniania własnych pomiarów. Kontakt: [darek.lubomski@gmail.com](mailto:darek.lubomski@gmail.com).
