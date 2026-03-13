@@ -14,6 +14,8 @@ Projekt ma na celu zgromadzenie w jednym miejscu wszystkich danych kartograficzn
 
 Projekt oparty jest o oprogramowanie Walls – tutaj znajdziesz [najnowszą wersję programu oraz instrukcję obsługi](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
 
+Projekt działa również w [Survex](https://survex.com/) — wystarczy zainstalować najnowszą wersję i wczytać plik `KATASTER.wpj` w programie Aven lub skompilować z linii poleceń: `cavern KATASTER.wpj`.
+
 ### Model 3D online
 [![Zobacz model 3D jaskiń](sketchfab_3d.png)](https://sketchfab.com/models/64c9acf8f12345a3a3a4aa72df330b51)
 
