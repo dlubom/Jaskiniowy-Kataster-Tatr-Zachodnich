@@ -11,7 +11,7 @@ DATA_SOURCE		"Ryszard Kujat, nawiazanie do pomiarow Borowca 1972-73"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix czarna.kujat
+#prefix Czarna.Kujat
 #flag	0	/Jaskinia Czarna III
 #flag	0	/ENTRANCE
 #note	0	/Jaskinia Czarna III
@@ -59,8 +59,8 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 ;Sala Bernarda -> Korytarz Mamuci -> koncowe zawalisko
 ;Nawiazanie: punkt 13 Kujata = punkt 70 ciagu glownego Borowca
-12	czarna.borowiec:70	211	11	14.4
-czarna.borowiec:70	14	222	5.2	17.7	;Korytarz Mamuci
+12	Czarna.Borowiec:70	211	11	14.4
+Czarna.Borowiec:70	14	222	5.2	17.7	;Korytarz Mamuci
 14	15	218	-1.6	17.43
 15	16	240	5.5	19.1
 16	17	242	-5.6	18.32
@@ -89,7 +89,7 @@ czarna.borowiec:70	14	222	5.2	17.7	;Korytarz Mamuci
 ;Laczy sie z ciagiem glownym w okolicy Mostu Trwogi (pomiar nie zamkniety)
 #units A=G V=G
 
-czarna.borowiec:65	6501	56.7	-2.7	14.6
+Czarna.Borowiec:65	6501	56.7	-2.7	14.6
 6501	6502	56.7	29.7	11.9
 6502	6503	53.1	26.1	5.4
 6503	6504	158.4	50.4	8.05

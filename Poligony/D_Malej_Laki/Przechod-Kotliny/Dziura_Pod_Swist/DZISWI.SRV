@@ -1,3 +1,4 @@
+#prefix DziuraPodSwist
 ;Dziura pod Swistowa
 #Units Meters Order=dav
 #fix 	dps0 	421698.19 	5454822.52 	1664.95

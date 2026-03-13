@@ -1,7 +1,7 @@
 #DATE 2004-07-01
 #UNITS meters order=DAV
 #Units A=D V=D
-#prefix ptasia
+#prefix PtasiaStudnia
 ;#Fix k1 49.7 7.98 -96.07/ Franusiowa
 k1	j28a	0	0	0
 ;k1	o33	0	0	0	;TODO nie dokladnie o33

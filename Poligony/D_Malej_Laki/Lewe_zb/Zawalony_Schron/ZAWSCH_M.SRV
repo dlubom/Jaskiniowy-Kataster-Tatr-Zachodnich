@@ -11,7 +11,7 @@ DATA_SOURCE		"https://jaskiniepolski.pgi.gov.pl/, Z. Tabaczynski"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix zawsch
+#prefix ZawalonySchron
 #flag	0	/Zawalony Schron
 #flag	0	/ENTRANCE
 #note	0	/Zawalony Schron

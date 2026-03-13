@@ -11,7 +11,7 @@ DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix nadbecz
+#prefix NadBeczka
 #flag	0	/Jaskinia nad Beczka
 #flag	0	/ENTRANCE
 #note	0	/Jaskinia nad Beczka

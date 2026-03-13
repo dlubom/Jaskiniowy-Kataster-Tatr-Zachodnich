@@ -17,12 +17,12 @@ instrument DistoX
 
 #units meters order=DAV
 #units A=D V=D
-#prefix SM_A1
-#note	SM_A1_COORD:o1	/Smocza Jama
-#flag	SM_A1_COORD:o1	/Smocza Jama
-#flag	SM_A1_COORD:o1	/ENTRANCE
+#prefix SmoczaJama
+#note	SmoczaJama.Coord:o1	/Smocza Jama
+#flag	SmoczaJama.Coord:o1	/Smocza Jama
+#flag	SmoczaJama.Coord:o1	/ENTRANCE
 
-SM_A1_COORD:o1	1.11	0	0	0
+SmoczaJama.Coord:o1	1.11	0	0	0
 1.0	1.1	6.67	43.31	18.62
 1.1	1.3	5.44	347.43	18.73
 1.3	1.4	5.35	348.59	31.05

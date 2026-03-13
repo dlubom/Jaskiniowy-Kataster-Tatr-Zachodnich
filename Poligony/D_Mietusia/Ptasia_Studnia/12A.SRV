@@ -1,7 +1,7 @@
 #DATE 2004-07-01
 #UNITS meters order=DAV
 #Units A=D V=D
-#prefix ptasia
+#prefix PtasiaStudnia
 ;#Fix o1 -3.04 -33.25 -114.89
 #Note o1 Goracy meander
 o1	j11a	0	0	0

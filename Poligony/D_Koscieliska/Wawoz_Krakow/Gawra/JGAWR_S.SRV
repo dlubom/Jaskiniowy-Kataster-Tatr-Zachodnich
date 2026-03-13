@@ -14,7 +14,7 @@ TEAM "J. Nowak"
 INSTRUMENT "nieznany"
 #]
 
-#prefix gawra
+#prefix Gawra
 #date 2008-11-11
 #units meters order=DAV
 #units A=D V=D

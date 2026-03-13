@@ -11,7 +11,7 @@ DATA_SOURCE		"https://jaskiniepolski.pgi.gov.pl/"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix zoska
+#prefix Zoska
 #flag	0	/Jaskinia Zoska
 #flag	0	/ENTRANCE
 #note	0	/Jaskinia Zoska

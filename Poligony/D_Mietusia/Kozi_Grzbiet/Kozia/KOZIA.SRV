@@ -1,3 +1,4 @@
+#prefix Kozia
 #Units Meters Order=dav
 #fix k001 420528.76 5454587.86 1850.00
 #note	k001	/Kozia

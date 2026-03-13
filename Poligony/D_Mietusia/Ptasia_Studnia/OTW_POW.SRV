@@ -1,7 +1,7 @@
 #UNITS meters order=DAV
 #DATE 2004-06-30
 #Units A=D V=D
-#prefix ptasia
+#prefix PtasiaStudnia
 #FIX  a1   E19:54:18.208  N49:14:22.862   1627m
 ;#Fix a1 0 0 0 / PTASIA
 ;#Flag a1   0 0 0 Otwor Ptasiej

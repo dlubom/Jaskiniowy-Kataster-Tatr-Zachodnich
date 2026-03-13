@@ -3,7 +3,8 @@
 ;
 ;
 #units order=avd
-g83	z0	190	-22	7.00
+#prefix WielkaSniezna.Wrocl
+WielkaSniezna.Ciag:g83	z0	190	-22	7.00
 z0	z1	287	1	6.20
 z1	z2	279	-11	7.15
 z2	z3	295	5	4.65

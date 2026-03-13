@@ -1,3 +1,4 @@
+#prefix SchronPodJedrus
 ;Schron pod Jedrusiowa
 #Units Meters Order=dav
 #fix 	spj0 	421673.35 	5454867.66	1569.05

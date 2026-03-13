@@ -3,9 +3,9 @@
 ;Konwersja na wektory RECT (roznice wspolrzednych miedzy stacjami)
 ;Zrodlo: _RAW/02/
 
-#prefix czarna.borowiec
+#prefix Czarna.Borowiec
 #units meters RECT order=ENU
-czarna:otwor1 0W 0.0 0.0 0.0
+Czarna:otwor1 0W 0.0 0.0 0.0
 0W	0	13.58	1.15	-8.22
 0	1	2.62	1.55	-4.73
 1	2	9.68	-2.60	-13.81

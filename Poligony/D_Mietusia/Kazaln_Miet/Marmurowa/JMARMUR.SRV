@@ -1,6 +1,6 @@
 #units meters order=DAV
 #units A=D V=D
-#prefix marmurowa
+#prefix Marmurowa
 #fix 	0	E19:54:2.93 N49:14:21.81   1770.6m
 ;wsp. odczytal K. D. z mapy.geoportal.gov.pl/imap
 #note	0	/Marmurowa
@@ -82,8 +82,8 @@
 ;Komin KKTJ
 #date 1987-04-01
 ;Tomasz Pryjma, K. Wardakowski
-#prefix marm.kom
-marmurowa:8	1	3.0	31	58
+#prefix Marmurowa.Kom
+Marmurowa:8	1	3.0	31	58
 1	2	4.95	345	24
 2	3	22.6	145	58
 3	4	9.9	310	-48
@@ -98,8 +98,8 @@ marmurowa:8	1	3.0	31	58
 11	13	3.4	2	32
 13	14	1.2	360	48
 ;Meander KKTJ
-#prefix marm.mean
-marmurowa:8	1	3.0	31	58
+#prefix Marmurowa.Mean
+Marmurowa:8	1	3.0	31	58
 1	2	4.95	345	24
 2	3	6.4	278	-20
 3	4	7.3	270	-42
@@ -108,8 +108,8 @@ marmurowa:8	1	3.0	31	58
 6	7	1.2	250	-10
 4	8	5.88	75	-25
 ;Meander Dudzinskiego
-#prefix marm.d
-marmurowa:8	1	3.0	31	58
+#prefix Marmurowa.D
+Marmurowa:8	1	3.0	31	58
 1	2	4.95	345	24
 2	3	4.95	328	18
 3	4	3.05	248	-28
@@ -127,8 +127,8 @@ marmurowa:8	1	3.0	31	58
 ;Z dnia II studni do starego dna
 #date 1990-04-01
 ;Tomasz Pryjma, K. Recielski
-#prefix marm.st
-marmurowa:10	1	13.0	245	20
+#prefix Marmurowa.St
+Marmurowa:10	1	13.0	245	20
 1	2	5.2	205	70
 2	3	6.15	260	45
 3	4	7.35	290	5
@@ -145,18 +145,18 @@ marmurowa:10	1	13.0	245	20
 #units meters order=AVD
 #units A=D V=D
 ;Tomasz Pryjma, K. Wardakowski
-#prefix marm.ok1
-marmurowa:20	1	210	-87	10.4
+#prefix Marmurowa.Ok1
+Marmurowa:20	1	210	-87	10.4
 1	2	208	25	5
 ;okna kandydackie
-#prefix marm.ok2
-marmurowa:22	1	50	82	22.7
+#prefix Marmurowa.Ok2
+Marmurowa:22	1	50	82	22.7
 1	2	18	-25	3.8
 2	3	78	0	5.9
 3	4	0	90	15
 ;partie II-giej sali
-#prefix marm.s2
-marmurowa:10	1	38	43	8.8
+#prefix Marmurowa.S2
+Marmurowa:10	1	38	43	8.8
 1	2	350	81	4.95
 2	3	95	0	1.85
 2	4	0	90	6
@@ -165,12 +165,12 @@ marmurowa:10	1	38	43	8.8
 3	7	52	83	3.30
 7	8	0	90	2
 ;
-#prefix marm.p
-marmurowa:18	19S	59	-8	7
+#prefix Marmurowa.P
+Marmurowa:18	19S	59	-8	7
 19S	20S	98	12	4
 20S	21S	161	-1	3.6
 21S	22S	100	0	3
 22S	23S	190	-8	2.3
 23S	24S	280	-5	3
 24S	25S	305	-22	3.4
-25S	marmurowa:18	290	30	7.6
+25S	Marmurowa:18	290	30	7.6

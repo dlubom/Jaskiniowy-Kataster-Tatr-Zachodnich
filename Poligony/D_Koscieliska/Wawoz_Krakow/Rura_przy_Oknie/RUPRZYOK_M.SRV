@@ -11,7 +11,7 @@ DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix ruraokn
+#prefix RuraPrzyOknie
 #flag	0	/Rura przy Oknie
 #flag	0	/ENTRANCE
 #note	0	/Rura przy Oknie

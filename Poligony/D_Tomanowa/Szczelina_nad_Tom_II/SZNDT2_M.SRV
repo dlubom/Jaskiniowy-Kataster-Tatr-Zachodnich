@@ -11,7 +11,7 @@ DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix szcztom2
+#prefix SzczelinaNadTomII
 #flag	0	/Szczelina nad Tomanowa II
 #flag	0	/ENTRANCE
 #note	0	/Szczelina nad Tomanowa II

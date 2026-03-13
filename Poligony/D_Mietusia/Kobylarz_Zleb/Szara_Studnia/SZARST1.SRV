@@ -1,6 +1,6 @@
 #units meters order=DAV
 #units A=D V=D
-#prefix szstd
+#prefix SzaraStudnia
 #FIX  0   E19:54:44.54  N49:14:38.89   1737.00m
 ;pomiar otworu wykonany GPSem przez Z. Tabaczynskiego dokladnosc +-10m,
 ;wysokosc odczytana altimetrem

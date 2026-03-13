@@ -11,7 +11,7 @@ DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix gawra
+#prefix Gawra
 #flag	0	/Gawra
 #flag	0	/ENTRANCE
 #note	0	/Gawra

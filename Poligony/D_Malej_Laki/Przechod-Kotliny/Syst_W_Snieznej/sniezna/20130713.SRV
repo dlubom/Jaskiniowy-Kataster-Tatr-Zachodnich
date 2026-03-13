@@ -5,8 +5,8 @@
 #date 2013-07-13
 ;Marcin Slowik (kartowanie-PDA + spray), Karol Makowski (DistoX)
 ;delta DistoX = ?
-#prefix przemko1
-1.0	:pNkk19	0	0	0
+#prefix WielkaSniezna.Przemko1
+1.0	WielkaSniezna.Przemkow:pNkk19	0	0	0
 1.0	1.1	303.59	74.15	13.684
 1.1	1.2	30.73	76.05	6.379;1.2 do powtorki, strzal z 1.1 blisko stalowego karabinka, powtorzenie z punku ok. 0,5m nizej, NIE! BYLO CHYBA DOBRZE
 1.2	1.3	305.87	15.78	3.82
@@ -45,7 +45,7 @@
 #date 2015-01-04
 ;Karol Makowski (kartowanie-PDA + DistoX), Marcin Slowik (Spray)
 ;delta DistoX = 0.55
-#prefix przemko2
+#prefix WielkaSniezna.Przemko2
 
 ;1.0	1.1	266.65	20.79	5.25;Powtorzony pomiar
 1.1	2.0	288.04	-11.81	4.847;Brak zaznaczonego punktu na scianie; trzeba obic i zaporeczowac trawers studni
@@ -169,7 +169,7 @@
 #date 2015-01-04
 ;Karol Makowski (kartowanie-PDA + DistoX), Marcin Slowik (Spray)
 ;delta DistoX = 0.55
-#prefix przemko3
+#prefix WielkaSniezna.Przemko3
 ;Kilkutonowy glaz na spagu "Zawieszonej salki"; pod nim zaczyna sie niewielki meander, z ktorego woda wyplywa i spada w postaci deszczu w kominie Totoro.
 1.0	1.1	108.64	56.82	15.985;Punkt pomiarowy na pochylni z kaskadowymi prozkami
 1.1	2.0	79.93	35.64	7.196;Poczatek dosc ciasnego meandra - 0,3-0,5 m szerokosci; po 10-15 m meander konczy sie niewieka kaluza; mozliwa kontynuacja, ale czolganie w wodzie!
@@ -251,7 +251,7 @@
 #date 2015-01-05
 ;Karol Makowski (kartowanie-PDA + DistoX), Marcin Slowik (Spray)
 ;delta DistoX = 0.55
-#prefix przemko4
+#prefix WielkaSniezna.Przemko4
 
 1.0	1.1	276.72	-84.49	25.806;Punkt 1.1 z ciagu pomiarowego "przemko2" - poczatek komina Totoro.
 1.1	1.2	161.7	-74.06	4.327;Dno komina Totoro.
@@ -327,6 +327,6 @@
 1.7	-	171.5	-61.71	5.97
 1.7	-	307.48	-77.44	4.399
 
-przemko1:1.10	przemko2:1.1	0	0	0
-przemko2:1.10	przemko3:1.0	0	0	0
-przemko1:1.10	przemko4:1.0	0	0	0
+WielkaSniezna.Przemko1:1.10	WielkaSniezna.Przemko2:1.1	0	0	0
+WielkaSniezna.Przemko2:1.10	WielkaSniezna.Przemko3:1.0	0	0	0
+WielkaSniezna.Przemko1:1.10	WielkaSniezna.Przemko4:1.0	0	0	0

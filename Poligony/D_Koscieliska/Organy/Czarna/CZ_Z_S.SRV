@@ -13,7 +13,7 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 INSTRUMENT "DistoX"
 #]
 
-#prefix czarna
+#prefix Czarna
 #date 2011-10-02
 #units meters order=AVD
 #units A=D V=D

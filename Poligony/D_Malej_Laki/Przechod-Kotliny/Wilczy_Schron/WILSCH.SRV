@@ -1,3 +1,4 @@
+#prefix WilczySchron
 ;Wilczy Schron
 #Units Meters Order=dav
 #fix 	wsn0 	421693.35 	5454837.72 	1635.04

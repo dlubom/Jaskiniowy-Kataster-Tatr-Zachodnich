@@ -3,7 +3,7 @@
 #date 2007-01-03
 ;TODO data prawdopodobnie bledna
 ;TODO brak info kto mierzyl
-#prefix nvk
+#prefix NovaKresanica
 #note	nvk0	/Nova Kresanica
 #flag	nvk0	/Nova Kresanica
 #flag	nvk0	/ENTRANCE

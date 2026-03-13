@@ -14,5 +14,5 @@ TEAM			"unknown"
 INSTRUMENT		"unknown"
 #]
 
-#prefix OV_A1_COORD
+#prefix ObcasnaVyv.Coord
 #FIX  o1  E19:55:47.53 N49:13:35.8   1453m

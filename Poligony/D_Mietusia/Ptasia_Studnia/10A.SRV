@@ -5,7 +5,7 @@
 ;#DATE 2004-07-01
 ;#UNITS meters order= DAV
 ;#Units A=D V=D
-;#prefix ptasia
+;#prefix PtasiaStudnia
 ;#Fix m1 81.40 12.48 -53.31
 ;#Note m1 Kaprawa Salka
 ;m1	m2	10.10	42	19

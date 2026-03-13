@@ -1,7 +1,7 @@
 #DATE 2004-07-01
 #UNITS meters order=DAV
 #Units A=D V=D
-#prefix ptasia
+#prefix PtasiaStudnia
 ;#Fix p1 73.66 9.51 -65.65	; to punkt j39c w ciagu Partie Sadeckie
 p1	j39c	0	0	0
 p43	k10	0	0	0

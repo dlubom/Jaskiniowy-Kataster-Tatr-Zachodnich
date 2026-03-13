@@ -2,7 +2,8 @@
 #Units A=grads
 #Units V=grads
 #Units Meters Order=dav
-s47	a0	6.0	75	20
+#prefix WielkaSniezna.Amoki
+WielkaSniezna.Ciag:s47	a0	6.0	75	20
 a4	a5	16.05	200	-52
 a3	a4	11.7	210	-51
 a2	a3	3.55	140	6

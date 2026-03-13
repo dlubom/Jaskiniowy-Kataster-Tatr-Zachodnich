@@ -11,7 +11,7 @@ DATA_SOURCE		"https://jaskiniepolski.pgi.gov.pl/, Z. Tabaczynski"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix sznlej
+#prefix SzczelinaNadLejem
 #flag	0	/Szczelina nad Lejem
 #flag	0	/ENTRANCE
 #note	0	/Szczelina nad Lejem

@@ -1,7 +1,8 @@
 ;Galeria Krokodyla
 #units order=avd
+#prefix WielkaSniezna.Krokodyl
 ;			.
-g27	gk0	284	-35	4.90
+WielkaSniezna.Ciag:g27	gk0	284	-35	4.90
 gk0	gk1	285	6	5.70
 gk1	gk2	262	0	6.80
 gk2	gk3	230	15	3.90

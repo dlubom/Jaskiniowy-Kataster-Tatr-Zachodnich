@@ -14,7 +14,7 @@ TEAM "J. Nowak, J. Slusarczyk"
 INSTRUMENT "nieznany"
 #]
 
-#prefix poszuk
+#prefix PoszukiwaczySkarbow
 #date 2006-12-16
 #units meters order=DAV
 #units A=D V=D

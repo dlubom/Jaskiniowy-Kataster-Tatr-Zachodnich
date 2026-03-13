@@ -1,8 +1,8 @@
 #DATE 2003-07-29
 #UNITS meters order=DAV
 #Units A=D V=D
-#PREFIX mala_pow
-mala:1	P2	2	200	65
+#prefix MalaWMulPow
+MalaWMulowej:1	P2	2	200	65
 P2	P3	8.5	340	12
 P3	P4	0.3	0	90
 P4	P5	17.8	303	30
@@ -14,4 +14,4 @@ P9	P10	17.64	256	32
 P10	P11	15	261	41
 P11	P12	17.02	229	36
 P12	P13	14.1	320	14
-P13	lejb:A1	1.86	146	-54	;lejb:A1 otwor lejbusiowej
+P13	Lejbusiowa:A1	1.86	146	-54	;Lejbusiowa:A1 otwor lejbusiowej

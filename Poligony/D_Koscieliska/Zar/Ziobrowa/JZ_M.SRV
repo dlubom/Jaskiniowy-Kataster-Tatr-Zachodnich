@@ -11,7 +11,7 @@ DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix ziobrowa
+#prefix Ziobrowa
 #flag	0	/Jaskinia Ziobrowa
 #flag	0	/ENTRANCE
 #note	0	/Jaskinia Ziobrowa

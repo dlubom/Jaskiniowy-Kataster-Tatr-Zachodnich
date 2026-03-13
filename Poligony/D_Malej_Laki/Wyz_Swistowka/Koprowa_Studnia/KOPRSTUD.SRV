@@ -1,3 +1,4 @@
+#prefix KoprowaStudnia
 ;Koprowa Studnia
 ;pomiary Soja E. Szczygiel J. 9.9.2011
 ;wektoryzacja Szczygiel J.
@@ -35,4 +36,4 @@ ks6	ks5	2.45	39.9	1.6
 ks6	ks7	2.13	263.4	31
 ks8	ks7	1.76	38.2	-50.2
 ks8	ks9	1.55	270.1	26.2
-ks9	swist:24	0	0	0
+ks9	Swistacza:24	0	0	0

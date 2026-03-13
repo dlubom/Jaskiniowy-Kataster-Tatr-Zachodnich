@@ -1,7 +1,7 @@
 #DATE 2004-06-30
 #UNITS meters order=DAV
 #Units A=D V=D
-#prefix ptasia
+#prefix PtasiaStudnia
 ;#Fix g1 -55.85 -0.27 -195.68
 g1	g2	6.8	76	-32	; ciagod punktu 5 w ciagu glownym nad dachem
 g2	g3	0.6	349	0

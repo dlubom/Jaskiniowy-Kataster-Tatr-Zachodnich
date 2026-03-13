@@ -1,7 +1,7 @@
 #DATE 2004-06-30
 #UNITS meters order=DAV
 #Units A=D V=D
-#prefix ptasia
+#prefix PtasiaStudnia
 ;#Fix f1 -54.17 -18.75 -231.8
 f1	b23	0	0	0
 f1	f2	9.2	12	0

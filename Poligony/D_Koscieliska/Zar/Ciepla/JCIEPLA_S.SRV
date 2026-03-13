@@ -14,7 +14,7 @@ TEAM "J. Nowak, E. Wojcik"
 INSTRUMENT "nieznany"
 #]
 
-#prefix ciepla
+#prefix Ciepla
 #date 2007-12-01
 #units meters order=DAV
 #units A=D V=D

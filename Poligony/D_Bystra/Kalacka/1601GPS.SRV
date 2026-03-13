@@ -14,4 +14,8 @@ TEAM "unknown"
 INSTRUMENT "unknown"
 #]
 
-#FIX  tc1601   E19:58:00.65  N49:15:22.67   1230m
+#prefix Kalacka
+#flag	0	/Jaskinia Kalacka
+#flag	0	/ENTRANCE
+#note	0	/Jaskinia Kalacka
+#FIX  0   E19:58:00.65  N49:15:22.67   1230m
