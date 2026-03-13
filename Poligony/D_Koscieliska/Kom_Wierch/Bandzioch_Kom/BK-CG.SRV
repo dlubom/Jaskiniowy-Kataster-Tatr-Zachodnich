@@ -2,10 +2,12 @@
 #Units Meters
 #fix	000	416262.210	5455060.050	1456.3
 #flag	/000,136,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,U,P,136
+#flag	000	/Bandzioch Kom. Dolny
 #flag	000	/ENTRANCE
+#flag	136	/Bandzioch Kom. Gorny
 #flag	136	/ENTRANCE
-#note	000	/Dolny Otwor
-#note	136	/Gorny Otwor
+#note	000	/Bandzioch Kom. Dolny
+#note	136	/Bandzioch Kom. Gorny
 #note	G	/Lazaret
 #note	L	/Bazylika
 #Units Meters rect Order=NEU

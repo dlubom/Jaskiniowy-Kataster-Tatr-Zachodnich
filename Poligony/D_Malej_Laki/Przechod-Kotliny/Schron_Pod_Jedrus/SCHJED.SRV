@@ -1,6 +1,8 @@
 #prefix SchronPodJedrus
-;Schron pod Jedrusiowa
 #Units Meters Order=dav
 #fix 	spj0 	421673.35 	5454867.66	1569.05
+#flag	spj0	/Schron pod Jedrusiowa Dziura
+#flag	spj0	/ENTRANCE
+#note	spj0	/Schron pod Jedrusiowa Dziura
 spj0 	spj1 	3.55 	225.00 	0.00
 spj1 	spj2 	2.55 	90.00 	-11.31

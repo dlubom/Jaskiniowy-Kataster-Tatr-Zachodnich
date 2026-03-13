@@ -16,6 +16,8 @@ W7-12/25	W7-12/26	3.05	270	17
 W7-12/26	W7-12/27	7.45	257	45
 W7-12/27	W7-12/28	3.9	228	-22	; => kor. polaczeniowy
 
+#flag	W7-500	/ENTRANCE
+#note	W7-500	/Za7Progami Gorny Otwor
 
 W7-500	W7-501	12.9	88	-55	;GORNY OTWOR, pomiar powtorzony w PIONY.SRV:510 ale z innymi danymi
 W7-501	W7-201	6.5	255	12
