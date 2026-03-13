@@ -6,6 +6,7 @@
 ;wysokosc odczytana altimetrem
 #note	0	/Szara Studnia
 #flag	0	/Szara Studnia
+#flag	0	/ENTRANCE
 #date 1999-05-28
 ;D. Fuja, Z. Tabaczynski i M. Parczewski
 0	1	3.9	11	-55

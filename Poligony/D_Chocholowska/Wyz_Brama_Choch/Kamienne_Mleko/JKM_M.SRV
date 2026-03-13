@@ -13,5 +13,6 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 #prefix kammleko
 #flag	0	/Kamienne Mleko
+#flag	0	/ENTRANCE
 #note	0	/Kamienne Mleko
 #fix	0	E19.811050	N49.245300	1096.0m

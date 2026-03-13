@@ -13,8 +13,10 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 #prefix zoska
 #flag	0	/Jaskinia Zoska
+#flag	0	/ENTRANCE
 #note	0	/Jaskinia Zoska
 #flag	1Z	/Zagonna Studnia
+#flag	1Z	/ENTRANCE
 #note	1Z	/Zagonna Studnia
 #fix	0	E19.914661	N49.244998	1790.0m
 #fix	1Z	E19.914781	N49.245064	1773.0m	(R50,R50)

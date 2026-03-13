@@ -2,6 +2,7 @@
 #prefix jlodm
 #note	0	/Jaskinia Lodowa Mietusia
 #flag	0	/Jaskinia Lodowa Mietusia
+#flag	0	/ENTRANCE
 #date 2013-09-01
 #FIX  0   E19:54:5.89  N49:14:23.77  1589.7m
 ;wsp. odczytal K. D. z mapy.geoportal.gov.pl/imap

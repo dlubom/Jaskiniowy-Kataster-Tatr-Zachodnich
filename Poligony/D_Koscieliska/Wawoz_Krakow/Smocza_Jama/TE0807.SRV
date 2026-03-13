@@ -20,6 +20,7 @@ instrument DistoX
 #prefix SM_A1
 #note	SM_A1_COORD:o1	/Smocza Jama
 #flag	SM_A1_COORD:o1	/Smocza Jama
+#flag	SM_A1_COORD:o1	/ENTRANCE
 
 SM_A1_COORD:o1	1.11	0	0	0
 1.0	1.1	6.67	43.31	18.62

@@ -13,5 +13,6 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 #prefix dzstole
 #flag	0	/Dziura w Stole
+#flag	0	/ENTRANCE
 #note	0	/Dziura w Stole
 #fix	0	E19.905089	N49.223997	1905.0m

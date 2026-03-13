@@ -5,6 +5,7 @@
 ;wysokosc odczytana z pliku DEM
 #note	0	/Jaskinia pod Progiem
 #flag	0	/Jaskinia pod Progiem
+#flag	0	/ENTRANCE
 ;M. Parczewski i Z. Tabaczynski
 #DATE 1999-10-30
 0	1	4.4	285	-38

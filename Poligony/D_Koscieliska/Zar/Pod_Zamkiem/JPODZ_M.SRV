@@ -13,5 +13,6 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 #prefix podzamk
 #flag	0	/Jaskinia Pod Zamkiem
+#flag	0	/ENTRANCE
 #note	0	/Jaskinia Pod Zamkiem
 #fix	0	E19.864730	N49.237658	1186.0m

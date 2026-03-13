@@ -2,6 +2,7 @@
 ;#FIX  0   E19:55:15.15  N49:14:22.32   1875m
 #note	0	/Nad Kotliny
 #flag	0	/Nad Kotliny
+#flag	0	/ENTRANCE
 ;0 - otwor Nad Kotlinami
 ;s68 - otwor snieznej
 #FIX  s68   E19:55:35.19  N49:14:24.66   1689.2m
@@ -177,6 +178,7 @@ s67	s68	75	30	4.10
 ;s68 - otwor snieznej
 #note	s68	/Sniezna
 #flag	s68	/Sniezna
+#flag	s68	/ENTRANCE
 ;w kierunku syfonu dominiki
 w13	g101	283	-3	11.80
 g101	g100	330	-5	2.07

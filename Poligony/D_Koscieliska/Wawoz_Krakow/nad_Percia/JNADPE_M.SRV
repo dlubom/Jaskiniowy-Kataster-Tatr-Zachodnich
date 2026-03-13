@@ -13,5 +13,6 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 #prefix nadperc
 #flag	0	/Jaskinia nad Percia
+#flag	0	/ENTRANCE
 #note	0	/Jaskinia nad Percia
 #fix	0	E19.874010	N49.236630	1240.0m

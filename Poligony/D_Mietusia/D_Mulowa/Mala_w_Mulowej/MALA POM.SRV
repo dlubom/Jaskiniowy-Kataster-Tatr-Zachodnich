@@ -6,6 +6,7 @@
 ;wsp. odczytal K. D. z mapy.geoportal.gov.pl/imap, wysokosc odczyt z pliku DEM
 #note	1	/Jaskinia Mala w Mulowej
 #flag	1	/Jaskinia Mala w Mulowej
+#flag	1	/ENTRANCE
 ;
 ;pomiary ciagu glownego od otworu do dna  z domiarami sali Fakro
 1	2	6.4	0	-90	;studzienka wlotowa

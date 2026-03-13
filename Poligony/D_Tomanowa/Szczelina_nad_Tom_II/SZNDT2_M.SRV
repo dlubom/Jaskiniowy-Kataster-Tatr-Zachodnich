@@ -13,5 +13,6 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 #prefix szcztom2
 #flag	0	/Szczelina nad Tomanowa II
+#flag	0	/ENTRANCE
 #note	0	/Szczelina nad Tomanowa II
 #fix	0	E19.903270	N49.229750	2050.0m

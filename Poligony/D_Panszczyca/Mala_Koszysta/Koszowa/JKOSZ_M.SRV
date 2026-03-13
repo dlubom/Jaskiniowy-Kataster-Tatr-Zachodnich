@@ -13,5 +13,6 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 #prefix jkosz
 #flag	0	/Jaskinia Koszowa
+#flag	0	/ENTRANCE
 #note	0	/Jaskinia Koszowa
 #fix	0	E20.059694	N49.249139	1790.0m

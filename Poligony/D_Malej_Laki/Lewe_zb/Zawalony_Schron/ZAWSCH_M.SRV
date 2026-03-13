@@ -13,5 +13,6 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 #prefix zawsch
 #flag	0	/Zawalony Schron
+#flag	0	/ENTRANCE
 #note	0	/Zawalony Schron
 #fix	0	E19.913233	N49.245394	1790.0m

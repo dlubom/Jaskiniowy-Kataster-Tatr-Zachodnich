@@ -4,6 +4,7 @@
 #DATE 2003-08-01;TODO data jest szacunkowa na podstawie geoportalu
 #note	A1	/Jaskinia Lejbusiowa
 #flag	A1	/Jaskinia Lejbusiowa
+#flag	A1	/ENTRANCE
 A1	A2	2.2	257	-31
 A2	A3	1.37	194	-21
 A3	A4	3	248	-57

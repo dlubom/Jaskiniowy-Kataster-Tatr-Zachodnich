@@ -13,5 +13,6 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 #prefix dmuch
 #flag	0	/Dmuchawa
+#flag	0	/ENTRANCE
 #note	0	/Dmuchawa
 #fix	0	E19.821000	N49.246111	1300.0m

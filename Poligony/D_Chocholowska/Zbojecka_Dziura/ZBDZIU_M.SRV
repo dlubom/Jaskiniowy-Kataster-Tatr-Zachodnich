@@ -13,5 +13,6 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 #prefix zbdziu
 #flag	0	/Zbojecka Dziura
+#flag	0	/ENTRANCE
 #note	0	/Zbojecka Dziura
 #fix	0	E19.811731	N49.247769	1143.0m

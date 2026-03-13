@@ -13,5 +13,6 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 #prefix lustkor
 #flag	0	/Lustrzany Korytarz
+#flag	0	/ENTRANCE
 #note	0	/Lustrzany Korytarz
 #fix	0	E19.878350	N49.237530	1530.0m

@@ -16,6 +16,7 @@ TEAM "F. Filar i M. Parczewski"
 #date 2014-01-06
 #note	:tb1401	/Jaskinia Dziura
 #flag	:tb1401	/Jaskinia Dziura
+#flag	:tb1401	/ENTRANCE
 #units meters order=DAV
 #units A=D V=D
 #prefix tb1401_A1

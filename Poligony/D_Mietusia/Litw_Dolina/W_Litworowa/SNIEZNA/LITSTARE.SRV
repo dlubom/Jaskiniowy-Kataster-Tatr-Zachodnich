@@ -7,6 +7,7 @@
 #FIX  LT58  E19:54:53.26989 N49:14:18.82979 1903m
 #note	LT58	/Wielka Litworowa
 #flag	LT58	/Wielka Litworowa
+#flag	LT58	/ENTRANCE
 ;Ciag glowny
 LT58	LT57	52	-81	13.20
 LT57	LT56	343	-9	6.90

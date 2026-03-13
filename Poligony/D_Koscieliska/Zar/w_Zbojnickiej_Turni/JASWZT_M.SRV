@@ -13,5 +13,6 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 #prefix zbturnia
 #flag	0	/Jaskinia w Zbojnickiej Turni
+#flag	0	/ENTRANCE
 #note	0	/Jaskinia w Zbojnickiej Turni
 #fix	0	E19.865280	N49.236430	1260.0m

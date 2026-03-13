@@ -2,6 +2,7 @@
 #FIX  ss0   E19:55:21.69  N49:14:29.29   1756.63m
 #note	ss0	/Sniezna Studnia
 #flag	ss0	/Sniezna Studnia
+#flag	ss0	/ENTRANCE
 ss0	ss1	2.60	130.00	-46.00
 ss1	ss2	10.55	0.00	-90.00
 ss800	ss2	7.80	180.00	-26.00

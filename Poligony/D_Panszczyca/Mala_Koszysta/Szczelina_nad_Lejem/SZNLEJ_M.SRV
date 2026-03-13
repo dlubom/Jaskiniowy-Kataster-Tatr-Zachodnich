@@ -13,5 +13,6 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 #prefix sznlej
 #flag	0	/Szczelina nad Lejem
+#flag	0	/ENTRANCE
 #note	0	/Szczelina nad Lejem
 #fix	0	E20.057556	N49.249167	1761.0m

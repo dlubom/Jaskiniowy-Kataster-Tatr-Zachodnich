@@ -18,6 +18,7 @@ INSTRUMENT "DistoX + PocketTopo"
 #date 2013-11-09
 #note	:tc1601	/Jaskinia Kalacka
 #flag	:tc1601	/Jaskinia Kalacka
+#flag	:tc1601	/ENTRANCE
 #units meters order=AVD
 #units A=D V=D
 #prefix tc1601_A1

@@ -2,6 +2,7 @@
 #Units Meters Order=dav
 #note	spp0	/Studnia przy Przechodzie
 #flag	spp0	/Studnia przy Przechodzie
+#flag	spp0	/ENTRANCE
 #fix 	spp0 	421683.32 	5454857.63 	1610.42
 ;TODO poprawic wsp.
 spp0	spp1	9.80	0.00	-90.00

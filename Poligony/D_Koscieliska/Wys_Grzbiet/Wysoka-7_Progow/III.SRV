@@ -67,6 +67,7 @@ W7-506	W7-507	8	245	55	; gorny otwor
 W7-501	W7-2	2.5	126	-14	;zac. agnieszki, pol. z wysoka
 
 #FLAG W7-0 /Otwor
+#FLAG W7-0 /ENTRANCE
 #FIX	W7-0	418698.72	5453986.05	1499
 #note	W7-0	/Wysoka-Za7 Progami
 #flag	W7-0	/Wysoka-Za7 Progami

@@ -17,6 +17,7 @@ INSTRUMENT "DistoX"
 #date 2013-03-01
 #note	:td0807	/Jaskinia Mrozna
 #flag	:td0807	/Jaskinia Mrozna
+#flag	:td0807	/ENTRANCE
 #UNITS meters order=dav
 #Units A=D V=D
 #prefix td0807_A1

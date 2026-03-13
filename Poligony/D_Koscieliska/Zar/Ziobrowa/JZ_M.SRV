@@ -13,7 +13,9 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 #prefix ziobrowa
 #flag	0	/Jaskinia Ziobrowa
+#flag	0	/ENTRANCE
 #note	0	/Jaskinia Ziobrowa
 #flag	5.24	/Jaskinia pod Niznia Zbojnicka Turnia
+#flag	5.24	/ENTRANCE
 #note	5.24	/Jaskinia pod Niznia Zbojnicka Turnia
 #fix	0	E19.863794	N49.238906	1104.0m
