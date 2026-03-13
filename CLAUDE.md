@@ -279,6 +279,14 @@ Averages multiple repeat shots for the same leg (forward A→B + backward B→A)
 /average-shots <path/to/FILE_S.SRV>
 ```
 
+### `/survex-stats` — `.claude/skills/survex-stats/SKILL.md`
+
+Compiles a Survex `.svx` file with `cavern` and prints the output and statistics. Useful for cross-checking raw source data before or after conversion. Usage:
+
+```
+/survex-stats <path/to/file.svx>
+```
+
 ### `/svx-to-srv` — `.claude/skills/svx-to-srv/SKILL.md`
 
 Converts Survex (`.svx`) survey files to Walls (`.SRV`) format. Covers measurement conversion, equate→zero-shot mapping, flag handling, and the critical issue of junction stations positioned only by duplicate shots. Usage:
