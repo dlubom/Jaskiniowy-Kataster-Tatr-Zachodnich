@@ -279,6 +279,14 @@ Averages multiple repeat shots for the same leg (forward A→B + backward B→A)
 /average-shots <path/to/FILE_S.SRV>
 ```
 
+### `/svx-to-srv` — `.claude/skills/svx-to-srv/SKILL.md`
+
+Converts Survex (`.svx`) survey files to Walls (`.SRV`) format. Covers measurement conversion, equate→zero-shot mapping, flag handling, and the critical issue of junction stations positioned only by duplicate shots. Usage:
+
+```
+/svx-to-srv <cave-id> <path/to/source.svx>
+```
+
 ## Workflow for Adding a New Cave
 
 Use the `/add-cave` skill (see above) or follow these steps manually:
