@@ -14,7 +14,7 @@ The project aims to compile all cartographic data related to the caves of the Ta
 
 The project is based on the Walls software – you can find the [latest version of the program and its manual here](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
 
-The project also works with [Survex](https://survex.com/) — just install the latest version and open `KATASTER.wpj` in Aven, or compile from the command line: `cavern KATASTER.wpj`.
+The project also works with [Survex](https://survex.com/) — just install the latest version and open `KATASTER.wpj` in Aven, or compile from the command line: `cavern KATASTER.wpj`. In Aven you can also load the terrain model `Powierzchnia/Survex/N49E019_VF1.hgt`.
 
 ### 3D Model Online
 [![View 3D cave model](sketchfab_3d.png)](https://sketchfab.com/models/64c9acf8f12345a3a3a4aa72df330b51)
