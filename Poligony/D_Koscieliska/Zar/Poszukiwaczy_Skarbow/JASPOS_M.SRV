@@ -11,7 +11,8 @@ DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix poszuk
+#prefix PoszukiwaczySkarbow
 #flag	0	/Jaskinia Poszukiwaczy Skarbow
+#flag	0	/ENTRANCE
 #note	0	/Jaskinia Poszukiwaczy Skarbow
 #fix	0	E19.866011	N49.236997	1211.0m

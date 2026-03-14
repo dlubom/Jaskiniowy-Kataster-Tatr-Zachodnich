@@ -2,10 +2,11 @@
 #units A=D V=D
 #date 2013-04-02
 ;K Dudzinski , Z Tabaczynski
-#prefix zwol
+#prefix Zwolinskiego
 #FIX  0   E19:58:38.200  N49:15:04.200   1314.0m
 #note	0	/Zwolinskiego
 #flag	0	/Zwolinskiego
+#flag	0	/ENTRANCE
 ;Zwolinskiego
 0	1	2.22	187	-17.5
 1	2	4.85	236	-29

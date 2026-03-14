@@ -1,3 +1,4 @@
+#prefix Wysoka7Progow
 ;Jaskinia Wysoka-Za Siedmiu Progami
 ;KKS
 ;Wyk. Jacek Szczygiel
@@ -118,7 +119,8 @@ W7-300	W7-289	3.5	108	20
 W7-289	W7-290	1	0	90
 W7-290	W7-291	3.9	106	-21
 
--357/22	W-357/23	13.6	296	-32
+;poprawka: bylo "-357/22" (brakujacy prefiks W), zmieniono na W-357/22
+W-357/22	W-357/23	13.6	296	-32
 W-357/23	W-357/24	2	295	-47
 W-357/22	W-357/25	10	250	28
 W-357/25	W-357/26	11	293	-28

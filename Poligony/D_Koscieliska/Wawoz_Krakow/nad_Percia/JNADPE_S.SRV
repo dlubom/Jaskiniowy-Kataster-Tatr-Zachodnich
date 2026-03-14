@@ -14,7 +14,7 @@ TEAM "J. Nowak, J. Slusarczyk"
 INSTRUMENT "nieznany"
 #]
 
-#prefix nadperc
+#prefix NadPercia
 #date 2006-11-04
 #units meters order=DAV
 #units A=D V=D

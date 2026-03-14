@@ -1,9 +1,10 @@
 #units meters order=DAV
 #units A=D V=D
-#prefix jbiala
+#prefix Biala
 #FIX  0   E19:52:10.88  N49:14:49.99   1283.0m
 #note	0	/Jaskinia Biala
 #flag	0	/Jaskinia Biala
+#flag	0	/ENTRANCE
 ;M. Nawrot, T. Tomaszek, Z. Tabaczynski
 #date 2003-06-20
 0	1	2.1	335	-5

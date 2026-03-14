@@ -104,6 +104,7 @@ LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 #prefix <PREFIX>
 #flag   <STATION>   /<Cave Label>
+#flag   <STATION>   /ENTRANCE
 #note   <STATION>   /<Cave Label>
 #fix    <STATION>   E<lon-dms>  N<lat-dms>  <elevation>m
 ```
@@ -112,6 +113,7 @@ LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 If the entrance station is unknown, comment out all three lines and add a TODO note:
 ```
 ; #flag  ???  /<Cave Label>
+; #flag  ???  /ENTRANCE
 ; #note  ???  /<Cave Label>
 ; #fix   ???  E<lon-dms>  N<lat-dms>  <elevation>m  ; TODO: uzupelnic numer stacji wejscia
 ```

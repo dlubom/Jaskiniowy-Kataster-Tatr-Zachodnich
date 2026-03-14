@@ -1,3 +1,4 @@
+#prefix Wysoka7Progow
 ;Jaskinia Wysoka-Za Siedmiu Progami
 ;KKS
 ;Wyk. Jacek Szczygiel
@@ -15,6 +16,8 @@ W7-12/25	W7-12/26	3.05	270	17
 W7-12/26	W7-12/27	7.45	257	45
 W7-12/27	W7-12/28	3.9	228	-22	; => kor. polaczeniowy
 
+#flag	W7-500	/ENTRANCE
+#note	W7-500	/Za7Progami Gorny Otwor
 
 W7-500	W7-501	12.9	88	-55	;GORNY OTWOR, pomiar powtorzony w PIONY.SRV:510 ale z innymi danymi
 W7-501	W7-201	6.5	255	12
@@ -67,6 +70,7 @@ W7-506	W7-507	8	245	55	; gorny otwor
 W7-501	W7-2	2.5	126	-14	;zac. agnieszki, pol. z wysoka
 
 #FLAG W7-0 /Otwor
+#FLAG W7-0 /ENTRANCE
 #FIX	W7-0	418698.72	5453986.05	1499
 #note	W7-0	/Wysoka-Za7 Progami
 #flag	W7-0	/Wysoka-Za7 Progami

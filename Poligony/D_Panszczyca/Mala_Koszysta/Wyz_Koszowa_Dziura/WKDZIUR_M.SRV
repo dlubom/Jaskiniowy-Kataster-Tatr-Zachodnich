@@ -11,7 +11,8 @@ DATA_SOURCE		"https://jaskiniepolski.pgi.gov.pl/, Z. Tabaczynski"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix wkdziur
+#prefix WyzKoszowaDziura
 #flag	0	/Wyznia Koszowa Dziura
+#flag	0	/ENTRANCE
 #note	0	/Wyznia Koszowa Dziura
 #fix	0	E20.058694	N49.248722	1800.0m

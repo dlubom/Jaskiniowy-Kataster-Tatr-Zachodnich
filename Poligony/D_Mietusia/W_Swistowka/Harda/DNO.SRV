@@ -1,6 +1,6 @@
 #units meters order=AVD
 #units A=D V=D
-#prefix harda
+#prefix Harda
 #date 2013-10-27
 1.90	1.91	52.36	13.66	7.79	#s domiar
 1.91	1.92	30.25	-5.1	7.379

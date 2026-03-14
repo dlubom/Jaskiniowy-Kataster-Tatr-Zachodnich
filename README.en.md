@@ -4,6 +4,7 @@
 
 ![Walls 2D screen](walls_2d_screen.png)
 ![Walls 2D screen](walls_3d_screen.png)
+![Survex Aven](Survex.jpeg)
 
 [![Latest Release](https://img.shields.io/github/v/release/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich)](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
 
@@ -14,8 +15,7 @@ The project aims to compile all cartographic data related to the caves of the Ta
 
 The project is based on the Walls software – you can find the [latest version of the program and its manual here](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
 
-### 3D Model Online
-[![View 3D cave model](sketchfab_3d.png)](https://sketchfab.com/models/64c9acf8f12345a3a3a4aa72df330b51)
+The project also works with [Survex](https://survex.com/) — just install the latest version and open `KATASTER.wpj` in Aven, or compile from the command line: `cavern KATASTER.wpj`. In Aven you can also load the terrain model `Powierzchnia/Survex/N49E019_VF1.hgt`.
 
 ### How Can You Help?
 We encourage collaboration on the project as well as sharing your own measurements. Contact: [darek.lubomski@gmail.com](mailto:darek.lubomski@gmail.com).
@@ -98,6 +98,9 @@ Currently, the project includes data for the following caves:
 - Zbójecka Dziura
 - Zoska - Zagonna Studnia
 - Zwolińskiego
+
+### Related Projects
+Worth mentioning is the [Caves of the Tatra Mountains](https://github.com/RadostW/jaskinie) project run by Speleoklub Warszawski. They follow a different philosophy — relying on their own contemporary field surveys rather than sourcing data from historical records. They also use secondary digitization of cave plans, without depth information. It's an interesting approach, though surveying all Tatra caves this way will be a significant challenge. The project uses the Survex format and is licensed under CC BY-SA 4.0.
 
 ### Changelog
 All project changes are documented in the [CHANGELOG.md](CHANGELOG.md).

@@ -14,7 +14,7 @@ TEAM "M. Parczewski, Z. Tabaczynski"
 INSTRUMENT "Topo-Vulcan"
 #]
 
-#prefix zawsch
+#prefix ZawalonySchron
 #date 1999-10-30
 #units meters order=DAV
 #units A=D V=D

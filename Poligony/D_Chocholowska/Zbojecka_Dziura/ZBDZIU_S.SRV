@@ -14,7 +14,7 @@ TEAM "J. Nowak, J. Slusarczyk"
 INSTRUMENT "nieznany"
 #]
 
-#prefix zbdziu
+#prefix ZbojeckaDziura
 #date 2004-06-19
 #units meters order=DAV
 #units A=D V=D

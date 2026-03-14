@@ -1,9 +1,10 @@
 #units meters order=DAV
 #units A=D V=D
-#PREFIX lodm
+#prefix LodowaMalolacka
 #FIX  0   E19:55:42.52  N49:14:35.05   1634.13m
 #note	0	/Lodowa Malolacka
 #flag	0	/Lodowa Malolacka
+#flag	0	/ENTRANCE
 ;F. FILAR, M. PARCZEWSK
 ;
 #DATE 2004-09-04

@@ -1,29 +1,30 @@
 #units meters order=AVD
 #units A=D V=D
 #date 2012-03-10
-#prefix g1
+#prefix Goryczkowa.G1
 #FIX  1   E19:58:21.578  N49:15:04.007   1263.0m
 #note	1	/Goryczkowa
 #flag	1	/Goryczkowa
+#flag	1	/ENTRANCE
 ;Goryczkowa
 ;team "Peter Imrich" pictures
 ;team "Tina Majernickova" instruments
 ;Disto X
-g1:1k	g2:39	0	0	0
-g3:37	g2:37	0	0	0
-g3:36	g2:36	0	0	0
-g2:35	g4:35	0	0	0
-g3:39	g4:39	0	0	0
-g2:1	g4:1	0	0	0
-g2:4	g4:4	0	0	0
-g2:8	g4:8	0	0	0
-g2:35	g5:35	0	0	0
-g4:43	g5:43	0	0	0
-g2:8	g5:8	0	0	0
-g3:6	g5:6	0	0	0
-g3:7a	g5:7a	0	0	0
-g2:4	g5:4	0	0	0
-g2:24	g5:24	0	0	0
+Goryczkowa.G1:1k	Goryczkowa.G2:39	0	0	0
+Goryczkowa.G3:37	Goryczkowa.G2:37	0	0	0
+Goryczkowa.G3:36	Goryczkowa.G2:36	0	0	0
+Goryczkowa.G2:35	Goryczkowa.G4:35	0	0	0
+Goryczkowa.G3:39	Goryczkowa.G4:39	0	0	0
+Goryczkowa.G2:1	Goryczkowa.G4:1	0	0	0
+Goryczkowa.G2:4	Goryczkowa.G4:4	0	0	0
+Goryczkowa.G2:8	Goryczkowa.G4:8	0	0	0
+Goryczkowa.G2:35	Goryczkowa.G5:35	0	0	0
+Goryczkowa.G4:43	Goryczkowa.G5:43	0	0	0
+Goryczkowa.G2:8	Goryczkowa.G5:8	0	0	0
+Goryczkowa.G3:6	Goryczkowa.G5:6	0	0	0
+Goryczkowa.G3:7a	Goryczkowa.G5:7a	0	0	0
+Goryczkowa.G2:4	Goryczkowa.G5:4	0	0	0
+Goryczkowa.G2:24	Goryczkowa.G5:24	0	0	0
 1a	1	257	29.9	3.4	<1.1,0,2,0.3>
 1a	1b	330.9 	-8.3	5.38	<0.2 ,0.2 ,0.1,0.2>
 1a	2	107.4 	-0	4.43	<1,0.7,0,1.4>

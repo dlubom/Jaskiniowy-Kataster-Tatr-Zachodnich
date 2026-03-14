@@ -14,7 +14,7 @@ TEAM "Z. Tabaczynski"
 INSTRUMENT "unknown"
 #]
 
-#prefix wkdziur
+#prefix WyzKoszowaDziura
 #date 2008-10-01
 #units meters order=DAV
 #units A=D V=D

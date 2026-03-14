@@ -1,8 +1,11 @@
+#prefix Wysoka7Progow
 ;Jaskinia Wysoka-Za Siedmiu Progami
 ;KKS
 ;Wyk. Jacek Szczygiel
 #UNITS D=M A=D V=D Order=DAV
 
+#flag	W7-200	/ENTRANCE
+#note	W7-200	/Za7Progami Dolny Otwor
 
 W7-200	W7-201	8.7	62	23	;pt. 200 dolnny otwor
 W7-201	W7-202	8.8	76	-45.5	;czekan

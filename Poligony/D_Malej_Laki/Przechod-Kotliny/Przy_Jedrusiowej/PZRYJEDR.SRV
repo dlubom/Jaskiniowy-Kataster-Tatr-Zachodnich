@@ -1,6 +1,9 @@
+#prefix PrzyJedrusiowej
 #Units Meters Order=dav
 #fix 	pj0 	421688.31 	5454867.45	 1562.01
-;Przy Jedrusiowej
+#flag	pj0	/Przy Jedrusiowej Dziurze
+#flag	pj0	/ENTRANCE
+#note	pj0	/Przy Jedrusiowej Dziurze
 pj0	pj1	7.82	198.43	-36.03
 pj1	pj20	2.05	308.66	51.33
 pj1	pj30	2.06	255.96	0.00

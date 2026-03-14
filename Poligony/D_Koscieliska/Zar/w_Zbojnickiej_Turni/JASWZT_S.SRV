@@ -14,7 +14,7 @@ TEAM "J. Nowak, J. Wolek"
 INSTRUMENT "nieznany"
 #]
 
-#prefix zbturnia
+#prefix ZbojnickaTurnia
 #date 2007-07-15
 #units meters order=DAV
 #units A=D V=D

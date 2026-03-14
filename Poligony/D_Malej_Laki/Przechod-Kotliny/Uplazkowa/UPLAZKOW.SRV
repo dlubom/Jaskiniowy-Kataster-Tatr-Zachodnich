@@ -1,7 +1,9 @@
+#prefix Uplazkowa
 #Units Meters Order=dav
 #fix 	ju0	421573.32	5454872.48 	1689.57
 #note	ju0	/Uplazkowa
 #flag	ju0	/Uplazkowa
+#flag	ju0	/ENTRANCE
 ;Uplazkowa
 ju0	ju1	11.61	259.37	-20.20
 ju1	ju2	6.52	232.45	-41.17

@@ -1,7 +1,8 @@
 ;Galeria Krokodyla
 #units order=avd
+#prefix WielkaSniezna.Krokodyl
 ;			.
-g27	gk0	284	-35	4.90
+WielkaSniezna.Ciag:g27	gk0	284	-35	4.90
 gk0	gk1	285	6	5.70
 gk1	gk2	262	0	6.80
 gk2	gk3	230	15	3.90
@@ -9,13 +10,16 @@ gk3	gk4	105	54	6.40
 gk4	gk5	250	46	1.80
 gk5	gk6	220	0	1.60
 gk6	gk7	255	50	5.40
-gk7	gk314	10	0	0.80
-gk314	gk315	0	90	3.50
-gk315	gk316	67	0	1.20
-gk316	gk317	302	0	7.50
-gk317	gk313.8	320	0	5.40
-gk318	gk319	335	0	3.50
-gk319	gk320	55	0	5.00
+;TODO: duplikat odcinkow gk7-gk320 (mniej precyzyjne wartosci).
+;  Bardziej precyzyjne pomiary w dalszej czesci pliku (odcinki gkPL).
+;  Azymut gk7->gk314 rozni sie znacznie: 10 vs 103.16 — do weryfikacji.
+;gk7	gk314	10	0	0.80
+;gk314	gk315	0	90	3.50
+;gk315	gk316	67	0	1.20
+;gk316	gk317	302	0	7.50
+;gk317	gk318	320	0	5.40	;poprawka: bylo gk313.8, zmieniono na gk318
+;gk318	gk319	335	0	3.50
+;gk319	gk320	55	0	5.00
 gk7	gk8	280	30	8.70
 gk8	gk9	277	0	6.50
 gk9	gk10	245	0	5.80
@@ -287,12 +291,12 @@ gkPLg	gkPLh	264.12	27.13	2.63
 gkPLh	gkPLi	343.89	74.51	8.77
 gkPLi	gkPLj	271.09	1.86	12.64
 gkPLj	gkPLk	237.09	48.85	1.85
-gkGK7	GK314	103.16	37.19	0.99
-GK314	GK315	0.00	90.00	3.50
-GK315	GK316	67.49	0.00	1.20
-GK316	GK317	302.04	0.00	7.50
-GK317	GK318	320.03	0.00	5.40
-GK318	GK319	334.97	0.00	3.50
-GK319	GK320	54.94	0.00	5.00
+gk7	gk314	103.16	37.19	0.99
+gk314	gk315	0.00	90.00	3.50
+gk315	gk316	67.49	0.00	1.20
+gk316	gk317	302.04	0.00	7.50
+gk317	gk318	320.03	0.00	5.40
+gk318	gk319	334.97	0.00	3.50
+gk319	gk320	54.94	0.00	5.00
 
 

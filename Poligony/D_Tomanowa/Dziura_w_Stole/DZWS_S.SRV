@@ -14,7 +14,7 @@ TEAM "J. i J. Nowak"
 INSTRUMENT "nieznany"
 #]
 
-#prefix dzstole
+#prefix DziuraWStole
 #date 2009-07-11
 #units meters order=DAV
 #units A=D V=D

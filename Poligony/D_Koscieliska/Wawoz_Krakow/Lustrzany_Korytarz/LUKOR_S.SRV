@@ -14,7 +14,7 @@ TEAM "J. Nowak, J. Matras"
 INSTRUMENT "nieznany"
 #]
 
-#prefix lustkor
+#prefix LustrzanyKorytarz
 #date 2006-08-26
 #units meters order=DAV
 #units A=D V=D

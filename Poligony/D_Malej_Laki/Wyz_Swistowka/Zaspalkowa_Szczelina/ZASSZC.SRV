@@ -1,7 +1,9 @@
+#prefix ZaspalkowaSzczel
 ;Zaspalkowa Szczelina
 #Units Meters Order=dav
 #note	zss0	/Zaspalkowa
 #flag	zss0	/Zaspalkowa
+#flag	zss0	/ENTRANCE
 #fix 	zss0 	421953.27 	5454527.64 	1743.30
 zss0 	zss1 	4.42 	215.82 	-26.87 ; pomiar powtorzony w ZASSZC.SRV:8
 zss1 	zss2 	4.71 	184.48	-38.00
