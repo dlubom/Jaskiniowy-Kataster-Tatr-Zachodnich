@@ -22,7 +22,6 @@ INSTRUMENT "DistoX2"
 
 ; === Polaczenia z innymi cigami ===
 sd_12	tb_0	0	0	0
-tb_0	tb_1	0	0	0
 sd_14	tb_2	0	0	0
 
 ; === Pomiary ===
