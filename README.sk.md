@@ -10,6 +10,8 @@
 
 [Stiahnite si najnovšie vydanie](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
 
+[3D model online](https://dlubom.github.io/Jaskiniowy-Kataster-Tatr-Zachodnich/)
+
 ### Popis projektu
 Projekt má za cieľ zhromaždiť všetky kartografické údaje o tatranských jaskyniach na jednom mieste. Využitím softvéru Walls je hlavným cieľom vytvoriť priestorové zosumarizovanie meracích postupov, súradníc vstupov do jaskýň a modelu terénu. Projekt je otvorený pre všetkých záujemcov, aby uľahčil prieskumné, vzdelávacie a podporoval vedecký výskum. Zhromaždenie komplexných a presných údajov predstavuje výzvu kvôli rozmanitosti metód a času ich vykonávania.
 

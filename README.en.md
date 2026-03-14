@@ -10,6 +10,8 @@
 
 [Download the latest release](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
 
+[3D Model online](https://dlubom.github.io/Jaskiniowy-Kataster-Tatr-Zachodnich/)
+
 ### Project Description
 The project aims to compile all cartographic data related to the caves of the Tatra Mountains in one place. Utilizing the Walls software, the primary goal is to create a spatial compilation of measurement sequences, cave entrance coordinates, and terrain models. The project is open to all who are interested, to facilitate exploratory and educational activities, and to support scientific research. Gathering comprehensive and accurate data presents a challenge due to the diversity of methods and times of their execution.
 
