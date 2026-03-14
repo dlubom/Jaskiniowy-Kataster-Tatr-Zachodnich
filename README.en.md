@@ -2,9 +2,9 @@
 
 # Tatra Cave Registry
 
-![Walls 2D screen](walls_2d_screen.png)
-![Walls 2D screen](walls_3d_screen.png)
-![Survex Aven](Survex.jpeg)
+![Walls 2D screen](doc/walls_2d_screen.png)
+![Walls 2D screen](doc/walls_3d_screen.png)
+![Survex Aven](doc/Survex.jpeg)
 
 [![Latest Release](https://img.shields.io/github/v/release/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich)](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
 
