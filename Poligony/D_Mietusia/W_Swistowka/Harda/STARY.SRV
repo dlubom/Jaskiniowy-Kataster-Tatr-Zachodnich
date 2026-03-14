@@ -1,6 +1,6 @@
 #units meters order=DAV
 #units A=D V=D
-#prefix harda
+#prefix Harda
 #date 2014-06-19
 1.50	st1	2.32	125.52	1.14	#s domiar
 st1	st2	2.0033	21.89	14.3

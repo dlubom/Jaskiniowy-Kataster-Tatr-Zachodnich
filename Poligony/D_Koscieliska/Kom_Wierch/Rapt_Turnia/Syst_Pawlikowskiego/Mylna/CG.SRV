@@ -14,7 +14,7 @@ TEAM "Filip Filar"
 INSTRUMENT "DistoX2"
 #]
 
-#prefix ML
+#prefix Mylna
 #date 2009-01-01
 #Units meters order=dav
 

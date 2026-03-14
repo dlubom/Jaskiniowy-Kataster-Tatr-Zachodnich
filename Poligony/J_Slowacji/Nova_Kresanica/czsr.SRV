@@ -2,7 +2,7 @@
 #units A=D V=D
 #date 2007-01-03
 ;TODO data prawdopodobnie bledna
-#prefix nvk
+#prefix NovaKresanica
 nvk28	nvk29	329.00	-70.00	2.64	<0.00,2.00,1.00,0.00>
 nvk29	nvk29a	35.00	0.00	3.02
 nvk29	nvk30	201.00	-47.00	3.39	<1.50,0.00,0.30,0.30>

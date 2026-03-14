@@ -1,9 +1,10 @@
 #units meters order=DAV
 #units A=D V=D
-#prefix dwt1
+#prefix DziurkaWTrawce
 #FIX  0   E19:54:34.66  N49:14:33.000   1762.55m
 #note	0	/Dziurka w Trawce
 #flag	0	/Dziurka w Trawce
+#flag	0	/ENTRANCE
 ;Dziurka w Trawce
 #date 2000-06-06; oraz 2000-06-30
 ;P. Orawiec i Z. Tabaczynski

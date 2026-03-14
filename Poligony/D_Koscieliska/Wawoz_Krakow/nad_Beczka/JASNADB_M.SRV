@@ -11,7 +11,8 @@ DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix nadbecz
+#prefix NadBeczka
 #flag	0	/Jaskinia nad Beczka
+#flag	0	/ENTRANCE
 #note	0	/Jaskinia nad Beczka
 #fix	0	E19.883730	N49.233880	1450.0m

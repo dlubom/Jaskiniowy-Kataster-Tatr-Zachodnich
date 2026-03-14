@@ -1,7 +1,8 @@
 #units meters order=DAV
-#prefix ryc
+#prefix SpiacychRycerzy
 #note	1	/Jaskinia Spiacych Rycerzy
 #flag	1	/Jaskinia Spiacych Rycerzy
+#flag	1	/ENTRANCE
 #date 2009-01-01
 ;TODO Piotr daty nie pamietal, jedynie wiadomo ze 4 lata temu
 #FIX  1   E19:55:24.300  N49:14:59.660   1397.8m

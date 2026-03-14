@@ -14,7 +14,7 @@ TEAM "F. Filar" TODO: reszta zespolu??
 INSTRUMENT "DistoX2"
 #]
 
-#prefix ML
+#prefix Mylna
 #date 2009-01-01
 #UNITS meters order=dav
 #Units A=D V=D

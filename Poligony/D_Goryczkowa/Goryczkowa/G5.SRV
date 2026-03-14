@@ -1,7 +1,7 @@
 #units meters order=AVD
 #units A=D V=D
 #date 2012-03-24
-#prefix g5
+#prefix Goryczkowa.G5
 ;Goryczkowa
 ;team "Jan Smoll" pictures
 ;team "Tina Majernickova" instruments

@@ -14,7 +14,7 @@ TEAM "D. Fuja, B. Zwijacz-Kozica, K. Dudzinski, P. Orawiec, W. Gozdz, A. Lezlii,
 INSTRUMENT "Topo-Vulcan"
 #]
 
-#prefix zoska
+#prefix Zoska
 #units meters order=DAV
 #units A=D V=D
 

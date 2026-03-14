@@ -14,5 +14,5 @@ TEAM "unknown"
 INSTRUMENT "unknown"
 #]
 
-#prefix SM_A1_COORD
+#prefix SmoczaJama.Coord
 #FIX  o1  E19:52:03.841 N49:14:16.225   1120m

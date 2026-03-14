@@ -11,7 +11,8 @@ DATA_SOURCE		"Panstwowy Instytut Geologiczny, F. Filar"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix ML
+#prefix Mylna
 #flag	0	/Mylna
+#flag	0	/ENTRANCE
 #note	0	/Mylna
 #fix	0	417179.14	5454690.67	1098

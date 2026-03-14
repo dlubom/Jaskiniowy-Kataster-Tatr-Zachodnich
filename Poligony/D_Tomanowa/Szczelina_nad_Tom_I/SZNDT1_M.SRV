@@ -11,7 +11,8 @@ DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix szcztom1
+#prefix SzczelinaNadTomI
 #flag	0	/Szczelina nad Tomanowa I
+#flag	0	/ENTRANCE
 #note	0	/Szczelina nad Tomanowa I
 #fix	0	E19.903410	N49.229640	2065.0m

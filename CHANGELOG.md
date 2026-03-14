@@ -4,6 +4,23 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.2.0] - 2026-03-13
+
+### Dodane
+- Flaga `#flag STATION /ENTRANCE` dla wszystkich otworow jaskiniowych (79 stacji) + 9 dodatkowych otworow
+- Jaskinia Czarna (T.E-08.01) — eksperymentalne, wymaga dalszej pracy:
+    - Konwersja na format dwuplikowy (_M.SRV + _S.SRV) z _RAW
+    - Ciag glowny (dane Borowca) i pomiary Kujata (partie koncowe)
+- Walidacja CI: wykrywanie niepodlaczonych stacji pomiarowych, cache Survex (actions/cache)
+- README: sekcja o pokrewnym projekcie RadostW/jaskinie
+
+### Zmienione
+- Ptasia Studnia (T.E-11): przeniesienie z Ratusz_Mulowy/ do wlasnego katalogu Ptasia_Studnia/, pelne nazwy otworow wg PIG, wykomentowanie niepodlaczonego ciagu 10A
+- Prefixy stacji: pelne nazwy jaskin CamelCase zamiast skrotow
+- Zamiana spacji na podkreslniki w nazwach plikow SRV (Mala w Mulowej, Syst. Pawlikowskiego, Ptasia Studnia)
+- Naprawa literowek w nazwach stacji (I.SRV, KROKODYL.SRV, SLEPE.SRV)
+- Walidacja CI: obsluga roznych wersji komunikatu cavern, shell bash (fix Windows)
+
 ## [v1.1.6] - 2026-03-11
 
 ### Dodane

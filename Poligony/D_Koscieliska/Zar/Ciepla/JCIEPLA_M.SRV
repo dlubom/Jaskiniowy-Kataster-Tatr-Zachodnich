@@ -11,7 +11,8 @@ DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix ciepla
+#prefix Ciepla
 #flag	0	/Jaskinia Ciepla
+#flag	0	/ENTRANCE
 #note	0	/Jaskinia Ciepla
 #fix	0	E19.865580	N49.233470	1331.0m

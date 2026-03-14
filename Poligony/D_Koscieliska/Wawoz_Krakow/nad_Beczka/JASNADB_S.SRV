@@ -14,7 +14,7 @@ TEAM "J. Nowak, M. Szot"
 INSTRUMENT "nieznany"
 #]
 
-#prefix nadbecz
+#prefix NadBeczka
 #date 2005-07-23
 #units meters order=DAV
 #units A=D V=D

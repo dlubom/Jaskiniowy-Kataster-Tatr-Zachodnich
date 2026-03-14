@@ -14,7 +14,7 @@ TEAM "J. Nowak, M. Kubarek, J. Wolek"
 INSTRUMENT "nieznany"
 #]
 
-#prefix ziobrowa
+#prefix Ziobrowa
 #date 2007-06-24
 #units meters order=DAV
 #units A=D V=D

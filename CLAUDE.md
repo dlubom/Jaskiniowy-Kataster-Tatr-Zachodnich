@@ -77,6 +77,7 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 #prefix PREFIX
 #flag	STATION	/Cave Label
+#flag	STATION	/ENTRANCE
 #note	STATION	/Cave Label
 #fix	STATION	EASTING	NORTHING	ELEVATION
 ```

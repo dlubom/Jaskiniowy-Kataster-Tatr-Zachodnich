@@ -1,6 +1,7 @@
 ;Kominy krakowskie
 #units order=avd
-s35	k1	105	-9	13.44
+#prefix WielkaSniezna.Krakow
+WielkaSniezna.Ciag:s35	k1	105	-9	13.44
 k1	k2	81	30	19.30
 k2	k3	3	55	11.25
 k3	k4	299	30	2.58

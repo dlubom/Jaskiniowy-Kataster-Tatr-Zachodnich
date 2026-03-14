@@ -11,7 +11,8 @@ DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix gawra
+#prefix Gawra
 #flag	0	/Gawra
+#flag	0	/ENTRANCE
 #note	0	/Gawra
 #fix	0	E19.874903	N49.237146	1303.0m

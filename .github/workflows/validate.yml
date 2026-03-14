@@ -20,16 +20,30 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Cache Survex (Linux)
+        if: runner.os == 'Linux'
+        id: cache-survex
+        uses: actions/cache@v4
+        with:
+          path: ~/survex
+          key: survex-${{ env.SURVEX_VERSION }}-ubuntu
+
       - name: Install Survex (Linux)
         if: runner.os == 'Linux'
         run: |
-          sudo apt-get update && sudo apt-get install -y build-essential libwxgtk3.2-dev libproj-dev libgdal-dev
-          wget https://survex.com/software/${{ env.SURVEX_VERSION }}/survex-${{ env.SURVEX_VERSION }}.tar.gz
-          tar xf survex-${{ env.SURVEX_VERSION }}.tar.gz
-          cd survex-${{ env.SURVEX_VERSION }}
-          ./configure
-          make
-          sudo make install
+          if [ "${{ steps.cache-survex.outputs.cache-hit }}" = "true" ]; then
+            echo "Using cached Survex"
+            sudo apt-get update && sudo apt-get install -y libproj25 libgdal34t64
+          else
+            sudo apt-get update && sudo apt-get install -y build-essential libwxgtk3.2-dev libproj-dev libgdal-dev
+            wget https://survex.com/software/${{ env.SURVEX_VERSION }}/survex-${{ env.SURVEX_VERSION }}.tar.gz
+            tar xf survex-${{ env.SURVEX_VERSION }}.tar.gz
+            cd survex-${{ env.SURVEX_VERSION }}
+            ./configure --prefix=$HOME/survex
+            make
+            make install
+          fi
+          echo "$HOME/survex/bin" >> $GITHUB_PATH
 
       - name: Install Survex (Windows)
         if: runner.os == 'Windows'
@@ -58,7 +72,18 @@ jobs:
           fi
 
       - name: Compile with cavern
-        run: cavern KATASTER.wpj
+        shell: bash
+        run: |
+          cavern KATASTER.wpj 2>&1 | tee cavern_output.txt
+
+      - name: Check for unattached stations
+        shell: bash
+        run: |
+          if grep -qE "not attached to a (fixed|control) point" cavern_output.txt; then
+            echo "::error::Cavern detected survey stations not attached to a fixed point:"
+            sed -n '/not attached to a .* point/,/^$/p' cavern_output.txt
+            exit 1
+          fi
 
       # --- Walls GUI automation (DISABLED) ---
       # Status: Walls installs and launches OK on GitHub runners.

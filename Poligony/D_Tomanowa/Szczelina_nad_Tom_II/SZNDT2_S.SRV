@@ -14,7 +14,7 @@ TEAM "J. Nowak"
 INSTRUMENT "nieznany"
 #]
 
-#prefix szcztom2
+#prefix SzczelinaNadTomII
 #date 2008-10-18
 #units meters order=DAV
 #units A=D V=D

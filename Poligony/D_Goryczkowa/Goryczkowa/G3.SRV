@@ -1,7 +1,7 @@
 #units meters order=AVD
 #units A=D V=D
 #date 2012-03-11
-#prefix g3
+#prefix Goryczkowa.G3
 ;Goryczkowa
 ;team "Jan Smoll" pictures
 ;team "Gabika Majernickova" instruments

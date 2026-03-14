@@ -1,7 +1,8 @@
 ;Kolanko
 #units order=avd
+#prefix WielkaSniezna.Kolanko
 ;
-w1	KO000	19.83	-55.99	13.70
+WielkaSniezna.Ciag:w1	KO000	19.83	-55.99	13.70
 KOKO00	KOKO01	331.62	0.00	0.99
 KOKO01	KOKO02	199.96	12.82	2.07
 KOKO02	KOKO03	178.04	-43.20	5.22

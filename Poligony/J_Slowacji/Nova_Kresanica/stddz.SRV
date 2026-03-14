@@ -3,7 +3,7 @@
 #date 2007-01-03
 ;TODO data prawdopodobnie bledna
 ;TODO brak info kto mierzyl
-#prefix nvk
+#prefix NovaKresanica
 nvk47	nvk57	103.00	44.00	7.34	<1.00,3.00,0.00,1.00>
 nvk57	nvk58	127.50	52.00	7.90	<0.00,1.00,2.00,2.00>
 nvk58	nvk59	238.00	-3.50	11.60	<1.00,1.50,1.00,0.00>

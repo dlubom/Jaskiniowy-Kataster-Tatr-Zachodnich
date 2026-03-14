@@ -1,6 +1,9 @@
-;Przy Przechodzie
+#prefix PrzyPrzechodzie
 #Units Meters Order=dav
 #Fix	 jp0 	421685.34 	5454857.60 	1583.5
+#flag	jp0	/Przy Przechodzie
+#flag	jp0	/ENTRANCE
+#note	jp0	/Przy Przechodzie
 jp0	jp1	5.55	243.95	25.51
 jp1	jp2	3.10	0.00	90.00
 jp2	jp3	7.20	232.63	16.12

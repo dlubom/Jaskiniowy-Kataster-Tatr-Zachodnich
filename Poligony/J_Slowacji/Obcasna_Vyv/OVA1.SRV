@@ -17,10 +17,11 @@ INSTRUMENT		"unknown"
 
 #units meters order=DVA
 #units A=D V=D
-#prefix OV_A1
-#note	OV_A1_COORD:o1	/Obcasna Vyvieracka
-#flag	OV_A1_COORD:o1	/Obcasna Vyvieracka
-OV_A1_COORD:o1	2	2.02	-81.6	52.0	;VCHOD
+#prefix ObcasnaVyv.A1
+#note	ObcasnaVyv.Coord:o1	/Obcasna Vyvieracka
+#flag	ObcasnaVyv.Coord:o1	/Obcasna Vyvieracka
+#flag	ObcasnaVyv.Coord:o1	/ENTRANCE
+ObcasnaVyv.Coord:o1	2	2.02	-81.6	52.0	;VCHOD
 2	3	2.93	-21.2	280.0
 3	4	12.61	-0.3	272.0	;HLADINA I.SIFON
 4	5	8.26	-14.5	284.5	;I.SIFON

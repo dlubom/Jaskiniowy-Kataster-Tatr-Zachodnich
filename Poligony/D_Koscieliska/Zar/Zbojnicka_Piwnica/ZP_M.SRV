@@ -11,7 +11,8 @@ DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix zbpiwn
+#prefix ZbojnickaPiwnica
 #flag	0	/Zbojnicka Piwnica
+#flag	0	/ENTRANCE
 #note	0	/Zbojnicka Piwnica
 #fix	0	E19.865280	N49.236430	1250.0m

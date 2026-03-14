@@ -11,4 +11,8 @@ DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#fix  td0807  E19:52:01.900  N49:14:58.900  1112.2m
+#prefix Mrozna
+#flag	0	/Jaskinia Mrozna
+#flag	0	/ENTRANCE
+#note	0	/Jaskinia Mrozna
+#fix  0  E19:52:01.900  N49:14:58.900  1112.2m

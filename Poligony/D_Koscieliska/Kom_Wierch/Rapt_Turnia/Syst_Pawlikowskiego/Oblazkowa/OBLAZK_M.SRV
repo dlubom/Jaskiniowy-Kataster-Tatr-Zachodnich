@@ -11,7 +11,8 @@ DATA_SOURCE		"Panstwowy Instytut Geologiczny, F. Filar"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix OBLAZ
+#prefix Oblazkowa
 #flag	0.0	/Oblazkowa
+#flag	0.0	/ENTRANCE
 #note	0.0	/Oblazkowa
 

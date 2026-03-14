@@ -14,7 +14,7 @@ TEAM "J. Nowak, S. Golosz, M. Romanski"
 INSTRUMENT "nieznany"
 #]
 
-#prefix kammleko
+#prefix KamienneMleko
 #date 2008-12-01	;TODO dzien nieznany
 #units meters order=DAV
 #units A=D V=D

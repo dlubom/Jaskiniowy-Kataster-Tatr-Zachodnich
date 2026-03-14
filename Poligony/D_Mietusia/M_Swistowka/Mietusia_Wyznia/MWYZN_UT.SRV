@@ -14,7 +14,7 @@ TEAM "rw kc mw"
 INSTRUMENT "DistoXBLE"
 #]
 
-#prefix td1001
+#prefix MietusiaWyznia
 #units meters order=DAV
 #units A=D V=D
 #units DECL=-6.1
