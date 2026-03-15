@@ -4,7 +4,6 @@ on:
   push:
     tags:
       - 'v*'
-    branches: [feature/caveview-3d]  # TODO: usunac po testach
   workflow_dispatch:
 
 permissions:
