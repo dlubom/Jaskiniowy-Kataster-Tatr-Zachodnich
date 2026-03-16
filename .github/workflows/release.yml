@@ -41,7 +41,8 @@ jobs:
             -x "*.ntp" \
             -x "*.wrl" \
             -x "*.log" \
-            -x "*.lst"
+            -x "*.lst" \
+            -x "web/*"
 
       - name: Extract release notes from CHANGELOG.md
         id: notes

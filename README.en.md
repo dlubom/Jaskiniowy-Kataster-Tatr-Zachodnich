@@ -2,13 +2,15 @@
 
 # Tatra Cave Registry
 
-![Walls 2D screen](walls_2d_screen.png)
-![Walls 2D screen](walls_3d_screen.png)
-![Survex Aven](Survex.jpeg)
+![Walls 2D screen](doc/walls_2d_screen.png)
+![Walls 2D screen](doc/walls_3d_screen.png)
+![Survex Aven](doc/Survex.jpeg)
 
 [![Latest Release](https://img.shields.io/github/v/release/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich)](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
 
 [Download the latest release](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
+
+[3D Model online](https://dlubom.github.io/Jaskiniowy-Kataster-Tatr-Zachodnich/)
 
 ### Project Description
 The project aims to compile all cartographic data related to the caves of the Tatra Mountains in one place. Utilizing the Walls software, the primary goal is to create a spatial compilation of measurement sequences, cave entrance coordinates, and terrain models. The project is open to all who are interested, to facilitate exploratory and educational activities, and to support scientific research. Gathering comprehensive and accurate data presents a challenge due to the diversity of methods and times of their execution.

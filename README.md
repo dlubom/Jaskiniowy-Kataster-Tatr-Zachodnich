@@ -2,13 +2,15 @@
 
 # Jaskiniowy Kataster Tatr
 
-![Walls 2D screen](walls_2d_screen.png)
-![Walls 2D screen](walls_3d_screen.png)
-![Survex Aven](Survex.jpeg)
+![Walls 2D screen](doc/walls_2d_screen.png)
+![Walls 2D screen](doc/walls_3d_screen.png)
+![Survex Aven](doc/Survex.jpeg)
 
 [![Latest Release](https://img.shields.io/github/v/release/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich)](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
 
 [Pobierz najnowsze wydanie](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
+
+[Model 3D online](https://dlubom.github.io/Jaskiniowy-Kataster-Tatr-Zachodnich/)
 
 ### Opis projektu
 Projekt ma na celu zgromadzenie w jednym miejscu wszystkich danych kartograficznych dotyczących tatrzańskich jaskiń. Wykorzystując oprogramowanie Walls, głównym celem jest stworzenie zestawienia przestrzennego ciągów pomiarowych, współrzędnych wejść do jaskiń oraz modelu terenu. Projekt jest otwarty dla wszystkich zainteresowanych, by ułatwić działania eksploracyjne, edukacyjne oraz wspierać badania naukowe. Zebranie kompleksowych i dokładnych danych stanowi wyzwanie ze względu na różnorodność metod i czasu ich wykonania.

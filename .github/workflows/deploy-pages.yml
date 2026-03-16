@@ -1,0 +1,88 @@
+name: Deploy 3D Viewer
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  SURVEX_VERSION: "1.4.20"
+  CAVEVIEW_VERSION: "2.9.0"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Cache Survex
+        id: cache-survex
+        uses: actions/cache@v4
+        with:
+          path: ~/survex
+          key: survex-${{ env.SURVEX_VERSION }}-ubuntu
+
+      - name: Install Survex
+        run: |
+          if [ "${{ steps.cache-survex.outputs.cache-hit }}" = "true" ]; then
+            echo "Using cached Survex"
+            sudo apt-get update && sudo apt-get install -y libproj25 libgdal34t64
+          else
+            sudo apt-get update && sudo apt-get install -y build-essential libwxgtk3.2-dev libproj-dev libgdal-dev
+            wget https://survex.com/software/${{ env.SURVEX_VERSION }}/survex-${{ env.SURVEX_VERSION }}.tar.gz
+            tar xf survex-${{ env.SURVEX_VERSION }}.tar.gz
+            cd survex-${{ env.SURVEX_VERSION }}
+            ./configure --prefix=$HOME/survex
+            make
+            make install
+          fi
+          echo "$HOME/survex/bin" >> $GITHUB_PATH
+
+      - name: Compile with cavern
+        run: cavern KATASTER.wpj
+
+      - name: Prepare public directory
+        run: |
+          mkdir -p public
+
+          # index.html
+          cp web/index.html public/
+
+          # 3D model
+          cp KATASTER.3d public/
+
+          # CaveView.js from GitHub Release
+          wget -q https://github.com/aardgoose/CaveView.js/releases/download/${{ env.CAVEVIEW_VERSION }}/CaveView.zip
+          unzip -q CaveView.zip -d public/
+
+          # Set version string
+          VERSION=$(git describe --tags --abbrev=0 2>/dev/null || echo "master@$(git rev-parse --short HEAD)")
+          sed -i "s/__VERSION__/$VERSION/" public/index.html
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
