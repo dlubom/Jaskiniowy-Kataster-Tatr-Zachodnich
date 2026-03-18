@@ -1,0 +1,288 @@
+{
+	"settings": {
+		"title": "Ustawienia",
+		"survey": {
+			"header": "Pomiar",
+			"caption": "Plik"
+		},
+		"view": {
+			"header": "Widok",
+			"camera": {
+				"caption": "Typ kamery",
+				"orthographic": "Ortogonalna",
+				"perspective": "Perspektywiczna",
+				"anaglyph": "Anaglif"
+			},
+			"viewpoints": {
+				"caption": "Punkt widzenia",
+				"none": "<wybierz widok>",
+				"plan": "Plan",
+				"elevation_n": "Przekrój N",
+				"elevation_s": "Przekrój S",
+				"elevation_e": "Przekrój E",
+				"elevation_w": "Przekrój W"
+			},
+			"eye_separation": "Rozstaw oczu",
+			"vertical_scaling": "Skalowanie pionowe",
+			"linewidth": "Grubość linii",
+			"autorotate": "Autorotacja",
+			"rotation_speed": "Prędkość obrotu"
+		},
+		"shading": {
+			"header": "Cieniowanie",
+			"caption": "Odcinki podziemne",
+			"height": "wg wysokości",
+			"length": "wg długości odcinka",
+			"inclination": "wg nachylenia",
+			"height_cursor": "kursor wysokości",
+			"fixed": "stały kolor",
+			"survey": "pomiar",
+			"route": "trasa",
+			"depth": "głębokość",
+			"depth_cursor": "kursor głębokości",
+			"distance": "odległość",
+			"beck": "beck"
+		},
+		"selected_route": "Wybrana trasa",
+		"no_routes": "brak tras",
+		"visibility": {
+			"header": "Widoczność",
+			"legs": "Linie pomiarowe",
+			"entrances": "Etykiety wejść",
+			"entrance_dots": "Znaczniki wejść",
+			"stations": "Punkty pomiarowe",
+			"labels": "Etykiety punktów",
+			"comments": "Komentarze punktów",
+			"walls": "Ściany (LRUD)",
+			"scraps": "Scrapy",
+			"model": "Model",
+			"splays": "Odcinki boczne",
+			"duplicates": "Odcinki zdublowane",
+			"traces": "Barwienia",
+			"warnings": "Ostrzeżenia",
+			"box": "Ramka",
+			"hud": "Wskaźniki",
+			"fog": "Mgła",
+			"grid": "Siatka"
+		},
+		"controls": {
+			"header": "Sterowanie",
+			"svx_control_mode": "Sterowanie Aven",
+			"zoom_to_cursor": "Zoom do kursora",
+			"wheel_tilt": "Kółko myszy - pochylenie"
+		},
+		"ui": {
+			"selection_tree": "Drzewo wyboru"
+		},
+		"default": {
+			"header": "Domyślne",
+			"save": "Zapisz ustawienia",
+			"reset": "Przywróć domyślne"
+		},
+		"colors": {
+			"header": "Kolory",
+			"background_color": "Tło",
+			"entrance_text": "Tekst wejść",
+			"entrance_background": "Tło wejść",
+			"entrance_marker": "Znacznik wejść",
+			"bounding_box": "Ramka",
+			"legs_fixed": "Linie pomiarowe (stały)",
+			"surface_fixed": "Linie powierzchniowe (stały)",
+			"duplicate_fixed": "Linie zdublowane (stały)",
+			"hud_text": "Tekst skali",
+			"defaults": "Przywróć domyślne kolory"
+		}
+	},
+	"surface": {
+		"title": "Powierzchnia",
+		"surface": {
+			"header": "Elementy powierzchniowe",
+			"legs": "Odcinki powierzchniowe",
+			"shading": {
+				"caption": "Cieniowanie",
+				"height": "wg wysokości",
+				"inclination": "wg nachylenia",
+				"height_cursor": "kursor wysokości",
+				"fixed": "stały kolor"
+			}
+		},
+		"terrain": {
+			"header": "Teren",
+			"terrain": "Teren widoczny",
+			"shading": {
+				"caption": "Cieniowanie",
+				"relief": "cieniowanie reliefowe",
+				"height": "wg wysokości",
+				"overlay": "nakładka mapy",
+				"contours": "poziomice"
+			},
+			"overlay": {
+				"caption": "Nakładka"
+			},
+			"opacity": "Przezroczystość",
+			"datum_shift": "Zastosuj przesunięcie",
+			"datum_shift_value": "Przesunięcie pionowe",
+			"lighting": "Oświetlenie kierunkowe",
+			"lightingmode": "Oświetlenie",
+			"lightingmodes": {
+				"none": "płaskie",
+				"single": "kierunkowe",
+				"multiple": "wielokierunkowe"
+			},
+			"downloadTileSet": "pobierz specyfikację kafelków"
+		}
+	},
+	"selection": {
+		"title": "Wybór",
+		"header": "Wybór"
+	},
+	"edit": {
+		"title": "Edycja",
+		"mode": "tryb edycji",
+		"intro": "wybierz tryb edycji",
+		"modes": {
+			"none": "- brak -",
+			"route": "Trasy",
+			"trace": "Barwienia",
+			"entrances": "Wejścia"
+		},
+		"entrance": {
+			"header": "Wejścia"
+		},
+		"route": {
+			"header": "Trasy",
+			"current": "Aktualna trasa",
+			"save": "Zapisz",
+			"new": "Nowa trasa",
+			"add": "Dodaj",
+			"download": "Pobierz"
+		},
+		"trace": {
+			"header": "Barwienia",
+			"start": "Początek",
+			"end": "Koniec"
+		}
+	},
+	"info": {
+		"title": "Informacje",
+		"header": "Informacje",
+		"file": "plik",
+		"more": "Więcej informacji:",
+		"summary": "Przeglądarka 3D jaskiń WebGL dla plików Survex (.3d), Therion (.lox) i Compass (.plt).",
+		"github": "CaveView na GitHub",
+		"stats": {
+			"header": "Statystyki pomiaru",
+			"legs": "Liczba odcinków",
+			"totalLength": "Łączna długość",
+			"minLength": "Najkrótszy odcinek",
+			"maxLength": "Najdłuższy odcinek",
+			"splayCount": "Odcinki boczne",
+			"surfaceCount": "Odcinki powierzchniowe",
+			"duplicateCount": "Odcinki zdublowane",
+			"otherLegs": "Inne odcinki"
+		}
+	},
+	"help": {
+		"title": "Pomoc",
+		"header_svx": "Klawisze (tryb Survex)",
+		"header_native": "Klawisze (tryb natywny)",
+		"shading": {
+			"header": "Cieniowanie",
+			"height": "wysokość",
+			"inclination": "nachylenie odcinka",
+			"length": "długość odcinka",
+			"height_cursor": "kursor wysokości",
+			"single": "stały kolor",
+			"survey": "sekcja pomiaru",
+			"route": "trasa",
+			"depth": "głębokość pod powierzchnią",
+			"depth_cursor": "kursor głębokości",
+			"cursor_up": "kursor w górę",
+			"cursor_down": "kursor w dół",
+			"distance": "odległość",
+			"flat": "cieniowanie płaskie"
+		},
+		"view": {
+			"header": "Widok",
+			"full_screen": "pełny ekran",
+			"orthogonal": "widok ortogonalny",
+			"perspective": "widok perspektywiczny",
+			"reset": "widok początkowy",
+			"center": "wycentruj na wybranym",
+			"next": "następna jaskinia",
+			"plan": "plan",
+			"elevation": "przekrój",
+			"north": "północ",
+			"east": "wschód",
+			"south": "południe",
+			"west": "zachód",
+			"rotate_clockwise": "obróć w prawo",
+			"rotate_anticlockwise": "obróć w lewo",
+			"zoom_in": "przybliż",
+			"zoom_out": "oddal",
+			"auto_rotate": "autorotacja",
+			"rotate_speed_up": "szybciej",
+			"rotate_speed_down": "wolniej",
+			"reverse_rotation": "odwróć kierunek",
+			"zoom_to_cursor": "zoom do kursora",
+			"control_mode": "zmień tryb sterowania",
+			"decrease_focal_length": "zmniejsz ogniskową",
+			"increase_focal_length": "zwiększ ogniskową",
+			"show_labels": "pokaż nazwy punktów pod kursorem"
+		},
+		"visibility": {
+			"header": "Widoczność",
+			"scraps": "scrapy wł/wył [tylko lox]",
+			"bounding_box": "ramka wł/wył",
+			"station_labels": "etykiety punktów wł/wył",
+			"entrance_labels": "etykiety wejść wł/wył",
+			"splays": "odcinki boczne wł/wył",
+			"survey": "odcinki podziemne wł/wył",
+			"surface": "odcinki powierzchniowe wł/wył",
+			"terrain": "teren wł/wył",
+			"walls": "ściany LRUD wł/wył",
+			"stations": "punkty pomiarowe wł/wył",
+			"opacity_down": "zmniejsz przezroczystość terenu",
+			"opacity_up": "zwiększ przezroczystość terenu"
+		},
+		"selection": {
+			"header": "Wybór",
+			"remove": "usuń wszystko poza wybranym"
+		}
+	},
+	"exports": {
+		"title": "Eksport",
+		"gltf_export": {
+			"header": "Eksport glTF",
+			"walls": "dołącz ściany LRUD",
+			"scraps": "dołącz scrapy",
+			"legs": "dołącz linie pomiarowe",
+			"rotate_axes": "obróć osie",
+			"export": "Pobierz",
+			"binary_format": "Eksportuj jako .glb"
+		},
+		"png_export": {
+			"header": "Eksport obrazu (PNG)",
+			"export": "Zrzut ekranu",
+			"size": "Rozmiar (px)",
+			"line_scale": "Skala linii"
+		}
+	},
+	"hud": {
+		"height": "wysokość",
+		"leg_length": "długość odcinka",
+		"depth": "głębokość",
+		"inclination": "nachylenie"
+	},
+	"dnd": {
+		"splash_text": "Przeciągnij&nbsp;plik .3d lub .lox tutaj aby&nbsp;załadować"
+	},
+	"popup": {
+		"leg_length": "Długość odcinka",
+		"segment_length": "Długość segmentu",
+		"direct_length": "Długość bezpośrednia",
+		"depth_from_surface": "głębokość od powierzchni",
+		"adjusted_depth": "głębokość skorygowana",
+		"distance": "odległość"
+	}
+}

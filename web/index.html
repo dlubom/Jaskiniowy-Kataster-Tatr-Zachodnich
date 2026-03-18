@@ -71,14 +71,22 @@
 
     <button class="info-btn" onclick="document.getElementById('info-popup').classList.toggle('visible')" title="Informacje">i</button>
 
-    <div id="info-popup" class="info-popup">
+    <div id="info-popup" class="info-popup visible">
         <div class="title">Jaskiniowy Kataster Tatr Zachodnich</div>
         <div class="version">__VERSION__</div>
-        <div>Dane pomiarowe jaskin Tatr Zachodnich w formacie Walls/Survex</div>
+        <div>Interaktywny model 3D jaskiń Tatr Zachodnich</div>
+        <div style="margin-top: 6px; font-size: 12px; color: #aaa;">
+            Dane pomiarowe w formacie Walls/Survex<br>
+            Układ współrzędnych: WGS 84, UTM zona 34N<br>
+            Teren: Cesium World Terrain
+        </div>
         <div style="margin-top: 6px;">
             <a href="https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich" target="_blank" rel="noopener">GitHub</a>
             &middot;
             <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+        </div>
+        <div style="margin-top: 4px; font-size: 11px; color: #777;">
+            Koordynatorzy: Dariusz Lubomski, Paweł Gogolak
         </div>
     </div>
 
