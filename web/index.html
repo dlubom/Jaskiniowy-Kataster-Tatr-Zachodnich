@@ -91,6 +91,8 @@
             var viewer = new CV2.CaveViewer( 'viewer', {
                 home: 'CaveView/',
                 surveyDirectory: './',
+                cesiumAccessToken: '__CESIUM_TOKEN__',
+                displayCRS: 'ORIGINAL',
                 showEditPage: false,
                 showExportPage: true,
                 saturatedGradient: true,
@@ -102,15 +104,14 @@
                     HUD: true,
                     stations: false,
                     stationLabels: true,
-                    entrances: true,
+                    entrances: false,
                     splays: false,
                     walls: false,
-                    surface: true
+                    surface: true,
+                    terrain: true,
+                    terrainDatumShift: true
                 }
             } );
-
-            // TODO: przygotowac kafelki DTM dla CaveView (terrain tiles)
-            // viewer.addOverlay( 'OpenStreetMap', new OSMProvider() );
 
             var ui = new CV2.CaveViewUI( viewer );
 
