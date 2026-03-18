@@ -4,6 +4,19 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.2.2] - 2026-03-18
+
+Poprawa niepołączonych sekcji jaskini Miętusia Wyżnia
+
+### Dodane
+- Claude skills:
+  - konwersja .svx -> .SRV
+  - kompilacja cavern
+
+### Zmienione
+- Podłączenie pominiętych sekcji w jaskini Miętusia Wyżnia
+
+
 ## [v1.2.1] - 2026-03-18
 
 Poprawki i rozbudowa modelu 3D online (CaveView na GitHub Pages).
