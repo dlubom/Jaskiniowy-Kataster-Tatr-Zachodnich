@@ -16,7 +16,6 @@ Poprawa niepołączonych sekcji jaskini Miętusia Wyżnia
 ### Zmienione
 - Podłączenie pominiętych sekcji w jaskini Miętusia Wyżnia
 
-
 ## [v1.2.1] - 2026-03-18
 
 Poprawki i rozbudowa modelu 3D online (CaveView na GitHub Pages).
