@@ -63,6 +63,7 @@
         .info-popup .version { color: #aaa; font-size: 12px; }
         .info-popup a { color: #8cb4ff; text-decoration: none; }
         .info-popup a:hover { text-decoration: underline; }
+        .overlay-branding { display: none !important; }
     </style>
 </head>
 <body>
@@ -71,14 +72,22 @@
 
     <button class="info-btn" onclick="document.getElementById('info-popup').classList.toggle('visible')" title="Informacje">i</button>
 
-    <div id="info-popup" class="info-popup">
+    <div id="info-popup" class="info-popup visible">
         <div class="title">Jaskiniowy Kataster Tatr Zachodnich</div>
         <div class="version">__VERSION__</div>
-        <div>Dane pomiarowe jaskin Tatr Zachodnich w formacie Walls/Survex</div>
+        <div>Interaktywny model 3D jaskiń Tatr Zachodnich</div>
+        <div style="margin-top: 6px; font-size: 12px; color: #aaa;">
+            Dane pomiarowe w formacie Walls/Survex<br>
+            Układ współrzędnych: WGS 84, UTM zona 34N<br>
+            Teren: Cesium World Terrain
+        </div>
         <div style="margin-top: 6px;">
             <a href="https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich" target="_blank" rel="noopener">GitHub</a>
             &middot;
             <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+        </div>
+        <div style="margin-top: 4px; font-size: 11px; color: #777;">
+            Koordynatorzy: Dariusz Lubomski, Paweł Gogolak
         </div>
     </div>
 
@@ -91,6 +100,8 @@
             var viewer = new CV2.CaveViewer( 'viewer', {
                 home: 'CaveView/',
                 surveyDirectory: './',
+                cesiumAccessToken: '__CESIUM_TOKEN__',
+                displayCRS: 'ORIGINAL',
                 showEditPage: false,
                 showExportPage: true,
                 saturatedGradient: true,
@@ -102,19 +113,22 @@
                     HUD: true,
                     stations: false,
                     stationLabels: true,
-                    entrances: true,
+                    entrances: false,
                     splays: false,
                     walls: false,
-                    surface: true
+                    surface: true,
+                    terrain: true,
+                    terrainDatumShift: true
                 }
             } );
-
-            // TODO: przygotowac kafelki DTM dla CaveView (terrain tiles)
-            // viewer.addOverlay( 'OpenStreetMap', new OSMProvider() );
 
             var ui = new CV2.CaveViewUI( viewer );
 
             ui.loadCave( 'KATASTER.3d' );
+
+            viewer.addEventListener( 'newCave', function () {
+                viewer.polarAngle = 55 * Math.PI / 180;
+            } );
 
             document.addEventListener( 'click', function ( e ) {
                 var popup = document.getElementById( 'info-popup' );

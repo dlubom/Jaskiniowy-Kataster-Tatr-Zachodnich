@@ -71,9 +71,16 @@ jobs:
           wget -q https://github.com/aardgoose/CaveView.js/releases/download/${{ env.CAVEVIEW_VERSION }}/CaveView.zip
           unzip -q CaveView.zip -d public/
 
-          # Set version string
+          # Patch CaveView 2.9.0 bugs (CRS regex + Cesium terrain worker)
+          python3 web/patch-caveview.py public/CaveView
+
+          # Polish language file for CaveView UI
+          cp web/lang-pl.json public/CaveView/lib/
+
+          # Set version string and Cesium ION token
           VERSION=$(git describe --tags --abbrev=0 2>/dev/null || echo "master@$(git rev-parse --short HEAD)")
           sed -i "s/__VERSION__/$VERSION/" public/index.html
+          sed -i "s/__CESIUM_TOKEN__/${{ secrets.CESIUM_ION_TOKEN }}/" public/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
