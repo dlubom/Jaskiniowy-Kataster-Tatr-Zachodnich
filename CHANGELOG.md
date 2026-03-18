@@ -4,6 +4,22 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.2.1] - 2026-03-18
+
+Poprawki i rozbudowa modelu 3D online (CaveView na GitHub Pages).
+
+### Dodane
+- Teren 3D Cesium World Terrain w viewerze CaveView (token Cesium ION)
+- Polskie tlumaczenie interfejsu CaveView (lang-pl.json)
+- Rozbudowany popup informacyjny: opis techniczny, uklad wspolrzednych, koordynatorzy
+- Popup widoczny domyslnie po zaladowaniu strony
+
+### Zmienione
+- Viewer: displayCRS ustawiony na ORIGINAL (zachowanie oryginalnych wspolrzednych UTM)
+- Viewer: domyslne pochylenie kamery -35°, teren i datum shift wlaczone
+- Patch CaveView 2.9.0: case-insensitive regex CRS (EPSG uppercase z Survex), fix webMeshWorker (Cesium terrain crash)
+- Token Cesium ION przechowywany w GitHub Secrets zamiast hardcoded
+
 ## [v1.2.0] - 2026-03-13
 
 ### Dodane
