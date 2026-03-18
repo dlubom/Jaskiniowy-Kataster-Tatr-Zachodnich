@@ -4,6 +4,16 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.2.3] - 2026-03-18
+
+Dodano Jaskinie Miętusią (T.D-11.01)
+
+### Dodane
+- Jaskinia Miętusia (T.D-11.01): dane pomiarowe z 2022-2024, Speleoklub Warszawski
+  - Rura
+  - Sala Matki Boskiej
+- Nowa grupa Wantule w D_Mietusia w KATASTER.wpj
+
 ## [v1.2.2] - 2026-03-18
 
 Poprawa niepołączonych sekcji jaskini Miętusia Wyżnia

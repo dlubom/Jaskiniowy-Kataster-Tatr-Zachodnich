@@ -50,6 +50,7 @@ V súčasnosti projekt obsahuje údaje pre nasledujúce jaskyne:
 - Jaskinia Mała w Mułowej
 - Jaskinia Małołącka
 - Jaskinia Marmurowa
+- Jaskinia Miętusia
 - Jaskinia Miętusia Wyżnia
 - Jaskinia Mroźna
 - Jaskinia Mylna

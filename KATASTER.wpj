@@ -921,7 +921,7 @@
 .BOOK	Dolina Mietusia
 .NAME	D-MIET
 .PATH	D_Mietusia
-.STATUS	8
+.STATUS	9
 .BOOK	Mala Swistowka
 .NAME	MALASW
 .PATH	M_Swistowka
@@ -980,6 +980,28 @@
 .STATUS	8
 .SURVEY	MWYZN_MRS
 .NAME	MWYZN_MRS
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
+.BOOK	Wantule
+.NAME	WANTULE
+.PATH	Wantule
+.STATUS	8
+.BOOK	Jaskinia Mietusia
+.NAME	MIET
+.PATH	Mietusia
+.STATUS	8
+.SURVEY	Jaskinia Mietusia meta
+.NAME	MIET_M
+.STATUS	8
+.SURVEY	Jaskinia Mietusia powierzchnia
+.NAME	MIET_PW
+.STATUS	8
+.SURVEY	Jaskinia Mietusia rura
+.NAME	MIET_RU
+.STATUS	8
+.SURVEY	Jaskinia Mietusia Sala Matki Boskiej
+.NAME	MIET_MB
 .STATUS	8
 .ENDBOOK
 .ENDBOOK

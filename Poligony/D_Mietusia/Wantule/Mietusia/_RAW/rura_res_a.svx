@@ -1,0 +1,38 @@
+﻿;  OBLIGATORY FIELDS
+;    Cave_name         Jaskinia Mietusia
+;    Section_name      Rura
+;    Entry_last_update 2022-10-22
+;    Author            Stanislaw Mielczarek - Speleoklub Warszawski
+;    Author            Jan Grzeszek - Speleoklub Warszawski
+;    Author            Joanna Jurczyk - Speleoklub Warszawski
+;    Licence           CC BY SA 4.0
+;    Survey_device     DistoX
+;    Note              Marked as resurvey
+
+; 2023.12.30 created by TopoDroid v 6.2.11
+; mietusia_0-11_tylko_ciąg_pomiarowy
+; Instrument: Pixel 6a
+
+*begin rura_res_a
+  *date 2022.10.22 
+  *team "Stasiak m Janek g asia j" 
+  *units tape meters
+  *units compass degrees
+  *units clino degrees
+  *flags not splay
+  *flags duplicate
+  *data normal from to tape compass clino
+    0 1   2.67 240.1 -13.5
+    1 2   3.59 230.8 -28.5
+    2 3   4.45 264.0 -20.3
+    3 4   3.56 230.7 -22.1
+    4 5   1.31 269.8 -39.0
+    5 6   1.95 255.3 9.9
+    6 7   2.70 268.5 10.8
+    7 8   1.19 249.6 3.1
+    8 9   1.84 261.1 -18.6
+    9 10   3.52 237.9 -27.9
+  *flags not splay
+
+
+*end rura_res_a
