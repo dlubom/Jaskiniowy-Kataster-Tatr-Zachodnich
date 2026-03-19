@@ -27,21 +27,21 @@ Parse the returned JSON for:
 
 If not found by ID, try searching by partial ASCII name.
 
-## Step 2 — Convert coordinates to DMS (single Node.js call)
+## Step 2 — Determine coordinates (coordinate source priority)
 
-Run one Node.js command to produce both the DMS string and verify the location:
+**Always use decimal degrees** for `#fix` (preferred format, per project convention).
 
-```bash
-node -e "
-const lat = <latitude>; const lon = <longitude>;
-const toDMS = (v) => {
-  const d = Math.floor(v), m = Math.floor((v-d)*60);
-  const s = (((v-d)*60-m)*60).toFixed(3).padStart(6,'0');
-  return d+':'+String(m).padStart(2,'0')+':'+s;
-};
-console.log('N'+toDMS(lat)+'  E'+toDMS(lon));
-"
-```
+### Which coordinates to use?
+
+Coordinate sources in order of preference:
+1. **GPS from `_RAW/` source files** — most accurate if the survey team recorded GPS readings in their original data. Check source files for GPS stations, `*fix`, or coordinate blocks. If found, use these.
+2. **PIG dump** (`latitude`, `longitude`, `absolute_height_masl`) — official registry data; good fallback. Already in decimal degrees — round to 6 decimal places.
+3. **Ask the user** — if neither source has reliable coords, ask the user to provide them.
+
+**Ask the user explicitly:** after reading the `_RAW/` files, ask: "Do the source files contain GPS coordinates? If yes, which station and what values?" This matters because survey-measured GPS is more accurate than the PIG registry, and the `#fix` station must match the actual survey network.
+
+Format: `E<lon>  N<lat>` (decimal degrees, 6 decimal places)
+Example: `E19.898750  N49.246611  1270.0m`
 
 ## Step 3 — Determine directory path
 
@@ -106,7 +106,7 @@ LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 #flag   <STATION>   /<Cave Label>
 #flag   <STATION>   /ENTRANCE
 #note   <STATION>   /<Cave Label>
-#fix    <STATION>   E<lon-dms>  N<lat-dms>  <elevation>m
+#fix    <STATION>   E<lon-dd>  N<lat-dd>  <elevation>m
 ```
 
 `<STATION>` is the entrance station name in the survey (e.g. `td0807.1.3`).
@@ -115,7 +115,7 @@ If the entrance station is unknown, comment out all three lines and add a TODO n
 ; #flag  ???  /<Cave Label>
 ; #flag  ???  /ENTRANCE
 ; #note  ???  /<Cave Label>
-; #fix   ???  E<lon-dms>  N<lat-dms>  <elevation>m  ; TODO: uzupelnic numer stacji wejscia
+; #fix   ???  E<lon-dd>  N<lat-dd>  <elevation>m  ; TODO: uzupelnic numer stacji wejscia
 ```
 
 ## Step 9 — Create CAVE_S.SRV
