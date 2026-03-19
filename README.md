@@ -50,7 +50,7 @@ Aktualnie projekt zawiera dane dla następujących jaskiń:
 - Jaskinia Mała w Mułowej
 - Jaskinia Małołącka
 - Jaskinia Marmurowa
-- Jaskinia Miętusia
+- Jaskinia Miętusia (fragment)
 - Jaskinia Miętusia Wyżnia
 - Jaskinia Mroźna
 - Jaskinia Mylna

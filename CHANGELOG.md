@@ -6,10 +6,10 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [v1.2.3] - 2026-03-18
 
-Dodano Jaskinie Miętusią (T.D-11.01)
+Dodano fragment Jaskini Miętusiej (T.D-11.01)
 
 ### Dodane
-- Jaskinia Miętusia (T.D-11.01): dane pomiarowe z 2022-2024, Speleoklub Warszawski
+- Jaskinia Miętusia (fragment) (T.D-11.01): dane pomiarowe z 2022-2024, Speleoklub Warszawski
   - Rura
   - Sala Matki Boskiej
 - Nowa grupa Wantule w D_Mietusia w KATASTER.wpj
