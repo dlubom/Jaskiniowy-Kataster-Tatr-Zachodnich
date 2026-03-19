@@ -983,6 +983,28 @@
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
+.BOOK	Wantule
+.NAME	WANTULE
+.PATH	Wantule
+.STATUS	8
+.BOOK	Jaskinia Mietusia
+.NAME	MIET
+.PATH	Mietusia
+.STATUS	8
+.SURVEY	Jaskinia Mietusia meta
+.NAME	MIET_M
+.STATUS	8
+.SURVEY	Jaskinia Mietusia powierzchnia
+.NAME	MIET_PW
+.STATUS	8
+.SURVEY	Jaskinia Mietusia rura
+.NAME	MIET_RU
+.STATUS	8
+.SURVEY	Jaskinia Mietusia Sala Matki Boskiej
+.NAME	MIET_MB
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
 .BOOK	Ratusz Mulowy
 .NAME	RMUL
 .PATH	Ptasia_Studnia

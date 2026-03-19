@@ -1,0 +1,20 @@
+#[
+CAVE_ID			"T.D-11.01"
+CAVE_NAME		"Jaskinia Mietusia"
+UPDATE_DATE		2026-03-18
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Pawel Gogolak"
+COORDINATOR_EMAIL	"pafffel@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"https://github.com/RadostW/jaskinie"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+#]
+
+#prefix Mietusia
+#flag	ru_0	/Jaskinia Mietusia
+#flag	ru_0	/ENTRANCE
+#note	ru_0	/Jaskinia Mietusia
+; GPS 2024-02-10 (Garmin etrex, W. Gutfeter - Speleoklub Warszawski)
+; Stacja pw_3 = gps_mietusia_2024, polaczona z otworem (ru_0) przez pomiary powierzchniowe (MIET_PW.SRV)
+#fix	pw_3	E19.898750	N49.246611	1270.0m

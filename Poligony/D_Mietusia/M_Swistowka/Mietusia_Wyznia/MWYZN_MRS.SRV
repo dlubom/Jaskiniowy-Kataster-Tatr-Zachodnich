@@ -5,8 +5,8 @@ SURVEY_ID		MRS
 SURVEY_NAME		"Mylna Rura Studnia"
 UPDATE_DATE		2026-03-08
 PROJECT_NAME		"Kataster jaskin tatrzanskich"
-COORDINATOR		"Dariusz Lubomski"
-COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+COORDINATOR		"Pawel Gogolak"
+COORDINATOR_EMAIL	"pafffel@gmail.com"
 DATA_SOURCE		"https://github.com/RadostW/jaskinie"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
