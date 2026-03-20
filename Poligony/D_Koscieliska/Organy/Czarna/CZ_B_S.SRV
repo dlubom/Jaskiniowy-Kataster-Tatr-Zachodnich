@@ -1,7 +1,31 @@
-;Ciag glowny Jaskini Czarnej
-;Dane zrodlowe: tabela wspolrzednych i wysokosci stacji (Borowiec)
+#[
+CAVE_ID			"T.E-09.12"
+CAVE_NAME		"Jaskinia Czarna"
+SURVEY_ID		B1
+SURVEY_NAME		"Ciag glowny - pomiary geodezyjne NKG AGH"
+UPDATE_DATE		2026-03-20
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"Adam Pyka, Wladyslaw Borowiec"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM			"Naukowe Kolo Geodetow AGH Krakow, kier. Wladyslaw Borowiec"
+INSTRUMENT		"pomiar geodezyjny"
+#]
+
+;Ciag glowny Jaskini Czarnej (otwor glowny -> Colorado)
+;Pomiary: luty 1972, marzec 1972, luty 1973
+;Zespol Naukowego Kola Geodetow AGH w Krakowie, kier. W. Borowiec
+;Dane zrodlowe: tabela wspolrzednych i wysokosci stacji
 ;Konwersja na wektory RECT (roznice wspolrzednych miedzy stacjami)
 ;Zrodlo: _RAW/02/
+;
+;Uwaga: os X siatki Borowca zorientowana wg polnocny magnetycznej z 1972/73.
+;Pozniejsze pomiary azymutalno-tasmowe nawiazujace do tych punktow
+;prawdopodobnie nie uwzglednialy deklinacji magnetycznej.
+;TODO: sprawdzic czy wektory RECT wymagaja rotacji o deklinacje z 1972/73
+;      (ok. 1-2 deg E dla Tatr Zachodnich) - zweryfikowac z _RAW/02/
 
 #prefix Czarna.Borowiec
 #units meters RECT order=ENU
