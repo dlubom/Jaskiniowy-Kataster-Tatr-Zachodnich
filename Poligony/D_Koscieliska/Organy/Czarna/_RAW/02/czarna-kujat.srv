@@ -1,0 +1,103 @@
+; Autor pomiarów: Kujat, (prawdopodobnie) luty 1981
+; Komentarze na podstawie listu Kujata do Izy Luty z 3.03.1981
+
+*begin czarna-kujat
+
+*date 1981.02
+
+; Ustawienie układu współrzędnych na długość/szerokość geograficzną
+*cs long-lat
+
+; Punkt nawiązania (fix) podany dla otworu III
+*fix 0 19:52:13.337 49:14:39.787 1326.0 ;TUTAJ SĄ BŁĘDNE DANE FIX-a!!!
+
+; Deklinacja magnetyczna w Tatrach dla lutego 1981 r.
+; Na podstawie modelu IGRF (International Geomagnetic Reference Field) 
+; wynosiła ona ok. +1.5 stopnia (na wschód).
+*calibrate declination 1.5
+
+; Definicja kolumn danych (Od, Do, Azymut, Upad, Odległość)
+*data normal from to compass clino tape
+;
+; Komentarz Kujata:
+; Otwór /0/ -> S. Bernartda /12/ -> Kor. Trzech Studni /1200-1213/
+; i spowrotem do 12 -> Korytarz Mamuci do końcowego zawaliska /12-26/
+; -> boczny korytarz od p. 25 /2500-2507/
+; Nawiązanie do ciągu głównego (Borowca) - mój punkt 13 pokrywa się z punktem 70 ciągu gł.
+;Azymut i upad podane w stopniach (360*).
+;
+0	1	165	-22	3.35	; 0 - otwór III
+1	2	201	0	3.05
+2	3	199	-11	9.42
+3	4	180	8	7.25
+4	5	194	-23	10.97
+5	6	222	-46	10.15
+6	7	240	-64	4.35
+7	8	326	-63	2.17
+8	9	315	-39	3.03
+9	10	192	-41	8.4
+10	11	217	-49	20.32
+11	12	253	-11	14	; 12 - S. Bernarda = 1200
+1200	1201	180	15.3	15.5	; Korytarz Trzech Studni
+1201	1202	203	8.1	2.85
+1202	1203	184	-18	3.87
+1203	1204	211	26.1	16.34
+1204	1205	224	14.4	12.35
+1205	1206	230	-14.4	11.21
+1206	1207	239	-8.1	8.85
+1207	1208	221	-15.3	9.07
+1208	1209	239	-13.5	5.85
+1209	1210	273	-27	6.8
+1210	1211	275	-15.3	3.58
+1211	1212	249	26.1	3.92
+1212	1213	257	-48.6	8.58
+12	13	211	11	14.4	; 13 = 70 z ciągu głównego (Borowca)
+13	14	222	5.2	17.7	; Korytarz Mamuci
+14	15	218	-1.6	17.43
+15	16	240	5.5	19.1
+16	17	242	-5.6	18.32
+17	18	252	-0.6	17.5
+18	19	195	4.6	16.08
+19	20	236	8.9	9.43
+20	21	195	-18.2	20.05
+21	22	231	8.5	20.05
+22	23	238	-12.5	19.18
+23	24	222	1.9	18.89
+24	25	239	31.7	6.6
+25	26	219	-19.6	12.92
+2500	2501	90	3.6	12.5	; 25 = 2500
+2501	2502	90	0	5	; boczny korytarz
+2502	2503	0	90	3
+2503	2504	230	0	7.4
+2504	2505	203	40.5	1.4
+2505	2506	245	3.6	5.8
+2506	2507	191	0	2.3
+;
+; Komentarz Kujata:
+; Punkt 65 ciągu głównego (W Kor. Tryumfalnym nad Brązowym Progiem) -> boczny korytarz (6500-6509)
+; łączy się z Ciągiem Głównym w okolicy Mostu Trwogi (pomiar nie zamknięty).
+; Azymut i upad podane w gradach (400*).
+;
+; --- ZMIANA JEDNOSTEK ---
+; Od tego miejsca pomiary azymutu i upadu wykonano w gradach (400)
+*units compass grads
+*units clino grads
+65	6501	56.7	-2.7	14.6	; 65 - z ciągu głównego Borowca
+6501	6502	56.7	29.7	11.9	; (w korytarzu Triumfalnym
+6502	6503	53.1	26.1	5.4	; nad Brązowym Progiem)
+6503	6504	158.4	50.4	8.05	; boczny korytarz, łączy się
+6504	6505	204.3	26.1	12.02	; z ciągiem głównym w okolicy
+6505	6506	225	-13.5	9.55	; Mostu Trwogi (ciąg nie dowiązany z tej strony)
+6506	6507	233.1	-36.9	6.2
+6507	6508	240.3	17.1	6.45
+6508	6509	213.3	8.1	12.2
+; --- POWRÓT DO STANDARDU ---
+*units compass degrees
+*units clino degrees
+
+; Powiązania punktów opisane w uwagach
+*equate 12 1200
+*equate 13 70
+*equate 25 2500
+
+*end czarna-kujat

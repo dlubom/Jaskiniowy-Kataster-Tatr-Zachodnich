@@ -37,7 +37,14 @@ INSTRUMENT		"unknown-diving"
 16.0	17.0	6	80	8.5	10.5
 17.0	18.0	5	90	10.5	11.7
 18.0	19.0	8	100	11.7	11
-19.0	20.0	1.5	135	11	8.5
+;Korekta dystansu 19.0->20.0: oryginalny pomiar 1.5 m, ale zmiana glebokosci
+;wynosi 2.5 m (z 11 m na 8.5 m), co jest fizycznie niemozliwe przy takim dystansie.
+;Dane zrodlowe (_RAW/Nurkowanie.txt): "135;8,5;1,5" — wartosc potwierdzona.
+;Autor pomiarow (Dominik 'Honzo' Graczyk) potwierdzil, ze zapisy robil dokladnie,
+;ale nie jest w stanie jednoznacznie rozstrzygnac zrodla bledu. Zalecil skorygowac
+;dystans z adnotacja o niepewnosci. Dystans zmieniony z 1.5 na 2.5 m (= zmiana
+;glebokosci), zgodnie z automatyczna korekta Walls. Patrz: Issue #8.
+19.0	20.0	2.5	135	11	8.5
 20.0	21.0	6	105	8.5	7.5
 21.0	22.0	8	100	7.5	5.5;i lekkim zakretem w prawo do powierzchni wody
 22.0	23.0	6	150	5.5	0; pomiar podany przez Darka Lubomskiego na podstawie zdania: od jeziorka azymut 150 na plaze i prozek
