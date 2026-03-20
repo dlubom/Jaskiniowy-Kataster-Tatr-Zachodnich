@@ -13,7 +13,7 @@ Drobne poprawki danych i metadanych
 - Jaskinia Czarna (CZ_Z_S.SRV): subprefix SzKostka dla pomiarow Kostki, unikniecie kolizji nazw stacji
 - Jaskinia Czarna (CZ_B_S.SRV): metadane i komentarze dla pomiarow Borowca (NKG AGH 1972-73), TODO dot. deklinacji magnetycznej
 
-## [v1.2.3] - 2026-03-18
+## [v1.2.3] - 2026-03-19
 
 Dodano fragment Jaskini Miętusiej (T.D-11.01)
 
