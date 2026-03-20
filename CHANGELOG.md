@@ -4,6 +4,15 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.2.4] - 2026-03-20
+
+Drobne poprawki danych i metadanych
+
+### Zmienione
+- Obcasna Vyvieracka (OVA2.SRV): korekta dystansu syfonu 19.0→20.0 z 1.5 na 2.5 m — oryginalny pomiar mniejszy niz zmiana glebokosci, potwierdzone z autorem (Fixes #8)
+- Jaskinia Czarna (CZ_Z_S.SRV): subprefix SzKostka dla pomiarow Kostki, unikniecie kolizji nazw stacji
+- Jaskinia Czarna (CZ_B_S.SRV): metadane i komentarze dla pomiarow Borowca (NKG AGH 1972-73), TODO dot. deklinacji magnetycznej
+
 ## [v1.2.3] - 2026-03-18
 
 Dodano fragment Jaskini Miętusiej (T.D-11.01)
