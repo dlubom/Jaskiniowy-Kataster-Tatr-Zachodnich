@@ -15,10 +15,10 @@ INSTRUMENT "DistoX"
 #]
 
 #prefix Mietusia
-#date 2022-10-21
 #units meters order=DAV
 #units A=D V=D
 #units DECL=-6.1
+#date 2022-10-21
 
 ; === Ciag glowny ===
 ; Stacja 0 = otwor jaskini
