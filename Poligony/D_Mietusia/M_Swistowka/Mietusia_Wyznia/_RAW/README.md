@@ -13,7 +13,8 @@
 
 - `mietusia_wyznia.svx` — plik główny / zbiorczy (equate + include)
 - `mietusia_wyznia_simplified.svx` — uproszczona wersja całości
-- `gps_mietusia_wyznia.svx` — dane GPS otworu
+- `gps_mietusia_wyznia.svx` — 5 odczytów GPS otworu z różnych urządzeń (etrex, 2x telefon, zegarek, garmin66i), 2024-02-13; stacje NIE są połączone z jaskinią w Survex (orphan)
+- `gps.svx` — plik nadrzędny GPS z projektu RadostW; zawiera *fix gps_mietusia_wyznia z OSM (E19.894801 N49.245350 1383m, "large uncertainty") — to jest stacja faktycznie łącząca jaskinię z układem współrzędnych w Survex przez *equate w mietusia_wyznia.svx; w SRV użyto zamiast tego średniej z 5 odczytów urządzeń (E19.894900 N49.245399 1377m)
 - `otwor.svx`, `suche_dno.svx`, `mylna_rura.svx`, `wyznia_matka.svx` — ciagi główne
 - `problem_speleoklubu.svx`, `traba.svx`, `trzy_syfony.svx`, `detektor_lawinowy.svx` — odnogi
 - `pawlacz.svx`, `komin.svx`, `obejscie.svx`, `odejscie_l2.svx` — odnogi
