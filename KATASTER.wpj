@@ -991,11 +991,16 @@
 .NAME	MIET
 .PATH	Mietusia
 .STATUS	8
-.SURVEY	Jaskinia Mietusia meta
-.NAME	MIET_M
+.BOOK	Powierzchnia
+.NAME	MIET_POW
+.PATH	Powierzchnia
 .STATUS	8
 .SURVEY	Jaskinia Mietusia powierzchnia
 .NAME	MIET_PW
+.STATUS	8
+.ENDBOOK
+.SURVEY	Jaskinia Mietusia meta
+.NAME	MIET_M
 .STATUS	8
 .SURVEY	Jaskinia Mietusia rura
 .NAME	MIET_RU
