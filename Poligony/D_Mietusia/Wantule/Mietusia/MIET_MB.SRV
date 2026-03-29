@@ -17,7 +17,6 @@ INSTRUMENT "DistoX2 4027"
 #prefix Mietusia
 #units meters order=DAV
 #units A=D V=D
-#units DECL=-6.1
 #date 2024-02-10
 
 ; === Polaczenie z sekcja Rura ===
