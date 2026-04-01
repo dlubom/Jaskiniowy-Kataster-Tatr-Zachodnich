@@ -1,0 +1,25 @@
+;  OBLIGATORY FIELDS
+;    Cave_name         Jaskinia Mietusia
+;    Section_name      GPS data
+;    Entry_last_update 2024-02-10
+;    Author            Joanna Jurczyk - Speleoklub Warszawski
+;    Author            Weronika Gutfeter - Speleoklub Warszawski
+;    Licence           CC BY SA 4.0
+;    Survey_device     Specified with measurement
+;
+;    Geodetic_datum    WGS84
+;    Coordinate_system LATLON
+
+;    Cave_name         Jaskinia Mietusia
+;    Section_name      GPS data
+;    Entry_last_update 2024-02-10
+;    Author            Weronika Gutfeter - Speleoklub Warszawski
+;    Survey_device     Garmin etrex - Speleoklub Warszawski
+*fix gps_mietusia_2024             19.898750 49.246611 1270
+
+;    Cave_name         Jaskinia Mietusia
+;    Section_name      GPS data
+;    Entry_last_update 2022-10-23
+;    Author            Joanna Jurczyk - Speleoklub Warszawski
+;    Survey_device     Garmin etrex - Speleoklub Warszawski
+*fix gps_mietusia_2022            19.898626 49.246429 1256.527344

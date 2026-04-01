@@ -1,0 +1,38 @@
+;  OBLIGATORY FIELDS
+;    Cave_name         Multiple caves
+;    Section_name      GPS data
+;    Entry_last_update 2024-01-01
+;    Author            Radost Waszkiewicz - Speleoklub Warszawski
+;    Licence           CC BY SA 4.0
+;    Survey_device     Unknown
+;
+;    Geodetic_datum    WGS84
+;    Coordinate_system UTM
+;    Notes             Coordinates and elevations compiled from
+;    Notes             national database unless otherwise specified
+
+
+*cs out UTM34N
+*cs LONG-LAT
+
+*include gps_mietusia_wyznia
+*include gps_mietusia
+
+;    Notes             Data from OSM, large uncertainty
+*fix gps_mietusia_wyznia          19.894801 49.245350 1383
+
+
+; =====================
+; Data from other databases
+; =====================
+;    Notes             Coordinates and elevations compiled from national database
+
+*fix otwor_zimna_polnocny         19.867340 49.249538 1120
+*fix otwor_zimna_poludniowy       19.869717 49.247359 1260
+
+*fix otwor_czarna_zachodni        19.870371 49.244396 1326
+*fix otwor_czarna_wschodni        19.881290 49.247090 1404
+
+*fix otwor_mietusia_estimated     19.898743 49.246411 1273
+
+*fix otwor_piwnica_mietusia       19.897227 49.244691 1392

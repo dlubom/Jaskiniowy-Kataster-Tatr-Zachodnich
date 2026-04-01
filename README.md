@@ -15,7 +15,7 @@
 ### Opis projektu
 Projekt ma na celu zgromadzenie w jednym miejscu wszystkich danych kartograficznych dotyczących tatrzańskich jaskiń. Wykorzystując oprogramowanie Walls, głównym celem jest stworzenie zestawienia przestrzennego ciągów pomiarowych, współrzędnych wejść do jaskiń oraz modelu terenu. Projekt jest otwarty dla wszystkich zainteresowanych, by ułatwić działania eksploracyjne, edukacyjne oraz wspierać badania naukowe. Zebranie kompleksowych i dokładnych danych stanowi wyzwanie ze względu na różnorodność metod i czasu ich wykonania.
 
-Projekt oparty jest o oprogramowanie Walls – tutaj znajdziesz [najnowszą wersję programu oraz instrukcję obsługi](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
+Projekt oparty jest o oprogramowanie Walls – tutaj znajdziesz [najnowszą wersję programu](https://github.com/wallscavesurvey/walls/releases)  oraz [instrukcję obsługi](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
 
 Projekt działa również w [Survex](https://survex.com/) — wystarczy zainstalować najnowszą wersję i wczytać plik `KATASTER.wpj` w programie Aven lub skompilować z linii poleceń: `cavern KATASTER.wpj`. W Aven można też wczytać model terenu `Powierzchnia/Survex/N49E019_VF1.hgt`.
 
