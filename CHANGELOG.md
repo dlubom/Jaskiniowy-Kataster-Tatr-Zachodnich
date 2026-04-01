@@ -4,6 +4,16 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.2.5] - 2026-04-01
+
+Poprawki jaskiń Miętusia i Miętusia Wyżnia
+
+### Dodane
+- Pliki źródłowe pomiarów GPS jaskiń Miętusich
+
+### Zmienione
+- Usunięto komendy #units DECL nadpisujące deklinację z plików pomiarowych jaskiń Miętusich
+
 ## [v1.2.4] - 2026-03-20
 
 Drobne poprawki danych i metadanych
