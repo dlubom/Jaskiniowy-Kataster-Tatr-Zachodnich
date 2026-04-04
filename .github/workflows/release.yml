@@ -8,6 +8,9 @@ on:
 permissions:
   contents: write
 
+env:
+  SURVEX_COMMIT: "f8e8a88c48e1d48921995b5a5846ae5c10306b8e"
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -21,6 +24,66 @@ jobs:
 
       - name: Set version in INFO.txt
         run: sed -i 's/__VERSION__/${{ steps.version.outputs.VERSION }}/' INFO.txt
+
+      - name: Cache Survex
+        id: cache-survex
+        uses: actions/cache@v4
+        with:
+          path: ~/survex
+          key: survex-${{ env.SURVEX_COMMIT }}-ubuntu
+
+      - name: Install Survex
+        run: |
+          if [ "${{ steps.cache-survex.outputs.cache-hit }}" = "true" ]; then
+            echo "Using cached Survex"
+            sudo apt-get update && sudo apt-get install -y libproj25 libgdal34t64 gdal-bin
+          else
+            sudo apt-get update && sudo apt-get install -y \
+              build-essential autoconf automake libwxgtk3.2-dev libproj-dev libgdal-dev \
+              liblocale-po-perl unifont python3-sphinx latexmk \
+              texlive-latex-base texlive-latex-extra texlive-fonts-recommended \
+              gdal-bin
+            git clone https://github.com/ojwb/survex.git survex-src
+            cd survex-src
+            git checkout ${{ env.SURVEX_COMMIT }}
+            autoreconf -fiv
+            ./configure --prefix=$HOME/survex
+            (cd src && python3 igrf2c.py igrf14coeffs.txt && mv ../thgeomagdata.h .)
+            make
+            make install
+          fi
+          echo "$HOME/survex/bin" >> $GITHUB_PATH
+
+      - name: Build exports
+        run: |
+          VERSION="${{ steps.version.outputs.VERSION }}"
+          OUTDIR="JKTZ-exports-${VERSION}"
+
+          mkdir -p "${OUTDIR}/caves"
+
+          # Kompilacja
+          cavern KATASTER.wpj 2>&1 | tee "${OUTDIR}/JKTZ-${VERSION}-cavern.log"
+          cp KATASTER.3d "${OUTDIR}/JKTZ-${VERSION}.3d"
+          cp KATASTER.err "${OUTDIR}/JKTZ-${VERSION}.err"
+
+          # DXF 3D (całość, bez domiarów)
+          survexport --legs --dxf KATASTER.3d "${OUTDIR}/JKTZ-${VERSION}.dxf"
+
+          # Shapefile całość
+          ogr2ogr -f "ESRI Shapefile" -dim XYZ -a_srs EPSG:32634 \
+            "${OUTDIR}/JKTZ-${VERSION}-all.shp" "${OUTDIR}/JKTZ-${VERSION}.dxf"
+
+          # Shapefiles per jaskinia
+          caves=$(survexport --entrances --csv KATASTER.3d /dev/stdout \
+            | tail -n+2 | cut -d, -f4 | sed 's/\..*//' | sort -u)
+
+          for cave in $caves; do
+            survexport --legs --survey="$cave" --dxf KATASTER.3d "/tmp/${cave}.dxf"
+            ogr2ogr -f "ESRI Shapefile" -dim XYZ -a_srs EPSG:32634 \
+              "${OUTDIR}/caves/${cave}.shp" "/tmp/${cave}.dxf"
+          done
+
+          zip -r "JKTZ-exports-${VERSION}.zip" "${OUTDIR}"
 
       - name: Build release ZIP
         run: |
@@ -56,4 +119,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           body_path: release_notes.md
-          files: JKTZ-${{ steps.version.outputs.VERSION }}.zip
+          files: |
+            JKTZ-${{ steps.version.outputs.VERSION }}.zip
+            JKTZ-exports-${{ steps.version.outputs.VERSION }}.zip
