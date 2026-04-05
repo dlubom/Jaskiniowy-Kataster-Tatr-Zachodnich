@@ -303,6 +303,16 @@ Converts Survex (`.svx`) survey files to Walls (`.SRV`) format. Covers measureme
 /svx-to-srv <cave-id> <path/to/source.svx>
 ```
 
+### `/docker-exports` — `.claude/skills/docker-exports/SKILL.md`
+
+Builds the `jktz-survex` Docker image and/or runs the release export pipeline locally, generating `.3d`, `.dxf`, `.shp`, and `.err` files in `exports/JKTZ-<VERSION>/`. Mirrors the GitHub Actions release pipeline. Usage:
+
+```
+/docker-exports [VERSION]
+/docker-exports --build-only
+/docker-exports --run-only [VERSION]
+```
+
 ## Workflow for Adding a New Cave
 
 Use the `/add-cave` skill (see above) or follow these steps manually:

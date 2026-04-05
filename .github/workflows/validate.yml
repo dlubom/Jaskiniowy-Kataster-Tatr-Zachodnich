@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 env:
-  SURVEX_VERSION: "1.4.20"
+  SURVEX_COMMIT: "f8e8a88c48e1d48921995b5a5846ae5c10306b8e"
 
 jobs:
   validate:
@@ -26,7 +26,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/survex
-          key: survex-${{ env.SURVEX_VERSION }}-ubuntu
+          key: survex-${{ env.SURVEX_COMMIT }}-ubuntu
 
       - name: Install Survex (Linux)
         if: runner.os == 'Linux'
@@ -35,23 +35,72 @@ jobs:
             echo "Using cached Survex"
             sudo apt-get update && sudo apt-get install -y libproj25 libgdal34t64
           else
-            sudo apt-get update && sudo apt-get install -y build-essential libwxgtk3.2-dev libproj-dev libgdal-dev
-            wget https://survex.com/software/${{ env.SURVEX_VERSION }}/survex-${{ env.SURVEX_VERSION }}.tar.gz
-            tar xf survex-${{ env.SURVEX_VERSION }}.tar.gz
-            cd survex-${{ env.SURVEX_VERSION }}
+            sudo apt-get update && sudo apt-get install -y build-essential autoconf automake libwxgtk3.2-dev libproj-dev libgdal-dev liblocale-po-perl unifont python3-sphinx latexmk texlive-latex-base texlive-latex-extra texlive-fonts-recommended
+            git clone https://github.com/ojwb/survex.git survex-src
+            cd survex-src
+            git checkout ${{ env.SURVEX_COMMIT }}
+            autoreconf -fiv
             ./configure --prefix=$HOME/survex
+            (cd src && python3 igrf2c.py igrf14coeffs.txt && mv ../thgeomagdata.h .)
             make
             make install
           fi
           echo "$HOME/survex/bin" >> $GITHUB_PATH
 
-      - name: Install Survex (Windows)
+      - name: Cache Survex (Windows)
+        if: runner.os == 'Windows'
+        id: cache-survex-win
+        uses: actions/cache@v4
+        with:
+          path: C:\survex
+          key: survex-${{ env.SURVEX_COMMIT }}-windows
+
+      - name: Setup MSYS2 (Windows)
+        if: runner.os == 'Windows' && steps.cache-survex-win.outputs.cache-hit != 'true'
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: false
+          install: >-
+            git
+            make
+            autoconf
+            automake
+            mingw-w64-x86_64-toolchain
+            mingw-w64-x86_64-proj
+            mingw-w64-x86_64-gdal
+            mingw-w64-x86_64-wxwidgets3.2-msw
+
+      - name: Build Survex (Windows)
+        if: runner.os == 'Windows' && steps.cache-survex-win.outputs.cache-hit != 'true'
+        shell: msys2 {0}
+        run: |
+          curl -L https://cpanmin.us | perl - --notest Locale::PO
+          git clone https://github.com/ojwb/survex.git survex-src
+          cd survex-src
+          git checkout ${{ env.SURVEX_COMMIT }}
+          autoreconf -fiv
+          ./configure --prefix=/c/survex --disable-dependency-tracking
+          # Generate thgeomagdata.h (needed by cavern, skipped by targeted make)
+          (cd src && python3 igrf2c.py igrf14coeffs.txt && mv ../thgeomagdata.h .)
+          # unifont.hex needed by lib/ build (no MSYS2 package available)
+          curl -L "https://ftp.gnu.org/gnu/unifont/unifont-17.0.04/unifont_all-17.0.04.hex.gz" | gunzip > lib/unifont.hex
+          # Partial build: message files + cavern only, skip aven and docs
+          make -C lib
+          make -C src cavern.exe
+          mkdir -p /c/survex/bin
+          install src/cavern.exe /c/survex/bin/cavern.exe
+          # Bundle MSYS2 DLLs so cavern.exe works outside MSYS2 shell
+          ldd src/cavern.exe | grep '/mingw64/bin' | awk '{print $3}' | xargs -I{} cp {} /c/survex/bin/
+          # On Windows, cavern looks for message files in its own directory
+          cp lib/*.msg /c/survex/bin/
+
+      - name: Add Survex to PATH (Windows)
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          Invoke-WebRequest -Uri "https://survex.com/software/${{ env.SURVEX_VERSION }}/survex-microsoft-windows-${{ env.SURVEX_VERSION }}.exe" -OutFile survex-installer.exe
-          Start-Process -Wait -FilePath .\survex-installer.exe -ArgumentList '/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART'
-          echo "C:\Program Files (x86)\Survex" >> $env:GITHUB_PATH
+          echo "C:\survex\bin" >> $env:GITHUB_PATH
+          echo "C:\msys64\mingw64\bin" >> $env:GITHUB_PATH
 
       - name: Check SRV file naming
         if: runner.os == 'Linux'
@@ -71,9 +120,18 @@ jobs:
             exit 1
           fi
 
-      - name: Compile with cavern
-        shell: bash
+      - name: Compile with cavern (Linux)
+        if: runner.os == 'Linux'
         run: |
+          cavern KATASTER.wpj 2>&1 | tee cavern_output.txt
+
+      - name: Compile with cavern (Windows)
+        if: runner.os == 'Windows'
+        shell: msys2 {0}
+        run: |
+          export PATH="/c/survex/bin:$PATH"
+          export PROJ_LIB=/mingw64/share/proj
+          export GDAL_DATA=/mingw64/share/gdal
           cavern KATASTER.wpj 2>&1 | tee cavern_output.txt
 
       - name: Check for unattached stations

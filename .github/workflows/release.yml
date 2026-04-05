@@ -8,6 +8,9 @@ on:
 permissions:
   contents: write
 
+env:
+  SURVEX_COMMIT: "f8e8a88c48e1d48921995b5a5846ae5c10306b8e"
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -22,12 +25,45 @@ jobs:
       - name: Set version in INFO.txt
         run: sed -i 's/__VERSION__/${{ steps.version.outputs.VERSION }}/' INFO.txt
 
+      - name: Cache Survex
+        id: cache-survex
+        uses: actions/cache@v4
+        with:
+          path: ~/survex
+          key: survex-${{ env.SURVEX_COMMIT }}-ubuntu
+
+      - name: Install Survex
+        run: |
+          if [ "${{ steps.cache-survex.outputs.cache-hit }}" = "true" ]; then
+            echo "Using cached Survex"
+            sudo apt-get update && sudo apt-get install -y libproj25 libgdal34t64 gdal-bin libwxgtk3.2-1t64
+          else
+            sudo apt-get update && sudo apt-get install -y \
+              build-essential autoconf automake libwxgtk3.2-dev libproj-dev libgdal-dev \
+              liblocale-po-perl unifont python3-sphinx latexmk \
+              texlive-latex-base texlive-latex-extra texlive-fonts-recommended \
+              gdal-bin
+            git clone https://github.com/ojwb/survex.git survex-src
+            cd survex-src
+            git checkout ${{ env.SURVEX_COMMIT }}
+            autoreconf -fiv
+            ./configure --prefix=$HOME/survex
+            (cd src && python3 igrf2c.py igrf14coeffs.txt && mv ../thgeomagdata.h .)
+            make
+            make install
+          fi
+          echo "$HOME/survex/bin" >> $GITHUB_PATH
+
+      - name: Build exports
+        run: bash docker/exports.sh ${{ steps.version.outputs.VERSION }} .
+
       - name: Build release ZIP
         run: |
           zip -r "JKTZ-${{ steps.version.outputs.VERSION }}.zip" . \
             -x ".git/*" \
             -x ".github/*" \
             -x ".claude/*" \
+            -x "docker/*" \
             -x ".gitignore" \
             -x "CLAUDE.md" \
             -x "doc/*" \
@@ -56,4 +92,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           body_path: release_notes.md
-          files: JKTZ-${{ steps.version.outputs.VERSION }}.zip
+          files: |
+            JKTZ-${{ steps.version.outputs.VERSION }}.zip
+            JKTZ-exports-${{ steps.version.outputs.VERSION }}.zip
