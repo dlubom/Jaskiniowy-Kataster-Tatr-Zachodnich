@@ -91,6 +91,7 @@ jobs:
             -x ".git/*" \
             -x ".github/*" \
             -x ".claude/*" \
+            -x "docker/*" \
             -x ".gitignore" \
             -x "CLAUDE.md" \
             -x "doc/*" \
