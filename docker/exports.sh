@@ -15,6 +15,9 @@ set -euo pipefail
 
 VERSION="${1:-local}"
 OUTDIR="exports/JKTZ-${VERSION}"
+TMPDIR_LOCAL="exports/tmp"
+mkdir -p "${TMPDIR_LOCAL}"
+trap 'rm -rf "${TMPDIR_LOCAL}"' EXIT
 
 echo "=== JKTZ exports — version: ${VERSION} ==="
 echo "    output: ${OUTDIR}/"
@@ -67,14 +70,14 @@ ogr2ogr -f "ESRI Shapefile" -dim XYZ -a_srs EPSG:32634 \
 # in a thin .svx wrapper or by converting #flag /ENTRANCE in .SRV files).
 # -----------------------------------------------------------------------------
 echo "[4/5] survexport — per-cave DXF + shapefiles"
-survexport --entrances --csv "${COMPILED_3D}" /tmp/entrances.csv
-caves=$(tail -n+2 /tmp/entrances.csv | cut -d, -f4 | sed 's/\..*//' | sort -u)
+survexport --entrances --csv "${COMPILED_3D}" ${TMPDIR_LOCAL}/entrances.csv
+caves=$(tail -n+2 ${TMPDIR_LOCAL}/entrances.csv | cut -d, -f4 | sed 's/:.*//' | sort -u)
 
 for cave in $caves; do
     echo "      → ${cave}"
-    survexport --legs --survey="${cave}" --dxf "${COMPILED_3D}" "/tmp/${cave}.dxf"
+    survexport --legs --survey="${cave}" --dxf "${COMPILED_3D}" "${TMPDIR_LOCAL}/${cave}.dxf"
     ogr2ogr -f "ESRI Shapefile" -dim XYZ -a_srs EPSG:32634 \
-        "${OUTDIR}/caves/${cave}.shp" "/tmp/${cave}.dxf"
+        "${OUTDIR}/caves/${cave}.shp" "${TMPDIR_LOCAL}/${cave}.dxf"
 done
 
 # -----------------------------------------------------------------------------
