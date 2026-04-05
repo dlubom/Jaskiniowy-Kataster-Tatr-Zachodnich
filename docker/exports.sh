@@ -1,21 +1,27 @@
 #!/usr/bin/env bash
 # =============================================================================
-# exports.sh — run inside the Docker runtime container
+# exports.sh — export pipeline, used both locally (Docker) and in GitHub Actions CI.
 #
-# Mirrors the "Build exports" step from .github/workflows/release.yml.
 # Generates all derived files from KATASTER.wpj and writes them to
-# exports/JKTZ-<VERSION>/ which is visible on the host via the bind mount.
+# <BASEDIR>/JKTZ-<VERSION>/ together with a ZIP archive.
 #
-# Usage (from repo root on host):
+# Usage (from repo root):
+#   # Local — via Docker (output visible on host via bind mount):
 #   docker run --rm -v "$(pwd):/project" jktz-survex bash docker/exports.sh [VERSION]
 #
-# VERSION defaults to "local" when not provided.
+#   # CI — directly on the runner (Survex installed):
+#   bash docker/exports.sh <VERSION> .
+#
+# Arguments:
+#   $1  VERSION  — defaults to "local"
+#   $2  BASEDIR  — output base directory, defaults to "exports"
 # =============================================================================
 set -euo pipefail
 
 VERSION="${1:-local}"
-OUTDIR="exports/JKTZ-${VERSION}"
-TMPDIR_LOCAL="exports/tmp"
+BASEDIR="${2:-exports}"
+OUTDIR="${BASEDIR}/JKTZ-${VERSION}"
+TMPDIR_LOCAL="${BASEDIR}/tmp"
 mkdir -p "${TMPDIR_LOCAL}"
 trap 'rm -rf "${TMPDIR_LOCAL}"' EXIT
 
@@ -84,9 +90,9 @@ done
 # 5. Bundle everything into a ZIP archive next to the output directory.
 # -----------------------------------------------------------------------------
 echo "[5/5] zip — bundling output"
-(cd exports && zip -r "JKTZ-${VERSION}-exports.zip" "JKTZ-${VERSION}/")
+(cd "${BASEDIR}" && zip -r "JKTZ-exports-${VERSION}.zip" "JKTZ-${VERSION}/")
 
 echo ""
 echo "=== Done ==="
 echo "    ${OUTDIR}/"
-echo "    exports/JKTZ-${VERSION}-exports.zip"
+echo "    ${BASEDIR}/JKTZ-exports-${VERSION}.zip"

@@ -55,35 +55,7 @@ jobs:
           echo "$HOME/survex/bin" >> $GITHUB_PATH
 
       - name: Build exports
-        run: |
-          VERSION="${{ steps.version.outputs.VERSION }}"
-          OUTDIR="JKTZ-exports-${VERSION}"
-
-          mkdir -p "${OUTDIR}/caves"
-
-          # Kompilacja
-          cavern KATASTER.wpj 2>&1 | tee "${OUTDIR}/JKTZ-${VERSION}-cavern.log"
-          cp KATASTER.3d "${OUTDIR}/JKTZ-${VERSION}.3d"
-          cp KATASTER.err "${OUTDIR}/JKTZ-${VERSION}.err"
-
-          # DXF 3D (całość, bez domiarów)
-          survexport --legs --dxf KATASTER.3d "${OUTDIR}/JKTZ-${VERSION}.dxf"
-
-          # Shapefile całość
-          ogr2ogr -f "ESRI Shapefile" -dim XYZ -a_srs EPSG:32634 \
-            "${OUTDIR}/JKTZ-${VERSION}-all.shp" "${OUTDIR}/JKTZ-${VERSION}.dxf"
-
-          # Shapefiles per jaskinia
-          caves=$(survexport --entrances --csv KATASTER.3d /dev/stdout \
-            | tail -n+2 | cut -d, -f4 | sed 's/\..*//' | sort -u)
-
-          for cave in $caves; do
-            survexport --legs --survey="$cave" --dxf KATASTER.3d "/tmp/${cave}.dxf"
-            ogr2ogr -f "ESRI Shapefile" -dim XYZ -a_srs EPSG:32634 \
-              "${OUTDIR}/caves/${cave}.shp" "/tmp/${cave}.dxf"
-          done
-
-          zip -r "JKTZ-exports-${VERSION}.zip" "${OUTDIR}"
+        run: bash docker/exports.sh ${{ steps.version.outputs.VERSION }} .
 
       - name: Build release ZIP
         run: |
