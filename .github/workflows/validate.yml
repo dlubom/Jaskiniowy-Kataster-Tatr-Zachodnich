@@ -104,21 +104,11 @@ jobs:
 
       - name: Check SRV file naming
         if: runner.os == 'Linux'
-        run: |
-          bad=$(find Poligony -name "*.srv" -not -path "*/_RAW/*" -type f)
-          if [ -n "$bad" ]; then
-            echo "::error::Lowercase .srv files found (should be .SRV):"
-            echo "$bad"
-            exit 1
-          fi
+        run: bash docker/check-naming.sh
 
       - name: Check for invalid directives
         if: runner.os == 'Linux'
-        run: |
-          if grep -r --include='*.SRV' '#<' Poligony/; then
-            echo "::error::Invalid #< directive found"
-            exit 1
-          fi
+        run: bash docker/check-directives.sh
 
       - name: Compile with cavern (Linux)
         if: runner.os == 'Linux'

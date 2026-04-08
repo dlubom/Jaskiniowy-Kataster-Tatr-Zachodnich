@@ -313,6 +313,14 @@ Builds the `jktz-survex` Docker image and/or runs the release export pipeline lo
 /docker-exports --run-only [VERSION]
 ```
 
+### `/docker-validate` — `.claude/skills/docker-validate/SKILL.md`
+
+Runs the validation pipeline locally using Docker (same `jktz-survex` image as `/docker-exports`). Checks SRV naming, invalid directives, compiles with cavern, and reports unattached-station errors. Mirrors the Linux job in GitHub Actions `validate.yml`. Usage:
+
+```
+/docker-validate
+```
+
 ## Workflow for Adding a New Cave
 
 Use the `/add-cave` skill (see above) or follow these steps manually:

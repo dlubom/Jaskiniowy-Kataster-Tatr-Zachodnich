@@ -11,6 +11,7 @@
 #Survex
 *.3d
 *.err
+cavern_output.txt
 
 #Claude
 .claude/settings.local.json

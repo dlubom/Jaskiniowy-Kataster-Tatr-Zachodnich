@@ -58,10 +58,10 @@ docker run --rm -v "$(pwd):/project" jktz-survex bash docker/exports.sh VERSION
 
 Replace `VERSION` with the actual value. Show the full output.
 
-On Windows the path binding requires the host path in Unix form or via `$(pwd)`. If running from Git Bash or WSL this works as-is. If `$(pwd)` fails in the user's shell, suggest the equivalent:
+**Windows note:** `$(pwd)` in Git Bash produces a Unix-style path (e.g. `/c/Users/...`) that Docker Desktop on Windows cannot resolve. If the bind mount fails, use the explicit Windows path instead.
 
 ```bash
-docker run --rm -v "${PWD}:/project" jktz-survex bash docker/exports.sh VERSION
+docker run --rm -v "C:/path/to/repo:/project" jktz-survex bash docker/exports.sh VERSION
 ```
 
 ### 4. Report results
