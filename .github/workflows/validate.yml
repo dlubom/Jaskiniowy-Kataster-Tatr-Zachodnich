@@ -56,7 +56,7 @@ jobs:
           key: survex-${{ env.SURVEX_COMMIT }}-windows
 
       - name: Setup MSYS2 (Windows)
-        if: runner.os == 'Windows' && steps.cache-survex-win.outputs.cache-hit != 'true'
+        if: runner.os == 'Windows'
         uses: msys2/setup-msys2@v2
         with:
           msystem: MINGW64
