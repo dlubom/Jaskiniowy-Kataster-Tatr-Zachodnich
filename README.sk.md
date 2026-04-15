@@ -40,6 +40,7 @@ V súčasnosti projekt obsahuje údaje pre nasledujúce jaskyne:
 - Jaskinia Ciepła
 - Jaskinia Czarna (fragment)
 - Jaskinia Goryczkowa
+- Jaskinia Kasprowa Niżnia (fragment)
 - Jaskinia Harda
 - Jaskinia Kalacka
 - Jaskinia Koszowa
