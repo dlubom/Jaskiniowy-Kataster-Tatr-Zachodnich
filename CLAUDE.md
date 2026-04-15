@@ -114,11 +114,10 @@ INSTRUMENT "instrument name"
 
 ;Section description
 
-FROM	TO	DISTANCE	AZIMUTH	INCLINATION
 0	1	4.61	293	2
 1	2	2.06	303	7
 
-;Splay shots (cross-sections)
+;Splay shots
 
 0	-	5.52	51	8
 0	-	5.47	265	76
