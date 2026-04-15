@@ -1,0 +1,3 @@
+# Force LF for shell scripts — they run in Linux Docker containers
+*.sh text eol=lf
+
