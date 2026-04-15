@@ -4,6 +4,28 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.2.6] - 2026-04-15
+
+Dodano fragment Jaskini Kasprowa Niżnia (T.D-16.03)
+
+### Dodane
+- Jaskinia Kasprowa Niżnia (fragment)
+
+### Zmienione
+- Usunięto mylącą linijkę w szablonie plików pomiarowych w CLAUDE.md
+
+## [v1.2.5b] - 2026-04-15
+
+Rozbudowanie Releasu w Github o eksport plików (DXF, Shapefile). Dodanie plików używanych przez Docker'a dla uzyskania tego samego procesu lokalnie.
+
+### Dodane
+- Skrypty i pliki Docker imitujące proces releasu, walidacji oraz eksportu dla Github
+
+### Zmienione
+- Budowanie Survex z najnowszego commita zawierającego poprawki błędów
+- Pliki konfiguracyjne .yml dla Github: depl
+- Wykomentowano niepodłączone domiary jaskini Hardej
+
 ## [v1.2.5] - 2026-04-01
 
 Poprawki jaskiń Miętusia i Miętusia Wyżnia

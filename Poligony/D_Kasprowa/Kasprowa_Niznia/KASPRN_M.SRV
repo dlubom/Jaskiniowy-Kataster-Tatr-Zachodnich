@@ -1,0 +1,18 @@
+#[
+CAVE_ID			"T.D-16.03"
+CAVE_NAME		"Kasprowa Niznia"
+UPDATE_DATE		2026-04-15
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Pawel Gogolak"
+COORDINATOR_EMAIL	"pafffel@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"Panstwowy Instytut Geologiczny"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+#]
+
+#prefix td1603
+#flag	0	/Kasprowa Niznia
+#flag	0	/ENTRANCE
+#note	0	/Kasprowa Niznia
+#fix	0	E19.978567  N49.253975  1228.0m

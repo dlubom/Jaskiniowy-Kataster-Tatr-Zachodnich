@@ -40,6 +40,7 @@ Aktualnie projekt zawiera dane dla następujących jaskiń:
 - Jaskinia Ciepła
 - Jaskinia Czarna (fragment)
 - Jaskinia Goryczkowa
+- Jaskinia Kasprowa Niżnia (fragment)
 - Jaskinia Harda
 - Jaskinia Kalacka
 - Jaskinia Koszowa

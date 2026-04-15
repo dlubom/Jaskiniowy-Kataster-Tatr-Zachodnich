@@ -40,6 +40,7 @@ Currently, the project includes data for the following caves:
 - Jaskinia Ciepła
 - Jaskinia Czarna (fragment)
 - Jaskinia Goryczkowa
+- Jaskinia Kasprowa Niżnia (fragment)
 - Jaskinia Harda
 - Jaskinia Kalacka
 - Jaskinia Koszowa
