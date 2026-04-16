@@ -4,6 +4,15 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.2.7] - 2026-04-16
+
+Poprawki współrzędnych wejść i wyłączenie modelu terenu w CaveView
+
+### Zmienione
+- Poprawiono współrzędne wejścia Jaskini Wysokiej (W7-0) — WGS84 zamiast UTM
+- Poprawiono współrzędne wejścia Bandziocha Kominiarskiego (000 Dolny) — WGS84 zamiast UTM
+- Tymczasowo wyłączono model terenu Cesium w CaveView (błąd renderowania)
+
 ## [v1.2.6] - 2026-04-15
 
 Dodano fragment Jaskini Kasprowa Niżnia (T.D-16.03)

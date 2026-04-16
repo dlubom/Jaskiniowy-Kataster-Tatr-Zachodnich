@@ -71,7 +71,7 @@ W7-501	W7-2	2.5	126	-14	;zac. agnieszki, pol. z wysoka
 
 #FLAG W7-0 /Otwor
 #FLAG W7-0 /ENTRANCE
-#FIX	W7-0	418698.72	5453986.05	1499
+#FIX	W7-0	E19.88454604	N49.23364130	1486.69
 #note	W7-0	/Wysoka-Za7 Progami
 #flag	W7-0	/Wysoka-Za7 Progami
 W7-0	W7-1	2.2	30	-8	;otwor
