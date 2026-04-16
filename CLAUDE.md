@@ -320,6 +320,19 @@ Runs the validation pipeline locally using Docker (same `jktz-survex` image as `
 /docker-validate
 ```
 
+### `/gnss-to-wgs84` — `.claude/skills/gnss-to-wgs84/SKILL.md`
+
+Converts coordinates from Polish EPSG:2180 (PUWG 1992 / "uklad 1992") to WGS84 geographic (EPSG:4326). Useful when processing GNSS survey reports. Requires `pyproj` (`pip3 install pyproj`). Usage:
+
+```
+/gnss-to-wgs84 <X_northing> <Y_easting> [<elevation>]
+```
+
+Example:
+```
+/gnss-to-wgs84 152168.79 564375.07 1486.69
+```
+
 ## Workflow for Adding a New Cave
 
 Use the `/add-cave` skill (see above) or follow these steps manually:
