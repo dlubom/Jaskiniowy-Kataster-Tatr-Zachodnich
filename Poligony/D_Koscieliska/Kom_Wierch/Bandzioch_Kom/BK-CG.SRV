@@ -1,5 +1,6 @@
 #prefix BandziochKom
 #Units Meters
+; source: unknown - GNSS
 #fix	000	E19.84957850	N49.24258746	1451.06
 #flag	/000,136,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,U,P,136
 #flag	000	/Bandzioch Kom. Dolny
