@@ -127,6 +127,7 @@ INSTRUMENT "instrument name"
 
 - **Cave IDs** follow the pattern `T.{region}-{number}.{sub}` (e.g., `T.C-16.01` for Jaskinia Kalacka, `T.B-14.01` for Dziura)
 - **Station naming**: `{cave_id}_{survey_id}` prefix (e.g., `tb1401_A1` for Dziura survey A1)
+- **`#prefix` convention**: use the cave name in CamelCase (no spaces, no diacritics), e.g., `Mrozna`, `Raptawicka`, `KasprowaNiznia`, `MietusiaWyznia`
 - **Directory hierarchy**: Valley → Mountain/Region → Cave → Survey files
 - **SRV file naming**: UPPERCASE basename + `.SRV` extension (e.g., `DZIUR_M.SRV`, `TC1601A1.SRV`). The basename must match the `.NAME` directive in `KATASTER.wpj`. This is required for Linux compatibility — `cavern` (Survex) on case-sensitive filesystems only tries: all-lowercase, Initial-cap, and ALL-UPPERCASE variants when resolving `.NAME` references.
 - **Directory naming conventions** (to keep paths short for Windows compatibility):

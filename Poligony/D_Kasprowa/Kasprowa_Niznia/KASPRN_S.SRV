@@ -14,7 +14,7 @@ TEAM "Adam Lada WKTJ, Kuba Kujawski 'Pajak' WKTJ"
 INSTRUMENT "DistoX"
 #]
 
-#prefix td1603
+#prefix KasprowaNiznia
 #units meters order=DAV
 #units A=D V=D
 #date 2019-01-09
