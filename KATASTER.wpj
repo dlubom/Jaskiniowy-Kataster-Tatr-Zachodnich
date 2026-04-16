@@ -632,6 +632,31 @@
 .ENDBOOK
 .ENDBOOK
 .ENDBOOK
+.BOOK	Kamienne Zadnie
+.NAME	KAM_ZAD
+.PATH	Kamienne_Zad
+.STATUS	8
+.BOOK	Jaskinia Lodowa w Ciemniaku
+.NAME	JLC
+.PATH	Lod_w_Ciemniaku
+.STATUS	8
+.SURVEY	Lodowa w Ciemniaku meta
+.NAME	LWCIM_M
+.STATUS	8
+.SURVEY	Ciag glowny
+.NAME	LWCIM_GC
+.STATUS	8
+.SURVEY	Partie gorne
+.NAME	LWCIM_GR
+.STATUS	8
+.SURVEY	Meander Geografow
+.NAME	LWCIM_MG
+.STATUS	8
+.SURVEY	Nowy Korytarz
+.NAME	LWCIM_NK
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
 .ENDBOOK
 .BOOK	Dolina Malej Laki
 .NAME	D-MALLAK

@@ -4,6 +4,17 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.2.9] - 2026-04-16
+
+Dodano Jaskinię Lodową w Ciemniaku (T.F-10.01) oraz drobne poprawki Jaskini Kasprowej Niżniej
+
+### Dodane
+- Jaskinia Lodowa w Ciemniaku (T.F-10.01, D_Koscieliska/Kamienne_Zad)
+- Pomiary z 2021-09-11 (WKTJ): ciąg główny, partie górne, Meander Geografów, Nowy Korytarz
+
+### Zmienione
+- Użyto pełnej nazwy Jaskinia Kasprowa Niżnia dla plików pomiarowych tej jaskini
+
 ## [v1.2.8] - 2026-04-16
 
 Poprawki prefixu jaskini Kasprowa Niżnia

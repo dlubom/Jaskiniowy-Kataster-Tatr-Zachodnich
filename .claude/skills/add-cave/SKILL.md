@@ -57,6 +57,8 @@ If a source ZIP was provided:
 2. List contents: `find /tmp/<cave_ascii>_raw -not -path "*/__MACOSX*" -type f`
 3. Read each survey file to understand its format (units, station naming, number of readings)
 
+**If the source files are in Survex format (`.svx` files):** use the `/svx-to-srv` skill to perform the conversion before proceeding to Step 9. The skill handles measurement conversion, equate→zero-shot mapping, splay shots, declination, and the critical issue of junction stations positioned only by duplicate shots. Skip the manual `CAVE_S.SRV` skeleton in Step 9 — the skill produces all section `.SRV` files directly.
+
 ## Step 5 — Create directory structure
 
 ```bash
