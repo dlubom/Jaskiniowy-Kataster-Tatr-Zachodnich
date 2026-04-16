@@ -4,6 +4,14 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.2.8] - 2026-04-16
+
+Poprawki prefixu jaskini Kasprowa Niżnia
+
+### Zmienione
+- Prefix jaskini Kasprowa Niżnia
+- Usczegółowiono informacje na temat konwencji prefixów w plikach pomiarowych
+
 ## [v1.2.7] - 2026-04-16
 
 Poprawki współrzędnych wejść i wyłączenie modelu terenu w CaveView

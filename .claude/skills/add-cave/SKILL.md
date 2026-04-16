@@ -83,8 +83,7 @@ Leave any genuinely unknown fields as `nieznany` / `nieznane`.
 
 ## Step 7 — Determine station prefix
 
-From cave ID `T.X-NN.MM` → prefix = `tXNNMM` (e.g., T.D-08.07 → `td0807`).
-Or use a short cave name abbreviation (e.g., MROZN) — check what style neighbouring caves use.
+Use the **cave name** in CamelCase (no spaces, no diacritics) as the prefix (e.g., `Mrozna`, `Raptawicka`, `KasprowaNiznia`, `MietusiaWyznia`).
 
 ## Step 8 — Create CAVE_M.SRV
 
