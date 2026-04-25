@@ -48,6 +48,7 @@ Aktualnie projekt zawiera dane dla następujących jaskiń:
 - Jaskinia Lejbusiowa
 - Jaskinia Lodowa Małołącka
 - Jaskinia Lodowa Miętusia
+- Jaskinia Lodowa w Ciemniaku
 - Jaskinia Mała w Mułowej
 - Jaskinia Małołącka
 - Jaskinia Marmurowa
