@@ -14,7 +14,12 @@ Grzegorz Sokół, Martyna Gruszka — WKTJ, 2021).
 Paweł Gogolak
 
 ## Uwagi
+TODO: poprawić domniemane złe połączenie
 Adam Łada przekazał pliki z komentarzem: "Tutaj być może coś jest źle połączone (Ssak?)".
+Dodatkowo osoba uczestnicząca w pomiarach napisała: "Z tego co pamiętam to chodziło chyba o sesję z matecznikiem. 
+Na samej górze.
+Wydaje mi się, że ten matecznik jest za blisko meandara geografów i za daleko od ssaka
+W terenie wydaje się być tylko lekko z boku ssaka a na poligonach wychodzi po przeciwnej stronie."
 TODO: przeanalizować domniemane złe połączenie
 
 ## Zawartość
