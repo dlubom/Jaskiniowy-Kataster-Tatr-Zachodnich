@@ -4,7 +4,17 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
-## [v1.2.9] - 2026-04-16
+## [v1.3.0] - 2026-04-26
+
+Zmieniono umiejscowienie listy jaskin zawartych w projekcie do osobnego pliku .md
+
+### Dodane
+- Osobna lista jaskin dla wszsystkich plikow README.md
+
+### Zmienione
+- Poszczegolne pliki .md przekierowuja do osobnego pliku .md z lista jaskin 
+
+## [v1.2.9] - 2026-04-26
 
 Dodano Jaskinię Lodową w Ciemniaku (T.F-10.01) oraz drobne poprawki Jaskini Kasprowej Niżniej
 
