@@ -10,9 +10,9 @@
 - Jaskinia Ciepła
 - Jaskinia Czarna (fragment)
 - Jaskinia Goryczkowa
-- Jaskinia Kasprowa Niżnia (fragment)
 - Jaskinia Harda
 - Jaskinia Kalacka
+- Jaskinia Kasprowa Niżnia (fragment)
 - Jaskinia Koszowa
 - Jaskinia Kozia
 - Jaskinia Lejbusiowa
@@ -37,9 +37,9 @@
 - Jaskinia przy Jędrusiowej Dziurze
 - Jaskinia przy Przechodzie
 - Jaskinia Raptawicka
-- Jaskinia Świstacza
 - Jaskinia Śnieżna Studnia
 - Jaskinia Śpiących Rycerzy (fragment)
+- Jaskinia Świstacza
 - Jaskinia w Wielkiej Turni
 - Jaskinia w Zbójnickiej Turni
 - Jaskinia Wielka Śnieżna
@@ -57,19 +57,19 @@
 - Studnia na Szlaku
 - Studnia przy Przechodzie
 - Studnia w Kazalnicy
+- System Jaskinia za Siedmiu Progami-Jaskinia Pośrednia-Jaskinia Wysoka
+- Szara Studnia
 - Szczelina Miętusia
 - Szczelina nad Lejem
 - Szczelina nad Tomanową I
 - Szczelina nad Tomanową II
-- System Jaskinia za Siedmiu Progami-Jaskinia Pośrednia-Jaskinia Wysoka
-- Szara Studnia
 - Upłazkowa
 - Wielka Litworowa
 - Wilczy Schron
 - Wyżnia Koszowa Dziura
-- Zawalony Schron
 - Zaspałkowa Szczelina
-- Zbójnicka Piwnica
+- Zawalony Schron
 - Zbójecka Dziura
+- Zbójnicka Piwnica
 - Zoska - Zagonna Studnia
 - Zwolińskiego
