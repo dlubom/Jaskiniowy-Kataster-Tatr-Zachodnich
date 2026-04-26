@@ -1,0 +1,75 @@
+- Czerwona Studzienka
+- Dmuchawa
+- Dziura
+- Dziura pod Świstową Studnią
+- Dziura w Stole
+- Dziurka w Trawce
+- Gawra
+- Jaskinia Bańdzioch Kominiarski
+- Jaskinia Biała (jako fragment jaskini Zimna)
+- Jaskinia Ciepła
+- Jaskinia Czarna (fragment)
+- Jaskinia Goryczkowa
+- Jaskinia Harda
+- Jaskinia Kalacka
+- Jaskinia Kasprowa Niżnia (fragment)
+- Jaskinia Koszowa
+- Jaskinia Kozia
+- Jaskinia Lejbusiowa
+- Jaskinia Lodowa Małołącka
+- Jaskinia Lodowa Miętusia
+- Jaskinia Lodowa w Ciemniaku
+- Jaskinia Mała w Mułowej
+- Jaskinia Małołącka
+- Jaskinia Marmurowa
+- Jaskinia Miętusia (fragment)
+- Jaskinia Miętusia Wyżnia
+- Jaskinia Mroźna
+- Jaskinia Mylna
+- Jaskinia nad Beczką
+- Jaskinia nad Percią
+- Jaskinia Nova Kresanica
+- Jaskinia Obcasna Vyvieracka
+- Jaskinia Obłazkowa
+- Jaskinia pod Progiem
+- Jaskinia pod Zamkiem (fragment)
+- Jaskinia Poszukiwaczy Skarbów (fragment)
+- Jaskinia przy Jędrusiowej Dziurze
+- Jaskinia przy Przechodzie
+- Jaskinia Raptawicka
+- Jaskinia Śnieżna Studnia
+- Jaskinia Śpiących Rycerzy (fragment)
+- Jaskinia Świstacza
+- Jaskinia w Wielkiej Turni
+- Jaskinia w Zbójnickiej Turni
+- Jaskinia Wielka Śnieżna
+- Jaskinia Zawaliskowa Tomanowa
+- Jaskinia Ziobrowa
+- Kamienne Mleko
+- Koprowa Studnia
+- Lustrzany Korytarz
+- Meander w Małołąckim Siodle
+- Mnichowa Studnia Wyżnia
+- Ptasia Studnia
+- Rura przy Oknie
+- Schron pod Jędrusiową Dziurą
+- Smocza Jama
+- Studnia na Szlaku
+- Studnia przy Przechodzie
+- Studnia w Kazalnicy
+- System Jaskinia za Siedmiu Progami-Jaskinia Pośrednia-Jaskinia Wysoka
+- Szara Studnia
+- Szczelina Miętusia
+- Szczelina nad Lejem
+- Szczelina nad Tomanową I
+- Szczelina nad Tomanową II
+- Upłazkowa
+- Wielka Litworowa
+- Wilczy Schron
+- Wyżnia Koszowa Dziura
+- Zaspałkowa Szczelina
+- Zawalony Schron
+- Zbójecka Dziura
+- Zbójnicka Piwnica
+- Zoska - Zagonna Studnia
+- Zwolińskiego
