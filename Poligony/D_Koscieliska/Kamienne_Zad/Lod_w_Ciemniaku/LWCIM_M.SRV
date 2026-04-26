@@ -1,7 +1,7 @@
 #[
-CAVE_ID			"T.D-16.03"
-CAVE_NAME		"Jaskinia Kasprowa Niznia"
-UPDATE_DATE		2026-04-15
+CAVE_ID			"T.F-10.01"
+CAVE_NAME		"Jaskinia Lodowa w Ciemniaku"
+UPDATE_DATE		2026-04-16
 PROJECT_NAME		"Kataster jaskin tatrzanskich"
 COORDINATOR		"Pawel Gogolak"
 COORDINATOR_EMAIL	"pafffel@gmail.com"
@@ -11,8 +11,8 @@ DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix KasprowaNiznia
-#flag	0	/Kasprowa Niznia
-#flag	0	/ENTRANCE
-#note	0	/Kasprowa Niznia
-#fix	0	E19.978567  N49.253975  1228.0m
+#prefix LodowaWCiemniaku
+#flag	gc0	/Lodowa w Ciemniaku
+#flag	gc0	/ENTRANCE
+#note	gc0	/Lodowa w Ciemniaku
+#fix	gc0	E19.892083	N49.233889	1695.2

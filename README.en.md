@@ -48,6 +48,7 @@ Currently, the project includes data for the following caves:
 - Jaskinia Lejbusiowa
 - Jaskinia Lodowa Małołącka
 - Jaskinia Lodowa Miętusia
+- Jaskinia Lodowa w Ciemniaku
 - Jaskinia Mała w Mułowej
 - Jaskinia Małołącka
 - Jaskinia Marmurowa

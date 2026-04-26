@@ -1,0 +1,71 @@
+#[
+CAVE_ID			"T.F-10.01"
+CAVE_NAME		"Jaskinia Lodowa w Ciemniaku"
+SURVEY_ID		GR
+SURVEY_NAME		"Partie gorne"
+UPDATE_DATE		2026-04-16
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Pawel Gogolak"
+COORDINATOR_EMAIL	"pafffel@gmail.com"
+DATA_SOURCE		"Wielkopolski Klub Taternictwa Jaskiniowego"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM "Michal Amborski WKTJ, Jan Barabach WKTJ"
+INSTRUMENT "DistoX2, Qave"
+#]
+
+#prefix LodowaWCiemniaku
+#units meters order=DAV
+#units A=D V=D
+#units DECL=5.56
+#date 2021-09-11
+
+; === Polaczenia z innymi cigami ===
+
+gc17	gr3	0	0	0
+
+;Partie gorne (stacje gr0-gr3)
+
+gr0	gr1	4.110	247.597	-52.046
+gr1	gr2	1.640	207.367	-35.707
+gr2	gr3	12.652	190.937	-48.008
+
+;Strzaly boczne (splay)
+
+gr0	-	0.727	35.898	-0.275
+gr0	-	0.560	10.915	64.402
+gr0	-	1.621	174.518	-87.358
+gr0	-	2.448	14.260	-10.118
+gr0	-	0.974	113.335	-53.976
+gr0	-	6.562	250.027	-33.162
+gr0	-	1.838	221.902	-59.139
+gr0	-	1.952	259.184	-57.327
+gr0	-	1.779	295.988	-15.425
+gr0	-	2.306	280.981	-1.901
+gr0	-	1.331	344.487	36.694
+gr0	-	2.118	322.619	31.135
+gr1	-	5.824	60.749	76.547
+gr1	-	5.704	48.010	74.410
+gr1	-	4.627	63.528	56.096
+gr1	-	2.913	84.754	80.947
+gr1	-	2.183	181.692	75.635
+gr1	-	1.730	237.838	31.108
+gr1	-	2.275	247.159	6.119
+gr1	-	3.621	261.568	9.959
+gr1	-	1.022	114.450	-3.587
+gr1	-	1.167	146.860	-7.086
+gr1	-	0.903	191.173	-15.677
+gr1	-	3.115	202.786	-60.057
+gr2	-	4.388	336.797	36.013
+gr2	-	3.547	326.613	24.192
+gr2	-	2.052	332.271	22.236
+gr2	-	2.325	346.822	49.252
+gr2	-	1.136	347.833	-15.793
+gr2	-	1.907	233.355	-81.282
+gr2	-	4.124	200.643	-58.596
+gr2	-	3.147	169.536	-63.281
+gr2	-	5.016	219.271	-51.691
+gr2	-	3.886	196.760	-32.953
+gr2	-	4.629	199.314	-49.664
+gr2	-	10.191	214.634	-45.775
+gr2	-	10.248	211.080	-54.272

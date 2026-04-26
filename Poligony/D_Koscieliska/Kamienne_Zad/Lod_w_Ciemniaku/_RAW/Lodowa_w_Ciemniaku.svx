@@ -1,0 +1,10 @@
+*begin Lodowa_w_Ciemniaku
+*include LwC_glowny_ciag.svx
+*include LwC_gora.svx
+*include LwC_Meander_Geografow.svx
+*include LwC_Nowy_Korytarz.svx
+
+*equate LwC_glowny_ciag.8 LwC_Nowy_Korytarz.12
+*equate LwC_glowny_ciag.17 LwC_Meander_Geografow.19
+*equate LwC_glowny_ciag.17 LwC_gora.3
+*end Lodowa_w_Ciemniaku
