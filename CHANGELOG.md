@@ -4,6 +4,14 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.3.2] - 2026-04-29
+
+Poprawiono stukturę plików jaskini Smocza Jama
+
+### Naprawione
+- Struktura plików jaskini Smocza Jama - osobny plik eksportu dla tej jaskini posiada poprawne dane. Dostosowano strukturę plików do panującej konwencji. Ujednolicono prefix jaskini.
+- Zunifikowano kolejność dyrektyw Walls dla Claude add-cave
+
 ## [v1.3.1] - 2026-04-29
 
 Dodano Partie Wawelskie Jaskini Czarnej oraz poprawka eksportu per-cave SHP

@@ -533,11 +533,11 @@
 .NAME	SM
 .PATH	Smocza_Jama
 .STATUS	8
-.SURVEY	Smocza Jama
-.NAME	TE0807
+.SURVEY	Smocza Jama meta
+.NAME	SMOCZ_M
 .STATUS	8
-.SURVEY	Coordinates
-.NAME	0807GPS
+.SURVEY	Smocza Jama pomiary
+.NAME	SMOCZ_S
 .STATUS	8
 .ENDBOOK
 .BOOK	Gawra
