@@ -139,9 +139,10 @@ INSTRUMENT "<instrument or nieznany>"
 #]
 
 #prefix <PREFIX>
-#date <YYYY-MM-DD>
 #units meters order=DAV
 #units A=D V=D
+; #units DECL=X.X    ; optional — must come BEFORE #date (see CLAUDE.md)
+#date <YYYY-MM-DD>
 
 ;<Section description>
 

@@ -1,7 +1,7 @@
 #[
-CAVE_ID			T.E-08.07
+CAVE_ID			"T.E-08.07"
 CAVE_NAME		"Smocza Jama"
-UPDATE_DATE		2015-07-26
+UPDATE_DATE		2026-04-29
 PROJECT_NAME		"Kataster jaskin tatrzanskich"
 COORDINATOR		"Dariusz Lubomski"
 COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
@@ -9,10 +9,10 @@ REFERENCE_SYSTEM	"WGS84"
 COORDINATE_SYSTEM	"UTM"
 DATA_SOURCE		"Polskie Towarzystwo Przyjaciol Nauk o Ziemi"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
-
-TEAM "unknown"
-INSTRUMENT "unknown"
 #]
 
-#prefix SmoczaJama.Coord
-#FIX  o1  E19:52:03.841 N49:14:16.225   1120m
+#prefix SmoczaJama
+#flag	0	/Smocza Jama
+#flag	0	/ENTRANCE
+#note	0	/Smocza Jama
+#fix	0	E19.867734	N49.237840	1120.0m
