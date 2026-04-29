@@ -102,18 +102,9 @@ jobs:
           echo "C:\survex\bin" >> $env:GITHUB_PATH
           echo "C:\msys64\mingw64\bin" >> $env:GITHUB_PATH
 
-      - name: Check SRV file naming
+      - name: Run full validation (Linux)
         if: runner.os == 'Linux'
-        run: bash docker/check-naming.sh
-
-      - name: Check for invalid directives
-        if: runner.os == 'Linux'
-        run: bash docker/check-directives.sh
-
-      - name: Compile with cavern (Linux)
-        if: runner.os == 'Linux'
-        run: |
-          cavern KATASTER.wpj 2>&1 | tee cavern_output.txt
+        run: bash docker/validate.sh
 
       - name: Compile with cavern (Windows)
         if: runner.os == 'Windows'
@@ -124,7 +115,8 @@ jobs:
           export GDAL_DATA=/mingw64/share/gdal
           cavern KATASTER.wpj 2>&1 | tee cavern_output.txt
 
-      - name: Check for unattached stations
+      - name: Check for unattached stations (Windows)
+        if: runner.os == 'Windows'
         shell: bash
         run: |
           if grep -qE "not attached to a (fixed|control) point" cavern_output.txt; then
