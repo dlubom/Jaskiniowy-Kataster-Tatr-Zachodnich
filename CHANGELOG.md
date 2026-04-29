@@ -12,7 +12,8 @@ Dodano walidacje exportu plików oraz użyto skryptu walidacji w GitHub Actions 
 - Krok walidacji plików exportu
 
 ### Zmienione
-- Walidacja GitHub korzysta z skryptu validate.sh 
+- Walidacja GitHub korzysta z skryptu validate.sh
+- Poprawiono komendy eksportu Shapefiles odnośnie pojawiającego się ostrzeżenia o skracaniu nazwy atrybutu
 
 ## [v1.3.2] - 2026-04-29
 
