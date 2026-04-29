@@ -4,6 +4,16 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.3.1] - 2026-04-29
+
+Dodano Partie Wawelskie Jaskini Czarnej oraz poprawka eksportu per-cave SHP
+
+### Dodane
+- Partie Wawelskie Jaskini Czarnej (CZ_W_S.SRV)
+
+### Naprawione
+- Eksport per-cave SHP — dodano flage --full-coordinates do survexport, bez ktorej wspolrzedne byly w ukladzie lokalnym (0,0) zamiast UTM34
+
 ## [v1.3.0] - 2026-04-26
 
 Zmieniono umiejscowienie listy jaskin zawartych w projekcie do osobnego pliku .md
