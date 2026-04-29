@@ -6,10 +6,13 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [v1.3.3] - 2026-04-29
 
-Dodano walidacje exportu plików
+Dodano walidacje exportu plików oraz użyto skryptu walidacji w GitHub Actions (jedno miejsce określające sposób walidacji)
 
 ### Dodane
 - Krok walidacji plików exportu
+
+### Zmienione
+- Walidacja GitHub korzysta z skryptu validate.sh 
 
 ## [v1.3.2] - 2026-04-29
 
