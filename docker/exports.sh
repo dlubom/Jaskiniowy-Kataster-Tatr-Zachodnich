@@ -81,7 +81,7 @@ caves=$(tail -n+2 ${TMPDIR_LOCAL}/entrances.csv | cut -d, -f4 | sed 's/:.*//' | 
 
 for cave in $caves; do
     echo "      → ${cave}"
-    survexport --legs --survey="${cave}" --dxf "${COMPILED_3D}" "${TMPDIR_LOCAL}/${cave}.dxf"
+    survexport --legs --full-coordinates --survey="${cave}" --dxf "${COMPILED_3D}" "${TMPDIR_LOCAL}/${cave}.dxf"
     ogr2ogr -f "ESRI Shapefile" -dim XYZ -a_srs EPSG:32634 \
         "${OUTDIR}/caves/${cave}.shp" "${TMPDIR_LOCAL}/${cave}.dxf"
 done

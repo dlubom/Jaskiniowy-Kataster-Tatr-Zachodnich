@@ -1,0 +1,155 @@
+#[
+CAVE_ID			"T.E-09.12"
+CAVE_NAME		"Jaskinia Czarna"
+SURVEY_ID		W1
+SURVEY_NAME		"Partie Wawelskie"
+UPDATE_DATE		2026-03-21
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"Stanislaw Kotarba, xlsx od Jakuba Nowaka"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+TEAM			"Stanislaw Kotarba i odkrywcy Partii Wawelskich"
+INSTRUMENT		"busola, tasma"
+#]
+
+#prefix Czarna.Wawel
+
+;Partie Wawelskie - ciag od punktu 42 Borowca
+;Pomiary: odkrywcy Partii Wawelskich w trakcie akcji eksploracyjnych 1978-1981
+;Plan i przekroj zestawil Stanislaw Kotarba w 1981 r.
+;w oparciu o punkty pomiarowe W. Borowca
+;Dokladna data pomiarow nieznana - przyjeto 1981-01-01
+
+#date 1981-01-01
+#units meters order=DAV
+#units A=D V=D
+
+;--- Ciag 42-s08 (od p. 42 Borowca przez Komin Zlobisty do Klasycznego Komina) ---
+;Nawiazanie: punkt 42 ciagu glownego Borowca
+Czarna.Borowiec:42	4201	7.50	229.5	48
+4201	4202	6.83	200.7	2
+4202	4203	11.34	233.1	25
+4203	4204	5.18	189.0	-8
+4204	4205	2.46	247.5	32
+4205	4206	3.35	297.0	77
+4206	13	1.80	252.0	-57	;ciag do Komina Zlobistego
+13	12	9.56	225.0	-32
+12	11	8.25	270.0	2
+11	10	3.60	261.0	12
+10	9	4.32	214.2	-6
+9	8	1.90	342.0	-46
+8	7	2.05	295.2	4
+7	6	3.36	198.0	2
+6	5	11.77	243.0	-30
+5	4	4.97	258.3	-7
+4	3	6.40	228.6	2
+3	2	5.58	228.6	-13
+2	1	1.90	153.0	-41
+1	0	1.50	142.2	32
+0	spit	9.50	199.8	-76
+spit	s01	10.40	50.4	35	;spit nad Zlobistym - obejscie
+s01	s02	12.90	70.2	25
+s02	s03	11.10	56.7	42
+s03	s04	7.80	235.8	-3
+s04	s05	1.95	300.6	32
+s05	s06	3.05	263.7	-13
+s06	s07	4.50	262.8	38
+s07	s08	4.78	256.5	5	;pod Klasycznym Kominem
+
+;--- Boczny ciag od p. 3 ---
+3	301	3.27	283.5	-20
+301	302	7.22	241.2	-9
+302	303	1.80	205.2	-10
+303	304	4.00	254.7	-14
+304	305	1.66	153.0	2
+
+;--- Ciag od p. 4206 (Komin Zlobisty) ---
+4206	420601	6.45	58.5	57
+420601	420602	5.85	72.0	21
+420602	420603	5.09	73.8	3
+420603	420604	4.15	29.7	58
+
+;--- Korytarzyk z problemem (od p. 420602) ---
+420602	42060201	5.20	15.3	-40
+42060201	42060202	5.34	38.7	8	;plus 9 punktow pomiarowych do Gzymsu do +24 wschod
+
+;--- Ciag glowny c.d. (od p. 13) ---
+13	14	3.91	322.2	65
+14	15	14.40	243.0	12
+15	16	10.43	54.0	42
+16	17	5.65	52.2	10
+17	18	2.73	117.9	-4
+
+;Biala Ulica (od p. 18)
+18	18_1	8.40	54.0	32
+18_1	18_2	6.40	66.6	8
+18_2	18_3	4.28	41.4	26
+18_3	18_4	12.54	61.2	15
+18_4	18_5	9.82	31.5	38
+18_5	18_6	7.00	36.0	43
+
+;--- Ciag glowny c.d. (od p. 18) ---
+18	18p	9.35	347.4	52
+18p	19	1.85	261.9	50
+19	20	5.80	340.2	53
+20	21	8.85	352.8	50
+21	22	8.20	245.7	42
+22	23	5.15	247.5	11
+23	24	4.95	207.0	42
+24	25	6.70	239.4	14
+25	26	4.55	218.7	18
+26	27	2.65	270.0	8
+27	28	3.92	225.0	5
+28	29	4.05	258.3	12
+29	30	4.50	169.2	45
+30	31	5.00	225.0	-14
+
+;--- Ciag od p. 18p ---
+18p	18p01	7.37	226.8	0
+18p01	18p02	3.80	257.4	-22
+18p02	18p03	4.32	212.4	-9
+18p03	18p04	5.67	133.2	10
+18p04	18p05	5.64	228.6	34
+18p05	18p06	5.12	230.4	-48
+18p06	18p07	5.28	232.2	12
+18p07	18p08	4.37	214.2	-32
+18p08	18p09	5.50	244.8	-30
+18p09	18p10	7.03	255.6	-44
+18p10	18p11	13.53	252.0	-52
+
+;--- Ciag od p. 18p05 ---
+18p05	18p0501	5.40	20.7	15
+18p0501	18p0502	6.40	34.2	38
+18p0502	18p0503	10.21	52.2	8
+
+;--- Ciag od p. 18p0502 ---
+18p0502	18p0504	5.22	198.0	46
+18p0504	18p0505	2.28	261.0	-25
+18p0505	18p0506	2.17	288.0	-45
+18p0506	18p0507	3.62	227.7	-3
+18p0507	18p0508	1.70	12.6	78
+18p0508	18p0509	1.54	218.7	12
+18p0509	18p0510	3.33	351.0	-65
+18p0510	18p0511	0.72	174.6	-12
+18p0511	18p0512	7.23	273.6	-58
+18p0512	18p0513	11.75	226.8	-15
+18p0513	18p0514	2.50	234.0	-42
+18p0514	18p0515	4.70	253.8	-28
+18p0515	18p0516	2.35	217.8	-14	;pod Kominem Klasycznym
+;brak ciagu do szczytu komina
+
+;--- Od s08 do Mlecznej Studni ---
+s08	18p11	4.34	270.0	-24
+18p11	18p12	3.60	180.0	-15
+18p12	18p13	19.75	252.0	-39
+18p13	18p14	17.12	243.0	-23
+18p14	18p15	19.55	253.8	-27
+18p15	18p16	11.55	284.4	-10
+18p16	18p17	4.30	252.0	-26	;spit nad Mleczna Studnia
+
+;--- Zamkniecie petli s08-18p11 (od p. 18p10 i od p. s08) ---
+;Stacja 18p11 osiagana z dwoch kierunkow: 18p10->18p11 i s08->18p11
+
+;--- Polaczenie wątpliwe ---
+;0	18p11	5.75	219.6	-20	;???? - do wyjasnienia
