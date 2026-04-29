@@ -4,6 +4,13 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.3.3] - 2026-04-29
+
+Dodano walidacje exportu plików
+
+### Dodane
+- Krok walidacji plików exportu
+
 ## [v1.3.2] - 2026-04-29
 
 Poprawiono stukturę plików jaskini Smocza Jama

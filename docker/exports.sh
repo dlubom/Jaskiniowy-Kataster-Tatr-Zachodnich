@@ -64,16 +64,6 @@ ogr2ogr -f "ESRI Shapefile" -dim XYZ -a_srs EPSG:32634 \
 
 # -----------------------------------------------------------------------------
 # 4. Extract the list of cave IDs from entrance stations in the compiled data.
-#    survexport --csv writes one row per entrance; column 4 is the station
-#    name (e.g. "tc1601.0"), stripping everything after the dot gives the
-#    cave prefix used in --survey= filtering below.
-#
-# TODO: This step currently fails with:
-#   survexport: error: No survey data in 3d file "exports/JKTZ-<VERSION>/JKTZ-<VERSION>.3d"
-# Root cause: cavern only recognises Survex *entrance directives, not Walls
-# #flag STATION /ENTRANCE — so no entrance stations are present in the .3d.
-# Fix needed: expose entrance stations to Survex (e.g. via *entrance directives
-# in a thin .svx wrapper or by converting #flag /ENTRANCE in .SRV files).
 # -----------------------------------------------------------------------------
 echo "[4/5] survexport — per-cave DXF + shapefiles"
 survexport --entrances --csv "${COMPILED_3D}" ${TMPDIR_LOCAL}/entrances.csv
