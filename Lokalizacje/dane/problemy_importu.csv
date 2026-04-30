@@ -1,0 +1,145 @@
+issue_type,source,source_record_id,object_id,inventory_id,name,detail
+tpn_missing_inventory_id,TPN,{A92FF1D1-6B71-4A2F-995D-9F7F56003701},JKTZ-OBJ-000007,,Dziura pod Kotlinami,TPN row 8 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{4B93FEA3-BF1A-4B34-BD98-0E41E9535BE9},JKTZ-OBJ-000016,,Szczelina w Łomiku,TPN row 17 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{61A88B7E-F4D7-448E-89C5-22F89BA5BAEF},JKTZ-OBJ-000018,,Schron w Kondratowych Basztach,TPN row 19 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{5760C06D-8E78-4D2C-A4DF-2A3FCB0BF8B2},JKTZ-OBJ-000019,,Szczelina w Zameczkach,TPN row 20 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{B70FDCF8-521F-4619-9B06-77D598113DCF},JKTZ-OBJ-000027,,Gawra w Kondratowych Basztach,TPN row 28 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{32002BF4-19E5-4BDC-8EF1-93D2E7B54909},JKTZ-OBJ-000036,,Szczelina nad Okapami,TPN row 37 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{5811B4F0-9466-491F-A4A5-28ED700D1A5D},JKTZ-OBJ-000037,,Sztolnia na Klinowej Czubie nr 8,TPN row 38 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{AFC28DA7-F21D-4303-8707-C5412DD4C64E},JKTZ-OBJ-000038,,Gawra nad Pisaną,TPN row 39 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{F4D11F48-14AF-4A26-9FBC-A3366D5BF8D2},JKTZ-OBJ-000046,,Sztolnie w Żlebie pod Banie,TPN row 47 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{AF10A02B-D9B1-4697-950C-C58015B51296},JKTZ-OBJ-000048,,Okap z Kotem,TPN row 49 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{C92929A3-56C0-4CE7-A989-3F2E432AF387},JKTZ-OBJ-000055,,Sztolnia w Żlebie pod Czerwienicą,TPN row 56 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{D1372576-F8E4-440B-BFDE-A01BFDE6BCF2},JKTZ-OBJ-000061,,Schron przy Zagonie,TPN row 62 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{D22B814F-00F6-46BE-A245-547F46E810C1},JKTZ-OBJ-000062,,Dziura w Kondratowych Basztach,TPN row 63 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{BA97358D-C961-45B2-8A59-F1423AD3E8A9},JKTZ-OBJ-000064,,Dziura w Burcie,TPN row 65 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{86E6E8C9-8495-4E9B-8E89-BC4BC2ADEC06},JKTZ-OBJ-000067,,Rura nad Okapami,TPN row 68 nie ma NR_INWENT.
+tpn_missing_inventory_id_inferred,TPN,{B918424F-9161-4841-8BC8-0051445A4D29},JKTZ-OBJ-000083,T.E-09.12,Jaskinia Czarna,TPN row 84 nie ma NR_INWENT; kandydat po nazwie: T.E-09.12.
+tpn_missing_inventory_id,TPN,{A3228025-863C-4833-9DA9-2AC6337E1F66},JKTZ-OBJ-000086,,Schron w Zawracie Kasprowym,TPN row 87 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{5DEECEF0-D133-4954-9235-6229FC686B9F},JKTZ-OBJ-000089,,Sztolnia w Żlebie Piekło,TPN row 90 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{4C30384D-7D8D-48D8-8D57-AEA8CC59687C},JKTZ-OBJ-000101,,Gawra we Wysrankach,TPN row 102 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{1B23AA17-69C9-486D-B03B-089AADB88194},JKTZ-OBJ-000107,,Schronisko przy Ścianach II,TPN row 108 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{0606A079-D986-44F9-BC11-22BE576A107E},JKTZ-OBJ-000119,,Sztolnia w Dolinie Białego nr 1,TPN row 120 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{840F8DD0-1013-4E80-9156-14863D013448},JKTZ-OBJ-000128,,Kalacka Nyża V,TPN row 129 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{D06EAAA8-1A55-4ECB-8C1C-3D5E7C499BDD},JKTZ-OBJ-000140,,Jarząbczy Schron,TPN row 141 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{74EBCFAC-7BBB-4D82-A73F-524887F40151},JKTZ-OBJ-000142,,Studzienka przy Pomaranczarni,TPN row 143 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{E306CFB8-DE61-4E12-B244-DFFE0ACA3586},JKTZ-OBJ-000145,,Zapadlisko,TPN row 146 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{9C221920-8DB8-42B8-9363-FF0D31EB6CBF},JKTZ-OBJ-000152,,Szczelina Salicylowa,TPN row 153 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{A8920EDC-9F80-4B86-AA53-B0628CD02173},JKTZ-OBJ-000154,,Myslenicka Rura,TPN row 155 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{42D3F366-F55C-48CF-A5BC-1EAABE01CC7F},JKTZ-OBJ-000156,,Szczelina nad Okapami,TPN row 157 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{D6DA794E-6CD4-4CDC-9342-B94BE4734FCA},JKTZ-OBJ-000160,,Schron nad Sniezna,TPN row 161 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{07247104-AFDF-41DE-82F4-3C841DC0CA24},JKTZ-OBJ-000163,,Szczelina w Nosalu,TPN row 164 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{2B10B023-5F25-4CC3-B9F8-3BA313D9C527},JKTZ-OBJ-000166,,Samkowy Schron,TPN row 167 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{25604785-57C9-44E3-A432-B94C85D4551B},JKTZ-OBJ-000195,,Szczelina przy Piórze,TPN row 196 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{61A58610-C3AE-4D2D-9C78-3E5741214D77},JKTZ-OBJ-000197,,Schron w Zdziarchach,TPN row 198 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{B99B0CF7-4CA0-4B29-A31E-A74E68F936CD},JKTZ-OBJ-000200,,Schron pod Sarnią Skałą,TPN row 201 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{1B274BA2-8A70-4FBA-BCE5-50A642876EAA},JKTZ-OBJ-000207,,Jaskinia nad Kasprową Niżnią,TPN row 208 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{E7505F82-A5F5-4C2D-BB98-7DD3399C5651},JKTZ-OBJ-000209,,Schron pod Siodłową Turnią I,TPN row 210 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{43E5925D-1348-42E6-ABBC-115D0F255F5A},JKTZ-OBJ-000219,,Schron przy Wymytem,TPN row 220 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{3F7018B7-6BB7-4181-9F09-607ADD6EC315},JKTZ-OBJ-000224,,Szczelina w Niżniej Świstówce I,TPN row 225 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{F8892AF0-67AE-47D1-8E94-9683FD539C7E},JKTZ-OBJ-000227,,Jaskinia przy Tunelu Małołąckim,TPN row 228 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{CF3C3737-0919-4FDA-BCBA-AEAE12604FA7},JKTZ-OBJ-000240,,Szczelina przy Wymytem,TPN row 241 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{DDED8478-2649-47DE-9199-DAE3080C4C68},JKTZ-OBJ-000251,,Dziura za Wykrotem,TPN row 252 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{BE12C616-1780-44D3-AD82-398987C85B67},JKTZ-OBJ-000262,,Nyża nad Olczyską III,TPN row 263 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{A5C7088E-A2FE-4898-AE2E-B0A9B420B17D},JKTZ-OBJ-000273,,,TPN row 274 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{204A0610-40F4-4D2D-AA17-A138A1237B13},JKTZ-OBJ-000277,,Gawra w Pronobisie,TPN row 278 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{928043CC-4A91-42CF-8FCD-1BBBD1671B28},JKTZ-OBJ-000286,,Gawra w Zawieszce,TPN row 287 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{98377D8A-8E3D-41E9-BD6D-DA78E5E56745},JKTZ-OBJ-000288,,Gawra nad Wielką Równią,TPN row 289 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{FCF9C91D-76AC-48F2-843E-3193DB34EDD4},JKTZ-OBJ-000293,,Studnia pod Okapami,TPN row 294 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{EEA9E82F-1DA8-492E-B6E2-A9442252C3A2},JKTZ-OBJ-000299,,Dziura we Wysrankach,TPN row 300 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{D6280BA6-C638-4087-B4F8-CF7AAD8BA588},JKTZ-OBJ-000300,,Szczelina za Mechami,TPN row 301 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{28DEA51D-B6AE-478E-B52A-834C3EB460FC},JKTZ-OBJ-000316,,Sztolnia w Przedniej Kopce nr 1,TPN row 317 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{0A918778-2BA0-4AE8-8DBD-1B8B7C319066},JKTZ-OBJ-000317,,Koleba w Zawracie Kasprowym,TPN row 318 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{9A3DC135-EC51-475F-BBBD-15BDD3072F68},JKTZ-OBJ-000321,,Szczelina w Niżniej Świstówce II,TPN row 322 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{CA3A7955-CD7E-46C0-9A2A-9F8632B39057},JKTZ-OBJ-000323,,koleba w Białym Żlebku,TPN row 324 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{7F42BD24-1B62-42FF-A68D-96F5AC40A42A},JKTZ-OBJ-000328,,Jaskinia pod Krzyżem,TPN row 329 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{6E0EBC33-4EAC-46F5-9BAB-FBFC1B2466C1},JKTZ-OBJ-000335,,Szczelina nad Mechami,TPN row 336 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{88801933-D166-488A-A718-584A7C9DC4C3},JKTZ-OBJ-000355,,Sztolnia na Klinowej Czubie nr 2,TPN row 356 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{674815A2-6117-4345-AE0C-96B55454081D},JKTZ-OBJ-000366,,Dziura nad Piórem,TPN row 367 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{0C92D771-B5DD-4D1A-A061-8C639277BCCB},JKTZ-OBJ-000377,,Okap w Kondratowych Basztach,TPN row 378 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{68642D6B-F4C0-4C24-A3CA-ED50C8EE96BA},JKTZ-OBJ-000379,,Kalacka Nyża IV,TPN row 380 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{FC8F548F-3C7C-461C-82D4-25EFDBAADA1F},JKTZ-OBJ-000392,,Schron nad Wymytem,TPN row 393 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{C447E8B7-560C-4B40-96B5-805673528AA6},JKTZ-OBJ-000394,,Sztolnia na Klinowej Czubie nr 1,TPN row 395 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{B4A1EBFD-C250-4F32-B73F-DEA1B725C447},JKTZ-OBJ-000399,,Schron w Kościele,TPN row 400 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{9F98E21A-0E26-4FEC-A0A1-60F22C48FB42},JKTZ-OBJ-000411,,Sztolnia w Dolinie Białego nr 2,TPN row 412 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{8CC17F24-30C0-4247-8D59-5A4DBCB45EFF},JKTZ-OBJ-000436,,Schron pod Siodłową Turnią II,TPN row 437 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{161042A4-B8C9-4297-AA43-96C370011BB2},JKTZ-OBJ-000449,,Schron pod Gniazdem,TPN row 450 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{905F9E2D-21D6-470F-9791-370E524C0953},JKTZ-OBJ-000456,,Sztolnia w Żlebie Banie,TPN row 457 nie ma NR_INWENT.
+tpn_missing_inventory_id_inferred,TPN,{273B92B8-201B-443E-AD19-73DE844B9F5B},JKTZ-OBJ-000476,T.E-08.07,Smocza Jama,TPN row 477 nie ma NR_INWENT; kandydat po nazwie: T.E-08.07.
+tpn_missing_inventory_id,TPN,{E5C5FFD1-D57C-4529-9532-F70BDFA3B79F},JKTZ-OBJ-000487,,Kalacka Nyża III,TPN row 488 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{B847E094-6D0A-49D5-B2F0-9729D028C662},JKTZ-OBJ-000501,,Studzienka przy Pomarańczarni,TPN row 502 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{B9CE3858-B5E7-46FF-9ED9-83E15D704972},JKTZ-OBJ-000506,,Sztolnia w Ornaczańskim Żlebie nr 3,TPN row 507 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{709473B2-1483-4A63-862E-7CB0517A3901},JKTZ-OBJ-000517,,Dziura w Koprowym Żlebie,TPN row 518 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{480831FA-5194-4224-A4A9-05E713EFCCBE},JKTZ-OBJ-000521,,Sztolnia w Ornaczańskim Żlebie nr 2,TPN row 522 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{0146E7BE-EBAE-4187-833D-200A4F960987},JKTZ-OBJ-000523,,Sztolnia - Kopalnia w Wantulach II,TPN row 524 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{33966EE8-29E8-438D-A2FA-D2FE604D5DD0},JKTZ-OBJ-000529,,Korytarz nad Kominem Flacha,TPN row 530 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{75A64A3A-F0FC-42E7-88C9-6198CF1BE83A},JKTZ-OBJ-000539,,Dudowy Barłóg,TPN row 540 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{DF21DAC8-E66A-4F29-979D-9E0703DB68E2},JKTZ-OBJ-000541,,Rura pod Okapami,TPN row 542 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{A5F01B51-0D1C-41DA-8216-91FD41235FF7},JKTZ-OBJ-000548,,Sztolnia w Małym Reglu nr 1,TPN row 549 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{B79A1681-7436-4251-B24B-A9ABBA32DFFE},JKTZ-OBJ-000563,,Szczelina w Wielkiej Turni,TPN row 564 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{8DB4E0C9-74C4-4400-ABAB-BC433D108D36},JKTZ-OBJ-000571,,Nyża w Pośredniej Turni,TPN row 572 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{B4A9F6FE-5B62-4143-80E3-A613A49E90D0},JKTZ-OBJ-000572,,Jaskinia w Niżniej Świstówce,TPN row 573 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{FFB80D84-7D5A-4986-BA87-1E8D5BC00181},JKTZ-OBJ-000581,,Schron w Małym Szerokiem I,TPN row 582 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{0AFBFC7D-0BD3-4FE7-A7F2-1774398D7DD9},JKTZ-OBJ-000584,,Schron w Nosalu,TPN row 585 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{B5AC9E3A-A89E-443F-B640-D28804A74046},JKTZ-OBJ-000589,,Sztolnia w Bramie Kantaka nr 2,TPN row 590 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{3EDD58B4-5F56-44FD-AD00-33CC9E44A795},JKTZ-OBJ-000595,,Nyża w Depresji Strzebońskiego,TPN row 596 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{92D7F63F-B33B-4530-9DDA-033A350887C0},JKTZ-OBJ-000601,,Komora w Kondratowych Basztach,TPN row 602 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{99522C8A-640C-427C-9E08-21276A83B81E},JKTZ-OBJ-000603,,Sztolnia na Klinowej Czubie nr 6,TPN row 604 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{C7918CC1-E333-4902-887C-861BBE7D6775},JKTZ-OBJ-000608,,Nyża w Kościele,TPN row 609 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{F22EDCD0-ACFD-4797-B2A0-CFD5B325BC8E},JKTZ-OBJ-000611,,tunel w Skrajnej Giewonckiej Baszcie,TPN row 612 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{DAF61259-946D-4D5E-8053-D5E69B732C09},JKTZ-OBJ-000612,,Sztolnia w Małym Reglu nr 2,TPN row 613 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{C79E6CC1-3C7B-4E74-9399-6AA3199C1A07},JKTZ-OBJ-000613,,Schron pod Kopą Kondracką,TPN row 614 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{64E02ADF-358A-4D7F-BECE-6434D72150B3},JKTZ-OBJ-000616,,Nyża za Kościołem,TPN row 617 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{FA9BA8B6-5ED6-431D-B2D5-5DF025111077},JKTZ-OBJ-000625,,Sztolnia na Klinowej Czubie nr 3,TPN row 626 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{AFB3118F-4982-4271-AB7E-544CCD7F4854},JKTZ-OBJ-000633,,Sztolnia w Przedniej Kopce nr 2,TPN row 634 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{3457F014-9E29-416F-A45B-0B44446C8CA4},JKTZ-OBJ-000635,,Dziura w Żlebie Pronobisa,TPN row 636 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{DE77AB43-68D1-4DA8-8A18-5D6DFEF2D4C7},JKTZ-OBJ-000675,,Nyża nad Kamieniem,TPN row 676 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{59093DE6-709C-4A98-AD99-2C2DD899B772},JKTZ-OBJ-000685,,Szczelina w Mechach,TPN row 686 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{89A4EBBD-F7FF-4E0D-A814-F643E09C7D1F},JKTZ-OBJ-000687,,Schron nad Mechami,TPN row 688 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{34E08E1E-9AB5-42BB-8640-3C73B10D978A},JKTZ-OBJ-000689,,Szczelina pod Siodłową Turnią,TPN row 690 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{1C03AB0C-0DF5-4C20-95D8-07FB3B2F19C6},JKTZ-OBJ-000690,,Szczelina w Żlebie Między Mnichy,TPN row 691 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{65764152-F017-43E3-83AD-3A672092D0BE},JKTZ-OBJ-000693,,Schron w Skrajnej Giewonckiej Baszcie,TPN row 694 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{8393A2D7-0BDE-48E7-AE6E-089C8051B123},JKTZ-OBJ-000713,,Sztolnia w Dolinie Białego nr 3,TPN row 714 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{2421D669-E136-4ED2-AE27-9BCFE57BC6D7},JKTZ-OBJ-000715,,Sztolnia w Ornaczańskim Żlebie nr 1,TPN row 716 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{5AB5C041-C89D-4653-B05B-31EA2E8EB461},JKTZ-OBJ-000721,,Schron w Wysokim Grzbiecie,TPN row 722 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{F3B07F48-0F30-4692-BBCA-96A387DF1FC5},JKTZ-OBJ-000732,,Sztolnia w Żlebie Baniste,TPN row 733 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{707B1C99-9EF6-457B-802C-D1B009933612},JKTZ-OBJ-000740,,Okno za Kościołem,TPN row 741 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{35C7E917-A53F-4A9B-AB4A-7D44B6B7915E},JKTZ-OBJ-000741,,Jaskinia w Kondratowych Basztach,TPN row 742 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{F44F49D6-8702-477C-99CC-83278DFA8C32},JKTZ-OBJ-000742,,Sztolnia - Kopalnia w Wantulach I,TPN row 743 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{7FD8BAB1-A46D-4ABA-8DEC-683933F2CAFD},JKTZ-OBJ-000754,,Sztolnia w Bramie Kantaka nr 1,TPN row 755 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{66B3CF2A-364B-4A5A-BCE4-53EA7F74F4CA},JKTZ-OBJ-000755,,Schron w Depresji Strzebońskiego,TPN row 756 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{5BD9E6E5-330D-45C1-BB5B-27F0A57D8CF0},JKTZ-OBJ-000757,,Dziura w Małym Giewoncie,TPN row 758 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{5A05ABCB-F94D-478E-B4F7-EDC0F40B9D69},JKTZ-OBJ-000767,,Korytarz za Kościołem,TPN row 768 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{96B9A3DD-2F35-400C-A96C-A5B21625EC24},JKTZ-OBJ-000775,,Kalacki Schron,TPN row 776 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{1A017868-8A43-4087-8959-E696E12E68D0},JKTZ-OBJ-000791,,Ponor Chochołowski,TPN row 792 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{02346839-21F2-4D2C-BD00-1C9AD8615175},JKTZ-OBJ-000799,,Jaskinia nad Lodową Basztą,TPN row 800 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{08B81C36-6909-4560-B876-9C7A04390725},JKTZ-OBJ-000804,,Sztolnia na Klinowej Czubie nr 5,TPN row 805 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{EC925837-5DE2-441A-946A-B65996D0A6A4},JKTZ-OBJ-000808,,Mnichowa Nyza,TPN row 809 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{717DBA7D-61BC-42EF-8F76-144786FC6700},JKTZ-OBJ-000818,,Tunel nad Kominem Flacha,TPN row 819 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{8EA8C6EF-B11F-40E9-8D87-239BEBB14CCE},JKTZ-OBJ-000824,,Koleba w Zawracie Kasprowym,TPN row 825 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{E8A95D46-668D-4C6C-81BA-7D7934C67AC9},JKTZ-OBJ-000825,,Nyża przy Zagonie,TPN row 826 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{0642CC8D-3C79-4801-A619-542161381FCB},JKTZ-OBJ-000835,,Okap z Rurką,TPN row 836 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{E958E9F6-70D1-4D6E-8A7A-9A19C3C9229B},JKTZ-OBJ-000837,,Dziura w Koniu,TPN row 838 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{9B566416-3888-4900-B351-CF81FC2A387E},JKTZ-OBJ-000873,,tunel w Skrajnej Giewonckiej Baszcie,TPN row 874 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{868AEFFA-E2BD-400D-A8BA-DF71A36172B4},JKTZ-OBJ-000875,,Szczelina w Niżniej Świstówce IV,TPN row 876 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{C33E3764-68A6-4841-BDBC-5CB4916E5B2E},JKTZ-OBJ-000876,,Szczelina w Kondratowych Basztach,TPN row 877 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{E6BA5010-45F5-4769-9026-229423DDF3CB},JKTZ-OBJ-000884,,Nyża pod Zachodem Pilotów,TPN row 885 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{F9C94562-FC14-4560-A452-5735CBD6F611},JKTZ-OBJ-000900,,Nyża w Kondratowych Basztach,TPN row 901 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{B3202807-F363-428A-B8F0-0E22A2FA66DA},JKTZ-OBJ-000916,,Jaskinia nad Wielką Równią,TPN row 917 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{690FC059-791F-46EE-969D-CDD1F0BA3460},JKTZ-OBJ-000917,,Szczelina w Baranich Schodach,TPN row 918 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{DA201294-463E-4F4D-8A60-D2F88FB17C1A},JKTZ-OBJ-000941,,Sztolnia na Klinowej Czubie nr 4,TPN row 942 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{DB9A3AD7-6249-4DAE-8C11-D37C5D5B78BD},JKTZ-OBJ-000946,,Schron w Zawraciku,TPN row 947 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{6C6683BC-DE94-4DAA-8716-64C86939974B},JKTZ-OBJ-000948,,Myślenicki Meanderek,TPN row 949 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{0AD65DEC-21FD-49ED-9416-5CDFAEB34D29},JKTZ-OBJ-000968,,Nyża w Białym Grzbiecie,TPN row 969 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{F4458B31-FE66-4983-91C6-5D0CD1A11BC7},JKTZ-OBJ-000970,,Jaskinia przy Wymytem,TPN row 971 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{FC5F97CD-C35E-4A49-8D19-4A40A0767A88},JKTZ-OBJ-000980,,Szczelina w Koprowym Żlebie,TPN row 981 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{77C43DE2-6B32-42CD-AB72-BDBE4D57DD49},JKTZ-OBJ-000981,,Meander nad Kominem Flacha,TPN row 982 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{F275B71F-8034-4305-8ECF-95EF2F9B4AE0},JKTZ-OBJ-000987,,Korytarz nad Mroźną,TPN row 988 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{5085400E-9C55-4BDE-89C7-740A8F6190B6},JKTZ-OBJ-000992,,Zielona Szczelina,TPN row 993 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{964DB8E1-2BE8-4126-A9D2-2DA687C5CD0D},JKTZ-OBJ-000995,,Ptasia Studnia dolny otwór,TPN row 996 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{72C1A44A-0423-4C26-A336-2B5CB36B3FDA},JKTZ-OBJ-000999,,Rura nad Okapami,TPN row 1000 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{B8BC1EDD-8A32-4819-974B-7B55CA77221A},JKTZ-OBJ-001001,,Schron w Małym szerokiem II,TPN row 1002 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{245D9CE7-7EA0-430E-8BD7-CB5BCB2A365B},JKTZ-OBJ-001002,,Komora nad Kobylarzem,TPN row 1003 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{1EC639A6-0C1C-4522-B7A4-6423E7FA3AC0},JKTZ-OBJ-001003,,Gawra w Żabim,TPN row 1004 nie ma NR_INWENT.
+tpn_missing_inventory_id,TPN,{89FC0421-8243-453B-B724-DAC2C28E9BF8},JKTZ-OBJ-001005,,Szczelina w Niżniej Świstówce III,TPN row 1006 nie ma NR_INWENT.
+pig_system_without_candidate_objects,Geoportal_PIG,490,,T-Wielka ĹšnieĹĽna,Jaskinia Wielka Śnieżna,"Rekord PIG/Geoportal dotyczy systemu, ale importer nie znalazl obiektow kandydackich."

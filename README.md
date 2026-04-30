@@ -28,6 +28,10 @@ Zachęcamy do współpracy przy projekcie oraz do udostępniania własnych pomia
 ### Zawartość projektu
 Aktualna lista jaskiń zawartych w projekcie znajduje się w pliku [Lista Jaskiń](LISTA_JASKIN.md).
 
+Rejestr lokalizacji obiektów terenowych, łączący dane TPN i PIG/Geoportalu oraz
+przygotowany pod przyszłe pomiary GNSS i eksporty GIS, znajduje się w katalogu
+[Lokalizacje](Lokalizacje/README.md).
+
 ### Pokrewne projekty
 Warto wspomnieć o projekcie [Caves of the Tatra Mountains](https://github.com/RadostW/jaskinie) prowadzonym przez Speleoklub Warszawski. Stosują oni odmienną filozofię — bazują na własnych pomiarach terenowych wykonywanych współcześnie, a nie na pozyskiwaniu danych z historycznych źródeł. Wykorzystują również wtórną digitalizację planów jaskiń, bez informacji o głębokości. To ciekawe podejście, choć pomierzenie w ten sposób wszystkich tatrzańskich jaskiń będzie dużym wyzwaniem. Projekt korzysta z formatu Survex i jest udostępniany na licencji CC BY-SA 4.0.
 

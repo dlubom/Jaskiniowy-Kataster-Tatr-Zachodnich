@@ -1,0 +1,9 @@
+accuracy_class,label,min_m_exclusive,max_m_inclusive,notes
+do_0_10_m,"do 0,10 m",0,0.10,
+0_10_1_m,"0,10-1 m",0.10,1,
+1_5_m,1-5 m,1,5,
+5_10_m,5-10 m,5,10,
+10_30_m,10-30 m,10,30,
+30_100_m,30-100 m,30,100,
+ponad_100_m,powyzej 100 m,100,,
+nieokreslona,nieokreslona,,,Tymczasowe dla importow bez jawnej dokladnosci.

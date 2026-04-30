@@ -1,0 +1,4 @@
+source,source_name,current_location_priority,scope,notes
+JKTZ_GNSS,Wlasny pomiar GNSS JKTZ,100,object,Docelowo najwyzszy priorytet po weryfikacji.
+TPN,Tatrzanski Park Narodowy - obiekty/otwory jaskin,80,object,Na starcie uznane za lepsze od PIG/Geoportalu.
+Geoportal_PIG,PIG/Geoportal - dane jaskin,50,cave_or_system_context,Do obserwacji obiektu trafia tylko przy jednoobiektowej jaskini; inaczej jako rekord powiazany.
