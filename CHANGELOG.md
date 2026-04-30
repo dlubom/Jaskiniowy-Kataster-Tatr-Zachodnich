@@ -4,6 +4,13 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.3.4] - 2026-04-30
+
+Poprawiono koordynaty pliku eksportu wszystkich jaskiń
+
+### Naprawione
+- Koordynaty pliku eksportu wszystkich jaskiń
+
 ## [v1.3.3] - 2026-04-29
 
 Dodano walidacje exportu plików oraz użyto skryptu walidacji w GitHub Actions (jedno miejsce określające sposób walidacji)
