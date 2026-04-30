@@ -43,10 +43,10 @@ bash docker/exports.sh "${EXPORTS_VERSION}" "${EXPORTS_BASEDIR}" 2>&1 | sed 's/^
 echo ""
 echo "Checking for empty .shp files..."
 echo ""
-bad=$(find "${EXPORTS_OUTDIR}" -type f -name "*.shp" -size 100c)
-if [ -n "$bad" ]; then
+EMPTY_SHAPEFILES=$(find "${EXPORTS_OUTDIR}" -type f -name "*.shp" -size 100c)
+if [ -n "$EMPTY_SHAPEFILES" ]; then
   echo "ERROR: Detected empty Shapefiles:"
-  echo "  $bad"
+  echo "  $EMPTY_SHAPEFILES"
   exit 1
 fi 
   
