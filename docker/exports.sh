@@ -50,7 +50,7 @@ COMPILED_3D="${OUTDIR}/JKTZ-${VERSION}.3d"
 #    no splays). Coordinate system comes from KATASTER.3d (already projected).
 # -----------------------------------------------------------------------------
 echo "[2/5] survexport — full DXF"
-survexport --legs --dxf "${COMPILED_3D}" "${OUTDIR}/JKTZ-${VERSION}.dxf"
+survexport --legs --full-coordinates --dxf "${COMPILED_3D}" "${OUTDIR}/JKTZ-${VERSION}.dxf"
 
 # -----------------------------------------------------------------------------
 # 3. Convert the full DXF to a single ESRI Shapefile.
