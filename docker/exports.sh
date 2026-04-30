@@ -57,23 +57,19 @@ survexport --legs --dxf "${COMPILED_3D}" "${OUTDIR}/JKTZ-${VERSION}.dxf"
 #    -dim XYZ preserves elevation.
 #    -a_srs EPSG:32634 tags the output with UTM zone 34N (WGS84),
 #    which is what Survex uses for this project's projected output.
+#    -sql renames EntityHandle → EntHandle to fit the Shapefile/DBF
+#    10-char field-name limit (otherwise ogr2ogr emits a "laundered field
+#    name" warning and silently truncates).
 # -----------------------------------------------------------------------------
+SHP_SQL="SELECT Layer, PaperSpace, SubClasses, Linetype, EntityHandle AS EntHandle, Text FROM entities"
+
 echo "[3/5] ogr2ogr — shapefile (all caves)"
 ogr2ogr -f "ESRI Shapefile" -dim XYZ -a_srs EPSG:32634 \
+    -sql "${SHP_SQL}" \
     "${OUTDIR}/JKTZ-${VERSION}-all.shp" "${OUTDIR}/JKTZ-${VERSION}.dxf"
 
 # -----------------------------------------------------------------------------
 # 4. Extract the list of cave IDs from entrance stations in the compiled data.
-#    survexport --csv writes one row per entrance; column 4 is the station
-#    name (e.g. "tc1601.0"), stripping everything after the dot gives the
-#    cave prefix used in --survey= filtering below.
-#
-# TODO: This step currently fails with:
-#   survexport: error: No survey data in 3d file "exports/JKTZ-<VERSION>/JKTZ-<VERSION>.3d"
-# Root cause: cavern only recognises Survex *entrance directives, not Walls
-# #flag STATION /ENTRANCE — so no entrance stations are present in the .3d.
-# Fix needed: expose entrance stations to Survex (e.g. via *entrance directives
-# in a thin .svx wrapper or by converting #flag /ENTRANCE in .SRV files).
 # -----------------------------------------------------------------------------
 echo "[4/5] survexport — per-cave DXF + shapefiles"
 survexport --entrances --csv "${COMPILED_3D}" ${TMPDIR_LOCAL}/entrances.csv
@@ -83,6 +79,7 @@ for cave in $caves; do
     echo "      → ${cave}"
     survexport --legs --full-coordinates --survey="${cave}" --dxf "${COMPILED_3D}" "${TMPDIR_LOCAL}/${cave}.dxf"
     ogr2ogr -f "ESRI Shapefile" -dim XYZ -a_srs EPSG:32634 \
+        -sql "${SHP_SQL}" \
         "${OUTDIR}/caves/${cave}.shp" "${TMPDIR_LOCAL}/${cave}.dxf"
 done
 
