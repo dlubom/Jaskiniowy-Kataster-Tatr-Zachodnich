@@ -71,31 +71,29 @@ ogr2ogr -f "ESRI Shapefile" -dim XYZ -a_srs EPSG:32634 \
 # -----------------------------------------------------------------------------
 # 4. Per-cave DXF + shapefile, one .shp per cave under caves/.
 #
-#    Source of truth for the cave list is #prefix directives in the .SRV
-#    files (not the entrances CSV) — some caves have sub-prefixes where
-#    only one sub-prefix has an /ENTRANCE flag (e.g. Goryczkowa: G1 has
-#    the entrance, G2..G5 don't but still hold legs). Grouping is by the
-#    first dotted component of the prefix:
-#       Czarna, Czarna.Borowiec, Czarna.Kujat, …  → cave "Czarna"
-#       Goryczkowa.G1 .. Goryczkowa.G5            → cave "Goryczkowa"
-#       BandziochKom                              → cave "BandziochKom"
-#
-#    Survex treats each #prefix value as an independent survey name —
-#    the dot in `Czarna.Kujat` is part of the name, NOT a parent/child
-#    separator (cavern sees `Czarna` and `Czarna.Kujat` as peer
-#    surveys). So `--survey=Czarna` returns ONLY legs in the survey
-#    literally named `Czarna`, never its sub-prefix peers. We iterate
-#    every declared prefix and merge the resulting DXFs into a single
-#    per-cave shapefile via ogr2ogr -append. A prefix file with only a
-#    #fix and no legs (e.g. CZ_Z_M.SRV) yields an empty DXF — harmless,
-#    other sub-prefixes populate the shapefile.
+#    Steps:
+#      1. Scrape unique #prefix values from Poligony/**/*.SRV (skip _RAW/).
+#      2. Group prefixes by the part before the first dot — that's the cave
+#         (e.g. Czarna, Czarna.Borowiec → "Czarna"; Goryczkowa.G1..G5 →
+#         "Goryczkowa"). CAVE_ID metadata is NOT used; grouping is pure
+#         string match on the prefix.
+#      3. For each cave, run survexport --survey=<prefix> once per prefix
+#         (Survex treats each #prefix as an independent survey, so peers
+#         like Czarna.Kujat are exported separately).
+#      4. First DXF creates caves/<cave>.shp via ogr2ogr; each subsequent
+#         DXF is merged in with ogr2ogr -append.
+#   Files produced for each cave (ESRI Shapefile is a multi-file format):
+#     caves/<cave>.shp  — geometry (3D polylines of survey legs)
+#     caves/<cave>.shx  — geometry index
+#     caves/<cave>.dbf  — attribute table (Layer, PaperSpace, SubClasses,
+#                         Linetype, EntHandle, Text)
+#     caves/<cave>.prj  — projection definition (EPSG:32634, UTM 34N WGS84)
 # -----------------------------------------------------------------------------
+
 echo "[4/5] survexport — per-cave DXF + shapefiles"
 
-# Entrances list — emitted as a release artifact (UTM coords of every
-# /ENTRANCE-flagged station). Not the source of truth for the cave list.
-survexport --entrances --csv "${COMPILED_3D}" "${OUTDIR}/JKTZ-${VERSION}-entrances.csv"
-
+# 4a. Collect every #prefix from SRV files and group by base (part before the
+#     first dot) into CAVE_PREFIXES[cave] = "prefix1 prefix2 ...".
 declare -A CAVE_PREFIXES
 while read -r prefix; do
     cave="${prefix%%.*}"
@@ -107,21 +105,26 @@ done < <(LC_ALL=C grep -rh '^#prefix ' Poligony --include='*.SRV' \
          | grep -v '^$' \
          | sort -u)
 
+# 4b. For each cave (sorted), export each of its prefixes to a temp DXF,
+#     then build caves/<cave>.shp from the first DXF and append the rest.
 for cave in $(printf '%s\n' "${!CAVE_PREFIXES[@]}" | sort); do
     echo "      → ${cave}"
     cave_shp="${OUTDIR}/caves/${cave}.shp"
 
     first=1
     for prefix in ${CAVE_PREFIXES[$cave]}; do
+        # Per-prefix DXF in TMPDIR_LOCAL (cleaned by the EXIT trap).
         tmp_dxf="${TMPDIR_LOCAL}/${prefix//./_}.dxf"
         survexport --legs --full-coordinates --survey="${prefix}" \
                    --dxf "${COMPILED_3D}" "${tmp_dxf}"
         if (( first )); then
+            # First prefix: create the shapefile.
             ogr2ogr -f "ESRI Shapefile" -dim XYZ -a_srs EPSG:32634 \
                 -sql "${SHP_SQL}" \
                 "${cave_shp}" "${tmp_dxf}"
             first=0
         else
+            # Subsequent prefixes: merge into the existing shapefile.
             ogr2ogr -append -f "ESRI Shapefile" -dim XYZ -a_srs EPSG:32634 \
                 -sql "${SHP_SQL}" \
                 "${cave_shp}" "${tmp_dxf}"
