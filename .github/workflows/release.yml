@@ -94,4 +94,3 @@ jobs:
           body_path: release_notes.md
           files: |
             JKTZ-${{ steps.version.outputs.VERSION }}.zip
-            JKTZ-exports-${{ steps.version.outputs.VERSION }}.zip

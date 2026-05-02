@@ -85,7 +85,6 @@ docker run --rm -v "C:/path/to/repo:/project" jktz-survex bash docker/exports.sh
 
 After a successful run, tell the user:
 - Output directory: `exports/JKTZ-<VERSION>/`
-- ZIP archive: `exports/JKTZ-<VERSION>-exports.zip`
 - Any `error:` or warning lines from the cavern log (found in `exports/JKTZ-<VERSION>/JKTZ-<VERSION>-cavern.log`)
 
 If the export step fails, show the error and suggest checking the cavern log for details.
