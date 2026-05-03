@@ -7,7 +7,7 @@ COORDINATOR		"Pawel Gogolak"
 COORDINATOR_EMAIL	"pafffel@gmail.com"
 REFERENCE_SYSTEM	"WGS84"
 COORDINATE_SYSTEM	"UTM"
-DATA_SOURCE		"Peter Imrich, Tina Majernickova, Jan Smoll, Gabika Majernickova, Krysztof Dudzinski, Juraj Szunyog"
+DATA_SOURCE		"Krzysztof Dudzinski"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
