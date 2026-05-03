@@ -4,6 +4,17 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.3.5] - 2026-05-03
+
+Poprawiono strukturę Releasu na GitHub'ie. Zmiany dotyczące prefixów dla jaskiń Czarna oraz Goryczkowa
+
+### Dodano
+-Pliki Dockerfile dla budowania obrazu Survex z wersji z Releasu
+
+### Naprawione
+- Prefixy dla jaskini Czarnej - poprawny export jaskini Czarnej
+- Struktura plików oraz prefixy dla jaskini Goryczkowej - poprawny export jaskini Goryczkowej
+
 ## [v1.3.4] - 2026-04-30
 
 Poprawiono koordynaty pliku eksportu wszystkich jaskiń

@@ -1,12 +1,26 @@
+#[
+CAVE_ID			"T.D-16.01"
+CAVE_NAME		"Jaskinia Goryczkowa"
+SURVEY_ID		G2
+SURVEY_NAME		"Sekcja G2"
+UPDATE_DATE		2026-05-03
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Pawel Gogolak"
+COORDINATOR_EMAIL	"pafffel@gmail.com"
+DATA_SOURCE		"Krzysztof Dudzinski"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM "Jan Smoll, Gabika Majernickova, Krysztof Dudzinski"
+INSTRUMENT "DistoX"
+#]
+
+#prefix2 Goryczkowa
+#prefix G2
 #units meters order=AVD
 #units A=D V=D
 #date 2012-03-10
-#prefix Goryczkowa.G2
-;Goryczkowa
-;team "Jan Smoll" pictures
-;team "Gabika Majernickova" instruments
-;team "Krysztof Dudzinski" instruments
-;Disto X
+
+;Pomiary
 1	2	279	25	5.1	<1.5,0,0.2,0.5>
 2	3	33.4	5.7	1.58	<1,1.5,0.8,0.3>
 2	4	238	18.2	3.87	<1,1,1,1>

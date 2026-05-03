@@ -3,7 +3,7 @@
 # exports.sh — export pipeline, used both locally (Docker) and in GitHub Actions CI.
 #
 # Generates all derived files from KATASTER.wpj and writes them to
-# <BASEDIR>/JKTZ-<VERSION>/ together with a ZIP archive.
+# <OUTDIR>/.
 #
 # Usage (from repo root):
 #   # Local — via Docker (output visible on host via bind mount):
@@ -14,14 +14,13 @@
 #
 # Arguments:
 #   $1  VERSION  — defaults to "local"
-#   $2  BASEDIR  — output base directory, defaults to "exports"
+#   $2  OUTDIR  — output base directory, defaults to "exports"
 # =============================================================================
 set -euo pipefail
 
 VERSION="${1:-local}"
-BASEDIR="${2:-exports}"
-OUTDIR="${BASEDIR}/JKTZ-${VERSION}"
-TMPDIR_LOCAL="${BASEDIR}/tmp"
+OUTDIR="${2:-exports}"
+TMPDIR_LOCAL="${OUTDIR}/tmp"
 mkdir -p "${TMPDIR_LOCAL}"
 trap 'rm -rf "${TMPDIR_LOCAL}"' EXIT
 
@@ -34,10 +33,11 @@ mkdir -p "${OUTDIR}/caves"
 # -----------------------------------------------------------------------------
 # 1. Compile the survey network with cavern.
 #    Reads KATASTER.wpj → writes KATASTER.3d and KATASTER.err.
-#    The .log is saved alongside the other outputs.
+#    The cavern log is saved alongside the other outputs as a .txt file so it
+#    is included in the release ZIP (which excludes *.log).
 # -----------------------------------------------------------------------------
-echo "[1/5] cavern — compiling survey network"
-cavern KATASTER.wpj 2>&1 | tee "${OUTDIR}/JKTZ-${VERSION}-cavern.log"
+echo "[1/4] cavern — compiling survey network"
+cavern KATASTER.wpj 2>&1 | tee "${OUTDIR}/JKTZ-${VERSION}-cavern-log.txt"
 cp KATASTER.3d "${OUTDIR}/JKTZ-${VERSION}.3d"
 cp KATASTER.err "${OUTDIR}/JKTZ-${VERSION}.err"
 
@@ -49,7 +49,7 @@ COMPILED_3D="${OUTDIR}/JKTZ-${VERSION}.3d"
 # 2. Export a single DXF file containing all survey legs (no surface shots,
 #    no splays). Coordinate system comes from KATASTER.3d (already projected).
 # -----------------------------------------------------------------------------
-echo "[2/5] survexport — full DXF"
+echo "[2/4] survexport — full DXF"
 survexport --legs --full-coordinates --dxf "${COMPILED_3D}" "${OUTDIR}/JKTZ-${VERSION}.dxf"
 
 # -----------------------------------------------------------------------------
@@ -63,7 +63,7 @@ survexport --legs --full-coordinates --dxf "${COMPILED_3D}" "${OUTDIR}/JKTZ-${VE
 # -----------------------------------------------------------------------------
 SHP_SQL="SELECT Layer, PaperSpace, SubClasses, Linetype, EntityHandle AS EntHandle, Text FROM entities"
 
-echo "[3/5] ogr2ogr — shapefile (all caves)"
+echo "[3/4] ogr2ogr — shapefile (all caves)"
 ogr2ogr -f "ESRI Shapefile" -dim XYZ -a_srs EPSG:32634 \
     -sql "${SHP_SQL}" \
     "${OUTDIR}/JKTZ-${VERSION}-all.shp" "${OUTDIR}/JKTZ-${VERSION}.dxf"
@@ -71,7 +71,7 @@ ogr2ogr -f "ESRI Shapefile" -dim XYZ -a_srs EPSG:32634 \
 # -----------------------------------------------------------------------------
 # 4. Extract the list of cave IDs from entrance stations in the compiled data.
 # -----------------------------------------------------------------------------
-echo "[4/5] survexport — per-cave DXF + shapefiles"
+echo "[4/4] survexport — per-cave DXF + shapefiles"
 survexport --entrances --csv "${COMPILED_3D}" ${TMPDIR_LOCAL}/entrances.csv
 caves=$(tail -n+2 ${TMPDIR_LOCAL}/entrances.csv | cut -d, -f4 | sed 's/:.*//' | sort -u)
 
@@ -83,13 +83,6 @@ for cave in $caves; do
         "${OUTDIR}/caves/${cave}.shp" "${TMPDIR_LOCAL}/${cave}.dxf"
 done
 
-# -----------------------------------------------------------------------------
-# 5. Bundle everything into a ZIP archive next to the output directory.
-# -----------------------------------------------------------------------------
-echo "[5/5] zip — bundling output"
-(cd "${BASEDIR}" && zip -r "JKTZ-exports-${VERSION}.zip" "JKTZ-${VERSION}/")
-
 echo ""
 echo "=== Done ==="
 echo "    ${OUTDIR}/"
-echo "    ${BASEDIR}/JKTZ-exports-${VERSION}.zip"

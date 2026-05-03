@@ -11,7 +11,8 @@ DATA_SOURCE		"Panstwowy Instytut Geologiczny"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix Czarna
+#prefix2 Czarna
+#prefix M
 #flag	otwor1	/Jaskinia Czarna
 #flag	otwor1	/ENTRANCE
 #note	otwor1	/Jaskinia Czarna

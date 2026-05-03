@@ -1,0 +1,31 @@
+# =============================================================================
+# Single-stage image: builds Survex from source and provides all runtime deps.
+# survexport links against GTK3/wxWidgets, so the full build environment must
+# be present at runtime — a lean multi-stage approach is not viable here.
+# Image size is ~1 GB.
+# =============================================================================
+FROM ubuntu:24.04
+
+ENV SURVEX_VERSION=1.4.20
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y \
+    build-essential curl python3 \
+    libwxgtk3.2-dev libproj-dev libgdal-dev \
+    liblocale-po-perl unifont \
+    python3-sphinx latexmk \
+    texlive-latex-base texlive-latex-extra texlive-fonts-recommended \
+    gdal-bin \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN curl -fsSL https://survex.com/software/${SURVEX_VERSION}/survex-${SURVEX_VERSION}.tar.gz | tar xz -C /tmp \
+    && cd /tmp/survex-${SURVEX_VERSION} \
+    && ./configure --prefix=/opt/survex \
+    && make \
+    && make install \
+    && rm -rf /tmp/survex-${SURVEX_VERSION}
+
+ENV PATH="/opt/survex/bin:$PATH"
+
+# /project will be the bind-mount point for the host repository
+WORKDIR /project
