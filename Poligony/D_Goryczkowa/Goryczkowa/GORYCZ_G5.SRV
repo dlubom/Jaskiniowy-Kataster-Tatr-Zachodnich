@@ -1,12 +1,25 @@
+#[
+CAVE_ID			"T.D-16.01"
+CAVE_NAME		"Jaskinia Goryczkowa"
+SURVEY_ID		G5
+SURVEY_NAME		"Sekcja G5"
+UPDATE_DATE		2026-05-03
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Pawel Gogolak"
+COORDINATOR_EMAIL	"pafffel@gmail.com"
+DATA_SOURCE		"Jan Smoll, Tina Majernickova, Juraj Szunyog"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM "Jan Smoll, Tina Majernickova, Juraj Szunyog"
+INSTRUMENT "DistoX"
+#]
+
+#prefix G5
 #units meters order=AVD
 #units A=D V=D
 #date 2012-03-24
-#prefix Goryczkowa.G5
-;Goryczkowa
-;team "Jan Smoll" pictures
-;team "Tina Majernickova" instruments
-;team "Juraj Szunyog" instruments
-;Disto X
+
+;Pomiary
 6	6a	163.6	-64.3	7.43	<0.8,0.4,0.7,0.3>
 6a	6b	187.9	-15.1	4.51	<0.4,0.4,0.3,0.3>
 7a	7c	115.3	43.8	1.77	<0.5,0.5,0.5,0.5>

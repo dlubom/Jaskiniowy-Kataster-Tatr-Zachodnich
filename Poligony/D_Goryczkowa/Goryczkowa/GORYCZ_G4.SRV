@@ -1,11 +1,25 @@
+#[
+CAVE_ID			"T.D-16.01"
+CAVE_NAME		"Jaskinia Goryczkowa"
+SURVEY_ID		G4
+SURVEY_NAME		"Sekcja G4"
+UPDATE_DATE		2026-05-03
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Pawel Gogolak"
+COORDINATOR_EMAIL	"pafffel@gmail.com"
+DATA_SOURCE		"Jan Smoll, Gabika Majernickova"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM "Jan Smoll, Gabika Majernickova"
+INSTRUMENT "DistoX"
+#]
+
+#prefix G4
 #units meters order=AVD
 #units A=D V=D
 #date 2012-03-11
-#prefix Goryczkowa.G4
-;Goryczkowa
-;team "Jan Smoll" pictures
-;team "Gabika Majernickova" instruments
-;Disto X
+
+;Pomiary
 35	39	206.5	-71.4	2.26	<0.8,0,3,3>
 ;35	35a	189.7	22.8	4.2	<0.8,0,3,8>;duplicita
 39	40	279.5	-44.6	4.69	<0,0.8,3,0.7>

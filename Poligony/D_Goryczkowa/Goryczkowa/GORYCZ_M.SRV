@@ -1,0 +1,18 @@
+#[
+CAVE_ID			"T.D-16.01"
+CAVE_NAME		"Jaskinia Goryczkowa"
+UPDATE_DATE		2026-05-03
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Pawel Gogolak"
+COORDINATOR_EMAIL	"pafffel@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"Peter Imrich, Tina Majernickova, Jan Smoll, Gabika Majernickova, Krysztof Dudzinski, Juraj Szunyog"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+#]
+
+#prefix Goryczkowa
+#flag	0	/Jaskinia Goryczkowa
+#flag	0	/ENTRANCE
+#note	0	/Jaskinia Goryczkowa
+#fix	0	E19.972661	N49.251113	1263.0m
