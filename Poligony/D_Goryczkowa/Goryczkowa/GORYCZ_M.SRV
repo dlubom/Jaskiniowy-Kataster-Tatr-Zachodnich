@@ -11,7 +11,8 @@ DATA_SOURCE		"Peter Imrich, Tina Majernickova, Jan Smoll, Gabika Majernickova, K
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #]
 
-#prefix Goryczkowa
+#prefix2 Goryczkowa
+#prefix M
 #flag	0	/Jaskinia Goryczkowa
 #flag	0	/ENTRANCE
 #note	0	/Jaskinia Goryczkowa

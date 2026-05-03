@@ -14,6 +14,7 @@ TEAM "Jan Smoll, Tina Majernickova, Juraj Szunyog"
 INSTRUMENT "DistoX"
 #]
 
+#prefix2 Goryczkowa
 #prefix G5
 #units meters order=AVD
 #units A=D V=D

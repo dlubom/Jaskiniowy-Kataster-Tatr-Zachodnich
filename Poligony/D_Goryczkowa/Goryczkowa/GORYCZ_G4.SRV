@@ -14,6 +14,7 @@ TEAM "Jan Smoll, Gabika Majernickova"
 INSTRUMENT "DistoX"
 #]
 
+#prefix2 Goryczkowa
 #prefix G4
 #units meters order=AVD
 #units A=D V=D
