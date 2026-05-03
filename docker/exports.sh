@@ -33,10 +33,11 @@ mkdir -p "${OUTDIR}/caves"
 # -----------------------------------------------------------------------------
 # 1. Compile the survey network with cavern.
 #    Reads KATASTER.wpj → writes KATASTER.3d and KATASTER.err.
-#    The .log is saved alongside the other outputs.
+#    The cavern log is saved alongside the other outputs as a .txt file so it
+#    is included in the release ZIP (which excludes *.log).
 # -----------------------------------------------------------------------------
 echo "[1/4] cavern — compiling survey network"
-cavern KATASTER.wpj 2>&1 | tee "${OUTDIR}/JKTZ-${VERSION}-cavern.log"
+cavern KATASTER.wpj 2>&1 | tee "${OUTDIR}/JKTZ-${VERSION}-cavern-log.txt"
 cp KATASTER.3d "${OUTDIR}/JKTZ-${VERSION}.3d"
 cp KATASTER.err "${OUTDIR}/JKTZ-${VERSION}.err"
 

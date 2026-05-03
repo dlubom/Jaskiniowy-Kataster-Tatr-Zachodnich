@@ -51,7 +51,7 @@ exports/
     JKTZ-v1.2.6.3d
     JKTZ-v1.2.6.dxf
     JKTZ-v1.2.6-all.shp
-    JKTZ-v1.2.6-cavern.log
+    JKTZ-v1.2.6-cavern-log.txt
     JKTZ-v1.2.6.err
     caves/
       tc1601.shp
