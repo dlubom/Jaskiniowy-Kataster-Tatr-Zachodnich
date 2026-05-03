@@ -76,7 +76,6 @@ jobs:
             -x "*.nts" \
             -x "*.ntp" \
             -x "*.wrl" \
-            -x "*.log" \
             -x "*.lst" \
             -x "web/*"
 
