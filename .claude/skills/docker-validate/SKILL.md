@@ -1,6 +1,6 @@
 # Skill: docker-validate
 
-Runs the validation pipeline locally using Docker (same `jktz-survex` image as `/docker-exports`, built from `docker/Dockerfile.survexImage-1.4.20` by default, or `docker/Dockerfile.survexImage-commit` for the commit-pinned variant). Checks SRV file naming, invalid directives, compiles with cavern, and reports any unattached-station errors. Mirrors the Linux job in GitHub Actions `validate.yml`.
+Runs the validation pipeline locally using Docker (same `jktz-survex` image as `/docker-exports`, built from `docker/Dockerfile.survexImage-release` by default, or `docker/Dockerfile.survexImage-commit` for the commit-pinned variant). Checks SRV file naming, invalid directives, compiles with cavern, and reports any unattached-station errors. Mirrors the Linux job in GitHub Actions `validate.yml`.
 
 ## When to use
 
@@ -29,7 +29,7 @@ docker image inspect jktz-survex > /dev/null 2>&1 && echo "exists" || echo "miss
 If missing, build it (first time takes several minutes; subsequent builds are near-instant due to layer caching). Default — stable release variant:
 
 ```bash
-docker build -f docker/Dockerfile.survexImage-1.4.20 -t jktz-survex .
+docker build -f docker/Dockerfile.survexImage-release -t jktz-survex .
 ```
 
 Use the commit-based variant only if the user explicitly requested it:

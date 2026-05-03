@@ -5,16 +5,16 @@ Builds the `jktz-survex` Docker image and/or runs the release export pipeline lo
 ## When to use
 
 - When you want to generate export files locally before or after a release (same pipeline as GitHub Actions).
-- When the Docker image needs to be rebuilt (e.g. after changing `SURVEX_VERSION` in `Dockerfile.survexImage-1.4.20` or `SURVEX_COMMIT` in `Dockerfile.survexImage-commit`).
+- When the Docker image needs to be rebuilt (e.g. after changing `SURVEX_VERSION` in `Dockerfile.survexImage-release` or `SURVEX_COMMIT` in `Dockerfile.survexImage-commit`).
 
 ## Dockerfile variants
 
 Two `Dockerfile.survexImage-*` variants are available — both produce an image tagged `jktz-survex`:
 
-- **`Dockerfile.survexImage-1.4.20`** — builds Survex from the official 1.4.20 release tarball. **Stable**, default for release exports.
+- **`Dockerfile.survexImage-release`** — builds Survex from the official release tarball (`survex.com`). **Stable**, default for release exports.
 - **`Dockerfile.survexImage-commit`** — builds Survex from a pinned commit of `ojwb/survex`. Use only when testing unreleased upstream fixes.
 
-Default to the `1.4.20` variant unless the user asks for the commit-based image.
+Default to the `release` variant unless the user asks for the commit-based image.
 
 ## Usage
 
@@ -53,7 +53,7 @@ All commands must be run from the **repository root**.
 Default — stable release variant:
 
 ```bash
-docker build -f docker/Dockerfile.survexImage-1.4.20 -t jktz-survex .
+docker build -f docker/Dockerfile.survexImage-release -t jktz-survex .
 ```
 
 Use the commit-based variant only if the user requested it:

@@ -7,7 +7,7 @@ generując lokalnie pliki `.3d`, `.dxf`, `.shp` i `.err`.
 
 Dwa warianty obrazu Survex — wybierz jeden:
 
-**`Dockerfile.survexImage-1.4.20`** — buduje Survex z oficjalnego archiwum wydania `1.4.20` (`survex.com`). Wariant **stabilny**, zalecany do generowania oficjalnych eksportów wydania.
+**`Dockerfile.survexImage-release`** — buduje Survex z oficjalnego archiwum wydania (tarball z `survex.com`). Wariant **stabilny**, zalecany do generowania oficjalnych eksportów wydania.
 
 **`Dockerfile.survexImage-commit`** — buduje Survex z konkretnego commita w repozytorium `ojwb/survex` (zmienna `SURVEX_COMMIT`). Wariant do testowania niewydanych jeszcze poprawek lub funkcji rozwojowych.
 
@@ -21,10 +21,10 @@ Wszystkie polecenia wykonuj z **katalogu glownego repozytorium**.
 
 ### 1. Zbuduj obraz (jednorazowo)
 
-Wariant stabilny (release 1.4.20) — domyślny:
+Wariant stabilny (release tarball) — domyślny:
 
 ```bash
-docker build -f docker/Dockerfile.survexImage-1.4.20 -t jktz-survex .
+docker build -f docker/Dockerfile.survexImage-release -t jktz-survex .
 ```
 
 Wariant z commita (rozwojowy):
