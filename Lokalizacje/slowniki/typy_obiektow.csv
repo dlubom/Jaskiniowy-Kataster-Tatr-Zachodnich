@@ -1,0 +1,7 @@
+object_type,label,notes
+otwor_jaskini,Otwor jaskini,Konkretny otwor albo wejscie jaskini.
+sztolnia,Sztolnia,Obiekt sztolniowy ujmowany jako obiekt terenowy.
+otwor_jaskini_lub_sztolnia,Otwor jaskini lub sztolnia,Typ przejsciowy dla niejednoznacznych rekordow zrodlowych.
+wywierzysko,Wywierzysko,Planowany typ dla zrodel krasowych.
+ponor,Ponor,Planowany typ dla miejsc zaniku wody.
+obiekt_terenowy,Obiekt terenowy,Fallback dla rekordow wymagajacych recznej klasyfikacji.

@@ -36,7 +36,8 @@ related_source_records:
 Najwazniejsze pola:
 
 - `id` - trwaly identyfikator obiektu.
-- `type` - typ obiektu, np. `otwor_jaskini`, `sztolnia`.
+- `type` - typ obiektu ze `slowniki/typy_obiektow.csv`, np. `otwor_jaskini`,
+  `sztolnia`, `wywierzysko`, `ponor`.
 - `subtype` - wartosc pomocnicza ze zrodla, np. `jaskinia`, `sztolnia`.
 - `name` - nazwa robocza obiektu.
 - `label` - oznaczenie otworu/wejscia, jesli istnieje.
@@ -48,6 +49,19 @@ Najwazniejsze pola:
 - `observations` - historia pomiarow/ustalen przypisanych do tego obiektu.
 - `related_source_records` - rekordy zrodlowe zwiazane z jaskinia/systemem, ale nie z
   jednym konkretnym obiektem.
+
+### Slowniki
+
+Walidator korzysta ze slownikow w `slowniki/`:
+
+- `typy_obiektow.csv` - dopuszczalne wartosci `type`.
+- `zrodla.csv` - dopuszczalne wartosci `source`.
+- `klasy_dokladnosci.csv` - dopuszczalne wartosci `accuracy_class`.
+
+Rejestr lokalizacji obejmuje obiekty terenowe, nie tylko jaskinie. Dopuszczalne sa
+otwory jaskin, sztolnie, wywierzyska i ponory. Informacja o jaskini pozostaje
+kontekstem w `cave.*`; dla obiektow bez takiego kontekstu pola moga byc puste, a
+`cave.assignment_status` powinno miec wartosc `missing`.
 
 ## `dane/obiekty.csv`
 

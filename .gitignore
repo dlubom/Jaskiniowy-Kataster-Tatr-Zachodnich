@@ -13,6 +13,16 @@
 *.err
 cavern_output.txt
 
+#Python / local tooling
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ty/
+.coverage
+htmlcov/
+
 #Claude
 .claude/settings.local.json
 *.bak

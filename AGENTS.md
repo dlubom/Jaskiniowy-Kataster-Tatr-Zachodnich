@@ -1,0 +1,391 @@
+# AGENTS.md
+
+This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
+
+## Project Overview
+
+**Jaskiniowy Kataster Tatr Zachodnich** (Tatra Cave Registry) is a speleological cave survey data project for the Western Tatra Mountains. It compiles cartographic data (survey measurements, cave entrance coordinates, terrain models) using the **Walls** cave survey software by Texas Speleological Survey.
+
+- **Coordinate system**: WGS 84 geographic (lon/lat) for `#fix` entrance points; UTM projection for compiled 3D output
+- **License**: Creative Commons Attribution-ShareAlike 4.0
+- **Current version**: v1.0.0 — semantic versioning, tracked in `CHANGELOG.md`
+- **Language**: Polish (cave names, documentation, comments in survey files)
+
+## Tools & Processing
+
+This is primarily a data project. The Walls cave-survey data still has no conventional
+software build, but the repository now has local Python tooling for the `Lokalizacje/`
+registry.
+
+- **Walls software** processes the data: reads `.SRV` survey files, compiles into binary `.NT*` files, and exports `.wrl` (VRML 3D models)
+- The main project file `KATASTER.wpj` is opened in Walls to compile and visualize all survey data
+- **Windows path limitation**: The project should be extracted to a short root path (e.g., `C:/`) because deep Windows paths can prevent some caves from displaying
+- **Python tooling** is managed with `uv` and runs from the repo-local `.venv`; do not
+  install dependencies into the system Python.
+
+## Repository Structure
+
+```
+KATASTER.wpj              # Main Walls project file (hierarchical cave/survey tree)
+CHANGELOG.md              # Version history (semver, from v0.00 to current)
+INFO.txt                  # Project description, links, contributor credits
+Poligony/                 # SOURCE DATA: ~150 .SRV survey files organized by valley
+  D_Bystra/
+  D_Chocholowska/
+  D_Goryczkowa/
+  D_Koscieliska/          # Largest region (Bandzioch, System Pawlikowskiego, etc.)
+  D_ku_Dziurze/
+  D_Malej_Laki/           # Contains System Wielkiej Snieznej
+  D_Mietusia/
+  D_Panszczyca/
+  D_Tomanowa/
+  J_Slowacji/
+  _Domiary_Pow_/          # Surface measurement connections between caves
+Powierzchnia/             # Terrain model (DEM from contour lines)
+Lokalizacje/              # Object-level locations: cave entrances, adits, springs, ponors
+KATASTER/                 # COMPILED OUTPUT (git-ignored .NT* files)
+.github/workflows/        # GitHub Actions (automated release ZIP on tag push)
+```
+
+## Local Python Tooling
+
+Use `uv` for all project Python tasks:
+
+```bash
+uv sync --dev
+uv run jktz-locations validate
+uv run jktz-locations export
+uv run ruff check src tests
+uv run ty check src tests
+uv run pytest
+uv run pre-commit install
+```
+
+The Python tooling is for validation and export helpers around `Lokalizacje/`.
+Generated caches and `.venv/` are ignored. Exports go under `exports/`, which is also
+ignored.
+
+### Lokalizacje Registry
+
+`Lokalizacje/` is a flat object-location registry. The primary entity is a terrain
+object `JKTZ-OBJ-*`, not a cave. Current supported object types are listed in
+`Lokalizacje/slowniki/typy_obiektow.csv` and include cave entrances (`otwor_jaskini`),
+adits (`sztolnia`), springs (`wywierzysko`), ponors (`ponor`), and transitional/fallback
+types.
+
+Each object YAML in `Lokalizacje/rejestr/obiekty/` has historical `observations`
+(`JKTZ-OBS-*`). The active location is selected by `current_observation_id`; do not
+delete old observations when adding new GNSS measurements. Add field GNSS observations
+with `source: JKTZ_GNSS`, a measurement date, method/device, coordinates, accuracy class,
+and verification status. Keep EPSG:2180 naming straight: `northing` corresponds to
+`x1992`, `easting` corresponds to `y1992`.
+
+Run `uv run jktz-locations validate` after editing `Lokalizacje/`. It checks YAML,
+IDs, dictionaries, current-observation pointers, CSV/YAML consistency, coordinate ranges,
+EPSG:2180 vs WGS84 consistency, and `raw_json` fields. `uv run jktz-locations export`
+writes current locations to CSV, XLSX, GPX, and EPSG:2180 Shapefile in
+`exports/lokalizacje/`.
+
+## Key File Formats
+
+### KATASTER.wpj (Project File)
+Walls project definition using directives: `.BOOK` (folder), `.SURVEY` (file reference), `.NAME`, `.PATH`, `.STATUS`, `.REF` (coordinate reference), `.ENDBOOK`. This file defines the hierarchical tree structure of all caves and their survey data.
+
+### .SRV Files (Survey Data) — the primary source files
+Two conventions exist:
+
+**Newer format** (e.g., Dziura, Mylna, Oblazkowa) splits data into two files per cave:
+- `*_M.SRV` — metadata + fixed entrance coordinates (`#fix`), map label (`#flag`, `#note`)
+- `*_S.SRV` — metadata + survey measurements (shots, splay shots, dates)
+
+**Older format** (e.g., CAVE.SRV) — single file with metadata, coordinates, and measurements combined.
+
+---
+
+### File Templates
+
+#### Template: Meta File (`CAVE_M.SRV`)
+```
+#[
+CAVE_ID			"T.X-00.00"
+CAVE_NAME		"Jaskinia Nazwa"
+UPDATE_DATE		YYYY-MM-DD
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+REFERENCE_SYSTEM	"WGS84"
+COORDINATE_SYSTEM	"UTM"
+DATA_SOURCE		"source name"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+#]
+
+#prefix PREFIX
+#flag	STATION	/Cave Label
+#flag	STATION	/ENTRANCE
+#note	STATION	/Cave Label
+#fix	STATION	LON	LAT	ELEVATION
+; LON/LAT in WGS84 geographic — use decimal degrees (e.g. E19.894900 N49.245399)
+; DMS format (e.g. E19:53:55.500 N49:14:47.800) also works but decimal degrees preferred
+```
+
+#### Template: Survey File (`CAVE_S.SRV`)
+```
+#[
+CAVE_ID			"T.X-00.00"
+CAVE_NAME		"Jaskinia Nazwa"
+SURVEY_ID		SURVEY_SHORT_ID
+SURVEY_NAME		"Survey description"
+UPDATE_DATE		YYYY-MM-DD
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"source name"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM "team member names"
+INSTRUMENT "instrument name"
+#]
+
+#prefix STATION_PREFIX
+#units meters order=DAV
+#units A=D V=D
+#units DECL=X.X
+; NOTE: #units DECL= must come BEFORE #date directive (standard convention in this project).
+; Do NOT place DECL= after #date — if "Derive from #Date" is enabled in the
+; project's Geographical Reference settings, #date directive overrides any preceding DECL=
+; with the IGRF model value, causing Walls and Survex to disagree.
+#date YYYY-MM-DD
+
+;Section description
+
+0	1	4.61	293	2
+1	2	2.06	303	7
+
+;Splay shots
+
+0	-	5.52	51	8
+0	-	5.47	265	76
+```
+
+## Data Conventions
+
+- **Cave IDs** follow the pattern `T.{region}-{number}.{sub}` (e.g., `T.C-16.01` for Jaskinia Kalacka, `T.B-14.01` for Dziura)
+- **Station naming**: `{cave_id}_{survey_id}` prefix (e.g., `tb1401_A1` for Dziura survey A1)
+- **`#prefix` convention**: use the cave name in CamelCase (no spaces, no diacritics), e.g., `Mrozna`, `Raptawicka`, `KasprowaNiznia`, `MietusiaWyznia`
+- **Directory hierarchy**: Valley → Mountain/Region → Cave → Survey files
+- **SRV file naming**: UPPERCASE basename + `.SRV` extension (e.g., `DZIUR_M.SRV`, `TC1601A1.SRV`). The basename must match the `.NAME` directive in `KATASTER.wpj`. This is required for Linux compatibility — `cavern` (Survex) on case-sensitive filesystems only tries: all-lowercase, Initial-cap, and ALL-UPPERCASE variants when resolving `.NAME` references.
+- **Directory naming conventions** (to keep paths short for Windows compatibility):
+  - **No spaces** — use underscores: `Studnia_na_Szlaku`, not `Studnia na Szlaku`
+  - **Valley prefix**: `D_` instead of `Dolina ` (e.g., `D_Koscieliska`, `D_Mietusia`)
+  - **Drop "Jaskinia "** from cave directories (e.g., `Kalacka` not `Jaskinia Kalacka`, `Zwolinskiego` not `Jaskinia Zwolinskiego`)
+  - **Shorten long names** where sensible (e.g., `Kom_Wierch`, `Rapt_Turnia`, `Syst_Pawlikowskiego`)
+  - Directory names must match `.PATH` directives in `KATASTER.wpj` exactly (case-sensitive)
+  - These are filesystem names only — display names in `KATASTER.wpj` (`.BOOK` directives) keep their full, human-readable form
+- Polish and Slovak diacritical marks are **not allowed** in `.wpj` paths, `.SRV` filenames, or survey text content used by Walls
+- Use ASCII equivalents instead (e.g., `ą->a`, `ć->c`, `ł->l`, `ó->o`, `ś->s`, `ż->z`, `č->c`, `š->s`, `ť->t`, `ž->z`)
+- Keep `_RAW/` files untouched as archival originals, even if they contain non-ASCII text
+- Files use **no BOM** encoding; some legacy files have encoding artifacts in Polish characters
+
+### Detecting Data Quality Issues in SRV Files
+
+**Important:** SRV files may contain non-UTF-8 bytes (CP1250/Latin-1 legacy encoding). Always use `LC_ALL=C` with grep/sed to handle these correctly. The Edit tool (which operates in UTF-8) will corrupt these bytes — use `LC_ALL=C sed -i ''` instead for byte-safe replacements.
+
+**Decimal comma (,) instead of dot (.)** — Walls treats comma as whitespace, shifting all subsequent fields:
+```bash
+# Detect: comma between digits in measurement fields (excluding comments, LRUD, metadata, _RAW/)
+LC_ALL=C grep -rn '[0-9],[0-9]' Poligony/ --include='*.SRV' | grep -v '/_RAW/' | grep -v ':#\|:;' | grep -v '<.*,.*>'
+```
+
+**Non-ASCII characters** — Polish diacritics that should have been replaced with ASCII:
+```bash
+# Detect: any non-ASCII bytes in SRV files (excluding _RAW/)
+LC_ALL=C grep -rn '[^[:print:][:space:]]' Poligony/ --include='*.SRV' | grep -v '/_RAW/'
+
+# Fix: replace CP1250 Polish characters with ASCII equivalents
+LC_ALL=C sed -i '' \
+  -e "$(printf 's/\xf3/o/g')" -e "$(printf 's/\xd3/O/g')" \
+  -e "$(printf 's/\xb9/a/g')" -e "$(printf 's/\xb3/l/g')" \
+  -e "$(printf 's/\xea/e/g')" -e "$(printf 's/\xe6/c/g')" \
+  -e "$(printf 's/\xbf/z/g')" -e "$(printf 's/\x9c/s/g')" \
+  -e "$(printf 's/\xf1/n/g')" FILE.SRV
+```
+
+### Raw Source Files (`_RAW/`)
+
+Cave directories contain (or will contain) a `_RAW/` subdirectory with original, unmodified source files provided by survey authors. Purpose:
+1. **Archival** — preserving original data in its native format (Therion, Survex, DistoX exports, scanned notes, etc.)
+2. **Verification** — allowing later validation of the converted `.SRV` measurements against the original source data
+3. **Audit trail** — documenting provenance of all data in the project
+
+The `_RAW/` contents are not processed by Walls but are tracked in git for reference.
+
+**Required structure:**
+```
+<cave>/_RAW/
+  README.md              # Metadata (required)
+  source.zip             # ZIP archive (required if source has multiple files)
+  source/                # Unpacked contents (required if ZIP exists)
+    ...raw files...
+```
+
+If the source material is a single file, the ZIP + unpacked folder are not needed — just place the file directly in `_RAW/` alongside `README.md`.
+
+**README.md must contain:**
+- Source / origin of the data
+- Author(s) of the original survey
+- Date the data was obtained
+- Person who added the files to `_RAW/`
+- Notes on completeness (full dataset, partial, missing elements)
+
+**Rules:**
+- Preserve original filenames and directory structure — no renaming or reorganizing
+- Never modify raw source files (even to fix encoding, formatting, or errors)
+- Non-ASCII characters are allowed in `_RAW/` files (unlike `.SRV` files used by Walls)
+
+## .gitignore
+
+Compiled Walls outputs are git-ignored: `*.nta`, `*.ntn`, `*.ntv`, `*.nts`, `*.ntp`, `*.wrl`, `*.log`, `*.lst`. The `logs/` directory is also ignored. Only `.SRV` source data and `.wpj` project file are tracked.
+
+## Versioning and Releases
+
+The project uses [semantic versioning](https://semver.org/) starting from v1.0.0. All version history is in `CHANGELOG.md`.
+
+### Release process
+1. Update `CHANGELOG.md` with a new `## [vX.Y.Z] - YYYY-MM-DD` entry
+2. Commit, merge to master
+3. Create an annotated tag: `git tag -a vX.Y.Z -m "vX.Y.Z - description"`
+4. Push the tag: `git push origin vX.Y.Z`
+5. GitHub Actions automatically creates a release with a ZIP archive (`JKTZ-vX.Y.Z.zip`)
+
+The version in `INFO.txt` is set automatically — the `__VERSION__` placeholder is replaced with the tag name during the release build.
+
+The release ZIP excludes: `.git/`, `.github/`, `.Codex/`, `.gitignore`, `AGENTS.md`, `doc/`, `logs/`, `*/_RAW/*`, `.DS_Store`, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
+
+## Documentation Resources (`doc/`)
+
+When working with this project, Codex can use the following reference materials:
+
+### Walls Software Documentation
+- **`doc/Walls_manual.md`** — Markdown version of the Walls cave survey software manual. Use this for details on `.SRV` file syntax, directives (`#fix`, `#units`, `#date`, etc.), project file structure, and compilation options.
+- **`doc/Walls_manual.pdf`** — Original PDF manual (same content as the markdown version).
+- **Walls source code** — For advanced or edge-case questions about Walls behavior, the source code is available at https://github.com/wallscavesurvey/walls
+
+### Polish Cave Registry Data (PIG)
+- **`doc/jaskinie_polski_pig_dump.jsonl`** — Full JSONL dump from the Polish Geological Institute cave registry (https://jaskiniepolski.pgi.gov.pl/). Each line is a JSON object with comprehensive cave data.
+
+**Use this file when:**
+- Adding new caves — search for existing official data (coordinates, dimensions, description)
+- Verifying or correcting entrance coordinates (`latitude`, `longitude`, `absolute_height_masl`)
+- Finding cave metadata (inventory number, region, length, depth, denivelation)
+- Researching documentation history (who surveyed, when, survey dates)
+- Finding alternative cave names (`other_names` field)
+- Checking geographic location and access descriptions
+
+**Always search by cave ID, not name** — the ID is ASCII and unambiguous. Cave names contain Polish diacritics (ź, ą, etc.) that cause grep to fail silently:
+
+```bash
+# Correct — search by ID (always works)
+grep '"T.B-14.01"' doc/jaskinie_polski_pig_dump.jsonl
+
+# Avoid — searching by name may fail on diacritics
+grep -i "dziura" doc/jaskinie_polski_pig_dump.jsonl
+```
+
+Returns data including:
+- Official name: "Dziura" with aliases "Jaskinia Strążyska, Zbójnicka Jama"
+- Coordinates: 49.27°N, 19.92°E, 1020 m n.p.m.
+- Dimensions: length 175m, depth 15.6m, denivelation 40.4m
+- Location: Dolina ku Dziurze, TPN
+- Documentation history: survey dates and authors
+
+## Git Commits
+
+When creating commits in this project:
+- **Do NOT add `Co-Authored-By` lines** — commit messages should not include Codex attribution
+- Use Polish language for commit messages when appropriate
+- Keep messages concise and descriptive
+- When releasing a new version, create an **annotated tag** (`git tag -a vX.Y.Z -m "..."`) on master after merging — see "Versioning and Releases" above
+
+## Available Skills
+
+### `/add-cave` — `.Codex/skills/add-cave/SKILL.md`
+
+Guides through adding a new cave end-to-end. Usage:
+
+```
+/add-cave <cave-id> "<valley/subdir/path>" [/path/to/source.zip]
+```
+
+Example:
+```
+/add-cave T.D-08.07 "Dolina Koscieliska/Organy" /tmp/MROZN.SRV.zip
+```
+
+Covers: PIG lookup → coordinate conversion → directory creation → `_RAW/` + README → `_M.SRV` + `_S.SRV` skeletons → `KATASTER.wpj` entry.
+
+### `/average-shots` — `.Codex/skills/average-shots/SKILL.md`
+
+Averages multiple repeat shots for the same leg (forward A→B + backward B→A) into a single measurement in a `_S.SRV` file. Use after importing raw DistoX data. Usage:
+
+```
+/average-shots <path/to/FILE_S.SRV>
+```
+
+### `/survex-stats` — `.Codex/skills/survex-stats/SKILL.md`
+
+Compiles a Survex `.svx` file with `cavern` and prints the output and statistics. Useful for cross-checking raw source data before or after conversion. Usage:
+
+```
+/survex-stats <path/to/file.svx>
+```
+
+### `/svx-to-srv` — `.Codex/skills/svx-to-srv/SKILL.md`
+
+Converts Survex (`.svx`) survey files to Walls (`.SRV`) format. Covers measurement conversion, equate→zero-shot mapping, flag handling, and the critical issue of junction stations positioned only by duplicate shots. Usage:
+
+```
+/svx-to-srv <cave-id> <path/to/source.svx>
+```
+
+### `/docker-exports` — `.Codex/skills/docker-exports/SKILL.md`
+
+Builds the `jktz-survex` Docker image and/or runs the release export pipeline locally, generating `.3d`, `.dxf`, `.shp`, and `.err` files in `exports/JKTZ-<VERSION>/`. Mirrors the GitHub Actions release pipeline. Usage:
+
+```
+/docker-exports [VERSION]
+/docker-exports --build-only
+/docker-exports --run-only [VERSION]
+```
+
+### `/docker-validate` — `.Codex/skills/docker-validate/SKILL.md`
+
+Runs the validation pipeline locally using Docker (same `jktz-survex` image as `/docker-exports`). Checks SRV naming, invalid directives, compiles with cavern, and reports unattached-station errors. Mirrors the Linux job in GitHub Actions `validate.yml`. Usage:
+
+```
+/docker-validate
+```
+
+### `/gnss-to-wgs84` — `.Codex/skills/gnss-to-wgs84/SKILL.md`
+
+Converts coordinates from Polish EPSG:2180 (PUWG 1992 / "uklad 1992") to WGS84 geographic (EPSG:4326). Useful when processing GNSS survey reports. Requires `pyproj` (`pip3 install pyproj`). Usage:
+
+```
+/gnss-to-wgs84 <X_northing> <Y_easting> [<elevation>]
+```
+
+Example:
+```
+/gnss-to-wgs84 152168.79 564375.07 1486.69
+```
+
+## Workflow for Adding a New Cave
+
+Use the `/add-cave` skill (see above) or follow these steps manually:
+
+1. **Research the cave** in `doc/jaskinie_polski_pig_dump.jsonl` — search by cave ID (see PIG section above) to find official coordinates, dimensions, and documentation history
+2. Create a directory under the appropriate valley in `Poligony/` (use underscores, no spaces, short names)
+3. Create `.SRV` file(s) with metadata block and survey data (newer format: separate `_M.SRV` for coordinates and `_S.SRV` for measurements)
+4. If using Codex for adding cave: **Close Walls** before editing `KATASTER.wpj` — Walls overwrites the file on save, discarding any manually added entries
+5. Add `.BOOK`/`.SURVEY` entries to `KATASTER.wpj` referencing the new files
+6. Update `CHANGELOG.md` with a new version entry
+7. All new data should be coordinated through the project coordinator (darek.lubomski@gmail.com)
