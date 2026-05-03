@@ -55,7 +55,7 @@ jobs:
           echo "$HOME/survex/bin" >> $GITHUB_PATH
 
       - name: Build exports
-        run: bash docker/exports.sh ${{ steps.version.outputs.VERSION }} .
+        run: bash docker/exports.sh ${{ steps.version.outputs.VERSION }}
 
       - name: Build release ZIP
         run: |

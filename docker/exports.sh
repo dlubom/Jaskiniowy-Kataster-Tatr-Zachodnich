@@ -3,7 +3,7 @@
 # exports.sh — export pipeline, used both locally (Docker) and in GitHub Actions CI.
 #
 # Generates all derived files from KATASTER.wpj and writes them to
-# <BASEDIR>/JKTZ-<VERSION>/.
+# <OUTDIR>/.
 #
 # Usage (from repo root):
 #   # Local — via Docker (output visible on host via bind mount):
@@ -14,14 +14,13 @@
 #
 # Arguments:
 #   $1  VERSION  — defaults to "local"
-#   $2  BASEDIR  — output base directory, defaults to "exports"
+#   $2  OUTDIR  — output base directory, defaults to "exports"
 # =============================================================================
 set -euo pipefail
 
 VERSION="${1:-local}"
-BASEDIR="${2:-exports}"
-OUTDIR="${BASEDIR}/JKTZ-${VERSION}"
-TMPDIR_LOCAL="${BASEDIR}/tmp"
+OUTDIR="${2:-exports}"
+TMPDIR_LOCAL="${OUTDIR}/tmp"
 mkdir -p "${TMPDIR_LOCAL}"
 trap 'rm -rf "${TMPDIR_LOCAL}"' EXIT
 
