@@ -11,10 +11,9 @@
 set -euo pipefail
 
 CAVERN_LOG="cavern_output.txt"
-EXPORTS_BASEDIR="exports"
+EXPORTS_OUTDIR="validate-exports"
 EXPORTS_VERSION="validate"
-EXPORTS_OUTDIR="${EXPORTS_BASEDIR}/JKTZ-${EXPORTS_VERSION}"
-trap 'rm -rf "${EXPORTS_BASEDIR}"' EXIT
+trap 'rm -rf "${EXPORTS_OUTDIR}"' EXIT
 
 echo "=== Validation Started ==="
 
@@ -38,7 +37,7 @@ fi
 
 echo "[5/5] Checking exports..."
 echo ""
-bash docker/exports.sh "${EXPORTS_VERSION}" "${EXPORTS_BASEDIR}" 2>&1 | sed 's/^/                   /'
+bash docker/exports.sh "${EXPORTS_VERSION}" "${EXPORTS_OUTDIR}" 2>&1 | sed 's/^/                   /'
 
 echo ""
 echo "Checking for empty .shp files..."
