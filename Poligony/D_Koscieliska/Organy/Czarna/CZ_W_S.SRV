@@ -13,7 +13,8 @@ TEAM			"Stanislaw Kotarba i odkrywcy Partii Wawelskich"
 INSTRUMENT		"busola, tasma"
 #]
 
-#prefix Czarna.Wawel
+#prefix2 Czarna
+#prefix Wawel
 
 ;Partie Wawelskie - ciag od punktu 42 Borowca
 ;Pomiary: odkrywcy Partii Wawelskich w trakcie akcji eksploracyjnych 1978-1981
@@ -27,7 +28,7 @@ INSTRUMENT		"busola, tasma"
 
 ;--- Ciag 42-s08 (od p. 42 Borowca przez Komin Zlobisty do Klasycznego Komina) ---
 ;Nawiazanie: punkt 42 ciagu glownego Borowca
-Czarna.Borowiec:42	4201	7.50	229.5	48
+Borowiec:42	4201	7.50	229.5	48
 4201	4202	6.83	200.7	2
 4202	4203	11.34	233.1	25
 4203	4204	5.18	189.0	-8

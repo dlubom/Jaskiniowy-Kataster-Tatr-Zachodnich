@@ -27,9 +27,10 @@ INSTRUMENT		"pomiar geodezyjny"
 ;TODO: sprawdzic czy wektory RECT wymagaja rotacji o deklinacje z 1972/73
 ;      (ok. 1-2 deg E dla Tatr Zachodnich) - zweryfikowac z _RAW/02/
 
-#prefix Czarna.Borowiec
+#prefix2 Czarna
+#prefix Borowiec
 #units meters RECT order=ENU
-Czarna:otwor1 0W 0.0 0.0 0.0
+M:otwor1 0W 0.0 0.0 0.0
 0W	0	13.58	1.15	-8.22
 0	1	2.62	1.55	-4.73
 1	2	9.68	-2.60	-13.81
