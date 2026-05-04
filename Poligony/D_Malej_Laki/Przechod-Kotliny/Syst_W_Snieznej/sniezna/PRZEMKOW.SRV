@@ -1,8 +1,9 @@
 ;Biala Woda
 ;
-#prefix WielkaSniezna.Przemkow
+#prefix2 WielkaSniezna
+#prefix Przemkow
 #units order=avd
-WielkaSniezna.Ciag:g36	b1	256.5	22.5	2.40
+Ciag:g36	b1	256.5	22.5	2.40
 b1	b2	292.5	17	5.30
 b2	b3	319.5	48	12.00
 b3	b4	261	20	8.00
