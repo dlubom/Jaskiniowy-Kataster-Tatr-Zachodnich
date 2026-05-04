@@ -1,4 +1,5 @@
-#prefix WielkaLitworowa
+#prefix2 WielkaSniezna
+#prefix Litworowa
 ;LTsbb Bielskie nowe
 #Units DECL=3.5
 #u meters

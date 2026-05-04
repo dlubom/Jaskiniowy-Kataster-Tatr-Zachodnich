@@ -1,4 +1,5 @@
-#prefix WielkaLitworowa
+#prefix2 WielkaSniezna
+#prefix Litworowa
 ;Litworowa
 ;
 #units v=d
@@ -500,8 +501,8 @@ LTcm89	LTcm88	140	-44	6.2
 LTcm88	LTcm87	140	-41	6.6
 ;uwaga pomiar gkplk dopisany
 ;TODO
-LTcm87	WielkaSniezna.Krokodyl:gkPLk	0	0	0
-;LTcm87	WielkaSniezna.Krokodyl:gkPLk	162	-52	25.2
+LTcm87	Krokodyl:gkPLk	0	0	0
+;LTcm87	Krokodyl:gkPLk	162	-52	25.2
 ;ltsa ciag boczny do studni Anielki
 LTz98	LTsa97	186	-7	6.4
 LTsa97	LTsa96	185	5	2.9
