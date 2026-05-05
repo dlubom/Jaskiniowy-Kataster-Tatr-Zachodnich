@@ -1,4 +1,5 @@
-#prefix WielkaLitworowa
+#prefix2 WielkaSniezna
+#prefix Litworowa
 ;Bielskie stare-nowe pomiary
 #Units Meters Order=avd
 #note  LTII20 /  punkt -160

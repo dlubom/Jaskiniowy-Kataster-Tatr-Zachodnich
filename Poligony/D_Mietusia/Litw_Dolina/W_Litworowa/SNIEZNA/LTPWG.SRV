@@ -1,4 +1,5 @@
-#prefix WielkaLitworowa
+#prefix2 WielkaSniezna
+#prefix Litworowa
 #units v=d
 #units a=d
 #Units Meters Order=avd

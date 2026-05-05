@@ -14,6 +14,7 @@ TEAM "F. Filar, M. Parczewski, B. Chlipala"
 INSTRUMENT "DistoX2"
 #]
 
+#prefix2 Pawlikowskiego
 #prefix Oblazkowa
 #date 2013-12-01
 #UNITS meters order=dav
