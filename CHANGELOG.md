@@ -4,6 +4,13 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.3.6] - 2026-05-05
+
+Poprawiono prefixy systemów: Jaskiń Pawlikowskiego oraz Wielkiej Śnieżnej. Zapewnia to poprawny export tych systemów.
+
+### Naprawione
+- Prefixy systemów Jaskiń Pawlikowskiego oraz Wielkiej Śnieżnej
+
 ## [v1.3.5] - 2026-05-03
 
 Poprawiono strukturę Releasu na GitHub'ie. Zmiany dotyczące prefixów dla jaskiń Czarna oraz Goryczkowa
