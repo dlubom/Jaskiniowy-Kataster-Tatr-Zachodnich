@@ -57,7 +57,7 @@ If a source ZIP was provided:
 2. List contents: `find /tmp/<cave_ascii>_raw -not -path "*/__MACOSX*" -type f`
 3. Read each survey file to understand its format (units, station naming, number of readings)
 
-**If the source files are in Survex format (`.svx` files):** use the `/svx-to-srv` skill to perform the conversion before proceeding to Step 9. The skill handles measurement conversion, equate→zero-shot mapping, splay shots, declination, and the critical issue of junction stations positioned only by duplicate shots. Skip the manual `CAVE_S.SRV` skeleton in Step 9 — the skill produces all section `.SRV` files directly.
+**If the source files are in Survex format (`.svx` files):** use the `/svx-to-srv` skill to perform the conversion before proceeding to Step 9. The skill handles measurement conversion, equate→zero-shot mapping, splay shots, declination, and the critical issue of junction stations positioned only by duplicate shots. Skip the manual survey-file skeleton in Step 9 — the skill produces all section `.SRV` files directly.
 
 ## Step 5 — Create directory structure
 
@@ -87,39 +87,30 @@ Leave any genuinely unknown fields as `nieznany` / `nieznane`.
 
 Use the **cave name** in CamelCase (no spaces, no diacritics) as the prefix (e.g., `Mrozna`, `Raptawicka`, `KasprowaNiznia`, `MietusiaWyznia`).
 
-## Step 8 — Create CAVE_M.SRV
+## Step 8 — Append entrance entry to `Poligony/OTWORY.SRV`
+
+All entrance fixes/flags/notes for every cave live in a single shared file: `Poligony/OTWORY.SRV`.
+
+Append a block like this (alphabetised by cave prefix) to `Poligony/OTWORY.SRV`:
 
 ```
-#[
-CAVE_ID         "T.X-NN.MM"
-CAVE_NAME       "Cave Name ASCII"
-UPDATE_DATE     <today YYYY-MM-DD>
-PROJECT_NAME    "Kataster jaskin tatrzanskich"
-COORDINATOR     "Dariusz Lubomski"
-COORDINATOR_EMAIL "darek.lubomski@gmail.com"
-REFERENCE_SYSTEM "WGS84"
-COORDINATE_SYSTEM "UTM"
-DATA_SOURCE     "Panstwowy Instytut Geologiczny"
-LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
-#]
-
-#prefix <PREFIX>
-#flag   <STATION>   /<Cave Label>
-#flag   <STATION>   /ENTRANCE
-#note   <STATION>   /<Cave Label>
-#fix    <STATION>   E<lon-dd>  N<lat-dd>  <elevation>m
+#fix    <PREFIX>:<STATION>   E<lon-dd>  N<lat-dd>  <elevation>m
+#flag   <PREFIX>:<STATION>   /<Cave Label>
+#flag   <PREFIX>:<STATION>   /ENTRANCE
+#note   <PREFIX>:<STATION>   /<Cave Label>
 ```
 
-`<STATION>` is the entrance station name in the survey (e.g. `td0807.1.3`).
-If the entrance station is unknown, comment out all three lines and add a TODO note:
+`<PREFIX>:<STATION>` is the fully-qualified entrance station name (e.g. `Marmurowa:0`, `MietusiaWyznia:ot_gps`, `WielkaSniezna:Ciag:0`). The station must exist in the cave's survey file — Walls/cavern resolves it across the whole project tree.
+
+If the entrance station is unknown, comment out the block and add a TODO note:
 ```
-; #flag  ???  /<Cave Label>
-; #flag  ???  /ENTRANCE
-; #note  ???  /<Cave Label>
-; #fix   ???  E<lon-dd>  N<lat-dd>  <elevation>m  ; TODO: uzupelnic numer stacji wejscia
+; #fix   <PREFIX>:???   E<lon-dd>  N<lat-dd>  <elevation>m  ; TODO: uzupelnic numer stacji wejscia
+; #flag  <PREFIX>:???   /<Cave Label>
+; #flag  <PREFIX>:???   /ENTRANCE
+; #note  <PREFIX>:???   /<Cave Label>
 ```
 
-## Step 9 — Create CAVE_S.SRV
+## Step 9 — Create the survey file (`CAVE.SRV` or `CAVE_<SECTION_SHORTNAME>.SRV`)
 
 ```
 #[
@@ -173,24 +164,47 @@ Find the correct `.BOOK` parent in KATASTER.wpj. The path hierarchy corresponds 
 - Each `.BOOK` with `.PATH <dir>` builds the cumulative path from the project root
 - Surveys without their own `.PATH` inherit the parent book's path
 
-Insert a new `.BOOK` block for the cave in the correct location:
+Insert a new `.BOOK` block for the cave in the correct location.
+
+Convention (drop the `Jaskinia` prefix from cave names everywhere):
+
+- `<CaveName>` — cave name without the `Jaskinia` prefix (e.g. `Marmurowa`). Used for `.BOOK`, `.PATH`, and as the prefix in `.SURVEY` display names.
+- `<CAVE_SHORT_ID>` — 3–8 char UPPERCASE dataset ID, unique within the project (e.g. `MARMUR`).
+- `<SECTION_SHORTNAME>` — short section code (e.g. `OT`, `KK`, `ME`, `DU`). Omit for a single-survey cave.
+
+Template — one `.SURVEY` block per `.SRV` file in the cave directory:
 
 ```
-.BOOK	<Cave Name ASCII>
-.NAME	<SHORT_ID>
-.PATH	<Cave Name ASCII>
+.BOOK	<CaveName>
+.NAME	<CAVE_SHORT_ID>
+.PATH	<CaveName>
 .STATUS	8
-.SURVEY	<Cave Name ASCII> meta
-.NAME	<PREFIX>_M
+.SURVEY	<CaveName> <section description>
+.NAME	<CAVE_SHORT_ID>_<SECTION_SHORTNAME>
 .STATUS	8
-.SURVEY	<Cave Name ASCII> pomiary
-.NAME	<PREFIX>_S
+.ENDBOOK
+```
+
+For a single-survey cave drop ` <section description>` from `.SURVEY` and `_<SECTION_SHORTNAME>` from `.NAME`.
+
+Concrete example — Marmurowa (multi-section):
+
+```
+.BOOK	Marmurowa
+.NAME	MARMUR
+.PATH	Marmurowa
+.STATUS	8
+.SURVEY	Marmurowa otwor - Piaskownice II
+.NAME	MARMUR_OT
+.STATUS	8
+.SURVEY	Marmurowa Komin KKTJ
+.NAME	MARMUR_KK
 .STATUS	8
 .ENDBOOK
 ```
 
 Use `Edit` tool with sufficient surrounding context to make the match unique.
-Verify with: `grep -n "<PREFIX>" KATASTER.wpj`
+Verify with: `grep -n "<CAVE_SHORT_ID>" KATASTER.wpj`
 
 ## Step 11 — Summary
 

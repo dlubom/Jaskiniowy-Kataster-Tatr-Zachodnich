@@ -17,7 +17,7 @@ Example:
 /svx-to-srv T.D-10.01 "Poligony/D_Mietusia/M_Swistowka/Mietusia_Wyznia/_RAW/source/mietusia_wyznia.svx"
 ```
 
-This produced 17 SRV files (`MWYZN_M.SRV` + 16 section files) in `Poligony/D_Mietusia/M_Swistowka/Mietusia_Wyznia/`.
+This produced 16 section SRV files in `Poligony/D_Mietusia/M_Swistowka/Mietusia_Wyznia/`. The cave's entrance fix is appended to the shared `Poligony/OTWORY.SRV` (see `/add-cave` Step 8).
 
 ## Conversion rules
 
@@ -36,7 +36,7 @@ The field order maps directly: `FROM TO DISTANCE AZIMUTH INCLINATION`
 | `*date YYYY.MM.DD` | `#date YYYY-MM-DD` | Dash separator in Walls |
 | `*team ...` | `TEAM "..."` in metadata block | |
 | `*instrument ...` | `INSTRUMENT "..."` in metadata block | |
-| `*entrance` | `#flag`, `#note`, `#fix` in `_M.SRV` | See add-cave skill for coordinate conversion |
+| `*entrance` | `#flag`, `#note`, `#fix` appended to `Poligony/OTWORY.SRV` | Fully-qualified station name (e.g. `Marmurowa:0`). See add-cave skill Step 8 for coordinate conversion |
 
 ### What to skip (do NOT convert)
 
@@ -134,7 +134,6 @@ sd_14    tb_2    0    0    0
 One `.SRV` file per Survex `*begin`/`*end` block (or logical section). Naming: `{CAVE_ABBR}_{SECTION}.SRV`, e.g.:
 
 ```
-MWYZN_M.SRV    ; metadata + entrance fix
 MWYZN_OT.SRV   ; otwor (entrance passage)
 MWYZN_SD.SRV   ; suche_dno
 MWYZN_TB.SRV   ; traba
@@ -142,6 +141,8 @@ MWYZN_TB.SRV   ; traba
 ```
 
 All sections use the same `#prefix` (e.g., `#prefix td1001`).
+
+The cave's entrance fix/flag/note goes into the shared `Poligony/OTWORY.SRV`.
 
 ## Conversion checklist
 
@@ -163,11 +164,11 @@ Once all `.SRV` files are ready, use the `/add-cave` skill to register the cave 
 
 The `/add-cave` skill handles:
 - Placing `_RAW/` source files with a `README.md`
-- Creating `_M.SRV` with entrance coordinates (from PIG dump or GPS)
+- Appending the entrance fix/flag/note to `Poligony/OTWORY.SRV` (from PIG dump or GPS)
 - Adding `.BOOK`/`.SURVEY` entries to `KATASTER.wpj`
 - Updating `CHANGELOG.md` and committing
 
-When running `/add-cave` after SVX conversion, the SRV section files are already created — skip the `_S.SRV` skeleton step and point the skill at the existing files.
+When running `/add-cave` after SVX conversion, the section `.SRV` files are already created — skip the survey-file skeleton step and point the skill at the existing files.
 
 ## Common pitfalls
 

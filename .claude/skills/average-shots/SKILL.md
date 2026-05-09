@@ -11,7 +11,7 @@ Use this skill when a `.SRV` file contains multiple shots for the same station p
 ## Usage
 
 ```
-/average-shots <path/to/FILE_S.SRV>
+/average-shots <path/to/FILE.SRV>
 ```
 
 ## Algorithm
@@ -89,7 +89,7 @@ Non-shot lines (metadata `#[...]`, directives `#date`, `#units`, `#prefix`, comm
 The script lives at `.claude/skills/average-shots/average_shots.py`. Run it directly:
 
 ```
-python .claude/skills/average-shots/average_shots.py <path/to/FILE_S.SRV>
+python .claude/skills/average-shots/average_shots.py <path/to/FILE.SRV>
 ```
 
 ## What to update after averaging
@@ -97,7 +97,7 @@ python .claude/skills/average-shots/average_shots.py <path/to/FILE_S.SRV>
 After running, update the metadata block in the `.SRV` file:
 - `UPDATE_DATE` → today's date (`YYYY-MM-DD`)
 
-## Example results (MROZNA_S.SRV, 2026-02-26)
+## Example results (MROZNA.SRV, 2026-02-26)
 
 - Input: 854 lines, 831 measurement shots across 196 legs
 - Output: 222 lines, 199 measurement shots

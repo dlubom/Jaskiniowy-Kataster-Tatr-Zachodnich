@@ -26,6 +26,7 @@ KATASTER.wpj              # Main Walls project file (hierarchical cave/survey tr
 CHANGELOG.md              # Version history (semver, from v0.00 to current)
 INFO.txt                  # Project description, links, contributor credits
 Poligony/                 # SOURCE DATA: ~150 .SRV survey files organized by valley
+  OTWORY.SRV              # SHARED file: #fix/#flag/#note entrance entries for every cave
   D_Bystra/
   D_Chocholowska/
   D_Goryczkowa/
@@ -48,43 +49,30 @@ KATASTER/                 # COMPILED OUTPUT (git-ignored .NT* files)
 Walls project definition using directives: `.BOOK` (folder), `.SURVEY` (file reference), `.NAME`, `.PATH`, `.STATUS`, `.REF` (coordinate reference), `.ENDBOOK`. This file defines the hierarchical tree structure of all caves and their survey data.
 
 ### .SRV Files (Survey Data) — the primary source files
-Two conventions exist:
 
-**Newer format** (e.g., Dziura, Mylna, Oblazkowa) splits data into two files per cave:
-- `*_M.SRV` — metadata + fixed entrance coordinates (`#fix`), map label (`#flag`, `#note`)
-- `*_S.SRV` — metadata + survey measurements (shots, splay shots, dates)
-
-**Older format** (e.g., CAVE.SRV) — single file with metadata, coordinates, and measurements combined.
+- All entrance fixes (`#fix`, `#flag`, `#note`) for every cave live in a single shared file: `Poligony/OTWORY.SRV`.
+- Each cave's directory contains one or more **survey files** with the measurements only. Naming: `CAVE.SRV` for a single-survey cave, or `CAVE_<SECTION_SHORTNAME>.SRV` for caves split across multiple surveys/sections (see Mietusia Wyznia for an example with sections `_OT`, `_SD`, `_MR`, `...`).
 
 ---
 
 ### File Templates
 
-#### Template: Meta File (`CAVE_M.SRV`)
-```
-#[
-CAVE_ID			"T.X-00.00"
-CAVE_NAME		"Jaskinia Nazwa"
-UPDATE_DATE		YYYY-MM-DD
-PROJECT_NAME		"Kataster jaskin tatrzanskich"
-COORDINATOR		"Dariusz Lubomski"
-COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
-REFERENCE_SYSTEM	"WGS84"
-COORDINATE_SYSTEM	"UTM"
-DATA_SOURCE		"source name"
-LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
-#]
+#### Template: Entrance entry in `Poligony/OTWORY.SRV`
 
-#prefix PREFIX
-#flag	STATION	/Cave Label
-#flag	STATION	/ENTRANCE
-#note	STATION	/Cave Label
-#fix	STATION	LON	LAT	ELEVATION
-; LON/LAT in WGS84 geographic — use decimal degrees (e.g. E19.894900 N49.245399)
-; DMS format (e.g. E19:53:55.500 N49:14:47.800) also works but decimal degrees preferred
+Append a block like this (alphabetised by cave prefix) to `Poligony/OTWORY.SRV`:
+
+```
+#fix	PREFIX:STATION	E<lon>	N<lat>	<elevation>m
+#flag	PREFIX:STATION	/Cave Label
+#flag	PREFIX:STATION	/ENTRANCE
+#note	PREFIX:STATION	/Cave Label
 ```
 
-#### Template: Survey File (`CAVE_S.SRV`)
+`PREFIX:STATION` is fully qualified (e.g. `Marmurowa:0`, `MietusiaWyznia:ot_gps`, `WielkaSniezna:Ciag:0`). LON/LAT in WGS84 geographic — use decimal degrees (e.g. `E19.894900 N49.245399`);
+
+The entrance station referenced here must exist in the cave's survey file (Walls/cavern resolves it across the whole project tree).
+
+#### Template: Survey File (`CAVE.SRV` or `CAVE_<SECTION_SHORTNAME>.SRV`)
 ```
 #[
 CAVE_ID			"T.X-00.00"
@@ -129,7 +117,7 @@ INSTRUMENT "instrument name"
 - **Station naming**: `{cave_id}_{survey_id}` prefix (e.g., `tb1401_A1` for Dziura survey A1)
 - **`#prefix` convention**: use the cave name in CamelCase (no spaces, no diacritics), e.g., `Mrozna`, `Raptawicka`, `KasprowaNiznia`, `MietusiaWyznia`
 - **Directory hierarchy**: Valley → Mountain/Region → Cave → Survey files
-- **SRV file naming**: UPPERCASE basename + `.SRV` extension (e.g., `DZIUR_M.SRV`, `TC1601A1.SRV`). The basename must match the `.NAME` directive in `KATASTER.wpj`. This is required for Linux compatibility — `cavern` (Survex) on case-sensitive filesystems only tries: all-lowercase, Initial-cap, and ALL-UPPERCASE variants when resolving `.NAME` references.
+- **SRV file naming**: UPPERCASE basename + `.SRV` extension (e.g., `DZIUR_S.SRV`, `MARMUR_OT.SRV`, `TC1601A1.SRV`). The basename must match the `.NAME` directive in `KATASTER.wpj`. This is required for Linux compatibility — `cavern` (Survex) on case-sensitive filesystems only tries: all-lowercase, Initial-cap, and ALL-UPPERCASE variants when resolving `.NAME` references.
 - **Directory naming conventions** (to keep paths short for Windows compatibility):
   - **No spaces** — use underscores: `Studnia_na_Szlaku`, not `Studnia na Szlaku`
   - **Valley prefix**: `D_` instead of `Dolina ` (e.g., `D_Koscieliska`, `D_Mietusia`)
@@ -292,14 +280,14 @@ Example:
 /add-cave T.D-08.07 "Dolina Koscieliska/Organy" /tmp/MROZN.SRV.zip
 ```
 
-Covers: PIG lookup → coordinate conversion → directory creation → `_RAW/` + README → `_M.SRV` + `_S.SRV` skeletons → `KATASTER.wpj` entry.
+Covers: PIG lookup → coordinate conversion → directory creation → `_RAW/` + README → entrance entry appended to `Poligony/OTWORY.SRV` → survey file skeleton(s) → `KATASTER.wpj` entry.
 
 ### `/average-shots` — `.claude/skills/average-shots/SKILL.md`
 
-Averages multiple repeat shots for the same leg (forward A→B + backward B→A) into a single measurement in a `_S.SRV` file. Use after importing raw DistoX data. Usage:
+Averages multiple repeat shots for the same leg (forward A→B + backward B→A) into a single measurement in a survey `.SRV` file. Use after importing raw DistoX data. Usage:
 
 ```
-/average-shots <path/to/FILE_S.SRV>
+/average-shots <path/to/FILE.SRV>
 ```
 
 ### `/survex-stats` — `.claude/skills/survex-stats/SKILL.md`
@@ -368,8 +356,9 @@ Use the `/add-cave` skill (see above) or follow these steps manually:
 
 1. **Research the cave** in `doc/jaskinie_polski_pig_dump.jsonl` — search by cave ID (see PIG section above) to find official coordinates, dimensions, and documentation history
 2. Create a directory under the appropriate valley in `Poligony/` (use underscores, no spaces, short names)
-3. Create `.SRV` file(s) with metadata block and survey data (newer format: separate `_M.SRV` for coordinates and `_S.SRV` for measurements)
-4. If using Claude for adding cave: **Close Walls** before editing `KATASTER.wpj` — Walls overwrites the file on save, discarding any manually added entries
-5. Add `.BOOK`/`.SURVEY` entries to `KATASTER.wpj` referencing the new files
-6. Update `CHANGELOG.md` with a new version entry
-7. All new data should be coordinated through the project coordinator (darek.lubomski@gmail.com)
+3. Create the cave's survey `.SRV` file(s) with metadata block and survey data (one file for a simple cave, one per section for a multi-section cave)
+4. Append entrance fix/flag/note for the cave to `Poligony/OTWORY.SRV` (fully-qualified station name, e.g. `Marmurowa:0`)
+5. If using Claude for adding cave: **Close Walls** before editing `KATASTER.wpj` — Walls overwrites the file on save, discarding any manually added entries
+6. Add `.BOOK`/`.SURVEY` entries to `KATASTER.wpj` referencing the new files
+7. Update `CHANGELOG.md` with a new version entry
+8. All new data should be coordinated through the project coordinator (darek.lubomski@gmail.com)
