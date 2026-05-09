@@ -5,7 +5,8 @@
 ; Wspolrzedne WGS84 w notacji decimal, przeliczone z EPSG:32634 narzedziem cs2cs.
 ; Wariancja R0.01 zostaje tylko przy Bandziochu: rozcina w Walls petle constrained #fix + RECT w BK-CG.SRV.
 
-#fix	BandziochKom:000	E19.8495784963	N49.2425874251	1451.06m (R0.01,R0.01)
+; source: unknown - GNSS
+#fix	BandziochKom:000	E19.84957850	N49.24258746	1451.06m (R0.01,R0.01)
 #flag	BandziochKom:000	/Bandzioch Kom. Dolny
 #flag	BandziochKom:000	/ENTRANCE
 #note	BandziochKom:000	/Bandzioch Kom. Dolny
@@ -364,7 +365,8 @@
 #flag	Wysoka7Progow:W-300	/ENTRANCE
 #note	Wysoka7Progow:W-300	/Wysoka Gorny Otwor
 
-#fix	Wysoka7Progow:W7-0	E19.8845460329	N49.2336412773	1486.69m
+; source: unknown - GNSS
+#fix	Wysoka7Progow:W7-0	E19.88454604	N49.23364130	1486.69m
 #flag	Wysoka7Progow:W7-0	/Otwor
 #flag	Wysoka7Progow:W7-0	/Wysoka-Za7 Progami
 #flag	Wysoka7Progow:W7-0	/ENTRANCE
