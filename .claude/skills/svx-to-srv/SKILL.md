@@ -63,10 +63,9 @@ One zero-shot per equate. Place them in a `; === Polaczenia z innymi cigami ===`
 
 ### Prefixes and station naming
 
-- Survex uses hierarchical prefixes (`*begin section`, `*end section`) — flatten to a single `#prefix` in Walls
-- All sections of the same cave use the **same** `#prefix` (e.g., `td1001` for T.D-10.01)
-- Section names become station infixes: `traba.1` → `tb_1` (with `#prefix td1001`)
-- Station full name: `td1001_tb_1`
+- Survex uses hierarchical prefixes (`*begin section`, `*end section`) — flatten according to the project's prefix convention
+- For prefix structure (single `#prefix` Pattern A vs two-level `#prefix2`+`#prefix` Pattern B), CamelCase rules including short prepositions, scope rules, and which pattern applies to which cave system, see the **Prefix Convention** section in [`CLAUDE.md`](../../../CLAUDE.md)
+- Pattern A example: section names become station infixes: `traba.1` → `tb_1` (with `#prefix td1001`); station full name: `td1001_tb_1`
 
 ---
 
@@ -140,7 +139,7 @@ MWYZN_TB.SRV   ; traba
 ...
 ```
 
-All sections use the same `#prefix` (e.g., `#prefix td1001`).
+The prefix structure (single `#prefix` vs `#prefix2`+`#prefix`) follows the project convention — see the **Prefix Convention** section in [`CLAUDE.md`](../../../CLAUDE.md).
 
 The cave's entrance fix/flag/note goes into the shared `Poligony/OTWORY.SRV`.
 

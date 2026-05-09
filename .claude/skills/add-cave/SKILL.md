@@ -85,7 +85,9 @@ Leave any genuinely unknown fields as `nieznany` / `nieznane`.
 
 ## Step 7 — Determine station prefix
 
-Use the **cave name** in CamelCase (no spaces, no diacritics) as the prefix (e.g., `Mrozna`, `Raptawicka`, `KasprowaNiznia`, `MietusiaWyznia`).
+See the **Prefix Convention** section in [`CLAUDE.md`](../../../CLAUDE.md) for the rules (CamelCase including short prepositions, single-section vs multi-section patterns, `#prefix2` for cave systems, scope rules).
+
+For a typical single-section cave: cave name in CamelCase, no spaces, no diacritics (e.g. `Mrozna`, `MietusiaWyznia`).
 
 ## Step 8 — Append entrance entry to `Poligony/OTWORY.SRV`
 

@@ -115,7 +115,7 @@ INSTRUMENT "instrument name"
 
 - **Cave IDs** follow the pattern `T.{region}-{number}.{sub}` (e.g., `T.C-16.01` for Jaskinia Kalacka, `T.B-14.01` for Dziura)
 - **Station naming**: `{cave_id}_{survey_id}` prefix (e.g., `tb1401_A1` for Dziura survey A1)
-- **`#prefix` convention**: use the cave name in CamelCase (no spaces, no diacritics), e.g., `Mrozna`, `Raptawicka`, `KasprowaNiznia`, `MietusiaWyznia`
+- **`#prefix` / `#prefix2` convention**: see the **Prefix Convention** subsection below
 - **Directory hierarchy**: Valley → Mountain/Region → Cave → Survey files
 - **SRV file naming**: UPPERCASE basename + `.SRV` extension (e.g., `DZIUR_S.SRV`, `MARMUR_OT.SRV`, `TC1601A1.SRV`). The basename must match the `.NAME` directive in `KATASTER.wpj`. This is required for Linux compatibility — `cavern` (Survex) on case-sensitive filesystems only tries: all-lowercase, Initial-cap, and ALL-UPPERCASE variants when resolving `.NAME` references.
 - **Directory naming conventions** (to keep paths short for Windows compatibility):
@@ -130,20 +130,17 @@ INSTRUMENT "instrument name"
 - Keep `_RAW/` files untouched as archival originals, even if they contain non-ASCII text
 - Files use **no BOM** encoding; some legacy files have encoding artifacts in Polish characters
 
-### Multi-section cave systems: two prefix conventions
+### Prefix Convention
 
-When a cave (or system of connected caves) is split across multiple `.SRV` files, this project uses one of two patterns. Pick by precedent within the system — don't mix.
+Cave names in `#prefix` use **CamelCase**, no spaces, no diacritics. Every word — including short prepositions (`w`, `na`, `pod`) — starts with a capital letter (e.g. "Lodowa w Ciemniaku" → `LodowaWCiemniaku`).
 
-**Pattern A — single `#prefix` + station-name infix.** One shared `#prefix` for the whole cave; section identity lives inside station names. Sections are joined with explicit zero-shots (`stationA  stationB  0  0  0`).
-- Example: Ptasia Studnia / Ratusz Mulowy — `#prefix ptasia`, stations `b1..b29` and `c1..c77`, equate `c1 b18 0 0 0`.
+Two options, picked by cave shape:
 
-**Pattern B — two-level `#prefix2` + `#prefix`.** Outer `#prefix2 SystemName` shared by every file in the system; inner `#prefix SectionName` per file (or per survey within a file). Stations qualify as `System:Section:Station`. Cross-section references inside the same `#prefix2` scope use just `Section:station` (no zero-shot needed unless the link is a logical equate). Entrance fixes live in `Poligony/OTWORY.SRV` under the fully-qualified name.
-- System Wielkiej Śnieżnej — `#prefix2 WielkaSniezna`, `#prefix Ciag`/`Jasna`/`Litworowa`/...; entrance `WielkaSniezna:Ciag:0`.
-- Goryczkowa — `#prefix2 Goryczkowa`, `#prefix G1..G5`; entrance `Goryczkowa:M:0`; cross-section equates as zero-shots (`G3:37 G2:37 0 0 0`).
-- Czarna — `#prefix2 Czarna`, `#prefix Borowiec`/`Wawel`/`Kujat`/`SzKostka`; entrances `Czarna:M:otwor1`, `Czarna:Kujat:0`.
-- System Pawlikowskiego — `#prefix2 Pawlikowskiego`, `#prefix Mylna`/`Oblazkowa`/`Raptawicka`; entrance `Pawlikowskiego:Mylna:0`.
+**Option 1 — single `#prefix` (simple cave).** One `#prefix` for the whole cave; stations qualify as `Prefix:Station`.
+- Example: Marmurowa — `#prefix Marmurowa`, entrance `Marmurowa:0`.
 
-A bare `#prefix` directive (no argument) clears the innermost prefix scope. Multiple `#prefix` directives in one file are allowed — each starts a new innermost-prefix scope (see `20130713.SRV` in WielkaSniezna).
+**Option 2 — `#prefix2` + `#prefix` (multi-section cave or cave system).** Outer `#prefix2 SystemName` shared by every file; inner `#prefix SectionName` per file. Stations qualify as `System:Section:Station`.
+- Example: System Wielkiej Śnieżnej — `#prefix2 WielkaSniezna`, `#prefix Ciag`/`Jasna`/...; entrance `WielkaSniezna:Ciag:0`.
 
 ### Detecting Data Quality Issues in SRV Files
 
