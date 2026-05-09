@@ -46,20 +46,11 @@ cavern KATASTER.wpj 2>&1 | tee -a "${CAVERN_LOG}"
     echo "      OK"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
-echo "[6/6] Checking exports..."
-echo ""
-bash docker/exports.sh "${EXPORTS_VERSION}" "${EXPORTS_OUTDIR}" 2>&1 | tee -a "${CAVERN_LOG}" | sed 's/^/                   /'
-
-echo ""
-echo "Checking for empty .shp files..."
-echo ""
-EMPTY_SHAPEFILES=$(find "${EXPORTS_OUTDIR}" -type f -name "*.shp" -size 100c)
-if [ -n "$EMPTY_SHAPEFILES" ]; then
-  echo "ERROR: Detected empty Shapefiles:"
-  echo "  $EMPTY_SHAPEFILES"
-  exit 1
-fi
-
+{
+    echo "[6/6] Checking exports..."
+    bash docker/check-exports.sh "${EXPORTS_VERSION}" "${EXPORTS_OUTDIR}"
+    echo "      OK"
+} 2>&1 | tee -a "${CAVERN_LOG}"
 
 echo ""
 echo "=== Validation Passed ✔ ==="
