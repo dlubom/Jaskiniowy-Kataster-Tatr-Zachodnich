@@ -21,6 +21,7 @@ INSTRUMENT "nieznany"
 
 ;Wys. nad Beczka: ok. 10 m
 
+; Otwor w tym pliku: NadBeczka:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	2.5	58	35
 1	2	7.0	78	0
 2	3	2.0	192	10

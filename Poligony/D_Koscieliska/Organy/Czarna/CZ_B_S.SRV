@@ -30,6 +30,7 @@ INSTRUMENT		"pomiar geodezyjny"
 #prefix2 Czarna
 #prefix Borowiec
 #units meters RECT order=ENU
+; Otwor w tym pliku: Czarna:M:otwor1 - fix/flag/note w Poligony/OTWORY.SRV
 M:otwor1 0W 0.0 0.0 0.0
 0W	0	13.58	1.15	-8.22
 0	1	2.62	1.55	-4.73

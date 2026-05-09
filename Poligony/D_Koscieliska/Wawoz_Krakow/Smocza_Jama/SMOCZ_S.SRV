@@ -19,6 +19,7 @@ INSTRUMENT "DistoX"
 #units A=D V=D
 #date 2013-12-31
 
+; Otwor w tym pliku: SmoczaJama:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1.11	0	0	0
 1.0	1.1	6.67	43.31	18.62
 1.1	1.3	5.44	347.43	18.73

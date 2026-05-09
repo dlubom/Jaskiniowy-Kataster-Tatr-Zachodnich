@@ -21,6 +21,7 @@ INSTRUMENT "nieznany"
 
 ;Wys. nad dnem wawozu ok. 75 m
 
+; Otwor w tym pliku: NadPercia:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	5.45	50	53
 1	2	2.35	34	26
 2	3	7.40	34	0

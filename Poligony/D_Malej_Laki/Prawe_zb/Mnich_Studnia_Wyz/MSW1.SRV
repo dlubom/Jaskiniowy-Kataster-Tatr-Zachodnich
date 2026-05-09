@@ -1,12 +1,9 @@
 #units meters order=DAV
 #units A=D V=D
 #prefix MnichStudniaWyz
-#FIX  0   E19:55:46.690   N49:14:35.660  1685m
-#note	0	/Mnichowa Studnia Wyznia
-#flag	0	/Mnichowa Studnia Wyznia
-#flag	0	/ENTRANCE
 ;K. Dudzinski i Z. Tabaczynski
 #DATE 2002-02-03
+; Otwor w tym pliku: MnichStudniaWyz:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	2.19	280	-30
 1	2	7.82	265	-57
 2	3	19.15	285	-88

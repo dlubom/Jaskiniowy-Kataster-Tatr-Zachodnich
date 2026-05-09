@@ -21,6 +21,7 @@ INSTRUMENT "nieznany"
 
 ;Wys. nad dnem wawozu ok. 65 m
 
+; Otwor w tym pliku: RuraPrzyOknie:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	2.34	65	82
 1	2	5.54	62	39
 2	3	3.60	60	13

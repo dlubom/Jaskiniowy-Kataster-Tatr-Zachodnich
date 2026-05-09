@@ -3,11 +3,8 @@
 #date 2013-04-02
 ;K Dudzinski , Z Tabaczynski
 #prefix Zwolinskiego
-#FIX  0   E19:58:38.200  N49:15:04.200   1314.0m
-#note	0	/Zwolinskiego
-#flag	0	/Zwolinskiego
-#flag	0	/ENTRANCE
 ;Zwolinskiego
+; Otwor w tym pliku: Zwolinskiego:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	2.22	187	-17.5
 1	2	4.85	236	-29
 2	3	2.1	235	-18

@@ -2,7 +2,6 @@
 #UNITS meters order=DAV
 #prefix PtasiaStudnia
 #Units A=D V=D
-;#Fix s1 -17.08 -2.73 -183.01
 s1	i8	0	0	0
 s1 	s2	2.8	348	-27
 s2	s3	2.6	147	65
@@ -48,7 +47,6 @@ S32	S33	3.3	282	27
 S33	S34	3.9	42	18
 S34	S35	1.85	26	19
 S35	S36	4.7	8	-2	;S36 spit na polce w P57
-;#Fix S36	 25.57 2.11 -126.2/ Poczatek Harlequinu
 s9	s10	2.2	239	41
 s10	s11	2.55	174	33	;s11 rozdroze w strone harlequinu
 s11	s12	1.85	242	45
@@ -56,5 +54,4 @@ s12	s13	6.3	270	18
 s13	s14	2.4	246	35
 s14	s15	4.25	216	11
 s15	s16	4.6	115	57	;s16 gora studni nad basenem
-;#Fix s16 -10.71 -17.74 -161.16
 #Note s16 Studnia nad Basenem

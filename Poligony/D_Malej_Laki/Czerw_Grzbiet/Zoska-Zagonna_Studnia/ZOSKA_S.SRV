@@ -21,6 +21,7 @@ INSTRUMENT "Topo-Vulcan"
 #segment /1996
 #date 1996-07-28
 ; Pomiary 1996: D. Fuja, B. Zwijacz-Kozica
+; Otwory w tym pliku: Zoska:0, Zoska:1Z - fix/flag/note w Poligony/OTWORY.SRV
 0	1G	4.64	197	-37
 1G	2G	8.57	0	-90
 2G	3G	5.5	276	-15
@@ -84,12 +85,9 @@ INSTRUMENT "Topo-Vulcan"
 35	36	5.85	93	49
 36	37	3.6	76	4
 
-#segment /surface_tie
+#segment /Zagonna_1996-08
 #date 1996-08-15
-; Pomiary (polaczenie otworow / Zagonna): 15.08.1996 K. Dudzinski, D. Fuja, P. Orawiec, B. Zwijacz-Kozica.
-0	A	8.09	355	-59
-A	B	7.74	80	21
-B	1Z	4.48	130	0	; otwor Zagonnej
+; Pomiary Zagonnej: 15.08.1996 K. Dudzinski, D. Fuja, P. Orawiec, B. Zwijacz-Kozica.
 1Z	2Z	6.12	120	-80
 2Z	3Z	3.76	258	-53
 3Z	4Z	3.36	297	-39

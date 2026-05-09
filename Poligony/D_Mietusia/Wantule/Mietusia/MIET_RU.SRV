@@ -22,6 +22,7 @@ INSTRUMENT "DistoX"
 ; === Ciag glowny ===
 ; Stacja 0 = otwor jaskini
 
+; Otwor w tym pliku: Mietusia:ru_0 - fix/flag/note w Poligony/OTWORY.SRV
 ru_0	ru_1	2.68	238.9	-14.3
 ru_1	ru_2	3.61	232.4	-28.5
 ru_2	ru_3	4.44	266.6	-21.3	; odgalezienie slepe

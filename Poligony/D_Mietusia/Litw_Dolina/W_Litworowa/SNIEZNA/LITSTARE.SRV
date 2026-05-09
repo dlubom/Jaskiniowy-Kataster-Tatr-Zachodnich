@@ -5,12 +5,8 @@
 #units v=d
 #units a=d
 #Units Meters Order=avd
-;#fix 	LT58	 0421006	5454543	1906
-#FIX  LT58  E19:54:53.26989 N49:14:18.82979 1903m
-#note	LT58	/Wielka Litworowa
-#flag	LT58	/Wielka Litworowa
-#flag	LT58	/ENTRANCE
 ;Ciag glowny
+; Otwor w tym pliku: WielkaSniezna:Litworowa:LT58 - fix/flag/note w Poligony/OTWORY.SRV
 LT58	LT57	52	-81	13.20
 LT57	LT56	343	-9	6.90
 ; lt56 szczelina z dna studni wlotowej

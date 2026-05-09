@@ -21,6 +21,7 @@ INSTRUMENT "DistoX"
 #date 2012-03-10
 
 ;Polaczenia z innymi sekcjami
+; Otwor w tym pliku: Goryczkowa:M:0 - fix/flag/note w Poligony/OTWORY.SRV
 M:0	1	0	0	0
 1k	G2:39	0	0	0
 G3:37	G2:37	0	0	0

@@ -10,6 +10,9 @@
 .NAME	JSURVEY
 .PATH	Poligony
 .STATUS	9
+.SURVEY	Otwory - fix
+.NAME	OTWORY
+.STATUS	8
 .BOOK	Dolina ku Dziurze
 .NAME	DKDZ
 .PATH	D_ku_Dziurze
@@ -17,9 +20,6 @@
 .BOOK	Dziura
 .NAME	DZIURA
 .PATH	Dziura
-.STATUS	8
-.SURVEY	Dziura meta
-.NAME	DZIUR_M
 .STATUS	8
 .SURVEY	Dziura pomiary
 .NAME	DZIUR_S
@@ -33,9 +33,6 @@
 .BOOK	Obcasna Vyvieracka
 .NAME	OBVYV
 .PATH	Obcasna_Vyv
-.STATUS	8
-.SURVEY	Coordinates
-.NAME	OVGPS
 .STATUS	8
 .SURVEY	OV_A2
 .NAME	OVA2
@@ -79,9 +76,6 @@
 .NAME	JKAL
 .PATH	Kalacka
 .STATUS	8
-.SURVEY	Coordinates
-.NAME	1601GPS
-.STATUS	8
 .SURVEY	Jaskinia Kalacka
 .NAME	TC1601A1
 .STATUS	8
@@ -95,9 +89,6 @@
 .NAME	JDMUCHB
 .PATH	Dmuchawa
 .STATUS	8
-.SURVEY	Dmuchawa meta
-.NAME	DMUCH_M
-.STATUS	8
 .SURVEY	Dmuchawa pomiary
 .NAME	DMUCH_S
 .STATUS	8
@@ -110,9 +101,6 @@
 .NAME	JKMLEK
 .PATH	Kamienne_Mleko
 .STATUS	8
-.SURVEY	Jaskinia Kamienne Mleko meta
-.NAME	JKM_M
-.STATUS	8
 .SURVEY	Jaskinia Kamienne Mleko pomiary
 .NAME	JKM_S
 .STATUS	8
@@ -121,9 +109,6 @@
 .BOOK	Zbojecka Dziura
 .NAME	ZBDZ
 .PATH	Zbojecka_Dziura
-.STATUS	8
-.SURVEY	Zbojecka Dziura meta
-.NAME	ZBDZIU_M
 .STATUS	8
 .SURVEY	Zbojecka Dziura pomiary
 .NAME	ZBDZIU_S
@@ -137,9 +122,6 @@
 .BOOK	Jaskinia Goryczkowa
 .NAME	JGOR
 .PATH	Goryczkowa
-.STATUS	8
-.SURVEY	Jaskinia Goryczkowa meta
-.NAME	GORYC_M
 .STATUS	8
 .SURVEY	GORYC_G1
 .NAME	GORYC_G1
@@ -174,9 +156,6 @@
 .NAME	KASPRN
 .PATH	Kasprowa_Niznia
 .STATUS	8
-.SURVEY	Kasprowa Niznia meta
-.NAME	KASPRN_M
-.STATUS	8
 .SURVEY	Kasprowa Niznia pomiary
 .NAME	KASPRN_S
 .STATUS	8
@@ -193,9 +172,6 @@
 .BOOK	Jaskinia Czarna
 .NAME	JCZ
 .PATH	Czarna
-.STATUS	8
-.SURVEY	Czarna meta
-.NAME	CZ_Z_M
 .STATUS	8
 .SURVEY	Fragment Jaskini Czarnej
 .NAME	CZ_Z_S
@@ -222,9 +198,6 @@
 .NAME	JMROZNA
 .PATH	Mrozna
 .STATUS	8
-.SURVEY	Mrozna meta
-.NAME	MROZNA_M
-.STATUS	8
 .SURVEY	Mrozna pomiary
 .NAME	MROZNA_S
 .STATUS	8
@@ -238,9 +211,6 @@
 .NAME	JCI
 .PATH	Ciepla
 .STATUS	8
-.SURVEY	Jaskinia Ciepla meta
-.NAME	JCIEPLA_M
-.STATUS	8
 .SURVEY	Jaskinia Ciepla pomiary
 .NAME	JCIEPLA_S
 .STATUS	8
@@ -248,9 +218,6 @@
 .BOOK	Jaskinia Pod Zamkiem
 .NAME	JPZ
 .PATH	Pod_Zamkiem
-.STATUS	8
-.SURVEY	Jaskinia Pod Zamkiem meta
-.NAME	JPODZ_M
 .STATUS	8
 .SURVEY	Jaskinia Pod Zamkiem pomiary
 .NAME	JPODZ_S
@@ -260,9 +227,6 @@
 .NAME	JPS
 .PATH	Poszukiwaczy_Skarbow
 .STATUS	8
-.SURVEY	Jaskinia Poszukiwaczy Skarbow meta
-.NAME	JASPOS_M
-.STATUS	8
 .SURVEY	Jaskinia Poszukiwaczy Skarbow pomiary
 .NAME	JASPOS_S
 .STATUS	8
@@ -270,9 +234,6 @@
 .BOOK	Jaskinia w Zbojnickiej Turni
 .NAME	JWZT
 .PATH	w_Zbojnickiej_Turni
-.STATUS	8
-.SURVEY	Jaskinia w Zbojnickiej Turni meta
-.NAME	JASWZT_M
 .STATUS	8
 .SURVEY	Jaskinia w Zbojnickiej Turni pomiary
 .NAME	JASWZT_S
@@ -282,9 +243,6 @@
 .NAME	JZIOB
 .PATH	Ziobrowa
 .STATUS	8
-.SURVEY	Jaskinia Ziobrowa meta
-.NAME	JZ_M
-.STATUS	8
 .SURVEY	Jaskinia Ziobrowa pomiary
 .NAME	JZ_S
 .STATUS	8
@@ -292,9 +250,6 @@
 .BOOK	Zbojnicka Piwnica
 .NAME	ZBPIWN
 .PATH	Zbojnicka_Piwnica
-.STATUS	8
-.SURVEY	Zbojnicka Piwnica meta
-.NAME	ZP_M
 .STATUS	8
 .SURVEY	Zbojnicka Piwnica pomiary
 .NAME	ZP_S
@@ -426,21 +381,10 @@
 .NAME	SJP
 .PATH	Syst_Pawlikowskiego
 .STATUS	8
-.BOOK	Powierzchnia
-.NAME	SJP_POW
-.PATH	Powierzchnia
-.STATUS	8
-.SURVEY	Powierzchnia Oblazkowa-Raptawicka
-.NAME	POW_ORM
-.STATUS	8
-.ENDBOOK
 .BOOK	Mylna
 .NAME	MYLNA
 .PATH	Mylna
 .STATUS	544776
-.SURVEY	Mylna meta
-.NAME	MYLNA_M
-.STATUS	8
 .BOOK	Ciag Glowny
 .NAME	MCG
 .STATUS	544768
@@ -507,9 +451,6 @@
 .NAME	OBLAZ
 .PATH	Oblazkowa
 .STATUS	8
-.SURVEY	Oblazkowa meta
-.NAME	OBLAZK_M
-.STATUS	8
 .SURVEY	Oblazkowa
 .NAME	OBLAZK_S
 .STATUS	8
@@ -517,9 +458,6 @@
 .BOOK	Raptawicka
 .NAME	RAPT
 .PATH	Raptawicka
-.STATUS	8
-.SURVEY	Raptawicka meta
-.NAME	RAPTAW_M
 .STATUS	8
 .SURVEY	Raptawicka
 .NAME	RAPTAW_S
@@ -536,9 +474,6 @@
 .NAME	SM
 .PATH	Smocza_Jama
 .STATUS	8
-.SURVEY	Smocza Jama meta
-.NAME	SMOCZ_M
-.STATUS	8
 .SURVEY	Smocza Jama pomiary
 .NAME	SMOCZ_S
 .STATUS	8
@@ -546,9 +481,6 @@
 .BOOK	Gawra
 .NAME	GAWRA
 .PATH	Gawra
-.STATUS	8
-.SURVEY	Gawra meta
-.NAME	JGAWR_M
 .STATUS	8
 .SURVEY	Gawra pomiary
 .NAME	JGAWR_S
@@ -558,9 +490,6 @@
 .NAME	JNB
 .PATH	nad_Beczka
 .STATUS	8
-.SURVEY	Jaskinia nad Beczka meta
-.NAME	JASNADB_M
-.STATUS	8
 .SURVEY	Jaskinia nad Beczka pomiary
 .NAME	JASNADB_S
 .STATUS	8
@@ -568,9 +497,6 @@
 .BOOK	Jaskinia nad Percia
 .NAME	JNADP
 .PATH	nad_Percia
-.STATUS	8
-.SURVEY	Jaskinia nad Percia meta
-.NAME	JNADPE_M
 .STATUS	8
 .SURVEY	Jaskinia nad Percia pomiary
 .NAME	JNADPE_S
@@ -580,9 +506,6 @@
 .NAME	LKOR
 .PATH	Lustrzany_Korytarz
 .STATUS	8
-.SURVEY	Lustrzany Korytarz meta
-.NAME	LUKOR_M
-.STATUS	8
 .SURVEY	Lustrzany Korytarz pomiary
 .NAME	LUKOR_S
 .STATUS	8
@@ -590,9 +513,6 @@
 .BOOK	Rura przy Oknie
 .NAME	RPO
 .PATH	Rura_przy_Oknie
-.STATUS	8
-.SURVEY	Rura przy Oknie meta
-.NAME	RUPRZYOK_M
 .STATUS	8
 .SURVEY	Rura przy Oknie pomiary
 .NAME	RUPRZYOK_S
@@ -646,9 +566,6 @@
 .NAME	JLC
 .PATH	Lod_w_Ciemniaku
 .STATUS	8
-.SURVEY	Lodowa w Ciemniaku meta
-.NAME	LWCIM_M
-.STATUS	8
 .SURVEY	Ciag glowny
 .NAME	LWCIM_GC
 .STATUS	8
@@ -697,9 +614,6 @@
 .NAME	ZAWSCH
 .PATH	Zawalony_Schron
 .STATUS	8
-.SURVEY	Zawalony Schron meta
-.NAME	ZAWSCH_M
-.STATUS	8
 .SURVEY	Zawalony Schron pomiary
 .NAME	ZAWSCH_S
 .STATUS	8
@@ -733,9 +647,6 @@
 .BOOK	Jaskinia Zoska - Zagonna Studnia
 .NAME	JZZS
 .PATH	Zoska-Zagonna_Studnia
-.STATUS	8
-.SURVEY	Zoska meta
-.NAME	ZOSKA_M
 .STATUS	8
 .SURVEY	Zoska pomiary
 .NAME	ZOSKA_S
@@ -934,9 +845,6 @@
 .NAME	WKDZIU
 .PATH	Wyz_Koszowa_Dziura
 .STATUS	8
-.SURVEY	Wyznia Koszowa Dziura meta
-.NAME	WKDZIUR_M
-.STATUS	8
 .SURVEY	Wyznia Koszowa Dziura pomiary
 .NAME	WKDZIUR_S
 .STATUS	8
@@ -945,9 +853,6 @@
 .NAME	JKOSZ
 .PATH	Koszowa
 .STATUS	8
-.SURVEY	Jaskinia Koszowa meta
-.NAME	JKOSZ_M
-.STATUS	8
 .SURVEY	Jaskinia Koszowa pomiary
 .NAME	JKOSZ_S
 .STATUS	8
@@ -955,9 +860,6 @@
 .BOOK	Szczelina nad Lejem
 .NAME	SZNLEJ
 .PATH	Szczelina_nad_Lejem
-.STATUS	8
-.SURVEY	Szczelina nad Lejem meta
-.NAME	SZNLEJ_M
 .STATUS	8
 .SURVEY	Szczelina nad Lejem pomiary
 .NAME	SZNLEJ_S
@@ -976,9 +878,6 @@
 .BOOK	Mietusia Wyznia
 .NAME	MWYZN
 .PATH	Mietusia_Wyznia
-.STATUS	8
-.SURVEY	MWYZN_M
-.NAME	MWYZN_M
 .STATUS	8
 .SURVEY	MWYZN_OT
 .NAME	MWYZN_OT
@@ -1038,17 +937,6 @@
 .NAME	MIET
 .PATH	Mietusia
 .STATUS	8
-.BOOK	Powierzchnia
-.NAME	MIET_POW
-.PATH	Powierzchnia
-.STATUS	8
-.SURVEY	Jaskinia Mietusia powierzchnia
-.NAME	MIET_PW
-.STATUS	8
-.ENDBOOK
-.SURVEY	Jaskinia Mietusia meta
-.NAME	MIET_M
-.STATUS	8
 .SURVEY	Jaskinia Mietusia rura
 .NAME	MIET_RU
 .STATUS	8
@@ -1060,9 +948,6 @@
 .BOOK	Ratusz Mulowy
 .NAME	RMUL
 .PATH	Ptasia_Studnia
-.STATUS	8
-.SURVEY	OTW_POW.SRV
-.NAME	OTW_POW
 .STATUS	8
 .SURVEY	15.SRV
 .NAME	15
@@ -1300,9 +1185,6 @@
 .SURVEY	MALA_POM.SRV
 .NAME	MALA_POM
 .STATUS	8
-.SURVEY	POW_POM1.SRV
-.NAME	POW_POM1
-.STATUS	8
 .ENDBOOK
 .ENDBOOK
 .ENDBOOK
@@ -1314,9 +1196,6 @@
 .NAME	DWS
 .PATH	Dziura_w_Stole
 .STATUS	8
-.SURVEY	Dziura w Stole meta
-.NAME	DZWS_M
-.STATUS	8
 .SURVEY	Dziura w Stole pomiary
 .NAME	DZWS_S
 .STATUS	8
@@ -1324,9 +1203,6 @@
 .BOOK	Jaskinia Zawaliskowa Tomanowa
 .NAME	JZTOM
 .PATH	Zawaliskowa_Tom
-.STATUS	8
-.SURVEY	Jaskinia Zawaliskowa Tomanowa meta
-.NAME	JZAWTOM_M
 .STATUS	8
 .SURVEY	Jaskinia Zawaliskowa Tomanowa pomiary
 .NAME	JZAWTOM_S
@@ -1336,9 +1212,6 @@
 .NAME	SNT1
 .PATH	Szczelina_nad_Tom_I
 .STATUS	8
-.SURVEY	Szczelina nad Tomanowa I meta
-.NAME	SZNDT1_M
-.STATUS	8
 .SURVEY	Szczelina nad Tomanowa I pomiary
 .NAME	SZNDT1_S
 .STATUS	8
@@ -1347,22 +1220,10 @@
 .NAME	SNT2
 .PATH	Szczelina_nad_Tom_II
 .STATUS	8
-.SURVEY	Szczelina nad Tomanowa II meta
-.NAME	SZNDT2_M
-.STATUS	8
 .SURVEY	Szczelina nad Tomanowa II pomiary
 .NAME	SZNDT2_S
 .STATUS	8
 .ENDBOOK
-.ENDBOOK
-.BOOK	_Domiary Powierzchniowe_
-.NAME	DOMPOW
-.PATH	_Domiary_Pow_
-.STATUS	8
-.SURVEY	LTsbb teren
-.NAME	LITW_TER
-.PATH	SNIEZNA
-.STATUS	8
 .ENDBOOK
 .ENDBOOK
 .BOOK	Powierzchnia

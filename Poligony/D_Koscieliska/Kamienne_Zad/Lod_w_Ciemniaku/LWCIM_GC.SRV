@@ -22,6 +22,7 @@ INSTRUMENT "DistoX2, Qave"
 
 ;Ciag glowny (stacje gc0-gc24)
 
+; Otwor w tym pliku: LodowaWCiemniaku:gc0 - fix/flag/note w Poligony/OTWORY.SRV
 gc0	gc1	6.294	72.138	12.801
 gc1	gc2	7.154	64.219	7.615
 gc2	gc3	7.030	83.701	9.051

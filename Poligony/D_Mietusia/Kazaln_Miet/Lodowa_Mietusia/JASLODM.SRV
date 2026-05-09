@@ -1,12 +1,9 @@
 #units meters order=DAV
 #prefix LodowaMietusia
-#note	0	/Jaskinia Lodowa Mietusia
-#flag	0	/Jaskinia Lodowa Mietusia
-#flag	0	/ENTRANCE
 #date 2013-09-01
-#FIX  0   E19:54:5.89  N49:14:23.77  1589.7m
 ;wsp. odczytal K. D. z mapy.geoportal.gov.pl/imap
 ;team A. Brzoza, H. Cieplak, D. Gratkowska, P. Sienkiewicz
+; Otwor w tym pliku: LodowaMietusia:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	3.58	200.4	-32.3
 1	2	5.23	193.6	-15
 2	3	6.63	180.6	-20.9

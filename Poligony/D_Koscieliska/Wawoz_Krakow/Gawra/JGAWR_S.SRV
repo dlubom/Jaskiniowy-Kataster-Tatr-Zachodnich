@@ -21,6 +21,7 @@ INSTRUMENT "nieznany"
 
 ;Wys. nad dnem wawozu ok. 130 m
 
+; Otwor w tym pliku: Gawra:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	3.10	26	-13	;8 m nowego
 1	2	2.00	50	-26	;razem 9+8=17 m
 2	3	2.35	41	-5

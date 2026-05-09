@@ -19,9 +19,7 @@ INSTRUMENT "DistoX + PocketTopo"
 #units meters order=AVD
 #units A=D V=D
 #prefix Kalacka
-#note	0	/Jaskinia Kalacka
-#flag	0	/Jaskinia Kalacka
-#flag	0	/ENTRANCE
+; Otwor w tym pliku: Kalacka:0 - fix/flag/note w Poligony/OTWORY.SRV
 1.0	0	0	0	0
 1.0	1.1	283.83	-7.69	7.511
 1.1	1.2	27.01	69.84	10.219

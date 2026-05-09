@@ -13,9 +13,6 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
 #prefix2 Czarna
 #prefix Kujat
-#flag	0	/Jaskinia Czarna III
-#flag	0	/ENTRANCE
-#note	0	/Jaskinia Czarna III
 
 ;Data pomiarow nieznana. PIG (T.E-09.12) podaje, ze R. Kujat nawiazal
 ;do punktow Borowca w 1975 r., ale dokladna data pomiarow jest nieznana
@@ -30,6 +27,7 @@ LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 #units A=D V=D
 
 ;Otwor III -> Sala Bernarda
+; Otwor w tym pliku: Czarna:Kujat:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	165	-22	3.35	;0 - otwor III
 1	2	201	0	3.05
 2	3	199	-11	9.42

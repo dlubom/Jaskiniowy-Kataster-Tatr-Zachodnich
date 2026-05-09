@@ -1,11 +1,8 @@
 #units meters order=DAV
 #prefix SzczelinaMietusia
-#note	0	/Szczelina Mietusia
-#flag	0	/Szczelina Mietusia
-#flag	0	/ENTRANCE
 #date 2011-11-05
-#FIX  0   0420114  5454702   1570.0m
 ;team A. Brzoza, P. Sienkiewicz
+; Otwor w tym pliku: SzczelinaMietusia:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	3.35	201	-54	<0,0.8,1,0.4>
 1	2	2.40	172	-41	<0.4,0,0.6,1>
 2	3	3.39	202.2	-59.7	<0,1.2,0.6,0>

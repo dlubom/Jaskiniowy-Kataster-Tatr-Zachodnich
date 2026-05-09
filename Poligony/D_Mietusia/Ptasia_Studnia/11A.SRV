@@ -2,8 +2,8 @@
 #UNITS meters order=DAV
 #Units A=D V=D
 #prefix PtasiaStudnia
-;#Fix n1 38.95 83.14	-52.26
-n1	n2	15.75	64	8
+; Otwor w tym pliku: PtasiaStudnia:a14 - fix/flag/note w Poligony/OTWORY.SRV
+a14	n2	15.75	64	8
 n2	n3	8.72	53	8
 n3	n4	16.86	63	4
 n4	n5	17.57	76	6

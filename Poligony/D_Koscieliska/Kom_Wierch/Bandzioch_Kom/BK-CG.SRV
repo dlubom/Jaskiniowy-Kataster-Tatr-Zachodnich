@@ -1,17 +1,11 @@
 #prefix BandziochKom
 #Units Meters
 ; source: unknown - GNSS
-#fix	000	E19.84957850	N49.24258746	1451.06
 #flag	/000,136,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,U,P,136
-#flag	000	/Bandzioch Kom. Dolny
-#flag	000	/ENTRANCE
-#flag	136	/Bandzioch Kom. Gorny
-#flag	136	/ENTRANCE
-#note	000	/Bandzioch Kom. Dolny
-#note	136	/Bandzioch Kom. Gorny
 #note	G	/Lazaret
 #note	L	/Bazylika
 #Units Meters rect Order=NEU
+; Otwory w tym pliku: BandziochKom:000, BandziochKom:136 - fix/flag/note w Poligony/OTWORY.SRV
 000	001	-6.34	-2.27	-8.96
 001	002	-10.93	-3	-3.12
 002	003	-5.17	-3.13	-7.71

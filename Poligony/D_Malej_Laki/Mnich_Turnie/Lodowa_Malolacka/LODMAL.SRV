@@ -1,14 +1,11 @@
 #units meters order=DAV
 #units A=D V=D
 #prefix LodowaMalolacka
-#FIX  0   E19:55:42.52  N49:14:35.05   1634.13m
-#note	0	/Lodowa Malolacka
-#flag	0	/Lodowa Malolacka
-#flag	0	/ENTRANCE
 ;F. FILAR, M. PARCZEWSK
 ;
 #DATE 2004-09-04
 ;ciag po pow.
+; Otwor w tym pliku: LodowaMalolacka:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1p	2.4	189	25
 1p	2p	13.32	299	-22
 2p	3p	20.8	67	60

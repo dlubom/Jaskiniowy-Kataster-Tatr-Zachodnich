@@ -1,10 +1,7 @@
 #prefix Uplazkowa
 #Units Meters Order=dav
-#fix 	ju0	421573.32	5454872.48 	1689.57
-#note	ju0	/Uplazkowa
-#flag	ju0	/Uplazkowa
-#flag	ju0	/ENTRANCE
 ;Uplazkowa
+; Otwor w tym pliku: Uplazkowa:ju0 - fix/flag/note w Poligony/OTWORY.SRV
 ju0	ju1	11.61	259.37	-20.20
 ju1	ju2	6.52	232.45	-41.17
 ju2	ju3	7.60	227.20	-14.48

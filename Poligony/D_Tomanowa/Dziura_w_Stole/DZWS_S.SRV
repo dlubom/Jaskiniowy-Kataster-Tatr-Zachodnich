@@ -21,6 +21,7 @@ INSTRUMENT "nieznany"
 
 ;Wys. nad dnem Doliny Tomanowej: ok. 400 m
 
+; Otwor w tym pliku: DziuraWStole:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	2.80	225	-75
 1	2	3.20	145	-35
 2	3	2.70	165	-20
