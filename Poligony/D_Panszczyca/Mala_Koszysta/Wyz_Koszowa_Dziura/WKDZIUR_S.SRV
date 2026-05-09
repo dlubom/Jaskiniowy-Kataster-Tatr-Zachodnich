@@ -21,6 +21,7 @@ INSTRUMENT "unknown"
 
 ;Wyznia Koszowa Dziura
 
+; Otwor w tym pliku: WyzKoszowaDziura:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	2	210	-40
 1	2	4	300	-80
 2	3	2	270	-30

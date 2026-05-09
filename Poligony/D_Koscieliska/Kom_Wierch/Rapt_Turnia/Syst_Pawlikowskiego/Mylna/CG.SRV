@@ -19,6 +19,7 @@ INSTRUMENT "DistoX2"
 #date 2009-01-01
 #Units meters order=dav
 
+; Otwor w tym pliku: Pawlikowskiego:Mylna:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	7.4	231	4
 1	2	3.98	306	8
 2	3	2.06	266	4

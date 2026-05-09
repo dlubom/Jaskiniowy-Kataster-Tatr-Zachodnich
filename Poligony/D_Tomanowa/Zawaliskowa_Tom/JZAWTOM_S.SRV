@@ -21,6 +21,7 @@ INSTRUMENT "nieznany"
 
 ;Wys. nad dnem Doliny Tomanowej: ok. 250 m
 
+; Otwor w tym pliku: ZawaliskawaTom:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	0.80	75	-10
 1	2	3.70	2	21
 2	3	2.60	312	-60

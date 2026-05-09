@@ -21,6 +21,7 @@ INSTRUMENT "nieznany"
 
 ;Wys. nad dnem Doliny Tomanowej: ok. 480 m
 
+; Otwor w tym pliku: SzczelinaNadTomII:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	3.90	118	-40
 1	2	2.70	115	-70
 2	3	3.00	102	-10

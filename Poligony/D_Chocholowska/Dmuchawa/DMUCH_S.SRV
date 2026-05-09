@@ -21,6 +21,7 @@ INSTRUMENT "nieznany"
 
 ;Wysokosc nad dnem doliny ok. 300 m
 
+; Otwor w tym pliku: Dmuchawa:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	1.20	130	0
 1	2	4.00	0	-90
 2	3	4.65	148	-22

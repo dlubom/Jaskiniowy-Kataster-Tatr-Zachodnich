@@ -17,9 +17,7 @@ TEAM "F. Filar i M. Parczewski"
 #units meters order=DAV
 #units A=D V=D
 #prefix Dziura
-#note	0	/Jaskinia Dziura
-#flag	0	/Jaskinia Dziura
-#flag	0	/ENTRANCE
+; Otwor w tym pliku: Dziura:0 - fix/flag/note w Poligony/OTWORY.SRV
 1.0	0	0	0	0
 1.0	1.1	2.61333333333333	86.99	-14.42
 1.1	1.2	4.46666666666667	99.2933333333333	-15.1033333333333

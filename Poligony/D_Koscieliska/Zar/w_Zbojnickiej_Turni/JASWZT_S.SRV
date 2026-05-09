@@ -21,6 +21,7 @@ INSTRUMENT "nieznany"
 
 ;Wys. nad dnem wawozu ok. 150 m
 
+; Otwor w tym pliku: ZbojnickaTurnia:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	3.00	223	10
 1	2	2.75	235	18
 2	3	4.20	280	30

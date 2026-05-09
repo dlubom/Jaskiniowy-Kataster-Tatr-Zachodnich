@@ -19,6 +19,7 @@ INSTRUMENT "nieznany"
 #units meters order=DAV
 #units A=D V=D
 
+; Otwor w tym pliku: ZbojeckaDziura:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	13.30	297	-19
 1	2	10.15	287	-9
 2	3	9.15	343	-7

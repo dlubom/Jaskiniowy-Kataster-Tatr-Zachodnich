@@ -21,6 +21,7 @@ INSTRUMENT "nieznany"
 
 ;Wys. nad dnem wawozu ok. 140 m
 
+; Otwor w tym pliku: ZbojnickaPiwnica:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	1.30	0	-90
 1	2	2.35	117	0
 2	3	4.30	37	-4	;II otwor

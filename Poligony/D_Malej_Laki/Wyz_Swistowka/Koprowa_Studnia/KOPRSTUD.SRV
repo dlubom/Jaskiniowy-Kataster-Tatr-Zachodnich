@@ -5,10 +5,7 @@
 #UNITS D=M A=D V=D Order=DAV
 #DATE 2011-09-09
 ;LRUD: L,R,U,D
-#note	ks0	/Koprowa Studnia
-#flag	ks0	/Koprowa Studnia
-#flag	ks0	/ENTRANCE
-#FIX	ks0	E19:55:49.09736	N49:14:21.55262	1807.10
+; Otwory w tym pliku: KoprowaStudnia:ks0, Swistacza:24 - fix/flag/note w Poligony/OTWORY.SRV
 ks0	ks10	1.28	224.1	-36.9	<0.85,,,>
 ks10	ks11	31.16	225.3	-85.7	<0,0.73,,>
 ks11	ks12	4.58	257.5	3.4	<0.34,1.63,5.6,0>

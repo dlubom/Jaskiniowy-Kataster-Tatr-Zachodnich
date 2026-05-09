@@ -1,13 +1,10 @@
 #units meters order=DAV
 #prefix SpiacychRycerzy
-#note	1	/Jaskinia Spiacych Rycerzy
-#flag	1	/Jaskinia Spiacych Rycerzy
-#flag	1	/ENTRANCE
 #date 2009-01-01
 ;TODO Piotr daty nie pamietal, jedynie wiadomo ze 4 lata temu
-#FIX  1   E19:55:24.300  N49:14:59.660   1397.8m
 ;team P. Sienkiewicz, M. Kurylowicz
 ;Jest to tylko czesc jaskini
+; Otwor w tym pliku: SpiacychRycerzy:1 - fix/flag/note w Poligony/OTWORY.SRV
 1	2	2.22	81.2	-6.9
 2	3	4.67	57.9	-29.5
 3	4	7.12	57.9	-4.1

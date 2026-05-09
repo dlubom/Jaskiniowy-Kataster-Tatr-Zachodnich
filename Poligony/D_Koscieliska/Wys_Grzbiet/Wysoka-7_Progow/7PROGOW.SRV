@@ -4,9 +4,8 @@
 ;Wyk. Jacek Szczygiel
 #UNITS D=M A=D V=D Order=DAV
 
-#flag	W7-200	/ENTRANCE
-#note	W7-200	/Za7Progami Dolny Otwor
 
+; Otwor w tym pliku: Wysoka7Progow:W7-200 - fix/flag/note w Poligony/OTWORY.SRV
 W7-200	W7-201	8.7	62	23	;pt. 200 dolnny otwor
 W7-201	W7-202	8.8	76	-45.5	;czekan
 W7-202	W7-203	10.3	72	-54	;Biala salka

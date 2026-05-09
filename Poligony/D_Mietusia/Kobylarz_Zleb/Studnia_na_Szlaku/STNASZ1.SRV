@@ -1,10 +1,7 @@
 #units meters order=DAV
 #units A=D V=D
 #prefix StudniaNaSzlaku
-#FIX  0   E19:54:47.59  N49:14:39.55   1799.50m
-#note	0	/Studnia na Szlaku
-#flag	0	/Studnia na Szlaku
-#flag	0	/ENTRANCE
 ;TODO #date
 ;Z. Tabaczynski
+; Otwor w tym pliku: StudniaNaSzlaku:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	5	270	-89

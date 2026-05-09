@@ -1,10 +1,7 @@
 #units meters order=DAV
 #units A=D V=D
 #prefix CzerwonaStudzienka
-#FIX  0   E19:54:50.03  N49:14:41.2   1810.78m
-#note	0	/Czerwona Studzienka
-#flag	0	/Czerwona Studzienka
-#flag	0	/ENTRANCE
 ;Z. Tabaczynski
 #DATE 2002-09-08
+; Otwor w tym pliku: CzerwonaStudzienka:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	12	0	-90

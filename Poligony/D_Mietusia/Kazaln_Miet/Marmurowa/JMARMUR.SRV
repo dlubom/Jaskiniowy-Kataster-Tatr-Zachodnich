@@ -1,14 +1,11 @@
 #units meters order=DAV
 #units A=D V=D
 #prefix Marmurowa
-#fix 	0	E19:54:2.93 N49:14:21.81   1770.6m
 ;wsp. odczytal K. D. z mapy.geoportal.gov.pl/imap
-#note	0	/Marmurowa
-#flag	0	/Marmurowa
-#flag	0	/ENTRANCE
 #date 1986-05-01
 ;Tomasz Pryjma, M. Adamiski
 ;otwor - Piaskownic II
+; Otwor w tym pliku: Marmurowa:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	1	1.0	0	90
 1	2	7.5	191	-43
 2	3	4.5	0	-90

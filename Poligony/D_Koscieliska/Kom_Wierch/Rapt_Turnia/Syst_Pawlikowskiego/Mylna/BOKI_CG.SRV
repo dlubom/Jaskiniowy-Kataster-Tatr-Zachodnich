@@ -21,6 +21,7 @@ INSTRUMENT "DistoX2"
 #Units A=D V=D
 
 ;1 bok kolo wejscia
+; Otwor w tym pliku: Pawlikowskiego:Mylna:0 - fix/flag/note w Poligony/OTWORY.SRV
 0	40	5.69	324	21
 ;2 bok kolo wejscia
 2	41	2.8	15	8
