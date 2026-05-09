@@ -4,6 +4,16 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.3.7] - 2026-05-09
+
+Przeniesienie koordynatów otworów jaskiń do zbiorczego pliku oraz poprawienie blędów CaveView dla naszego projektu
+
+### Dodano
+-Zbiorczy plik otworów jaskiń
+
+### Naprawione
+- Błędy CaveView dla dużego modelu 3D
+
 ## [v1.3.6] - 2026-05-05
 
 Poprawiono prefixy systemów: Jaskiń Pawlikowskiego oraz Wielkiej Śnieżnej. Zapewnia to poprawny export tych systemów.
