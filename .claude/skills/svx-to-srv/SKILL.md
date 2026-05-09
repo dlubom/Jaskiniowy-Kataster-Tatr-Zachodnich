@@ -17,7 +17,7 @@ Example:
 /svx-to-srv T.D-10.01 "Poligony/D_Mietusia/M_Swistowka/Mietusia_Wyznia/_RAW/source/mietusia_wyznia.svx"
 ```
 
-This produced 17 SRV files (`MWYZN_M.SRV` + 16 section files) in `Poligony/D_Mietusia/M_Swistowka/Mietusia_Wyznia/`.
+This produced 16 section SRV files in `Poligony/D_Mietusia/M_Swistowka/Mietusia_Wyznia/`. The cave's entrance fix is appended to the shared `Poligony/OTWORY.SRV` (see `/add-cave` Step 8).
 
 ## Conversion rules
 
@@ -36,7 +36,7 @@ The field order maps directly: `FROM TO DISTANCE AZIMUTH INCLINATION`
 | `*date YYYY.MM.DD` | `#date YYYY-MM-DD` | Dash separator in Walls |
 | `*team ...` | `TEAM "..."` in metadata block | |
 | `*instrument ...` | `INSTRUMENT "..."` in metadata block | |
-| `*entrance` | `#flag`, `#note`, `#fix` in `_M.SRV` | See add-cave skill for coordinate conversion |
+| `*entrance` | `#flag`, `#note`, `#fix` appended to `Poligony/OTWORY.SRV` | Fully-qualified station name (e.g. `Marmurowa:0`). See add-cave skill Step 8 for coordinate conversion |
 
 ### What to skip (do NOT convert)
 
@@ -63,10 +63,9 @@ One zero-shot per equate. Place them in a `; === Polaczenia z innymi cigami ===`
 
 ### Prefixes and station naming
 
-- Survex uses hierarchical prefixes (`*begin section`, `*end section`) — flatten to a single `#prefix` in Walls
-- All sections of the same cave use the **same** `#prefix` (e.g., `td1001` for T.D-10.01)
-- Section names become station infixes: `traba.1` → `tb_1` (with `#prefix td1001`)
-- Station full name: `td1001_tb_1`
+- Survex uses hierarchical prefixes (`*begin section`, `*end section`) — flatten according to the project's prefix convention
+- For prefix structure (single `#prefix` Pattern A vs two-level `#prefix2`+`#prefix` Pattern B), CamelCase rules including short prepositions, scope rules, and which pattern applies to which cave system, see the **Prefix Convention** section in [`CLAUDE.md`](../../../CLAUDE.md)
+- Pattern A example: section names become station infixes: `traba.1` → `tb_1` (with `#prefix td1001`); station full name: `td1001_tb_1`
 
 ---
 
@@ -134,14 +133,15 @@ sd_14    tb_2    0    0    0
 One `.SRV` file per Survex `*begin`/`*end` block (or logical section). Naming: `{CAVE_ABBR}_{SECTION}.SRV`, e.g.:
 
 ```
-MWYZN_M.SRV    ; metadata + entrance fix
 MWYZN_OT.SRV   ; otwor (entrance passage)
 MWYZN_SD.SRV   ; suche_dno
 MWYZN_TB.SRV   ; traba
 ...
 ```
 
-All sections use the same `#prefix` (e.g., `#prefix td1001`).
+The prefix structure (single `#prefix` vs `#prefix2`+`#prefix`) follows the project convention — see the **Prefix Convention** section in [`CLAUDE.md`](../../../CLAUDE.md).
+
+The cave's entrance fix/flag/note goes into the shared `Poligony/OTWORY.SRV`.
 
 ## Conversion checklist
 
@@ -163,11 +163,11 @@ Once all `.SRV` files are ready, use the `/add-cave` skill to register the cave 
 
 The `/add-cave` skill handles:
 - Placing `_RAW/` source files with a `README.md`
-- Creating `_M.SRV` with entrance coordinates (from PIG dump or GPS)
+- Appending the entrance fix/flag/note to `Poligony/OTWORY.SRV` (from PIG dump or GPS)
 - Adding `.BOOK`/`.SURVEY` entries to `KATASTER.wpj`
 - Updating `CHANGELOG.md` and committing
 
-When running `/add-cave` after SVX conversion, the SRV section files are already created — skip the `_S.SRV` skeleton step and point the skill at the existing files.
+When running `/add-cave` after SVX conversion, the section `.SRV` files are already created — skip the survey-file skeleton step and point the skill at the existing files.
 
 ## Common pitfalls
 

@@ -1,0 +1,34 @@
+#[
+CAVE_ID			"T.E-11.05"
+CAVE_NAME		"Jaskinia Marmurowa"
+SURVEY_ID		ST
+SURVEY_NAME		"Z dna II Studni do starego dna"
+UPDATE_DATE		2026-05-09
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"Tomasz Pryjma, Fundacja Extreme Sports"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM "Tomasz Pryjma, K. Recielski"
+INSTRUMENT "nieznany"
+#]
+
+#prefix Marmurowa
+#units meters order=DAV
+#units A=D V=D
+#date 1990-04-01
+
+;Z dna II Studni do starego dna - dowiazany do stacji Marmurowa:10 (ciag glowny)
+10	st_1	13.0	245	20
+st_1	st_2	5.2	205	70
+st_2	st_3	6.15	260	45
+st_3	st_4	7.35	290	5
+st_4	st_5	5.0	250	-30
+st_5	st_6	6.75	260	-85
+st_6	st_7	21.8	0	-90
+st_7	st_8	17.9	360	-58
+st_8	st_9	5.7	260	-38
+st_8	st_10	10	100	40
+st_9	st_11	3.8	20	-80
+st_11	st_12	4.15	270	-55

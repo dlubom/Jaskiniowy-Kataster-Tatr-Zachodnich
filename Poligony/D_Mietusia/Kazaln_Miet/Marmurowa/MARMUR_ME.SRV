@@ -1,0 +1,30 @@
+#[
+CAVE_ID			"T.E-11.05"
+CAVE_NAME		"Jaskinia Marmurowa"
+SURVEY_ID		ME
+SURVEY_NAME		"Meander KKTJ"
+UPDATE_DATE		2026-05-09
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"Tomasz Pryjma, Fundacja Extreme Sports"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM "Tomasz Pryjma, K. Wardakowski"
+INSTRUMENT "nieznany"
+#]
+
+#prefix Marmurowa
+#units meters order=DAV
+#units A=D V=D
+#date 1987-04-01
+
+;Meander KKTJ - dowiazany do stacji Marmurowa:8 (ciag glowny)
+8	me_1	3.0	31	58
+me_1	me_2	4.95	345	24
+me_2	me_3	6.4	278	-20
+me_3	me_4	7.3	270	-42
+me_4	me_5	2.5	180	-52
+me_5	me_6	3.05	265	35
+me_6	me_7	1.2	250	-10
+me_4	me_8	5.88	75	-25

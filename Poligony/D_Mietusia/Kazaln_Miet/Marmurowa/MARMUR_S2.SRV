@@ -1,0 +1,30 @@
+#[
+CAVE_ID			"T.E-11.05"
+CAVE_NAME		"Jaskinia Marmurowa"
+SURVEY_ID		S2
+SURVEY_NAME		"Partie II-giej Sali"
+UPDATE_DATE		2026-05-09
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"Tomasz Pryjma, Fundacja Extreme Sports"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM "Tomasz Pryjma, K. Wardakowski"
+INSTRUMENT "nieznany"
+#]
+
+#prefix Marmurowa
+#units meters order=AVD
+#units A=D V=D
+#date 1987-04-01
+
+;Partie II-giej Sali - dowiazane do stacji Marmurowa:10 (ciag glowny)
+10	s2_1	38	43	8.8
+s2_1	s2_2	350	81	4.95
+s2_2	s2_3	95	0	1.85
+s2_2	s2_4	0	90	6
+s2_2	s2_5	32	0	5.1
+s2_5	s2_6	0	90	4
+s2_3	s2_7	52	83	3.30
+s2_7	s2_8	0	90	2

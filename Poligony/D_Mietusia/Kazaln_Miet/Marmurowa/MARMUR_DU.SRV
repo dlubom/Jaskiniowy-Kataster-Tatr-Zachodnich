@@ -1,0 +1,37 @@
+#[
+CAVE_ID			"T.E-11.05"
+CAVE_NAME		"Jaskinia Marmurowa"
+SURVEY_ID		DU
+SURVEY_NAME		"Meander Dudzinskiego"
+UPDATE_DATE		2026-05-09
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"Tomasz Pryjma, Fundacja Extreme Sports"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM "Tomasz Pryjma, K. Wardakowski"
+INSTRUMENT "nieznany"
+#]
+
+#prefix Marmurowa
+#units meters order=DAV
+#units A=D V=D
+#date 1987-04-01
+
+;Meander Dudzinskiego - dowiazany do stacji Marmurowa:8 (ciag glowny)
+8	du_1	3.0	31	58
+du_1	du_2	4.95	345	24
+du_2	du_3	4.95	328	18
+du_3	du_4	3.05	248	-28
+du_4	du_5	3.3	277	-35
+du_5	du_6	2.5	308	-42
+du_6	du_7	2.2	0	-90
+du_7	du_8	1.65	270	-48
+du_8	du_9	2.45	296	-21
+du_9	du_10	2.45	245	-85
+du_10	du_11	8.54	298	-42
+du_11	du_12	1.6	250	12
+du_11	du_13	4.2	50	-45
+du_12	du_14	3.44	260	-33
+du_14	du_15	2.1	340	-78
