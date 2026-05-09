@@ -6,16 +6,18 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [v1.3.8] - 2026-05-09
 
-Poprawione prefixy jaskiń Marmurowa oraz Obcasná Vyvieračka
+Poprawione prefixy jaskiń Marmurowa oraz Obcasná Vyvieračka. Dołączono brakujące pomiary jaskini Czarnej oraz zaktualizowano współrzędne otworów.
 
 ### Dodano
--Walidacja aktualnej konwencji prefixów
+- Walidacja aktualnej konwencji prefixów
+- Dodatkowe pomiary brakujących ciągów jaskini Czarnej
 
 ### Naprawione
 - Struktura prefixów i plików jaskini Marmurowej
 - Prefix jaskini Obcasná Vyvieračka
 
 ### Zmienione
+- Aktualizacja współrzędnych otworów jaskini Czarnej
 - Informacje odnośnie struktury plików, konwencji prefixów oraz pliku zbiorczego koordynatów otworów
 
 ## [v1.3.7] - 2026-05-09
