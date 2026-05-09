@@ -336,6 +336,19 @@ Runs the validation pipeline locally using Docker (same `jktz-survex` image as `
 /docker-validate
 ```
 
+### `/verify-cave-refactor` — `.claude/skills/verify-cave-refactor/SKILL.md`
+
+Verifies that a refactor of a single cave's SRV files (split, prefix rename, formatting) did not change the survey itself. Compiles the project before and after the change, exports station coordinates for the named cave, and diffs them. Usage:
+
+```
+/verify-cave-refactor <cave-prefix>
+```
+
+Example:
+```
+/verify-cave-refactor Marmurowa
+```
+
 ### `/gnss-to-wgs84` — `.claude/skills/gnss-to-wgs84/SKILL.md`
 
 Converts coordinates from Polish EPSG:2180 (PUWG 1992 / "uklad 1992") to WGS84 geographic (EPSG:4326). Useful when processing GNSS survey reports. Requires `pyproj` (`pip3 install pyproj`). Usage:
