@@ -17,9 +17,10 @@ INSTRUMENT		"unknown"
 
 #units meters order=DVA
 #units A=D V=D
-#prefix ObcasnaVyv.A1
-; Otwor w tym pliku: ObcasnaVyv:o1 - fix/flag/note w Poligony/OTWORY.SRV
-ObcasnaVyv:o1	2	2.02	-81.6	52.0	; otwor, fix/flag/note w Poligony/OTWORY.SRV
+#prefix2 ObcasnaVyv
+#prefix A1
+; Otwor w tym pliku: ObcasnaVyv:A1:o1 - fix/flag/note w Poligony/OTWORY.SRV
+o1	2	2.02	-81.6	52.0	; otwor, fix/flag/note w Poligony/OTWORY.SRV
 2	3	2.93	-21.2	280.0
 3	4	12.61	-0.3	272.0	;HLADINA I.SIFON
 4	5	8.26	-14.5	284.5	;I.SIFON

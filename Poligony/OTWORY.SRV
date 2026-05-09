@@ -191,10 +191,10 @@
 #flag	NovaKresanica:nvk0	/ENTRANCE
 #note	NovaKresanica:nvk0	/Nova Kresanica
 
-#fix	ObcasnaVyv:o1	E19.9298694255	N49.2266111028	1453.00m
-#flag	ObcasnaVyv:o1	/Obcasna Vyvieracka
-#flag	ObcasnaVyv:o1	/ENTRANCE
-#note	ObcasnaVyv:o1	/Obcasna Vyvieracka
+#fix	ObcasnaVyv:A1:o1	E19.9298694255	N49.2266111028	1453.00m
+#flag	ObcasnaVyv:A1:o1	/Obcasna Vyvieracka
+#flag	ObcasnaVyv:A1:o1	/ENTRANCE
+#note	ObcasnaVyv:A1:o1	/Obcasna Vyvieracka
 
 #fix	Pawlikowskiego:Mylna:0	E19.8622047217	N49.2393861277	1098.00m
 #flag	Pawlikowskiego:Mylna:0	/Mylna
