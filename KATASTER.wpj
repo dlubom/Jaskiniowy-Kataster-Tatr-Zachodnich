@@ -1050,8 +1050,29 @@
 .NAME	MARMUR
 .PATH	Marmurowa
 .STATUS	8
-.SURVEY	Marmurowa
-.NAME	JMARMUR
+.SURVEY	Marmurowa otwor - Piaskownice II
+.NAME	MARMUR_OT
+.STATUS	8
+.SURVEY	Marmurowa Komin KKTJ
+.NAME	MARMUR_KK
+.STATUS	8
+.SURVEY	Marmurowa Meander KKTJ
+.NAME	MARMUR_ME
+.STATUS	8
+.SURVEY	Marmurowa Meander Dudzinskiego
+.NAME	MARMUR_DU
+.STATUS	8
+.SURVEY	Marmurowa Stary ciag
+.NAME	MARMUR_ST
+.STATUS	8
+.SURVEY	Marmurowa Okna kandydackie
+.NAME	MARMUR_OK
+.STATUS	8
+.SURVEY	Marmurowa Partie II Sali
+.NAME	MARMUR_S2
+.STATUS	8
+.SURVEY	Marmurowa Piaskownica II
+.NAME	MARMUR_P
 .STATUS	8
 .ENDBOOK
 .BOOK	Studnia w Kazalnicy

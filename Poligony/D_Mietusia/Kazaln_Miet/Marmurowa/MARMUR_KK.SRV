@@ -1,0 +1,36 @@
+#[
+CAVE_ID			"T.E-11.05"
+CAVE_NAME		"Jaskinia Marmurowa"
+SURVEY_ID		KK
+SURVEY_NAME		"Komin KKTJ"
+UPDATE_DATE		2026-05-09
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"Tomasz Pryjma, Fundacja Extreme Sports"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM "Tomasz Pryjma, K. Wardakowski"
+INSTRUMENT "nieznany"
+#]
+
+#prefix Marmurowa
+#units meters order=DAV
+#units A=D V=D
+#date 1987-04-01
+
+;Komin KKTJ - dowiazany do stacji Marmurowa:8 (ciag glowny)
+8	kk_1	3.0	31	58
+kk_1	kk_2	4.95	345	24
+kk_2	kk_3	22.6	145	58
+kk_3	kk_4	9.9	310	-48
+kk_4	kk_5	1.5	354	4
+kk_3	kk_6	2.5	112	-26
+kk_3	kk_7	6.5	47	15
+kk_7	kk_8	10.02	38	72
+kk_3	kk_9	12.03	135	41
+kk_9	kk_10	1.5	35	25
+kk_10	kk_11	5.03	131	58
+kk_11	kk_12	4.0	0	90
+kk_11	kk_13	3.4	2	32
+kk_13	kk_14	1.2	360	48

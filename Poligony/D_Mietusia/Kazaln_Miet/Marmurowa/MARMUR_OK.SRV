@@ -1,0 +1,30 @@
+#[
+CAVE_ID			"T.E-11.05"
+CAVE_NAME		"Jaskinia Marmurowa"
+SURVEY_ID		OK
+SURVEY_NAME		"Okna kandydackie (1 i 2)"
+UPDATE_DATE		2026-05-09
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"Tomasz Pryjma, Fundacja Extreme Sports"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM "Tomasz Pryjma, K. Wardakowski"
+INSTRUMENT "nieznany"
+#]
+
+#prefix Marmurowa
+#units meters order=AVD
+#units A=D V=D
+#date 1987-04-01
+
+;Okno kandydackie 1 - dowiazane do stacji Marmurowa:20 (ciag glowny)
+20	ok1_1	210	-87	10.4
+ok1_1	ok1_2	208	25	5
+
+;Okno kandydackie 2 - dowiazane do stacji Marmurowa:22 (ciag glowny)
+22	ok2_1	50	82	22.7
+ok2_1	ok2_2	18	-25	3.8
+ok2_2	ok2_3	78	0	5.9
+ok2_3	ok2_4	0	90	15
