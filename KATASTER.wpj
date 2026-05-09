@@ -185,6 +185,9 @@
 .SURVEY	Partie Wawelskie - pomiary Kotarby
 .NAME	CZ_W_S
 .STATUS	8
+.SURVEY	Pomiary Jakuba Nowaka 2012-2015
+.NAME	CZ_N_S
+.STATUS	8
 .ENDBOOK
 .BOOK	Jaskinia Zimna
 .NAME	JZIMNA
