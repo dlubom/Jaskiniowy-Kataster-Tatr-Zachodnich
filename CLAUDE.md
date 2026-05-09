@@ -142,6 +142,21 @@ INSTRUMENT "instrument name"
 - Keep `_RAW/` files untouched as archival originals, even if they contain non-ASCII text
 - Files use **no BOM** encoding; some legacy files have encoding artifacts in Polish characters
 
+### Multi-section cave systems: two prefix conventions
+
+When a cave (or system of connected caves) is split across multiple `.SRV` files, this project uses one of two patterns. Pick by precedent within the system — don't mix.
+
+**Pattern A — single `#prefix` + station-name infix.** One shared `#prefix` for the whole cave; section identity lives inside station names. Sections are joined with explicit zero-shots (`stationA  stationB  0  0  0`).
+- Example: Ptasia Studnia / Ratusz Mulowy — `#prefix ptasia`, stations `b1..b29` and `c1..c77`, equate `c1 b18 0 0 0`.
+
+**Pattern B — two-level `#prefix2` + `#prefix`.** Outer `#prefix2 SystemName` shared by every file in the system; inner `#prefix SectionName` per file (or per survey within a file). Stations qualify as `System:Section:Station`. Cross-section references inside the same `#prefix2` scope use just `Section:station` (no zero-shot needed unless the link is a logical equate). Entrance fixes live in `Poligony/OTWORY.SRV` under the fully-qualified name.
+- System Wielkiej Śnieżnej — `#prefix2 WielkaSniezna`, `#prefix Ciag`/`Jasna`/`Litworowa`/...; entrance `WielkaSniezna:Ciag:0`.
+- Goryczkowa — `#prefix2 Goryczkowa`, `#prefix G1..G5`; entrance `Goryczkowa:M:0`; cross-section equates as zero-shots (`G3:37 G2:37 0 0 0`).
+- Czarna — `#prefix2 Czarna`, `#prefix Borowiec`/`Wawel`/`Kujat`/`SzKostka`; entrances `Czarna:M:otwor1`, `Czarna:Kujat:0`.
+- System Pawlikowskiego — `#prefix2 Pawlikowskiego`, `#prefix Mylna`/`Oblazkowa`/`Raptawicka`; entrance `Pawlikowskiego:Mylna:0`.
+
+A bare `#prefix` directive (no argument) clears the innermost prefix scope. Multiple `#prefix` directives in one file are allowed — each starts a new innermost-prefix scope (see `20130713.SRV` in WielkaSniezna).
+
 ### Detecting Data Quality Issues in SRV Files
 
 **Important:** SRV files may contain non-UTF-8 bytes (CP1250/Latin-1 legacy encoding). Always use `LC_ALL=C` with grep/sed to handle these correctly. The Edit tool (which operates in UTF-8) will corrupt these bytes — use `LC_ALL=C sed -i ''` instead for byte-safe replacements.
