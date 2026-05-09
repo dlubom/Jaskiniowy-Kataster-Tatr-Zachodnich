@@ -2,7 +2,8 @@
 #units meters order=ENU
 
 ; Zbiorczy plik fixow otworow.
-; Wspolrzedne WGS84 w notacji decimal, przeliczone z EPSG:32634 narzedziem cs2cs.
+; Wspolrzedne #fix: WGS84 lon/lat w notacji decimal oraz wysokosc m n.p.m.
+; Punkty przeliczane narzedziem cs2cs; uklad zrodlowy opisany przy grupie punktow, jesli znany.
 ; Wariancja R0.01 zostaje tylko przy Bandziochu: rozcina w Walls petle constrained #fix + RECT w BK-CG.SRV.
 
 ; source: unknown - GNSS
@@ -26,12 +27,17 @@
 #flag	Ciepla:0	/ENTRANCE
 #note	Ciepla:0	/Jaskinia Ciepla
 
-#fix	Czarna:Kujat:0	E19.8809922751	N49.2472760025	1409.37m
+; source: GNSS + LIDAR 2026-05-09
+; XY/H: PL-1992 EPSG:2180 (zrzut: easting,northing,H) + PL-KRON86-NH.
+; Przeliczenie: cs2cs +init=epsg:2180 +to +init=epsg:4326, wejscie easting/northing.
+; Czarna:M:otwor1: 563339.46 / 153353.95 / 1323.42 -> E19.8705053667 N49.2444121431 1323.42m
+; Czarna:Kujat:0: 564121.29 / 153658.93 / 1403.92 -> E19.8812979507 N49.2470745479 1403.92m
+#fix	Czarna:Kujat:0	E19.8812979507	N49.2470745479	1403.92m
 #flag	Czarna:Kujat:0	/Jaskinia Czarna III
 #flag	Czarna:Kujat:0	/ENTRANCE
 #note	Czarna:Kujat:0	/Jaskinia Czarna III
 
-#fix	Czarna:M:otwor1	E19.8703722455	N49.2443861054	1326.00m
+#fix	Czarna:M:otwor1	E19.8705053667	N49.2444121431	1323.42m
 #flag	Czarna:M:otwor1	/Jaskinia Czarna
 #flag	Czarna:M:otwor1	/ENTRANCE
 #note	Czarna:M:otwor1	/Jaskinia Czarna
