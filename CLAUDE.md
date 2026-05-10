@@ -146,6 +146,11 @@ Two options, picked by cave shape:
 
 **Important:** SRV files may contain non-UTF-8 bytes (CP1250/Latin-1 legacy encoding). Always use `LC_ALL=C` with grep/sed to handle these correctly. The Edit tool (which operates in UTF-8) will corrupt these bytes — use `LC_ALL=C sed -i ''` instead for byte-safe replacements.
 
+**Walls duplicate-vector warnings** — with `Options | Compilation | Look for Duplicates` enabled, Walls logs duplicate FROM/TO station pairs independently of segment tags. Adding `#S L` or `#S /Duplicate` is useful for statistics/segment handling, but it does **not** suppress the "Duplication of shot" warning. Fix depending on the data:
+- Repeated instrument readings for the same leg: average them into one measurement.
+- Truly duplicate survey/resurvey leg: choose one source or keep both only if you accept the Walls warning when duplicate checking is enabled.
+- Conflicting measurements with the same station names: do not blindly average; resolve from source material, or rename the alternate traverse stations and tie the endpoints explicitly.
+
 **Decimal comma (,) instead of dot (.)** — Walls treats comma as whitespace, shifting all subsequent fields:
 ```bash
 # Detect: comma between digits in measurement fields (excluding comments, LRUD, metadata, _RAW/)
