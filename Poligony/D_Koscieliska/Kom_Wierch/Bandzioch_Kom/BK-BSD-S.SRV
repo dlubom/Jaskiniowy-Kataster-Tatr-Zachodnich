@@ -2,6 +2,7 @@
 #Units Order=DAV
 #Units meters
 #Units A=D V=D
+#date 1977-05-15
 ;Korytarz przy Starym Dnie
 B067       	B067001	14	65	-38
 B067001	B067002	6.3	162	-32
@@ -37,6 +38,7 @@ BB014007	BB014008	3.4	203	28
 ;Partie Zamkowe
 ;Pom. K. Kleszynski, B. Sanborski oraz K. Mazik, A. Grabsk 7-8.02.81
 ;Na odcinku od BAA003 do BAA006 poprawka na petli laczacej pozostale dwa wejscia do Partii Zamkowych
+#date 1981-02-08
 BAA	BAA001	5.9	219	33
 BAA001	BAA002	6.1	32	4
 BAA002	BAA003	3.1	125	10
@@ -69,6 +71,7 @@ BAA00609	BAA003  	7.2	241	27
 
 ;Blizniacze Studnie - Czarny Komin
 ;Pom. K. Mazik, J. Gmyrek 23.04.81, Blad rozrzucony po Y i Z
+#date 1981-04-23
 BC	BC001	5.1	80	-22
 BC001	BC002	2.5	90	-58
 BC002	BC003	12	344	-68
@@ -78,6 +81,7 @@ BC005	BC006	4.2	106	-11
 BC006	BC007	7	90	-54
 BC007	BC008	2.5	83	4
 ;Pom. A. Antkiewicz, przy wspolpracy M. Dolny, J. Godula, P. Materniak 1980, Dane przyblizone
+#date 1980-07-01
 BC008	BC009	6.6	90	0
 BC009	BC010	15.55	36	-87
 BC010	BC011	3	277	0
