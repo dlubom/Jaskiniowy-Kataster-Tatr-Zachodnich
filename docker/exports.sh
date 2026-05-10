@@ -73,7 +73,7 @@ ogr2ogr -f "ESRI Shapefile" -dim XYZ -a_srs EPSG:32634 \
 # -----------------------------------------------------------------------------
 echo "[4/4] survexport — per-cave DXF + shapefiles"
 survexport --entrances --csv "${COMPILED_3D}" ${TMPDIR_LOCAL}/entrances.csv
-caves=$(tail -n+2 ${TMPDIR_LOCAL}/entrances.csv | cut -d, -f4 | sed 's/:.*//' | sort -u)
+caves=$(tail -n+2 ${TMPDIR_LOCAL}/entrances.csv | cut -d, -f4 | sed 's/[.:].*//' | sort -u)
 
 for cave in $caves; do
     echo "      → ${cave}"
