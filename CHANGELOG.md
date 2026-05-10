@@ -4,6 +4,24 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.3.9] - 2026-05-10
+
+Poprawiono dane Bandziocha Kominiarskiego oraz ciag glowny Borowca w Jaskini Czarnej.
+
+### Dodano
+- Arkusze robocze/digitalizacje pomiarow Bandziocha Kominiarskiego w `_RAW`
+- Raport dotyczacy deklinacji i konwersji ciagu Borowca z `RECT` do `DAV`
+
+### Naprawione
+- Deklinacja ciagu Borowca w Jaskini Czarnej przez wlaczenie wersji `CZ_B_DAV.SRV`
+- Polaczenie siodmego dna Bandziocha Kominiarskiego
+- Nazwy stacji w Jaskini Czarnej przekraczajace limit Walls
+
+### Zmienione
+- Dodano daty pomiarow do wielu ciagow Bandziocha Kominiarskiego
+- Poprawiono zagniezdzenie Ciagu 3 Dna w `KATASTER.wpj`
+- Usunieto lokalny `REF` oraz zbedne flagi/komentarze z danych Bandziocha Kominiarskiego
+
 ## [v1.3.8] - 2026-05-09
 
 Poprawione prefixy jaskiń Marmurowa oraz Obcasná Vyvieračka. Dołączono brakujące pomiary jaskini Czarnej oraz zaktualizowano współrzędne otworów.
