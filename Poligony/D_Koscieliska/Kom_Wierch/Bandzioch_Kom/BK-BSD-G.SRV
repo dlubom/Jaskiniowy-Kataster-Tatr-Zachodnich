@@ -2,6 +2,7 @@
 #Units Order=DAV
 #Units meters
 #Units A=G V=G
+#date 1983-07-01
 ;Pom. J. Duleba, A. Madej 1983
 ;Rejon Sali ze Stolem - Rozdroze
 B001       	B001001	1.6	264	-40
@@ -18,6 +19,7 @@ BB003	BB004	4.6	104	-14
 
 ;Ciag do Studni Kargula
 ;Pom. K. Mazik 2-3.02.1981
+#date 1981-02-03
 BA	BA001	5.3	249	0
 BA001	BA002	7	290	40
 BA002	BA003	6.8	293	20

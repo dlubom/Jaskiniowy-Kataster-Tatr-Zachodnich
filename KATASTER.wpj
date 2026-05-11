@@ -176,8 +176,8 @@
 .SURVEY	Fragment Jaskini Czarnej
 .NAME	CZ_Z_S
 .STATUS	8
-.SURVEY	Ciag glowny Jaskini Czarnej
-.NAME	CZ_B_S
+.SURVEY	Ciag glowny Jaskini Czarnej - Borowiec DAV z deklinacja
+.NAME	CZ_B_DAV
 .STATUS	8
 .SURVEY	Pomiary Kujata 1981 - partie koncowe
 .NAME	CZ_K_S
@@ -300,20 +300,6 @@
 .BOOK	Ciag 4 Dna
 .NAME	BK-C4D
 .STATUS	8
-.BOOK	Ciag 3 Dna
-.NAME	BK-C3D
-.STATUS	8
-.SURVEY	Boki Ciagu 3 Dna - Grady
-.NAME	BK-B3D-G
-.STATUS	8
-.SURVEY	Boki Ciagu 3 Dna - Stopnie
-.NAME	BK-B3D-S
-.STATUS	8
-.SURVEY	Ciag 3 Dna - Stopnie
-.NAME	BK-C3D-S
-.STATUS	8
-.REF	5455060.050 416262.210 34 -0.871 1457 1 49 14 33.300 19 50 58.320 27 "WGS 1984"
-.ENDBOOK
 .SURVEY	Boki Ciagu 4 Dna - Grady
 .NAME	BK-B4D-G
 .STATUS	8
@@ -325,6 +311,19 @@
 .STATUS	8
 .SURVEY	Ciag 4 Dna - Stopnie
 .NAME	BK-C4D-S
+.STATUS	8
+.ENDBOOK
+.BOOK	Ciag 3 Dna
+.NAME	BK-C3D
+.STATUS	8
+.SURVEY	Boki Ciagu 3 Dna - Grady
+.NAME	BK-B3D-G
+.STATUS	8
+.SURVEY	Boki Ciagu 3 Dna - Stopnie
+.NAME	BK-B3D-S
+.STATUS	8
+.SURVEY	Ciag 3 Dna - Stopnie
+.NAME	BK-C3D-S
 .STATUS	8
 .ENDBOOK
 .BOOK	Ciag 2 Dna (Nowe Dno-Syf.KKTJ)
