@@ -4,6 +4,14 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.4.0] - 2026-05-13
+
+Poprawiono koordynaty oraz blednie dodany ciag powierzchniowyc Jaskini Mietusiej Wyzniej
+
+### Naprawione
+
+Koordynaty otworu jaskini Mietusiej Wyzniej oraz zbedny ciag powierzchniowy
+
 ## [v1.3.9] - 2026-05-10
 
 Poprawiono dane Bandziocha Kominiarskiego oraz ciag glowny Borowca w Jaskini Czarnej.
