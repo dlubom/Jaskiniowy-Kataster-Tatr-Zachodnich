@@ -167,10 +167,10 @@
 #flag	Mietusia:ru_0	/ENTRANCE
 #note	Mietusia:ru_0	/Jaskinia Mietusia
 
-#fix	MietusiaWyznia:ot_gps	E19.8948999471	N49.2453990405	1377.00m
-#flag	MietusiaWyznia:ot_gps	/Jaskinia Mietusia Wyznia
-#flag	MietusiaWyznia:ot_gps	/ENTRANCE
-#note	MietusiaWyznia:ot_gps	/Jaskinia Mietusia Wyznia
+#fix	MietusiaWyznia:ot_0	E19.8948999471	N49.2453990405	1377.00m
+#flag	MietusiaWyznia:ot_0	/Jaskinia Mietusia Wyznia
+#flag	MietusiaWyznia:ot_0	/ENTRANCE
+#note	MietusiaWyznia:ot_0	/Jaskinia Mietusia Wyznia
 
 #fix	MnichStudniaWyz:0	E19.9296361116	N49.2432388811	1685.00m
 #flag	MnichStudniaWyz:0	/Mnichowa Studnia Wyznia

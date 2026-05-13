@@ -20,8 +20,9 @@ INSTRUMENT "DistoX2"
 #date 2024-02-12
 
 ; === Pomiary ===
-; Otwor w tym pliku: MietusiaWyznia:ot_gps - fix/flag/note w Poligony/OTWORY.SRV
-ot_gps	ot_0	19.61	286.9	49.3
+; Otwor w tym pliku: MietusiaWyznia:ot_0 - fix/flag/note w Poligony/OTWORY.SRV
+; Pierwotny strzal powierzchniowy gps->ot_0 (19.61m 286.9 +49.3) usuniety;
+; ot_0 ustawiony bezposrednio na wspolrzednych otrzymanych za pomoca survexport z pliku 3d oraz wyszukania odpowiedniej stacji
 
 ot_1	ot_0	5.61	84.2	-6.6	; wsteczny do batinoxa
 ot_1	-	3.21	338.3	-11.6
