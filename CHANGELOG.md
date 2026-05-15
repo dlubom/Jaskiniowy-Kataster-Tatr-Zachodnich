@@ -4,6 +4,22 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.4.1] - 2026-05-15
+
+Rozszerono walidacje projektu oraz poprawiono elementy, ktore ta walidacja wylapala.
+
+### Dodano
+- Sprawdzenie poprawnosci nazw plikow i folderow
+- Sprawdzenie separatorow wartosci pomiarowych
+- Walidacja obszaru wystepowania koordynat oraz obiektow exportu
+
+### Naprawione
+- Nazwy plikow dla jaskinia Nova Kresanica
+- Wystepujace znaki spoza obszaru ASCII w plikach .SRV
+
+### Zmienione
+- Struktura skryptow uzywanych przez github / docker
+
 ## [v1.4.0] - 2026-05-13
 
 Poprawiono koordynaty oraz blednie dodany ciag powierzchniowyc Jaskini Mietusiej Wyzniej
