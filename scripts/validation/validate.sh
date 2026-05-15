@@ -20,36 +20,42 @@ trap 'rm -rf "${EXPORTS_OUTDIR}"' EXIT
 echo "=== Validation Started ==="
 
 {
-    echo "[1/6] Checking SRV file naming..."
+    echo "[1/7] Checking SRV file naming..."
     bash scripts/validation/check-naming.sh
-    echo "      OK"
+    echo "      SRV file naming: Passed ✔"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
 {
-    echo "[2/6] Checking for invalid directives..."
+    echo "[2/7] Checking for invalid directives..."
     bash scripts/validation/check-directives.sh
-    echo "      OK"
+    echo "      Invalid directives: Passed ✔"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
 {
-    echo "[3/6] Checking #prefix values..."
+    echo "[3/7] Checking #prefix values..."
     bash scripts/validation/check-prefixes.sh
-    echo "      OK"
+    echo "      #prefix values: Passed ✔"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
-echo "[4/6] Compiling with cavern..."
+{
+    echo "[4/7] Checking entrance coordinates are inside Tatras extent..."
+    bash scripts/validation/check-coordinates.sh
+    echo "      Entrance coordinates in Tatras extent: Passed ✔"
+} 2>&1 | tee -a "${CAVERN_LOG}"
+
+echo "[5/7] Compiling with cavern..."
 cavern KATASTER.wpj 2>&1 | tee -a "${CAVERN_LOG}"
 
 {
-    echo "[5/6] Checking for unattached stations..."
+    echo "[6/7] Checking for unattached stations..."
     bash scripts/validation/check-unattached.sh "${CAVERN_LOG}"
-    echo "      OK"
+    echo "      Unattached stations: Passed ✔"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
 {
-    echo "[6/6] Checking exports..."
+    echo "[7/7] Checking exports..."
     bash scripts/validation/check-exports.sh "${EXPORTS_VERSION}" "${EXPORTS_OUTDIR}"
-    echo "      OK"
+    echo "      Exports: Passed ✔"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
 echo ""
