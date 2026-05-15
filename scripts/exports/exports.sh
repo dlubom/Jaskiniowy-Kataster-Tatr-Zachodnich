@@ -7,10 +7,10 @@
 #
 # Usage (from repo root):
 #   # Local — via Docker (output visible on host via bind mount):
-#   docker run --rm -v "$(pwd):/project" jktz-survex bash docker/exports.sh [VERSION]
+#   docker run --rm -v "$(pwd):/project" jktz-survex bash scripts/exports/exports.sh [VERSION]
 #
 #   # CI — directly on the runner (Survex installed):
-#   bash docker/exports.sh <VERSION> .
+#   bash scripts/exports/exports.sh <VERSION> .
 #
 # Arguments:
 #   $1  VERSION  — defaults to "local"

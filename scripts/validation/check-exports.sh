@@ -10,7 +10,7 @@ VERSION="${1:?VERSION required}"
 OUTDIR="${2:?OUTDIR required}"
 
 echo ""
-bash docker/exports.sh "${VERSION}" "${OUTDIR}" 2>&1 | sed 's/^/                   /'
+bash scripts/exports/exports.sh "${VERSION}" "${OUTDIR}" 2>&1 | sed 's/^/                   /'
 
 echo ""
 echo "Checking for empty .shp files..."

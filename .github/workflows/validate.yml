@@ -104,7 +104,7 @@ jobs:
 
       - name: Run full validation (Linux)
         if: runner.os == 'Linux'
-        run: bash docker/validate.sh
+        run: bash scripts/validation/validate.sh
 
       - name: Compile with cavern (Windows)
         if: runner.os == 'Windows'

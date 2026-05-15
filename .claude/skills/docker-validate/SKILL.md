@@ -43,13 +43,13 @@ Show the build output. If the build fails, stop and report the error.
 ### 2. Run the validation
 
 ```bash
-docker run --rm -v "$(pwd):/project" jktz-survex bash docker/validate.sh
+docker run --rm -v "$(pwd):/project" jktz-survex bash scripts/validation/validate.sh
 ```
 
 **Windows note:** `$(pwd)` in Git Bash produces a Unix-style path (e.g. `/c/Users/...`) that Docker Desktop on Windows cannot resolve. If the bind mount fails, use the explicit Windows path instead.
 
 ```bash
-docker run --rm -v "C:/path/to/repo:/project" jktz-survex bash docker/validate.sh
+docker run --rm -v "C:/path/to/repo:/project" jktz-survex bash scripts/validation/validate.sh
 ```
 
 Show the **full output** to the user.
