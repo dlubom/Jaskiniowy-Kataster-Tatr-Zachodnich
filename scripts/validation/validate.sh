@@ -20,9 +20,9 @@ trap 'rm -rf "${EXPORTS_OUTDIR}"' EXIT
 echo "=== Validation Started ==="
 
 {
-    echo "[1/9] Checking SRV file naming..."
-    bash scripts/validation/check-naming.sh
-    echo "      SRV file naming: Passed ✔"
+    echo "[1/9] Checking SRV filenames format..."
+    bash scripts/validation/check-filenames-format.sh
+    echo "      SRV filenames format: Passed ✔"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
 {
