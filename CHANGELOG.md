@@ -4,6 +4,18 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.4.1] - 2026-05-17
+
+### Dodano
+- Release renderuje `Poligony/OTWORY.SRV` z szablonu `Poligony/OTWORY.SRV.j2`,
+  automatycznie wstrzykujac najnowsze najlepsze pomiary otworow z projektu
+  `dlubom/gps-kataster-obiektow-tatr`.
+- Dodano lokalna walidacje narzedzi release przez `uv`, `ruff` i `pytest`.
+
+### Zmienione
+- Zrodlem szczegolow pomiarow GPS i wyboru najlepszych wspolrzednych jest teraz
+  repozytorium `dlubom/gps-kataster-obiektow-tatr`.
+
 ## [v1.4.0] - 2026-05-13
 
 Poprawiono koordynaty oraz blednie dodany ciag powierzchniowyc Jaskini Mietusiej Wyzniej

@@ -92,6 +92,11 @@ The renderer downloads the latest GitHub release asset from
 template, missing release asset, or empty coordinate/elevation field is an
 error.
 
+Entrance coordinates are maintained in
+[`dlubom/gps-kataster-obiektow-tatr`](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.0.0)
+and are injected automatically here during release rendering. Look there for
+measurement provenance and best-measurement selection details.
+
 ---
 
 ### File Templates

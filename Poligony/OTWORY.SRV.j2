@@ -1,6 +1,10 @@
 #date 2026-05-09
 #units meters order=ENU
 
+; Wspolrzedne #fix sa automatycznie wstrzykiwane z release'ow:
+; https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.0.0
+; Szczegoly pomiarow i wyboru najlepszych wartosci sa w tamtym projekcie.
+
 {{ gps_fix('BandziochKom:000', 'KSZ-0112', suffix=' (R0.01,R0.01)') }}
 #flag	BandziochKom:000	/Bandzioch Kom. Dolny
 #flag	BandziochKom:000	/ENTRANCE
@@ -21,11 +25,6 @@
 #flag	Ciepla:0	/ENTRANCE
 #note	Ciepla:0	/Jaskinia Ciepla
 
-; source: GNSS + LIDAR 2026-05-09
-; XY/H: PL-1992 EPSG:2180 (zrzut: easting,northing,H) + PL-KRON86-NH.
-; Przeliczenie: cs2cs +init=epsg:2180 +to +init=epsg:4326, wejscie easting/northing.
-; Czarna:M:otwor1: 563339.46 / 153353.95 / 1323.42 -> E19.8705053667 N49.2444121431 1323.42m
-; Czarna:Kujat:0: 564121.29 / 153658.93 / 1403.92 -> E19.8812979507 N49.2470745479 1403.92m
 {{ gps_fix('Czarna:Kujat:0', 'KSW-0240') }}
 #flag	Czarna:Kujat:0	/Jaskinia Czarna III
 #flag	Czarna:Kujat:0	/ENTRANCE
