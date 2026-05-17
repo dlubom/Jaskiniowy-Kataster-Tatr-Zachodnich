@@ -10,6 +10,31 @@ env:
   SURVEX_COMMIT: "f8e8a88c48e1d48921995b5a5846ae5c10306b8e"
 
 jobs:
+  python-tools:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Sync Python tooling
+        run: uv sync --locked
+
+      - name: Run Ruff and Pytest
+        run: |
+          uv run ruff format --check scripts tests
+          uv run ruff check scripts tests
+          uv run pytest
+
   validate:
     strategy:
       fail-fast: false

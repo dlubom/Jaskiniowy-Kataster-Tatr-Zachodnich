@@ -13,11 +13,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Tools & Processing
 
-This is a data project, not a software project. There is no build system, test suite, or linter.
+This is a data project, not a software application. The Python tooling is only
+for release automation around the survey data.
 
 - **Walls software** processes the data: reads `.SRV` survey files, compiles into binary `.NT*` files, and exports `.wrl` (VRML 3D models)
 - The main project file `KATASTER.wpj` is opened in Walls to compile and visualize all survey data
 - **Windows path limitation**: The project should be extracted to a short root path (e.g., `C:/`) because deep Windows paths can prevent some caves from displaying
+- Python release tooling is managed with `uv`; validate it with
+  `uv run ruff check scripts tests` and `uv run pytest`.
 
 ## Repository Structure
 
@@ -51,7 +54,43 @@ Walls project definition using directives: `.BOOK` (folder), `.SURVEY` (file ref
 ### .SRV Files (Survey Data) — the primary source files
 
 - All entrance fixes (`#fix`, `#flag`, `#note`) for every cave live in a single shared file: `Poligony/OTWORY.SRV`.
+- `Poligony/OTWORY.SRV.j2` is the release-time template for that shared file.
+  `scripts/render_otwory_from_gps.py` renders it to `Poligony/OTWORY.SRV`
+  from the latest `best-measurements.csv` asset in
+  `dlubom/gps-kataster-obiektow-tatr`. Each `gps_fix(...)` call embeds the
+  GPS `object_id` directly in the template. Missing object rows or empty
+  `lon`/`lat`/`elevation_m` values are release-blocking errors.
 - Each cave's directory contains one or more **survey files** with the measurements only. Naming: `CAVE.SRV` for a single-survey cave, or `CAVE_<SECTION_SHORTNAME>.SRV` for caves split across multiple surveys/sections (see Mietusia Wyznia for an example with sections `_OT`, `_SD`, `_MR`, `...`).
+
+#### Local GPS render check
+
+Use `uv` for the Python release tooling:
+
+```
+uv sync --locked
+uv run ruff format --check scripts tests
+uv run ruff check scripts tests
+uv run pytest
+```
+
+To preview a rendered entrances file without touching the checked-in
+`Poligony/OTWORY.SRV`, write it to a temporary path:
+
+```
+uv run python scripts/render_otwory_from_gps.py --output /tmp/OTWORY.SRV
+```
+
+To reproduce the release input locally, render in place and compile:
+
+```
+uv run python scripts/render_otwory_from_gps.py
+cavern KATASTER.wpj
+```
+
+The renderer downloads the latest GitHub release asset from
+`dlubom/gps-kataster-obiektow-tatr`. Any missing `object_id` mapping in the
+template, missing release asset, or empty coordinate/elevation field is an
+error.
 
 ---
 
@@ -216,11 +255,13 @@ The project uses [semantic versioning](https://semver.org/) starting from v1.0.0
 2. Commit, merge to master
 3. Create an annotated tag: `git tag -a vX.Y.Z -m "vX.Y.Z - description"`
 4. Push the tag: `git push origin vX.Y.Z`
-5. GitHub Actions automatically creates a release with a ZIP archive (`JKTZ-vX.Y.Z.zip`)
+5. GitHub Actions renders `Poligony/OTWORY.SRV` from the latest GPS best
+   measurements, then automatically creates a release with a ZIP archive
+   (`JKTZ-vX.Y.Z.zip`)
 
 The version in `INFO.txt` is set automatically — the `__VERSION__` placeholder is replaced with the tag name during the release build.
 
-The release ZIP excludes: `.git/`, `.github/`, `.claude/`, `.gitignore`, `CLAUDE.md`, `doc/`, `logs/`, `*/_RAW/*`, `.DS_Store`, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
+The release ZIP excludes: `.git/`, `.github/`, `.claude/`, `.gitignore`, `CLAUDE.md`, `doc/`, `scripts/`, `Poligony/OTWORY.SRV.j2`, `logs/`, `*/_RAW/*`, `.DS_Store`, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
 
 ## Documentation Resources (`doc/`)
 

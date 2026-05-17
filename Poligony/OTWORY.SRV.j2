@@ -1,0 +1,441 @@
+#date 2026-05-09
+#units meters order=ENU
+
+{{ gps_fix('BandziochKom:000', 'KSZ-0112', suffix=' (R0.01,R0.01)') }}
+#flag	BandziochKom:000	/Bandzioch Kom. Dolny
+#flag	BandziochKom:000	/ENTRANCE
+#note	BandziochKom:000	/Bandzioch Kom. Dolny
+
+{{ gps_fix('BandziochKom:136', 'LEJ-0002', suffix=' (R0.01,R0.01)') }}
+#flag	BandziochKom:136	/Bandzioch Kom. Gorny
+#flag	BandziochKom:136	/ENTRANCE
+#note	BandziochKom:136	/Bandzioch Kom. Gorny
+
+{{ gps_fix('Biala:0', 'KSW-0257') }}
+#flag	Biala:0	/Jaskinia Biala
+#flag	Biala:0	/ENTRANCE
+#note	Biala:0	/Jaskinia Biala
+
+{{ gps_fix('Ciepla:0', 'KSW-0114') }}
+#flag	Ciepla:0	/Jaskinia Ciepla
+#flag	Ciepla:0	/ENTRANCE
+#note	Ciepla:0	/Jaskinia Ciepla
+
+; source: GNSS + LIDAR 2026-05-09
+; XY/H: PL-1992 EPSG:2180 (zrzut: easting,northing,H) + PL-KRON86-NH.
+; Przeliczenie: cs2cs +init=epsg:2180 +to +init=epsg:4326, wejscie easting/northing.
+; Czarna:M:otwor1: 563339.46 / 153353.95 / 1323.42 -> E19.8705053667 N49.2444121431 1323.42m
+; Czarna:Kujat:0: 564121.29 / 153658.93 / 1403.92 -> E19.8812979507 N49.2470745479 1403.92m
+{{ gps_fix('Czarna:Kujat:0', 'KSW-0240') }}
+#flag	Czarna:Kujat:0	/Jaskinia Czarna III
+#flag	Czarna:Kujat:0	/ENTRANCE
+#note	Czarna:Kujat:0	/Jaskinia Czarna III
+
+{{ gps_fix('Czarna:M:otwor1', 'KSW-0201') }}
+#flag	Czarna:M:otwor1	/Jaskinia Czarna
+#flag	Czarna:M:otwor1	/ENTRANCE
+#note	Czarna:M:otwor1	/Jaskinia Czarna
+
+{{ gps_fix('CzerwonaStudzienka:0', 'MLZ-0041') }}
+#flag	CzerwonaStudzienka:0	/Czerwona Studzienka
+#flag	CzerwonaStudzienka:0	/ENTRANCE
+#note	CzerwonaStudzienka:0	/Czerwona Studzienka
+
+{{ gps_fix('Dmuchawa:0', 'CHW-0017') }}
+#flag	Dmuchawa:0	/Dmuchawa
+#flag	Dmuchawa:0	/ENTRANCE
+#note	Dmuchawa:0	/Dmuchawa
+
+{{ gps_fix('Dziura:0', 'DZI-0004') }}
+#flag	Dziura:0	/Jaskinia Dziura
+#flag	Dziura:0	/ENTRANCE
+#note	Dziura:0	/Jaskinia Dziura
+
+{{ gps_fix('DziuraPodSwist:dps0', 'MLZ-0069') }}
+#flag	DziuraPodSwist:dps0	/Pod Swistowa
+#flag	DziuraPodSwist:dps0	/ENTRANCE
+#note	DziuraPodSwist:dps0	/Pod Swistowa
+
+{{ gps_fix('DziuraWStole:0', 'KSW-0088') }}
+#flag	DziuraWStole:0	/Dziura w Stole
+#flag	DziuraWStole:0	/ENTRANCE
+#note	DziuraWStole:0	/Dziura w Stole
+
+{{ gps_fix('DziurkaWTrawce:0', 'MTW-0011') }}
+#flag	DziurkaWTrawce:0	/Dziurka w Trawce
+#flag	DziurkaWTrawce:0	/ENTRANCE
+#note	DziurkaWTrawce:0	/Dziurka w Trawce
+
+{{ gps_fix('Gawra:0', 'KSW-0036') }}
+#flag	Gawra:0	/Gawra
+#flag	Gawra:0	/ENTRANCE
+#note	Gawra:0	/Gawra
+
+{{ gps_fix('Goryczkowa:M:0', 'BYZ-0030') }}
+#flag	Goryczkowa:M:0	/Jaskinia Goryczkowa
+#flag	Goryczkowa:M:0	/ENTRANCE
+#note	Goryczkowa:M:0	/Jaskinia Goryczkowa
+
+{{ gps_fix('Harda:1.0', 'MTW-0015') }}
+#flag	Harda:1.0	/Harda
+#flag	Harda:1.0	/ENTRANCE
+#note	Harda:1.0	/Harda
+
+{{ gps_fix('Kalacka:0', 'BYZ-0031') }}
+#flag	Kalacka:0	/Jaskinia Kalacka
+#flag	Kalacka:0	/ENTRANCE
+#note	Kalacka:0	/Jaskinia Kalacka
+
+{{ gps_fix('KamienneMleko:0', 'CHZ-0014') }}
+#flag	KamienneMleko:0	/Kamienne Mleko
+#flag	KamienneMleko:0	/ENTRANCE
+#note	KamienneMleko:0	/Kamienne Mleko
+
+{{ gps_fix('KasprowaNiznia:0', 'BYW-0018') }}
+#flag	KasprowaNiznia:0	/Kasprowa Niznia
+#flag	KasprowaNiznia:0	/ENTRANCE
+#note	KasprowaNiznia:0	/Kasprowa Niznia
+
+{{ gps_fix('KoprowaStudnia:ks0', 'MLW-0020') }}
+#flag	KoprowaStudnia:ks0	/Koprowa Studnia
+#flag	KoprowaStudnia:ks0	/ENTRANCE
+#note	KoprowaStudnia:ks0	/Koprowa Studnia
+
+{{ gps_fix('Koszowa:0', 'PL-0005') }}
+#flag	Koszowa:0	/Jaskinia Koszowa
+#flag	Koszowa:0	/ENTRANCE
+#note	Koszowa:0	/Jaskinia Koszowa
+
+{{ gps_fix('Kozia:k001', 'MTW-0013') }}
+#flag	Kozia:k001	/Kozia
+#flag	Kozia:k001	/ENTRANCE
+#note	Kozia:k001	/Kozia
+
+{{ gps_fix('Lejbusiowa:A1', 'MTZ-0013') }}
+#flag	Lejbusiowa:A1	/Jaskinia Lejbusiowa
+#flag	Lejbusiowa:A1	/ENTRANCE
+#note	Lejbusiowa:A1	/Jaskinia Lejbusiowa
+
+{{ gps_fix('LodowaMalolacka:0', 'MLW-0024') }}
+#flag	LodowaMalolacka:0	/Lodowa Malolacka
+#flag	LodowaMalolacka:0	/ENTRANCE
+#note	LodowaMalolacka:0	/Lodowa Malolacka
+
+{{ gps_fix('LodowaMietusia:0', 'MTZ-0022') }}
+#flag	LodowaMietusia:0	/Jaskinia Lodowa Mietusia
+#flag	LodowaMietusia:0	/ENTRANCE
+#note	LodowaMietusia:0	/Jaskinia Lodowa Mietusia
+
+{{ gps_fix('LodowaWCiemniaku:gc0', 'KSW-0173') }}
+#flag	LodowaWCiemniaku:gc0	/Lodowa w Ciemniaku
+#flag	LodowaWCiemniaku:gc0	/ENTRANCE
+#note	LodowaWCiemniaku:gc0	/Lodowa w Ciemniaku
+
+{{ gps_fix('LustrzanyKorytarz:0', 'KSW-0095') }}
+#flag	LustrzanyKorytarz:0	/Lustrzany Korytarz
+#flag	LustrzanyKorytarz:0	/ENTRANCE
+#note	LustrzanyKorytarz:0	/Lustrzany Korytarz
+
+{{ gps_fix('MalaWMulowej:1', 'MTZ-0027') }}
+#flag	MalaWMulowej:1	/Jaskinia Mala w Mulowej
+#flag	MalaWMulowej:1	/ENTRANCE
+#note	MalaWMulowej:1	/Jaskinia Mala w Mulowej
+
+{{ gps_fix('Malolacka:ma0', 'MLZ-0025') }}
+#flag	Malolacka:ma0	/Malolacka
+#flag	Malolacka:ma0	/ENTRANCE
+#note	Malolacka:ma0	/Malolacka
+
+{{ gps_fix('Marmurowa:0', 'MTZ-0018') }}
+#flag	Marmurowa:0	/Marmurowa
+#flag	Marmurowa:0	/ENTRANCE
+#note	Marmurowa:0	/Marmurowa
+
+{{ gps_fix('MeanderWMalymSiodle:0', 'MLZ-0077') }}
+#flag	MeanderWMalymSiodle:0	/Meander w Malolackim Siodle
+#flag	MeanderWMalymSiodle:0	/ENTRANCE
+#note	MeanderWMalymSiodle:0	/Meander w Malolackim Siodle
+
+{{ gps_fix('Mietusia:ru_0', 'MTZ-0023') }}
+#flag	Mietusia:ru_0	/Jaskinia Mietusia
+#flag	Mietusia:ru_0	/ENTRANCE
+#note	Mietusia:ru_0	/Jaskinia Mietusia
+
+{{ gps_fix('MietusiaWyznia:ot_0', 'MTZ-0016') }}
+#flag	MietusiaWyznia:ot_0	/Jaskinia Mietusia Wyznia
+#flag	MietusiaWyznia:ot_0	/ENTRANCE
+#note	MietusiaWyznia:ot_0	/Jaskinia Mietusia Wyznia
+
+{{ gps_fix('MnichStudniaWyz:0', 'MLW-0009') }}
+#flag	MnichStudniaWyz:0	/Mnichowa Studnia Wyznia
+#flag	MnichStudniaWyz:0	/ENTRANCE
+#note	MnichStudniaWyz:0	/Mnichowa Studnia Wyznia
+
+{{ gps_fix('Mrozna:0', 'KSW-0081') }}
+#flag	Mrozna:0	/Jaskinia Mrozna
+#flag	Mrozna:0	/ENTRANCE
+#note	Mrozna:0	/Jaskinia Mrozna
+
+{{ gps_fix('NadBeczka:0', 'KSW-0183') }}
+#flag	NadBeczka:0	/Jaskinia nad Beczka
+#flag	NadBeczka:0	/ENTRANCE
+#note	NadBeczka:0	/Jaskinia nad Beczka
+
+{{ gps_fix('NadPercia:0', 'KSW-0116') }}
+#flag	NadPercia:0	/Jaskinia nad Percia
+#flag	NadPercia:0	/ENTRANCE
+#note	NadPercia:0	/Jaskinia nad Percia
+
+{{ gps_fix('NovaKresanica:nvk0', 'SK-0001') }}
+#flag	NovaKresanica:nvk0	/Nova Kresanica
+#flag	NovaKresanica:nvk0	/ENTRANCE
+#note	NovaKresanica:nvk0	/Nova Kresanica
+
+{{ gps_fix('ObcasnaVyv:A1:o1', 'SK-0002') }}
+#flag	ObcasnaVyv:A1:o1	/Obcasna Vyvieracka
+#flag	ObcasnaVyv:A1:o1	/ENTRANCE
+#note	ObcasnaVyv:A1:o1	/Obcasna Vyvieracka
+
+{{ gps_fix('Pawlikowskiego:Mylna:0', 'KSZ-0064') }}
+#flag	Pawlikowskiego:Mylna:0	/Mylna
+#flag	Pawlikowskiego:Mylna:0	/ENTRANCE
+#note	Pawlikowskiego:Mylna:0	/Mylna
+
+{{ gps_fix('Pawlikowskiego:Oblazkowa:0.0', 'KSZ-0090') }}
+#flag	Pawlikowskiego:Oblazkowa:0.0	/Oblazkowa
+#flag	Pawlikowskiego:Oblazkowa:0.0	/ENTRANCE
+#note	Pawlikowskiego:Oblazkowa:0.0	/Oblazkowa
+
+{{ gps_fix('Pawlikowskiego:Raptawicka:1.0', 'KSZ-0047') }}
+#flag	Pawlikowskiego:Raptawicka:1.0	/Raptawicka
+#flag	Pawlikowskiego:Raptawicka:1.0	/ENTRANCE
+#note	Pawlikowskiego:Raptawicka:1.0	/Raptawicka
+
+{{ gps_fix('PodProgiem:0', 'MLZ-0070') }}
+#flag	PodProgiem:0	/Jaskinia pod Progiem
+#flag	PodProgiem:0	/ENTRANCE
+#note	PodProgiem:0	/Jaskinia pod Progiem
+
+{{ gps_fix('PodZamkiem:0', 'KSW-0158') }}
+#flag	PodZamkiem:0	/Jaskinia Pod Zamkiem
+#flag	PodZamkiem:0	/ENTRANCE
+#note	PodZamkiem:0	/Jaskinia Pod Zamkiem
+
+{{ gps_fix('PoszukiwaczySkarbow:0', 'KSW-0057') }}
+#flag	PoszukiwaczySkarbow:0	/Jaskinia Poszukiwaczy Skarbow
+#flag	PoszukiwaczySkarbow:0	/ENTRANCE
+#note	PoszukiwaczySkarbow:0	/Jaskinia Poszukiwaczy Skarbow
+
+{{ gps_fix('PrzyJedrusiowej:pj0', 'MLZ-0002') }}
+#flag	PrzyJedrusiowej:pj0	/Przy Jedrusiowej Dziurze
+#flag	PrzyJedrusiowej:pj0	/ENTRANCE
+#note	PrzyJedrusiowej:pj0	/Przy Jedrusiowej Dziurze
+
+{{ gps_fix('PrzyPrzechodzie:jp0', 'MLZ-0007') }}
+#flag	PrzyPrzechodzie:jp0	/Przy Przechodzie
+#flag	PrzyPrzechodzie:jp0	/ENTRANCE
+#note	PrzyPrzechodzie:jp0	/Przy Przechodzie
+
+{{ gps_fix('PtasiaStudnia:a14', 'MTW-0023') }}
+#flag	PtasiaStudnia:a14	/Lodowa Litworowa
+#flag	PtasiaStudnia:a14	/ENTRANCE
+#note	PtasiaStudnia:a14	/Lodowa Litworowa
+
+{{ gps_fix('PtasiaStudnia:a22', 'MTW-0004') }}
+#flag	PtasiaStudnia:a22	/Jaskinia nad Dachem
+#flag	PtasiaStudnia:a22	/ENTRANCE
+#note	PtasiaStudnia:a22	/Jaskinia nad Dachem
+
+{{ gps_fix('PtasiaStudnia:A7', 'MTW-0053') }}
+#flag	PtasiaStudnia:A7	/Jaskinia nad Lodowa Litworowa
+#flag	PtasiaStudnia:A7	/ENTRANCE
+#note	PtasiaStudnia:A7	/Jaskinia nad Lodowa Litworowa
+
+{{ gps_fix('PtasiaStudnia:b1', 'MTZ-0015') }}
+#flag	PtasiaStudnia:b1	/Ptasia Studnia
+#flag	PtasiaStudnia:b1	/ENTRANCE
+#note	PtasiaStudnia:b1	/Ptasia Studnia
+
+{{ gps_fix('RuraPrzyOknie:0', 'KSW-0227') }}
+#flag	RuraPrzyOknie:0	/Rura przy Oknie
+#flag	RuraPrzyOknie:0	/ENTRANCE
+#note	RuraPrzyOknie:0	/Rura przy Oknie
+
+{{ gps_fix('SchronPodJedrus:spj0', 'MLZ-0048') }}
+#flag	SchronPodJedrus:spj0	/Schron pod Jedrusiowa Dziura
+#flag	SchronPodJedrus:spj0	/ENTRANCE
+#note	SchronPodJedrus:spj0	/Schron pod Jedrusiowa Dziura
+
+{{ gps_fix('SmoczaJama:0', 'KSW-0065') }}
+#flag	SmoczaJama:0	/Smocza Jama
+#flag	SmoczaJama:0	/ENTRANCE
+#note	SmoczaJama:0	/Smocza Jama
+
+{{ gps_fix('SnieznaStudnia:ss0', 'MLZ-0059') }}
+#flag	SnieznaStudnia:ss0	/Sniezna Studnia
+#flag	SnieznaStudnia:ss0	/ENTRANCE
+#note	SnieznaStudnia:ss0	/Sniezna Studnia
+
+{{ gps_fix('SpiacychRycerzy:1', 'MLW-0023') }}
+#flag	SpiacychRycerzy:1	/Jaskinia Spiacych Rycerzy
+#flag	SpiacychRycerzy:1	/ENTRANCE
+#note	SpiacychRycerzy:1	/Jaskinia Spiacych Rycerzy
+
+{{ gps_fix('StudniaNaSzlaku:0', 'MTW-0047') }}
+#flag	StudniaNaSzlaku:0	/Studnia na Szlaku
+#flag	StudniaNaSzlaku:0	/ENTRANCE
+#note	StudniaNaSzlaku:0	/Studnia na Szlaku
+
+{{ gps_fix('StudniaPrzyPrzech:spp0', 'MLZ-0001') }}
+#flag	StudniaPrzyPrzech:spp0	/Studnia przy Przechodzie
+#flag	StudniaPrzyPrzech:spp0	/ENTRANCE
+#note	StudniaPrzyPrzech:spp0	/Studnia przy Przechodzie
+
+{{ gps_fix('StudniaWKazalnicy:SwK0', 'MTZ-0011') }}
+#flag	StudniaWKazalnicy:SwK0	/Studnia w Kazalnicy
+#flag	StudniaWKazalnicy:SwK0	/ENTRANCE
+#note	StudniaWKazalnicy:SwK0	/Studnia w Kazalnicy
+
+{{ gps_fix('Swistacza:24', 'MLW-0028') }}
+#flag	Swistacza:24	/Jaskinia Swistacza
+#flag	Swistacza:24	/ENTRANCE
+#note	Swistacza:24	/Jaskinia Swistacza
+
+{{ gps_fix('SzaraStudnia:0', 'MTW-0020') }}
+#flag	SzaraStudnia:0	/Szara Studnia
+#flag	SzaraStudnia:0	/ENTRANCE
+#note	SzaraStudnia:0	/Szara Studnia
+
+{{ gps_fix('SzczelinaMietusia:0', 'MTZ-0029') }}
+#flag	SzczelinaMietusia:0	/Szczelina Mietusia
+#flag	SzczelinaMietusia:0	/ENTRANCE
+#note	SzczelinaMietusia:0	/Szczelina Mietusia
+
+{{ gps_fix('SzczelinaNadLejem:0', 'PL-0024') }}
+#flag	SzczelinaNadLejem:0	/Szczelina nad Lejem
+#flag	SzczelinaNadLejem:0	/ENTRANCE
+#note	SzczelinaNadLejem:0	/Szczelina nad Lejem
+
+{{ gps_fix('SzczelinaNadTomI:0', 'KSW-0221') }}
+#flag	SzczelinaNadTomI:0	/Szczelina nad Tomanowa I
+#flag	SzczelinaNadTomI:0	/ENTRANCE
+#note	SzczelinaNadTomI:0	/Szczelina nad Tomanowa I
+
+{{ gps_fix('SzczelinaNadTomII:0', 'KSW-0083') }}
+#flag	SzczelinaNadTomII:0	/Szczelina nad Tomanowa II
+#flag	SzczelinaNadTomII:0	/ENTRANCE
+#note	SzczelinaNadTomII:0	/Szczelina nad Tomanowa II
+
+{{ gps_fix('Uplazkowa:ju0', 'MLZ-0065') }}
+#flag	Uplazkowa:ju0	/Uplazkowa
+#flag	Uplazkowa:ju0	/ENTRANCE
+#note	Uplazkowa:ju0	/Uplazkowa
+
+{{ gps_fix('WielkaSniezna:Ciag:0', 'MLZ-0031') }}
+#flag	WielkaSniezna:Ciag:0	/Nad Kotliny
+#flag	WielkaSniezna:Ciag:0	/ENTRANCE
+#note	WielkaSniezna:Ciag:0	/Nad Kotliny
+
+{{ gps_fix('WielkaSniezna:Ciag:s68', 'MLZ-0068') }}
+#flag	WielkaSniezna:Ciag:s68	/Sniezna
+#flag	WielkaSniezna:Ciag:s68	/ENTRANCE
+#note	WielkaSniezna:Ciag:s68	/Sniezna
+
+{{ gps_fix('WielkaSniezna:Jasna:j0', 'MLZ-0085') }}
+#flag	WielkaSniezna:Jasna:j0	/Jasny Awen
+#flag	WielkaSniezna:Jasna:j0	/ENTRANCE
+#note	WielkaSniezna:Jasna:j0	/Jasny Awen
+
+{{ gps_fix('WielkaSniezna:Litworowa:LT58', 'MTW-0010') }}
+#flag	WielkaSniezna:Litworowa:LT58	/Wielka Litworowa
+#flag	WielkaSniezna:Litworowa:LT58	/ENTRANCE
+#note	WielkaSniezna:Litworowa:LT58	/Wielka Litworowa
+
+{{ gps_fix('WielkiejTurni:0', 'MLZ-0004') }}
+#flag	WielkiejTurni:0	/Jaskinia w Wielkiej Turni
+#flag	WielkiejTurni:0	/ENTRANCE
+#note	WielkiejTurni:0	/Jaskinia w Wielkiej Turni
+
+{{ gps_fix('WilczySchron:wsn0', 'MLZ-0018') }}
+#flag	WilczySchron:wsn0	/Wilczy Schron
+#flag	WilczySchron:wsn0	/ENTRANCE
+#note	WilczySchron:wsn0	/Wilczy Schron
+
+{{ gps_fix('Wysoka7Progow:W-300', 'KSW-0189') }}
+#flag	Wysoka7Progow:W-300	/ENTRANCE
+#note	Wysoka7Progow:W-300	/Wysoka Gorny Otwor
+
+; source: unknown - GNSS
+{{ gps_fix('Wysoka7Progow:W7-0', 'KSW-0189') }}
+#flag	Wysoka7Progow:W7-0	/Otwor
+#flag	Wysoka7Progow:W7-0	/Wysoka-Za7 Progami
+#flag	Wysoka7Progow:W7-0	/ENTRANCE
+#note	Wysoka7Progow:W7-0	/Wysoka-Za7 Progami
+
+{{ gps_fix('Wysoka7Progow:W7-200', 'KSW-0153') }}
+#flag	Wysoka7Progow:W7-200	/ENTRANCE
+#note	Wysoka7Progow:W7-200	/Za7Progami Dolny Otwor
+
+{{ gps_fix('Wysoka7Progow:W7-500', 'KSW-0189') }}
+#flag	Wysoka7Progow:W7-500	/ENTRANCE
+#note	Wysoka7Progow:W7-500	/Za7Progami Gorny Otwor
+
+{{ gps_fix('WyzKoszowaDziura:0', 'PL-0031') }}
+#flag	WyzKoszowaDziura:0	/Wyznia Koszowa Dziura
+#flag	WyzKoszowaDziura:0	/ENTRANCE
+#note	WyzKoszowaDziura:0	/Wyznia Koszowa Dziura
+
+{{ gps_fix('ZaspalkowaSzczel:zss0', 'MLW-0014') }}
+#flag	ZaspalkowaSzczel:zss0	/Zaspalkowa
+#flag	ZaspalkowaSzczel:zss0	/ENTRANCE
+#note	ZaspalkowaSzczel:zss0	/Zaspalkowa
+
+{{ gps_fix('ZawaliskawaTom:0', 'KSW-0085') }}
+#flag	ZawaliskawaTom:0	/Jaskinia Zawaliskowa Tomanowa
+#flag	ZawaliskawaTom:0	/ENTRANCE
+#note	ZawaliskawaTom:0	/Jaskinia Zawaliskowa Tomanowa
+
+{{ gps_fix('ZawalonySchron:0', 'MLZ-0032') }}
+#flag	ZawalonySchron:0	/Zawalony Schron
+#flag	ZawalonySchron:0	/ENTRANCE
+#note	ZawalonySchron:0	/Zawalony Schron
+
+{{ gps_fix('ZbojeckaDziura:0', 'CHZ-0012') }}
+#flag	ZbojeckaDziura:0	/Zbojecka Dziura
+#flag	ZbojeckaDziura:0	/ENTRANCE
+#note	ZbojeckaDziura:0	/Zbojecka Dziura
+
+{{ gps_fix('ZbojnickaPiwnica:0', 'KSW-0215') }}
+#flag	ZbojnickaPiwnica:0	/Zbojnicka Piwnica
+#flag	ZbojnickaPiwnica:0	/ENTRANCE
+#note	ZbojnickaPiwnica:0	/Zbojnicka Piwnica
+
+{{ gps_fix('ZbojnickaTurnia:0', 'KSW-0181') }}
+#flag	ZbojnickaTurnia:0	/Jaskinia w Zbojnickiej Turni
+#flag	ZbojnickaTurnia:0	/ENTRANCE
+#note	ZbojnickaTurnia:0	/Jaskinia w Zbojnickiej Turni
+
+{{ gps_fix('Ziobrowa:0', 'KSW-0075') }}
+#flag	Ziobrowa:0	/Jaskinia Ziobrowa
+#flag	Ziobrowa:0	/ENTRANCE
+#note	Ziobrowa:0	/Jaskinia Ziobrowa
+
+{{ gps_fix('Ziobrowa:5.24', 'KSW-0177') }}
+#flag	Ziobrowa:5.24	/Jaskinia pod Niznia Zbojnicka Turnia
+#flag	Ziobrowa:5.24	/ENTRANCE
+#note	Ziobrowa:5.24	/Jaskinia pod Niznia Zbojnicka Turnia
+
+{{ gps_fix('Zoska:0', 'MLZ-0057') }}
+#flag	Zoska:0	/Jaskinia Zoska
+#flag	Zoska:0	/ENTRANCE
+#note	Zoska:0	/Jaskinia Zoska
+
+{{ gps_fix('Zoska:1Z', 'MLZ-0055') }}
+#flag	Zoska:1Z	/Zagonna Studnia
+#flag	Zoska:1Z	/ENTRANCE
+#note	Zoska:1Z	/Zagonna Studnia
+
+{{ gps_fix('Zwolinskiego:0', 'BYW-0013') }}
+#flag	Zwolinskiego:0	/Zwolinskiego
+#flag	Zwolinskiego:0	/ENTRANCE
+#note	Zwolinskiego:0	/Zwolinskiego
