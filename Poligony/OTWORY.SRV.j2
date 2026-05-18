@@ -360,6 +360,9 @@
 #flag	WilczySchron:wsn0	/ENTRANCE
 #note	WilczySchron:wsn0	/Wilczy Schron
 
+; Wysoka7Progow: aktywny #fix opieramy tylko na source: unknown - GNSS dla W7-0.
+; To najdokladniejszy pomiar; pozostale powiazania GPS sa niepewne, wiec
+; renderujemy je nizej tylko jako zakomentowane wartosci kontrolne.
 ; Brak gps_fix: w gps-kataster-obiektow-tatr nie ma osobnego object_id dla tego lokalnego otworu.
 #flag	Wysoka7Progow:W-300	/ENTRANCE
 #note	Wysoka7Progow:W-300	/Wysoka Gorny Otwor
@@ -371,11 +374,11 @@
 #flag	Wysoka7Progow:W7-0	/ENTRANCE
 #note	Wysoka7Progow:W7-0	/Wysoka-Za7 Progami
 
-{{ gps_fix('Wysoka7Progow:W7-200', 'KSW-0153') }}
+; {{ gps_fix('Wysoka7Progow:W7-200', 'KSW-0153') }}
 #flag	Wysoka7Progow:W7-200	/ENTRANCE
 #note	Wysoka7Progow:W7-200	/Za7Progami Dolny Otwor
 
-{{ gps_fix('Wysoka7Progow:W7-500', 'KSW-0123') }}
+; {{ gps_fix('Wysoka7Progow:W7-500', 'KSW-0123') }}
 #flag	Wysoka7Progow:W7-500	/ENTRANCE
 #note	Wysoka7Progow:W7-500	/Za7Progami Gorny Otwor
 

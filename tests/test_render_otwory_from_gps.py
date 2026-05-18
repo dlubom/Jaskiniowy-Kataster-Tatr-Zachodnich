@@ -9,6 +9,14 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = REPO_ROOT / "scripts" / "render_otwory_from_gps.py"
 PROJECT_TEMPLATE = REPO_ROOT / "Poligony" / "OTWORY.SRV.j2"
 GPS_FIX_CALL_RE = re.compile(r"{{ gps_fix\('([^']+)', '([^']+)'(?:, suffix='[^']+')?\) }}")
+ACTIVE_GPS_FIX_CALL_RE = re.compile(
+    r"^{{ gps_fix\('([^']+)', '([^']+)'(?:, suffix='[^']+')?\) }}$",
+    re.MULTILINE,
+)
+COMMENTED_GPS_FIX_CALL_RE = re.compile(
+    r"^;\s+{{ gps_fix\('([^']+)', '([^']+)'(?:, suffix='[^']+')?\) }}$",
+    re.MULTILINE,
+)
 ENTRANCE_FLAG_RE = re.compile(r"^#flag\t([^\t]+)\t/ENTRANCE$", re.MULTILINE)
 
 
@@ -74,6 +82,36 @@ def test_renderer_fails_when_required_measurement_value_is_empty(tmp_path: Path)
     assert not output.exists()
 
 
+def test_renderer_keeps_commented_gps_fix_commented(tmp_path: Path) -> None:
+    template = tmp_path / "OTWORY.SRV.j2"
+    output = tmp_path / "OTWORY.SRV"
+    measurements = tmp_path / "best-measurements.csv"
+    template.write_text("; {{ gps_fix('Cave:0', 'OBJ-1') }}\n", encoding="utf-8")
+    measurements.write_text(
+        "object_id,lon,lat,elevation_m\nOBJ-1,19.1,49.2,123.4\n",
+        encoding="utf-8",
+    )
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(SCRIPT),
+            "--template",
+            str(template),
+            "--csv",
+            str(measurements),
+            "--output",
+            str(output),
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert output.read_text(encoding="utf-8") == "; #fix\tCave:0\tE19.1\tN49.2\t123.4m\n"
+
+
 def test_project_template_embeds_unique_object_ids_for_gps_fixes() -> None:
     template = PROJECT_TEMPLATE.read_text(encoding="utf-8")
     calls = GPS_FIX_CALL_RE.findall(template)
@@ -88,3 +126,23 @@ def test_project_template_embeds_unique_object_ids_for_gps_fixes() -> None:
     assert gps_fix_stations <= entrance_stations
     assert not re.search(r"(?m)^#fix\t", template)
     assert "fallback" not in template.lower()
+
+
+def test_project_template_uses_only_reviewed_gnss_for_active_wysoka_fix() -> None:
+    template = PROJECT_TEMPLATE.read_text(encoding="utf-8")
+    active_wysoka_calls = [
+        call
+        for call in ACTIVE_GPS_FIX_CALL_RE.findall(template)
+        if call[0].startswith("Wysoka7Progow:")
+    ]
+    commented_wysoka_calls = {
+        call
+        for call in COMMENTED_GPS_FIX_CALL_RE.findall(template)
+        if call[0].startswith("Wysoka7Progow:")
+    }
+
+    assert active_wysoka_calls == [("Wysoka7Progow:W7-0", "KSW-0189")]
+    assert commented_wysoka_calls == {
+        ("Wysoka7Progow:W7-200", "KSW-0153"),
+        ("Wysoka7Progow:W7-500", "KSW-0123"),
+    }
