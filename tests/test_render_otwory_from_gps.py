@@ -8,7 +8,8 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = REPO_ROOT / "scripts" / "render_otwory_from_gps.py"
 PROJECT_TEMPLATE = REPO_ROOT / "Poligony" / "OTWORY.SRV.j2"
-PROJECT_SRV = REPO_ROOT / "Poligony" / "OTWORY.SRV"
+GPS_FIX_CALL_RE = re.compile(r"{{ gps_fix\('([^']+)', '([^']+)'(?:, suffix='[^']+')?\) }}")
+ENTRANCE_FLAG_RE = re.compile(r"^#flag\t([^\t]+)\t/ENTRANCE$", re.MULTILINE)
 
 
 def test_renderer_writes_fix_from_template_object_id(tmp_path: Path) -> None:
@@ -73,20 +74,17 @@ def test_renderer_fails_when_required_measurement_value_is_empty(tmp_path: Path)
     assert not output.exists()
 
 
-def test_project_template_embeds_object_ids_for_every_fix() -> None:
+def test_project_template_embeds_unique_object_ids_for_gps_fixes() -> None:
     template = PROJECT_TEMPLATE.read_text(encoding="utf-8")
-    source_fix_count = sum(
-        1
-        for line in PROJECT_SRV.read_text(encoding="utf-8").splitlines()
-        if line.startswith("#fix\t")
-    )
-    calls = re.findall(
-        r"{{ gps_fix\('([^']+)', '([^']+)'(?:, suffix='[^']+')?\) }}",
-        template,
-    )
+    calls = GPS_FIX_CALL_RE.findall(template)
+    gps_fix_stations = {station for station, _object_id in calls}
+    gps_fix_object_ids = [object_id for _station, object_id in calls]
+    entrance_stations = set(ENTRANCE_FLAG_RE.findall(template))
 
-    assert len(calls) == source_fix_count == 87
+    assert calls
     assert all(station and object_id for station, object_id in calls)
+    assert len(gps_fix_stations) == len(calls)
+    assert len(set(gps_fix_object_ids)) == len(gps_fix_object_ids)
+    assert gps_fix_stations <= entrance_stations
+    assert not re.search(r"(?m)^#fix\t", template)
     assert "fallback" not in template.lower()
-    assert ("BandziochKom:136", "LEJ-0002") in calls
-    assert ("Wysoka7Progow:W7-200", "KSW-0153") in calls

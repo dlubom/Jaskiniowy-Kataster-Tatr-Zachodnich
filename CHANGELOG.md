@@ -13,6 +13,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 - Dodano lokalna walidacje narzedzi release przez `uv`, `ruff` i `pytest`.
 
 ### Zmienione
+- `Poligony/OTWORY.SRV` nie jest juz wersjonowanym zrodlem; powstaje lokalnie
+  i w release z szablonu `Poligony/OTWORY.SRV.j2`.
 - Zrodlem szczegolow pomiarow GPS i wyboru najlepszych wspolrzednych jest teraz
   repozytorium `dlubom/gps-kataster-obiektow-tatr`.
 

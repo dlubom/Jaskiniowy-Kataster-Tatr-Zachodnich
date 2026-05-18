@@ -12,6 +12,7 @@
 *.3d
 *.err
 cavern_output.txt
+Poligony/OTWORY.SRV
 
 #Claude
 .claude/settings.local.json
