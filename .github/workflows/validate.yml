@@ -45,6 +45,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
       - name: Cache Survex (Linux)
         if: runner.os == 'Linux'
         id: cache-survex
@@ -129,7 +134,15 @@ jobs:
 
       - name: Run full validation (Linux)
         if: runner.os == 'Linux'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: bash docker/validate.sh
+
+      - name: Render latest entrance fixes (Windows)
+        if: runner.os == 'Windows'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/render_otwory_from_gps.py
 
       - name: Compile with cavern (Windows)
         if: runner.os == 'Windows'
