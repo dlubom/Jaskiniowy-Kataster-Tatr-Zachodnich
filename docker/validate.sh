@@ -20,34 +20,40 @@ trap 'rm -rf "${EXPORTS_OUTDIR}"' EXIT
 echo "=== Validation Started ==="
 
 {
-    echo "[1/6] Checking SRV file naming..."
+    echo "[1/7] Checking SRV file naming..."
     bash docker/check-naming.sh
     echo "      OK"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
 {
-    echo "[2/6] Checking for invalid directives..."
+    echo "[2/7] Checking for invalid directives..."
     bash docker/check-directives.sh
     echo "      OK"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
 {
-    echo "[3/6] Checking #prefix values..."
+    echo "[3/7] Checking #prefix values..."
     bash docker/check-prefixes.sh
     echo "      OK"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
-echo "[4/6] Compiling with cavern..."
+{
+    echo "[4/7] Checking rendered entrance snapshot..."
+    python3 scripts/render_otwory_from_gps.py --check
+    echo "      OK"
+} 2>&1 | tee -a "${CAVERN_LOG}"
+
+echo "[5/7] Compiling with cavern..."
 cavern KATASTER.wpj 2>&1 | tee -a "${CAVERN_LOG}"
 
 {
-    echo "[5/6] Checking for unattached stations..."
+    echo "[6/7] Checking for unattached stations..."
     bash docker/check-unattached.sh "${CAVERN_LOG}"
     echo "      OK"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
 {
-    echo "[6/6] Checking exports..."
+    echo "[7/7] Checking exports..."
     bash docker/check-exports.sh "${EXPORTS_VERSION}" "${EXPORTS_OUTDIR}"
     echo "      OK"
 } 2>&1 | tee -a "${CAVERN_LOG}"

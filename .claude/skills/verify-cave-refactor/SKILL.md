@@ -1,20 +1,27 @@
 ---
 ---
 name: verify-cave-refactor
-description: Verify that a refactor of cave SRV files (file split, prefix rename, formatting changes) did not alter the survey topology or coordinates. Compiles the project before and after the change, exports station coordinates for the named cave, and diffs them.
-argument-hint: <cave-prefix>
+description: Verify that a refactor did not lose cave data. Two modes — (a) single cave HEAD vs WIP for a local refactor, (b) whole project current-branch vs master for a branch-level refactor (e.g. OTWORY GPS render).
+argument-hint: <cave-prefix> | --whole-project
 ---
 
-Verify that a refactor preserved survey data for a single cave.
+Verify that a refactor preserved survey data.
 
 Arguments: $ARGUMENTS
-Expected format: `<cave-prefix>` — the `#prefix` value used by the cave (e.g. `Marmurowa`, `MietusiaWyznia`, `WielkaSniezna`).
 
-Use after refactors that **should not change the survey itself** — splitting a single SRV into multiple files, renaming `#prefix` values, renaming stations, reorganising `#units` directives, removing duplicate metadata, etc. The output of `cavern` should be bit-identical for the named cave's stations (modulo station names if they were intentionally renamed).
+Two modes:
+
+- **Single-cave mode** — argument is a `#prefix` value (`Marmurowa`, `MietusiaWyznia`, `WielkaSniezna`, …). Compares HEAD-without-WIP against HEAD-with-WIP, filtered to one cave. Use after refactors that *should not change the survey itself* — splitting a single SRV into multiple files, renaming `#prefix` values, renaming stations, reorganising `#units` directives, removing duplicate metadata, etc. The output of `cavern` should be bit-identical for the named cave's stations (modulo station names if they were intentionally renamed).
+- **Whole-project mode** — argument is `--whole-project`. Compares the current branch's HEAD against `master`'s HEAD across **every** cave, using the release-pipeline outputs (`.3d`, station CSV, per-cave shapefiles). Use after branch-level changes that touch many caves at once — e.g. the OTWORY-from-GPS render refactor. Reports loss-focused stats: caves dropped, stations dropped, legs dropped, shapefile feature deltas.
+
+Dispatch on the argument: if it starts with `--whole-project`, run [Whole-project mode](#whole-project-mode-branch-vs-master); otherwise treat it as a cave prefix and run [Single-cave mode](#single-cave-mode-head-vs-wip).
 
 ---
 
-## Flow
+## Single-cave mode (HEAD vs WIP)
+<a id="single-cave-mode-head-vs-wip"></a>
+
+### Flow
 
 The verification compares the compiled output **before** and **after** the refactor. Use a **`git worktree`** for the baseline:
 
@@ -32,7 +39,7 @@ The verification compares the compiled output **before** and **after** the refac
 
 Run both compiles in the same Docker image (`jktz-survex`) and same shell session so the only variable is the source files.
 
-## Output location
+### Output location
 
 Write all exports to a stable, host-side directory so the files survive after the verification finishes and can be re-inspected later:
 
@@ -53,16 +60,121 @@ Then have the container script write the export files under `/output/<cave-prefi
 
 After the diff, tell the user the absolute paths to all four files so they can grep / open them for further investigation.
 
-## Caveats
+### Caveats
 
 - Splay shots (`to = -`) do not appear in the `.3d` file. If the refactor touched splay-shot lines, the CSV diff will not catch the change — sanity-check splay counts separately (e.g. `grep -c $'\t-\t' Poligony/.../*.SRV` before and after).
 - The diff must be empty for a *pure* refactor. Any coordinate difference means a real shot was added, removed, or altered — investigate before committing.
 - Sort the output before diffing; cavern does not guarantee a stable station order between runs.
 
-## Reporting
+### Reporting
 
 Show the user:
 - Which diff variant was run (coords / full / legs) and whether the diff was empty (refactor confirmed safe) or non-empty (lines that differ)
 - Station count before vs after (`wc -l` on each filtered CSV) — should match for pure refactors
 - Leg count before vs after (if the legs check was run) — should match for pure refactors
 - Any cavern errors or new warnings introduced by the refactor
+
+---
+
+## Whole-project mode (branch vs master)
+<a id="whole-project-mode-branch-vs-master"></a>
+
+Compare the current branch against `master` across the whole project, with the loss question front-and-centre: **did the refactor drop any caves, stations, or legs?**
+
+The branch-level refactor covered by this mode keeps `Poligony/OTWORY.SRV` as
+a versioned snapshot rendered from GPS data. To get a
+meaningful comparison, the skill verifies that the current-branch snapshot
+matches the latest GPS release before compiling. The check needs internet
+because it downloads the latest release asset from
+`dlubom/gps-kataster-obiektow-tatr`.
+
+### Flow
+
+Both checkouts run in separate `git worktree`s so the user's working tree is never modified.
+
+1. **Build the image if needed.**
+   ```bash
+   docker images -q jktz-survex | grep -q . || docker build -f docker/Dockerfile.survexImage-release -t jktz-survex .
+   ```
+
+2. **Create both worktrees.**
+   ```bash
+   OUTROOT="<host-tmp>/verify-cave-refactor/whole-project"
+   mkdir -p "$OUTROOT"
+   git worktree add "$OUTROOT/master"  master  --detach
+   git worktree add "$OUTROOT/branch" HEAD    --detach
+   ```
+
+3. **Check OTWORY in the branch worktree.** Run from inside the branch worktree, with its own `.venv` so the host environment is untouched:
+   ```bash
+   ( cd "$OUTROOT/branch" && uv sync --locked && uv run python scripts/render_otwory_from_gps.py --check )
+   ```
+   If this fails (no network, missing asset, missing `object_id` mapping, or a stale snapshot), stop and report — the comparison would be meaningless without it. Do **not** render in the master worktree; master uses the `OTWORY.SRV` it ships with.
+
+4. **Run the release export pipeline in both worktrees.** Same image, same script, same version label per side:
+   ```bash
+   docker run --rm -v "$OUTROOT/master:/project"  jktz-survex bash docker/exports.sh master  exports
+   docker run --rm -v "$OUTROOT/branch:/project" jktz-survex bash docker/exports.sh branch exports
+   ```
+   Each side produces `exports/JKTZ-{master,branch}.3d`, `.dxf`, `-all.shp`, plus `exports/caves/<cave>.shp` for every cave.
+
+5. **Generate station + entrance CSVs** from the compiled `.3d` (the shapefile contains legs only — for "stations lost" we need the station list directly):
+   ```bash
+   docker run --rm -v "$OUTROOT/master:/project" jktz-survex bash -c \
+     "survexport --csv         exports/JKTZ-master.3d  exports/JKTZ-master-stations.csv && \
+      survexport --entrances   --csv exports/JKTZ-master.3d  exports/JKTZ-master-entrances.csv"
+   # …same for branch…
+   ```
+   Copy the resulting CSVs and the `caves/` shapefile directories out of each worktree into `$OUTROOT/` so they survive worktree removal:
+   ```
+   $OUTROOT/master-stations.csv   $OUTROOT/branch-stations.csv
+   $OUTROOT/master-entrances.csv  $OUTROOT/branch-entrances.csv
+   $OUTROOT/master-caves/         $OUTROOT/branch-caves/   (per-cave .shp/.dbf/.shx)
+   $OUTROOT/master-all.shp + sidecars   $OUTROOT/branch-all.shp + sidecars
+   ```
+
+6. **Compute the loss summary.** Use station-name set diffs as the primary signal; shapefile feature counts as a secondary cross-check.
+
+   - **Caves dropped.** Extract the cave prefix (substring before the first `:` of column 4 in the entrances CSV) on each side, sort-unique, then `comm -23 master-caves.txt branch-caves.txt`. Any cave on the left is missing from the branch — a hard regression.
+   - **Stations dropped.** From each `*-stations.csv`, take column 4 (full station name), sort-unique. `comm -23` again — stations on master but not on branch. Group by cave prefix when reporting.
+   - **Legs dropped.** Run `dump3d` on each `.3d`, filter `^LEG`, normalise (drop station labels — keep only the two endpoint coords sorted within the line and across the file), then `comm -23`. Catches legs lost even when both endpoints survive.
+   - **Per-cave shapefile feature deltas.** For each cave `C` present on master, run `ogrinfo -so -al $OUTROOT/master-caves/C.shp` and `… branch-caves/C.shp`, parse the `Feature Count:` line, and flag any cave where the count dropped. (Shapefile features here are leg polylines from the per-cave DXF, so this is a leg-level sanity check at the cave granularity.)
+
+7. **Remove the worktrees** when finished (export artefacts are already copied out into `$OUTROOT`):
+   ```bash
+   git worktree remove "$OUTROOT/master"
+   git worktree remove "$OUTROOT/branch"
+   ```
+
+### Output location
+
+Same `<host-tmp>` convention as single-cave mode (`/tmp` on Linux/macOS, `$env:TEMP` on Windows). Final artefacts in `<host-tmp>/verify-cave-refactor/whole-project/`:
+
+```
+master-stations.csv      branch-stations.csv
+master-entrances.csv     branch-entrances.csv
+master-caves/<cave>.shp  branch-caves/<cave>.shp     (+ .dbf .shx .prj sidecars)
+master-all.shp           branch-all.shp              (+ sidecars)
+caves-lost.txt           stations-lost.txt           legs-lost.txt
+per-cave-feature-deltas.txt
+```
+
+Tell the user the absolute paths so they can inspect anything flagged.
+
+### Caveats
+
+- The snapshot check needs internet and a GPS-coordinate row for every cave in `OTWORY.SRV.j2`. If the check fails, the comparison is not done — surface the renderer's error directly rather than continuing with stale OTWORY.
+- Coordinate **shifts** in the branch output are *expected* (the whole point of the refactor is to update entrance coordinates from GPS). The report should NOT flag those as losses — only flag missing names / missing rows.
+- Splay shots are still invisible to `.3d` and shapefiles. Splay loss isn't covered by this mode; check `_RAW/` or grep splay counts separately if you suspect it.
+- The release pipeline is slow (cavern + DXF + one shapefile per cave). The first build of `jktz-survex` from scratch adds several minutes on top.
+
+### Reporting
+
+Loss-focused, single-screen summary:
+
+- **Caves**: master = N, branch = M, dropped = list (truncate to ~5 with "+X more")
+- **Stations**: master = N, branch = M, dropped = list-by-cave (truncate)
+- **Legs**: master = N, branch = M, dropped = N (per-cave breakdown if any)
+- **Per-cave shapefile feature deltas**: list only caves with non-zero delta
+- **cavern log diff**: any new `error:` or `warning:` lines on the branch side that aren't on master
+- **Verdict**: "no losses" or "losses detected" — followed by the paths under `$OUTROOT`
