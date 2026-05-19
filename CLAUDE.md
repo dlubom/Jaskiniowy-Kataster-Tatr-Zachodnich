@@ -269,10 +269,11 @@ The version in `INFO.txt` is set automatically — the `__VERSION__` placeholder
 The release ZIP excludes: `.git/`, `.github/`, `.claude/`, `.venv/`, Python/tool caches, `.gitignore`, `CLAUDE.md`, `doc/`, `scripts/`, `Poligony/OTWORY.SRV.j2`, `logs/`, `*/_RAW/*`, `.DS_Store`, local Survex build directories, validation scratch outputs, previous `JKTZ-*.zip` files, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
 
 Pull requests build a temporary test release package after validation succeeds.
-The package is uploaded as a GitHub Actions artifact with short retention and,
-for branches in this repository, linked from an automatically updated PR
-comment. These PR packages are not GitHub Releases and do not affect
-`/releases/latest`.
+The package is uploaded as a GitHub Actions artifact with short retention and
+linked from the `pr-release-package` check summary. For branches in this
+repository, the workflow also tries to update a PR comment with the same link;
+that comment is best-effort so token permission issues do not fail the build.
+These PR packages are not GitHub Releases and do not affect `/releases/latest`.
 
 ## Documentation Resources (`doc/`)
 
