@@ -422,7 +422,12 @@
 #flag	Ziobrowa:0	/ENTRANCE
 #note	Ziobrowa:0	/Jaskinia Ziobrowa
 
-{{ gps_fix('Ziobrowa:5.24', 'KSW-0177') }}
+; Ziobrowa:5.24 to drugi otwor SYSTEMU Ziobrowa.
+; KSW-0177 jest pasujacym obiektem GPS, ale uzycie go jako aktywnego #fix
+; rozciaga lokalny ciag poza geometrie pomiaru Ziobrowej.
+; Zostawiamy wyrenderowana wspolrzedna zrodlowa do kontroli, ale jako komentarz,
+; zeby Walls/Survex policzyl ten otwor z sieci pomiarowej.
+; {{ gps_fix('Ziobrowa:5.24', 'KSW-0177') }}
 #flag	Ziobrowa:5.24	/Jaskinia pod Niznia Zbojnicka Turnia
 #flag	Ziobrowa:5.24	/ENTRANCE
 #note	Ziobrowa:5.24	/Jaskinia pod Niznia Zbojnicka Turnia

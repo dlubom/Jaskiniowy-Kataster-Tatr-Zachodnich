@@ -146,3 +146,13 @@ def test_project_template_uses_only_reviewed_gnss_for_active_wysoka_fix() -> Non
         ("Wysoka7Progow:W7-200", "KSW-0153"),
         ("Wysoka7Progow:W7-500", "KSW-0123"),
     }
+
+
+def test_project_template_keeps_ziobrowa_second_entrance_unconstrained() -> None:
+    template = PROJECT_TEMPLATE.read_text(encoding="utf-8")
+    active_calls = set(ACTIVE_GPS_FIX_CALL_RE.findall(template))
+    commented_calls = set(COMMENTED_GPS_FIX_CALL_RE.findall(template))
+
+    assert ("Ziobrowa:5.24", "KSW-0177") not in active_calls
+    assert ("Ziobrowa:5.24", "KSW-0177") in commented_calls
+    assert "Walls/Survex policzyl ten otwor z sieci pomiarowej" in template
