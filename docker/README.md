@@ -17,13 +17,13 @@ docker build -f docker/Dockerfile.survexImage-commit -t jktz-survex .
 ## Walidacja projektu
 
 ```bash
-docker run --rm -v "$(pwd):/project" jktz-survex bash scripts/validation/validate.sh
+docker run --rm -v "$(pwd):/project" jktz-survex bash scripts/_legacy/validation/validate.sh
 ```
 
 ## Eksport
 
 ```bash
-docker run --rm -v "$(pwd):/project" jktz-survex bash scripts/exports/exports.sh v1.2.6
+docker run --rm -v "$(pwd):/project" jktz-survex bash scripts/_legacy/exports/exports.sh v1.2.6
 ```
 
 Podmień `v1.2.6` na dowolna etykietę wersji.

@@ -70,7 +70,7 @@ docker build -f docker/Dockerfile.survexImage-commit -t jktz-survex .
 ### 3. Run the export (if `DO_RUN=true`)
 
 ```bash
-docker run --rm -v "$(pwd):/project" jktz-survex bash scripts/exports/exports.sh VERSION
+docker run --rm -v "$(pwd):/project" jktz-survex bash scripts/_legacy/exports/exports.sh VERSION
 ```
 
 Replace `VERSION` with the actual value. Show the full output.
@@ -78,7 +78,7 @@ Replace `VERSION` with the actual value. Show the full output.
 **Windows note:** `$(pwd)` in Git Bash produces a Unix-style path (e.g. `/c/Users/...`) that Docker Desktop on Windows cannot resolve. If the bind mount fails, use the explicit Windows path instead.
 
 ```bash
-docker run --rm -v "C:/path/to/repo:/project" jktz-survex bash scripts/exports/exports.sh VERSION
+docker run --rm -v "C:/path/to/repo:/project" jktz-survex bash scripts/_legacy/exports/exports.sh VERSION
 ```
 
 ### 4. Report results

@@ -6,7 +6,7 @@
 # Mirrors the Linux job in GitHub Actions validate.yml.
 #
 # Usage (from repo root):
-#   docker run --rm -v "$(pwd):/project" jktz-survex bash scripts/validation/validate.sh
+#   docker run --rm -v "$(pwd):/project" jktz-survex bash scripts/_legacy/validation/validate.sh
 # =============================================================================
 set -euo pipefail
 
@@ -21,31 +21,31 @@ echo "=== Validation Started ==="
 
 {
     echo "[1/10] Checking SRV filenames format..."
-    bash scripts/validation/check-filenames-format.sh
+    bash scripts/_legacy/validation/check-filenames-format.sh
     echo "      SRV filenames format: Passed ✔"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
 {
     echo "[2/10] Checking for invalid directives..."
-    bash scripts/validation/check-directives.sh
+    bash scripts/_legacy/validation/check-directives.sh
     echo "      Invalid directives: Passed ✔"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
 {
     echo "[3/10] Checking decimal format in numeric fields..."
-    bash scripts/validation/check-decimal-format.sh
+    bash scripts/_legacy/validation/check-decimal-format.sh
     echo "      Decimal format: Passed ✔"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
 {
     echo "[4/10] Checking for non-ASCII bytes in SRV files..."
-    bash scripts/validation/check-non-ascii.sh
+    bash scripts/_legacy/validation/check-non-ascii.sh
     echo "      Non-ASCII bytes: Passed ✔"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
 {
     echo "[5/10] Checking #prefix values..."
-    bash scripts/validation/check-prefixes.sh
+    bash scripts/_legacy/validation/check-prefixes.sh
     echo "      #prefix values: Passed ✔"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
@@ -57,7 +57,7 @@ echo "=== Validation Started ==="
 
 {
     echo "[7/10] Checking entrance coordinates are inside Tatras extent..."
-    bash scripts/validation/check-coordinates.sh
+    bash scripts/_legacy/validation/check-coordinates.sh
     echo "      Entrance coordinates in Tatras extent: Passed ✔"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
@@ -66,13 +66,13 @@ cavern KATASTER.wpj 2>&1 | tee -a "${CAVERN_LOG}"
 
 {
     echo "[9/10] Checking for unattached stations..."
-    bash scripts/validation/check-unattached.sh "${CAVERN_LOG}"
+    bash scripts/_legacy/validation/check-unattached.sh "${CAVERN_LOG}"
     echo "      Unattached stations: Passed ✔"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
 {
     echo "[10/10] Checking exports..."
-    bash scripts/validation/check-exports.sh "${EXPORTS_VERSION}" "${EXPORTS_OUTDIR}"
+    bash scripts/_legacy/validation/check-exports.sh "${EXPORTS_VERSION}" "${EXPORTS_OUTDIR}"
     echo "      Exports: Passed ✔"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 

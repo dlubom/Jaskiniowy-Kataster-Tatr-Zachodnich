@@ -2,7 +2,7 @@
 # Build the user-facing JKTZ ZIP package from the current workspace.
 #
 # Usage:
-#   scripts/build_release_zip.sh <VERSION> [ZIP_PATH]
+#   scripts/_legacy/build_release_zip.sh <VERSION> [ZIP_PATH]
 set -euo pipefail
 
 if [[ $# -lt 1 || $# -gt 2 ]]; then

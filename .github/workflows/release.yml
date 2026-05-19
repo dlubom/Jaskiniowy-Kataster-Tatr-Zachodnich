@@ -79,10 +79,10 @@ jobs:
           echo "$HOME/survex/bin" >> $GITHUB_PATH
 
       - name: Build exports
-        run: bash scripts/exports/exports.sh ${{ steps.version.outputs.VERSION }}
+        run: bash scripts/_legacy/exports/exports.sh ${{ steps.version.outputs.VERSION }}
 
       - name: Build release ZIP
-        run: bash scripts/build_release_zip.sh ${{ steps.version.outputs.VERSION }}
+        run: bash scripts/_legacy/build_release_zip.sh ${{ steps.version.outputs.VERSION }}
 
       - name: Extract release notes from CHANGELOG.md
         id: notes

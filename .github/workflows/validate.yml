@@ -144,7 +144,7 @@ jobs:
         if: runner.os == 'Linux'
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: bash scripts/validation/validate.sh
+        run: bash scripts/_legacy/validation/validate.sh
 
       - name: Check rendered entrance snapshot (Windows)
         if: runner.os == 'Windows'
@@ -312,10 +312,10 @@ jobs:
           echo "$HOME/survex/bin" >> $GITHUB_PATH
 
       - name: Build exports
-        run: bash scripts/exports/exports.sh ${{ steps.package.outputs.version }}
+        run: bash scripts/_legacy/exports/exports.sh ${{ steps.package.outputs.version }}
 
       - name: Build PR release ZIP
-        run: bash scripts/build_release_zip.sh ${{ steps.package.outputs.version }}
+        run: bash scripts/_legacy/build_release_zip.sh ${{ steps.package.outputs.version }}
 
       - name: Upload PR release ZIP
         id: upload

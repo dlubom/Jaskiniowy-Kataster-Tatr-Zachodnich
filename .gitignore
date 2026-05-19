@@ -28,3 +28,11 @@ logs/
 
 #Docker exports
 exports/
+
+#Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
