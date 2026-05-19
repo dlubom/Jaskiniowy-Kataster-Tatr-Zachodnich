@@ -13,11 +13,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Tools & Processing
 
-This is a data project, not a software project. There is no build system, test suite, or linter.
+This is a data project, not a software application. The Python tooling is only
+for release automation around the survey data.
 
 - **Walls software** processes the data: reads `.SRV` survey files, compiles into binary `.NT*` files, and exports `.wrl` (VRML 3D models)
 - The main project file `KATASTER.wpj` is opened in Walls to compile and visualize all survey data
 - **Windows path limitation**: The project should be extracted to a short root path (e.g., `C:/`) because deep Windows paths can prevent some caves from displaying
+- Python release tooling is managed with `uv`; validate it with
+  `uv run ruff check scripts tests` and `uv run pytest`.
 
 ## Repository Structure
 
@@ -26,7 +29,7 @@ KATASTER.wpj              # Main Walls project file (hierarchical cave/survey tr
 CHANGELOG.md              # Version history (semver, from v0.00 to current)
 INFO.txt                  # Project description, links, contributor credits
 Poligony/                 # SOURCE DATA: ~150 .SRV survey files organized by valley
-  OTWORY.SRV              # SHARED file: #fix/#flag/#note entrance entries for every cave
+  OTWORY.SRV.j2           # SHARED template: #fix/#flag/#note entrance entries for every cave
   D_Bystra/
   D_Chocholowska/
   D_Goryczkowa/
@@ -50,25 +53,80 @@ Walls project definition using directives: `.BOOK` (folder), `.SURVEY` (file ref
 
 ### .SRV Files (Survey Data) — the primary source files
 
-- All entrance fixes (`#fix`, `#flag`, `#note`) for every cave live in a single shared file: `Poligony/OTWORY.SRV`.
+- All entrance fixes (`#fix`, `#flag`, `#note`) for every cave live in
+  `Poligony/OTWORY.SRV`, a versioned generated snapshot for reviewable diffs.
+- `Poligony/OTWORY.SRV.j2` is the source template for that snapshot.
+  `scripts/render_otwory_from_gps.py` renders it from the latest
+  `best-measurements.csv` asset in `dlubom/gps-kataster-obiektow-tatr`.
+  Each `gps_fix(...)` call embeds the GPS `object_id` directly in the template.
+  Missing object rows or empty `lon`/`lat`/`elevation_m` values are
+  release-blocking errors.
 - Each cave's directory contains one or more **survey files** with the measurements only. Naming: `CAVE.SRV` for a single-survey cave, or `CAVE_<SECTION_SHORTNAME>.SRV` for caves split across multiple surveys/sections (see Mietusia Wyznia for an example with sections `_OT`, `_SD`, `_MR`, `...`).
+
+#### Local GPS render check
+
+Use `uv` for the Python release tooling:
+
+```
+uv sync --locked
+uv run ruff format --check scripts tests
+uv run ruff check scripts tests
+uv run pytest
+```
+
+To preview a rendered entrances file without creating local
+`Poligony/OTWORY.SRV`, write it to a temporary path:
+
+```
+uv run python scripts/render_otwory_from_gps.py --output /tmp/OTWORY.SRV
+```
+
+To reproduce the release input locally, render in place and compile:
+
+```
+uv run python scripts/render_otwory_from_gps.py
+cavern KATASTER.wpj
+```
+
+Before committing, check that the versioned `Poligony/OTWORY.SRV` snapshot
+matches the template rendered from the latest GPS release:
+
+```
+uv run python scripts/render_otwory_from_gps.py --check
+```
+
+The renderer downloads the latest GitHub release asset from
+`dlubom/gps-kataster-obiektow-tatr`. Any missing `object_id` mapping in the
+template, missing release asset, or empty coordinate/elevation field is an
+error.
+
+Entrance coordinates are maintained in
+[`dlubom/gps-kataster-obiektow-tatr`](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases)
+and are injected automatically into the versioned snapshot. Look there for
+measurement provenance and best-measurement selection details.
 
 ---
 
 ### File Templates
 
-#### Template: Entrance entry in `Poligony/OTWORY.SRV`
+#### Template: Entrance entry in `Poligony/OTWORY.SRV.j2`
 
-Append a block like this (alphabetised by cave prefix) to `Poligony/OTWORY.SRV`:
+Append a block like this (alphabetised by cave prefix) to
+`Poligony/OTWORY.SRV.j2`, then render and commit the updated
+`Poligony/OTWORY.SRV` snapshot:
 
 ```
-#fix	PREFIX:STATION	E<lon>	N<lat>	<elevation>m
+{{ gps_fix('PREFIX:STATION', 'OBJECT-ID') }}
 #flag	PREFIX:STATION	/Cave Label
 #flag	PREFIX:STATION	/ENTRANCE
 #note	PREFIX:STATION	/Cave Label
 ```
 
-`PREFIX:STATION` is fully qualified (e.g. `Marmurowa:0`, `MietusiaWyznia:ot_gps`, `WielkaSniezna:Ciag:0`). LON/LAT in WGS84 geographic — use decimal degrees (e.g. `E19.894900 N49.245399`);
+`PREFIX:STATION` is fully qualified (e.g. `Marmurowa:0`,
+`MietusiaWyznia:ot_gps`, `WielkaSniezna:Ciag:0`). `OBJECT-ID` is the
+corresponding opening/object id from `dlubom/gps-kataster-obiektow-tatr`.
+The rendered `Poligony/OTWORY.SRV` contains WGS84 geographic lon/lat decimal
+degrees (e.g. `E19.894900 N49.245399`).
 
 The entrance station referenced here must exist in the cave's survey file (Walls/cavern resolves it across the whole project tree).
 
@@ -206,6 +264,9 @@ If the source material is a single file, the ZIP + unpacked folder are not neede
 ## .gitignore
 
 Compiled Walls outputs are git-ignored: `*.nta`, `*.ntn`, `*.ntv`, `*.nts`, `*.ntp`, `*.wrl`, `*.log`, `*.lst`. The `logs/` directory is also ignored. Only `.SRV` source data and `.wpj` project file are tracked.
+`Poligony/OTWORY.SRV` is versioned intentionally: it is generated from
+`Poligony/OTWORY.SRV.j2`, but kept in Git so coordinate changes have normal
+review diffs. CI verifies that the snapshot matches the latest GPS release.
 
 ## Versioning and Releases
 
@@ -216,11 +277,20 @@ The project uses [semantic versioning](https://semver.org/) starting from v1.0.0
 2. Commit, merge to master
 3. Create an annotated tag: `git tag -a vX.Y.Z -m "vX.Y.Z - description"`
 4. Push the tag: `git push origin vX.Y.Z`
-5. GitHub Actions automatically creates a release with a ZIP archive (`JKTZ-vX.Y.Z.zip`)
+5. GitHub Actions verifies that `Poligony/OTWORY.SRV` matches the latest GPS
+   best measurements, then automatically creates a release with a ZIP archive
+   (`JKTZ-vX.Y.Z.zip`)
 
 The version in `INFO.txt` is set automatically — the `__VERSION__` placeholder is replaced with the tag name during the release build.
 
-The release ZIP excludes: `.git/`, `.github/`, `.claude/`, `.gitignore`, `CLAUDE.md`, `doc/`, `logs/`, `*/_RAW/*`, `.DS_Store`, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
+The release ZIP excludes: `.git/`, `.github/`, `.claude/`, `.venv/`, Python/tool caches, Python tooling files (`pyproject.toml`, `uv.lock`, `tests/`), `.gitignore`, `CLAUDE.md`, `doc/`, `scripts/`, `Poligony/OTWORY.SRV.j2`, `logs/`, `*/_RAW/*`, `.DS_Store`, local Survex build directories, validation scratch outputs, previous `JKTZ-*.zip` files, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
+
+Pull requests build a temporary test release package after validation succeeds.
+The package is uploaded as a GitHub Actions artifact with short retention and
+linked from the `pr-release-package` check summary. For branches in this
+repository, the workflow also tries to update a PR comment with the same link;
+that comment is best-effort so token permission issues do not fail the build.
+These PR packages are not GitHub Releases and do not affect `/releases/latest`.
 
 ## Documentation Resources (`doc/`)
 
@@ -282,7 +352,7 @@ Example:
 /add-cave T.D-08.07 "Dolina Koscieliska/Organy" /tmp/MROZN.SRV.zip
 ```
 
-Covers: PIG lookup → coordinate conversion → directory creation → `_RAW/` + README → entrance entry appended to `Poligony/OTWORY.SRV` → survey file skeleton(s) → `KATASTER.wpj` entry.
+Covers: PIG lookup → coordinate conversion → directory creation → `_RAW/` + README → entrance entry appended to `Poligony/OTWORY.SRV.j2` → survey file skeleton(s) → `KATASTER.wpj` entry.
 
 ### `/average-shots` — `.claude/skills/average-shots/SKILL.md`
 
@@ -359,7 +429,7 @@ Use the `/add-cave` skill (see above) or follow these steps manually:
 1. **Research the cave** in `doc/jaskinie_polski_pig_dump.jsonl` — search by cave ID (see PIG section above) to find official coordinates, dimensions, and documentation history
 2. Create a directory under the appropriate valley in `Poligony/` (use underscores, no spaces, short names)
 3. Create the cave's survey `.SRV` file(s) with metadata block and survey data (one file for a simple cave, one per section for a multi-section cave)
-4. Append entrance fix/flag/note for the cave to `Poligony/OTWORY.SRV` (fully-qualified station name, e.g. `Marmurowa:0`)
+4. Append entrance fix/flag/note for the cave to `Poligony/OTWORY.SRV.j2` (fully-qualified station name, e.g. `Marmurowa:0`)
 5. If using Claude for adding cave: **Close Walls** before editing `KATASTER.wpj` — Walls overwrites the file on save, discarding any manually added entries
 6. Add `.BOOK`/`.SURVEY` entries to `KATASTER.wpj` referencing the new files
 7. Update `CHANGELOG.md` with a new version entry
