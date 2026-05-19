@@ -26,8 +26,11 @@ zip -qr "${ZIP_PATH}" . \
     -x "docker/*" \
     -x ".gitignore" \
     -x "CLAUDE.md" \
+    -x "pyproject.toml" \
+    -x "uv.lock" \
     -x "doc/*" \
     -x "scripts/*" \
+    -x "tests/*" \
     -x "Poligony/OTWORY.SRV.j2" \
     -x "logs/*" \
     -x "*/_RAW/*" \
