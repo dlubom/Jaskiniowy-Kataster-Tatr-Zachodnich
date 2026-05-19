@@ -26,8 +26,8 @@ cavern_output.txt
 #Logs
 logs/
 
-#Docker exports
-exports/
+#Docker exports (anchored to repo root so src/jktz/exports/ is NOT ignored)
+/exports/
 
 #Python
 __pycache__/
