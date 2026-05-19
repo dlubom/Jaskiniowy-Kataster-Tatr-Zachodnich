@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [master]
 
+permissions:
+  contents: read
+
 env:
   SURVEX_COMMIT: "f8e8a88c48e1d48921995b5a5846ae5c10306b8e"
 
@@ -231,3 +234,144 @@ jobs:
       #     } else {
       #       Write-Host "::warning::KATASTER/ directory not created"
       #     }
+
+  pr-release-package:
+    if: github.event_name == 'pull_request'
+    needs: [python-tools, validate]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compute package version
+        id: package
+        shell: bash
+        run: |
+          short_sha="${GITHUB_SHA::7}"
+          version="pr-${{ github.event.pull_request.number }}-${short_sha}"
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+          echo "zip=JKTZ-${version}.zip" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Sync Python tooling
+        run: uv sync --locked
+
+      - name: Set version in INFO.txt
+        run: sed -i 's/__VERSION__/${{ steps.package.outputs.version }}/' INFO.txt
+
+      - name: Render latest entrance fixes
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: uv run python scripts/render_otwory_from_gps.py
+
+      - name: Cache Survex
+        id: cache-survex
+        uses: actions/cache@v4
+        with:
+          path: ~/survex
+          key: survex-${{ env.SURVEX_COMMIT }}-ubuntu
+
+      - name: Install Survex
+        run: |
+          if [ "${{ steps.cache-survex.outputs.cache-hit }}" = "true" ]; then
+            echo "Using cached Survex"
+            sudo apt-get update && sudo apt-get install -y libproj25 libgdal34t64 gdal-bin libwxgtk3.2-1t64
+          else
+            sudo apt-get update && sudo apt-get install -y \
+              build-essential autoconf automake libwxgtk3.2-dev libproj-dev libgdal-dev \
+              liblocale-po-perl unifont python3-sphinx latexmk \
+              texlive-latex-base texlive-latex-extra texlive-fonts-recommended \
+              gdal-bin
+            git clone https://github.com/ojwb/survex.git survex-src
+            cd survex-src
+            git checkout ${{ env.SURVEX_COMMIT }}
+            autoreconf -fiv
+            ./configure --prefix=$HOME/survex
+            (cd src && python3 igrf2c.py igrf14coeffs.txt && mv ../thgeomagdata.h .)
+            make
+            make install
+          fi
+          echo "$HOME/survex/bin" >> $GITHUB_PATH
+
+      - name: Build exports
+        run: bash docker/exports.sh ${{ steps.package.outputs.version }}
+
+      - name: Build PR release ZIP
+        run: bash scripts/build_release_zip.sh ${{ steps.package.outputs.version }}
+
+      - name: Upload PR release ZIP
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.package.outputs.zip }}
+          path: ${{ steps.package.outputs.zip }}
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Add package link to job summary
+        run: |
+          {
+            echo "### PR test release package"
+            echo ""
+            echo "- Version: \`${{ steps.package.outputs.version }}\`"
+            echo "- Artifact: [${{ steps.package.outputs.zip }}](${{ steps.upload.outputs.artifact-url }})"
+            echo "- Retention: 14 days"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Link package in pull request
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const marker = '<!-- jktz-pr-release-package -->';
+            const body = [
+              marker,
+              '### PR test release package',
+              '',
+              '- Version: `${{ steps.package.outputs.version }}`',
+              '- Artifact: [${{ steps.package.outputs.zip }}](${{ steps.upload.outputs.artifact-url }})',
+              '- Retention: 14 days',
+              '',
+              'This is a temporary GitHub Actions artifact for PR testing. It is not a public GitHub Release.',
+            ].join('\n');
+
+            const {owner, repo} = context.repo;
+            const issue_number = context.payload.pull_request.number;
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner,
+              repo,
+              issue_number,
+              per_page: 100,
+            });
+            const existing = comments.find(
+              (comment) => comment.user.type === 'Bot' && comment.body.includes(marker)
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner,
+                repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number,
+                body,
+              });
+            }

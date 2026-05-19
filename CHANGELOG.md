@@ -11,6 +11,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
   automatycznie wstrzykujac najnowsze najlepsze pomiary otworow z projektu
   `dlubom/gps-kataster-obiektow-tatr`.
 - Dodano lokalna walidacje narzedzi release przez `uv`, `ruff` i `pytest`.
+- PR-ki buduja tymczasowa paczke testowa ZIP jako GitHub Actions artifact,
+  linkowana automatycznie w komentarzu PR bez tworzenia publicznego release.
 
 ### Zmienione
 - `Poligony/OTWORY.SRV` nie jest juz wersjonowanym zrodlem; powstaje lokalnie

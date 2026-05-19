@@ -82,29 +82,7 @@ jobs:
         run: bash docker/exports.sh ${{ steps.version.outputs.VERSION }}
 
       - name: Build release ZIP
-        run: |
-          zip -r "JKTZ-${{ steps.version.outputs.VERSION }}.zip" . \
-            -x ".git/*" \
-            -x ".github/*" \
-            -x ".claude/*" \
-            -x "docker/*" \
-            -x ".gitignore" \
-            -x "CLAUDE.md" \
-            -x "doc/*" \
-            -x "scripts/*" \
-            -x "Poligony/OTWORY.SRV.j2" \
-            -x "logs/*" \
-            -x "*/_RAW/*" \
-            -x "*.DS_Store" \
-            -x "*.nta" \
-            -x "*.ntn" \
-            -x "*.ntv" \
-            -x "*.nts" \
-            -x "*.ntp" \
-            -x "*.wrl" \
-            -x "*.log" \
-            -x "*.lst" \
-            -x "web/*"
+        run: bash scripts/build_release_zip.sh ${{ steps.version.outputs.VERSION }}
 
       - name: Extract release notes from CHANGELOG.md
         id: notes
