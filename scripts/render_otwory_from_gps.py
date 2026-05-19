@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import ast
 import csv
+import difflib
 import json
 import os
 import re
@@ -55,6 +56,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--template", type=Path, default=DEFAULT_TEMPLATE)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument(
+        "--check",
+        action="store_true",
+        help="Verify that the output file matches the rendered template without writing it.",
+    )
+    parser.add_argument(
         "--csv",
         type=Path,
         help="Use an already downloaded best-measurements.csv instead of GitHub latest.",
@@ -79,14 +85,42 @@ def main(argv: list[str] | None = None) -> int:
                 template,
                 measurements=measurements,
             )
-            args.output.write_text(rendered, encoding="utf-8")
+            if args.check:
+                _check_rendered_output(args.output, rendered)
+            else:
+                args.output.write_text(rendered, encoding="utf-8")
     except RenderError as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
 
-    print(f"Rendered {args.output} from {asset.source}")
+    action = "Checked" if args.check else "Rendered"
+    print(f"{action} {args.output} from {asset.source}")
     print(f"GPS fixes: {stats.gps_fixes}")
     return 0
+
+
+def _check_rendered_output(output: Path, rendered: str) -> None:
+    if not output.exists():
+        raise RenderError(
+            f"{output} does not exist. Run scripts/render_otwory_from_gps.py and commit it."
+        )
+    current = output.read_text(encoding="utf-8")
+    if current == rendered:
+        return
+
+    diff = "".join(
+        difflib.unified_diff(
+            current.splitlines(keepends=True),
+            rendered.splitlines(keepends=True),
+            fromfile=str(output),
+            tofile=f"{output} (rendered)",
+        )
+    )
+    raise RenderError(
+        f"{output} is not up to date. "
+        "Run `uv run python scripts/render_otwory_from_gps.py` and commit the result.\n"
+        f"{diff}"
+    )
 
 
 def _download_latest_best_measurements(github_repo: str, tmp_dir: Path) -> ReleaseAsset:

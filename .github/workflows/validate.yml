@@ -38,6 +38,11 @@ jobs:
           uv run ruff check scripts tests
           uv run pytest
 
+      - name: Check rendered entrance snapshot
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: uv run python scripts/render_otwory_from_gps.py --check
+
   validate:
     strategy:
       fail-fast: false
@@ -141,11 +146,11 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: bash docker/validate.sh
 
-      - name: Render latest entrance fixes (Windows)
+      - name: Check rendered entrance snapshot (Windows)
         if: runner.os == 'Windows'
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python scripts/render_otwory_from_gps.py
+        run: python scripts/render_otwory_from_gps.py --check
 
       - name: Compile with cavern (Windows)
         if: runner.os == 'Windows'

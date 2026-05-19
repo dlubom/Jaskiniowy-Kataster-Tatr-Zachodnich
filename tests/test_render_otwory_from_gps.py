@@ -82,6 +82,74 @@ def test_renderer_fails_when_required_measurement_value_is_empty(tmp_path: Path)
     assert not output.exists()
 
 
+def test_renderer_check_passes_when_output_is_current(tmp_path: Path) -> None:
+    template = tmp_path / "OTWORY.SRV.j2"
+    output = tmp_path / "OTWORY.SRV"
+    measurements = tmp_path / "best-measurements.csv"
+    template.write_text("{{ gps_fix('Cave:0', 'OBJ-1') }}\n", encoding="utf-8")
+    measurements.write_text(
+        "object_id,lon,lat,elevation_m\nOBJ-1,19.1,49.2,123.4\n",
+        encoding="utf-8",
+    )
+    output.write_text("#fix\tCave:0\tE19.1\tN49.2\t123.4m\n", encoding="utf-8")
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(SCRIPT),
+            "--template",
+            str(template),
+            "--csv",
+            str(measurements),
+            "--output",
+            str(output),
+            "--check",
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert output.read_text(encoding="utf-8") == "#fix\tCave:0\tE19.1\tN49.2\t123.4m\n"
+    assert "Checked" in result.stdout
+
+
+def test_renderer_check_fails_when_output_is_stale(tmp_path: Path) -> None:
+    template = tmp_path / "OTWORY.SRV.j2"
+    output = tmp_path / "OTWORY.SRV"
+    measurements = tmp_path / "best-measurements.csv"
+    template.write_text("{{ gps_fix('Cave:0', 'OBJ-1') }}\n", encoding="utf-8")
+    measurements.write_text(
+        "object_id,lon,lat,elevation_m\nOBJ-1,19.1,49.2,123.4\n",
+        encoding="utf-8",
+    )
+    output.write_text("#fix\tCave:0\tE19.0\tN49.2\t123.4m\n", encoding="utf-8")
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(SCRIPT),
+            "--template",
+            str(template),
+            "--csv",
+            str(measurements),
+            "--output",
+            str(output),
+            "--check",
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 1
+    assert "is not up to date" in result.stderr
+    assert "---" in result.stderr
+    assert "+#fix\tCave:0\tE19.1\tN49.2\t123.4m" in result.stderr
+    assert output.read_text(encoding="utf-8") == "#fix\tCave:0\tE19.0\tN49.2\t123.4m\n"
+
+
 def test_renderer_keeps_commented_gps_fix_commented(tmp_path: Path) -> None:
     template = tmp_path / "OTWORY.SRV.j2"
     output = tmp_path / "OTWORY.SRV"

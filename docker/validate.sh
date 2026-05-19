@@ -38,8 +38,8 @@ echo "=== Validation Started ==="
 } 2>&1 | tee -a "${CAVERN_LOG}"
 
 {
-    echo "[4/7] Rendering entrance fixes from GPS release..."
-    python3 scripts/render_otwory_from_gps.py
+    echo "[4/7] Checking rendered entrance snapshot..."
+    python3 scripts/render_otwory_from_gps.py --check
     echo "      OK"
 } 2>&1 | tee -a "${CAVERN_LOG}"
 

@@ -44,10 +44,10 @@ jobs:
       - name: Set version in INFO.txt
         run: sed -i 's/__VERSION__/${{ steps.version.outputs.VERSION }}/' INFO.txt
 
-      - name: Render latest entrance fixes
+      - name: Check rendered entrance snapshot
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: uv run python scripts/render_otwory_from_gps.py
+        run: uv run python scripts/render_otwory_from_gps.py --check
 
       - name: Cache Survex
         id: cache-survex

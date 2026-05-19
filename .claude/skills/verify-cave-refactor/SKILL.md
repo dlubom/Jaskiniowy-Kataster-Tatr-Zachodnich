@@ -81,7 +81,12 @@ Show the user:
 
 Compare the current branch against `master` across the whole project, with the loss question front-and-centre: **did the refactor drop any caves, stations, or legs?**
 
-The branch-level refactor this mode is designed for renders `Poligony/OTWORY.SRV` from GPS data at release time. On `master` the file is static; on the branch it is rewritten by `scripts/render_otwory_from_gps.py`. To get a meaningful comparison, the skill renders OTWORY in the current-branch worktree before compiling. The render needs internet (it downloads the latest release asset from `dlubom/gps-kataster-obiektow-tatr`).
+The branch-level refactor covered by this mode keeps `Poligony/OTWORY.SRV` as
+a versioned snapshot rendered from GPS data. To get a
+meaningful comparison, the skill verifies that the current-branch snapshot
+matches the latest GPS release before compiling. The check needs internet
+because it downloads the latest release asset from
+`dlubom/gps-kataster-obiektow-tatr`.
 
 ### Flow
 
@@ -100,11 +105,11 @@ Both checkouts run in separate `git worktree`s so the user's working tree is nev
    git worktree add "$OUTROOT/branch" HEAD    --detach
    ```
 
-3. **Render OTWORY in the branch worktree.** Run from inside the branch worktree, with its own `.venv` so the host environment is untouched:
+3. **Check OTWORY in the branch worktree.** Run from inside the branch worktree, with its own `.venv` so the host environment is untouched:
    ```bash
-   ( cd "$OUTROOT/branch" && uv sync --locked && uv run python scripts/render_otwory_from_gps.py )
+   ( cd "$OUTROOT/branch" && uv sync --locked && uv run python scripts/render_otwory_from_gps.py --check )
    ```
-   If this fails (no network, missing asset, missing `object_id` mapping), stop and report — the comparison would be meaningless without it. Do **not** render in the master worktree; master uses the static `OTWORY.SRV` it ships with.
+   If this fails (no network, missing asset, missing `object_id` mapping, or a stale snapshot), stop and report — the comparison would be meaningless without it. Do **not** render in the master worktree; master uses the `OTWORY.SRV` it ships with.
 
 4. **Run the release export pipeline in both worktrees.** Same image, same script, same version label per side:
    ```bash
@@ -158,7 +163,7 @@ Tell the user the absolute paths so they can inspect anything flagged.
 
 ### Caveats
 
-- The render step needs internet and a GPS-coordinate row for every cave in `OTWORY.SRV.j2`. If the renderer fails, the comparison is not done — surface the renderer's error directly rather than continuing with stale OTWORY.
+- The snapshot check needs internet and a GPS-coordinate row for every cave in `OTWORY.SRV.j2`. If the check fails, the comparison is not done — surface the renderer's error directly rather than continuing with stale OTWORY.
 - Coordinate **shifts** in the branch output are *expected* (the whole point of the refactor is to update entrance coordinates from GPS). The report should NOT flag those as losses — only flag missing names / missing rows.
 - Splay shots are still invisible to `.3d` and shapefiles. Splay loss isn't covered by this mode; check `_RAW/` or grep splay counts separately if you suspect it.
 - The release pipeline is slow (cavern + DXF + one shapefile per cave). The first build of `jktz-survex` from scratch adds several minutes on top.
