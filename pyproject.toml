@@ -20,6 +20,7 @@ jktz-build-zip = "jktz.cli.build_zip:main"
 dev = [
   "pytest>=8.0,<9.0",
   "ruff>=0.12,<1.0",
+  "pre-commit>=4.0,<5.0",
 ]
 
 [tool.hatch.build.targets.wheel]
