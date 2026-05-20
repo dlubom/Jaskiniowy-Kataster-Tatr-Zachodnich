@@ -99,32 +99,26 @@ jobs:
           Start-Process -Wait -FilePath .\survex-installer.exe -ArgumentList '/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART'
           echo "C:\Program Files (x86)\Survex" >> $env:GITHUB_PATH
 
-      - name: Cache GDAL (Windows)
-        if: runner.os == 'Windows'
-        id: cache-gdal
-        uses: actions/cache@v4
-        with:
-          path: C:\Program Files\GDAL
-          key: gdal-choco-v1-windows
-
       - name: Install GDAL (Windows)
-        if: runner.os == 'Windows' && steps.cache-gdal.outputs.cache-hit != 'true'
-        shell: pwsh
-        run: choco install gdal -y --no-progress --limit-output
+        if: runner.os == 'Windows'
+        uses: mamba-org/setup-micromamba@v2
+        with:
+          micromamba-version: "2.03.5-0"
+          environment-name: gdal-env
+          create-args: >-
+            -c conda-forge
+            gdal
+          cache-environment: true
+          init-shell: powershell
 
       - name: Add GDAL to PATH (Windows)
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          # choco install gdal lays the binaries under C:\Program Files\GDAL on
-          # windows-latest; locate ogr2ogr.exe to add the right dir to PATH.
-          $ogr = (Get-ChildItem -Path "C:\Program Files\GDAL","C:\OSGeo4W64\bin","C:\OSGeo4W\bin" -Filter "ogr2ogr.exe" -ErrorAction SilentlyContinue | Select-Object -First 1).FullName
-          if (-not $ogr) {
-              # Fallback: scan the whole system drive
-              $ogr = (Get-ChildItem -Path "C:\" -Filter "ogr2ogr.exe" -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1).FullName
-          }
-          if (-not $ogr) { throw "ogr2ogr.exe not found after 'choco install gdal'" }
-          $gdalBin = Split-Path -Path $ogr -Parent
+          # conda-forge GDAL lays binaries under <env>/Library/bin on Windows.
+          $envBin = (Get-ChildItem -Path "$env:MAMBA_ROOT_PREFIX\envs" -Filter "ogr2ogr.exe" -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1).FullName
+          if (-not $envBin) { throw "ogr2ogr.exe not found inside the gdal-env micromamba environment" }
+          $gdalBin = Split-Path -Path $envBin -Parent
           Write-Host "GDAL bin dir: $gdalBin"
           echo "$gdalBin" >> $env:GITHUB_PATH
 
