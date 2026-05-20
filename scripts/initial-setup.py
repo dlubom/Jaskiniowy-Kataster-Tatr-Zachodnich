@@ -22,12 +22,40 @@ Idempotent: safe to re-run any time.
 
 from __future__ import annotations
 
+import os
 import shutil
 import subprocess
 import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+
+# Enable ANSI escape sequence processing on Windows (10+) consoles. The empty
+# os.system call flips the VT-processing flag on stdout without printing
+# anything. POSIX terminals already understand the codes natively.
+if os.name == "nt":
+    os.system("")
+
+# Honour https://no-color.org/ and disable colors when stdout isn't a TTY
+# (e.g. piped output, CI logs).
+_USE_COLOR = sys.stdout.isatty() and "NO_COLOR" not in os.environ
+
+
+def _c(code: str, text: str) -> str:
+    return f"\033[{code}m{text}\033[0m" if _USE_COLOR else text
+
+
+def _red(text: str) -> str:
+    return _c("31", text)
+
+
+def _green(text: str) -> str:
+    return _c("32", text)
+
+
+def _yellow(text: str) -> str:
+    return _c("33", text)
+
 
 SYSTEM_TOOLS = [
     (
@@ -63,11 +91,11 @@ def main() -> int:
 
     print("[1/4] Checking required tool: uv")
     if not _has("uv"):
-        print("  [MISSING] uv is required.")
+        print(f"  {_red('[MISSING]')} uv is required.")
         print("           Install from https://docs.astral.sh/uv/getting-started/installation/")
         print("           Then re-run: python scripts/initial-setup.py")
         return 1
-    print("  [OK] uv found\n")
+    print(f"  {_green('[OK]')} uv found\n")
 
     print("[2/4] Installing Python tooling (uv sync --locked)")
     _run(["uv", "sync", "--locked"])
@@ -92,9 +120,9 @@ def main() -> int:
     missing: list[str] = []
     for cmd, hint in SYSTEM_TOOLS:
         if _has(cmd):
-            print(f"  [OK]      {cmd}")
+            print(f"  {_green('[OK]     ')} {cmd}")
         else:
-            print(f"  [MISSING] {cmd} -- {hint}")
+            print(f"  {_red('[MISSING]')} {cmd} -- {hint}")
             missing.append(cmd)
 
     print("\n=== Setup complete ===\n")
@@ -111,11 +139,13 @@ def main() -> int:
 
     if missing:
         print()
-        print("NOTE: missing system tool(s): " + ", ".join(missing) + ".")
+        print(_yellow("NOTE: missing system tool(s): " + ", ".join(missing) + "."))
         if "cavern" in missing or "ogr2ogr" in missing:
             print(
-                "      The pre-push hook will fail until these are installed. "
-                "Use `git push --no-verify` to bypass intentionally."
+                _yellow(
+                    "      The pre-push hook will fail until these are installed. "
+                    "Use `git push --no-verify` to bypass intentionally."
+                )
             )
 
     return 0
