@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 env:
-  SURVEX_COMMIT: "f8e8a88c48e1d48921995b5a5846ae5c10306b8e"
+  SURVEX_VERSION: "1.4.21"
 
 jobs:
   release:
@@ -37,8 +37,8 @@ jobs:
 
       - name: Validate Python tooling
         run: |
-          uv run ruff format --check scripts tests
-          uv run ruff check scripts tests
+          uv run ruff format --check src scripts tests
+          uv run ruff check src scripts tests
           uv run pytest
 
       - name: Set version in INFO.txt
@@ -54,7 +54,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/survex
-          key: survex-${{ env.SURVEX_COMMIT }}-ubuntu
+          key: survex-${{ env.SURVEX_VERSION }}-ubuntu
 
       - name: Install Survex
         run: |
@@ -62,27 +62,21 @@ jobs:
             echo "Using cached Survex"
             sudo apt-get update && sudo apt-get install -y libproj25 libgdal34t64 gdal-bin libwxgtk3.2-1t64
           else
-            sudo apt-get update && sudo apt-get install -y \
-              build-essential autoconf automake libwxgtk3.2-dev libproj-dev libgdal-dev \
-              liblocale-po-perl unifont python3-sphinx latexmk \
-              texlive-latex-base texlive-latex-extra texlive-fonts-recommended \
-              gdal-bin
-            git clone https://github.com/ojwb/survex.git survex-src
-            cd survex-src
-            git checkout ${{ env.SURVEX_COMMIT }}
-            autoreconf -fiv
+            sudo apt-get update && sudo apt-get install -y build-essential libwxgtk3.2-dev libproj-dev libgdal-dev gdal-bin
+            wget https://survex.com/software/${{ env.SURVEX_VERSION }}/survex-${{ env.SURVEX_VERSION }}.tar.gz
+            tar xf survex-${{ env.SURVEX_VERSION }}.tar.gz
+            cd survex-${{ env.SURVEX_VERSION }}
             ./configure --prefix=$HOME/survex
-            (cd src && python3 igrf2c.py igrf14coeffs.txt && mv ../thgeomagdata.h .)
-            make
+            ma
             make install
           fi
           echo "$HOME/survex/bin" >> $GITHUB_PATH
 
       - name: Build exports
-        run: bash scripts/_legacy/exports/exports.sh ${{ steps.version.outputs.VERSION }}
+        run: uv run jktz-exports ${{ steps.version.outputs.VERSION }}
 
       - name: Build release ZIP
-        run: bash scripts/_legacy/build_release_zip.sh ${{ steps.version.outputs.VERSION }}
+        run: uv run jktz-build-zip ${{ steps.version.outputs.VERSION }}
 
       - name: Extract release notes from CHANGELOG.md
         id: notes
