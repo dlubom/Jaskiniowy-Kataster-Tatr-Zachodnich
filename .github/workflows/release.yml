@@ -67,7 +67,7 @@ jobs:
             tar xf survex-${{ env.SURVEX_VERSION }}.tar.gz
             cd survex-${{ env.SURVEX_VERSION }}
             ./configure --prefix=$HOME/survex
-            ma
+            make
             make install
           fi
           echo "$HOME/survex/bin" >> $GITHUB_PATH
