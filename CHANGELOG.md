@@ -18,11 +18,10 @@ Rozszerono walidacje projektu (migracja do Pythona) oraz poprawiono elementy, kt
 ### Naprawione
 - Nazwy plików dla jaskini Nova Kresanica
 - Wystepujące znaki spoza obszaru ASCII w plikach .SRV
-- Github actions: zunifikowana walidacja Windows oraz Linux - korzystają z tego samego skryptu walidacji
 
 ### Zmienione
 - Struktura skryptow używanych github / docker
-- 
+- Github actions: zunifikowana walidacja Windows oraz Linux - korzystają z tego samego skryptu walidacji
 
 ## [v1.4.1] - 2026-05-17
 
