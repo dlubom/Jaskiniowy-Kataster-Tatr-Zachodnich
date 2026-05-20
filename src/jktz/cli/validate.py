@@ -25,7 +25,6 @@ from jktz.validation import (
     unattached,
 )
 
-
 _EXPORTS_INDENT = " " * 19  # matches the original bash `sed 's/^/<19 spaces>/'`
 
 
