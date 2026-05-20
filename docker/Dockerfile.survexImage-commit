@@ -1,16 +1,12 @@
-# =============================================================================
-# Single-stage image: builds Survex from source and provides all runtime deps.
-# survexport links against GTK3/wxWidgets, so the full build environment must
-# be present at runtime — a lean multi-stage approach is not viable here.
-# Image size is ~1 GB.
-# =============================================================================
+# Same as Dockerfile.survexImage-release but builds Survex from a pinned upstream commit.
+# Use only when testing unreleased Survex fixes.
 FROM ubuntu:24.04
 
 ENV SURVEX_COMMIT=f8e8a88c48e1d48921995b5a5846ae5c10306b8e
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y \
-    build-essential autoconf automake git python3 \
+    build-essential autoconf automake curl git python3 \
     libwxgtk3.2-dev libproj-dev libgdal-dev \
     liblocale-po-perl unifont \
     python3-sphinx latexmk \
@@ -33,5 +29,23 @@ RUN git clone https://github.com/ojwb/survex.git /survex-src \
 
 ENV PATH="/opt/survex/bin:$PATH"
 
-# /project will be the bind-mount point for the host repository
+# uv installer drops binaries in /root/.local; move them to /usr/local so they're on PATH.
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh \
+    && mv /root/.local/bin/uv /usr/local/bin/uv \
+    && mv /root/.local/bin/uvx /usr/local/bin/uvx
+
+# Keep the container venv off the bind-mounted /project (avoids clash with host's .venv).
+ENV UV_PROJECT_ENVIRONMENT=/opt/jktz-venv
+
+# Pre-fetch deps at build time so the first run doesn't need network.
+COPY pyproject.toml uv.lock /tmp/jktz-prefetch/
+RUN cd /tmp/jktz-prefetch \
+    && uv sync --no-install-project --locked \
+    && rm -rf /tmp/jktz-prefetch
+
+# prepare-jktz-venv.sh runs uv sync --locked before exec'ing the container command.
+COPY docker/prepare-jktz-venv.sh /usr/local/bin/prepare-jktz-venv.sh
+RUN chmod +x /usr/local/bin/prepare-jktz-venv.sh
+ENTRYPOINT ["/usr/local/bin/prepare-jktz-venv.sh"]
+
 WORKDIR /project

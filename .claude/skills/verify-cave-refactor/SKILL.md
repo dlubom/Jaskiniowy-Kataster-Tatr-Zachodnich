@@ -111,10 +111,10 @@ Both checkouts run in separate `git worktree`s so the user's working tree is nev
    ```
    If this fails (no network, missing asset, missing `object_id` mapping, or a stale snapshot), stop and report — the comparison would be meaningless without it. Do **not** render in the master worktree; master uses the `OTWORY.SRV` it ships with.
 
-4. **Run the release export pipeline in both worktrees.** Same image, same script, same version label per side:
+4. **Run the release export pipeline in both worktrees.** Same image, same console script, same version label per side:
    ```bash
-   docker run --rm -v "$OUTROOT/master:/project"  jktz-survex bash scripts/_legacy/exports/exports.sh master  exports
-   docker run --rm -v "$OUTROOT/branch:/project" jktz-survex bash scripts/_legacy/exports/exports.sh branch exports
+   docker run --rm -v "$OUTROOT/master:/project"  jktz-survex uv run jktz-exports master  exports
+   docker run --rm -v "$OUTROOT/branch:/project" jktz-survex uv run jktz-exports branch exports
    ```
    Each side produces `exports/JKTZ-{master,branch}.3d`, `.dxf`, `-all.shp`, plus `exports/caves/<cave>.shp` for every cave.
 

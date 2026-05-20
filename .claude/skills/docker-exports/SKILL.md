@@ -5,7 +5,7 @@ Builds the `jktz-survex` Docker image and/or runs the release export pipeline lo
 ## When to use
 
 - When you want to generate export files locally before or after a release (same pipeline as GitHub Actions).
-- When the Docker image needs to be rebuilt (e.g. after changing `SURVEX_VERSION` in `Dockerfile.survexImage-release` or `SURVEX_COMMIT` in `Dockerfile.survexImage-commit`).
+- When the Docker image needs to be rebuilt (e.g. after changing `SURVEX_VERSION` in `Dockerfile.survexImage-release` or `SURVEX_COMMIT` in `Dockerfile.survexImage-commit`, or after a `pyproject.toml` / `uv.lock` change since the image pre-fetches Python deps at build time).
 
 ## Dockerfile variants
 
@@ -70,7 +70,7 @@ docker build -f docker/Dockerfile.survexImage-commit -t jktz-survex .
 ### 3. Run the export (if `DO_RUN=true`)
 
 ```bash
-docker run --rm -v "$(pwd):/project" jktz-survex bash scripts/_legacy/exports/exports.sh VERSION
+docker run --rm -v "$(pwd):/project" jktz-survex uv run jktz-exports VERSION
 ```
 
 Replace `VERSION` with the actual value. Show the full output.
@@ -78,7 +78,7 @@ Replace `VERSION` with the actual value. Show the full output.
 **Windows note:** `$(pwd)` in Git Bash produces a Unix-style path (e.g. `/c/Users/...`) that Docker Desktop on Windows cannot resolve. If the bind mount fails, use the explicit Windows path instead.
 
 ```bash
-docker run --rm -v "C:/path/to/repo:/project" jktz-survex bash scripts/_legacy/exports/exports.sh VERSION
+docker run --rm -v "C:/path/to/repo:/project" jktz-survex uv run jktz-exports VERSION
 ```
 
 ### 4. Report results

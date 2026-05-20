@@ -26,7 +26,7 @@ All commands must be run from the **repository root**.
 docker image inspect jktz-survex > /dev/null 2>&1 && echo "exists" || echo "missing"
 ```
 
-If missing, build it (first time takes several minutes; subsequent builds are near-instant due to layer caching). Default — stable release variant:
+If missing, build it (first time takes several minutes; subsequent builds are near-instant due to layer caching). If the image was built before the bash→Python migration, **rebuild it** so the image picks up `uv` and the `jktz` package. Default — stable release variant:
 
 ```bash
 docker build -f docker/Dockerfile.survexImage-release -t jktz-survex .
@@ -43,13 +43,13 @@ Show the build output. If the build fails, stop and report the error.
 ### 2. Run the validation
 
 ```bash
-docker run --rm -v "$(pwd):/project" jktz-survex bash scripts/_legacy/validation/validate.sh
+docker run --rm -v "$(pwd):/project" jktz-survex uv run jktz-validate
 ```
 
 **Windows note:** `$(pwd)` in Git Bash produces a Unix-style path (e.g. `/c/Users/...`) that Docker Desktop on Windows cannot resolve. If the bind mount fails, use the explicit Windows path instead.
 
 ```bash
-docker run --rm -v "C:/path/to/repo:/project" jktz-survex bash scripts/_legacy/validation/validate.sh
+docker run --rm -v "C:/path/to/repo:/project" jktz-survex uv run jktz-validate
 ```
 
 Show the **full output** to the user.

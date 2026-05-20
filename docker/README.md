@@ -14,16 +14,24 @@ docker build -f docker/Dockerfile.survexImage-release -t jktz-survex .
 docker build -f docker/Dockerfile.survexImage-commit -t jktz-survex .
 ```
 
+Obraz zawiera również `uv` oraz wstępnie zsynchronizowane zależności Pythona (`pyproject.toml` + `uv.lock` z repozytorium są pobierane w czasie budowy obrazu). Entrypoint wykonuje `uv sync --locked` z `/project` (bind-mount), po czym uruchamia komendę przekazaną do `docker run`.
+
 ## Walidacja projektu
 
 ```bash
-docker run --rm -v "$(pwd):/project" jktz-survex bash scripts/_legacy/validation/validate.sh
+docker run --rm -v "$(pwd):/project" jktz-survex uv run jktz-validate
 ```
 
 ## Eksport
 
 ```bash
-docker run --rm -v "$(pwd):/project" jktz-survex bash scripts/_legacy/exports/exports.sh v1.2.6
+docker run --rm -v "$(pwd):/project" jktz-survex uv run jktz-exports v1.2.6
 ```
 
 Podmień `v1.2.6` na dowolna etykietę wersji.
+
+## Spakowanie wydania (ZIP)
+
+```bash
+docker run --rm -v "$(pwd):/project" jktz-survex uv run jktz-build-zip v1.2.6
+```

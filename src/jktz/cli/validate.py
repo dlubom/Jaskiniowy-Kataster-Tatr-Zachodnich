@@ -72,9 +72,9 @@ def main() -> int:
         )
         _run(5, "Checking #prefix values", "#prefix values", prefixes.check)
 
-        print("[6/10] Checking rendered entrance snapshot...")
+        print("[6/10] Checking rendered entrances snapshot...")
         _run_render_check()
-        print("      OK")
+        print("      Rendered entrances snapshot: Passed ✔")
 
         _run(
             7,
