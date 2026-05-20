@@ -6,20 +6,23 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [v1.4.2] - 2026-05-15
 
-Rozszerono walidacje projektu oraz poprawiono elementy, ktore ta walidacja wylapala.
+Rozszerono walidacje projektu (migracja do Pythona) oraz poprawiono elementy, ktore ta walidacja wylapala.
 
 ### Dodano
-- Sprawdzenie poprawnosci nazw plikow i folderow
-- Sprawdzenie separatorow wartosci pomiarowych
-- Walidacja obszaru wystepowania koordynat oraz obiektow exportu
+- Sprawdzenie poprawności nazw plików i folderów
+- Sprawdzenie separatorów wartości pomiarowych
+- Walidacja obszaru występowania koordynat oraz obiektów exportu
+- Skrypt wstępnie konfigurujący środowisko developerskie oraz sprawdzający potrzebne narzędzia/biblioteki
+- Pre-commit, pre-push hooks
 
 ### Naprawione
-- Nazwy plikow dla jaskinia Nova Kresanica
-- Wystepujace znaki spoza obszaru ASCII w plikach .SRV
+- Nazwy plików dla jaskini Nova Kresanica
+- Wystepujące znaki spoza obszaru ASCII w plikach .SRV
+- Github actions: zunifikowana walidacja Windows oraz Linux - korzystają z tego samego skryptu walidacji
 
 ### Zmienione
-- Struktura skryptow uzywanych przez github / docker
-
+- Struktura skryptow używanych github / docker
+- 
 
 ## [v1.4.1] - 2026-05-17
 
