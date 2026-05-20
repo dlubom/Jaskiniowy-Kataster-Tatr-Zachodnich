@@ -26,10 +26,14 @@ from jktz.validation import (
 
 def _reconfigure_streams_utf8() -> None:
     # On Windows ✔ (U+2714) breaks under cp1252 when stdout is redirected.
+    # line_buffering=True flushes on every newline even when stdout isn't a
+    # TTY. Without this, Windows block-buffers stdout in CI and the [N/10]
+    # progress lines only appear at the end of the job (Linux line-buffers by
+    # default, hence the historical asymmetry).
     for stream in (sys.stdout, sys.stderr):
         reconfigure = getattr(stream, "reconfigure", None)
         if reconfigure is not None:
-            reconfigure(encoding="utf-8", errors="replace")
+            reconfigure(encoding="utf-8", errors="replace", line_buffering=True)
 
 
 def _run(step: int, header: str, footer: str, fn: Callable[[], None]) -> None:
