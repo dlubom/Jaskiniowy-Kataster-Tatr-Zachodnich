@@ -51,8 +51,6 @@ EXCLUDE_PATTERNS: tuple[str, ...] = (
     "*.lst",
     "web/*",
     "survex-src/*",
-    "survex-*/*",
-    "survex-*.tar.gz",
     "validate-exports/*",
     "cavern_output.txt",
     "release_notes.md",

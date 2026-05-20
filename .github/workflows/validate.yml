@@ -66,30 +66,11 @@ jobs:
       - name: Sync Python tooling
         run: uv sync --locked
 
-      - name: Cache Survex (Linux)
-        if: runner.os == 'Linux'
-        id: cache-survex
-        uses: actions/cache@v4
-        with:
-          path: ~/survex
-          key: survex-${{ env.SURVEX_VERSION }}-ubuntu
-
       - name: Install Survex (Linux)
         if: runner.os == 'Linux'
-        run: |
-          if [ "${{ steps.cache-survex.outputs.cache-hit }}" = "true" ]; then
-            echo "Using cached Survex"
-            sudo apt-get update && sudo apt-get install -y libproj25 libgdal34t64 gdal-bin libwxgtk3.2-1t64
-          else
-            sudo apt-get update && sudo apt-get install -y build-essential libwxgtk3.2-dev libproj-dev libgdal-dev gdal-bin
-            wget https://survex.com/software/${{ env.SURVEX_VERSION }}/survex-${{ env.SURVEX_VERSION }}.tar.gz
-            tar xf survex-${{ env.SURVEX_VERSION }}.tar.gz
-            cd survex-${{ env.SURVEX_VERSION }}
-            ./configure --prefix=$HOME/survex
-            make
-            make install
-          fi
-          echo "$HOME/survex/bin" >> $GITHUB_PATH
+        uses: ./.github/actions/install-survex
+        with:
+          version: ${{ env.SURVEX_VERSION }}
 
       - name: Install Survex (Windows)
         if: runner.os == 'Windows'
@@ -169,28 +150,10 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: uv run python scripts/render_otwory_from_gps.py
 
-      - name: Cache Survex
-        id: cache-survex
-        uses: actions/cache@v4
-        with:
-          path: ~/survex
-          key: survex-${{ env.SURVEX_VERSION }}-ubuntu
-
       - name: Install Survex
-        run: |
-          if [ "${{ steps.cache-survex.outputs.cache-hit }}" = "true" ]; then
-            echo "Using cached Survex"
-            sudo apt-get update && sudo apt-get install -y libproj25 libgdal34t64 gdal-bin libwxgtk3.2-1t64
-          else
-            sudo apt-get update && sudo apt-get install -y build-essential libwxgtk3.2-dev libproj-dev libgdal-dev gdal-bin
-            wget https://survex.com/software/${{ env.SURVEX_VERSION }}/survex-${{ env.SURVEX_VERSION }}.tar.gz
-            tar xf survex-${{ env.SURVEX_VERSION }}.tar.gz
-            cd survex-${{ env.SURVEX_VERSION }}
-            ./configure --prefix=$HOME/survex
-            make
-            make install
-          fi
-          echo "$HOME/survex/bin" >> $GITHUB_PATH
+        uses: ./.github/actions/install-survex
+        with:
+          version: ${{ env.SURVEX_VERSION }}
 
       - name: Build exports
         run: uv run jktz-exports ${{ steps.package.outputs.version }}
