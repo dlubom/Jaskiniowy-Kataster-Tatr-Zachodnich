@@ -41,6 +41,7 @@ def _wait_for_readable(path: Path, timeout: float = 30.0, interval: float = 0.1)
         time.sleep(interval)
     raise TimeoutError(f"file not settled within {timeout}s: {path}")
 
+
 # Field rename to fit Shapefile/DBF 10-char field-name limit; matches the
 # exports.sh -sql clause verbatim.
 _SHP_SQL = (
@@ -53,18 +54,12 @@ def _cave_names_from_entrances_csv(csv_path: Path) -> list[str]:
 
     Column 4 is the entrance station name like ``Marmurowa:0`` or
     ``WielkaSniezna:Ciag:0``. The cave name is the part before the first ``:``.
+
+    Survex 1.4.20 had a bug where this CSV column used ``.`` as the separator
+    on Windows; the per-cave loop relies on ``:`` so Survex >= 1.4.21 is
+    required for local runs. CI/Docker pins SURVEX_COMMIT to a fixed version
+    via the workflow, so this only affects developer machines.
     """
-    # TODO(phase4-cave-separator): on Windows + Survex 1.4.20, survexport's
-    # --entrances --csv produces station names with `.` as separator
-    # (e.g. ``BandziochKom.000``) rather than the `:` used in OTWORY.SRV.
-    # The per-cave loop then calls ``survexport --survey=BandziochKom.000``
-    # which fails with "No survey data in 3d file" because the survey name
-    # contains the entrance station suffix, not just the cave prefix.
-    # The bash exports.sh used ``sed 's/:.*//'`` and presumably worked in
-    # the Docker container - investigate whether the Linux Survex CSV
-    # output uses `:` instead, or whether the bash version was also broken
-    # but never exercised this code path. Likely fix: split on either `:`
-    # or `.` (whichever appears first), and re-test with /docker-exports.
     caves: set[str] = set()
     with csv_path.open(encoding="utf-8", newline="") as f:
         reader = csv.reader(f)
@@ -149,12 +144,6 @@ def run_exports(
         for cave in _cave_names_from_entrances_csv(entrances_csv):
             print(f"      -> {cave}")
             cave_dxf = tmp / f"{cave}.dxf"
-            # TODO(phase4-cave-separator): see _cave_names_from_entrances_csv -
-            # ``cave`` here may be ``BandziochKom.000`` (with the entrance
-            # station appended) instead of just ``BandziochKom``. survexport
-            # then exits 0 without producing the .dxf, and _wait_for_readable
-            # below times out after 30s. Same fix as the helper above will
-            # unblock this loop. Verify against /docker-exports before fixing.
             tools.survexport(
                 [
                     "--legs",
