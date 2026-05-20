@@ -32,22 +32,18 @@ def _resolve(tool: str) -> str:
     return resolved
 
 
-def _run_capturing(cmd: list[str], cwd: Path | None = None) -> None:
-    """Run cmd to completion, inheriting stdout/stderr. Raise on non-zero exit."""
-    cmd = [_resolve(cmd[0]), *cmd[1:]]
-    try:
-        subprocess.run(cmd, check=True, cwd=str(cwd) if cwd else None)
-    except subprocess.CalledProcessError as exc:
-        raise ExternalToolError(
-            f"{Path(cmd[0]).name} failed with exit code {exc.returncode}"
-        ) from exc
+def _stream_subprocess(
+    cmd: list[str],
+    cwd: Path | None = None,
+    log_to: Path | None = None,
+) -> None:
+    """Run ``cmd``, streaming its combined stdout/stderr through ``sys.stdout``.
 
-
-def _run_tee(cmd: list[str], log_path: Path, cwd: Path | None = None) -> None:
-    """Run cmd, stream combined stdout+stderr to our stdout AND a log file.
-
-    Matches the bash idiom ``cmd 2>&1 | tee log.txt`` — used for cavern so the
-    cavern log is both visible live and saved for the unattached-station check.
+    Routing the output through Python's text stream (rather than subprocess
+    inheriting our fd 1 or writing direct bytes to ``sys.stdout.buffer``) is
+    what lets ``_indent_stdout`` in the orchestrator catch every line and
+    prefix it. Optionally also tees the raw bytes to ``log_to`` (used for the
+    cavern log that the unattached-station check later greps).
     """
     cmd = [_resolve(cmd[0]), *cmd[1:]]
     proc = subprocess.Popen(
@@ -57,13 +53,19 @@ def _run_tee(cmd: list[str], log_path: Path, cwd: Path | None = None) -> None:
         cwd=str(cwd) if cwd else None,
         bufsize=0,
     )
-
     assert proc.stdout is not None
-    with log_path.open("wb") as logf:
+
+    logf = log_to.open("wb") if log_to is not None else None
+    try:
         for chunk in iter(lambda: proc.stdout.read(4096), b""):
-            sys.stdout.buffer.write(chunk)
+            if logf is not None:
+                logf.write(chunk)
+            sys.stdout.write(chunk.decode("utf-8", errors="replace"))
             sys.stdout.flush()
-            logf.write(chunk)
+    finally:
+        if logf is not None:
+            logf.close()
+
     ret = proc.wait()
     if ret != 0:
         raise ExternalToolError(f"{Path(cmd[0]).name} failed with exit code {ret}")
@@ -75,18 +77,14 @@ def cavern(
     log_to: Path | None = None,
 ) -> None:
     """Run Survex's ``cavern`` to compile a .wpj or .svx project file."""
-    cmd = ["cavern", *args]
-    if log_to is not None:
-        _run_tee(cmd, log_to, cwd=cwd)
-    else:
-        _run_capturing(cmd, cwd=cwd)
+    _stream_subprocess(["cavern", *args], cwd=cwd, log_to=log_to)
 
 
 def survexport(args: list[str], cwd: Path | None = None) -> None:
     """Run Survex's ``survexport`` to export .3d into DXF/CSV/etc."""
-    _run_capturing(["survexport", *args], cwd=cwd)
+    _stream_subprocess(["survexport", *args], cwd=cwd)
 
 
 def ogr2ogr(args: list[str], cwd: Path | None = None) -> None:
     """Run GDAL's ``ogr2ogr`` to convert between vector formats."""
-    _run_capturing(["ogr2ogr", *args], cwd=cwd)
+    _stream_subprocess(["ogr2ogr", *args], cwd=cwd)

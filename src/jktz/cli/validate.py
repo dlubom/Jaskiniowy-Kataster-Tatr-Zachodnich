@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+import contextlib
 import shutil
 import subprocess
 import sys
-from collections.abc import Callable
+from collections.abc import Callable, Iterator
 from pathlib import Path
+from typing import TextIO
 
 from jktz.exports import pipeline
 from jktz.exports import tools as exports_tools
@@ -22,6 +24,53 @@ from jktz.validation import (
     shapefiles_extent,
     unattached,
 )
+
+
+_EXPORTS_INDENT = " " * 19  # matches the original bash `sed 's/^/<19 spaces>/'`
+
+
+class _IndentingStream:
+    """Wrap a stream and prefix every line with ``prefix`` on write.
+
+    Mirrors the bash idiom ``... | sed 's/^/<spaces>/'`` we used to apply to
+    exports.sh output, so step 10's exports pipeline (which is loud) stands
+    out from the rest of the validation log. Forwards every other attribute
+    to the wrapped stream so existing callers (flush, encoding, fileno, …)
+    keep working.
+    """
+
+    def __init__(self, target: TextIO, prefix: str) -> None:
+        self._target = target
+        self._prefix = prefix
+        self._at_line_start = True
+
+    def write(self, text: str) -> int:
+        if not text:
+            return 0
+        out_parts: list[str] = []
+        for line in text.splitlines(keepends=True):
+            if self._at_line_start:
+                out_parts.append(self._prefix)
+            out_parts.append(line)
+            self._at_line_start = line.endswith(("\n", "\r"))
+        return self._target.write("".join(out_parts))
+
+    def flush(self) -> None:
+        self._target.flush()
+
+    def __getattr__(self, name: str):  # type: ignore[override]
+        return getattr(self._target, name)
+
+
+@contextlib.contextmanager
+def _indent_stdout(prefix: str = _EXPORTS_INDENT) -> Iterator[None]:
+    """Indent every line printed during the ``with`` block by ``prefix``."""
+    original = sys.stdout
+    sys.stdout = _IndentingStream(original, prefix)  # type: ignore[assignment]
+    try:
+        yield
+    finally:
+        sys.stdout = original
 
 
 def _reconfigure_streams_utf8() -> None:
@@ -99,7 +148,8 @@ def main() -> int:
 
         print("[10/10] Checking exports...")
         try:
-            pipeline.run_exports(version=exports_version, outdir=exports_dir)
+            with _indent_stdout():
+                pipeline.run_exports(version=exports_version, outdir=exports_dir)
             empty_shapefiles.check(outdir=exports_dir)
             shapefiles_count.check(outdir=exports_dir, version=exports_version)
             shapefiles_extent.check(outdir=exports_dir, version=exports_version)
