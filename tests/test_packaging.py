@@ -23,6 +23,11 @@ def test_is_excluded_matches_known_patterns() -> None:
     assert is_excluded("pyproject.toml")
     assert is_excluded(".idea/workspace.xml")
     assert is_excluded(".vscode/settings.json")
+    assert is_excluded(".gitattributes")
+    assert is_excluded(".pre-commit-config.yaml")
+    assert is_excluded("survex-1.4.21/configure")
+    assert is_excluded("survex-1.4.21/src/cavern.c")
+    assert is_excluded("survex-1.4.21.tar.gz")
 
 
 def test_is_excluded_keeps_real_data_files() -> None:
