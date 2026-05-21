@@ -4,7 +4,7 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
-## [v1.4.2] - 2026-05-15
+## [v1.4.2] - 2026-05-21
 
 Rozszerono walidacje projektu (migracja do Pythona) oraz poprawiono elementy, ktore ta walidacja wylapala.
 
