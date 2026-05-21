@@ -1,7 +1,7 @@
 # Pre-commit / pre-push hooks for Jaskiniowy Kataster Tatr Zachodnich.
 #
 # Install once after cloning:
-#     python initial-setup.py
+#     python scripts/initial-setup.py
 #
 # Hooks use `uv run` so the ruff / pytest versions match pyproject.toml's
 # dev dependency group (no version drift between the hook and CI).
