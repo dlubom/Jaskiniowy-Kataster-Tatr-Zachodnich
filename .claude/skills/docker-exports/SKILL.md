@@ -1,6 +1,6 @@
 # Skill: docker-exports
 
-Builds the `jktz-survex` Docker image and/or runs the release export pipeline locally, producing `.3d`, `.dxf`, `.shp`, and `.err` files in `exports/JKTZ-<VERSION>/`.
+Builds the `jktz-survex` Docker image and/or runs the release export pipeline locally, producing `.3d`, `.dxf`, `.shp`, and `.err` files in `<OUTDIR>/` (default `exports/`), with version embedded in filenames.
 
 ## When to use
 
@@ -19,18 +19,20 @@ Default to the `release` variant unless the user asks for the commit-based image
 ## Usage
 
 ```
-/docker-exports [VERSION]
+/docker-exports [VERSION] [OUTDIR]
 /docker-exports --build-only
-/docker-exports --run-only [VERSION]
+/docker-exports --run-only [VERSION] [OUTDIR]
 ```
 
-- `VERSION` — version label for the output directory, e.g. `v1.2.6`. Defaults to `local`.
+- `VERSION` — version label embedded in output filenames, e.g. `v1.2.6`. Defaults to `local`.
+- `OUTDIR` — output directory (host-relative, must be inside the bind-mounted repo). Defaults to `exports`.
 - `--build-only` — only build (or rebuild) the Docker image, do not run exports.
 - `--run-only` — skip the build step and run exports immediately (image must already exist).
 
 Examples:
 ```
 /docker-exports v1.2.6
+/docker-exports v1.2.6 exports/pr-check
 /docker-exports --build-only
 /docker-exports --run-only v1.2.7
 /docker-exports
@@ -47,6 +49,7 @@ All commands must be run from the **repository root**.
   - If `--run-only`: set `DO_BUILD=false`, `DO_RUN=true`
   - Otherwise (default): set `DO_BUILD=true`, `DO_RUN=true`
 - Set `VERSION` from the first non-flag argument, defaulting to `local`.
+- Set `OUTDIR` from the second non-flag argument, defaulting to `exports`. If supplied, omit it from the container command when it equals `exports` to match CI behaviour exactly.
 
 ### 2. Build the Docker image (if `DO_BUILD=true`)
 
@@ -70,21 +73,37 @@ docker build -f docker/Dockerfile.survexImage-commit -t jktz-survex .
 ### 3. Run the export (if `DO_RUN=true`)
 
 ```bash
-docker run --rm -v "$(pwd):/project" jktz-survex uv run jktz-exports VERSION
+docker run --rm -v "$(pwd):/project" jktz-survex uv run jktz-exports VERSION [OUTDIR]
 ```
 
-Replace `VERSION` with the actual value. Show the full output.
+Replace `VERSION` (and `OUTDIR` if non-default) with the actual values. Show the full output.
+
+`OUTDIR` is resolved **inside the container**, so it must point to a path within the bind-mounted `/project` (i.e. a host-relative path inside the repo) — otherwise the files won't appear on the host.
 
 **Windows note:** `$(pwd)` in Git Bash produces a Unix-style path (e.g. `/c/Users/...`) that Docker Desktop on Windows cannot resolve. If the bind mount fails, use the explicit Windows path instead.
 
 ```bash
-docker run --rm -v "C:/path/to/repo:/project" jktz-survex uv run jktz-exports VERSION
+docker run --rm -v "C:/path/to/repo:/project" jktz-survex uv run jktz-exports VERSION [OUTDIR]
 ```
 
 ### 4. Report results
 
-After a successful run, tell the user:
-- Output directory: `exports/JKTZ-<VERSION>/`
-- Any `error:` or warning lines from the cavern log (found in `exports/JKTZ-<VERSION>/JKTZ-<VERSION>-cavern-log.txt`)
+After a successful run, tell the user where the artefacts landed. The pipeline writes files **directly into `<OUTDIR>/`** — the version is embedded in each filename:
+
+```
+<OUTDIR>/
+├── JKTZ-<VERSION>-cavern-log.txt
+├── JKTZ-<VERSION>.3d
+├── JKTZ-<VERSION>.err
+├── JKTZ-<VERSION>.dxf
+├── JKTZ-<VERSION>-all.shp   (+ .shx, .dbf, .prj sidecars)
+└── caves/
+    ├── <CaveName>.shp       (+ sidecars)
+    └── ...
+```
+
+Surface to the user:
+- The output directory path (e.g. `exports/`).
+- Any `error:` or warning lines from `<OUTDIR>/JKTZ-<VERSION>-cavern-log.txt`.
 
 If the export step fails, show the error and suggest checking the cavern log for details.
