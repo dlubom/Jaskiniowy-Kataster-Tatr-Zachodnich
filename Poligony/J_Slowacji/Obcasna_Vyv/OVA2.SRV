@@ -40,7 +40,7 @@ INSTRUMENT		"unknown-diving"
 18.0	19.0	8	100	11.7	11
 ;Korekta dystansu 19.0->20.0: oryginalny pomiar 1.5 m, ale zmiana glebokosci
 ;wynosi 2.5 m (z 11 m na 8.5 m), co jest fizycznie niemozliwe przy takim dystansie.
-;Dane zrodlowe (_RAW/Nurkowanie.txt): "135;8,5;1,5" — wartosc potwierdzona.
+;Dane zrodlowe (_RAW/Nurkowanie.txt): "135;8,5;1,5" - wartosc potwierdzona.
 ;Autor pomiarow (Dominik 'Honzo' Graczyk) potwierdzil, ze zapisy robil dokladnie,
 ;ale nie jest w stanie jednoznacznie rozstrzygnac zrodla bledu. Zalecil skorygowac
 ;dystans z adnotacja o niepewnosci. Dystans zmieniony z 1.5 na 2.5 m (= zmiana

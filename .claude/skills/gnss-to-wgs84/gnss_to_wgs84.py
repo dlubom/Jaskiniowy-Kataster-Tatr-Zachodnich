@@ -29,7 +29,7 @@ except ImportError:
 TATRA_X_MIN, TATRA_X_MAX = 140_000, 170_000
 TATRA_Y_MIN, TATRA_Y_MAX = 550_000, 580_000
 
-# WGS84 bounding box for the Tatra Mountains (PL + SK)
+# WGS84 extent for the Tatra Mountains (PL + SK)
 TATRA_LAT_MIN, TATRA_LAT_MAX = 49.15, 49.30
 TATRA_LON_MIN, TATRA_LON_MAX = 19.75, 20.15
 
@@ -106,7 +106,7 @@ def main():
 
     lat, lon = convert(x, y)
 
-    # Validate output (WGS84 Tatra bbox)
+    # Validate output (WGS84 Tatra extent)
     for w in validate_output(lat, lon):
         print(w, file=sys.stderr)
 

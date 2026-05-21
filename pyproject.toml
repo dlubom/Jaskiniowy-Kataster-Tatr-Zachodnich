@@ -1,14 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "jktz-release-tools"
 version = "0.1.0"
 requires-python = ">=3.9"
-dependencies = []
+dependencies = [
+  "pyproj>=3.6",
+  "pyogrio>=0.8",
+]
+
+[project.scripts]
+jktz-validate = "jktz.cli.validate:main"
+jktz-exports = "jktz.cli.exports:main"
+jktz-build-zip = "jktz.cli.build_zip:main"
 
 [dependency-groups]
 dev = [
   "pytest>=8.0,<9.0",
   "ruff>=0.12,<1.0",
+  "pre-commit>=4.0,<5.0",
 ]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/jktz"]
 
 [tool.ruff]
 line-length = 100

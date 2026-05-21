@@ -4,7 +4,7 @@
 #Units DECL=3.5
 #u meters
 #units order=dva
-#note LTsbb0   -113,0m
+#note LTsbb0   -113.0m
 #note LTsbb26  Kolektor
 sbb0	sbb0a	7.34	-25	153	#s domiar
 sbb0a	sbb1	7.59	26	212

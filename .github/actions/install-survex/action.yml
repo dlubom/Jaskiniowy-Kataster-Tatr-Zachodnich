@@ -1,0 +1,39 @@
+name: Install Survex (Linux)
+description: >
+  Build and install Survex on Ubuntu runners, caching the install prefix at
+  ~/survex. The source tarball and build tree live in $RUNNER_TEMP so they
+  never land inside the repo checkout (otherwise jktz-build-zip would pack
+  them into the release ZIP).
+
+inputs:
+  version:
+    description: Survex version (e.g. 1.4.21)
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Cache Survex
+      id: cache
+      uses: actions/cache@v4
+      with:
+        path: ~/survex
+        key: survex-${{ inputs.version }}-ubuntu
+
+    - name: Install Survex
+      shell: bash
+      run: |
+        if [ "${{ steps.cache.outputs.cache-hit }}" = "true" ]; then
+          echo "Using cached Survex"
+          sudo apt-get update && sudo apt-get install -y libproj25 libgdal34t64 gdal-bin libwxgtk3.2-1t64
+        else
+          sudo apt-get update && sudo apt-get install -y build-essential libwxgtk3.2-dev libproj-dev libgdal-dev gdal-bin
+          cd "$RUNNER_TEMP"
+          wget "https://survex.com/software/${{ inputs.version }}/survex-${{ inputs.version }}.tar.gz"
+          tar xf "survex-${{ inputs.version }}.tar.gz"
+          cd "survex-${{ inputs.version }}"
+          ./configure --prefix="$HOME/survex"
+          make
+          make install
+        fi
+        echo "$HOME/survex/bin" >> "$GITHUB_PATH"

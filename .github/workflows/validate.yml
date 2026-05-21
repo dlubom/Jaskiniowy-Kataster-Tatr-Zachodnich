@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 env:
-  SURVEX_COMMIT: "f8e8a88c48e1d48921995b5a5846ae5c10306b8e"
+  SURVEX_VERSION: "1.4.21"
 
 jobs:
   python-tools:
@@ -34,8 +34,8 @@ jobs:
 
       - name: Run Ruff and Pytest
         run: |
-          uv run ruff format --check scripts tests
-          uv run ruff check scripts tests
+          uv run ruff format --check src scripts tests
+          uv run ruff check src scripts tests
           uv run pytest
 
       - name: Check rendered entrance snapshot
@@ -58,187 +58,55 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Cache Survex (Linux)
-        if: runner.os == 'Linux'
-        id: cache-survex
-        uses: actions/cache@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
-          path: ~/survex
-          key: survex-${{ env.SURVEX_COMMIT }}-ubuntu
+          enable-cache: true
+
+      - name: Sync Python tooling
+        run: uv sync --locked
 
       - name: Install Survex (Linux)
         if: runner.os == 'Linux'
-        run: |
-          if [ "${{ steps.cache-survex.outputs.cache-hit }}" = "true" ]; then
-            echo "Using cached Survex"
-            sudo apt-get update && sudo apt-get install -y libproj25 libgdal34t64 gdal-bin libwxgtk3.2-1t64
-          else
-            sudo apt-get update && sudo apt-get install -y build-essential autoconf automake libwxgtk3.2-dev libproj-dev libgdal-dev liblocale-po-perl unifont python3-sphinx latexmk texlive-latex-base texlive-latex-extra texlive-fonts-recommended gdal-bin
-            git clone https://github.com/ojwb/survex.git survex-src
-            cd survex-src
-            git checkout ${{ env.SURVEX_COMMIT }}
-            autoreconf -fiv
-            ./configure --prefix=$HOME/survex
-            (cd src && python3 igrf2c.py igrf14coeffs.txt && mv ../thgeomagdata.h .)
-            make
-            make install
-          fi
-          echo "$HOME/survex/bin" >> $GITHUB_PATH
-
-      - name: Cache Survex (Windows)
-        if: runner.os == 'Windows'
-        id: cache-survex-win
-        uses: actions/cache@v4
+        uses: ./.github/actions/install-survex
         with:
-          path: C:\survex
-          key: survex-${{ env.SURVEX_COMMIT }}-windows
+          version: ${{ env.SURVEX_VERSION }}
 
-      - name: Setup MSYS2 (Windows)
-        if: runner.os == 'Windows'
-        uses: msys2/setup-msys2@v2
-        with:
-          msystem: MINGW64
-          update: false
-          install: >-
-            git
-            make
-            autoconf
-            automake
-            mingw-w64-x86_64-toolchain
-            mingw-w64-x86_64-proj
-            mingw-w64-x86_64-gdal
-            mingw-w64-x86_64-wxwidgets3.2-msw
-
-      - name: Build Survex (Windows)
-        if: runner.os == 'Windows' && steps.cache-survex-win.outputs.cache-hit != 'true'
-        shell: msys2 {0}
-        run: |
-          curl -L https://cpanmin.us | perl - --notest Locale::PO
-          git clone https://github.com/ojwb/survex.git survex-src
-          cd survex-src
-          git checkout ${{ env.SURVEX_COMMIT }}
-          autoreconf -fiv
-          ./configure --prefix=/c/survex --disable-dependency-tracking
-          # Generate thgeomagdata.h (needed by cavern, skipped by targeted make)
-          (cd src && python3 igrf2c.py igrf14coeffs.txt && mv ../thgeomagdata.h .)
-          # unifont.hex needed by lib/ build (no MSYS2 package available)
-          curl -L "https://ftp.gnu.org/gnu/unifont/unifont-17.0.04/unifont_all-17.0.04.hex.gz" | gunzip > lib/unifont.hex
-          # Partial build: message files + cavern only, skip aven and docs
-          make -C lib
-          make -C src cavern.exe
-          mkdir -p /c/survex/bin
-          install src/cavern.exe /c/survex/bin/cavern.exe
-          # Bundle MSYS2 DLLs so cavern.exe works outside MSYS2 shell
-          ldd src/cavern.exe | grep '/mingw64/bin' | awk '{print $3}' | xargs -I{} cp {} /c/survex/bin/
-          # On Windows, cavern looks for message files in its own directory
-          cp lib/*.msg /c/survex/bin/
-
-      - name: Add Survex to PATH (Windows)
+      - name: Install Survex (Windows)
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          echo "C:\survex\bin" >> $env:GITHUB_PATH
-          echo "C:\msys64\mingw64\bin" >> $env:GITHUB_PATH
+          Invoke-WebRequest -Uri "https://survex.com/software/${{ env.SURVEX_VERSION }}/survex-microsoft-windows-${{ env.SURVEX_VERSION }}.exe" -OutFile survex-installer.exe
+          Start-Process -Wait -FilePath .\survex-installer.exe -ArgumentList '/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART'
+          echo "C:\Program Files (x86)\Survex" >> $env:GITHUB_PATH
 
-      - name: Run full validation (Linux)
-        if: runner.os == 'Linux'
+      - name: Install GDAL (Windows)
+        if: runner.os == 'Windows'
+        uses: mamba-org/setup-micromamba@v2
+        with:
+          micromamba-version: latest
+          environment-name: gdal-env
+          create-args: >-
+            -c conda-forge
+            gdal
+          cache-environment: true
+          init-shell: powershell
+
+      - name: Add GDAL to PATH (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          # conda-forge GDAL lays binaries under <env>/Library/bin on Windows.
+          $envBin = (Get-ChildItem -Path "$env:MAMBA_ROOT_PREFIX\envs" -Filter "ogr2ogr.exe" -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1).FullName
+          if (-not $envBin) { throw "ogr2ogr.exe not found inside the gdal-env micromamba environment" }
+          $gdalBin = Split-Path -Path $envBin -Parent
+          Write-Host "GDAL bin dir: $gdalBin"
+          echo "$gdalBin" >> $env:GITHUB_PATH
+
+      - name: Run full validation
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: bash docker/validate.sh
-
-      - name: Check rendered entrance snapshot (Windows)
-        if: runner.os == 'Windows'
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: python scripts/render_otwory_from_gps.py --check
-
-      - name: Compile with cavern (Windows)
-        if: runner.os == 'Windows'
-        shell: msys2 {0}
-        run: |
-          export PATH="/c/survex/bin:$PATH"
-          export PROJ_LIB=/mingw64/share/proj
-          export GDAL_DATA=/mingw64/share/gdal
-          cavern KATASTER.wpj 2>&1 | tee cavern_output.txt
-
-      - name: Check for unattached stations (Windows)
-        if: runner.os == 'Windows'
-        shell: bash
-        run: |
-          if grep -qE "not attached to a (fixed|control) point" cavern_output.txt; then
-            echo "::error::Cavern detected survey stations not attached to a fixed point:"
-            sed -n '/not attached to a .* point/,/^$/p' cavern_output.txt
-            exit 1
-          fi
-
-      # --- Walls GUI automation (DISABLED) ---
-      # Status: Walls installs and launches OK on GitHub runners.
-      # AppActivate works, F9 (compile) is sent, but no output is produced.
-      # Likely cause: F9 opens a compile dialog requiring mouse interaction,
-      # or the project tree node isn't selected. Walls has no CLI mode.
-      # Since cavern validates the same data, this adds no value until
-      # Walls gets a command-line compile option.
-      #
-      # Install path: C:\Program Files (x86)\Walls Cave Survey\Walls v2\Walls32.exe
-      # MSI: https://github.com/wallscavesurvey/walls/releases/download/v2.2/WallsInstaller-2.2-2024-12-21.msi
-      #
-      # To re-enable: uncomment the steps below.
-      #
-      # - name: Install Walls (Windows, experimental)
-      #   if: runner.os == 'Windows'
-      #   continue-on-error: true
-      #   shell: pwsh
-      #   run: |
-      #     $msiUrl = 'https://github.com/wallscavesurvey/walls/releases/download/v2.2/WallsInstaller-2.2-2024-12-21.msi'
-      #     $msiPath = Join-Path $env:RUNNER_TEMP 'walls.msi'
-      #     Invoke-WebRequest -Uri $msiUrl -OutFile $msiPath
-      #     Start-Process msiexec.exe -ArgumentList @('/i', $msiPath, '/qn', '/norestart') -Wait
-      #     $candidates = @(
-      #       (Join-Path $env:ProgramFiles 'Walls Cave Survey\Walls v2\Walls32.exe'),
-      #       (Join-Path ${env:ProgramFiles(x86)} 'Walls Cave Survey\Walls v2\Walls32.exe')
-      #     )
-      #     $wallsExe = $candidates | Where-Object { Test-Path $_ } | Select-Object -First 1
-      #     if ($wallsExe) {
-      #       Write-Host "Walls installed at: $wallsExe"
-      #     } else {
-      #       Write-Host "::warning::Walls32.exe not found"
-      #     }
-      #
-      # - name: Compile with Walls (Windows, experimental)
-      #   if: runner.os == 'Windows'
-      #   continue-on-error: true
-      #   shell: pwsh
-      #   run: |
-      #     Add-Type -AssemblyName System.Windows.Forms
-      #     $wshell = New-Object -ComObject WScript.Shell
-      #     $candidates = @(
-      #       (Join-Path $env:ProgramFiles 'Walls Cave Survey\Walls v2\Walls32.exe'),
-      #       (Join-Path ${env:ProgramFiles(x86)} 'Walls Cave Survey\Walls v2\Walls32.exe')
-      #     )
-      #     $wallsExe = $candidates | Where-Object { Test-Path $_ } | Select-Object -First 1
-      #     if (-not $wallsExe) { throw "Walls32.exe not found" }
-      #     $proj = Join-Path $env:GITHUB_WORKSPACE 'KATASTER.wpj'
-      #     $proc = Start-Process -FilePath $wallsExe -ArgumentList @($proj) -WorkingDirectory $env:GITHUB_WORKSPACE -PassThru
-      #     Start-Sleep -Seconds 20
-      #     $wshell.AppActivate($proc.Id)
-      #     $wshell.SendKeys('{F9}')
-      #     Start-Sleep -Seconds 60
-      #     $wshell.SendKeys('%{F4}')
-      #     try { $proc.WaitForExit(30000) } catch { }
-      #     if (-not $proc.HasExited) { Stop-Process -Id $proc.Id -Force }
-      #
-      # - name: List Walls output (Windows, experimental)
-      #   if: runner.os == 'Windows'
-      #   continue-on-error: true
-      #   shell: pwsh
-      #   run: |
-      #     $outDir = Join-Path $env:GITHUB_WORKSPACE 'KATASTER'
-      #     if (Test-Path $outDir) {
-      #       Write-Host "=== KATASTER/ output files ==="
-      #       Get-ChildItem $outDir -Recurse | Format-Table Name, Length, LastWriteTime -AutoSize
-      #     } else {
-      #       Write-Host "::warning::KATASTER/ directory not created"
-      #     }
+        run: uv run jktz-validate
 
   pr-release-package:
     if: github.event_name == 'pull_request'
@@ -282,40 +150,16 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: uv run python scripts/render_otwory_from_gps.py
 
-      - name: Cache Survex
-        id: cache-survex
-        uses: actions/cache@v4
-        with:
-          path: ~/survex
-          key: survex-${{ env.SURVEX_COMMIT }}-ubuntu
-
       - name: Install Survex
-        run: |
-          if [ "${{ steps.cache-survex.outputs.cache-hit }}" = "true" ]; then
-            echo "Using cached Survex"
-            sudo apt-get update && sudo apt-get install -y libproj25 libgdal34t64 gdal-bin libwxgtk3.2-1t64
-          else
-            sudo apt-get update && sudo apt-get install -y \
-              build-essential autoconf automake libwxgtk3.2-dev libproj-dev libgdal-dev \
-              liblocale-po-perl unifont python3-sphinx latexmk \
-              texlive-latex-base texlive-latex-extra texlive-fonts-recommended \
-              gdal-bin
-            git clone https://github.com/ojwb/survex.git survex-src
-            cd survex-src
-            git checkout ${{ env.SURVEX_COMMIT }}
-            autoreconf -fiv
-            ./configure --prefix=$HOME/survex
-            (cd src && python3 igrf2c.py igrf14coeffs.txt && mv ../thgeomagdata.h .)
-            make
-            make install
-          fi
-          echo "$HOME/survex/bin" >> $GITHUB_PATH
+        uses: ./.github/actions/install-survex
+        with:
+          version: ${{ env.SURVEX_VERSION }}
 
       - name: Build exports
-        run: bash docker/exports.sh ${{ steps.package.outputs.version }}
+        run: uv run jktz-exports ${{ steps.package.outputs.version }}
 
       - name: Build PR release ZIP
-        run: bash scripts/build_release_zip.sh ${{ steps.package.outputs.version }}
+        run: uv run jktz-build-zip ${{ steps.package.outputs.version }}
 
       - name: Upload PR release ZIP
         id: upload

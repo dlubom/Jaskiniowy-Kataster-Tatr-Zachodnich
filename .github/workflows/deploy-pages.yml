@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  SURVEX_COMMIT: "f8e8a88c48e1d48921995b5a5846ae5c10306b8e"
+  SURVEX_VERSION: "1.4.21"
   CAVEVIEW_VERSION: "2.9.0"
 
 jobs:
@@ -31,30 +31,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Cache Survex
-        id: cache-survex
-        uses: actions/cache@v4
-        with:
-          path: ~/survex
-          key: survex-${{ env.SURVEX_COMMIT }}-ubuntu
-
       - name: Install Survex
-        run: |
-          if [ "${{ steps.cache-survex.outputs.cache-hit }}" = "true" ]; then
-            echo "Using cached Survex"
-            sudo apt-get update && sudo apt-get install -y libproj25 libgdal34t64
-          else
-            sudo apt-get update && sudo apt-get install -y build-essential autoconf automake libwxgtk3.2-dev libproj-dev libgdal-dev liblocale-po-perl unifont python3-sphinx latexmk texlive-latex-base texlive-latex-extra texlive-fonts-recommended
-            git clone https://github.com/ojwb/survex.git survex-src
-            cd survex-src
-            git checkout ${{ env.SURVEX_COMMIT }}
-            autoreconf -fiv
-            ./configure --prefix=$HOME/survex
-            (cd src && python3 igrf2c.py igrf14coeffs.txt && mv ../thgeomagdata.h .)
-            make
-            make install
-          fi
-          echo "$HOME/survex/bin" >> $GITHUB_PATH
+        uses: ./.github/actions/install-survex
+        with:
+          version: ${{ env.SURVEX_VERSION }}
 
       - name: Compile with cavern
         run: cavern KATASTER.wpj

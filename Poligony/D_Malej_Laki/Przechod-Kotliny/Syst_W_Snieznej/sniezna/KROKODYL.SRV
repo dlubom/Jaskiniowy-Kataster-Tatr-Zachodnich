@@ -13,7 +13,7 @@ gk5	gk6	220	0	1.60
 gk6	gk7	255	50	5.40
 ;TODO: duplikat odcinkow gk7-gk320 (mniej precyzyjne wartosci).
 ;  Bardziej precyzyjne pomiary w dalszej czesci pliku (odcinki gkPL).
-;  Azymut gk7->gk314 rozni sie znacznie: 10 vs 103.16 — do weryfikacji.
+;  Azymut gk7->gk314 rozni sie znacznie: 10 vs 103.16 - do weryfikacji.
 ;gk7	gk314	10	0	0.80
 ;gk314	gk315	0	90	3.50
 ;gk315	gk316	67	0	1.20
