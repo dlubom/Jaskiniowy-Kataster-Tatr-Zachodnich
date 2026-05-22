@@ -1,0 +1,8 @@
+#Units Order=DAV
+#Units meters
+#Units A=D V=D
+;Pom S. Kotarba J. Varey 1981
+O028       	O028001	2.86	278	32
+O028001	O028002	5.99	330	7
+O028002	O028003	5.73	8	2
+O028003	O028004	3.51	42	5

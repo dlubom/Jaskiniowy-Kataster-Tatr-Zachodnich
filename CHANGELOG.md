@@ -4,6 +4,18 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.4.3] - 2026-05-22
+
+Dodano brakujace pomiary partii za 3 dnem w Bandziochu Kominiarskim.
+
+### Dodano
+- Ciag Nowego 3 Dna oraz ciag Surferow do Bandziocha Kominiarskiego
+- Surowa paczke Walls+Survex od Witolda Hoffmanna w `_RAW`
+- Raport porownania paczki Witolda z obecnymi plikami Bandziocha
+
+### Zmienione
+- `KATASTER.wpj` wlacza nowe ciagi Bandziocha pod `Ciag 3 Dna`
+
 ## [v1.4.2] - 2026-05-21
 
 Rozszerono walidacje projektu (migracja do Pythona) oraz poprawiono elementy, ktore ta walidacja wylapala.

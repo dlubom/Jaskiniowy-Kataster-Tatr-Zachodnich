@@ -316,6 +316,12 @@
 .BOOK	Ciag 3 Dna
 .NAME	BK-C3D
 .STATUS	8
+.SURVEY	Surferow
+.NAME	SURFEROW
+.STATUS	8
+.SURVEY	Ciag Nowego 3 Dna - Stopnie
+.NAME	BK-N3D-G
+.STATUS	8
 .SURVEY	Boki Ciagu 3 Dna - Grady
 .NAME	BK-B3D-G
 .STATUS	8

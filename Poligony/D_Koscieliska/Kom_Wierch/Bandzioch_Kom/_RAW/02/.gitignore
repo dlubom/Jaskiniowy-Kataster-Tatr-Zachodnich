@@ -1,0 +1,3 @@
+# Preserve this archival package even though repo-wide rules ignore compiled outputs.
+!*
+!*/

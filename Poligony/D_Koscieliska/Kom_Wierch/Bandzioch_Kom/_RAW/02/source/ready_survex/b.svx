@@ -1,0 +1,9 @@
+*begin b
+*include N3D.svx
+*include CSD.svx
+*include Surferow.svx
+
+*equate N3D.BD053 CSD.BD053
+*equate N3D.Y0 Surferow.Y0
+
+*end b
