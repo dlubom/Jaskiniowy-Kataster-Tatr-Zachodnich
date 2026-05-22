@@ -1,0 +1,119 @@
+;WALLS Project File
+.BOOK	Bandzioch Kominiarski Project
+.NAME	BK
+.STATUS	3
+.SURVEY	Bandzioch Kominiarski - Wprowadzenie
+.NAME	BK-W
+.STATUS	10
+.BOOK	Ciag Glowny Miedzyotworowy
+.NAME	BK-CGM
+.STATUS	9
+.SURVEY	Ciag Glowny - Dolny Otwór - Gorny Otwor
+.NAME	BK-CG
+.STATUS	8
+.SURVEY	Boki Ciagu Glownego - Grady
+.NAME	BK-BCG-G
+.STATUS	8
+.SURVEY	Boki Ciagu Glownego - Stopnie
+.NAME	BK-BCG-S
+.STATUS	8
+.ENDBOOK
+.BOOK	Ciag 1 Dna (Stare Dno)
+.NAME	BK-C1D
+.STATUS	9
+.SURVEY	Boki Ciagu Starego Dna - Grady
+.NAME	BK-BSD-G
+.STATUS	8
+.SURVEY	Boki Ciagu Starego Dna - Stopnie
+.NAME	BK-BSD-S
+.STATUS	8
+.SURVEY	Ciag Starego Dna - Stopnie
+.NAME	BK-CSD-S
+.STATUS	8
+.SURVEY	Ciag Starego Dna - Grady
+.NAME	BK-CSD-G
+.STATUS	8
+.ENDBOOK
+.BOOK	Ciag 2 Dna (Nowe Dno-Syf.KKTJ)
+.NAME	BK-C2D
+.STATUS	9
+.SURVEY	Ciag 2 Dna - Grady
+.NAME	BK-C2D-G
+.STATUS	8
+.SURVEY	Ciag 2 Dna - Stopnie
+.NAME	BK-C2D-S
+.STATUS	8
+.SURVEY	Boki Ciagu 2 Dna - Grady
+.NAME	BK-B2D-G
+.STATUS	8
+.SURVEY	Boki Ciagu 2 Dna - Stopnie
+.NAME	BK-B2D-S
+.STATUS	8
+.ENDBOOK
+.BOOK	Ciag 3 Dna
+.NAME	BK-C3D
+.STATUS	9
+.SURVEY	surferow
+.NAME	SURFEROW
+.STATUS	8
+.SURVEY	Ci¹g Nowego 3 Dna - Stopnie
+.NAME	BK-N3D-G
+.STATUS	8
+.SURVEY	Boki Ciagu 3 Dna - Grady
+.NAME	BK-B3D-G
+.STATUS	10
+.SURVEY	Boki Ciagu 3 Dna - Stopnie
+.NAME	BK-B3D-S
+.STATUS	10
+.SURVEY	Ciag 3 Dna - Stopnie
+.NAME	BK-C3D-S
+.STATUS	10
+.REF	5455060.050 416262.210 34 -0.871 1457 1 49 14 33.300 19 50 58.320 27 ""
+.ENDBOOK
+.BOOK	Ciag 4 Dna
+.NAME	BK-C4D
+.STATUS	10
+.SURVEY	Boki Ciagu 4 Dna - Grady
+.NAME	BK-B4D-G
+.STATUS	8
+.SURVEY	Boki Ciagu 4 Dna - Stopnie
+.NAME	BK-B4D-S
+.STATUS	8
+.SURVEY	Ciag 4 Dna - Grady
+.NAME	BK-C4D-G
+.STATUS	8
+.SURVEY	Ciag 4 Dna - Stopnie
+.NAME	BK-C4D-S
+.STATUS	8
+.ENDBOOK
+.BOOK	Ciag 5 Dna
+.NAME	BK-C5D
+.STATUS	10
+.SURVEY	Boki Ciagu 5 Dna - Stopnie
+.NAME	BK-B5D-S
+.STATUS	8
+.SURVEY	Ciag 5 Dna - Stopnie
+.NAME	BK-C5D-S
+.STATUS	8
+.ENDBOOK
+.BOOK	Ciag 6 Dna
+.NAME	BK-C6D
+.STATUS	10
+.SURVEY	Boki Ciagu 6 Dna - Stopnie
+.NAME	BK-B6D-S
+.STATUS	8
+.SURVEY	Ciag 6 Dna - Stopnie
+.NAME	BK-C6D-S
+.STATUS	8
+.ENDBOOK
+.BOOK	Ciag 7 Dna
+.NAME	BK-C7D
+.STATUS	10
+.SURVEY	Boki Ciagu 7 Dna - Grady
+.NAME	BK-B7D-G
+.STATUS	8
+.SURVEY	Ciag 7 Dna - Grady
+.NAME	BK-C7D-G
+.STATUS	8
+.ENDBOOK
+.ENDBOOK
