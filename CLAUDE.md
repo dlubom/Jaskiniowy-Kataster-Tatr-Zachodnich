@@ -44,7 +44,7 @@ It does four things:
 Defined in `.pre-commit-config.yaml`. Run via the [pre-commit framework](https://pre-commit.com/).
 
 - **pre-commit** (every `git commit`, fast): `ruff format`, `ruff check --fix`, `pytest`. Only the staged Python files under `src/`, `scripts/`, `tests/` are passed to ruff. If `ruff format` modifies a file, the commit **fails** (does not auto-stage) — re-stage with `git add -u` and commit again. This is the standard pre-commit framework behavior; it guarantees no commit ships unformatted code.
-- **pre-push** (every `git push`, slow): `uv run jktz-validate` — full cavern compile + exports pipeline. Takes a few minutes. Requires Survex and GDAL on PATH. Bypass intentionally with `git push --no-verify`.
+- **pre-push** (every `git push`, slow): `uv run jktz-validate` — full cavern compile + exports pipeline. The validation fails if `cavern` emits any compile warnings. Takes a few minutes. Requires Survex and GDAL on PATH. Bypass intentionally with `git push --no-verify`.
 
 If the pre-push hook fails because Survex/GDAL aren't installed, fix them locally or use `git push --no-verify` for that push. CI will still run the full validation on the PR.
 
