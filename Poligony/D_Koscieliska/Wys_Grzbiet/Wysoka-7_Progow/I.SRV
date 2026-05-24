@@ -3,6 +3,8 @@
 ;KKS
 ;Wyk. Jacek Szczygiel
 #UNITS D=M A=D V=D Order=DAV
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 
 W7-250	W7-251	8.3	28	-43	;PARTIE ZA SIEDMIOMA ZACISKAMI
 W7-251	W7-252	4.3	358	-53

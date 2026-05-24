@@ -3,6 +3,8 @@
 ;KKS
 ;Wyk. Jacek Szczygiel
 #UNITS D=M A=D V=D Order=DAV
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 
 W7-235	W7-236	9.85	108	-1	;APOKALIPSA
 W7-236	W7-237	8.5	108	-15	;APOKALIPSA

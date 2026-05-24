@@ -5,6 +5,8 @@
 #units v=d
 #units a=d
 #Units Meters Order=avd
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 ;Ciag glowny
 ; Otwor w tym pliku: WielkaSniezna:Litworowa:LT58 - fix/flag/note w Poligony/OTWORY.SRV
 LT58	LT57	52	-81	13.20
@@ -598,4 +600,3 @@ LTpjO	LTpjP	131	0	1.40
 LTpjP	LTpjR	0	-90	7.20
 LTpjO	LTpjN	347	-36	2.25
 LTpjN	LTpjM	60	-20	4.70
-

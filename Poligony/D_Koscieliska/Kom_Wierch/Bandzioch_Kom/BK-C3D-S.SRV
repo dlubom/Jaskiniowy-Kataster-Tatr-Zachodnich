@@ -2,6 +2,8 @@
 #Units Order=DAV
 #Units meters
 #Units A=D V=D
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 #Flag	BD053
 #Note	BD053	3 Dno
 BD	BD001	5.7	48	15

@@ -1,6 +1,8 @@
 #prefix WilczySchron
 ;Wilczy Schron
 #Units Meters Order=dav
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 ; Otwor w tym pliku: WilczySchron:wsn0 - fix/flag/note w Poligony/OTWORY.SRV
 wsn0 	wsn1 	2.66 	169.33	 6.26
 wsn1 	wsn2 	3.35 	84.81 	-8.41

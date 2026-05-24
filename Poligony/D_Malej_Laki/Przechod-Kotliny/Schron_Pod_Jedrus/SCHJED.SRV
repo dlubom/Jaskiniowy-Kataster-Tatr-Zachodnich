@@ -1,5 +1,7 @@
 #prefix SchronPodJedrus
 #Units Meters Order=dav
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 ; Otwor w tym pliku: SchronPodJedrus:spj0 - fix/flag/note w Poligony/OTWORY.SRV
 spj0 	spj1 	3.55 	225.00 	0.00
 spj1 	spj2 	2.55 	90.00 	-11.31

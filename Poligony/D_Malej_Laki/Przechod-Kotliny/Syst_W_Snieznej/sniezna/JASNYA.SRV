@@ -3,6 +3,8 @@
 ;
 ;
 #units order=avd
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 #prefix2 WielkaSniezna
 #prefix Jasna
 ; Otwor w tym pliku: WielkaSniezna:Jasna:j0 - fix/flag/note w Poligony/OTWORY.SRV
@@ -26,4 +28,3 @@ j16	j17	252	-60	3.86
 j17	j18	189	-73	9.52
 j18	j19	0	-90	15.50
 j19	j20	17	0	10.30
-

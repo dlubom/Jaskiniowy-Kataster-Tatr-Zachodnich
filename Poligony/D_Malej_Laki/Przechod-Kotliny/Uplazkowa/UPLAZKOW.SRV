@@ -1,5 +1,7 @@
 #prefix Uplazkowa
 #Units Meters Order=dav
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 ;Uplazkowa
 ; Otwor w tym pliku: Uplazkowa:ju0 - fix/flag/note w Poligony/OTWORY.SRV
 ju0	ju1	11.61	259.37	-20.20

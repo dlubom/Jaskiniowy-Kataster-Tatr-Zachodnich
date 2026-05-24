@@ -1,5 +1,7 @@
 ;Kolanko
 #units order=avd
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 #prefix2 WielkaSniezna
 #prefix Kolanko
 ;
@@ -341,4 +343,3 @@ KO161	KO162	341.97	11.91	3.63
 KO162	KO163	301.10	11.06	2.19
 KO163	KO165	300.88	-4.89	3.40
 KO163	KO164	325.84	45.97	3.41
-

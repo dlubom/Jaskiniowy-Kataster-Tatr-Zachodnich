@@ -1,5 +1,7 @@
 #prefix PrzyJedrusiowej
 #Units Meters Order=dav
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 ; Otwor w tym pliku: PrzyJedrusiowej:pj0 - fix/flag/note w Poligony/OTWORY.SRV
 pj0	pj1	7.82	198.43	-36.03
 pj1	pj20	2.05	308.66	51.33

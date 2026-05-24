@@ -3,6 +3,8 @@
 #prefix2 WielkaSniezna
 #prefix Przemkow
 #units order=avd
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 Ciag:g36	b1	256.5	22.5	2.40
 b1	b2	292.5	17	5.30
 b2	b3	319.5	48	12.00
@@ -321,4 +323,3 @@ pNkk16	pNkk17	50	12.00	4.77
 pNkk17	pNkk18	20	60.00	7.50
 pNkk18	pNkk19	330	0.00	2.71
 ;
-

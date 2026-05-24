@@ -2,6 +2,8 @@
 #Units Order=DAV
 #Units meters
 #Units A=D V=D
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 ;Boki za szalonym meandrem
 L122       	L122001	4.7	340	59
 L122001	L122002	3.5	35	6

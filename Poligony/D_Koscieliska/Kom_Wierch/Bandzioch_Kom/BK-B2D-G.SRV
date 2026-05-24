@@ -2,6 +2,8 @@
 #Units Order=DAV
 #Units meters
 #Units A=G V=G
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 ;Studzienka z marmitem
 L102       	L102001	3.75	0	-100
 L102001	L102002	3.15	6.3	-58

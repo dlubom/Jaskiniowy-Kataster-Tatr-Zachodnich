@@ -3,6 +3,8 @@
 ;KKS
 ;Wyk. Jacek Szczygiel
 #UNITS D=M A=D V=D Order=DAV
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 
 
 ; Otwor w tym pliku: Wysoka7Progow:W7-200 - fix/flag/note w Poligony/OTWORY.SRV
@@ -402,4 +404,3 @@ W-327/5	W-327/6	6.4	208	-25
 W-327/6	W-327/7	5.4	345	-48
 W-327/7	W-327/8	3.8	105	-26
 W-327/8	W7-325	5.7	0	-90
-

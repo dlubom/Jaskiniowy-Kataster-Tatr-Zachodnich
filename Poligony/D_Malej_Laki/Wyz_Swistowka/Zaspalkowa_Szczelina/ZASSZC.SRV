@@ -1,6 +1,8 @@
 #prefix ZaspalkowaSzczel
 ;Zaspalkowa Szczelina
 #Units Meters Order=dav
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 ; Otwor w tym pliku: ZaspalkowaSzczel:zss0 - fix/flag/note w Poligony/OTWORY.SRV
 zss0 	zss1 	4.42 	215.82 	-26.87 ; pomiar powtorzony w ZASSZC.SRV:8
 zss1 	zss2 	4.71 	184.48	-38.00

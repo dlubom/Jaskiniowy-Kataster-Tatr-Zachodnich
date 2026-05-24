@@ -2,6 +2,8 @@
 #Units Order=DAV
 #Units meters
 #Units A=D V=D
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 ;Ciag do Sali z Przewiewem
 LA009     	LA009001	7.75	89	2
 LA009001	LA009002	3.92	158	4
@@ -34,7 +36,6 @@ LA036006	LA036007	6.6	191	-42
 LA036007	LA036008	15.3	229	-30
 LA036008	LA036009	9.7	180	-58
 LA036009	LA041     	6.8	114	-38
-
 
 
 

@@ -1,6 +1,8 @@
 #prefix2 WielkaSniezna
 #prefix Litworowa
 #u meters
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 ;partie slepych
 ;pomiary: Artur Zera, Jakub Pysz, Alan Zera
 ;
@@ -42,7 +44,7 @@ sle29	sle30	2.1	27	5
 sle30	sle31	5.75	287	51
 sle31	sle32	 3.3	20	6
 sle32	sle33	9	348	67
-sle33	sle34	3	348	90
+sle33	sle34	3	--	90
 sle27	sle35	5.1	38	-2
 sle35	sle36	5.25	320	74
 sle36	sle37	20.6	330	48
