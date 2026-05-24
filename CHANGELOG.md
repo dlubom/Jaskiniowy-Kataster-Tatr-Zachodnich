@@ -4,6 +4,22 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.4.4] - 2026-05-24
+
+Wymuszono bezwarningowa kompilacje Cavern oraz poprawiono dane pomiarowe blokujace ten warunek.
+
+### Dodano
+- Walidacje warningow Cavern w `uv run jktz-validate`
+- Testy walidatora wykrywajace linie `warning:` oraz niezerowe podsumowanie warningow
+
+### Naprawione
+- Pionowe strzaly z inklinacja `+/-90` uzywaja braku azymutu (`--`) zamiast sztucznego odczytu kompasu
+- Pliki bez wiarygodnej daty maja jawny `#Units DECL=0.819D`, zgodny z konwergencja siatki projektu, zamiast ukrytego domyslu Cavern
+
+### Zmienione
+- Pelna walidacja PR i pre-push blokuje teraz kazdy warning kompilacji Cavern
+- Datowane bloki, w tym czesc Bandziocha Kominiarskiego, pozostaja liczone z istniejacych `#date`, co daje jawna zmiane geometrii wzgledem wczesniejszej kompilacji bez dat
+
 ## [v1.4.3] - 2026-05-22
 
 Dodano brakujace pomiary partii za 3 dnem w Bandziochu Kominiarskim.
