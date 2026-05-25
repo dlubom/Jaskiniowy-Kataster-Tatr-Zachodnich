@@ -1,6 +1,8 @@
 #prefix StudniaPrzyPrzech
 ;Studnia przy Przechodzie
 #Units Meters Order=dav
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 ;TODO poprawic wsp.
 ; Otwor w tym pliku: StudniaPrzyPrzech:spp0 - fix/flag/note w Poligony/OTWORY.SRV
 spp0	spp1	9.80	0.00	-90.00

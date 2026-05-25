@@ -1,5 +1,7 @@
 #prefix Kozia
 #Units Meters Order=dav
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 ; Otwor w tym pliku: Kozia:k001 - fix/flag/note w Poligony/OTWORY.SRV
 k001	k002	0.90	0.00	-90.00
 k002	k003	3.21	174.97	-15.94

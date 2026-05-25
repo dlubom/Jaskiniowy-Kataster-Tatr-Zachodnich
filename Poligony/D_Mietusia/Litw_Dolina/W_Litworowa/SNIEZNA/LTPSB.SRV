@@ -2,6 +2,8 @@
 #prefix Litworowa
 #u meters
 #units order=dav
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 LTpsb0	LTsb1	2.1	0	-90
 LTsb1	LTpsb2	1.65	132	-36
 LTpsb2	LTpsb3	1.05	58	-59
@@ -17,9 +19,9 @@ LTpsb11	LTpsb12	5.08	3	-15
 LTpsb12	LTpsb13	5.47	147	-22
 LTpsb13	LTpsb14	3.6	124	-8
 LTpsb14a	LTpsb15	1.3	110	-12
-LTpsb15	LTpsb16	0.8	105	90
+LTpsb15	LTpsb16	0.8	--	90
 LTpsb16	LTpsb17	2	105	0
-LTpsb17	LTpsb18	0.8	105	-90
+LTpsb17	LTpsb18	0.8	--	-90
 LTpsb18	LTpsb19	2	105	-4
 LTpsb5	LTpsb5a	4.7	130	32
 LTpsb6	LTpsb6a	3.15	320	29

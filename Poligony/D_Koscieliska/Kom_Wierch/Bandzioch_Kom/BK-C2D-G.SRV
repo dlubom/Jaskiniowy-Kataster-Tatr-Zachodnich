@@ -2,6 +2,8 @@
 #Units Order=DAV
 #Units meters
 #Units A=G V=G
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 L	L001	6.91	128	-15
 L001	L002	9.6	53	-63
 L002	L003	9.04	141	-62

@@ -1,5 +1,7 @@
 ;Kominy krakowskie
 #units order=avd
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 #prefix2 WielkaSniezna
 #prefix Krakow
 Ciag:s35	k1	105	-9	13.44
@@ -37,4 +39,3 @@ k6	k6d	271	7	8.30
 k6d	k6e	11	27	27.63
 k6	k6f	333	10	1.90
 k6f	k6g	30	63	32.00
-

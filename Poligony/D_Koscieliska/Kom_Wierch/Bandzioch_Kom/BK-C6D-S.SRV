@@ -2,6 +2,8 @@
 #Units Order=DAV
 #Units meters
 #Units A=D V=D
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 #Flag	LA066
 #Note	LA066	6 Dno
 LA	LA001	3	220	-37

@@ -1,5 +1,7 @@
 #prefix SnieznaStudnia
 #Units Meters Order=dav
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 ; Otwor w tym pliku: SnieznaStudnia:ss0 - fix/flag/note w Poligony/OTWORY.SRV
 ss0	ss1	2.60	130.00	-46.00
 ss1	ss2	10.55	0.00	-90.00

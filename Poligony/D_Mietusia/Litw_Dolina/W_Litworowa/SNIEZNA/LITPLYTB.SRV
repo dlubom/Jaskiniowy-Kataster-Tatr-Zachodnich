@@ -2,6 +2,8 @@
 #prefix Litworowa
 ;Bielskie stare-nowe pomiary
 #Units Meters Order=avd
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 #note  LTII20 /  punkt -160
 #note  LTsb0 /  punkt -102
 LTll20	LTbie1	110	18	5.60

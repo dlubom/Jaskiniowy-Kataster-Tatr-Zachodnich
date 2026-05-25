@@ -1,5 +1,7 @@
 #prefix PrzyPrzechodzie
 #Units Meters Order=dav
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 ; Otwor w tym pliku: PrzyPrzechodzie:jp0 - fix/flag/note w Poligony/OTWORY.SRV
 jp0	jp1	5.55	243.95	25.51
 jp1	jp2	3.10	0.00	90.00

@@ -1,4 +1,6 @@
 #Units Meters Order=avd
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 #prefix2 WielkaSniezna
 #prefix Ciag
 ;0 - otwor Nad Kotlinami

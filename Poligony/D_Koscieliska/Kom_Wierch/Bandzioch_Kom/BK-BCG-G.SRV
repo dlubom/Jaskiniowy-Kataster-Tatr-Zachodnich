@@ -2,6 +2,8 @@
 #Units Order=DAV
 #Units meters
 #Units A=G V=G
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 ;Sala Kobyleckiego
 ;Pom. S. Kotarba, A. Chorabik
 001	001001	7.1	272	-18
@@ -496,5 +498,4 @@ P	119001	3.70	45	50
 
 126	126001	4.08	370	-8
 126001	126002	4.50	68	-42
-
 

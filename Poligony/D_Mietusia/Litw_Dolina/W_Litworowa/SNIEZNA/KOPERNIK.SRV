@@ -1,6 +1,8 @@
 #prefix2 WielkaSniezna
 #prefix Litworowa
 #u meters
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 ;sala kopernika i okolice
 ;pomiary: Czeslaw Szura, Artur Zera
 ;

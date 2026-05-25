@@ -1,5 +1,7 @@
 ;Syfon Krakowski
 #units order=avd
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 #prefix2 WielkaSniezna
 #prefix SyfonK
 Ciag:g30	SK1	124.05	-40.01	12.10
@@ -25,4 +27,3 @@ SK19	SK20	222.04	14.99	1.70
 SK20	SK21	241.97	23.97	8.59
 SK21	SK22	248.13	-30.92	5.10
 SK22	SK23	233.91	-9.98	4.50
-

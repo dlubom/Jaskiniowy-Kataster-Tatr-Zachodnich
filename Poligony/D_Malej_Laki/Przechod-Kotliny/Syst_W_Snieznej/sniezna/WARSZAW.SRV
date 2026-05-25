@@ -1,6 +1,8 @@
 ;Warszawskie kaskady
 ;
 #units order=avd
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 #prefix2 WielkaSniezna
 #prefix Warszaw
 Ciag:w21	wk1	23	31	1.60
@@ -64,4 +66,3 @@ wk139	wk1310	283	20	3.20
 wk1310	wk1311	180	0	2.40
 wk1311	wk1312	71	42	4.50
 wk1312	Ciag:w11	139	-39	1.40
-

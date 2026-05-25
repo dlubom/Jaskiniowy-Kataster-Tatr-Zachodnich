@@ -13,6 +13,7 @@ from jktz.exports import tools as exports_tools
 from jktz.exports.tools import ExternalToolError
 from jktz.reporting import CheckFailed
 from jktz.validation import (
+    cavern_warnings,
     coordinates,
     decimal_format,
     directives,
@@ -26,6 +27,7 @@ from jktz.validation import (
 )
 
 _EXPORTS_INDENT = " " * 19  # matches the original bash `sed 's/^/<19 spaces>/'`
+_TOTAL_STEPS = 11
 
 
 class _IndentingStream:
@@ -85,7 +87,7 @@ def _reconfigure_streams_utf8() -> None:
 
 
 def _run(step: int, header: str, footer: str, fn: Callable[[], None]) -> None:
-    print(f"[{step}/10] {header}...")
+    print(f"[{step}/{_TOTAL_STEPS}] {header}...")
     fn()
     print(f"      {footer}: Passed ✔")
 
@@ -124,7 +126,7 @@ def main() -> int:
         )
         _run(5, "Checking #prefix values", "#prefix values", prefixes.check)
 
-        print("[6/10] Checking rendered entrances snapshot...")
+        print(f"[6/{_TOTAL_STEPS}] Checking rendered entrances snapshot...")
         _run_render_check()
         print("      Rendered entrances snapshot: Passed ✔")
 
@@ -135,7 +137,7 @@ def main() -> int:
             coordinates.check,
         )
 
-        print("[8/10] Compiling with cavern...")
+        print(f"[8/{_TOTAL_STEPS}] Compiling with cavern...")
         exports_tools.cavern(["KATASTER.wpj"], log_to=cavern_log)
 
         _run(
@@ -145,7 +147,14 @@ def main() -> int:
             lambda: unattached.check(log_path=cavern_log),
         )
 
-        print("[10/10] Checking exports...")
+        _run(
+            10,
+            "Checking cavern compile warnings",
+            "Cavern compile warnings",
+            lambda: cavern_warnings.check(log_path=cavern_log),
+        )
+
+        print(f"[11/{_TOTAL_STEPS}] Checking exports...")
         try:
             with _indent_stdout():
                 pipeline.run_exports(version=exports_version, outdir=exports_dir)

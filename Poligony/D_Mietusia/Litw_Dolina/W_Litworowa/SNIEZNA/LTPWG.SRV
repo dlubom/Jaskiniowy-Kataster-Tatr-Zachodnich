@@ -3,6 +3,8 @@
 #units v=d
 #units a=d
 #Units Meters Order=avd
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 LTpwh	LTpwg	161	34	2.1
 LTpwg	LTpwg1	0	90	3.5
 LTpwg1	LTpwg2	320	11	1.70

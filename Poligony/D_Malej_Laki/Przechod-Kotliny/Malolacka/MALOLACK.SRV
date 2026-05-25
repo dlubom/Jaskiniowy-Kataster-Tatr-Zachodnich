@@ -1,5 +1,7 @@
 #prefix Malolacka
 #Units Meters Order=dav
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 ;Malolacka
 ; Otwor w tym pliku: Malolacka:ma0 - fix/flag/note w Poligony/OTWORY.SRV
 ma0	ma1	8.96	265.71	-26.50

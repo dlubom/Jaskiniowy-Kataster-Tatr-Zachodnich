@@ -1,5 +1,7 @@
 #units meters order=DAV
 #units A=D V=D
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 #prefix StudniaNaSzlaku
 ;TODO #date
 ;Z. Tabaczynski

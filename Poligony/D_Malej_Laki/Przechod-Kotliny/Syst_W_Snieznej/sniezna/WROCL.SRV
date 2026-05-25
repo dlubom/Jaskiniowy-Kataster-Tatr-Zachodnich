@@ -3,6 +3,8 @@
 ;
 ;
 #units order=avd
+; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
+#Units DECL=0.819D
 #prefix2 WielkaSniezna
 #prefix Wrocl
 Ciag:g83	z0	190	-22	7.00
