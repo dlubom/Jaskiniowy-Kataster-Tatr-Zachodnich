@@ -2,16 +2,16 @@
 CAVE_ID			"T.F-09.01"
 CAVE_NAME		"Jaskinia Psia"
 SURVEY_ID		PSIA_1987
-SURVEY_NAME		"Pomiary 1987"
+SURVEY_NAME		"Pomiary 1987 (Kardas + Luty)"
 UPDATE_DATE		2026-05-27
 PROJECT_NAME		"Kataster jaskin tatrzanskich"
 COORDINATOR		"Dariusz Lubomski"
 COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
-DATA_SOURCE		"GitHub issue #111; projekt_svx/pomiary/psia_pomiary_1987.svx"
+DATA_SOURCE		"GitHub issue #111; przepisane ze skanow arkuszy pomiarowych (_RAW/source/Pomiary od Izy Luty/)"
 LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM "R. M. Kardas, I. Luty, M. Francuz, A. Gajewska, A. Paterek, K. Recielski, E. i R. Szczesni, A. Trybulec"
-INSTRUMENT "busola geologiczna Meridian, przyrzad Suunto, klinometry Freiberg, tasma parciana"
+TEAM "R. M. Kardas, I. Luty, M. Francuz, A. Gajewska, A. Paterka, K. Recielski, E. i R. Szczesni, A. Trybulec"
+INSTRUMENT "busola geologiczna Meridian, klinometr Freiberg, tasma parciana"
 #]
 
 #prefix Psia
@@ -20,20 +20,235 @@ INSTRUMENT "busola geologiczna Meridian, przyrzad Suunto, klinometry Freiberg, t
 #units DECL=-2.37D
 #date 1987-08-11
 
-; Pomiary wykonywano takze 1987-08-17 i 1987-08-18.
-; Otwor w tym pliku: Psia:p87_0 - fix/flag/note w Poligony/OTWORY.SRV.
-; Zrodlo SVX opisuje ten plik jako ciag od otworu do polaczenia z Partiami Poznanskimi.
+; Kolumny w oryginale (skany tabel): S., C, AZYMUT, KAT PION., ODL. RZECZ.
+; Wartosci odleglosci - metry, katy - stopnie. Dziesietny przecinek z oryginalu zamieniony na kropke.
+; Otwor: Psia:p87_0 - fix/flag/note w Poligony/OTWORY.SRV.
+; Stacje p87_* - ciag R. M. Kardasia (I i II poziom). Stacje l87_* - ciag I. Luty (III, IV i V poziom).
+; Polaczenie z Partiami Poznanskimi 2018: Psia:p87_25 - patrz PSIA_PP.SRV.
 
-; === Pomiary ===
-p87_0	p87_1	6.40	230	-38
-p87_1	p87_2	23.10	215	-68
-p87_2	p87_12	8.85	253	-20
+; ============================================================
+; CIAG KARDAS 1987 - I i II poziom
+; R. M. Kardas, A. Paterka, M. Francuz - 11 i 17 VIII 1987
+; ============================================================
+
+; --- Ciag glowny od otworu (0) do punktu 14 (przekaz do I. Luty)
+p87_0	p87_1	6.40	230	-38	; 0 - w otworze
+p87_1	p87_2	23.10	215	-68	; wyj. progu po przekatnej w pion. 12.70 m
+p87_11	p87_12	8.85	253	-20	; szer. korytarza w p. 12: 5.27. Stacja 11 polozona przez ciag boczny od 0 (poprawiono z 2 na 11 wg tabeli)
 p87_12	p87_13	5.22	224	-46.5
-p87_13	p87_14	6.55	113	+21.5	; do zacisku
+p87_13	p87_14	6.55	113	+21.5	; 14 - przekaz do dalszych ciagow (c.d. ciagu glownego - I. Luty)
+
+; --- Boczny ciag z punktu 2
+p87_2	p87_3	9.90	56	+22.5
+p87_3	p87_4	2.30	272.5	-11
+p87_4	p87_5	5.00	322	+39.5
+p87_2	p87_6	4.65	72	+18	; od 5 do konca korytarzyka 1 m; 6 - pkt sytuacyjny ciagu
+p87_2	p87_7	7.00	335	-16.5
+p87_7	p87_8	9.10	30	-25
+p87_8	p87_9	7.15	0	+29
+p87_9	p87_10	3.00	50	+33
+
+; --- Boczny ciag z punktu 13 (do salki bocznej i dalej)
 p87_13	p87_15	5.78	200	+11.5
 p87_15	p87_16	18.52	203	-6
-p87_16	p87_17	2.90	200	+15.5
-p87_17	p87_18	5.00	200	+19
+p87_16	p87_17	2.90	200	+15.5	; 17 - odejscie korytarzyka bocznego
+p87_17	p87_18	5.00	200	+19	; 18 - odejscie odnogi bocznej
 p87_18	p87_20	5.95	120	+37
+p87_20	p87_21	5.20	233	+10	; 21 - odejscie bocznego ciagu
+p87_20	p87_22	6.25	198	+26.5	; 22 - wejscie studni bocznej; salka boczna
+p87_22	p87_23	4.78	182	-1	; ciag nad progiem
 p87_20	p87_24	13.50	77	+44.5
 p87_24	p87_25	5.60	106	-14
+p87_18	p87_19	5.05	240	0	; salka boczna
+
+; --- Boczne ciagi mierzone 17 VIII 1987 (R. M. Kardas + A. Paterka)
+#date 1987-08-17
+
+; --- Boczny ciag z punktu 17
+p87_17	p87_171	2.70	303	-24
+p87_171	p87_172	2.20	292	-67.5
+p87_172	p87_173	6.90	235	-40
+p87_173	p87_174	1.90	30	-76
+p87_174	p87_175	2.50	28	-38
+p87_175	p87_176	3.70	31	-65
+p87_176	p87_177	3.50	311	-23
+p87_176	p87_178	4.10	102	+23	; az. kontynuacji 205
+
+; --- Boczny ciag z punktu 21
+p87_21	p87_211	2.00	235	+1
+p87_211	p87_212	4.50	235	-28.5
+p87_212	p87_213	3.00	232	-44
+p87_213	p87_214	4.20	299	-31.5
+p87_214	p87_215	4.40	241	-6
+p87_214	p87_216	3.90	71	+18	; az. kontynuacji 75
+p87_214	p87_217	2.80	47	0	; pomiar bez kata pionowego - orientacyjny
+p87_213	p87_218	3.20	238	+45	; ciag nad otworem
+p87_218	p87_219	3.40	232	-16.5
+p87_219	p87_210	5.50	245	0
+
+; --- Boczny ciag z otworu (0) - 17 VIII 1987
+p87_0	p87_01	5.20	235	+38	; 0 - otwor
+p87_0	p87_02	2.00	290	-14
+p87_02	p87_03	3.10	300	-30
+p87_03	p87_04	0.70	0	-90
+p87_04	p87_05	6.50	313	-21
+p87_05	p87_06	5.15	230	+24.5
+p87_06	p87_07	2.85	293	-43
+p87_07	p87_08	5.00	352	-22
+p87_08	p87_09	5.10	238	+31
+p87_09	p87_010	3.40	242	-40
+p87_010	p87_011	4.80	282	-32
+p87_05	p87_012	1.30	265	+7
+p87_012	p87_013	6.65	26	-8
+p87_013	p87_014	2.20	277	-13	; cd. w nastepnej tabeli
+
+; --- Boczny ciag od 01 (R. M. Kardas + M. Francuz - 11 VIII 1987) -
+;     polaczenie ciagu od otworu z punktem 11 ciagu glownego.
+#date 1987-08-11
+p87_01	p87_015	2.50	189	+18
+p87_015	p87_016	3.15	225	-15
+p87_016	p87_017	2.25	238	+6
+p87_017	p87_018	2.70	214	-2.5
+p87_018	p87_019	3.90	253	-7
+p87_019	p87_020	3.10	226	-2
+p87_020	p87_021	3.00	211	-56
+p87_021	p87_022	2.75	196	-80
+p87_022	p87_023	2.20	50	-62
+p87_023	p87_024	3.20	81	-76
+p87_024	p87_025	10.85	92	-76
+p87_025	p87_11	1.40	248	+16	; polaczenie z punktem 11 ciagu glownego
+p87_11	p87_2	9.50	132	+5	; zamkniecie ciagu - dowiazanie 11 -> 2
+
+; --- Boczny ciag od punktu 45 (45 = pkt I. Luty z ciagu Luty)
+p87_45	p87_452	2.30	219	+9	; 45 - pkt I. Luty
+p87_452	p87_453	4.40	336	+46
+p87_453	p87_454	2.60	213	+28
+p87_453	p87_455	1.50	30	+17
+p87_455	p87_456	4.50	40	-8
+
+; ============================================================
+; CIAG LUTY 1987 - III, IV i V poziom
+; I. Luty przy wspolpracy: M. Francuz, A. Gajewska, A. Paterka,
+; K. Recielski, E. i R. Szczesni, A. Trybulec - 17 i 18 VIII 1987
+; ============================================================
+
+; --- Polaczenia z ciagiem Kardas (zerowe shoty - equate)
+p87_14	l87_14k	0	0	0	; equate kardas:14 = luty:14kardas (przekaz na III poziom)
+p87_45	l87_45	0	0	0	; equate kardas:45 = luty:45
+
+#date 1987-08-17
+
+; --- Ciag glowny od 14kardas (= kardas:14) do slepego zakonczenia korytarza
+l87_14k	l87_23	3.30	88	-60	; p. z ciagu Kardas
+l87_23	l87_22	2.60	105	-72
+l87_22	l87_21	2.00	200	-42
+l87_21	l87_20	1.90	315	-65
+l87_20	l87_11	2.80	18	+2
+l87_11	l87_10	3.40	100	-8
+l87_10	l87_9	5.40	118	+2
+l87_9	l87_8	8.50	100	+1
+l87_8	l87_7	8.90	64	0
+l87_7	l87_6	9.40	93	-5
+l87_6	l87_5	3.50	192	0
+l87_5	l87_4	3.00	108	-2
+l87_4	l87_3	4.40	160	+2
+l87_3	l87_2	4.70	238	+12
+l87_2	l87_1	10.30	230	-2
+l87_1	l87_0	6.30	188	+7	; 0 - slepe zakonczenie korytarza
+
+; --- Boczny ciag z punktu 11
+l87_11	l87_12	3.60	10	+6
+l87_12	l87_13	3.00	45	+2
+l87_12	l87_14	1.00	275	+10
+l87_14	l87_15	3.20	23	-6
+l87_15	l87_16	1.10	317	-16
+l87_16	l87_17	1.80	37	+30
+
+; --- Boczny ciag z punktu 8
+l87_8	l87_25	2.50	15	+20
+l87_25	l87_25a	0.40	348	0
+l87_25a	l87_26	5.10	78	+5
+
+; --- Boczny ciag z punktu 6 (do dolnego korytarza)
+l87_6	l87_27	4.40	50	-3
+l87_27	l87_28	5.40	33	-18
+l87_28	l87_29	3.20	130	-71
+l87_29	l87_30	23.80	219	-3
+l87_30	l87_31	5.40	201	+31	; 31 - koniec dolnego korytarza
+l87_31	l87_32	6.70	250	-13
+l87_32	l87_33	4.90	251	-18
+l87_33	l87_34	4.80	242	+6
+l87_34	l87_35	1.70	315	-12
+l87_35	l87_36	10.70	222	+11
+
+#date 1987-08-18
+
+l87_36	l87_37	4.70	248	+8
+l87_36	l87_38	6.90	222	+23
+l87_38	l87_39	4.00	122	+52
+l87_39	l87_40	8.20	103	+14
+l87_39	l87_41	9.50	125	+26
+l87_39	l87_42	8.30	187	+24
+l87_39	l87_43	7.20	291	+8
+l87_43	l87_43a	2.40	215	0
+
+; --- Ciag boczny od 29 (V poziom)
+l87_29	l87_45	8.20	42	-5
+l87_45	l87_46	15.10	47	-8
+l87_46	l87_47	4.00	58	+1
+l87_47	l87_48	15.40	18	+5
+l87_48	l87_49	4.45	355	+12
+l87_49	l87_50	5.00	24	-7
+l87_50	l87_51	8.00	230	+1
+l87_51	l87_52	3.65	241	-2
+l87_52	l87_53	7.80	214	-19
+l87_53	l87_54	8.90	341	-3
+l87_54	l87_55	4.90	33	+17
+l87_55	l87_56	3.00	320	+10
+l87_56	l87_56a	3.80	10	+18
+l87_56	l87_57	2.70	223	-40
+l87_57	l87_57a	2.00	310	-6
+
+; --- Petla zamykajaca: 48 - 53 - 58 - 60 - 48
+l87_53	l87_58	6.30	62	0
+l87_58	l87_59	2.35	45	+12
+l87_59	l87_60	1.40	98	+24
+l87_60	l87_48	3.30	86	-7	; dowiazanie petli; dx=-0.080 dy=0.479 dh=-1.552
+
+; --- Boczny ciag od 48 (przez 61-68)
+l87_48	l87_61	2.90	43	-13
+l87_61	l87_62	1.45	71	-10
+l87_62	l87_63	1.45	222	0
+l87_63	l87_64	1.30	140	-28
+l87_64	l87_65	2.80	16	-35
+l87_65	l87_66	1.60	0	-90	; az. 4 w oryginale; pomiar pionowy - kompas pominiety
+l87_66	l87_67	3.95	125	-30
+l87_67	l87_68	2.45	162	-21
+
+l87_68	l87_69	6.50	119	-24
+l87_68	l87_70	4.80	188	-7
+
+; --- Boczny ciag od 45 (przez 451, 73-77, 100-110)
+l87_45	l87_451	6.00	7	-37
+l87_451	l87_73	5.10	350	-42
+l87_73	l87_72	5.70	239	-28
+l87_72	l87_71	3.40	192	-42
+l87_73	l87_74	3.40	196	-5
+l87_73	l87_75	4.20	4	+12
+l87_75	l87_76	2.40	183	0
+l87_75	l87_77	5.30	145	-6
+l87_75	l87_110	1.70	294	0
+l87_110	l87_109	3.50	28	+3
+l87_109	l87_104	3.80	319	-40
+l87_104	l87_105	3.90	215	-38
+l87_105	l87_106	3.00	172	-35
+l87_106	l87_107	3.95	193	+1
+l87_107	l87_108	3.60	182	+30
+l87_104	l87_103	4.00	28	-10
+l87_103	l87_102	6.90	309	+30
+l87_102	l87_101	3.10	20	+72
+l87_101	l87_100	4.80	348	+32
+
+; --- Petla zamykajaca: 1 - 6 - 29 - 31 - 1 (przez 1a)
+l87_1	l87_1a	0.70	310	-10
+l87_1a	l87_31	4.20	265	-80
