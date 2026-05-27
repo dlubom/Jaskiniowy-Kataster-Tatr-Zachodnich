@@ -1,0 +1,25 @@
+;TODO - uzupelnic wszystkie potrzebne rzeczy. To narazie jest tylko przepisane
+;TODO - tutaj mamy na razie ciąg pomiarowy od punktu 0 do połączenia z Partiami Poznańskimi
+
+*begin psia_pomiary_1987
+*date 1987.08.11		;a także 1987.08.17 oraz 1987.08.18
+;*fix 0 408XXX.000 4705XXX.000 1410		;TODO - dodac wspolrzedne
+*calibrate declination -2.37
+  ; na podstawie https://www.ngdc.noaa.gov/geomag-web/#declination model IGRF 2° 22' E  changing by  0° 3' E per year
+  ; λ: 19°53′06,58″, φ: 49°14′01,54″ = Latitude: 49° 14' 01.54" N, Longitude: 19° 53' 06.58" E
+*team R. M. Kardaś (I i II poziom) i I. Luty (III, IV i V poziom) przy współpracy M. Francuza, A. Gajewskiej, A. Paterka, K. Recielskiego, E. i R. Szczęsnych i A. Trybulca
+*entrance 0
+*data normal from to compass clino tape
+0	1	230		-38		6.40
+1	2	215		-68		23.10
+2	12	253		-20		8.85
+12	13	224		-46.5	5.22
+13	14	113		+21.5	6.55 ; do zacisku
+13	15	200		+11.5	5.78
+15	16	203		-6		18.52
+16	17	200		+15.5	2.90
+17	18	200		+19		5.00
+18	20	120		+37		5.95
+20	24	77		+44.5	13.50
+24	25	106		-14		5.60
+*end psia_pomiary_1987

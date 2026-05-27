@@ -34,6 +34,7 @@
 - Jaskinia pod Progiem
 - Jaskinia pod Zamkiem (fragment)
 - Jaskinia Poszukiwaczy Skarbów (fragment)
+- Jaskinia Psia
 - Jaskinia przy Jędrusiowej Dziurze
 - Jaskinia przy Przechodzie
 - Jaskinia Raptawicka

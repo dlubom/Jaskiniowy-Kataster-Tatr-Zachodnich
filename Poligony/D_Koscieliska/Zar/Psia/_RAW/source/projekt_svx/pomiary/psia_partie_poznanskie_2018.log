@@ -1,0 +1,46 @@
+Survex 1.2.37
+Copyright (C) 1990-2018 Olly Betts
+Survey has no control points. Therefore I've fixed psia_partie_poznanskie_2018.0 at (0,0,0)
+
+Removing trailing traverses...
+
+Concatenating traverses...
+
+Simplifying network...
+
+Calculating network...
+
+Calculating traverses...
+
+Calculating trailing traverses...
+
+Calculating statistics...
+
+Survey contains 375 survey stations, joined by 374 shots.
+There are 0 loops.
+Total length of survey shots =  158.93m ( 158.93m adjusted)
+Total plan length of survey shots =  134.76m
+Total vertical length of survey shots =   60.54m
+Vertical range = 34.82m (from psia_partie_poznanskie_2018.15 at 33.02m to anonymous station at -1.80m)
+North-South range = 29.80m (from anonymous station at 11.42m to anonymous station at -18.38m)
+East-West range = 73.24m (from anonymous station at 12.71m to psia_partie_poznanskie_2018.33_1 at -60.53m)
+ 343 1-nodes.
+   1 2-node.
+   1 4-node.
+   1 5-node.
+   5 7-nodes.
+   3 9-nodes.
+   1 10-node.
+   3 11-nodes.
+   1 12-node.
+   1 13-node.
+   4 14-nodes.
+   1 15-node.
+   2 16-nodes.
+   1 17-node.
+   3 18-nodes.
+   1 20-node.
+   1 21-node.
+   1 24-node.
+   1 25-node.
+CPU time used  0.02s

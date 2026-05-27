@@ -1,0 +1,39 @@
+#[
+CAVE_ID			"T.F-09.01"
+CAVE_NAME		"Jaskinia Psia"
+SURVEY_ID		PSIA_1987
+SURVEY_NAME		"Pomiary 1987"
+UPDATE_DATE		2026-05-27
+PROJECT_NAME		"Kataster jaskin tatrzanskich"
+COORDINATOR		"Dariusz Lubomski"
+COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
+DATA_SOURCE		"GitHub issue #111; projekt_svx/pomiary/psia_pomiary_1987.svx"
+LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM "R. M. Kardas, I. Luty, M. Francuz, A. Gajewska, A. Paterek, K. Recielski, E. i R. Szczesni, A. Trybulec"
+INSTRUMENT "busola geologiczna Meridian, przyrzad Suunto, klinometry Freiberg, tasma parciana"
+#]
+
+#prefix Psia
+#units meters order=DAV
+#units A=D V=D
+#units DECL=-2.37D
+#date 1987-08-11
+
+; Pomiary wykonywano takze 1987-08-17 i 1987-08-18.
+; Otwor w tym pliku: Psia:p87_0 - fix/flag/note w Poligony/OTWORY.SRV.
+; Zrodlo SVX opisuje ten plik jako ciag od otworu do polaczenia z Partiami Poznanskimi.
+
+; === Pomiary ===
+p87_0	p87_1	6.40	230	-38
+p87_1	p87_2	23.10	215	-68
+p87_2	p87_12	8.85	253	-20
+p87_12	p87_13	5.22	224	-46.5
+p87_13	p87_14	6.55	113	+21.5	; do zacisku
+p87_13	p87_15	5.78	200	+11.5
+p87_15	p87_16	18.52	203	-6
+p87_16	p87_17	2.90	200	+15.5
+p87_17	p87_18	5.00	200	+19
+p87_18	p87_20	5.95	120	+37
+p87_20	p87_24	13.50	77	+44.5
+p87_24	p87_25	5.60	106	-14
