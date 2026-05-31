@@ -17,7 +17,6 @@ INSTRUMENT "busola geologiczna Meridian, klinometr Freiberg, tasma parciana"
 #prefix Psia
 #units meters order=DAV
 #units A=D V=D
-#units DECL=-2.37D
 #date 1987-08-11
 
 ; Kolumny w oryginale (skany tabel): S., C, AZYMUT, KAT PION., ODL. RZECZ.
@@ -102,10 +101,10 @@ p87_05	p87_012	1.30	265	+7
 p87_012	p87_013	6.65	26	-8
 p87_013	p87_014	2.20	277	-13	; cd. w nastepnej tabeli
 
-; --- Boczny ciag od 01 (R. M. Kardas + M. Francuz - 11 VIII 1987) -
+; --- Boczny ciag od 05 (R. M. Kardas + M. Francuz - 11 VIII 1987) -
 ;     polaczenie ciagu od otworu z punktem 11 ciagu glownego.
 #date 1987-08-11
-p87_01	p87_015	2.50	189	+18
+p87_05	p87_015	2.50	189	+18
 p87_015	p87_016	3.15	225	-15
 p87_016	p87_017	2.25	238	+6
 p87_017	p87_018	2.70	214	-2.5
