@@ -33,7 +33,7 @@ INSTRUMENT "busola geologiczna Meridian, klinometr Freiberg, tasma parciana"
 ; --- Ciag glowny od otworu (0) do punktu 14 (przekaz do I. Luty)
 p87_0	p87_1	6.40	230	-38	; 0 - w otworze
 p87_1	p87_2	23.10	215	-68	; wys. progu po przelamaniu w pion 12.70 m
-p87_11	p87_12	8.85	253	-20	; szer. korytarza w p. 12: 5.27 TODO: Weryfikacja Stacja 11 polozona przez ciag boczny od 0 (poprawiono z 2 na 11 wg tabeli)
+p87_2	p87_12	8.85	253	-20	; szer. korytarza w p. 12: 5.27
 p87_12	p87_13	5.22	224	-46.5 ;
 p87_13	p87_14	6.55	113	+21.5 ; 14 - przelaz do dolnych ciagow - wejscie - c.d ciagu glownego - I.Luty
 
@@ -115,8 +115,8 @@ p87_021	p87_022	2.75	196	-80
 p87_022	p87_023	2.20	50	-62
 p87_023	p87_024	3.20	81	-76
 p87_024	p87_025	10.85	92	-76
-p87_025	p87_11	1.40	248	+16	; polaczenie z punktem 11 ciagu glownego
-p87_11	p87_2	9.50	132	+5	; 2 - zamkniecie ciagu do c. glownego
+p87_025	p87_11	1.40	248	+16
+p87_11	p87_2	9.50	132	+5 ; 2 - zamkniecie ciagu do c. glownego
 
 ; --- Boczny ciag od punktu 45 (45 = pkt I. Luty z ciagu Luty)
 p87_45	p87_452	2.30	219	+9	; 45 - pkt I. Luty
