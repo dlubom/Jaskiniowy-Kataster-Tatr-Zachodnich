@@ -17,7 +17,6 @@ INSTRUMENT "DistoX, TopoDroid 3.4.5e"
 #prefix Psia
 #units meters order=DAV
 #units A=D V=D
-#units DECL=-5.15D
 #date 2018-01-04
 
 ; === Polaczenie z pomiarami 1987 ===
