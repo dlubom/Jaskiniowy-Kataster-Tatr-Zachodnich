@@ -32,7 +32,9 @@ The field order maps directly: `FROM TO DISTANCE AZIMUTH INCLINATION`
 | Survex | Walls | Notes |
 |--------|-------|-------|
 | `*data normal from to tape compass clino` | `#units meters order=DAV` | Standard shot format |
-| `*calibrate declination X` | `#units DECL=X` | Note: `#dec` does NOT exist in Walls |
+| `*declination X` | drop it when `#date` is present | Declination derives from `#date` (IGRF). Only if the file has no reliable date, use `#units DECL=X` instead of `#date`. Note: `#dec` does NOT exist in Walls |
+| `*calibrate declination X` | drop it when `#date` is present | Legacy pre-1.2.22 way of specifying declination (NOT an instrument correction). **Opposite sign** to `*declination`: actual declination = `-X`. Sanity-check `-X` against IGRF for the survey date/location — a large mismatch means the author baked in something else (grid convergence, empirical fix) and needs investigation. If the file has no reliable date, use `#units DECL=-X` instead of `#date` |
+| `*calibrate compass/clino/tape X [scale]` | `#units INCA=-X` / `INCV=-X` / `INCD=-X` | Genuine instrument zero-error corrections — do NOT drop. Survex subtracts the zero error, Walls INC* values are added, so the sign flips |
 | `*date YYYY.MM.DD` | `#date YYYY-MM-DD` | Dash separator in Walls |
 | `*team ...` | `TEAM "..."` in metadata block | |
 | `*instrument ...` | `INSTRUMENT "..."` in metadata block | |
@@ -150,7 +152,8 @@ The cave's entrance fix/flag/note goes into the shared `Poligony/OTWORY.SRV`.
 - [ ] Convert measurements, skipping `*flags duplicate` and `*flags surface`
 - [ ] Map `*equate` directives to zero-shots
 - [ ] **Check for junction stations in duplicate shots** — add zero-shots as needed (see critical section above)
-- [ ] Convert `*calibrate declination` → `#units DECL=X`
+- [ ] Drop `*declination` / `*calibrate declination` when `#date` is present (declination derives from `#date`); use `#units DECL=` instead of `#date` only when there is no reliable date. Mind the sign: `*calibrate declination X` → `DECL=-X`
+- [ ] Convert `*calibrate compass/clino/tape` (instrument corrections) → `#units INCA=/INCV=/INCD=` with the sign flipped — never drop these
 - [ ] Place all shots in correct chronological order per `*date`
 
 ## Adding the converted cave to the project
@@ -174,7 +177,7 @@ When running `/add-cave` after SVX conversion, the section `.SRV` files are alre
 | Pitfall | Detail |
 |---------|--------|
 | `*flags not duplicate` substring bug | Always check `*flags not duplicate` before `*flags duplicate` when parsing flag lines |
-| `#dec` does not exist | Use `#units DECL=X`, not `#dec X` |
+| `#dec` does not exist | In the rare no-date case use `#units DECL=X`, not `#dec X` |
 | Floating junction stations | See critical section above — most likely cause of disconnected components |
 | Non-ASCII in station names | Survex allows Polish diacritics; replace with ASCII equivalents in Walls SRV files |
 | LRUD format change | Survex LRUD is on separate `*data passage` lines; Walls LRUD is inline `<L,R,U,D>` appended to the shot line — merge them during conversion |

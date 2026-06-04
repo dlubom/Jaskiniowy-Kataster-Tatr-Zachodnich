@@ -4,6 +4,15 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.4.5] - 2026-05-27
+
+Dodano Jaskinie Psia w rejonie Zaru.
+
+### Dodano
+- Pliki pomiarowe Jaskini Psiej na podstawie materialow z issue #111
+- Surowe archiwa SVX i skany pomiarow w `_RAW`
+- Wpis Jaskini Psiej w `KATASTER.wpj`, `LISTA_JASKIN.md` i szablonie `OTWORY.SRV.j2`
+
 ## [v1.4.4] - 2026-05-24
 
 Wymuszono bezwarningowa kompilacje Cavern oraz poprawiono dane pomiarowe blokujace ten warunek.

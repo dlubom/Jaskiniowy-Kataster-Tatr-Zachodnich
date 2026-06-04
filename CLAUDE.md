@@ -177,11 +177,11 @@ INSTRUMENT "instrument name"
 #prefix STATION_PREFIX
 #units meters order=DAV
 #units A=D V=D
-#units DECL=X.X
-; NOTE: #units DECL= must come BEFORE #date directive (standard convention in this project).
-; Do NOT place DECL= after #date — if "Derive from #Date" is enabled in the
-; project's Geographical Reference settings, #date directive overrides any preceding DECL=
-; with the IGRF model value, causing Walls and Survex to disagree.
+; NOTE: do NOT add a #units DECL= directive when a #date directive is present.
+; Declination is derived from #date via the IGRF model ("Derive from #Date" in the
+; project's Geographical Reference settings). An explicit DECL= would either be
+; overridden by #date or conflict with it, causing Walls and Survex to disagree.
+; Only when the file has NO reliable date, use an explicit #units DECL=X.X instead of #date.
 #date YYYY-MM-DD
 
 ;Section description

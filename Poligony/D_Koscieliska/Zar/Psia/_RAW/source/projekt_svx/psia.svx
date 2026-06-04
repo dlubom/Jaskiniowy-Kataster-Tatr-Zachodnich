@@ -1,0 +1,8 @@
+*begin psia
+
+*include pomiary/psia_pomiary_1987.svx
+*include pomiary/psia_partie_poznanskie_2018.svx
+
+*equate psia_pomiary_1987.25 psia_partie_poznanskie_2018.33_1
+
+*end psia

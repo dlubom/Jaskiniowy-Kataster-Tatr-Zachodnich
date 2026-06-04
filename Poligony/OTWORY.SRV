@@ -255,6 +255,11 @@
 #flag	PtasiaStudnia:b1	/ENTRANCE
 #note	PtasiaStudnia:b1	/Ptasia Studnia
 
+#fix	Psia:p87_0	E19.8725622322	N49.2330781905	1403.356689m
+#flag	Psia:p87_0	/Jaskinia Psia
+#flag	Psia:p87_0	/ENTRANCE
+#note	Psia:p87_0	/Jaskinia Psia
+
 #fix	RuraPrzyOknie:0	E19.8710384124	N49.2363680593	1187.845053m
 #flag	RuraPrzyOknie:0	/Rura przy Oknie
 #flag	RuraPrzyOknie:0	/ENTRANCE
