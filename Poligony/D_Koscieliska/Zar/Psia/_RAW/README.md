@@ -1,6 +1,6 @@
 # Jaskinia Psia - surowe materialy zrodlowe
 
-- **Zrodlo**: GitHub issue #111 (`Dodać pomiary Psiej`)
+- **Zrodlo**: Piotr Graczyk
 - **Autorzy pomiarow**: Piotr Graczyk, Izabella Luty, Rafal M. Kardas; Partie Poznanskie 2018: Witold Hoffmann, Sonia Dudziak, Michal Macioszczyk
 - **Data pomiaru**: 1987-08-11, 1987-08-17, 1987-08-18; Partie Poznanskie: 2018-01-04
 - **Data pozyskania**: 2026-05-14
