@@ -79,15 +79,15 @@ p87_211	p87_212	235	-28.5	4.50
 p87_212	p87_213	232	-44	3.00
 p87_213	p87_214	299	-31.5	4.20
 p87_214	p87_215	241	-6	4.40
-p87_214	p87_216	71	+18	3.90	;
+p87_214	p87_216	71	+18	3.90
 p87_214	p87_217	47	0	2.80	; az. kontynuacji 75
 p87_213	p87_218	238	+45	3.20
 p87_218	p87_219	232	-16.5	3.40
-p87_219	p87_2110	245	0	5.50 ; odl. zred, pomiar bez kata ponowego -> orientacyjny
+p87_219	p87_2110	245	0	5.50 ; odl. zred, pomiar bez kata pionowego -> orientacyjny
 
-; --- Boczny ciag z otworu (0) - 17 VIII 1987
-p87_0	p87_01	235	+38	5.20	; 0 - otwor dx=2.658 dy=2.780 dh=0.220
-p87_0	p87_02	290	-14	2.00
+; --- Ciag nad otworem (0) - 17 VIII 1987
+p87_0	p87_01	235	+38	5.20 ; ciag nad otworem - 0 - otwor
+p87_0	p87_02	290	-14	2.00 ; 0 - otwor dx=2.658 dy=2.780 dh=0.220
 p87_02	p87_03	300	-30	3.10
 p87_03	p87_04	0	-90	0.70 ; - przeniesienie punktu na poziom dna
 p87_04	p87_05	313	-21	6.50
@@ -99,10 +99,10 @@ p87_09	p87_010	242	-40	3.40
 p87_010	p87_011	282	-32	4.80
 p87_05	p87_012	265	+7	1.30
 p87_012	p87_013	26	-8	6.65
-p87_013	p87_014	277	-13	2.20	; cd. w nastepnej tabeli
+p87_013	p87_014	277	-12	2.20	; cd. w nastepnej tabeli
 
-; --- Boczny ciag od 05 (R. M. Kardas + M. Francuz - 11 VIII 1987) -
-;     polaczenie ciagu od otworu z punktem 11 ciagu glownego.
+; --- Ciag boczny w dolnych (?) partiach (R. M. Kardas + M. Francuz - 11 VIII 1987)
+;     polaczenie ciagu od stacji p87_05 ze stacja p87_2 ciagu glownego
 #date 1987-08-11
 p87_05	p87_015	189	+18	2.50
 p87_015	p87_016	225	-15	3.15
