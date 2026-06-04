@@ -134,7 +134,8 @@ INSTRUMENT "<instrument or nieznany>"
 #prefix <PREFIX>
 #units meters order=DAV
 #units A=D V=D
-; #units DECL=X.X    ; optional — must come BEFORE #date (see CLAUDE.md)
+; do NOT add #units DECL= when #date is present — declination derives from #date (see CLAUDE.md);
+; use #units DECL=X.X instead of #date only when the file has no reliable date
 #date <YYYY-MM-DD>
 
 ;<Section description>
