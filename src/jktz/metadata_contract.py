@@ -3,6 +3,7 @@ from __future__ import annotations
 import posixpath
 import re
 from dataclasses import dataclass
+from datetime import date
 from pathlib import Path
 
 SINGLE_FIELDS = (
@@ -40,15 +41,19 @@ RAW_FIELDS = (
 RAW_STATUSES = {"dostępny", "częściowy", "niedostępny"}
 
 _FIELD_RE = re.compile(r'^([A-Z][A-Z0-9_]*)\s+"([^"]*)"$')
+_METADATA_OPEN_RE = re.compile(r"#\[\r?\n")
+_METADATA_CLOSE_RE = re.compile(r"(?m)^#\](?:\r?\n|$)")
 _DATE_RE = re.compile(r"^\d{4}(-\d{2})?(-\d{2})?$")
 _UPDATE_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 _GRADE_RE = re.compile(
     r"^(nieznane|BCRA:([1-6X][A-D]?|nieznane)|[A-Z][A-Z0-9_-]*:[A-Za-z0-9._-]+)$"
 )
 _RAW_ITEM_RE = re.compile(r"^- \*\*([^*]+):\*\*\s*(.*)$")
-_SHOT_RE = re.compile(r"^\s*\S+\s+\S+\s+(-?\d+(?:\.\d+)?)\s+\S+\s+\S+")
 _DATE_DIRECTIVE_RE = re.compile(r"^\s*#date\b", re.IGNORECASE)
+_UNITS_DIRECTIVE_RE = re.compile(r"^\s*#units\b", re.IGNORECASE)
 _DECL_DIRECTIVE_RE = re.compile(r"^\s*#units\b.*\bDECL\s*=", re.IGNORECASE)
+_ORDER_RE = re.compile(r"\border\s*=\s*([A-Z]+)", re.IGNORECASE)
+_RECT_RE = re.compile(r"\brect\b", re.IGNORECASE)
 
 
 class MetadataError(ValueError):
@@ -87,18 +92,30 @@ def _validate_date(name: str, value: str) -> None:
         return
     if "/" in value:
         left, sep, right = value.partition("/")
-        if not sep or not _DATE_RE.fullmatch(left) or not _DATE_RE.fullmatch(right):
+        if not sep or not _is_valid_contract_date(left) or not _is_valid_contract_date(right):
             raise MetadataError(f"{name} has invalid date range {value!r}")
         return
-    if not _DATE_RE.fullmatch(value):
+    if not _is_valid_contract_date(value):
         raise MetadataError(f"{name} has invalid date {value!r}")
+
+
+def _is_valid_contract_date(value: str) -> bool:
+    if not _DATE_RE.fullmatch(value):
+        return False
+    if value.count("-") == 2:
+        try:
+            date.fromisoformat(value)
+        except ValueError:
+            return False
+    return True
 
 
 def _validate_field(name: str, value: str) -> None:
     if name in STRUCTURAL_FIELDS and value == "nieznane":
         raise MetadataError(f"{name} cannot be nieznane")
-    if name == "UPDATE_DATE" and value != "nieznane" and not _UPDATE_DATE_RE.fullmatch(value):
-        raise MetadataError(f"UPDATE_DATE has invalid date {value!r}")
+    if name == "UPDATE_DATE" and value != "nieznane":
+        if not _UPDATE_DATE_RE.fullmatch(value) or not _is_valid_contract_date(value):
+            raise MetadataError(f"UPDATE_DATE has invalid date {value!r}")
     if name == "SURVEY_DATE":
         _validate_date(name, value)
     if name == "SURVEY_GRADE" and not _GRADE_RE.fullmatch(value):
@@ -106,14 +123,15 @@ def _validate_field(name: str, value: str) -> None:
 
 
 def parse_srv_metadata(path: Path, text: str) -> SrvMetadata:
-    if not text.startswith("#[\n"):
+    opening = _METADATA_OPEN_RE.match(text)
+    if opening is None:
         raise MetadataError(f"{path.as_posix()} must start with #[")
-    end = text.find("#]\n")
-    if end == -1:
+    closing = _METADATA_CLOSE_RE.search(text, opening.end())
+    if closing is None:
         raise MetadataError(f"{path.as_posix()} metadata block is not closed with #]")
 
-    block = text[3:end]
-    body = text[end + 3 :]
+    block = text[opening.end() : closing.start()]
+    body = text[closing.end() :]
     single: dict[str, str] = {}
     repeated: dict[str, list[str]] = {name: [] for name in REPEATED_FIELDS}
 
@@ -183,18 +201,35 @@ def resolve_source_ref(srv_path: Path, value: str, poligony_root: Path) -> Path:
 def parse_raw_readme(path: Path, text: str) -> RawReadme:
     fields: dict[str, str] = {}
     in_contents = False
+    after_contents = False
+    seen_contents_heading = False
     content_items: list[str] = []
     for line in text.splitlines():
         if line == "## Zawartość":
+            if seen_contents_heading:
+                in_contents = False
+                after_contents = True
+                continue
+            seen_contents_heading = True
             in_contents = True
+            after_contents = False
             continue
         if in_contents:
+            if line.startswith("## "):
+                in_contents = False
+                after_contents = True
+                continue
             if line.startswith("- "):
                 content_items.append(line[2:])
             continue
+        if after_contents:
+            continue
         match = _RAW_ITEM_RE.fullmatch(line)
         if match:
-            fields[match.group(1)] = match.group(2).strip()
+            name = match.group(1)
+            if name in fields:
+                raise MetadataError(f"{path.as_posix()} duplicate RAW field {name}")
+            fields[name] = match.group(2).strip()
 
     missing = [name for name in RAW_FIELDS if name not in fields]
     if missing:
@@ -216,21 +251,50 @@ def parse_raw_readme(path: Path, text: str) -> RawReadme:
 
 def has_dated_or_declared_active_shots(text: str) -> bool:
     has_orientation_state = False
+    distance_token_index = 2
+    is_rectangular = False
     for raw_line in text.splitlines():
         line = raw_line.split(";", 1)[0].strip()
         if not line:
             continue
-        if _DATE_DIRECTIVE_RE.match(line) or _DECL_DIRECTIVE_RE.match(line):
+        if _DATE_DIRECTIVE_RE.match(line):
             has_orientation_state = True
+            continue
+        if _UNITS_DIRECTIVE_RE.match(line):
+            if _DECL_DIRECTIVE_RE.match(line):
+                has_orientation_state = True
+            is_rectangular = bool(_RECT_RE.search(line))
+            distance_token_index = _distance_token_index(line)
             continue
         if line.startswith("#"):
             continue
-        match = _SHOT_RE.match(line)
-        if not match:
+        if is_rectangular:
             continue
-        distance = float(match.group(1))
+        tokens = line.split()
+        if len(tokens) <= distance_token_index:
+            continue
+        distance = _as_float(tokens[distance_token_index])
+        if distance is None:
+            continue
         if distance == 0:
             continue
         if not has_orientation_state:
             return False
     return True
+
+
+def _distance_token_index(units_line: str) -> int:
+    match = _ORDER_RE.search(units_line)
+    if match is None:
+        return 2
+    order = match.group(1).upper()
+    if "D" not in order:
+        return 2
+    return 2 + order.index("D")
+
+
+def _as_float(value: str) -> float | None:
+    try:
+        return float(value)
+    except ValueError:
+        return None

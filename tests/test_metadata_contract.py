@@ -127,6 +127,38 @@ def test_rejects_bad_date_and_grade_formats() -> None:
         parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), bad_grade)
 
 
+def test_rejects_impossible_full_dates() -> None:
+    bad_update_date = VALID_BLOCK.replace(
+        'UPDATE_DATE     "2026-06-05"', 'UPDATE_DATE     "2026-02-30"'
+    )
+    with pytest.raises(MetadataError, match="UPDATE_DATE"):
+        parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), bad_update_date)
+
+    bad_survey_date = VALID_BLOCK.replace(
+        'SURVEY_DATE     "2004-06-19"', 'SURVEY_DATE     "2004-02-30"'
+    )
+    with pytest.raises(MetadataError, match="SURVEY_DATE"):
+        parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), bad_survey_date)
+
+
+def test_parse_srv_metadata_accepts_crlf_block_delimiters() -> None:
+    text = VALID_BLOCK.replace("\n", "\r\n")
+
+    parsed = parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), text)
+
+    assert parsed.single["CAVE_ID"] == "T.D-04.01"
+    assert parsed.body.startswith("#prefix ZbojeckaDziura")
+
+
+def test_parse_srv_metadata_accepts_closing_block_at_eof() -> None:
+    text = VALID_BLOCK.split("#]\n", maxsplit=1)[0] + "#]"
+
+    parsed = parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), text)
+
+    assert parsed.single["CAVE_ID"] == "T.D-04.01"
+    assert parsed.body == ""
+
+
 RAW_README = """# Cave - source package
 
 - **Status materiału:** dostępny
@@ -184,6 +216,26 @@ def test_parse_raw_readme_rejects_missing_field() -> None:
         )
 
 
+def test_parse_raw_readme_rejects_duplicate_field() -> None:
+    text = RAW_README.replace(
+        "- **Status materiału:** dostępny\n",
+        "- **Status materiału:** dostępny\n- **Status materiału:** częściowy\n",
+    )
+
+    with pytest.raises(MetadataError, match="duplicate RAW field Status materiału"):
+        parse_raw_readme(Path("_RAW/01/README.md"), text)
+
+
+def test_parse_raw_readme_contents_stop_at_next_heading() -> None:
+    text = RAW_README.replace(
+        "## Zawartość\n\n- `source.xlsx` - arkusz z pomiarami\n",
+        "## Zawartość\n\n## Uwagi\n\n- `source.xlsx` - arkusz z pomiarami\n",
+    )
+
+    with pytest.raises(MetadataError, match="missing ## Zawartość items"):
+        parse_raw_readme(Path("_RAW/01/README.md"), text)
+
+
 def test_active_srv_scope() -> None:
     assert is_active_srv_path(Path("Poligony/Cave/CAVE.SRV"))
     assert not is_active_srv_path(Path("Poligony/OTWORY.SRV"))
@@ -197,3 +249,29 @@ def test_active_shot_scanner_requires_date_or_decl_for_nonzero_shots() -> None:
     assert has_dated_or_declared_active_shots("0\t1\t0\t0\t0\n")
     assert has_dated_or_declared_active_shots(";0\t1\t1.0\t90\t0\n")
     assert not has_dated_or_declared_active_shots("0\t1\t1.0\t90\t0\n")
+
+
+@pytest.mark.parametrize("order", ["DAV", "DVA"])
+def test_active_shot_scanner_reads_distance_from_third_token_for_dav_and_dva(order: str) -> None:
+    assert not has_dated_or_declared_active_shots(
+        f"#units meters order={order}\n0\t1\t1.0\t90\t0\n"
+    )
+    assert has_dated_or_declared_active_shots(
+        f"#units meters order={order}\n#date 2004-06-19\n0\t1\t1.0\t90\t0\n"
+    )
+
+
+def test_active_shot_scanner_reads_distance_from_fifth_token_for_avd() -> None:
+    text = "#units meters order=AVD\n0\t1\t0\t0\t1.0\n"
+
+    assert not has_dated_or_declared_active_shots(text)
+    assert has_dated_or_declared_active_shots("#date 2004-06-19\n" + text)
+
+
+def test_active_shot_scanner_keeps_zero_shots_allowed_for_unit_orders() -> None:
+    assert has_dated_or_declared_active_shots("#units meters order=DAV\n0\t1\t0\t90\t0\n")
+    assert has_dated_or_declared_active_shots("#units meters order=AVD\n0\t1\t90\t0\t0\n")
+
+
+def test_active_shot_scanner_ignores_rectangular_delta_rows() -> None:
+    assert has_dated_or_declared_active_shots("#units meters rect Order=NEU\n0\t1\t1.0\t2.0\t3.0\n")
