@@ -62,26 +62,36 @@ If a source ZIP was provided:
 ## Step 5 — Create directory structure
 
 ```bash
-mkdir -p "Jaskinie-poligony/<valley-path>/<Cave Name>/_RAW"
+mkdir -p "Jaskinie-poligony/<valley-path>/<Cave Name>/_RAW/01"
 ```
 
-Copy source files to `_RAW/` preserving original names (never rename raw files):
+Copy source files to `_RAW/01/` preserving original names (never rename raw files):
 ```bash
-cp /tmp/<cave_ascii>_raw/<file> "Jaskinie-poligony/<valley-path>/<Cave Name>/_RAW/"
+cp /tmp/<cave_ascii>_raw/<file> "Jaskinie-poligony/<valley-path>/<Cave Name>/_RAW/01/"
 ```
 
-## Step 6 — Create _RAW/README.md
+## Step 6 — Create `_RAW/01/README.md`
 
-Use Polish language. Required fields:
-- **Źródło** — origin / who provided the data
-- **Autorzy pomiarów** — survey authors (from PIG `authors_of_study`)
-- **Data pomiaru** — survey date (from PIG or source file headers)
-- **Data pozyskania** — date the file was obtained (from file timestamp if unknown)
-- **Dodał** — who added it to _RAW/ (ask user if unknown)
-- **Kompletność** — completeness notes (format, number of files, missing data)
-- **## Pliki** — list every file in _RAW/ with a one-line description
+Use Polish language and the canonical package contract. Required fields:
 
-Leave any genuinely unknown fields as `nieznany` / `nieznane`.
+```markdown
+# <Cave Name ASCII> - paczka zrodlowa 01
+
+- **Status materiału:** dostępny
+- **Pochodzenie danych:** <origin / who provided the data>
+- **Autorzy pomiarów:** <authors from source/PIG or nieznane>
+- **Daty pomiarów:** <dates from source/PIG or nieznane>
+- **Data pozyskania:** <date obtained or nieznane>
+- **Dodał do _RAW:** <person who added files or nieznane>
+- **Licencja źródłowa:** <source license or nieznane>
+- **Kompletność:** <completeness notes>
+
+## Zawartość
+
+- `<file>` - <one-line description>
+```
+
+Leave any genuinely unknown fields as `nieznane`. If no raw material is available, still create `_RAW/01/README.md` with `Status materiału: niedostępny` and `- Brak materiałów źródłowych.` under `## Zawartość`.
 
 ## Step 7 — Determine station prefix
 
@@ -118,17 +128,20 @@ If the entrance station is unknown, comment out the block and add a TODO note:
 #[
 CAVE_ID         "T.X-NN.MM"
 CAVE_NAME       "Cave Name ASCII"
-SURVEY_ID       <PREFIX>
-SURVEY_NAME     "<Cave Name ASCII>"
-UPDATE_DATE     <today YYYY-MM-DD>
+SURVEY_ID       "SURVEY_ID"
+SURVEY_NAME     "Survey name"
+UPDATE_DATE     "2026-06-05"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
-COORDINATOR     "Dariusz Lubomski"
-COORDINATOR_EMAIL "darek.lubomski@gmail.com"
-DATA_SOURCE     "<source or nieznane>"
+COORDINATOR     "nieznane"
+COORDINATOR_EMAIL "nieznane"
+SOURCE_REF      "_RAW/01"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM "<authors from PIG or nieznany>"
-INSTRUMENT "<instrument or nieznany>"
+TEAM            "nieznane"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "nieznane"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "utworzono aktywny plik SRV z materialow zrodlowych"
 #]
 
 #prefix <PREFIX>
@@ -150,7 +163,7 @@ FROM    TO      DISTANCE    AZIMUTH     INCLINATION
 0       -       5.47        265         76
 ```
 
-`SURVEY_ID` and `SURVEY_NAME` are inside `#[...]` which is a block comment — Walls ignores it entirely. These fields are project convention only; omit them if unknown.
+`SURVEY_ID` and `SURVEY_NAME` are inside `#[...]` which is a block comment — Walls ignores it entirely. These fields are project convention only, but active `.SRV` files must include them and they cannot be `nieznane`. `SOURCE_REF` must point to an existing `_RAW/NN` package README. Do not use `DATA_SOURCE` in active `.SRV`; preserve source provenance in `_RAW/01/README.md` instead.
 
 If the raw source file contains multiple readings per shot, note this and leave measurements as TODO:
 ```

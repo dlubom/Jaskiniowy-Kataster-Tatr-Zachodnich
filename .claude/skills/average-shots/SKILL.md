@@ -94,8 +94,10 @@ python .claude/skills/average-shots/average_shots.py <path/to/FILE.SRV>
 
 ## What to update after averaging
 
-After running, update the metadata block in the `.SRV` file:
-- `UPDATE_DATE` → today's date (`YYYY-MM-DD`)
+After averaging, run the repo metadata helper or update the metadata block so:
+- `UPDATE_DATE` is today's date (`YYYY-MM-DD`)
+- `PROCESSING "usredniono pomiary przod/tyl"` is present exactly once
+- all existing `SOURCE_REF`, `TEAM`, `INSTRUMENT`, `SURVEY_DATE`, and `SURVEY_GRADE` lines are preserved
 
 ## Example results (MROZNA.SRV, 2026-02-26)
 

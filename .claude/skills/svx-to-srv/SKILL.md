@@ -35,9 +35,9 @@ The field order maps directly: `FROM TO DISTANCE AZIMUTH INCLINATION`
 | `*declination X` | drop it when `#date` is present | Declination derives from `#date` (IGRF). Only if the file has no reliable date, use `#units DECL=X` instead of `#date`. Note: `#dec` does NOT exist in Walls |
 | `*calibrate declination X` | drop it when `#date` is present | Legacy pre-1.2.22 way of specifying declination (NOT an instrument correction). **Opposite sign** to `*declination`: actual declination = `-X`. Sanity-check `-X` against IGRF for the survey date/location — a large mismatch means the author baked in something else (grid convergence, empirical fix) and needs investigation. If the file has no reliable date, use `#units DECL=-X` instead of `#date` |
 | `*calibrate compass/clino/tape X [scale]` | `#units INCA=-X` / `INCV=-X` / `INCD=-X` | Genuine instrument zero-error corrections — do NOT drop. Survex subtracts the zero error, Walls INC* values are added, so the sign flips |
-| `*date YYYY.MM.DD` | `#date YYYY-MM-DD` | Dash separator in Walls |
-| `*team ...` | `TEAM "..."` in metadata block | |
-| `*instrument ...` | `INSTRUMENT "..."` in metadata block | |
+| `*date YYYY.MM.DD` | `#date YYYY-MM-DD` and repeated `SURVEY_DATE "YYYY-MM-DD"` in metadata | Dash separator in Walls |
+| `*team ...` | repeated `TEAM "..."` in metadata block | Preserve multiple source team lines |
+| `*instrument ...` | repeated `INSTRUMENT "..."` in metadata block | Preserve multiple source instrument lines |
 | `*entrance` | `#flag`, `#note`, `#fix` appended to `Poligony/OTWORY.SRV` | Fully-qualified station name (e.g. `Marmurowa:0`). See add-cave skill Step 8 for coordinate conversion |
 
 ### What to skip (do NOT convert)
@@ -145,16 +145,29 @@ The prefix structure (single `#prefix` vs `#prefix2`+`#prefix`) follows the proj
 
 The cave's entrance fix/flag/note goes into the shared `Poligony/OTWORY.SRV`.
 
+## Metadata requirements
+
+Use the repository helper (`scripts/srv_metadata.py`) or the canonical contract in `src/jktz/metadata_contract.py` to create/update the leading `#[ ... #]` block in every active `.SRV` output file.
+
+Required conversion metadata:
+- `SOURCE_REF` points to an existing `_RAW/NN` package, normally `_RAW/01`.
+- Every `*team` line maps to a repeated `TEAM`.
+- Every `*instrument` line maps to a repeated `INSTRUMENT`.
+- Every reliable `*date` maps both to operative `#date` and repeated `SURVEY_DATE`.
+- Add `PROCESSING "konwersja SVX -> SRV"`.
+- Do not add `DATA_SOURCE` to active `.SRV`; source provenance belongs in `_RAW/NN/README.md`.
+
 ## Conversion checklist
 
 - [ ] Read all `.svx` files to understand the structure (main file, `*include` chain)
 - [ ] Map Survex section names to SRV file abbreviations
-- [ ] Convert measurements, skipping `*flags duplicate` and `*flags surface`
+- [ ] Convert measurements, converting `*flags duplicate` with `#S /Duplicate` and skipping `*flags surface`
 - [ ] Map `*equate` directives to zero-shots
 - [ ] **Check for junction stations in duplicate shots** — add zero-shots as needed (see critical section above)
 - [ ] Drop `*declination` / `*calibrate declination` when `#date` is present (declination derives from `#date`); use `#units DECL=` instead of `#date` only when there is no reliable date. Mind the sign: `*calibrate declination X` → `DECL=-X`
 - [ ] Convert `*calibrate compass/clino/tape` (instrument corrections) → `#units INCA=/INCV=/INCD=` with the sign flipped — never drop these
 - [ ] Place all shots in correct chronological order per `*date`
+- [ ] Create/update metadata blocks with `SOURCE_REF`, repeated `TEAM`/`INSTRUMENT`/`SURVEY_DATE`, and `PROCESSING "konwersja SVX -> SRV"`
 
 ## Adding the converted cave to the project
 

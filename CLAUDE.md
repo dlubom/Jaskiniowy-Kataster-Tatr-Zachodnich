@@ -159,19 +159,22 @@ The entrance station referenced here must exist in the cave's survey file (Walls
 #### Template: Survey File (`CAVE.SRV` or `CAVE_<SECTION_SHORTNAME>.SRV`)
 ```
 #[
-CAVE_ID			"T.X-00.00"
-CAVE_NAME		"Jaskinia Nazwa"
-SURVEY_ID		SURVEY_SHORT_ID
-SURVEY_NAME		"Survey description"
-UPDATE_DATE		YYYY-MM-DD
-PROJECT_NAME		"Kataster jaskin tatrzanskich"
-COORDINATOR		"Dariusz Lubomski"
-COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
-DATA_SOURCE		"source name"
-LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+CAVE_ID         "T.X-00.00"
+CAVE_NAME       "Cave Name ASCII"
+SURVEY_ID       "SURVEY_ID"
+SURVEY_NAME     "Survey name"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "nieznane"
+COORDINATOR_EMAIL "nieznane"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM "team member names"
-INSTRUMENT "instrument name"
+TEAM            "nieznane"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "nieznane"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "utworzono aktywny plik SRV z materialow zrodlowych"
 #]
 
 #prefix STATION_PREFIX
@@ -257,7 +260,7 @@ LC_ALL=C sed -i '' \
 
 ### Raw Source Files (`_RAW/`)
 
-Cave directories contain (or will contain) a `_RAW/` subdirectory with original, unmodified source files provided by survey authors. Purpose:
+Cave directories contain (or will contain) a `_RAW/` subdirectory with original, unmodified source files provided by survey authors. The detailed metadata contract is in `docs/superpowers/specs/2026-06-04-srv-metadata-design.md`. Purpose:
 1. **Archival** — preserving original data in its native format (Therion, Survex, DistoX exports, scanned notes, etc.)
 2. **Verification** — allowing later validation of the converted `.SRV` measurements against the original source data
 3. **Audit trail** — documenting provenance of all data in the project
@@ -267,24 +270,33 @@ The `_RAW/` contents are not processed by Walls but are tracked in git for refer
 **Required structure:**
 ```
 <cave>/_RAW/
-  README.md              # Metadata (required)
-  source.zip             # ZIP archive (required if source has multiple files)
-  source/                # Unpacked contents (required if ZIP exists)
+  README.md              # Optional index only
+  01/
+    README.md            # Required package metadata
+    ...raw files...
+  02/
+    README.md            # Required if another source package exists
     ...raw files...
 ```
 
-If the source material is a single file, the ZIP + unpacked folder are not needed — just place the file directly in `_RAW/` alongside `README.md`.
-
-**README.md must contain:**
-- Source / origin of the data
-- Author(s) of the original survey
-- Date the data was obtained
-- Person who added the files to `_RAW/`
-- Notes on completeness (full dataset, partial, missing elements)
+`_RAW/NN/README.md` must contain:
+- `Status materiału` (`dostępny`, `częściowy`, or `niedostępny`)
+- `Pochodzenie danych`
+- `Autorzy pomiarów`
+- `Daty pomiarów`
+- `Data pozyskania`
+- `Dodał do _RAW`
+- `Licencja źródłowa`
+- `Kompletność`
+- `## Zawartość` with one item per source file/directory, or `Brak materiałów źródłowych.` for `niedostępny`
 
 **Rules:**
-- Preserve original filenames and directory structure — no renaming or reorganizing
-- Never modify raw source files (even to fix encoding, formatting, or errors)
+- Active `.SRV` metadata is mandatory and must start at the beginning of the file.
+- `SOURCE_REF` links each active `.SRV` to an existing `_RAW/NN` package.
+- `DATA_SOURCE` is deprecated in active `.SRV`; source provenance belongs in `_RAW/NN/README.md`.
+- `_RAW` material files are never modified, even to fix encoding, formatting, or errors.
+- `_RAW/NN/README.md` is metadata and may be created or updated.
+- Preserve original filenames and directory structure inside the selected `_RAW/NN` package.
 - Non-ASCII characters are allowed in `_RAW/` files (unlike `.SRV` files used by Walls)
 
 ## .gitignore
