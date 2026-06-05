@@ -14,7 +14,6 @@ from jktz.reporting import CheckFailed
 
 
 def _poligony_root(root: Path) -> Path:
-    root = root.resolve()
     if root.name == "Poligony":
         return root
     candidate = root / "Poligony"
@@ -23,9 +22,10 @@ def _poligony_root(root: Path) -> Path:
     return root
 
 
-def _repo_relative(path: Path, poligony_root: Path) -> Path:
+def _repo_relative(path: Path, scan_root: Path) -> Path:
+    base = scan_root.parent if scan_root.name == "Poligony" else scan_root
     try:
-        return path.relative_to(poligony_root.parent)
+        return path.relative_to(base)
     except ValueError:
         return path
 
@@ -37,13 +37,11 @@ def _is_numbered_package_dir(path: Path) -> bool:
 def _check_raw_root(raw_dir: Path, errors: list[str]) -> None:
     children = sorted(raw_dir.iterdir())
     numbered_packages = [child for child in children if _is_numbered_package_dir(child)]
-    enforces_package_layout = bool(numbered_packages) or (raw_dir / "README.md").exists()
 
     for child in children:
         if child.name == "README.md" or _is_numbered_package_dir(child):
             continue
-        if enforces_package_layout:
-            errors.append(f"  {child.as_posix()}: material left directly under _RAW")
+        errors.append(f"  {child.as_posix()}: material left directly under _RAW")
 
     for package in numbered_packages:
         _check_raw_package(package, errors)
@@ -68,8 +66,8 @@ def _check_raw_package(package: Path, errors: list[str]) -> None:
     errors.append(f"  {package.as_posix()}: empty RAW package must have status niedostępny")
 
 
-def _check_srv(path: Path, poligony_root: Path, errors: list[str]) -> None:
-    rel = _repo_relative(path, poligony_root)
+def _check_srv(path: Path, scan_root: Path, poligony_root: Path, errors: list[str]) -> None:
+    rel = _repo_relative(path, scan_root)
     if not is_active_srv_path(rel):
         return
 
@@ -106,14 +104,15 @@ def _check_source_ref_package(rel: Path, source_ref: str, package: Path, errors:
 def check(root: Path = Path("Poligony")) -> None:
     """Validate active SRV metadata blocks and normalized _RAW source packages."""
     errors: list[str] = []
-    poligony_root = _poligony_root(root)
+    scan_root = root.resolve()
+    poligony_root = _poligony_root(scan_root)
 
-    for raw_dir in sorted(poligony_root.rglob("_RAW")):
+    for raw_dir in sorted(scan_root.rglob("_RAW")):
         if raw_dir.is_dir():
             _check_raw_root(raw_dir, errors)
 
-    for path in sorted(poligony_root.rglob("*.SRV")):
-        _check_srv(path, poligony_root, errors)
+    for path in sorted(scan_root.rglob("*.SRV")):
+        _check_srv(path, scan_root, poligony_root, errors)
 
     if errors:
         raise CheckFailed("ERROR: SRV metadata contract violation:\n" + "\n".join(errors))

@@ -91,11 +91,45 @@ def test_metadata_check_allows_parent_source_ref(tmp_path: Path) -> None:
     metadata.check(root=tmp_path / "Poligony")
 
 
-def test_metadata_check_ignores_raw_and_otwory(tmp_path: Path) -> None:
+def test_metadata_check_ignores_raw_otwory_and_powierzchnia_via_active_path_gate(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root = tmp_path
+    poligony = root / "Poligony"
+    raw = poligony / "Cave" / "_RAW" / "01"
+    raw.mkdir(parents=True)
+    (raw / "README.md").write_text(_raw_readme())
+    (raw / "ORIG.SRV").write_text("0\t1\t1.0\t90\t0\n")
+    (poligony / "OTWORY.SRV").write_text("#fix Cave:0 E19.9 N49.2 1000m\n")
+    surface = root / "Powierzchnia" / "Teren_10x10" / "POZIOM.SRV"
+    surface.parent.mkdir(parents=True)
+    surface.write_text("0\t1\t1.0\t90\t0\n")
+
+    checked_paths: list[Path] = []
+    original_is_active_srv_path = metadata.is_active_srv_path
+
+    def recording_is_active_srv_path(path: Path) -> bool:
+        checked_paths.append(path)
+        return original_is_active_srv_path(path)
+
+    monkeypatch.setattr(metadata, "is_active_srv_path", recording_is_active_srv_path)
+
+    metadata.check(root=root)
+
+    assert Path("Poligony/Cave/_RAW/01/ORIG.SRV") in checked_paths
+    assert Path("Poligony/OTWORY.SRV") in checked_paths
+    assert Path("Powierzchnia/Teren_10x10/POZIOM.SRV") in checked_paths
+
+
+def test_metadata_check_rejects_direct_material_under_raw(tmp_path: Path) -> None:
     root = tmp_path / "Poligony"
     raw = root / "Cave" / "_RAW"
     raw.mkdir(parents=True)
     (raw / "ORIG.SRV").write_text("0\t1\t1.0\t90\t0\n")
-    (root / "OTWORY.SRV").write_text("#fix Cave:0 E19.9 N49.2 1000m\n")
 
-    metadata.check(root=root)
+    with pytest.raises(CheckFailed) as excinfo:
+        metadata.check(root=root)
+
+    msg = str(excinfo.value)
+    assert "ORIG.SRV" in msg
+    assert "material left directly under _RAW" in msg
