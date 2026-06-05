@@ -263,8 +263,9 @@ def has_dated_or_declared_active_shots(text: str) -> bool:
         if _UNITS_DIRECTIVE_RE.match(line):
             if _DECL_DIRECTIVE_RE.match(line):
                 has_orientation_state = True
-            is_rectangular = bool(_RECT_RE.search(line))
-            distance_token_index = _distance_token_index(line)
+            if _ORDER_RE.search(line):
+                is_rectangular = bool(_RECT_RE.search(line))
+                distance_token_index = _distance_token_index(line)
             continue
         if line.startswith("#"):
             continue

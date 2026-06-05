@@ -275,3 +275,9 @@ def test_active_shot_scanner_keeps_zero_shots_allowed_for_unit_orders() -> None:
 
 def test_active_shot_scanner_ignores_rectangular_delta_rows() -> None:
     assert has_dated_or_declared_active_shots("#units meters rect Order=NEU\n0\t1\t1.0\t2.0\t3.0\n")
+
+
+def test_active_shot_scanner_preserves_order_across_units_without_order() -> None:
+    assert not has_dated_or_declared_active_shots(
+        "#units meters order=AVD\n#units A=D V=D\n0\t1\t0\t0\t1.0\n"
+    )
