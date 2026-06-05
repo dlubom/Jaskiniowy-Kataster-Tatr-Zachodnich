@@ -1,17 +1,23 @@
 #[
-CAVE_ID			"T.E-09.12"
-CAVE_NAME		"Jaskinia Czarna"
-SURVEY_ID		N1
-SURVEY_NAME		"Pomiary Jakuba Nowaka 2012-2015"
-UPDATE_DATE		2026-05-09
-PROJECT_NAME		"Kataster jaskin tatrzanskich"
-COORDINATOR		"Dariusz Lubomski"
-COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
-DATA_SOURCE		"Jakub Nowak, Czarna 1979-2015.xls; Jaskinie 67, 69, 77, 81"
-LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+CAVE_ID         "T.E-09.12"
+CAVE_NAME       "Jaskinia Czarna"
+SURVEY_ID       "N1"
+SURVEY_NAME     "Pomiary Jakuba Nowaka 2012-2015"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "Dariusz Lubomski"
+COORDINATOR_EMAIL "darek.lubomski@gmail.com"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM			"Jakub Nowak, Miroslaw Pindel, Sylwia Golosz-Romanska, Przemyslaw Styrna, Krzysztof Kukulka, Joanna Nowak, Kaja Fidzinska, Florian Malek, Bartosz Berdel"
-INSTRUMENT		"busola, tasma"
+TEAM            "Jakub Nowak, Miroslaw Pindel, Sylwia Golosz-Romanska, Przemyslaw Styrna, Krzysztof Kukulka, Joanna Nowak, Kaja Fidzinska, Florian Malek, Bartosz Berdel"
+INSTRUMENT      "busola, tasma"
+SURVEY_DATE     "2012-11-03"
+SURVEY_DATE     "2012-12-09"
+SURVEY_DATE     "2014-12-13"
+SURVEY_DATE     "2015-12-31"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "zachowano istniejacy aktywny plik SRV"
 #]
 
 #prefix2 Czarna

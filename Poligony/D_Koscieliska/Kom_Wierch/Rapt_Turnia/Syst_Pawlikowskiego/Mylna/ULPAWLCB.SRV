@@ -1,17 +1,20 @@
 #[
-CAVE_ID			"T.E-08.04"
-CAVE_NAME		"Jaskinia Mylna"
-SURVEY_ID		ULPAWLCB
-SURVEY_NAME		"Ulica Pawlikowskiego-CB"
-UPDATE_DATE		2026-02-12
-PROJECT_NAME		"Kataster jaskin tatrzanskich"
-COORDINATOR		"Dariusz Lubomski"
-COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
-DATA_SOURCE		"F. Filar"
-LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+CAVE_ID         "T.E-08.04"
+CAVE_NAME       "Jaskinia Mylna"
+SURVEY_ID       "ULPAWLCB"
+SURVEY_NAME     "Ulica Pawlikowskiego-CB"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "Dariusz Lubomski"
+COORDINATOR_EMAIL "darek.lubomski@gmail.com"
+SOURCE_REF      "../_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM "F. Filar" TODO: reszta zespolu??
-INSTRUMENT "DistoX2"
+TEAM            "F. Filar"
+INSTRUMENT      "DistoX2"
+SURVEY_DATE     "2009-01-01"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "zachowano istniejacy aktywny plik SRV"
 #]
 
 #prefix2 Pawlikowskiego

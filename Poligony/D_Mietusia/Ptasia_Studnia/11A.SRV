@@ -1,3 +1,22 @@
+#[
+CAVE_ID         "WPJ:RMUL"
+CAVE_NAME       "Ratusz Mulowy"
+SURVEY_ID       "11A"
+SURVEY_NAME     "11A.SRV"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "nieznane"
+COORDINATOR_EMAIL "nieznane"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "nieznane"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "2004-07-01"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+#]
+
 #DATE 2004-07-01
 #UNITS meters order=DAV
 #Units A=D V=D

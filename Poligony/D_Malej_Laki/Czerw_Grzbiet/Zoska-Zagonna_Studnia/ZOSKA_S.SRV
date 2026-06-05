@@ -1,17 +1,24 @@
 #[
-CAVE_ID			"T.E-12.58"
-CAVE_NAME		"Jaskinia Zoska - Zagonna Studnia"
-SURVEY_ID		POMIARY
-SURVEY_NAME		"Pomiary 1996-2005"
-UPDATE_DATE		2026-03-04
-PROJECT_NAME		"Kataster jaskin tatrzanskich"
-COORDINATOR		"Dariusz Lubomski"
-COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
-DATA_SOURCE		"P. Ramatowski"
-LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+CAVE_ID         "T.E-12.58"
+CAVE_NAME       "Jaskinia Zoska - Zagonna Studnia"
+SURVEY_ID       "POMIARY"
+SURVEY_NAME     "Pomiary 1996-2005"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "Dariusz Lubomski"
+COORDINATOR_EMAIL "darek.lubomski@gmail.com"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM "D. Fuja, B. Zwijacz-Kozica, K. Dudzinski, P. Orawiec, W. Gozdz, A. Lezlii, Z. Tabaczynski, J. Wilk"
-INSTRUMENT "Topo-Vulcan"
+TEAM            "D. Fuja, B. Zwijacz-Kozica, K. Dudzinski, P. Orawiec, W. Gozdz, A. Lezlii, Z. Tabaczynski, J. Wilk"
+INSTRUMENT      "Topo-Vulcan"
+SURVEY_DATE     "1996-07-28"
+SURVEY_DATE     "1996-08-15"
+SURVEY_DATE     "2004-10-27"
+SURVEY_DATE     "2004-11-11"
+SURVEY_DATE     "2005-03-24"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "zachowano istniejacy aktywny plik SRV"
 #]
 
 #prefix Zoska

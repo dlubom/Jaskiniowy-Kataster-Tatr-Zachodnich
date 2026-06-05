@@ -1,3 +1,22 @@
+#[
+CAVE_ID         "WPJ:Swistacza"
+CAVE_NAME       "Swistacza"
+SURVEY_ID       "SWIST"
+SURVEY_NAME     "SWIST"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "nieznane"
+COORDINATOR_EMAIL "nieznane"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "nieznane"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "2012-12-01"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+#]
+
 ;pomiary Soja E. Szczygiel J., Rembecki M. 01.12.2012
 ;wektoryzacja Szczygiel J.
 #UNITS D=M A=D V=D Order=DAV

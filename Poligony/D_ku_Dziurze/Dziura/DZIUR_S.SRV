@@ -1,16 +1,20 @@
 #[
-CAVE_ID			T.B-14.01
-CAVE_NAME		"Jaskinia Dziura"
-SURVEY_ID		A1
-SURVEY_NAME		"Ciag glowny"
-UPDATE_DATE		2026-02-07
-PROJECT_NAME		"Kataster jaskin tatrzanskich"
-COORDINATOR		"Dariusz Lubomski"
-COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
-DATA_SOURCE		"Dariusz Lubomski"
-LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+CAVE_ID         "T.B-14.01"
+CAVE_NAME       "Jaskinia Dziura"
+SURVEY_ID       "A1"
+SURVEY_NAME     "Ciag glowny"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "Dariusz Lubomski"
+COORDINATOR_EMAIL "darek.lubomski@gmail.com"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM "F. Filar i M. Parczewski"
+TEAM            "F. Filar i M. Parczewski"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "2014-01-06"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "zachowano istniejacy aktywny plik SRV"
 #]
 
 #date 2014-01-06

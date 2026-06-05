@@ -1,3 +1,22 @@
+#[
+CAVE_ID         "WPJ:KOZIAA"
+CAVE_NAME       "Kozia"
+SURVEY_ID       "KOZIA"
+SURVEY_NAME     "Kozia"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "nieznane"
+COORDINATOR_EMAIL "nieznane"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "nieznane"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "nieznane"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+#]
+
 #prefix Kozia
 #Units Meters Order=dav
 ; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.

@@ -1,3 +1,34 @@
+#[
+CAVE_ID         "WPJ:BK-CGM"
+CAVE_NAME       "Ciag Glowny Miedzyotworowy"
+SURVEY_ID       "BK-BCG-G"
+SURVEY_NAME     "Boki Ciagu Glownego - Grady"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "nieznane"
+COORDINATOR_EMAIL "nieznane"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "nieznane"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "1981-04-22"
+SURVEY_DATE     "1983-02-09"
+SURVEY_DATE     "1983-02-25"
+SURVEY_DATE     "1983-02-26"
+SURVEY_DATE     "1983-02-27"
+SURVEY_DATE     "1979-07-01"
+SURVEY_DATE     "1982-07-01"
+SURVEY_DATE     "1983-02-23"
+SURVEY_DATE     "1983-02-08"
+SURVEY_DATE     "1983-02-11"
+SURVEY_DATE     "1983-02-28"
+SURVEY_DATE     "1981-10-17"
+SURVEY_DATE     "1981-10-10"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+#]
+
 #prefix BandziochKom
 #Units Order=DAV
 #Units meters

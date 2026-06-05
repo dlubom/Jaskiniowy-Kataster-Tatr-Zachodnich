@@ -1,17 +1,22 @@
 #[
-CAVE_ID			"T.F-09.01"
-CAVE_NAME		"Jaskinia Psia"
-SURVEY_ID		PSIA_1987
-SURVEY_NAME		"Pomiary 1987 (Kardas + Luty)"
-UPDATE_DATE		2026-05-27
-PROJECT_NAME		"Kataster jaskin tatrzanskich"
-COORDINATOR		"Dariusz Lubomski"
-COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
-DATA_SOURCE		"GitHub issue #111; przepisane ze skanow arkuszy pomiarowych (_RAW/source/Pomiary od Izy Luty/)"
-LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+CAVE_ID         "T.F-09.01"
+CAVE_NAME       "Jaskinia Psia"
+SURVEY_ID       "PSIA_1987"
+SURVEY_NAME     "Pomiary 1987 (Kardas + Luty)"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "Dariusz Lubomski"
+COORDINATOR_EMAIL "darek.lubomski@gmail.com"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM "R. M. Kardas, I. Luty, M. Francuz, A. Gajewska, A. Paterka, K. Recielski, E. i R. Szczesni, A. Trybulec"
-INSTRUMENT "busola geologiczna Meridian, klinometr Freiberg, tasma parciana"
+TEAM            "R. M. Kardas, I. Luty, M. Francuz, A. Gajewska, A. Paterka, K. Recielski, E. i R. Szczesni, A. Trybulec"
+INSTRUMENT      "busola geologiczna Meridian, klinometr Freiberg, tasma parciana"
+SURVEY_DATE     "1987-08-11"
+SURVEY_DATE     "1987-08-17"
+SURVEY_DATE     "1987-08-18"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "zachowano istniejacy aktywny plik SRV"
 #]
 
 #prefix Psia
