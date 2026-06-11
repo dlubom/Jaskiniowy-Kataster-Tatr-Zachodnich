@@ -147,7 +147,7 @@ The cave's entrance fix/flag/note goes into the shared `Poligony/OTWORY.SRV`.
 
 ## Metadata requirements
 
-Use the repository helper (`scripts/srv_metadata.py`) or the canonical contract in `src/jktz/metadata_contract.py` to create/update the leading `#[ ... #]` block in every active `.SRV` output file.
+Use the repository helper (`scripts/srv_metadata.py`) or the canonical SRV contract in `src/jktz/srv_metadata.py` to create/update the leading `#[ ... #]` block in every active `.SRV` output file.
 
 Required conversion metadata:
 - `SOURCE_REF` points to an existing `_RAW/NN` package, normally `_RAW/01`.

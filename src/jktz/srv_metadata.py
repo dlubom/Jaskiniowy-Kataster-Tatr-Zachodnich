@@ -6,6 +6,8 @@ from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
+from jktz.metadata_errors import MetadataError
+
 SINGLE_FIELDS = (
     "CAVE_ID",
     "CAVE_NAME",
@@ -28,18 +30,6 @@ REPEATED_FIELDS = (
 STRUCTURAL_FIELDS = {"CAVE_ID", "CAVE_NAME", "SURVEY_ID", "SURVEY_NAME", "SOURCE_REF", "LICENSE"}
 ALL_FIELDS = set(SINGLE_FIELDS) | set(REPEATED_FIELDS)
 
-RAW_FIELDS = (
-    "Status materiału",
-    "Pochodzenie danych",
-    "Autorzy pomiarów",
-    "Daty pomiarów",
-    "Data pozyskania",
-    "Dodał do _RAW",
-    "Licencja źródłowa",
-    "Kompletność",
-)
-RAW_STATUSES = {"dostępny", "częściowy", "niedostępny"}
-
 _FIELD_RE = re.compile(r'^([A-Z][A-Z0-9_]*)\s+"([^"]*)"$')
 _METADATA_OPEN_RE = re.compile(r"#\[\r?\n")
 _METADATA_CLOSE_RE = re.compile(r"(?m)^#\](?:\r?\n|$)")
@@ -48,16 +38,6 @@ _UPDATE_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 _GRADE_RE = re.compile(
     r"^(nieznane|BCRA:([1-6X][A-D]?|nieznane)|[A-Z][A-Z0-9_-]*:[A-Za-z0-9._-]+)$"
 )
-_RAW_ITEM_RE = re.compile(r"^- \*\*([^*]+):\*\*\s*(.*)$")
-_DATE_DIRECTIVE_RE = re.compile(r"^\s*#date\b", re.IGNORECASE)
-_UNITS_DIRECTIVE_RE = re.compile(r"^\s*#units\b", re.IGNORECASE)
-_DECL_DIRECTIVE_RE = re.compile(r"^\s*#units\b.*\bDECL\s*=", re.IGNORECASE)
-_ORDER_RE = re.compile(r"\border\s*=\s*([A-Z]+)", re.IGNORECASE)
-_RECT_RE = re.compile(r"\brect\b", re.IGNORECASE)
-
-
-class MetadataError(ValueError):
-    """Raised when SRV or RAW metadata violates the repository contract."""
 
 
 @dataclass(frozen=True)
@@ -65,12 +45,6 @@ class SrvMetadata:
     single: dict[str, str]
     repeated: dict[str, list[str]]
     body: str
-
-
-@dataclass(frozen=True)
-class RawReadme:
-    fields: dict[str, str]
-    content_items: list[str]
 
 
 def is_active_srv_path(path: Path) -> bool:
@@ -198,104 +172,61 @@ def resolve_source_ref(srv_path: Path, value: str, poligony_root: Path) -> Path:
     return resolved
 
 
-def parse_raw_readme(path: Path, text: str) -> RawReadme:
-    fields: dict[str, str] = {}
-    in_contents = False
-    after_contents = False
-    seen_contents_heading = False
-    content_items: list[str] = []
-    for line in text.splitlines():
-        if line == "## Zawartość":
-            if seen_contents_heading:
-                in_contents = False
-                after_contents = True
-                continue
-            seen_contents_heading = True
-            in_contents = True
-            after_contents = False
-            continue
-        if in_contents:
-            if line.startswith("## "):
-                in_contents = False
-                after_contents = True
-                continue
-            if line.startswith("- "):
-                content_items.append(line[2:])
-            continue
-        if after_contents:
-            continue
-        match = _RAW_ITEM_RE.fullmatch(line)
-        if match:
-            name = match.group(1)
-            if name in fields:
-                raise MetadataError(f"{path.as_posix()} duplicate RAW field {name}")
-            fields[name] = match.group(2).strip()
-
-    missing = [name for name in RAW_FIELDS if name not in fields]
-    if missing:
-        raise MetadataError(f"{path.as_posix()} missing RAW field(s): {', '.join(missing)}")
-    if fields["Status materiału"] not in RAW_STATUSES:
-        raise MetadataError(
-            f"{path.as_posix()} invalid Status materiału {fields['Status materiału']!r}"
-        )
-    if not content_items:
-        raise MetadataError(f"{path.as_posix()} missing ## Zawartość items")
-    if fields["Status materiału"] != "niedostępny" and content_items == [
-        "Brak materiałów źródłowych."
-    ]:
-        raise MetadataError(
-            f"{path.as_posix()} available package cannot have empty source inventory"
-        )
-    return RawReadme(fields=fields, content_items=content_items)
+def default_metadata(
+    *,
+    cave_id: str,
+    cave_name: str,
+    survey_id: str,
+    survey_name: str,
+    source_refs: list[str],
+    update_date: str,
+    project_name: str = "Kataster jaskin tatrzanskich",
+    coordinator: str = "nieznane",
+    coordinator_email: str = "nieznane",
+    license_value: str = "http://creativecommons.org/licenses/by-sa/4.0/",
+    team: list[str] | None = None,
+    instruments: list[str] | None = None,
+    survey_dates: list[str] | None = None,
+    survey_grade: str = "nieznane",
+    processing: list[str] | None = None,
+) -> SrvMetadata:
+    return SrvMetadata(
+        single={
+            "CAVE_ID": cave_id,
+            "CAVE_NAME": cave_name,
+            "SURVEY_ID": survey_id,
+            "SURVEY_NAME": survey_name,
+            "UPDATE_DATE": update_date,
+            "PROJECT_NAME": project_name,
+            "COORDINATOR": coordinator,
+            "COORDINATOR_EMAIL": coordinator_email,
+            "LICENSE": license_value,
+        },
+        repeated={
+            "SOURCE_REF": source_refs,
+            "TEAM": team or ["nieznane"],
+            "INSTRUMENT": instruments or ["nieznane"],
+            "SURVEY_DATE": survey_dates or ["nieznane"],
+            "SURVEY_GRADE": [survey_grade],
+            "PROCESSING": processing or ["nieznane"],
+        },
+        body="",
+    )
 
 
-def has_dated_or_declared_active_shots(text: str) -> bool:
-    has_orientation_state = False
-    distance_token_index = 2
-    is_rectangular = False
-    for raw_line in text.splitlines():
-        line = raw_line.split(";", 1)[0].strip()
-        if not line:
-            continue
-        if _DATE_DIRECTIVE_RE.match(line):
-            has_orientation_state = True
-            continue
-        if _UNITS_DIRECTIVE_RE.match(line):
-            if _DECL_DIRECTIVE_RE.match(line):
-                has_orientation_state = True
-            if _ORDER_RE.search(line):
-                is_rectangular = bool(_RECT_RE.search(line))
-                distance_token_index = _distance_token_index(line)
-            continue
-        if line.startswith("#"):
-            continue
-        if is_rectangular:
-            continue
-        tokens = line.split()
-        if len(tokens) <= distance_token_index:
-            continue
-        distance = _as_float(tokens[distance_token_index])
-        if distance is None:
-            continue
-        if distance == 0:
-            continue
-        if not has_orientation_state:
-            return False
-    return True
-
-
-def _distance_token_index(units_line: str) -> int:
-    match = _ORDER_RE.search(units_line)
-    if match is None:
-        return 2
-    order = match.group(1).upper()
-    if "D" not in order:
-        return 2
-    return 2 + order.index("D")
-
-
-def _as_float(value: str) -> float | None:
+def replace_or_insert_metadata(text: str, metadata: SrvMetadata) -> str:
     try:
-        return float(value)
+        existing = parse_srv_metadata(Path("Poligony/MEMORY.SRV"), text)
+        body = existing.body
     except ValueError:
-        return None
+        body = text.lstrip("\r\n")
+    return format_srv_metadata(metadata) + body
+
+
+def append_processing(metadata: SrvMetadata, note: str) -> SrvMetadata:
+    values = [value for value in metadata.repeated["PROCESSING"] if value != "nieznane"]
+    if note not in values:
+        values.append(note)
+    repeated = dict(metadata.repeated)
+    repeated["PROCESSING"] = values or ["nieznane"]
+    return SrvMetadata(single=dict(metadata.single), repeated=repeated, body=metadata.body)

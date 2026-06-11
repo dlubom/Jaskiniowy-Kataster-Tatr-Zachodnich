@@ -15,6 +15,7 @@ dependencies = [
 jktz-validate = "jktz.cli.validate:main"
 jktz-exports = "jktz.cli.exports:main"
 jktz-build-zip = "jktz.cli.build_zip:main"
+jktz-srv-metadata = "jktz.cli.srv_metadata:main"
 
 [dependency-groups]
 dev = [

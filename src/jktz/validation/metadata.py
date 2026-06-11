@@ -2,15 +2,15 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from jktz.metadata_contract import (
-    MetadataError,
-    has_dated_or_declared_active_shots,
+from jktz.metadata_errors import MetadataError
+from jktz.raw_metadata import parse_raw_readme
+from jktz.reporting import CheckFailed
+from jktz.srv_metadata import (
     is_active_srv_path,
-    parse_raw_readme,
     parse_srv_metadata,
     resolve_source_ref,
 )
-from jktz.reporting import CheckFailed
+from jktz.validation.measurements import has_dated_or_declared_active_shots
 
 
 def _poligony_root(root: Path) -> Path:
