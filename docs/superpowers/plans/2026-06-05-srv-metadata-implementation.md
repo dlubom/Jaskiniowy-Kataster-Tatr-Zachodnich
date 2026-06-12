@@ -86,6 +86,7 @@ def test_parse_srv_metadata_with_repeated_fields() -> None:
 
     assert parsed.single["CAVE_ID"] == "T.D-04.01"
     assert parsed.single["SURVEY_NAME"] == "Zbojecka Dziura"
+    assert parsed.single["SURVEY_GRADE"] == "BCRA:5D"
     assert parsed.repeated["SOURCE_REF"] == ["_RAW/01", "../_RAW/02"]
     assert parsed.repeated["TEAM"] == ["J. Nowak", "J. Slusarczyk"]
     assert parsed.body.startswith("#prefix ZbojeckaDziura")
@@ -103,13 +104,13 @@ def test_format_srv_metadata_is_canonical_and_parseable() -> None:
             "COORDINATOR": "Dariusz Lubomski",
             "COORDINATOR_EMAIL": "darek.lubomski@gmail.com",
             "LICENSE": "http://creativecommons.org/licenses/by-sa/4.0/",
+            "SURVEY_GRADE": "BCRA:5D",
         },
         repeated={
             "SOURCE_REF": ["_RAW/01"],
             "TEAM": ["J. Nowak"],
             "INSTRUMENT": ["nieznane"],
             "SURVEY_DATE": ["2004-06-19"],
-            "SURVEY_GRADE": ["BCRA:5D"],
             "PROCESSING": ["konwersja z arkusza"],
         },
         body="",
@@ -269,8 +270,9 @@ SINGLE_FIELDS = (
     "COORDINATOR",
     "COORDINATOR_EMAIL",
     "LICENSE",
+    "SURVEY_GRADE",
 )
-REPEATED_FIELDS = ("SOURCE_REF", "TEAM", "INSTRUMENT", "SURVEY_DATE", "SURVEY_GRADE", "PROCESSING")
+REPEATED_FIELDS = ("SOURCE_REF", "TEAM", "INSTRUMENT", "SURVEY_DATE", "PROCESSING")
 STRUCTURAL_FIELDS = {"CAVE_ID", "CAVE_NAME", "SURVEY_ID", "SURVEY_NAME", "SOURCE_REF", "LICENSE"}
 ALL_FIELDS = set(SINGLE_FIELDS) | set(REPEATED_FIELDS)
 
@@ -289,7 +291,7 @@ RAW_STATUSES = {"dostępny", "częściowy", "niedostępny"}
 _FIELD_RE = re.compile(r'^([A-Z][A-Z0-9_]*)\s+"([^"]*)"$')
 _DATE_RE = re.compile(r"^\d{4}(-\d{2})?(-\d{2})?$")
 _UPDATE_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
-_GRADE_RE = re.compile(r"^(nieznane|BCRA:([1-6X][A-D]?|nieznane)|[A-Z][A-Z0-9_-]*:[A-Za-z0-9._-]+)$")
+_GRADE_RE = re.compile(r"^(nieznane|BCRA:([1-6X][A-D]?|nieznane)|(?!BCRA:)[A-Z][A-Z0-9_-]*:[A-Za-z0-9._-]+)$")
 _RAW_ITEM_RE = re.compile(r"^- \*\*([^*]+)\*\*:\s*(.*)$")
 _SHOT_RE = re.compile(r"^\s*\S+\s+\S+\s+(-?\d+(?:\.\d+)?)\s+\S+\s+\S+")
 _DATE_DIRECTIVE_RE = re.compile(r"^\s*#date\b", re.IGNORECASE)
@@ -381,14 +383,19 @@ def parse_srv_metadata(path: Path, text: str) -> SrvMetadata:
 def format_srv_metadata(metadata: SrvMetadata) -> str:
     lines = ["#["]
     for name in SINGLE_FIELDS:
+        if name == "SURVEY_GRADE":
+            continue
         if name == "LICENSE":
             for value in metadata.repeated["SOURCE_REF"]:
                 lines.append(f'{ "SOURCE_REF":<16}"{value}"')
         lines.append(f'{name:<16}"{metadata.single[name]}"')
     lines.append("")
-    for name in ("TEAM", "INSTRUMENT", "SURVEY_DATE", "SURVEY_GRADE", "PROCESSING"):
+    for name in ("TEAM", "INSTRUMENT", "SURVEY_DATE"):
         for value in metadata.repeated[name]:
             lines.append(f'{name:<16}"{value}"')
+    lines.append(f'{"SURVEY_GRADE":<16}"{metadata.single["SURVEY_GRADE"]}"')
+    for value in metadata.repeated["PROCESSING"]:
+        lines.append(f'{"PROCESSING":<16}"{value}"')
     lines.append("#]")
     lines.append("")
     return "\n".join(lines) + "\n"
@@ -928,13 +935,13 @@ def default_metadata(
             "COORDINATOR": coordinator,
             "COORDINATOR_EMAIL": coordinator_email,
             "LICENSE": license_value,
+            "SURVEY_GRADE": survey_grade,
         },
         repeated={
             "SOURCE_REF": source_refs,
             "TEAM": team or ["nieznane"],
             "INSTRUMENT": instruments or ["nieznane"],
             "SURVEY_DATE": survey_dates or ["nieznane"],
-            "SURVEY_GRADE": [survey_grade],
             "PROCESSING": processing or ["nieznane"],
         },
         body="",

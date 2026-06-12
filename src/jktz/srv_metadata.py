@@ -18,13 +18,13 @@ SINGLE_FIELDS = (
     "COORDINATOR",
     "COORDINATOR_EMAIL",
     "LICENSE",
+    "SURVEY_GRADE",
 )
 REPEATED_FIELDS = (
     "SOURCE_REF",
     "TEAM",
     "INSTRUMENT",
     "SURVEY_DATE",
-    "SURVEY_GRADE",
     "PROCESSING",
 )
 STRUCTURAL_FIELDS = {"CAVE_ID", "CAVE_NAME", "SURVEY_ID", "SURVEY_NAME", "SOURCE_REF", "LICENSE"}
@@ -36,7 +36,7 @@ _METADATA_CLOSE_RE = re.compile(r"(?m)^#\](?:\r?\n|$)")
 _DATE_RE = re.compile(r"^\d{4}(-\d{2})?(-\d{2})?$")
 _UPDATE_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 _GRADE_RE = re.compile(
-    r"^(nieznane|BCRA:([1-6X][A-D]?|nieznane)|[A-Z][A-Z0-9_-]*:[A-Za-z0-9._-]+)$"
+    r"^(nieznane|BCRA:([1-6X][A-D]?|nieznane)|(?!BCRA:)[A-Z][A-Z0-9_-]*:[A-Za-z0-9._-]+)$"
 )
 
 
@@ -137,14 +137,19 @@ def parse_srv_metadata(path: Path, text: str) -> SrvMetadata:
 def format_srv_metadata(metadata: SrvMetadata) -> str:
     lines = ["#["]
     for name in SINGLE_FIELDS:
+        if name == "SURVEY_GRADE":
+            continue
         if name == "LICENSE":
             for value in metadata.repeated["SOURCE_REF"]:
                 lines.append(_format_field("SOURCE_REF", value))
         lines.append(_format_field(name, metadata.single[name]))
     lines.append("")
-    for name in ("TEAM", "INSTRUMENT", "SURVEY_DATE", "SURVEY_GRADE", "PROCESSING"):
+    for name in ("TEAM", "INSTRUMENT", "SURVEY_DATE"):
         for value in metadata.repeated[name]:
             lines.append(_format_field(name, value))
+    lines.append(_format_field("SURVEY_GRADE", metadata.single["SURVEY_GRADE"]))
+    for value in metadata.repeated["PROCESSING"]:
+        lines.append(_format_field("PROCESSING", value))
     lines.append("#]")
     lines.append("")
     return "\n".join(lines) + "\n"
@@ -201,13 +206,13 @@ def default_metadata(
             "COORDINATOR": coordinator,
             "COORDINATOR_EMAIL": coordinator_email,
             "LICENSE": license_value,
+            "SURVEY_GRADE": survey_grade,
         },
         repeated={
             "SOURCE_REF": source_refs,
             "TEAM": team or ["nieznane"],
             "INSTRUMENT": instruments or ["nieznane"],
             "SURVEY_DATE": survey_dates or ["nieznane"],
-            "SURVEY_GRADE": [survey_grade],
             "PROCESSING": processing or ["nieznane"],
         },
         body="",

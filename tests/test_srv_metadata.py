@@ -47,6 +47,7 @@ def test_parse_srv_metadata_with_repeated_fields() -> None:
 
     assert parsed.single["CAVE_ID"] == "T.D-04.01"
     assert parsed.single["SURVEY_NAME"] == "Zbojecka Dziura"
+    assert parsed.single["SURVEY_GRADE"] == "BCRA:5D"
     assert parsed.repeated["SOURCE_REF"] == ["_RAW/01", "../_RAW/02"]
     assert parsed.repeated["TEAM"] == ["J. Nowak", "J. Slusarczyk"]
     assert parsed.body.startswith("#prefix ZbojeckaDziura")
@@ -64,13 +65,13 @@ def test_format_srv_metadata_is_canonical_and_parseable() -> None:
             "COORDINATOR": "Dariusz Lubomski",
             "COORDINATOR_EMAIL": "darek.lubomski@gmail.com",
             "LICENSE": "http://creativecommons.org/licenses/by-sa/4.0/",
+            "SURVEY_GRADE": "BCRA:5D",
         },
         repeated={
             "SOURCE_REF": ["_RAW/01"],
             "TEAM": ["J. Nowak"],
             "INSTRUMENT": ["nieznane"],
             "SURVEY_DATE": ["2004-06-19"],
-            "SURVEY_GRADE": ["BCRA:5D"],
             "PROCESSING": ["konwersja z arkusza"],
         },
         body="",
@@ -114,6 +115,16 @@ def test_rejects_duplicate_single_field() -> None:
         parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), text)
 
 
+def test_rejects_duplicate_survey_grade() -> None:
+    text = VALID_BLOCK.replace(
+        'SURVEY_GRADE    "BCRA:5D"',
+        'SURVEY_GRADE    "BCRA:5D"\nSURVEY_GRADE    "BCRA:6D"',
+    )
+
+    with pytest.raises(MetadataError, match="duplicate single field SURVEY_GRADE"):
+        parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), text)
+
+
 def test_rejects_unknown_structural_field_value() -> None:
     text = VALID_BLOCK.replace('SURVEY_ID       "ZBDZIU"', 'SURVEY_ID       "nieznane"')
 
@@ -129,6 +140,22 @@ def test_rejects_bad_date_and_grade_formats() -> None:
     bad_grade = VALID_BLOCK.replace('SURVEY_GRADE    "BCRA:5D"', 'SURVEY_GRADE    "BCRA 5D"')
     with pytest.raises(MetadataError, match="SURVEY_GRADE"):
         parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), bad_grade)
+
+
+@pytest.mark.parametrize("grade", ["BCRA:banana", "BCRA:7D", "BCRA:99"])
+def test_rejects_unknown_bcra_grade(grade: str) -> None:
+    text = VALID_BLOCK.replace("BCRA:5D", grade)
+
+    with pytest.raises(MetadataError, match="SURVEY_GRADE"):
+        parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), text)
+
+
+def test_accepts_named_non_bcra_grade_standard() -> None:
+    text = VALID_BLOCK.replace("BCRA:5D", "UIS:2")
+
+    parsed = parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), text)
+
+    assert parsed.single["SURVEY_GRADE"] == "UIS:2"
 
 
 def test_rejects_impossible_full_dates() -> None:
