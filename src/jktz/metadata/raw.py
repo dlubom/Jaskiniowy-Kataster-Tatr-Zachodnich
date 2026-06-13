@@ -5,7 +5,7 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
-from jktz.metadata_errors import MetadataError
+from jktz.metadata.errors import MetadataError
 
 RAW_FIELDS = (
     "Status materiału",
@@ -23,7 +23,7 @@ _RAW_ITEM_RE = re.compile(r"^- \*\*([^*]+):\*\*\s*(.*)$")
 
 
 @dataclass(frozen=True)
-class RawReadme:
+class RawMetadata:
     fields: dict[str, str]
     content_items: list[str]
 
@@ -34,7 +34,7 @@ class MaterialHash:
     sha256: str
 
 
-def parse_raw_readme(path: Path, text: str) -> RawReadme:
+def parse_raw_metadata(path: Path, text: str) -> RawMetadata:
     fields: dict[str, str] = {}
     in_contents = False
     after_contents = False
@@ -82,10 +82,10 @@ def parse_raw_readme(path: Path, text: str) -> RawReadme:
         raise MetadataError(
             f"{path.as_posix()} available package cannot have empty source inventory"
         )
-    return RawReadme(fields=fields, content_items=content_items)
+    return RawMetadata(fields=fields, content_items=content_items)
 
 
-def canonical_raw_readme(
+def format_raw_metadata(
     *,
     title: str,
     status: str,

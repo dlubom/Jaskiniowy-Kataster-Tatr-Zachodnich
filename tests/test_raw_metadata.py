@@ -4,12 +4,12 @@ from pathlib import Path
 
 import pytest
 
-from jktz.metadata_errors import MetadataError
-from jktz.raw_metadata import (
-    RawReadme,
-    canonical_raw_readme,
+from jktz.metadata.errors import MetadataError
+from jktz.metadata.raw import (
+    RawMetadata,
+    format_raw_metadata,
     material_hashes,
-    parse_raw_readme,
+    parse_raw_metadata,
 )
 
 RAW_README = """# Cave - source package
@@ -29,44 +29,44 @@ RAW_README = """# Cave - source package
 """
 
 
-def test_parse_raw_readme_contract() -> None:
-    parsed = parse_raw_readme(Path("_RAW/01/README.md"), RAW_README)
+def test_parse_raw_metadata_contract() -> None:
+    parsed = parse_raw_metadata(Path("_RAW/01/README.md"), RAW_README)
 
-    assert isinstance(parsed, RawReadme)
+    assert isinstance(parsed, RawMetadata)
     assert parsed.fields["Status materiału"] == "dostępny"
     assert parsed.content_items == ["`source.xlsx` - arkusz z pomiarami"]
 
 
-def test_parse_raw_readme_rejects_missing_field() -> None:
+def test_parse_raw_metadata_rejects_missing_field() -> None:
     with pytest.raises(MetadataError, match="Licencja źródłowa"):
-        parse_raw_readme(
+        parse_raw_metadata(
             Path("_RAW/01/README.md"),
             RAW_README.replace("- **Licencja źródłowa:** nieznane\n", ""),
         )
 
 
-def test_parse_raw_readme_rejects_duplicate_field() -> None:
+def test_parse_raw_metadata_rejects_duplicate_field() -> None:
     text = RAW_README.replace(
         "- **Status materiału:** dostępny\n",
         "- **Status materiału:** dostępny\n- **Status materiału:** częściowy\n",
     )
 
     with pytest.raises(MetadataError, match="duplicate RAW field Status materiału"):
-        parse_raw_readme(Path("_RAW/01/README.md"), text)
+        parse_raw_metadata(Path("_RAW/01/README.md"), text)
 
 
-def test_parse_raw_readme_contents_stop_at_next_heading() -> None:
+def test_parse_raw_metadata_contents_stop_at_next_heading() -> None:
     text = RAW_README.replace(
         "## Zawartość\n\n- `source.xlsx` - arkusz z pomiarami\n",
         "## Zawartość\n\n## Uwagi\n\n- `source.xlsx` - arkusz z pomiarami\n",
     )
 
     with pytest.raises(MetadataError, match="missing ## Zawartość items"):
-        parse_raw_readme(Path("_RAW/01/README.md"), text)
+        parse_raw_metadata(Path("_RAW/01/README.md"), text)
 
 
-def test_canonical_raw_readme_for_missing_materials() -> None:
-    text = canonical_raw_readme(
+def test_format_raw_metadata_for_missing_materials() -> None:
+    text = format_raw_metadata(
         title="Cave - missing source package",
         status="niedostępny",
         origin="nieznane",

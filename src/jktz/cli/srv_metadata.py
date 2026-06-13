@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from jktz.raw_metadata import material_hashes
+from jktz.metadata.raw import material_hashes
 
 
 def main() -> int:

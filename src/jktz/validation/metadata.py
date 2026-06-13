@@ -2,14 +2,14 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from jktz.metadata_errors import MetadataError
-from jktz.raw_metadata import parse_raw_readme
-from jktz.reporting import CheckFailed
-from jktz.srv_metadata import (
+from jktz.metadata.errors import MetadataError
+from jktz.metadata.raw import parse_raw_metadata
+from jktz.metadata.srv import (
     is_active_srv_path,
     parse_srv_metadata,
     resolve_source_ref,
 )
+from jktz.reporting import CheckFailed
 from jktz.validation.measurements import has_dated_or_declared_active_shots
 
 
@@ -54,7 +54,7 @@ def _check_raw_package(package: Path, errors: list[str]) -> None:
         return
 
     try:
-        parsed = parse_raw_readme(readme, readme.read_text(encoding="utf-8"))
+        parsed = parse_raw_metadata(readme, readme.read_text(encoding="utf-8"))
     except MetadataError as exc:
         errors.append(f"  {exc}")
         return

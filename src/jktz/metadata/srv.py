@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
-from jktz.metadata_errors import MetadataError
+from jktz.metadata.errors import MetadataError
 
 SINGLE_FIELDS = (
     "CAVE_ID",

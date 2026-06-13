@@ -4,8 +4,8 @@ from pathlib import Path
 
 import pytest
 
-from jktz.metadata_errors import MetadataError
-from jktz.srv_metadata import (
+from jktz.metadata.errors import MetadataError
+from jktz.metadata.srv import (
     SrvMetadata,
     append_processing,
     default_metadata,
