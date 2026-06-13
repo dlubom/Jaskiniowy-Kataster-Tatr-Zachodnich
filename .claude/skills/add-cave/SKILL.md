@@ -46,7 +46,7 @@ Example: `E19.898750  N49.246611  1270.0m`
 ## Step 3 — Determine directory path
 
 Valley path from arguments (use ASCII, no diacritics in directory names):
-`Jaskinie-poligony/<valley-path>/<Cave Name ASCII>/`
+`Poligony/<valley-path>/<Cave Name ASCII>/`
 
 Check if the valley subdirectory already exists. Match the style of neighbouring caves in that directory.
 
@@ -62,12 +62,12 @@ If a source ZIP was provided:
 ## Step 5 — Create directory structure
 
 ```bash
-mkdir -p "Jaskinie-poligony/<valley-path>/<Cave Name>/_RAW/01"
+mkdir -p "Poligony/<valley-path>/<Cave Name ASCII>/_RAW/01"
 ```
 
 Copy source files to `_RAW/01/` preserving original names (never rename raw files):
 ```bash
-cp /tmp/<cave_ascii>_raw/<file> "Jaskinie-poligony/<valley-path>/<Cave Name>/_RAW/01/"
+cp /tmp/<cave_ascii>_raw/<file> "Poligony/<valley-path>/<Cave Name ASCII>/_RAW/01/"
 ```
 
 ## Step 6 — Create `_RAW/01/README.md`
