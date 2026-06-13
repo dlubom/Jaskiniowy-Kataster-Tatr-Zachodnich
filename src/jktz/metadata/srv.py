@@ -47,20 +47,6 @@ class SrvMetadata:
     body: str
 
 
-def is_active_srv_path(path: Path) -> bool:
-    parts = path.parts
-    if path.suffix != ".SRV" or "_RAW" in parts:
-        return False
-    if parts[:1] == ("Poligony",):
-        poligony_path = path.as_posix()
-    elif "Poligony" in parts:
-        poligony_index = parts.index("Poligony")
-        poligony_path = "/".join(parts[poligony_index:])
-    else:
-        return False
-    return poligony_path != "Poligony/OTWORY.SRV"
-
-
 def _validate_date(name: str, value: str) -> None:
     if value == "nieznane":
         return
@@ -160,23 +146,6 @@ def _format_field(name: str, value: str) -> str:
     return f'{name}{padding}"{value}"'
 
 
-def resolve_source_ref(srv_path: Path, value: str, poligony_root: Path) -> Path:
-    normalized = posixpath.normpath(value)
-    parts = normalized.split("/")
-    if len(parts) < 2 or parts[-2] != "_RAW" or not re.fullmatch(r"\d{2}", parts[-1]):
-        raise MetadataError(f"SOURCE_REF {value!r} must end with _RAW/NN")
-    if normalized.startswith("/"):
-        raise MetadataError(f"SOURCE_REF {value!r} must be relative")
-
-    resolved = (srv_path.parent / Path(normalized)).resolve()
-    root = poligony_root.resolve()
-    try:
-        resolved.relative_to(root)
-    except ValueError as exc:
-        raise MetadataError(f"SOURCE_REF {value!r} resolves outside Poligony") from exc
-    return resolved
-
-
 def default_metadata(
     *,
     cave_id: str,
@@ -235,3 +204,34 @@ def append_processing(metadata: SrvMetadata, note: str) -> SrvMetadata:
     repeated = dict(metadata.repeated)
     repeated["PROCESSING"] = values or ["nieznane"]
     return SrvMetadata(single=dict(metadata.single), repeated=repeated, body=metadata.body)
+
+
+def is_active_srv_path(path: Path) -> bool:
+    parts = path.parts
+    if path.suffix != ".SRV" or "_RAW" in parts:
+        return False
+    if parts[:1] == ("Poligony",):
+        poligony_path = path.as_posix()
+    elif "Poligony" in parts:
+        poligony_index = parts.index("Poligony")
+        poligony_path = "/".join(parts[poligony_index:])
+    else:
+        return False
+    return poligony_path != "Poligony/OTWORY.SRV"
+
+
+def resolve_source_ref(srv_path: Path, value: str, poligony_root: Path) -> Path:
+    normalized = posixpath.normpath(value)
+    parts = normalized.split("/")
+    if len(parts) < 2 or parts[-2] != "_RAW" or not re.fullmatch(r"\d{2}", parts[-1]):
+        raise MetadataError(f"SOURCE_REF {value!r} must end with _RAW/NN")
+    if normalized.startswith("/"):
+        raise MetadataError(f"SOURCE_REF {value!r} must be relative")
+
+    resolved = (srv_path.parent / Path(normalized)).resolve()
+    root = poligony_root.resolve()
+    try:
+        resolved.relative_to(root)
+    except ValueError as exc:
+        raise MetadataError(f"SOURCE_REF {value!r} resolves outside Poligony") from exc
+    return resolved
