@@ -220,10 +220,10 @@ def default_metadata(
 
 
 def replace_or_insert_metadata(text: str, metadata: SrvMetadata) -> str:
-    try:
+    if text.startswith("#["):
         existing = parse_srv_metadata(Path("Poligony/MEMORY.SRV"), text)
         body = existing.body
-    except ValueError:
+    else:
         body = text.lstrip("\r\n")
     return format_srv_metadata(metadata) + body
 

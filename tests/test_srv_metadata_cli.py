@@ -115,6 +115,20 @@ def test_srv_set_rejects_invalid_metadata_without_modifying_file(
     assert "UPDATE_DATE" in capsys.readouterr().err
 
 
+def test_srv_set_rejects_malformed_existing_block_without_modifying_file(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    path = tmp_path / "CAVE.SRV"
+    original = b"#[\nBROKEN\n#]\n\n#prefix Cave\n0\t1\t1.0\t90\t0\n"
+    path.write_bytes(original)
+
+    result = main(_srv_set_args(path))
+
+    assert result == 1
+    assert path.read_bytes() == original
+    assert "invalid metadata line" in capsys.readouterr().err
+
+
 def test_srv_update_changes_date_and_appends_processing_idempotently(tmp_path: Path) -> None:
     path = tmp_path / "CAVE.SRV"
     path.write_text("#prefix Cave\n0\t1\t1.0\t90\t0\n", encoding="ascii")
