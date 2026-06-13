@@ -79,7 +79,7 @@ def encode_srv(text: str) -> bytes: ...
 def atomic_write(path: Path, data: bytes) -> None: ...
 ```
 
-`encode_srv` rejects non-ASCII metadata before it is combined with the preserved
+CLI rejects a non-ASCII metadata block before it is combined with the preserved
 Latin-1 body. `atomic_write` creates parent directories only when the caller has
 already validated the generated document.
 

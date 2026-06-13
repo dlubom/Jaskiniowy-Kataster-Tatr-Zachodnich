@@ -72,26 +72,27 @@ cp /tmp/<cave_ascii>_raw/<file> "Jaskinie-poligony/<valley-path>/<Cave Name>/_RA
 
 ## Step 6 — Create `_RAW/01/README.md`
 
-Use Polish language and the canonical package contract. Required fields:
+Use the metadata CLI instead of composing the README manually:
 
-```markdown
-# <Cave Name ASCII> - paczka zrodlowa 01
-
-- **Status materiału:** dostępny
-- **Pochodzenie danych:** <origin / who provided the data>
-- **Autorzy pomiarów:** <authors from source/PIG or nieznane>
-- **Daty pomiarów:** <dates from source/PIG or nieznane>
-- **Data pozyskania:** <date obtained or nieznane>
-- **Dodał do _RAW:** <person who added files or nieznane>
-- **Licencja źródłowa:** <source license or nieznane>
-- **Kompletność:** <completeness notes>
-
-## Zawartość
-
-- `<file>` - <one-line description>
+```bash
+uv run jktz-srv-metadata raw-set \
+  "Poligony/<valley-path>/<Cave Name ASCII>/_RAW/01/README.md" \
+  --title "<Cave Name ASCII> - paczka zrodlowa 01" \
+  --status "dostępny" \
+  --origin "<origin / who provided the data>" \
+  --authors "<authors from source/PIG or nieznane>" \
+  --dates "<dates from source/PIG or nieznane>" \
+  --acquired "<date obtained or nieznane>" \
+  --added-by "<person who added files or nieznane>" \
+  --license-value "<source license or nieznane>" \
+  --completeness "<completeness notes>" \
+  --content '`<file>` - <one-line description>'
 ```
 
-Leave any genuinely unknown fields as `nieznane`. If no raw material is available, still create `_RAW/01/README.md` with `Status materiału: niedostępny` and `- Brak materiałów źródłowych.` under `## Zawartość`.
+Repeat `--content` for every source file or directory. Leave genuinely unknown
+fields as `nieznane`. If no raw material is available, use
+`--status "niedostępny"` and
+`--content "Brak materiałów źródłowych."`.
 
 ## Step 7 — Determine station prefix
 
@@ -124,26 +125,9 @@ If the entrance station is unknown, comment out the block and add a TODO note:
 
 ## Step 9 — Create the survey file (`CAVE.SRV` or `CAVE_<SECTION_SHORTNAME>.SRV`)
 
+First create the Walls body without a hand-written metadata block:
+
 ```
-#[
-CAVE_ID         "T.X-NN.MM"
-CAVE_NAME       "Cave Name ASCII"
-SURVEY_ID       "SURVEY_ID"
-SURVEY_NAME     "Survey name"
-UPDATE_DATE     "2026-06-05"
-PROJECT_NAME    "Kataster jaskin tatrzanskich"
-COORDINATOR     "nieznane"
-COORDINATOR_EMAIL "nieznane"
-SOURCE_REF      "_RAW/01"
-LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
-
-TEAM            "nieznane"
-INSTRUMENT      "nieznane"
-SURVEY_DATE     "nieznane"
-SURVEY_GRADE    "nieznane"
-PROCESSING      "utworzono aktywny plik SRV z materialow zrodlowych"
-#]
-
 #prefix <PREFIX>
 #units meters order=DAV
 #units A=D V=D
@@ -163,7 +147,26 @@ FROM    TO      DISTANCE    AZIMUTH     INCLINATION
 0       -       5.47        265         76
 ```
 
-`SURVEY_ID` and `SURVEY_NAME` are inside `#[...]` which is a block comment — Walls ignores it entirely. These fields are project convention only, but active `.SRV` files must include them and they cannot be `nieznane`. `SOURCE_REF` must point to an existing `_RAW/NN` package README. Do not use `DATA_SOURCE` in active `.SRV`; preserve source provenance in `_RAW/01/README.md` instead.
+Then atomically prepend the validated metadata block:
+
+```bash
+uv run jktz-srv-metadata srv-set \
+  "Poligony/<valley-path>/<Cave Name ASCII>/<CAVE_FILE>.SRV" \
+  --cave-id "T.X-NN.MM" \
+  --cave-name "<Cave Name ASCII>" \
+  --survey-id "<SURVEY_ID>" \
+  --survey-name "<Survey name>" \
+  --source-ref "_RAW/01" \
+  --update-date "<YYYY-MM-DD>" \
+  --processing "utworzono aktywny plik SRV z materialow zrodlowych"
+```
+
+Repeat `--source-ref`, `--team`, `--instrument`, `--survey-date`, and
+`--processing` when multiple values exist. Optional descriptive values default
+to `nieznane`. `SURVEY_ID` and `SURVEY_NAME` cannot be `nieznane`.
+`SOURCE_REF` must point to an existing `_RAW/NN` package README. Do not use
+`DATA_SOURCE` in active `.SRV`; preserve source provenance in the RAW README.
+Use `--dry-run` to inspect the complete file without writing it.
 
 If the raw source file contains multiple readings per shot, note this and leave measurements as TODO:
 ```

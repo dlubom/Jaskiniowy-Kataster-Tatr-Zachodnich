@@ -312,9 +312,9 @@ niepoprawne pole. Walidacja nie zatrzymuje sie na pierwszym naruszeniu.
 
 ## Helper i repozytoryjne skills
 
-Powstanie wspolny repozytoryjny helper lub skrypt do bezpiecznego tworzenia i
-aktualizowania metadanych. Skills maja uzywac helpera zamiast recznie skladac
-bloki.
+Wspolnym repozytoryjnym helperem jest entry point `jktz-srv-metadata`.
+Udostepnia `srv-set`, `srv-update`, `raw-set` oraz `hash-raw`. Skills uzywaja
+tych komend zamiast recznie skladac bloki.
 
 Helper:
 
@@ -326,6 +326,10 @@ Helper:
 - przyjmuje wiele `SOURCE_REF`, dat, zespolow, instrumentow i operacji
   przetwarzania;
 - jest idempotentny.
+
+Komendy zapisujace obsluguja `--dry-run`, waliduja kompletny wynik przed
+zapisem i podmieniaja plik atomowo. Implementacja CLI znajduje sie w
+`src/jktz/cli/srv_metadata.py`, a kod domenowy w `src/jktz/metadata/`.
 
 Aktualizacji wymagaja co najmniej:
 

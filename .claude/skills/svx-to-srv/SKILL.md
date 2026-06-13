@@ -147,7 +147,26 @@ The cave's entrance fix/flag/note goes into the shared `Poligony/OTWORY.SRV`.
 
 ## Metadata requirements
 
-Use the repository helper (`scripts/srv_metadata.py`) or the canonical SRV contract in `src/jktz/srv_metadata.py` to create/update the leading `#[ ... #]` block in every active `.SRV` output file.
+After writing each converted Walls body, create its metadata through the CLI:
+
+```bash
+uv run jktz-srv-metadata srv-set \
+  "<path/to/OUTPUT.SRV>" \
+  --cave-id "<cave-id>" \
+  --cave-name "<Cave Name ASCII>" \
+  --survey-id "<SURVEY_ID>" \
+  --survey-name "<Survey name>" \
+  --source-ref "_RAW/01" \
+  --update-date "<YYYY-MM-DD>" \
+  --team "<team entry>" \
+  --instrument "<instrument entry>" \
+  --survey-date "<survey date>" \
+  --processing "konwersja SVX -> SRV"
+```
+
+Repeat `--team`, `--instrument`, `--survey-date`, and `--source-ref` for every
+source value. Omit an unknown optional flag to receive the canonical `nieznane`
+default. Use `--dry-run` to inspect the generated file without writing it.
 
 Required conversion metadata:
 - `SOURCE_REF` points to an existing `_RAW/NN` package, normally `_RAW/01`.
@@ -167,7 +186,7 @@ Required conversion metadata:
 - [ ] Drop `*declination` / `*calibrate declination` when `#date` is present (declination derives from `#date`); use `#units DECL=` instead of `#date` only when there is no reliable date. Mind the sign: `*calibrate declination X` → `DECL=-X`
 - [ ] Convert `*calibrate compass/clino/tape` (instrument corrections) → `#units INCA=/INCV=/INCD=` with the sign flipped — never drop these
 - [ ] Place all shots in correct chronological order per `*date`
-- [ ] Create/update metadata blocks with `SOURCE_REF`, repeated `TEAM`/`INSTRUMENT`/`SURVEY_DATE`, and `PROCESSING "konwersja SVX -> SRV"`
+- [ ] Run `jktz-srv-metadata srv-set` for every output with `SOURCE_REF`, repeated `TEAM`/`INSTRUMENT`/`SURVEY_DATE`, and `PROCESSING "konwersja SVX -> SRV"`
 
 ## Adding the converted cave to the project
 

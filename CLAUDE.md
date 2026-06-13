@@ -157,6 +157,13 @@ degrees (e.g. `E19.894900 N49.245399`).
 The entrance station referenced here must exist in the cave's survey file (Walls/cavern resolves it across the whole project tree).
 
 #### Template: Survey File (`CAVE.SRV` or `CAVE_<SECTION_SHORTNAME>.SRV`)
+
+Create the Walls body, then use `uv run jktz-srv-metadata srv-set ...` to
+atomically prepend the canonical block shown below. Use
+`uv run jktz-srv-metadata srv-update ...` for later `UPDATE_DATE` or
+`PROCESSING` changes, and `raw-set` for `_RAW/NN/README.md`. All write commands
+support `--dry-run`.
+
 ```
 #[
 CAVE_ID         "T.X-00.00"
@@ -298,6 +305,8 @@ The `_RAW/` contents are not processed by Walls but are tracked in git for refer
 - `_RAW/NN/README.md` is metadata and may be created or updated.
 - Preserve original filenames and directory structure inside the selected `_RAW/NN` package.
 - Non-ASCII characters are allowed in `_RAW/` files (unlike `.SRV` files used by Walls)
+- Create and update these metadata documents with `uv run jktz-srv-metadata`;
+  reusable Python APIs live under `src/jktz/metadata/`.
 
 ## .gitignore
 
@@ -466,7 +475,7 @@ Use the `/add-cave` skill (see above) or follow these steps manually:
 
 1. **Research the cave** in `doc/jaskinie_polski_pig_dump.jsonl` — search by cave ID (see PIG section above) to find official coordinates, dimensions, and documentation history
 2. Create a directory under the appropriate valley in `Poligony/` (use underscores, no spaces, short names)
-3. Create the cave's survey `.SRV` file(s) with metadata block and survey data (one file for a simple cave, one per section for a multi-section cave)
+3. Create the cave's survey `.SRV` body and run `uv run jktz-srv-metadata srv-set` for each file
 4. Append entrance fix/flag/note for the cave to `Poligony/OTWORY.SRV.j2` (fully-qualified station name, e.g. `Marmurowa:0`)
 5. If using Claude for adding cave: **Close Walls** before editing `KATASTER.wpj` — Walls overwrites the file on save, discarding any manually added entries
 6. Add `.BOOK`/`.SURVEY` entries to `KATASTER.wpj` referencing the new files

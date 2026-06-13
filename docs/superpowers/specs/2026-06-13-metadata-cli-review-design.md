@@ -76,7 +76,8 @@ standardowe wyjscie, a plik nie jest tworzony ani modyfikowany.
 
 Aktywne `.SRV` sa odczytywane i zapisywane jako bajty mapowane przez Latin-1.
 Dzieki temu kazdy bajt tresci poza naglowkiem ma jednoznaczne odwzorowanie i
-wraca do pliku bez zmiany. Nowy blok metadanych musi byc ASCII.
+wraca do pliku bez zmiany. Nowy blok metadanych jest osobno sprawdzany jako
+ASCII przed polaczeniem z zachowana trescia.
 
 README paczek RAW uzywa UTF-8.
 

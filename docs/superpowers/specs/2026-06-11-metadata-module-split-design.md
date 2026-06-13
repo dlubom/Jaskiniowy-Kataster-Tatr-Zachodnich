@@ -11,7 +11,7 @@ formatu README paczek `_RAW/NN` ani wyniku walidacji.
 
 ## Docelowe moduly
 
-### `src/jktz/srv_metadata.py`
+### `src/jktz/metadata/srv.py`
 
 Modul zawiera kontrakt aktywnego SRV:
 
@@ -27,11 +27,11 @@ Canonical formatter nadal zapisuje pusta linie:
 - pomiedzy polami strukturalnymi i polami opisujacymi pomiar;
 - pomiedzy `#]` i trescia Walls.
 
-### `src/jktz/raw_metadata.py`
+### `src/jktz/metadata/raw.py`
 
 Modul zawiera kontrakt README paczki `_RAW/NN`:
 
-- `RawReadme`;
+- `RawMetadata`;
 - parsowanie i walidacje README;
 - generowanie canonical README;
 - obliczanie sum SHA-256 materialow zrodlowych z pominieciem README.
@@ -44,14 +44,15 @@ Modul zawiera walidacje tresci pomiarowej niezalezna od metadanych:
 - rozpoznawanie kolejnosci kolumn Walls;
 - sprawdzanie, czy niezerowe aktywne strzaly maja stan orientacji.
 
-### `src/jktz/metadata_errors.py`
+### `src/jktz/metadata/errors.py`
 
 Modul zawiera wspolny `MetadataError`, aby kontrakt SRV i kontrakt RAW nie
 zalezaly od siebie.
 
 ### `src/jktz/cli/srv_metadata.py`
 
-Modul zawiera parser argumentow i implementacje komendy `hash-raw`.
+Modul zawiera parser argumentow i implementacje komend `srv-set`,
+`srv-update`, `raw-set` oraz `hash-raw`.
 `scripts/srv_metadata.py` pozostaje cienka, zgodna wstecznie nakladka
 uruchamiajaca `jktz.cli.srv_metadata.main`.
 
@@ -70,9 +71,9 @@ dzialanie kontraktow i walidacji repozytorium.
 ## Kompatybilnosc
 
 - `scripts/srv_metadata.py hash-raw` zachowuje dotychczasowe zachowanie.
+- `jktz-srv-metadata` udostepnia zapisujace komendy z opcja `--dry-run`.
 - Komunikaty bledow kontraktow pozostaja bez zmian.
 - `jktz-validate` wykonuje te same kontrole.
 - Historyczne plany implementacyjne nie sa przepisywane.
 - Aktualna specyfikacja kontraktu i instrukcje wskazujace modul implementacji
   zostana zaktualizowane do nowych sciezek.
-

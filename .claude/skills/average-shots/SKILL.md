@@ -94,10 +94,18 @@ python .claude/skills/average-shots/average_shots.py <path/to/FILE.SRV>
 
 ## What to update after averaging
 
-After averaging, run the repo metadata helper or update the metadata block so:
-- `UPDATE_DATE` is today's date (`YYYY-MM-DD`)
-- `PROCESSING "usredniono pomiary przod/tyl"` is present exactly once
-- all existing `SOURCE_REF`, `TEAM`, `INSTRUMENT`, `SURVEY_DATE`, and `SURVEY_GRADE` lines are preserved
+After averaging, update metadata through the CLI:
+
+```bash
+uv run jktz-srv-metadata srv-update <path/to/FILE.SRV> \
+  --update-date "<YYYY-MM-DD>" \
+  --add-processing "usredniono pomiary przod/tyl"
+```
+
+The command preserves existing `SOURCE_REF`, `TEAM`, `INSTRUMENT`,
+`SURVEY_DATE`, and `SURVEY_GRADE` values. Repeating it is idempotent:
+`PROCESSING "usredniono pomiary przod/tyl"` remains present exactly once.
+Use `--dry-run` to inspect the result without writing it.
 
 ## Example results (MROZNA.SRV, 2026-02-26)
 
