@@ -52,9 +52,9 @@ def test_metadata_check_passes_for_valid_srv_and_raw(tmp_path: Path) -> None:
     cave = tmp_path / "Poligony" / "Cave"
     raw = cave / "_RAW" / "01"
     raw.mkdir(parents=True)
-    (raw / "README.md").write_text(_raw_readme())
-    (raw / "source.xlsx").write_text("raw")
-    (cave / "CAVE.SRV").write_text(_srv())
+    (raw / "README.md").write_text(_raw_readme(), encoding="utf-8")
+    (raw / "source.xlsx").write_text("raw", encoding="utf-8")
+    (cave / "CAVE.SRV").write_text(_srv(), encoding="utf-8")
 
     metadata.check(root=tmp_path / "Poligony")
 
@@ -63,10 +63,12 @@ def test_metadata_check_reports_all_errors(tmp_path: Path) -> None:
     cave = tmp_path / "Poligony" / "Cave"
     raw = cave / "_RAW" / "01"
     raw.mkdir(parents=True)
-    (raw / "README.md").write_text(_raw_readme().replace("- **Licencja źródłowa:** nieznane\n", ""))
-    (raw / "loose.txt").write_text("raw")
-    (cave / "BAD.SRV").write_text("#prefix Cave\n0\t1\t1.0\t90\t0\n")
-    (cave / "CAVE.SRV").write_text(_srv(body="0\t1\t1.0\t90\t0\n"))
+    (raw / "README.md").write_text(
+        _raw_readme().replace("- **Licencja źródłowa:** nieznane\n", ""), encoding="utf-8"
+    )
+    (raw / "loose.txt").write_text("raw", encoding="utf-8")
+    (cave / "BAD.SRV").write_text("#prefix Cave\n0\t1\t1.0\t90\t0\n", encoding="utf-8")
+    (cave / "CAVE.SRV").write_text(_srv(body="0\t1\t1.0\t90\t0\n"), encoding="utf-8")
 
     with pytest.raises(CheckFailed) as excinfo:
         metadata.check(root=tmp_path / "Poligony")
@@ -84,9 +86,9 @@ def test_metadata_check_allows_parent_source_ref(tmp_path: Path) -> None:
     raw = system / "_RAW" / "02"
     raw.mkdir(parents=True)
     section.mkdir(parents=True)
-    (raw / "README.md").write_text(_raw_readme())
-    (raw / "source.svx").write_text("raw")
-    (section / "SECTION.SRV").write_text(_srv(source_ref="../_RAW/02"))
+    (raw / "README.md").write_text(_raw_readme(), encoding="utf-8")
+    (raw / "source.svx").write_text("raw", encoding="utf-8")
+    (section / "SECTION.SRV").write_text(_srv(source_ref="../_RAW/02"), encoding="utf-8")
 
     metadata.check(root=tmp_path / "Poligony")
 
@@ -98,12 +100,12 @@ def test_metadata_check_ignores_raw_otwory_and_powierzchnia_via_active_path_gate
     poligony = root / "Poligony"
     raw = poligony / "Cave" / "_RAW" / "01"
     raw.mkdir(parents=True)
-    (raw / "README.md").write_text(_raw_readme())
-    (raw / "ORIG.SRV").write_text("0\t1\t1.0\t90\t0\n")
-    (poligony / "OTWORY.SRV").write_text("#fix Cave:0 E19.9 N49.2 1000m\n")
+    (raw / "README.md").write_text(_raw_readme(), encoding="utf-8")
+    (raw / "ORIG.SRV").write_text("0\t1\t1.0\t90\t0\n", encoding="utf-8")
+    (poligony / "OTWORY.SRV").write_text("#fix Cave:0 E19.9 N49.2 1000m\n", encoding="utf-8")
     surface = root / "Powierzchnia" / "Teren_10x10" / "POZIOM.SRV"
     surface.parent.mkdir(parents=True)
-    surface.write_text("0\t1\t1.0\t90\t0\n")
+    surface.write_text("0\t1\t1.0\t90\t0\n", encoding="utf-8")
 
     checked_paths: list[Path] = []
     original_is_active_srv_path = metadata.is_active_srv_path
@@ -125,7 +127,7 @@ def test_metadata_check_rejects_direct_material_under_raw(tmp_path: Path) -> Non
     root = tmp_path / "Poligony"
     raw = root / "Cave" / "_RAW"
     raw.mkdir(parents=True)
-    (raw / "ORIG.SRV").write_text("0\t1\t1.0\t90\t0\n")
+    (raw / "ORIG.SRV").write_text("0\t1\t1.0\t90\t0\n", encoding="utf-8")
 
     with pytest.raises(CheckFailed) as excinfo:
         metadata.check(root=root)
