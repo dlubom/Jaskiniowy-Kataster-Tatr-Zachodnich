@@ -176,4 +176,3 @@ UV_CACHE_DIR=/private/tmp/uv-cache uv run jktz-validate
 
 Confirm that no active `.SRV` or `_RAW/NN/README.md` data file changed and
 that canonical blank lines remain asserted in SRV formatter tests.
-
