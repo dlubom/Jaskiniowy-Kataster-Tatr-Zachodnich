@@ -44,13 +44,17 @@ def _raw_root_material(raw_dir: Path) -> list[Path]:
     ]
 
 
+def _lexical_absolute(path: Path) -> Path:
+    return Path(os.path.abspath(os.fspath(path)))
+
+
 def _git_ignored_untracked(paths: list[Path], scan_root: Path) -> set[Path]:
-    absolute_paths = [path.resolve() for path in paths]
+    absolute_paths = [_lexical_absolute(path) for path in paths]
     if not absolute_paths:
         return set()
 
     stdin = b"\0".join(os.fsencode(path) for path in absolute_paths) + b"\0"
-    env = os.environ.copy()
+    env = {key: value for key, value in os.environ.items() if not key.upper().startswith("GIT_")}
     env.update({"LANG": "C", "LC_ALL": "C"})
     try:
         result = subprocess.run(
@@ -64,10 +68,16 @@ def _git_ignored_untracked(paths: list[Path], scan_root: Path) -> set[Path]:
         return set()
 
     if result.returncode in {0, 1}:
-        return {Path(os.fsdecode(path)) for path in result.stdout.split(b"\0") if path}
+        return {
+            _lexical_absolute(Path(os.fsdecode(path)))
+            for path in result.stdout.split(b"\0")
+            if path
+        }
 
     stderr = result.stderr.decode(errors="replace").strip()
-    if "not a git repository" in stderr or "must be run in a work tree" in stderr:
+    if result.returncode == 128 and (
+        "not a git repository" in stderr or "must be run in a work tree" in stderr
+    ):
         return set()
     detail = stderr or f"git exited with status {result.returncode}"
     raise CheckFailed(f"ERROR: git check-ignore failed: {detail}")

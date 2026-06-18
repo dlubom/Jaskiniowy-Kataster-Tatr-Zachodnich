@@ -172,3 +172,61 @@ def test_metadata_check_rejects_ignored_tracked_material_under_raw(tmp_path: Pat
     msg = str(excinfo.value)
     assert "generated.err" in msg
     assert "material left directly under _RAW" in msg
+
+
+def test_metadata_check_allows_ignored_untracked_symlink_under_raw(tmp_path: Path) -> None:
+    _git(tmp_path, "init")
+    (tmp_path / ".gitignore").write_text("*.err\n", encoding="utf-8")
+    target = tmp_path / "source.txt"
+    target.write_text("generated", encoding="utf-8")
+    raw = tmp_path / "Poligony" / "Cave" / "_RAW"
+    raw.mkdir(parents=True)
+    try:
+        (raw / "generated.err").symlink_to(target)
+    except OSError as exc:
+        pytest.skip(f"symlinks unavailable: {exc}")
+
+    metadata.check(root=tmp_path / "Poligony")
+
+
+def test_metadata_check_ignores_inherited_git_environment_and_checks_once(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    _git(tmp_path, "init")
+    (tmp_path / ".gitignore").write_text("*.err\n", encoding="utf-8")
+    for cave_name in ("First", "Second"):
+        raw = tmp_path / "Poligony" / cave_name / "_RAW"
+        raw.mkdir(parents=True)
+        (raw / "generated.err").write_text("generated", encoding="utf-8")
+
+    calls = 0
+    real_run = subprocess.run
+
+    def recording_run(*args: object, **kwargs: object) -> subprocess.CompletedProcess[bytes]:
+        nonlocal calls
+        calls += 1
+        return real_run(*args, **kwargs)
+
+    monkeypatch.setenv("GIT_DIR", str(tmp_path / "missing.git"))
+    monkeypatch.setattr(metadata.subprocess, "run", recording_run)
+
+    metadata.check(root=tmp_path / "Poligony")
+
+    assert calls == 1
+
+
+def test_git_ignored_untracked_reports_unexpected_git_error(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    def failing_run(*args: object, **kwargs: object) -> subprocess.CompletedProcess[bytes]:
+        return subprocess.CompletedProcess(
+            args=args[0],
+            returncode=2,
+            stdout=b"",
+            stderr=b"fatal: not a git repository: boom",
+        )
+
+    monkeypatch.setattr(metadata.subprocess, "run", failing_run)
+
+    with pytest.raises(CheckFailed, match="fatal: not a git repository: boom"):
+        metadata._git_ignored_untracked([tmp_path / "generated.err"], tmp_path)
