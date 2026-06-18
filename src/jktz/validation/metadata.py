@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import os
+import subprocess
 from pathlib import Path
 
 from jktz.metadata.errors import MetadataError
@@ -34,12 +36,50 @@ def _is_numbered_package_dir(path: Path) -> bool:
     return path.is_dir() and len(path.name) == 2 and path.name.isdigit()
 
 
-def _check_raw_root(raw_dir: Path, errors: list[str]) -> None:
-    children = sorted(raw_dir.iterdir())
-    numbered_packages = [child for child in children if _is_numbered_package_dir(child)]
+def _raw_root_material(raw_dir: Path) -> list[Path]:
+    return [
+        child
+        for child in sorted(raw_dir.iterdir())
+        if child.name != "README.md" and not _is_numbered_package_dir(child)
+    ]
 
-    for child in children:
-        if child.name == "README.md" or _is_numbered_package_dir(child):
+
+def _git_ignored_untracked(paths: list[Path], scan_root: Path) -> set[Path]:
+    absolute_paths = [path.resolve() for path in paths]
+    if not absolute_paths:
+        return set()
+
+    stdin = b"\0".join(os.fsencode(path) for path in absolute_paths) + b"\0"
+    env = os.environ.copy()
+    env.update({"LANG": "C", "LC_ALL": "C"})
+    try:
+        result = subprocess.run(
+            ["git", "-C", os.fspath(scan_root), "check-ignore", "--stdin", "-z"],
+            input=stdin,
+            capture_output=True,
+            check=False,
+            env=env,
+        )
+    except FileNotFoundError:
+        return set()
+
+    if result.returncode in {0, 1}:
+        return {Path(os.fsdecode(path)) for path in result.stdout.split(b"\0") if path}
+
+    stderr = result.stderr.decode(errors="replace").strip()
+    if "not a git repository" in stderr or "must be run in a work tree" in stderr:
+        return set()
+    detail = stderr or f"git exited with status {result.returncode}"
+    raise CheckFailed(f"ERROR: git check-ignore failed: {detail}")
+
+
+def _check_raw_root(raw_dir: Path, ignored_untracked: set[Path], errors: list[str]) -> None:
+    numbered_packages = [
+        child for child in sorted(raw_dir.iterdir()) if _is_numbered_package_dir(child)
+    ]
+
+    for child in _raw_root_material(raw_dir):
+        if child in ignored_untracked:
             continue
         errors.append(f"  {child.as_posix()}: material left directly under _RAW")
 
@@ -107,9 +147,11 @@ def check(root: Path = Path("Poligony")) -> None:
     scan_root = root.resolve()
     poligony_root = _poligony_root(scan_root)
 
-    for raw_dir in sorted(scan_root.rglob("_RAW")):
-        if raw_dir.is_dir():
-            _check_raw_root(raw_dir, errors)
+    raw_dirs = [raw_dir for raw_dir in sorted(scan_root.rglob("_RAW")) if raw_dir.is_dir()]
+    raw_root_material = [child for raw_dir in raw_dirs for child in _raw_root_material(raw_dir)]
+    ignored_untracked = _git_ignored_untracked(raw_root_material, scan_root)
+    for raw_dir in raw_dirs:
+        _check_raw_root(raw_dir, ignored_untracked, errors)
 
     for path in sorted(scan_root.rglob("*.SRV")):
         _check_srv(path, scan_root, poligony_root, errors)

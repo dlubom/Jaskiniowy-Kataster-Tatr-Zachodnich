@@ -1,11 +1,21 @@
 from __future__ import annotations
 
+import subprocess
 from pathlib import Path
 
 import pytest
 
 from jktz.reporting import CheckFailed
 from jktz.validation import metadata
+
+
+def _git(root: Path, *args: str) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        ["git", "-C", str(root), *args],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
 
 
 def _raw_readme(status: str = "dostępny") -> str:
@@ -134,4 +144,31 @@ def test_metadata_check_rejects_direct_material_under_raw(tmp_path: Path) -> Non
 
     msg = str(excinfo.value)
     assert "ORIG.SRV" in msg
+    assert "material left directly under _RAW" in msg
+
+
+def test_metadata_check_allows_ignored_untracked_material_under_raw(tmp_path: Path) -> None:
+    _git(tmp_path, "init")
+    (tmp_path / ".gitignore").write_text("*.err\n", encoding="utf-8")
+    raw = tmp_path / "Poligony" / "Cave" / "_RAW"
+    raw.mkdir(parents=True)
+    (raw / "generated.err").write_text("generated", encoding="utf-8")
+
+    metadata.check(root=tmp_path / "Poligony")
+
+
+def test_metadata_check_rejects_ignored_tracked_material_under_raw(tmp_path: Path) -> None:
+    _git(tmp_path, "init")
+    (tmp_path / ".gitignore").write_text("*.err\n", encoding="utf-8")
+    raw = tmp_path / "Poligony" / "Cave" / "_RAW"
+    raw.mkdir(parents=True)
+    generated = raw / "generated.err"
+    generated.write_text("generated", encoding="utf-8")
+    _git(tmp_path, "add", "--force", str(generated))
+
+    with pytest.raises(CheckFailed) as excinfo:
+        metadata.check(root=tmp_path / "Poligony")
+
+    msg = str(excinfo.value)
+    assert "generated.err" in msg
     assert "material left directly under _RAW" in msg
