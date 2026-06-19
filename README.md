@@ -15,6 +15,13 @@
 ### Opis projektu
 Projekt ma na celu zgromadzenie w jednym miejscu wszystkich danych kartograficznych dotyczących tatrzańskich jaskiń. Wykorzystując oprogramowanie Walls, głównym celem jest stworzenie zestawienia przestrzennego ciągów pomiarowych, współrzędnych wejść do jaskiń oraz modelu terenu. Projekt jest otwarty dla wszystkich zainteresowanych, by ułatwić działania eksploracyjne, edukacyjne oraz wspierać badania naukowe. Zebranie kompleksowych i dokładnych danych stanowi wyzwanie ze względu na różnorodność metod i czasu ich wykonania.
 
+### Uzupełniające zbiory danych
+
+Kataster obejmuje obiekty, dla których dostępne są dane pomiarowe. Uzupełniają go dwa powiązane zbiory obejmujące także obiekty, których nie ma jeszcze w tym repozytorium:
+
+- [GPS Kataster Obiektów Tatr](https://github.com/dlubom/gps-kataster-obiektow-tatr) — baza lokalizacji GPS otworów jaskiń i innych obiektów terenowych. Ten projekt korzysta z publikowanych w niej najlepszych pomiarów GPS do wyznaczania współrzędnych wejść. Gotowe dane GIS i terenowe można pobrać z [najnowszego wydania](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/latest).
+- [Georeferencer](https://github.com/dlubom/Georeferencer) — georeferencjonowane skany planów jaskiń w formacie GeoTIFF, obejmujące również obiekty bez danych pomiarowych w tym katastrze. Gotową paczkę GeoTIFF można pobrać z [najnowszego wydania](https://github.com/dlubom/Georeferencer/releases/latest).
+
 Projekt oparty jest o oprogramowanie Walls – tutaj znajdziesz [najnowszą wersję programu](https://github.com/wallscavesurvey/walls/releases)  oraz [instrukcję obsługi](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
 
 Projekt działa również w [Survex](https://survex.com/) — wystarczy zainstalować najnowszą wersję i wczytać plik `KATASTER.wpj` w programie Aven lub skompilować z linii poleceń: `cavern KATASTER.wpj`. W Aven można też wczytać model terenu `Powierzchnia/Survex/N49E019_VF1.hgt`.

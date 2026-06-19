@@ -15,6 +15,13 @@
 ### Project Description
 The project aims to compile all cartographic data related to the caves of the Tatra Mountains in one place. Utilizing the Walls software, the primary goal is to create a spatial compilation of measurement sequences, cave entrance coordinates, and terrain models. The project is open to all who are interested, to facilitate exploratory and educational activities, and to support scientific research. Gathering comprehensive and accurate data presents a challenge due to the diversity of methods and times of their execution.
 
+### Complementary Data Sets
+
+The registry contains objects for which cave survey data is available. Two related data sets complement it by also covering objects that are not yet present in this repository:
+
+- [GPS Kataster Obiektów Tatr](https://github.com/dlubom/gps-kataster-obiektow-tatr) — a database of GPS locations for cave entrances and other field objects. This project uses its published best GPS measurements to determine entrance coordinates. Ready-to-use GIS and field data can be downloaded from the [latest release](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/latest).
+- [Georeferencer](https://github.com/dlubom/Georeferencer) — georeferenced scans of cave plans in GeoTIFF format, including objects without survey data in this registry. A ready-to-use GeoTIFF package can be downloaded from the [latest release](https://github.com/dlubom/Georeferencer/releases/latest).
+
 The project is based on the Walls software – you can find the [latest version of the program and its manual here](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
 
 The project also works with [Survex](https://survex.com/) — just install the latest version and open `KATASTER.wpj` in Aven, or compile from the command line: `cavern KATASTER.wpj`. In Aven you can also load the terrain model `Powierzchnia/Survex/N49E019_VF1.hgt`.
