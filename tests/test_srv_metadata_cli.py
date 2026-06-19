@@ -115,6 +115,22 @@ def test_srv_set_rejects_invalid_metadata_without_modifying_file(
     assert "UPDATE_DATE" in capsys.readouterr().err
 
 
+def test_srv_set_rejects_invalid_source_ref_without_modifying_file(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    path = tmp_path / "CAVE.SRV"
+    original = b"#prefix Cave\n0\t1\t1.0\t90\t0\n"
+    path.write_bytes(original)
+    args = _srv_set_args(path)
+    args[args.index("_RAW/01")] = "sources/01"
+
+    result = main(args)
+
+    assert result == 1
+    assert path.read_bytes() == original
+    assert "must end with _RAW/NN" in capsys.readouterr().err
+
+
 def test_srv_set_rejects_malformed_existing_block_without_modifying_file(
     tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:

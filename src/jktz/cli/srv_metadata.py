@@ -19,6 +19,7 @@ from jktz.metadata.srv import (
     format_srv_metadata,
     parse_srv_metadata,
     replace_or_insert_metadata,
+    resolve_source_ref,
 )
 
 
@@ -96,6 +97,10 @@ def _encode_metadata_block(metadata: SrvMetadata) -> None:
         raise MetadataError("SRV metadata must contain ASCII only") from exc
 
 
+def _poligony_root_for(path: Path) -> Path:
+    return next((parent for parent in path.parents if parent.name == "Poligony"), path.parent)
+
+
 def _run_srv_set(args: argparse.Namespace) -> None:
     metadata = default_metadata(
         cave_id=args.cave_id,
@@ -114,6 +119,9 @@ def _run_srv_set(args: argparse.Namespace) -> None:
         survey_grade=args.survey_grade,
         processing=args.processing,
     )
+    poligony_root = _poligony_root_for(args.path)
+    for source_ref in metadata.repeated["SOURCE_REF"]:
+        resolve_source_ref(args.path, source_ref, poligony_root)
     _encode_metadata_block(metadata)
     current = read_srv(args.path) if args.path.exists() else ""
     updated = replace_or_insert_metadata(current, metadata)

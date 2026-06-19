@@ -13,6 +13,18 @@ def test_active_shot_scanner_requires_date_or_decl_for_nonzero_shots() -> None:
     assert not has_dated_or_declared_active_shots("0\t1\t1.0\t90\t0\n")
 
 
+def test_active_shot_scanner_ignores_date_inside_block_comment() -> None:
+    text = "#[ disabled\n#date 2004-06-19\n#]\n0\t1\t1.0\t90\t0\n"
+
+    assert not has_dated_or_declared_active_shots(text)
+
+
+def test_active_shot_scanner_ignores_shots_inside_block_comment() -> None:
+    text = "#[ deferred\n0\t1\t1.0\t90\t0\n#]\n"
+
+    assert has_dated_or_declared_active_shots(text)
+
+
 @pytest.mark.parametrize("order", ["DAV", "DVA"])
 def test_active_shot_scanner_reads_distance_from_third_token_for_dav_and_dva(order: str) -> None:
     assert not has_dated_or_declared_active_shots(

@@ -172,6 +172,14 @@ def test_rejects_impossible_full_dates() -> None:
         parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), bad_survey_date)
 
 
+@pytest.mark.parametrize("survey_date", ["2004-00", "2004-13", "2004-06/2004-99"])
+def test_rejects_impossible_partial_dates(survey_date: str) -> None:
+    text = VALID_BLOCK.replace('SURVEY_DATE     "2004-06-19"', f'SURVEY_DATE     "{survey_date}"')
+
+    with pytest.raises(MetadataError, match="SURVEY_DATE"):
+        parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), text)
+
+
 def test_parse_srv_metadata_accepts_crlf_block_delimiters() -> None:
     text = VALID_BLOCK.replace("\n", "\r\n")
 

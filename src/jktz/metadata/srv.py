@@ -62,9 +62,11 @@ def _validate_date(name: str, value: str) -> None:
 def _is_valid_contract_date(value: str) -> bool:
     if not _DATE_RE.fullmatch(value):
         return False
-    if value.count("-") == 2:
+    date_parts = value.count("-")
+    if date_parts in {1, 2}:
+        candidate = f"{value}-01" if date_parts == 1 else value
         try:
-            date.fromisoformat(value)
+            date.fromisoformat(candidate)
         except ValueError:
             return False
     return True
@@ -78,6 +80,8 @@ def _validate_field(name: str, value: str) -> None:
             raise MetadataError(f"UPDATE_DATE has invalid date {value!r}")
     if name == "SURVEY_DATE":
         _validate_date(name, value)
+    if name == "SOURCE_REF":
+        validate_source_ref(value)
     if name == "SURVEY_GRADE" and not _GRADE_RE.fullmatch(value):
         raise MetadataError(f"SURVEY_GRADE has invalid value {value!r}")
 
@@ -220,13 +224,18 @@ def is_active_srv_path(path: Path) -> bool:
     return poligony_path != "Poligony/OTWORY.SRV"
 
 
-def resolve_source_ref(srv_path: Path, value: str, poligony_root: Path) -> Path:
+def validate_source_ref(value: str) -> str:
     normalized = posixpath.normpath(value)
     parts = normalized.split("/")
     if len(parts) < 2 or parts[-2] != "_RAW" or not re.fullmatch(r"\d{2}", parts[-1]):
         raise MetadataError(f"SOURCE_REF {value!r} must end with _RAW/NN")
     if normalized.startswith("/"):
         raise MetadataError(f"SOURCE_REF {value!r} must be relative")
+    return normalized
+
+
+def resolve_source_ref(srv_path: Path, value: str, poligony_root: Path) -> Path:
+    normalized = validate_source_ref(value)
 
     resolved = (srv_path.parent / Path(normalized)).resolve()
     root = poligony_root.resolve()

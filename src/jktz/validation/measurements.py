@@ -13,9 +13,17 @@ def has_dated_or_declared_active_shots(text: str) -> bool:
     has_orientation_state = False
     distance_token_index = 2
     is_rectangular = False
+    in_block_comment = False
     for raw_line in text.splitlines():
         line = raw_line.split(";", 1)[0].strip()
         if not line:
+            continue
+        if in_block_comment:
+            if line.startswith("#]"):
+                in_block_comment = False
+            continue
+        if line.startswith("#["):
+            in_block_comment = "#]" not in line[2:]
             continue
         if _DATE_DIRECTIVE_RE.match(line):
             has_orientation_state = True
