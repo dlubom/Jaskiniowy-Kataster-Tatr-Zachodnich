@@ -13,3 +13,4 @@
 
 - `kasprowa.cave` — surowe dane z aplikacji Qave; zawiera potrójne odczyty DistoX dla każdej strzały; format własny Qave (CSV-like)
 - `Kasprowa_Niznia.svx` — plik Survex z uśrednionymi pomiarami ciągu i surowymi strzałami bocznymi (splay); zawiera `*fix` w układzie UTM34N (z geoportalu) oraz deklaracje zespołu i instrumentów
+- `kasprowapomiary.zip` — archiwum materiałów pomiarowych

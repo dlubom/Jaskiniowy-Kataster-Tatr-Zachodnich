@@ -20,7 +20,7 @@
 - Create `tests/test_validation_utils.py`: unit contract for shared path classification.
 - Modify active-validator tests: prove every Walls-specific rule ignores `_RAW`.
 - Modify `tests/test_validation_metadata.py`: RAW inventory and status regressions.
-- Modify nine `_RAW/01|02/README.md` files found by the repository audit: make inventory metadata match existing materials without changing source files.
+- Modify seven `_RAW/01/README.md` files confirmed by the repository validator: make inventory metadata match existing materials without changing source files.
 
 ### Task 1: Centralize the `_RAW` boundary
 
@@ -156,14 +156,12 @@ UV_CACHE_DIR=/private/tmp/uv-cache uv run pytest tests/test_validation_metadata.
 
 Expected: all metadata validation tests pass.
 
-### Task 3: Reconcile the nine repository inventories
+### Task 3: Reconcile the seven repository inventories
 
 **Files:**
 - Modify: `Poligony/D_Kasprowa/Kasprowa_Niznia/_RAW/01/README.md`
 - Modify: `Poligony/D_Koscieliska/Kamienne_Zad/Lod_w_Ciemniaku/_RAW/01/README.md`
-- Modify: `Poligony/D_Koscieliska/Kom_Wierch/Bandzioch_Kom/_RAW/02/README.md`
 - Modify: `Poligony/D_Koscieliska/Organy/Czarna/_RAW/01/README.md`
-- Modify: `Poligony/D_Koscieliska/Zar/Psia/_RAW/01/README.md`
 - Modify: `Poligony/D_Mietusia/Kazaln_Miet/Marmurowa/_RAW/01/README.md`
 - Modify: `Poligony/D_Mietusia/M_Swistowka/Mietusia_Wyznia/_RAW/01/README.md`
 - Modify: `Poligony/D_Mietusia/W_Swistowka/Harda/_RAW/01/README.md`

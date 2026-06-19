@@ -18,8 +18,13 @@ def _git(root: Path, *args: str) -> subprocess.CompletedProcess[str]:
     )
 
 
-def _raw_readme(status: str = "dostępny") -> str:
-    item = "`source.xlsx` - arkusz" if status != "niedostępny" else "Brak materiałów źródłowych."
+def _raw_readme(status: str = "dostępny", contents: list[str] | None = None) -> str:
+    if contents is None:
+        contents = (
+            ["`source.xlsx` - arkusz"]
+            if status != "niedostępny"
+            else ["Brak materiałów źródłowych."]
+        )
     return (
         "# Cave - source package\n\n"
         f"- **Status materiału:** {status}\n"
@@ -30,8 +35,7 @@ def _raw_readme(status: str = "dostępny") -> str:
         "- **Dodał do _RAW:** Dariusz Lubomski\n"
         "- **Licencja źródłowa:** nieznane\n"
         "- **Kompletność:** pełny pomiar\n\n"
-        "## Zawartość\n\n"
-        f"- {item}\n"
+        "## Zawartość\n\n" + "".join(f"- {item}\n" for item in contents)
     )
 
 
@@ -97,7 +101,7 @@ def test_metadata_check_allows_parent_source_ref(tmp_path: Path) -> None:
     raw.mkdir(parents=True)
     section.mkdir(parents=True)
     (raw / "README.md").write_text(_raw_readme(), encoding="utf-8")
-    (raw / "source.svx").write_text("raw", encoding="utf-8")
+    (raw / "source.xlsx").write_text("raw", encoding="utf-8")
     (section / "SECTION.SRV").write_text(_srv(source_ref="../_RAW/02"), encoding="utf-8")
 
     metadata.check(root=tmp_path / "Poligony")
@@ -110,7 +114,7 @@ def test_metadata_check_ignores_raw_otwory_and_powierzchnia_via_active_path_gate
     poligony = root / "Poligony"
     raw = poligony / "Cave" / "_RAW" / "01"
     raw.mkdir(parents=True)
-    (raw / "README.md").write_text(_raw_readme(), encoding="utf-8")
+    (raw / "README.md").write_text(_raw_readme(contents=["`ORIG.SRV` - source"]), encoding="utf-8")
     (raw / "ORIG.SRV").write_text("0\t1\t1.0\t90\t0\n", encoding="utf-8")
     (poligony / "OTWORY.SRV").write_text("#fix Cave:0 E19.9 N49.2 1000m\n", encoding="utf-8")
     surface = root / "Powierzchnia" / "Teren_10x10" / "POZIOM.SRV"
@@ -230,3 +234,137 @@ def test_git_ignored_untracked_reports_unexpected_git_error(
 
     with pytest.raises(CheckFailed, match="fatal: not a git repository: boom"):
         metadata._git_ignored_untracked([tmp_path / "generated.err"], tmp_path)
+
+
+def test_metadata_check_rejects_missing_declared_inventory_path(tmp_path: Path) -> None:
+    raw = tmp_path / "Poligony" / "Cave" / "_RAW" / "01"
+    raw.mkdir(parents=True)
+    (raw / "README.md").write_text(
+        _raw_readme(contents=["`missing.svx` - source"]), encoding="utf-8"
+    )
+    (raw / "actual.svx").write_text("source", encoding="utf-8")
+
+    with pytest.raises(
+        CheckFailed, match="declared RAW inventory path 'missing.svx' does not exist"
+    ):
+        metadata.check(root=tmp_path / "Poligony")
+
+
+def test_metadata_check_rejects_unsafe_inventory_path(tmp_path: Path) -> None:
+    raw = tmp_path / "Poligony" / "Cave" / "_RAW" / "01"
+    raw.mkdir(parents=True)
+    (raw / "README.md").write_text(
+        _raw_readme(contents=["`../outside.svx` - source"]), encoding="utf-8"
+    )
+    (raw / "source.xlsx").write_text("source", encoding="utf-8")
+
+    with pytest.raises(CheckFailed, match="unsafe RAW inventory path '../outside.svx'"):
+        metadata.check(root=tmp_path / "Poligony")
+
+
+def test_metadata_check_rejects_material_missing_from_inventory(tmp_path: Path) -> None:
+    raw = tmp_path / "Poligony" / "Cave" / "_RAW" / "01"
+    raw.mkdir(parents=True)
+    (raw / "README.md").write_text(
+        _raw_readme(contents=["`listed.svx` - source"]), encoding="utf-8"
+    )
+    (raw / "listed.svx").write_text("listed", encoding="utf-8")
+    (raw / "unlisted.svx").write_text("unlisted", encoding="utf-8")
+
+    with pytest.raises(CheckFailed, match="material missing from RAW inventory: unlisted.svx"):
+        metadata.check(root=tmp_path / "Poligony")
+
+
+def test_metadata_check_accepts_declared_directory_with_source_filenames(
+    tmp_path: Path,
+) -> None:
+    raw = tmp_path / "Poligony" / "Cave" / "_RAW" / "01"
+    source_dir = raw / "Pomiary źródłowe"
+    source_dir.mkdir(parents=True)
+    (raw / "README.md").write_text(
+        _raw_readme(contents=["`Pomiary źródłowe/` - original directory"]),
+        encoding="utf-8",
+    )
+    (source_dir / "źródło z przecinkiem,01.svx").write_text("raw", encoding="utf-8")
+
+    metadata.check(root=tmp_path / "Poligony")
+
+
+def test_metadata_check_rejects_inventory_note_without_path(tmp_path: Path) -> None:
+    raw = tmp_path / "Poligony" / "Cave" / "_RAW" / "01"
+    raw.mkdir(parents=True)
+    (raw / "README.md").write_text(
+        _raw_readme(contents=["notatka zamiast ścieżki"]), encoding="utf-8"
+    )
+    (raw / "source.xlsx").write_text("source", encoding="utf-8")
+
+    with pytest.raises(CheckFailed, match="inventory item must start with a path in backticks"):
+        metadata.check(root=tmp_path / "Poligony")
+
+
+def test_metadata_check_ignores_untracked_generated_package_artifact(tmp_path: Path) -> None:
+    _git(tmp_path, "init")
+    (tmp_path / ".gitignore").write_text("*.err\n", encoding="utf-8")
+    raw = tmp_path / "Poligony" / "Cave" / "_RAW" / "01"
+    raw.mkdir(parents=True)
+    (raw / "README.md").write_text(_raw_readme(), encoding="utf-8")
+    (raw / "source.xlsx").write_text("source", encoding="utf-8")
+    (raw / "generated.err").write_text("generated", encoding="utf-8")
+
+    metadata.check(root=tmp_path / "Poligony")
+
+
+def test_metadata_check_rejects_tracked_generated_package_artifact(tmp_path: Path) -> None:
+    _git(tmp_path, "init")
+    (tmp_path / ".gitignore").write_text("*.err\n", encoding="utf-8")
+    raw = tmp_path / "Poligony" / "Cave" / "_RAW" / "01"
+    raw.mkdir(parents=True)
+    (raw / "README.md").write_text(_raw_readme(), encoding="utf-8")
+    (raw / "source.xlsx").write_text("source", encoding="utf-8")
+    generated = raw / "generated.err"
+    generated.write_text("generated", encoding="utf-8")
+    _git(tmp_path, "add", "--force", str(generated))
+
+    with pytest.raises(CheckFailed, match="material missing from RAW inventory: generated.err"):
+        metadata.check(root=tmp_path / "Poligony")
+
+
+def test_metadata_check_accepts_unavailable_empty_package(tmp_path: Path) -> None:
+    raw = tmp_path / "Poligony" / "Cave" / "_RAW" / "01"
+    raw.mkdir(parents=True)
+    (raw / "README.md").write_text(_raw_readme(status="niedostępny"), encoding="utf-8")
+
+    metadata.check(root=tmp_path / "Poligony")
+
+
+def test_metadata_check_rejects_unavailable_package_with_material(tmp_path: Path) -> None:
+    raw = tmp_path / "Poligony" / "Cave" / "_RAW" / "01"
+    raw.mkdir(parents=True)
+    (raw / "README.md").write_text(_raw_readme(status="niedostępny"), encoding="utf-8")
+    (raw / "source.xlsx").write_text("source", encoding="utf-8")
+
+    with pytest.raises(CheckFailed, match="unavailable RAW package contains material"):
+        metadata.check(root=tmp_path / "Poligony")
+
+
+def test_metadata_check_rejects_empty_marker_for_available_package(tmp_path: Path) -> None:
+    raw = tmp_path / "Poligony" / "Cave" / "_RAW" / "01"
+    raw.mkdir(parents=True)
+    (raw / "README.md").write_text(
+        _raw_readme(contents=["Brak materiałów źródłowych.", "`source.xlsx` - source"]),
+        encoding="utf-8",
+    )
+    (raw / "source.xlsx").write_text("source", encoding="utf-8")
+
+    with pytest.raises(CheckFailed, match="available RAW package declares no source material"):
+        metadata.check(root=tmp_path / "Poligony")
+
+
+def test_metadata_check_excludes_package_gitignore_from_inventory(tmp_path: Path) -> None:
+    raw = tmp_path / "Poligony" / "Cave" / "_RAW" / "01"
+    raw.mkdir(parents=True)
+    (raw / "README.md").write_text(_raw_readme(), encoding="utf-8")
+    (raw / "source.xlsx").write_text("source", encoding="utf-8")
+    (raw / ".gitignore").write_text("*.err\n", encoding="utf-8")
+
+    metadata.check(root=tmp_path / "Poligony")

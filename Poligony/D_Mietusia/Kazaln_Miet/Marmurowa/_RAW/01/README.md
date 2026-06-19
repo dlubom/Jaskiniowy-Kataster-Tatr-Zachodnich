@@ -11,4 +11,15 @@
 
 ## Zawartość
 
-- `img182.jpg` – `img193.jpg` — zdjęcia/skany oryginalnych notatek pomiarowych
+- `img182.jpg` — zdjęcie/skan oryginalnych notatek pomiarowych
+- `img183.jpg` — zdjęcie/skan oryginalnych notatek pomiarowych
+- `img184.jpg` — zdjęcie/skan oryginalnych notatek pomiarowych
+- `img185.jpg` — zdjęcie/skan oryginalnych notatek pomiarowych
+- `img186.jpg` — zdjęcie/skan oryginalnych notatek pomiarowych
+- `img187.jpg` — zdjęcie/skan oryginalnych notatek pomiarowych
+- `img188.jpg` — zdjęcie/skan oryginalnych notatek pomiarowych
+- `img189.jpg` — zdjęcie/skan oryginalnych notatek pomiarowych
+- `img190.jpg` — zdjęcie/skan oryginalnych notatek pomiarowych
+- `img191.jpg` — zdjęcie/skan oryginalnych notatek pomiarowych
+- `img192.jpg` — zdjęcie/skan oryginalnych notatek pomiarowych
+- `img193.jpg` — zdjęcie/skan oryginalnych notatek pomiarowych

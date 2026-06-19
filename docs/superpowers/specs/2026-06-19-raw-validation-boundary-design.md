@@ -70,8 +70,11 @@ odroznia poprawnego dodania zrodla od niedozwolonej zmiany istniejacego pliku.
 
 ## Migracja istniejacych README
 
-Audyt wykazal 74 katalogi `_RAW`, 77 paczek i 9 rozbieznosci inwentarza.
-Migracja zmienia tylko odpowiednie `_RAW/NN/README.md`:
+Wstepny audyt bez semantyki pokrycia katalogiem wskazal 9 potencjalnych
+rozbieznosci w 74 katalogach `_RAW` i 77 paczkach. Docelowy walidator uznal
+dwie z nich za poprawne: deklaracja zagniezdzonego katalogu pokrywa jego
+zawartosc, a repozytoryjny `.gitignore` nie jest materialem zrodlowym. Migracja
+zmienia 7 odpowiednich `_RAW/NN/README.md`:
 
 - dopisuje brakujace materialy;
 - zastępuje wpisy odnoszace sie do nieistniejacych dawnych nazw;

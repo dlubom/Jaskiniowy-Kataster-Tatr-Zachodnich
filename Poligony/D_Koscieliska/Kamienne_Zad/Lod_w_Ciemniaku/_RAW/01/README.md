@@ -17,3 +17,4 @@
 - `LwC_Meander_Geografow.svx` — Meander Geografów
 - `LwC_Nowy_Korytarz.svx` — Nowy Korytarz
 - `Pomiary/` — oryginalne pliki eksportu DistoX2 (.cave)
+- `Lodowa_w_Ciemniaku.zip` — archiwum materiałów źródłowych

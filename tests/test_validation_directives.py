@@ -17,3 +17,11 @@ def test_fails_on_pound_left_angle_directive(tmp_path: Path) -> None:
     (tmp_path / "BAD.SRV").write_text("#<bogus\n0\t1\t1.0\t90\t0\n")
     with pytest.raises(CheckFailed, match="Invalid #< directive"):
         directives.check(root=tmp_path)
+
+
+def test_ignores_raw_subtree(tmp_path: Path) -> None:
+    source = tmp_path / "Cave" / "_RAW" / "01" / "SOURCE.SRV"
+    source.parent.mkdir(parents=True)
+    source.write_text("#<source syntax\n")
+
+    directives.check(root=tmp_path)

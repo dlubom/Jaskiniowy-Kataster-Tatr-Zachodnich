@@ -13,3 +13,4 @@
 
 - `harda poligon.rar` — archiwum RAR z projektem Walls
 - `harda poligon/` — rozpakowana zawartość:
+- `Harda_old.zip` — starsze archiwum projektu

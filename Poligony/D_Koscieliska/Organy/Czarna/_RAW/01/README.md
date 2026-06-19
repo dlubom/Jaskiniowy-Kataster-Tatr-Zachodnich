@@ -11,6 +11,5 @@
 
 ## Zawartość
 
-- `Czarna-zimna.top` — oryginalny plik PocketTopo z pomiarem (data tripu: 2011-10-02)
-- `porównanie czarna - zimna.pdf` — zestawienie poligonu z planami Czarnej i Zimnej
-- `Czarna-zimna_zrzut_pomiarow.txt` — zrzut tekstowy pomiarów wygenerowany z pliku .top (756 strzałów, potrójne odczyty)
+- `source.zip` — archiwum oryginalnych materiałów źródłowych
+- `source/` — rozpakowana zawartość archiwum: plik PocketTopo, zestawienie PDF i tekstowy zrzut pomiarów

@@ -20,6 +20,9 @@
 - `rura_res_a.svx` — pomiar powtórzony rura stacje 0–10, 2022-10-22, *flags duplicate
 - `rura_res_b.svx` — pomiar powtórzony rura stacje 0–38, 2022-10-23, *flags duplicate
 - `rura_res_c.svx` — pomiar powtórzony rura stacje 0–38, 2022-10-23, *flags duplicate
+
+## Uwagi
+
 - rura_res_*.svx pominięte w SRV (flaga duplicate)
 - powierzchnia.svx pominięta w SRV (flaga surface)
 - Dane zdigitalizowane (Digitized/) pominięte — nie są pierwotnymi pomiarami
