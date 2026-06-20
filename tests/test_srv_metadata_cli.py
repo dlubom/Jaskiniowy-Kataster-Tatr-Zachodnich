@@ -231,7 +231,7 @@ def test_raw_set_rejects_invalid_status_without_modifying_file(
 
     assert result == 1
     assert path.read_text(encoding="utf-8") == "existing\n"
-    assert "invalid Status materiału" in capsys.readouterr().err
+    assert "invalid value for RAW field 'Status materiału'" in capsys.readouterr().err
 
 
 def test_hash_raw_keeps_existing_output_format(

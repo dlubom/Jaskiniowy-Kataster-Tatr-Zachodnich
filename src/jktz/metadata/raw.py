@@ -64,18 +64,22 @@ def parse_raw_metadata(path: Path, text: str) -> RawMetadata:
         if match:
             name = match.group(1)
             if name in fields:
-                raise MetadataError(f"{path.as_posix()} duplicate RAW field {name}")
+                raise MetadataError(f"{path.as_posix()} duplicate RAW field {name!r}")
             fields[name] = match.group(2).strip()
 
     missing = [name for name in RAW_FIELDS if name not in fields]
     if missing:
-        raise MetadataError(f"{path.as_posix()} missing RAW field(s): {', '.join(missing)}")
+        quoted_missing = ", ".join(repr(name) for name in missing)
+        raise MetadataError(f"{path.as_posix()} missing RAW field(s): {quoted_missing}")
     if fields["Status materiału"] not in RAW_STATUSES:
         raise MetadataError(
-            f"{path.as_posix()} invalid Status materiału {fields['Status materiału']!r}"
+            f"{path.as_posix()} invalid value for RAW field 'Status materiału': "
+            f"{fields['Status materiału']!r}"
         )
     if not content_items:
-        raise MetadataError(f"{path.as_posix()} missing ## Zawartość items")
+        raise MetadataError(
+            f"{path.as_posix()} section '## Zawartość' must contain at least one item"
+        )
     if fields["Status materiału"] != "niedostępny" and content_items == [
         "Brak materiałów źródłowych."
     ]:
