@@ -106,4 +106,3 @@ UV_CACHE_DIR=/private/tmp/uv-cache uv run jktz-validate
 
 Expected: pytest passes, Ruff is clean, the diff has no whitespace errors, and
 all repository validation checks pass.
-

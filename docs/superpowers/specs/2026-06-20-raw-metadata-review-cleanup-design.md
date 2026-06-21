@@ -34,4 +34,3 @@ rozdzielony na dwa niezależne przypadki:
 Zmiany obejmują `src/jktz/metadata/raw.py`, `tests/test_raw_metadata.py` oraz
 asercję komunikatu CLI w `tests/test_srv_metadata_cli.py`. Parser, format README
 i reguły walidacji pozostają bez zmian.
-
