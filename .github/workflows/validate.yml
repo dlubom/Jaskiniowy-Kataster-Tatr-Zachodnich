@@ -66,6 +66,10 @@ jobs:
       - name: Sync Python tooling
         run: uv sync --locked
 
+      - name: Run Pytest (Windows)
+        if: runner.os == 'Windows'
+        run: uv run pytest
+
       - name: Install Survex (Linux)
         if: runner.os == 'Linux'
         uses: ./.github/actions/install-survex

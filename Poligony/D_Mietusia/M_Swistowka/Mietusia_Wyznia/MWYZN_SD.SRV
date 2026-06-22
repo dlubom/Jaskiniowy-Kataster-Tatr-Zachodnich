@@ -1,17 +1,20 @@
 #[
-CAVE_ID		"T.D-10.01"
-CAVE_NAME		"Jaskinia Mietusia Wyznia"
-SURVEY_ID		SD
-SURVEY_NAME		"Suche Dno"
-UPDATE_DATE		2026-03-08
-PROJECT_NAME		"Kataster jaskin tatrzanskich"
-COORDINATOR		"Pawel Gogolak"
-COORDINATOR_EMAIL	"pafffel@gmail.com"
-DATA_SOURCE		"https://github.com/RadostW/jaskinie"
-LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+CAVE_ID         "T.D-10.01"
+CAVE_NAME       "Jaskinia Mietusia Wyznia"
+SURVEY_ID       "SD"
+SURVEY_NAME     "Suche Dno"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "Pawel Gogolak"
+COORDINATOR_EMAIL "pafffel@gmail.com"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM "Radost Waszkiewicz, Stanislaw Mielczarek, Pawel Jarosz"
-INSTRUMENT "DistoX2"
+TEAM            "Radost Waszkiewicz, Stanislaw Mielczarek, Pawel Jarosz"
+INSTRUMENT      "DistoX2"
+SURVEY_DATE     "2024-02-12"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "zachowano istniejacy aktywny plik SRV"
 #]
 
 #prefix MietusiaWyznia

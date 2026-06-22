@@ -1,3 +1,22 @@
+#[
+CAVE_ID         "WPJ:BK-C3D"
+CAVE_NAME       "Ciag 3 Dna"
+SURVEY_ID       "BK-C3D-S"
+SURVEY_NAME     "Ciag 3 Dna - Stopnie"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "nieznane"
+COORDINATOR_EMAIL "nieznane"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "nieznane"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "nieznane"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+#]
+
 #prefix BandziochKom
 #Units Order=DAV
 #Units meters

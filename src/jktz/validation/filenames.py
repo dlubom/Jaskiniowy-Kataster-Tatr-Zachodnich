@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from jktz.reporting import CheckFailed
+from jktz.validation._utils import non_raw_paths
 
 
 def check(root: Path = Path("Poligony")) -> None:
@@ -15,10 +16,8 @@ def check(root: Path = Path("Poligony")) -> None:
     lowercase_extensions: list[str] = []
     lowercase_basenames: list[str] = []
 
-    for path in root.rglob("*"):
+    for path in non_raw_paths(root):
         if not path.is_file():
-            continue
-        if "_RAW" in path.parts:
             continue
         if path.suffix == ".srv":
             lowercase_extensions.append(f"  {path.as_posix()}")

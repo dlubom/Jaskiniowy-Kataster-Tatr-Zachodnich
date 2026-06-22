@@ -19,6 +19,7 @@ from jktz.validation import (
     directives,
     empty_shapefiles,
     filenames,
+    metadata,
     non_ascii,
     prefixes,
     shapefiles_count,
@@ -27,7 +28,7 @@ from jktz.validation import (
 )
 
 _EXPORTS_INDENT = " " * 19  # matches the original bash `sed 's/^/<19 spaces>/'`
-_TOTAL_STEPS = 11
+_TOTAL_STEPS = 12
 
 
 class _IndentingStream:
@@ -111,50 +112,51 @@ def main() -> int:
 
     try:
         _run(1, "Checking SRV filenames format", "SRV filenames format", filenames.check)
-        _run(2, "Checking for invalid directives", "Invalid directives", directives.check)
+        _run(2, "Checking SRV metadata contract", "SRV metadata contract", metadata.check)
+        _run(3, "Checking for invalid directives", "Invalid directives", directives.check)
         _run(
-            3,
+            4,
             "Checking decimal format in numeric fields",
             "Decimal format",
             decimal_format.check,
         )
         _run(
-            4,
+            5,
             "Checking for non-ASCII bytes in SRV files",
             "Non-ASCII bytes",
             non_ascii.check,
         )
-        _run(5, "Checking #prefix values", "#prefix values", prefixes.check)
+        _run(6, "Checking #prefix values", "#prefix values", prefixes.check)
 
-        print(f"[6/{_TOTAL_STEPS}] Checking rendered entrances snapshot...")
+        print(f"[7/{_TOTAL_STEPS}] Checking rendered entrances snapshot...")
         _run_render_check()
         print("      Rendered entrances snapshot: Passed ✔")
 
         _run(
-            7,
+            8,
             "Checking entrance coordinates are inside Tatras extent",
             "Entrance coordinates in Tatras extent",
             coordinates.check,
         )
 
-        print(f"[8/{_TOTAL_STEPS}] Compiling with cavern...")
+        print(f"[9/{_TOTAL_STEPS}] Compiling with cavern...")
         exports_tools.cavern(["KATASTER.wpj"], log_to=cavern_log)
 
         _run(
-            9,
+            10,
             "Checking for unattached stations",
             "Unattached stations",
             lambda: unattached.check(log_path=cavern_log),
         )
 
         _run(
-            10,
+            11,
             "Checking cavern compile warnings",
             "Cavern compile warnings",
             lambda: cavern_warnings.check(log_path=cavern_log),
         )
 
-        print(f"[11/{_TOTAL_STEPS}] Checking exports...")
+        print(f"[12/{_TOTAL_STEPS}] Checking exports...")
         try:
             with _indent_stdout():
                 pipeline.run_exports(version=exports_version, outdir=exports_dir)

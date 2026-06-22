@@ -1,17 +1,20 @@
 #[
-CAVE_ID			"T.D-22.01"
-CAVE_NAME		"Wyznia Koszowa Dziura"
-SURVEY_ID		WKDZIUR
-SURVEY_NAME		"Wyznia Koszowa Dziura"
-UPDATE_DATE		2026-02-24
-PROJECT_NAME		"Kataster jaskin tatrzanskich"
-COORDINATOR		"Dariusz Lubomski"
-COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
-DATA_SOURCE		"Z. Tabaczynski"
-LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+CAVE_ID         "T.D-22.01"
+CAVE_NAME       "Wyznia Koszowa Dziura"
+SURVEY_ID       "WKDZIUR"
+SURVEY_NAME     "Wyznia Koszowa Dziura"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "Dariusz Lubomski"
+COORDINATOR_EMAIL "darek.lubomski@gmail.com"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM "Z. Tabaczynski"
-INSTRUMENT "unknown"
+TEAM            "Z. Tabaczynski"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "2008-10-01"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "zachowano istniejacy aktywny plik SRV"
 #]
 
 #prefix WyzKoszowaDziura

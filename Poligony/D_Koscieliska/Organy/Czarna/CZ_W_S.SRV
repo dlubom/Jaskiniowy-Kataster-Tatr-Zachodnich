@@ -1,16 +1,20 @@
 #[
-CAVE_ID			"T.E-09.12"
-CAVE_NAME		"Jaskinia Czarna"
-SURVEY_ID		W1
-SURVEY_NAME		"Partie Wawelskie"
-UPDATE_DATE		2026-03-21
-PROJECT_NAME		"Kataster jaskin tatrzanskich"
-COORDINATOR		"Dariusz Lubomski"
-COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
-DATA_SOURCE		"Stanislaw Kotarba, xlsx od Jakuba Nowaka"
-LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
-TEAM			"Stanislaw Kotarba i odkrywcy Partii Wawelskich"
-INSTRUMENT		"busola, tasma"
+CAVE_ID         "T.E-09.12"
+CAVE_NAME       "Jaskinia Czarna"
+SURVEY_ID       "W1"
+SURVEY_NAME     "Partie Wawelskie"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "Dariusz Lubomski"
+COORDINATOR_EMAIL "darek.lubomski@gmail.com"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "Stanislaw Kotarba i odkrywcy Partii Wawelskich"
+INSTRUMENT      "busola, tasma"
+SURVEY_DATE     "1981-01-01"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "zachowano istniejacy aktywny plik SRV"
 #]
 
 #prefix2 Czarna

@@ -1,17 +1,20 @@
 #[
-CAVE_ID			"T.G-11.01"
-CAVE_NAME		"Dziura w Stole"
-SURVEY_ID		DZWS
-SURVEY_NAME		"Dziura w Stole"
-UPDATE_DATE		2026-03-07
-PROJECT_NAME		"Kataster jaskin tatrzanskich"
-COORDINATOR		"Dariusz Lubomski"
-COORDINATOR_EMAIL	"darek.lubomski@gmail.com"
-DATA_SOURCE		"J. Nowak"
-LICENSE			"http://creativecommons.org/licenses/by-sa/4.0/"
+CAVE_ID         "T.G-11.01"
+CAVE_NAME       "Dziura w Stole"
+SURVEY_ID       "DZWS"
+SURVEY_NAME     "Dziura w Stole"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "Dariusz Lubomski"
+COORDINATOR_EMAIL "darek.lubomski@gmail.com"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM "J. i J. Nowak"
-INSTRUMENT "nieznany"
+TEAM            "J. i J. Nowak"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "2009-07-11"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "zachowano istniejacy aktywny plik SRV"
 #]
 
 #prefix DziuraWStole
