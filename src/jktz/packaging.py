@@ -28,6 +28,7 @@ EXCLUDE_PATTERNS: tuple[str, ...] = (
     "pyproject.toml",
     "uv.lock",
     "doc/*",
+    "docs/*",
     "scripts/*",
     "src/*",
     "tests/*",

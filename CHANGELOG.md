@@ -4,6 +4,21 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [v1.4.6] - 2026-06-21
+
+Wprowadzono spojny kontrakt metadanych dla aktywnych pomiarow SRV i materialow zrodlowych.
+
+### Dodano
+- Kanoniczne bloki metadanych SRV z informacjami o jaskini, pomiarze, licencji i odnosnikach `SOURCE_REF`
+- Metadane oraz inwentarze paczek materialow zrodlowych w plikach `_RAW/NN/README.md`
+- Narzedzie `jktz-srv-metadata` do tworzenia i aktualizacji metadanych SRV i RAW
+- Walidacje metadanych, dat pomiarow i jawnej deklinacji w `uv run jktz-validate`
+
+### Zmienione
+- Aktywne pliki SRV zostaly uzupelnione o metadane, a materialy zrodlowe uporzadkowane w numerowanych paczkach `_RAW/NN` bez zmiany ich zawartosci
+- Walidatory i repozytoryjne skille korzystaja ze wspolnej definicji aktywnych plikow oraz kanonicznych komend metadanych
+- Walidacja Windows uruchamia pelny zestaw testow przed kompilacja projektu
+
 ## [v1.4.5] - 2026-05-27
 
 Dodano Jaskinie Psia w rejonie Zaru.

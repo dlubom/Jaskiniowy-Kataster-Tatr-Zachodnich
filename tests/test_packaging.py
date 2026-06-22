@@ -13,6 +13,7 @@ def test_is_excluded_matches_known_patterns() -> None:
     assert is_excluded("src/jktz/cli/validate.py")
     assert is_excluded("tests/test_packaging.py")
     assert is_excluded("doc/Walls_manual.md")
+    assert is_excluded("docs/release-notes.md")
     assert is_excluded("Poligony/OTWORY.SRV.j2")
     assert is_excluded("Poligony/D_Bystra/Cave/_RAW/original.svx")
     assert is_excluded("Poligony/Whatever.NTA")
@@ -63,6 +64,8 @@ def test_build_release_zip_includes_data_and_excludes_tooling(tmp_path: Path) ->
     (tmp_path / "src" / "jktz" / "__init__.py").write_text("")
     (tmp_path / "tests").mkdir()
     (tmp_path / "tests" / "test_x.py").write_text("py")
+    (tmp_path / "docs").mkdir()
+    (tmp_path / "docs" / "release-notes.md").write_text("docs are not release data")
     (tmp_path / "pyproject.toml").write_text("[project]")
     (tmp_path / "uv.lock").write_text("")
     (tmp_path / "CLAUDE.md").write_text("instructions")
@@ -97,6 +100,7 @@ def test_build_release_zip_includes_data_and_excludes_tooling(tmp_path: Path) ->
     assert "scripts/render_otwory_from_gps.py" not in names
     assert "src/jktz/__init__.py" not in names
     assert "tests/test_x.py" not in names
+    assert "docs/release-notes.md" not in names
     assert "pyproject.toml" not in names
     assert "uv.lock" not in names
     assert "CLAUDE.md" not in names
@@ -129,3 +133,4 @@ def test_exclude_patterns_is_immutable_tuple() -> None:
     assert "src/*" in EXCLUDE_PATTERNS
     assert "scripts/*" in EXCLUDE_PATTERNS
     assert "tests/*" in EXCLUDE_PATTERNS
+    assert "docs/*" in EXCLUDE_PATTERNS

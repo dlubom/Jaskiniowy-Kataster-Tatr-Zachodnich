@@ -1,3 +1,22 @@
+#[
+CAVE_ID         "WPJ:JMWM"
+CAVE_NAME       "Jaskinia Mala w Mulowej"
+SURVEY_ID       "LACHONY"
+SURVEY_NAME     "LACHONY.SRV"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "nieznane"
+COORDINATOR_EMAIL "nieznane"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "nieznane"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "2007-11-04"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+#]
+
 #DATE 2007-11-04
 #UNITS meters order=DAV
 #Units A=D V=D

@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 
 from jktz.reporting import CheckFailed
+from jktz.validation._utils import non_raw_paths, srv_files
 
 
 def _is_allowed(b: int) -> bool:
@@ -20,10 +21,7 @@ def check(root: Path = Path("Poligony")) -> None:
     path_errors: list[str] = []
     content_errors: list[str] = []
 
-    for path in root.rglob("*"):
-        parts = path.parts
-        if "_RAW" in parts:
-            continue
+    for path in non_raw_paths(root):
         # Scan the basename byte-by-byte. fsencode round-trips the platform
         # filesystem name back to its on-disk byte sequence.
         base_bytes = os.fsencode(path.name)
@@ -33,9 +31,7 @@ def check(root: Path = Path("Poligony")) -> None:
             path_errors.append(f"  {path.as_posix()}  byte 0x{byte:02x} at col {col} (path)")
             break
 
-    for path in root.rglob("*.SRV"):
-        if "_RAW" in path.parts:
-            continue
+    for path in srv_files(root):
         with path.open("rb") as f:
             for line_num, line in enumerate(f, start=1):
                 # awk reads up to LF and leaves the line WITHOUT it; CR may

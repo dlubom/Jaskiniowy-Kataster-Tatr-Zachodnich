@@ -1,3 +1,26 @@
+#[
+CAVE_ID         "WPJ:LMALOL"
+CAVE_NAME       "Lodowa Malolacka"
+SURVEY_ID       "LODMAL"
+SURVEY_NAME     "Lodowa Malolacka"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "nieznane"
+COORDINATOR_EMAIL "nieznane"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "nieznane"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "2004-09-04"
+SURVEY_DATE     "2004-10-23"
+SURVEY_DATE     "2004-09-25"
+SURVEY_DATE     "2004-10-30"
+SURVEY_DATE     "2004-11-06"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+#]
+
 #units meters order=DAV
 #units A=D V=D
 #prefix LodowaMalolacka

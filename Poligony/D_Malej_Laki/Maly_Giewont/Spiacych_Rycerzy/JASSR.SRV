@@ -1,3 +1,22 @@
+#[
+CAVE_ID         "WPJ:JSR"
+CAVE_NAME       "Jaskinia Spiacych Rycerzy"
+SURVEY_ID       "JASSR"
+SURVEY_NAME     "Jaskinia Spiacych Rycerzy"
+UPDATE_DATE     "2026-06-05"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "nieznane"
+COORDINATOR_EMAIL "nieznane"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "nieznane"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "2009-01-01"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+#]
+
 #units meters order=DAV
 #prefix SpiacychRycerzy
 #date 2009-01-01
