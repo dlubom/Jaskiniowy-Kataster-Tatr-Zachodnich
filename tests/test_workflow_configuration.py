@@ -59,3 +59,4 @@ def test_install_survex_action_builds_from_source_on_windows() -> None:
     assert "msys2/setup-msys2@v2" in action
     assert "survex-${{ inputs.version }}.tar.gz" in action
     assert "mingw-w64-ucrt-x86_64-wxwidgets3.2-msw" in action
+    assert "SURVEXLIB=" in action

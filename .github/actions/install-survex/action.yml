@@ -83,3 +83,4 @@ runs:
         cygpath -w "$HOME/survex/bin" >> "$GITHUB_PATH"
         cygpath -w /ucrt64/bin >> "$GITHUB_PATH"
         cygpath -w /usr/bin >> "$GITHUB_PATH"
+        echo "SURVEXLIB=$(cygpath -w "$HOME/survex/share/survex")" >> "$GITHUB_ENV"
