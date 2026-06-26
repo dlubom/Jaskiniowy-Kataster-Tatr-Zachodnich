@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  SURVEX_VERSION: "1.4.21"
+  SURVEX_VERSION: "1.4.22"
   CAVEVIEW_VERSION: "2.9.0"
 
 jobs:

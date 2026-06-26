@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 env:
-  SURVEX_VERSION: "1.4.21"
+  SURVEX_VERSION: "1.4.22"
 
 jobs:
   python-tools:
@@ -70,42 +70,10 @@ jobs:
         if: runner.os == 'Windows'
         run: uv run pytest
 
-      - name: Install Survex (Linux)
-        if: runner.os == 'Linux'
+      - name: Install Survex
         uses: ./.github/actions/install-survex
         with:
           version: ${{ env.SURVEX_VERSION }}
-
-      - name: Install Survex (Windows)
-        if: runner.os == 'Windows'
-        shell: pwsh
-        run: |
-          Invoke-WebRequest -Uri "https://survex.com/software/${{ env.SURVEX_VERSION }}/survex-microsoft-windows-${{ env.SURVEX_VERSION }}.exe" -OutFile survex-installer.exe
-          Start-Process -Wait -FilePath .\survex-installer.exe -ArgumentList '/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART'
-          echo "C:\Program Files (x86)\Survex" >> $env:GITHUB_PATH
-
-      - name: Install GDAL (Windows)
-        if: runner.os == 'Windows'
-        uses: mamba-org/setup-micromamba@v2
-        with:
-          micromamba-version: latest
-          environment-name: gdal-env
-          create-args: >-
-            -c conda-forge
-            gdal
-          cache-environment: true
-          init-shell: powershell
-
-      - name: Add GDAL to PATH (Windows)
-        if: runner.os == 'Windows'
-        shell: pwsh
-        run: |
-          # conda-forge GDAL lays binaries under <env>/Library/bin on Windows.
-          $envBin = (Get-ChildItem -Path "$env:MAMBA_ROOT_PREFIX\envs" -Filter "ogr2ogr.exe" -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1).FullName
-          if (-not $envBin) { throw "ogr2ogr.exe not found inside the gdal-env micromamba environment" }
-          $gdalBin = Split-Path -Path $envBin -Parent
-          Write-Host "GDAL bin dir: $gdalBin"
-          echo "$gdalBin" >> $env:GITHUB_PATH
 
       - name: Run full validation
         env:

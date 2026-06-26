@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 env:
-  SURVEX_VERSION: "1.4.21"
+  SURVEX_VERSION: "1.4.22"
 
 jobs:
   release:

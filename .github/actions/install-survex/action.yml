@@ -1,29 +1,31 @@
-name: Install Survex (Linux)
+name: Install Survex
 description: >
-  Build and install Survex on Ubuntu runners, caching the install prefix at
-  ~/survex. The source tarball and build tree live in $RUNNER_TEMP so they
-  never land inside the repo checkout (otherwise jktz-build-zip would pack
+  Build and install Survex on Ubuntu and Windows runners, caching the install
+  prefix at ~/survex. The source tarball and build tree live in $RUNNER_TEMP so
+  they never land inside the repo checkout (otherwise jktz-build-zip would pack
   them into the release ZIP).
 
 inputs:
   version:
-    description: Survex version (e.g. 1.4.21)
+    description: Survex version (e.g. 1.4.22)
     required: true
 
 runs:
   using: composite
   steps:
-    - name: Cache Survex
-      id: cache
+    - name: Cache Survex (Linux)
+      if: runner.os == 'Linux'
+      id: cache-linux
       uses: actions/cache@v4
       with:
         path: ~/survex
         key: survex-${{ inputs.version }}-ubuntu
 
-    - name: Install Survex
+    - name: Install Survex (Linux)
+      if: runner.os == 'Linux'
       shell: bash
       run: |
-        if [ "${{ steps.cache.outputs.cache-hit }}" = "true" ]; then
+        if [ "${{ steps.cache-linux.outputs.cache-hit }}" = "true" ]; then
           echo "Using cached Survex"
           sudo apt-get update && sudo apt-get install -y libproj25 libgdal34t64 gdal-bin libwxgtk3.2-1t64
         else
@@ -37,3 +39,47 @@ runs:
           make install
         fi
         echo "$HOME/survex/bin" >> "$GITHUB_PATH"
+
+    - name: Set up MSYS2 (Windows)
+      if: runner.os == 'Windows'
+      uses: msys2/setup-msys2@v2
+      with:
+        msystem: UCRT64
+        update: true
+        install: >-
+          base-devel
+          curl
+          tar
+          mingw-w64-ucrt-x86_64-toolchain
+          mingw-w64-ucrt-x86_64-pkgconf
+          mingw-w64-ucrt-x86_64-wxwidgets3.2-msw
+          mingw-w64-ucrt-x86_64-proj
+          mingw-w64-ucrt-x86_64-gdal
+
+    - name: Cache Survex (Windows)
+      if: runner.os == 'Windows'
+      id: cache-windows
+      uses: actions/cache@v4
+      with:
+        path: ~/survex
+        key: survex-${{ inputs.version }}-windows-ucrt64
+
+    - name: Install Survex (Windows)
+      if: runner.os == 'Windows' && steps.cache-windows.outputs.cache-hit != 'true'
+      shell: msys2 {0}
+      run: |
+        cd "$RUNNER_TEMP"
+        curl -L --fail "https://survex.com/software/${{ inputs.version }}/survex-${{ inputs.version }}.tar.gz" -o "survex-${{ inputs.version }}.tar.gz"
+        tar xf "survex-${{ inputs.version }}.tar.gz"
+        cd "survex-${{ inputs.version }}"
+        ./configure --prefix="$HOME/survex" WX_CONFIG=/ucrt64/bin/wx-config
+        make -j2
+        make install
+
+    - name: Add Survex and MSYS2 runtime to PATH (Windows)
+      if: runner.os == 'Windows'
+      shell: msys2 {0}
+      run: |
+        cygpath -w "$HOME/survex/bin" >> "$GITHUB_PATH"
+        cygpath -w /ucrt64/bin >> "$GITHUB_PATH"
+        cygpath -w /usr/bin >> "$GITHUB_PATH"
