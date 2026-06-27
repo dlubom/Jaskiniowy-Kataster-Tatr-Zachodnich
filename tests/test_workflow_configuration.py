@@ -17,7 +17,7 @@ def test_validate_job_runs_windows_pytest_after_sync_before_external_tools() -> 
         if: runner.os == 'Windows'
         run: uv run pytest
 
-      - name: Install Survex
+      - name: Install Survex (Linux)
 """
         in workflow
     )
@@ -43,20 +43,25 @@ def test_install_survex_action_uses_current_release_example() -> None:
     assert f"description: Survex version (e.g. {SURVEX_VERSION})" in action
 
 
-def test_validate_job_uses_shared_survex_action_instead_of_windows_installer() -> None:
+def test_validate_job_installs_official_windows_survex_release() -> None:
     workflow_path = ROOT / ".github" / "workflows" / "validate.yml"
     workflow = workflow_path.read_text(encoding="utf-8")
 
-    assert "survex-microsoft-windows" not in workflow
-    assert "mamba-org/setup-micromamba" not in workflow
+    assert (
+        "https://survex.com/software/${{ env.SURVEX_VERSION }}/"
+        "survex-microsoft-windows-${{ env.SURVEX_VERSION }}.exe"
+    ) in workflow
+    assert "/VERYSILENT" in workflow
+    assert "C:\\Program Files (x86)\\Survex" in workflow
+    assert "mamba-org/setup-micromamba" in workflow
+    assert "msys2/setup-msys2" not in workflow
     assert workflow.count("uses: ./.github/actions/install-survex") == 2
 
 
-def test_install_survex_action_builds_from_source_on_windows() -> None:
+def test_install_survex_action_remains_linux_only_source_build() -> None:
     action_path = ROOT / ".github" / "actions" / "install-survex" / "action.yml"
     action = action_path.read_text(encoding="utf-8")
 
-    assert "msys2/setup-msys2@v2" in action
+    assert "runner.os == 'Windows'" not in action
+    assert "survex-microsoft-windows" not in action
     assert "survex-${{ inputs.version }}.tar.gz" in action
-    assert "mingw-w64-ucrt-x86_64-wxwidgets3.2-msw" in action
-    assert "SURVEXLIB=" in action
