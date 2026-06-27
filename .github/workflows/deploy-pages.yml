@@ -16,7 +16,6 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  SURVEX_VERSION: "1.4.22"
   CAVEVIEW_VERSION: "2.9.0"
 
 jobs:
@@ -31,10 +30,14 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Read Survex version
+        id: survex
+        uses: ./.github/actions/read-survex-version
+
       - name: Install Survex
         uses: ./.github/actions/install-survex
         with:
-          version: ${{ env.SURVEX_VERSION }}
+          version: ${{ steps.survex.outputs.version }}
 
       - name: Compile with cavern
         run: cavern KATASTER.wpj

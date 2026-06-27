@@ -4,14 +4,6 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
-## [v1.4.7] - 2026-06-26
-
-Zaktualizowano repozytoryjne workflowy do Survex 1.4.22.
-
-### Zmienione
-- Walidacja PR, budowanie releasu i publikacja 3D Viewera uzywaja Survex 1.4.22 zamiast 1.4.21
-- Testy konfiguracji workflow pilnuja spojnego pinu wersji Survexa w zadaniach CI
-
 ## [v1.4.6] - 2026-06-21
 
 Wprowadzono spojny kontrakt metadanych dla aktywnych pomiarow SRV i materialow zrodlowych.
