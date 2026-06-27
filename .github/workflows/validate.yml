@@ -16,10 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Read Survex version
-        id: survex
-        uses: ./.github/actions/read-survex-version
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -53,6 +49,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Read Survex version
+        id: survex
+        uses: ./.github/actions/read-survex-version
 
       - name: Set up Python
         uses: actions/setup-python@v5
