@@ -5,7 +5,7 @@ Builds the `jktz-survex` Docker image and/or runs the release export pipeline lo
 ## When to use
 
 - When you want to generate export files locally before or after a release (same pipeline as GitHub Actions).
-- When the Docker image needs to be rebuilt (e.g. after changing `SURVEX_VERSION` in `Dockerfile.survexImage-release` or `SURVEX_COMMIT` in `Dockerfile.survexImage-commit`, or after a `pyproject.toml` / `uv.lock` change since the image pre-fetches Python deps at build time).
+- When the Docker image needs to be rebuilt (e.g. after changing the pinned Survex version in `.github/survex-version` — read by `Dockerfile.survexImage-release` — or `SURVEX_COMMIT` in `Dockerfile.survexImage-commit`, or after a `pyproject.toml` / `uv.lock` change since the image pre-fetches Python deps at build time).
 
 ## Dockerfile variants
 
@@ -66,7 +66,7 @@ docker build -f docker/Dockerfile.survexImage-commit -t jktz-survex .
 ```
 
 - The first build compiles Survex from source and takes several minutes.
-- Subsequent builds are near-instant due to Docker layer caching (unless `SURVEX_VERSION` / `SURVEX_COMMIT` changed).
+- Subsequent builds are near-instant due to Docker layer caching (unless `.github/survex-version` / `SURVEX_COMMIT` changed).
 - Show the full build output to the user.
 - If the build fails, stop and report the error — do not proceed to the run step.
 
