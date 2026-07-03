@@ -2,7 +2,6 @@
 # against GTK3/wxWidgets so the build env stays for runtime.
 FROM ubuntu:24.04
 
-ENV SURVEX_VERSION=1.4.21
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y \
@@ -14,12 +13,17 @@ RUN apt-get update && apt-get install -y \
     gdal-bin \
     && rm -rf /var/lib/apt/lists/*
 
-RUN curl -fsSL https://survex.com/software/${SURVEX_VERSION}/survex-${SURVEX_VERSION}.tar.gz | tar xz -C /tmp \
+# Pin the Survex version from the repo's single source of truth
+# (.github/survex-version, same file CI reads). Changing that file busts this
+# layer's cache and triggers a rebuild.
+COPY .github/survex-version /tmp/survex-version
+RUN SURVEX_VERSION="$(tr -d '[:space:]' < /tmp/survex-version)" \
+    && curl -fsSL https://survex.com/software/${SURVEX_VERSION}/survex-${SURVEX_VERSION}.tar.gz | tar xz -C /tmp \
     && cd /tmp/survex-${SURVEX_VERSION} \
     && ./configure --prefix=/opt/survex \
     && make \
     && make install \
-    && rm -rf /tmp/survex-${SURVEX_VERSION}
+    && rm -rf /tmp/survex-${SURVEX_VERSION} /tmp/survex-version
 
 ENV PATH="/opt/survex/bin:$PATH"
 

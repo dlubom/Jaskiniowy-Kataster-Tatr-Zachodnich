@@ -8,15 +8,16 @@ on:
 permissions:
   contents: write
 
-env:
-  SURVEX_VERSION: "1.4.21"
-
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Read Survex version
+        id: survex
+        uses: ./.github/actions/read-survex-version
 
       - name: Extract version from tag
         id: version
@@ -52,7 +53,7 @@ jobs:
       - name: Install Survex
         uses: ./.github/actions/install-survex
         with:
-          version: ${{ env.SURVEX_VERSION }}
+          version: ${{ steps.survex.outputs.version }}
 
       - name: Build exports
         run: uv run jktz-exports ${{ steps.version.outputs.VERSION }}

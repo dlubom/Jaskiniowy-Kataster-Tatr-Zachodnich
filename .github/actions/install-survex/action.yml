@@ -7,7 +7,7 @@ description: >
 
 inputs:
   version:
-    description: Survex version (e.g. 1.4.21)
+    description: Survex version to install
     required: true
 
 runs:

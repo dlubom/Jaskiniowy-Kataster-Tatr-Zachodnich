@@ -1,0 +1,21 @@
+name: Read Survex version
+description: Read the repository-pinned Survex version.
+
+outputs:
+  version:
+    description: Survex version from .github/survex-version
+    value: ${{ steps.version.outputs.version }}
+
+runs:
+  using: composite
+  steps:
+    - name: Read Survex version
+      id: version
+      shell: bash
+      run: |
+        version="$(tr -d '[:space:]' < .github/survex-version)"
+        if [ -z "$version" ]; then
+          echo ".github/survex-version is empty" >&2
+          exit 1
+        fi
+        echo "version=$version" >> "$GITHUB_OUTPUT"
