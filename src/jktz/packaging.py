@@ -8,8 +8,8 @@ from pathlib import Path
 # POSIX-style separators and are matched against each file's path relative to
 # the project root via fnmatch (where `*` matches `/` — same as zip's -x).
 #
-# Kept in sync with the original build_release_zip.sh exclude list, plus
-# `src/*` (the jktz Python package — tooling, not deliverable data).
+# This is the canonical release-content contract. `src/*` and the other
+# tooling paths are intentionally excluded from the user-facing data archive.
 EXCLUDE_PATTERNS: tuple[str, ...] = (
     ".git/*",
     ".github/*",
@@ -73,7 +73,7 @@ def build_release_zip(
     """Build the user-facing JKTZ release ZIP from the workspace at ``root``.
 
     Returns the absolute path of the produced ZIP. Overwrites any existing file
-    at the target path (matches ``rm -f`` in the bash version).
+    at the target path.
     """
     root = Path(root).resolve()
     if zip_path is None:

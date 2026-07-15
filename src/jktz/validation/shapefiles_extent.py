@@ -31,8 +31,8 @@ def _wgs84_bbox_of_shapefile(shp: Path) -> tuple[float, float, float, float] | N
     xmin, ymin, xmax, ymax = bounds
     # The shapefile extent is an axis-aligned rectangle in UTM, but after
     # reprojection to WGS84 it is no longer axis-aligned. Transform all four
-    # corners and take the bounding box of the result - same approach as
-    # check-shapefiles-extent.sh did via gdaltransform + awk.
+    # corners and take the bounding box of the result before checking it
+    # against the Tatras envelope.
     xs = [xmin, xmax, xmin, xmax]
     ys = [ymin, ymin, ymax, ymax]
     lons, lats = _UTM34N_TO_WGS84.transform(xs, ys)

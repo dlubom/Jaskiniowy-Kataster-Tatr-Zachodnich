@@ -267,7 +267,7 @@ LC_ALL=C sed -i '' \
 
 ### Raw Source Files (`_RAW/`)
 
-Cave directories contain (or will contain) a `_RAW/` subdirectory with original, unmodified source files provided by survey authors. The detailed metadata contract is in `docs/superpowers/specs/2026-06-04-srv-metadata-design.md`. Purpose:
+Cave directories contain (or will contain) a `_RAW/` subdirectory with original, unmodified source files provided by survey authors. The contract below is enforced by `src/jktz/validation/metadata.py` and managed through `uv run jktz-srv-metadata`. Purpose:
 1. **Archival** — preserving original data in its native format (Therion, Survex, DistoX exports, scanned notes, etc.)
 2. **Verification** — allowing later validation of the converted `.SRV` measurements against the original source data
 3. **Audit trail** — documenting provenance of all data in the project
