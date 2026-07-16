@@ -1,9 +1,10 @@
 from __future__ import annotations
 
 import re
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 
 from jktz.cli import render_otwory
+from jktz.entrances.render import RenderResult
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PROJECT_TEMPLATE = REPO_ROOT / "Poligony" / "OTWORY.SRV.j2"
@@ -17,6 +18,24 @@ COMMENTED_GPS_FIX_CALL_RE = re.compile(
     re.MULTILINE,
 )
 ENTRANCE_FLAG_RE = re.compile(r"^#flag\t([^\t]+)\t/ENTRANCE$", re.MULTILINE)
+
+
+def test_renderer_cli_prints_portable_output_path(monkeypatch, capsys) -> None:
+    def fake_render(**_kwargs) -> RenderResult:
+        return RenderResult(
+            output=PureWindowsPath("Poligony/OTWORY.SRV"),
+            source="gps-kataster@v1",
+            gps_fixes=87,
+        )
+
+    monkeypatch.setattr(render_otwory, "render_entrances", fake_render)
+
+    return_code = render_otwory.main(["--check"])
+
+    assert return_code == 0
+    assert capsys.readouterr().out == (
+        "Checked Poligony/OTWORY.SRV from gps-kataster@v1\nGPS fixes: 87\n"
+    )
 
 
 def test_renderer_writes_fix_from_template_object_id(tmp_path: Path, capsys) -> None:

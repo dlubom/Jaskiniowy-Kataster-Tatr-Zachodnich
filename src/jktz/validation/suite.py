@@ -91,7 +91,7 @@ def _check_rendered_entrances() -> None:
     except (OSError, RenderError) as exc:
         raise CheckFailed(f"ERROR: entrance snapshot check failed: {exc}") from exc
 
-    print(f"Checked {result.output} from {result.source}")
+    print(f"Checked {result.output.as_posix()} from {result.source}")
     print(f"GPS fixes: {result.gps_fixes}")
 
 

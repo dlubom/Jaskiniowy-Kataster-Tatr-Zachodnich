@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 
 import pytest
 
@@ -73,7 +73,7 @@ def test_rendered_entrances_check_uses_package_api(monkeypatch, capsys) -> None:
     def fake_render(*, check: bool) -> RenderResult:
         assert check is True
         return RenderResult(
-            output=Path("Poligony/OTWORY.SRV"),
+            output=PureWindowsPath("Poligony/OTWORY.SRV"),
             source="gps-kataster@v1",
             gps_fixes=87,
         )

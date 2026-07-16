@@ -49,7 +49,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     action = "Checked" if args.check else "Rendered"
-    print(f"{action} {result.output} from {result.source}")
+    print(f"{action} {result.output.as_posix()} from {result.source}")
     print(f"GPS fixes: {result.gps_fixes}")
     return 0
 
