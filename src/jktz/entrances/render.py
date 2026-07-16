@@ -1,21 +1,18 @@
-#!/usr/bin/env python3
 """Render Poligony/OTWORY.SRV from GPS best-measurements release data.
 
 The template intentionally uses a tiny Jinja-compatible subset:
-``{{ gps_fix(...) }}`` calls.  Keeping the renderer dependency-free matters for
-the release workflow, where this script runs before Survex compiles the project.
+``{{ gps_fix(...) }}`` calls. The implementation remains dependency-free so it
+can run in every environment supported by the repository tooling.
 """
 
 from __future__ import annotations
 
-import argparse
 import ast
 import csv
 import difflib
 import json
 import os
 import re
-import sys
 import tempfile
 import urllib.error
 import urllib.request
@@ -49,60 +46,49 @@ class RenderError(ValueError):
     """Raised when the template or input data cannot be rendered safely."""
 
 
-def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(
-        description="Render Poligony/OTWORY.SRV from gps-kataster latest best measurements."
-    )
-    parser.add_argument("--template", type=Path, default=DEFAULT_TEMPLATE)
-    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
-    parser.add_argument(
-        "--check",
-        action="store_true",
-        help="Verify that the output file matches the rendered template without writing it.",
-    )
-    parser.add_argument(
-        "--csv",
-        type=Path,
-        help="Use an already downloaded best-measurements.csv instead of GitHub latest.",
-    )
-    parser.add_argument(
-        "--github-repo",
-        default=DEFAULT_GITHUB_REPO,
-        help="GitHub repository to read latest release from, as owner/repo.",
-    )
-    args = parser.parse_args(argv)
+@dataclass(frozen=True)
+class RenderResult:
+    """Summary of one render or snapshot-check operation."""
 
-    try:
-        with tempfile.TemporaryDirectory(prefix="jktz-gps-") as tmp_dir:
-            asset = (
-                ReleaseAsset(path=args.csv, source=str(args.csv))
-                if args.csv is not None
-                else _download_latest_best_measurements(args.github_repo, Path(tmp_dir))
-            )
-            measurements = _load_best_measurements(asset.path)
-            template = args.template.read_text(encoding="utf-8")
-            rendered, stats = _render_template(
-                template,
-                measurements=measurements,
-            )
-            if args.check:
-                _check_rendered_output(args.output, rendered)
-            else:
-                args.output.write_text(rendered, encoding="utf-8")
-    except RenderError as exc:
-        print(f"error: {exc}", file=sys.stderr)
-        return 1
+    output: Path
+    source: str
+    gps_fixes: int
 
-    action = "Checked" if args.check else "Rendered"
-    print(f"{action} {args.output} from {asset.source}")
-    print(f"GPS fixes: {stats.gps_fixes}")
-    return 0
+
+def render_entrances(
+    *,
+    template_path: Path = DEFAULT_TEMPLATE,
+    output_path: Path = DEFAULT_OUTPUT,
+    csv_path: Path | None = None,
+    github_repo: str = DEFAULT_GITHUB_REPO,
+    check: bool = False,
+) -> RenderResult:
+    """Render or verify the versioned entrance snapshot."""
+    with tempfile.TemporaryDirectory(prefix="jktz-gps-") as tmp_dir:
+        asset = (
+            ReleaseAsset(path=csv_path, source=str(csv_path))
+            if csv_path is not None
+            else _download_latest_best_measurements(github_repo, Path(tmp_dir))
+        )
+        measurements = _load_best_measurements(asset.path)
+        template = template_path.read_text(encoding="utf-8")
+        rendered, stats = _render_template(template, measurements=measurements)
+        if check:
+            _check_rendered_output(output_path, rendered)
+        else:
+            output_path.write_text(rendered, encoding="utf-8")
+
+    return RenderResult(
+        output=output_path,
+        source=asset.source,
+        gps_fixes=stats.gps_fixes,
+    )
 
 
 def _check_rendered_output(output: Path, rendered: str) -> None:
     if not output.exists():
         raise RenderError(
-            f"{output} does not exist. Run scripts/render_otwory_from_gps.py and commit it."
+            f"{output} does not exist. Run `uv run jktz-render-otwory` and commit it."
         )
     current = output.read_text(encoding="utf-8")
     if current == rendered:
@@ -118,7 +104,7 @@ def _check_rendered_output(output: Path, rendered: str) -> None:
     )
     raise RenderError(
         f"{output} is not up to date. "
-        "Run `uv run python scripts/render_otwory_from_gps.py` and commit the result.\n"
+        "Run `uv run jktz-render-otwory` and commit the result.\n"
         f"{diff}"
     )
 
@@ -293,7 +279,3 @@ def _required_str(data: dict[str, Any], key: str) -> str:
     if not isinstance(value, str) or not value:
         raise RenderError(f"GitHub release asset missing {key}.")
     return value
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())

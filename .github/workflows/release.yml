@@ -48,7 +48,7 @@ jobs:
       - name: Check rendered entrance snapshot
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: uv run python scripts/render_otwory_from_gps.py --check
+        run: uv run jktz-render-otwory --check
 
       - name: Install Survex
         uses: ./.github/actions/install-survex

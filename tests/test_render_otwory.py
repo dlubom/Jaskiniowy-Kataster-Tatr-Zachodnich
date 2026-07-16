@@ -1,12 +1,11 @@
 from __future__ import annotations
 
 import re
-import subprocess
-import sys
 from pathlib import Path
 
+from jktz.cli import render_otwory
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
-SCRIPT = REPO_ROOT / "scripts" / "render_otwory_from_gps.py"
 PROJECT_TEMPLATE = REPO_ROOT / "Poligony" / "OTWORY.SRV.j2"
 GPS_FIX_CALL_RE = re.compile(r"{{ gps_fix\('([^']+)', '([^']+)'(?:, suffix='[^']+')?\) }}")
 ACTIVE_GPS_FIX_CALL_RE = re.compile(
@@ -20,7 +19,7 @@ COMMENTED_GPS_FIX_CALL_RE = re.compile(
 ENTRANCE_FLAG_RE = re.compile(r"^#flag\t([^\t]+)\t/ENTRANCE$", re.MULTILINE)
 
 
-def test_renderer_writes_fix_from_template_object_id(tmp_path: Path) -> None:
+def test_renderer_writes_fix_from_template_object_id(tmp_path: Path, capsys) -> None:
     template = tmp_path / "OTWORY.SRV.j2"
     output = tmp_path / "OTWORY.SRV"
     measurements = tmp_path / "best-measurements.csv"
@@ -30,10 +29,8 @@ def test_renderer_writes_fix_from_template_object_id(tmp_path: Path) -> None:
         encoding="utf-8",
     )
 
-    result = subprocess.run(
+    return_code = render_otwory.main(
         [
-            sys.executable,
-            str(SCRIPT),
             "--template",
             str(template),
             "--csv",
@@ -41,17 +38,15 @@ def test_renderer_writes_fix_from_template_object_id(tmp_path: Path) -> None:
             "--output",
             str(output),
         ],
-        capture_output=True,
-        text=True,
-        check=False,
     )
+    captured = capsys.readouterr()
 
-    assert result.returncode == 0, result.stderr
+    assert return_code == 0, captured.err
     assert output.read_text(encoding="utf-8") == "#fix\tCave:0\tE19.1\tN49.2\t123.4m\n"
-    assert "GPS fixes: 1" in result.stdout
+    assert "GPS fixes: 1" in captured.out
 
 
-def test_renderer_fails_when_required_measurement_value_is_empty(tmp_path: Path) -> None:
+def test_renderer_fails_when_required_measurement_value_is_empty(tmp_path: Path, capsys) -> None:
     template = tmp_path / "OTWORY.SRV.j2"
     output = tmp_path / "OTWORY.SRV"
     measurements = tmp_path / "best-measurements.csv"
@@ -61,10 +56,8 @@ def test_renderer_fails_when_required_measurement_value_is_empty(tmp_path: Path)
         encoding="utf-8",
     )
 
-    result = subprocess.run(
+    return_code = render_otwory.main(
         [
-            sys.executable,
-            str(SCRIPT),
             "--template",
             str(template),
             "--csv",
@@ -72,17 +65,15 @@ def test_renderer_fails_when_required_measurement_value_is_empty(tmp_path: Path)
             "--output",
             str(output),
         ],
-        capture_output=True,
-        text=True,
-        check=False,
     )
+    captured = capsys.readouterr()
 
-    assert result.returncode == 1
-    assert "OBJ-1 has empty elevation_m" in result.stderr
+    assert return_code == 1
+    assert "OBJ-1 has empty elevation_m" in captured.err
     assert not output.exists()
 
 
-def test_renderer_check_passes_when_output_is_current(tmp_path: Path) -> None:
+def test_renderer_check_passes_when_output_is_current(tmp_path: Path, capsys) -> None:
     template = tmp_path / "OTWORY.SRV.j2"
     output = tmp_path / "OTWORY.SRV"
     measurements = tmp_path / "best-measurements.csv"
@@ -93,10 +84,8 @@ def test_renderer_check_passes_when_output_is_current(tmp_path: Path) -> None:
     )
     output.write_text("#fix\tCave:0\tE19.1\tN49.2\t123.4m\n", encoding="utf-8")
 
-    result = subprocess.run(
+    return_code = render_otwory.main(
         [
-            sys.executable,
-            str(SCRIPT),
             "--template",
             str(template),
             "--csv",
@@ -105,17 +94,15 @@ def test_renderer_check_passes_when_output_is_current(tmp_path: Path) -> None:
             str(output),
             "--check",
         ],
-        capture_output=True,
-        text=True,
-        check=False,
     )
+    captured = capsys.readouterr()
 
-    assert result.returncode == 0, result.stderr
+    assert return_code == 0, captured.err
     assert output.read_text(encoding="utf-8") == "#fix\tCave:0\tE19.1\tN49.2\t123.4m\n"
-    assert "Checked" in result.stdout
+    assert "Checked" in captured.out
 
 
-def test_renderer_check_fails_when_output_is_stale(tmp_path: Path) -> None:
+def test_renderer_check_fails_when_output_is_stale(tmp_path: Path, capsys) -> None:
     template = tmp_path / "OTWORY.SRV.j2"
     output = tmp_path / "OTWORY.SRV"
     measurements = tmp_path / "best-measurements.csv"
@@ -126,10 +113,8 @@ def test_renderer_check_fails_when_output_is_stale(tmp_path: Path) -> None:
     )
     output.write_text("#fix\tCave:0\tE19.0\tN49.2\t123.4m\n", encoding="utf-8")
 
-    result = subprocess.run(
+    return_code = render_otwory.main(
         [
-            sys.executable,
-            str(SCRIPT),
             "--template",
             str(template),
             "--csv",
@@ -138,19 +123,17 @@ def test_renderer_check_fails_when_output_is_stale(tmp_path: Path) -> None:
             str(output),
             "--check",
         ],
-        capture_output=True,
-        text=True,
-        check=False,
     )
+    captured = capsys.readouterr()
 
-    assert result.returncode == 1
-    assert "is not up to date" in result.stderr
-    assert "---" in result.stderr
-    assert "+#fix\tCave:0\tE19.1\tN49.2\t123.4m" in result.stderr
+    assert return_code == 1
+    assert "is not up to date" in captured.err
+    assert "---" in captured.err
+    assert "+#fix\tCave:0\tE19.1\tN49.2\t123.4m" in captured.err
     assert output.read_text(encoding="utf-8") == "#fix\tCave:0\tE19.0\tN49.2\t123.4m\n"
 
 
-def test_renderer_keeps_commented_gps_fix_commented(tmp_path: Path) -> None:
+def test_renderer_keeps_commented_gps_fix_commented(tmp_path: Path, capsys) -> None:
     template = tmp_path / "OTWORY.SRV.j2"
     output = tmp_path / "OTWORY.SRV"
     measurements = tmp_path / "best-measurements.csv"
@@ -160,10 +143,8 @@ def test_renderer_keeps_commented_gps_fix_commented(tmp_path: Path) -> None:
         encoding="utf-8",
     )
 
-    result = subprocess.run(
+    return_code = render_otwory.main(
         [
-            sys.executable,
-            str(SCRIPT),
             "--template",
             str(template),
             "--csv",
@@ -171,12 +152,10 @@ def test_renderer_keeps_commented_gps_fix_commented(tmp_path: Path) -> None:
             "--output",
             str(output),
         ],
-        capture_output=True,
-        text=True,
-        check=False,
     )
+    captured = capsys.readouterr()
 
-    assert result.returncode == 0, result.stderr
+    assert return_code == 0, captured.err
     assert output.read_text(encoding="utf-8") == "; #fix\tCave:0\tE19.1\tN49.2\t123.4m\n"
 
 

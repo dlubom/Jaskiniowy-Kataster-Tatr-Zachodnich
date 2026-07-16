@@ -2,13 +2,13 @@ from __future__ import annotations
 
 import contextlib
 import shutil
-import subprocess
 import sys
 from collections.abc import Callable, Iterator, Sequence
 from dataclasses import dataclass
 from pathlib import Path
 from typing import TextIO
 
+from jktz.entrances.render import RenderError, render_entrances
 from jktz.exports import pipeline
 from jktz.exports import tools as exports_tools
 from jktz.reporting import CheckFailed
@@ -86,12 +86,13 @@ def _indent_stdout(prefix: str = _EXPORTS_INDENT) -> Iterator[None]:
 
 
 def _check_rendered_entrances() -> None:
-    script = Path("scripts") / "render_otwory_from_gps.py"
-    proc = subprocess.run([sys.executable, str(script), "--check"], check=False)
-    if proc.returncode != 0:
-        raise CheckFailed(
-            f"ERROR: render_otwory_from_gps.py --check failed (exit {proc.returncode})"
-        )
+    try:
+        result = render_entrances(check=True)
+    except (OSError, RenderError) as exc:
+        raise CheckFailed(f"ERROR: entrance snapshot check failed: {exc}") from exc
+
+    print(f"Checked {result.output} from {result.source}")
+    print(f"GPS fixes: {result.gps_fixes}")
 
 
 def _check_exports(context: ValidationContext) -> None:

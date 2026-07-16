@@ -25,6 +25,7 @@ EXCLUDE_PATTERNS: tuple[str, ...] = (
     ".gitattributes",
     ".pre-commit-config.yaml",
     "CLAUDE.md",
+    "CONTRIBUTING.md",
     "pyproject.toml",
     "uv.lock",
     "doc/*",

@@ -30,6 +30,11 @@ After cloning, install Python tooling and git hooks with one command:
 
 Prerequisite: `uv` on PATH (https://docs.astral.sh/uv/getting-started/installation/). The script uses only the Python standard library and delegates all project work to `uv` subprocesses, so it does not need to be invoked via `uv run`. Idempotent — safe to re-run after changes to dev tooling.
 
+`scripts/` is reserved for this pre-install bootstrap. Once setup completes,
+repository tooling lives under `src/jktz/` and is invoked through the
+`uv run jktz-*` commands declared in `pyproject.toml`. Human contributor setup
+is also documented in `CONTRIBUTING.md`.
+
 It does four things:
 1. Verifies `uv` is on PATH.
 2. Runs `uv sync --locked` (installs ruff, pytest, pre-commit, and the `jktz-*` CLIs into `.venv`).
@@ -82,7 +87,7 @@ Walls project definition using directives: `.BOOK` (folder), `.SURVEY` (file ref
 - All entrance fixes (`#fix`, `#flag`, `#note`) for every cave live in
   `Poligony/OTWORY.SRV`, a versioned generated snapshot for reviewable diffs.
 - `Poligony/OTWORY.SRV.j2` is the source template for that snapshot.
-  `scripts/render_otwory_from_gps.py` renders it from the latest
+  `uv run jktz-render-otwory` renders it from the latest
   `best-measurements.csv` asset in `dlubom/gps-kataster-obiektow-tatr`.
   Each `gps_fix(...)` call embeds the GPS `object_id` directly in the template.
   Missing object rows or empty `lon`/`lat`/`elevation_m` values are
@@ -104,13 +109,13 @@ To preview a rendered entrances file without creating local
 `Poligony/OTWORY.SRV`, write it to a temporary path:
 
 ```
-uv run python scripts/render_otwory_from_gps.py --output /tmp/OTWORY.SRV
+uv run jktz-render-otwory --output /tmp/OTWORY.SRV
 ```
 
 To reproduce the release input locally, render in place and compile:
 
 ```
-uv run python scripts/render_otwory_from_gps.py
+uv run jktz-render-otwory
 cavern KATASTER.wpj
 ```
 
@@ -118,7 +123,7 @@ Before committing, check that the versioned `Poligony/OTWORY.SRV` snapshot
 matches the template rendered from the latest GPS release:
 
 ```
-uv run python scripts/render_otwory_from_gps.py --check
+uv run jktz-render-otwory --check
 ```
 
 The renderer downloads the latest GitHub release asset from
@@ -330,7 +335,7 @@ The project uses [semantic versioning](https://semver.org/) starting from v1.0.0
 
 The version in `INFO.txt` is set automatically — the `__VERSION__` placeholder is replaced with the tag name during the release build.
 
-The release ZIP excludes: `.git/`, `.github/`, `.claude/`, `.venv/`, Python/tool caches, Python tooling files (`pyproject.toml`, `uv.lock`, `tests/`), `.gitignore`, `CLAUDE.md`, `doc/`, `scripts/`, `Poligony/OTWORY.SRV.j2`, `logs/`, `*/_RAW/*`, `.DS_Store`, local Survex build directories, validation scratch outputs, previous `JKTZ-*.zip` files, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
+The release ZIP excludes: `.git/`, `.github/`, `.claude/`, `.venv/`, Python/tool caches, Python tooling files (`pyproject.toml`, `uv.lock`, `tests/`), `.gitignore`, `CLAUDE.md`, `CONTRIBUTING.md`, `doc/`, `scripts/`, `Poligony/OTWORY.SRV.j2`, `logs/`, `*/_RAW/*`, `.DS_Store`, local Survex build directories, validation scratch outputs, previous `JKTZ-*.zip` files, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
 
 Pull requests build a temporary test release package after validation succeeds.
 The package is uploaded as a GitHub Actions artifact with short retention and
