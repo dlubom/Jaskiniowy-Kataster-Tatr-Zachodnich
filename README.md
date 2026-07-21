@@ -29,6 +29,10 @@ Projekt działa również w [Survex](https://survex.com/) — wystarczy zainstal
 ### Jak można pomóc?
 Zachęcamy do współpracy przy projekcie oraz do udostępniania własnych pomiarów. Kontakt: [darek.lubomski@gmail.com](mailto:darek.lubomski@gmail.com).
 
+Instrukcje przygotowania środowiska dla nowych developerów i agentów znajdują
+się w [CONTRIBUTING.md](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/blob/master/CONTRIBUTING.md). Po sklonowaniu repozytorium rozpocznij
+od `python scripts/initial-setup.py`.
+
 ### Licencja
 [Creative Commons Attribution-ShareAlike 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
 

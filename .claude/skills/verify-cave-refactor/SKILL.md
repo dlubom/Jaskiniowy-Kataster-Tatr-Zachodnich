@@ -107,7 +107,7 @@ Both checkouts run in separate `git worktree`s so the user's working tree is nev
 
 3. **Check OTWORY in the branch worktree.** Run from inside the branch worktree, with its own `.venv` so the host environment is untouched:
    ```bash
-   ( cd "$OUTROOT/branch" && uv sync --locked && uv run python scripts/render_otwory_from_gps.py --check )
+   ( cd "$OUTROOT/branch" && uv sync --locked && uv run jktz-render-otwory --check )
    ```
    If this fails (no network, missing asset, missing `object_id` mapping, or a stale snapshot), stop and report — the comparison would be meaningless without it. Do **not** render in the master worktree; master uses the `OTWORY.SRV` it ships with.
 

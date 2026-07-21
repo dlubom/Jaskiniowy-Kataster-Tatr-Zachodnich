@@ -22,16 +22,17 @@ Examples:
 
 ## Steps
 
-1. Run cavern on the provided file:
+1. Run the Python CLI on the provided `.svx` or `.wpj` file:
 
-   - For a `.svx` file, run the `survex-stats.sh` script:
-     ```bash
-     bash .claude/skills/survex-stats/survex-stats.sh "<path/to/file.svx>"
-     ```
-   - For `KATASTER.wpj` (full project validation), run cavern directly:
-     ```bash
-     cavern KATASTER.wpj 2>&1
-     ```
+   ```bash
+   uv run jktz-survex-stats "<path/to/file.svx>"
+   ```
+
+   For the full project use:
+
+   ```bash
+   uv run jktz-survex-stats KATASTER.wpj
+   ```
 
 2. Show the full output to the user — it includes cavern warnings, errors, and the summary statistics (total length, number of stations, etc.).
 

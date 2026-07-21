@@ -29,6 +29,10 @@ The project also works with [Survex](https://survex.com/) — just install the l
 ### How Can You Help?
 We encourage collaboration on the project as well as sharing your own measurements. Contact: [darek.lubomski@gmail.com](mailto:darek.lubomski@gmail.com).
 
+Environment setup instructions for new developers and their agents are in
+[CONTRIBUTING.md](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/blob/master/CONTRIBUTING.md). After cloning the repository, start with
+`python scripts/initial-setup.py`.
+
 ### License
 [Creative Commons Attribution-ShareAlike 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
 

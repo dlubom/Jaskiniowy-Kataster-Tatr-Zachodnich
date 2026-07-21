@@ -18,3 +18,14 @@ def test_validate_job_runs_windows_pytest_after_sync_before_external_tools() -> 
 """
         in workflow
     )
+
+
+def test_workflows_use_installed_entrance_renderer() -> None:
+    workflows = Path(__file__).parents[1] / ".github" / "workflows"
+    contents = "\n".join(
+        path.read_text(encoding="utf-8")
+        for path in (workflows / "validate.yml", workflows / "release.yml")
+    )
+
+    assert "uv run jktz-render-otwory" in contents
+    assert "scripts/render_otwory_from_gps.py" not in contents

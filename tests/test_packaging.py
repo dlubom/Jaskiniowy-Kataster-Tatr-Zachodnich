@@ -9,7 +9,8 @@ from jktz.packaging import EXCLUDE_PATTERNS, build_release_zip, is_excluded
 def test_is_excluded_matches_known_patterns() -> None:
     assert is_excluded(".git/config")
     assert is_excluded(".github/workflows/validate.yml")
-    assert is_excluded("scripts/render_otwory_from_gps.py")
+    assert is_excluded("CONTRIBUTING.md")
+    assert is_excluded("scripts/initial-setup.py")
     assert is_excluded("src/jktz/cli/validate.py")
     assert is_excluded("tests/test_packaging.py")
     assert is_excluded("doc/Walls_manual.md")
@@ -42,7 +43,7 @@ def test_is_excluded_keeps_real_data_files() -> None:
 def test_excludes_use_posix_separators_on_windows_paths() -> None:
     # On Windows the relative path uses backslashes; is_excluded must normalize.
     assert is_excluded(r".git\config")
-    assert is_excluded(r"scripts\render_otwory_from_gps.py")
+    assert is_excluded(r"scripts\initial-setup.py")
 
 
 def test_build_release_zip_includes_data_and_excludes_tooling(tmp_path: Path) -> None:
@@ -59,7 +60,7 @@ def test_build_release_zip_includes_data_and_excludes_tooling(tmp_path: Path) ->
     (tmp_path / ".git").mkdir()
     (tmp_path / ".git" / "HEAD").write_text("ref: refs/heads/main")
     (tmp_path / "scripts").mkdir()
-    (tmp_path / "scripts" / "render_otwory_from_gps.py").write_text("py")
+    (tmp_path / "scripts" / "initial-setup.py").write_text("py")
     (tmp_path / "src" / "jktz").mkdir(parents=True)
     (tmp_path / "src" / "jktz" / "__init__.py").write_text("")
     (tmp_path / "tests").mkdir()
@@ -69,6 +70,7 @@ def test_build_release_zip_includes_data_and_excludes_tooling(tmp_path: Path) ->
     (tmp_path / "pyproject.toml").write_text("[project]")
     (tmp_path / "uv.lock").write_text("")
     (tmp_path / "CLAUDE.md").write_text("instructions")
+    (tmp_path / "CONTRIBUTING.md").write_text("developer instructions")
     (tmp_path / "cavern_output.txt").write_text("log")
     (tmp_path / "previous.NTA").write_bytes(b"\x00" * 10)
     (tmp_path / "KATASTER.wrl").write_text("vrml")
@@ -97,13 +99,14 @@ def test_build_release_zip_includes_data_and_excludes_tooling(tmp_path: Path) ->
 
     # Excluded
     assert ".git/HEAD" not in names
-    assert "scripts/render_otwory_from_gps.py" not in names
+    assert "scripts/initial-setup.py" not in names
     assert "src/jktz/__init__.py" not in names
     assert "tests/test_x.py" not in names
     assert "docs/release-notes.md" not in names
     assert "pyproject.toml" not in names
     assert "uv.lock" not in names
     assert "CLAUDE.md" not in names
+    assert "CONTRIBUTING.md" not in names
     assert "cavern_output.txt" not in names
     assert "previous.NTA" not in names
     assert "KATASTER.wrl" not in names

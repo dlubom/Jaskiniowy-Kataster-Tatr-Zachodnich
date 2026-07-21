@@ -42,8 +42,7 @@ def _wait_for_readable(path: Path, timeout: float = 30.0, interval: float = 0.1)
     raise TimeoutError(f"file not settled within {timeout}s: {path}")
 
 
-# Field rename to fit Shapefile/DBF 10-char field-name limit; matches the
-# exports.sh -sql clause verbatim.
+# Field rename to fit the Shapefile/DBF 10-character field-name limit.
 _SHP_SQL = (
     "SELECT Layer, PaperSpace, SubClasses, Linetype, EntityHandle AS EntHandle, Text FROM entities"
 )
@@ -80,7 +79,7 @@ def run_exports(
 ) -> None:
     """Compile KATASTER.wpj and write .3d, .dxf, .shp release artefacts.
 
-    Mirrors exports.sh step-for-step:
+    Implements the release export contract:
       1. cavern KATASTER.wpj                  → .3d, .err, cavern-log.txt
       2. survexport --legs --dxf              → JKTZ-<version>.dxf
       3. ogr2ogr DXF → ESRI Shapefile         → JKTZ-<version>-all.shp
