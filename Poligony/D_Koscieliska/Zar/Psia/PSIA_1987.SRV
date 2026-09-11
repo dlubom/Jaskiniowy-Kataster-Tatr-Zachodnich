@@ -3,25 +3,27 @@ CAVE_ID         "T.F-09.01"
 CAVE_NAME       "Jaskinia Psia"
 SURVEY_ID       "PSIA_1987"
 SURVEY_NAME     "Pomiary 1987 (Kardas + Luty)"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-09-19"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
 SOURCE_REF      "_RAW/01"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM            "R. M. Kardas, I. Luty, M. Francuz, A. Gajewska, A. Paterka, K. Recielski, E. i R. Szczesni, A. Trybulec"
+TEAM            "R. M. Kardas (I i II poziom), I. Luty (III, IV i V poziom); wspolpraca: M. Francuz, A. Gajewska, A. Paterek, K. Recielski, E. i R. Szczesni, A. Trybulec"
 INSTRUMENT      "busola geologiczna Meridian, klinometr Freiberg, tasma parciana"
+SURVEY_DATE     "1987-08-10"
 SURVEY_DATE     "1987-08-11"
 SURVEY_DATE     "1987-08-17"
 SURVEY_DATE     "1987-08-18"
 SURVEY_GRADE    "nieznane"
-PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "zweryfikowano skany, datowanie i autorstwo; niepewnosci w komentarzach, wartosci pomiarow bez zmian"
 #]
 
 #prefix Psia
 #units meters order=AVD
 #units A=D V=D
+; Pierwsza tabela bez daty: roboczo 11 VIII 1987 wg PIG i Wiercicy 58 (1988), s. 13.
 #date 1987-08-11
 
 ; Kolumny w oryginale (skany tabel): S., C, AZYMUT, KAT PION., ODL. RZECZ.
@@ -32,7 +34,6 @@ PROCESSING      "zachowano istniejacy aktywny plik SRV"
 
 ; ============================================================
 ; CIAG KARDAS 1987 - I i II poziom
-; R. M. Kardas, A. Paterka, M. Francuz - 11 i 17 VIII 1987
 ; ============================================================
 
 ; --- Ciag glowny od otworu (0) do punktu 14 (przekaz do I. Luty)
@@ -65,7 +66,7 @@ p87_20	p87_24	77	+44.5	13.50 ; ciag nad progiem
 p87_24	p87_25	106	-14	5.60
 p87_18	p87_19	240	0	5.05 ; salka boczna
 
-; --- Boczne ciagi mierzone 17 VIII 1987 (R. M. Kardas + A. Paterka)
+; --- Boczne ciagi (R. M. Kardas + A. Paterek; skan Psia pomiary x.jpg)
 #date 1987-08-17
 
 ; --- Boczny ciag z punktu 17
@@ -90,9 +91,9 @@ p87_213	p87_218	238	+45	3.20
 p87_218	p87_219	232	-16.5	3.40
 p87_219	p87_2110	245	0	5.50 ; odl. zred, pomiar bez kata pionowego -> orientacyjny
 
-; --- Ciag nad otworem (0) - 17 VIII 1987
+; --- Ciag nad otworem (0)
 p87_0	p87_01	235	+38	5.20 ; ciag nad otworem - 0 - otwor
-p87_0	p87_02	290	-14	2.00 ; 0 - otwor dx=2.658 dy=2.780 dh=0.220
+p87_0	p87_02	290	-14	2.00 ; 0 - otwor dx=2.658 dy=2.780 dh=-0.220
 p87_02	p87_03	300	-30	3.10
 p87_03	p87_04	0	-90	0.70 ; - przeniesienie punktu na poziom dna
 p87_04	p87_05	313	-21	6.50
@@ -106,9 +107,9 @@ p87_05	p87_012	265	+7	1.30
 p87_012	p87_013	26	-8	6.65
 p87_013	p87_014	277	-12	2.20	; cd. w nastepnej tabeli
 
-; --- Ciag boczny w dolnych (?) partiach (R. M. Kardas + M. Francuz - 11 VIII 1987)
-;     polaczenie ciagu od stacji p87_05 ze stacja p87_2 ciagu glownego
-#date 1987-08-11
+; --- Ciag boczny w dolnych (?) partiach (R. M. Kardas + M. Francuz)
+; Przyjeto 10 VIII ze skanu Psia pomiary x+1.jpg; Wiercica 58 (1988), s. 14: ten zespol 18 VIII.
+#date 1987-08-10
 p87_05	p87_015	189	+18	2.50
 p87_015	p87_016	225	-15	3.15
 p87_016	p87_017	238	+6	2.25
@@ -132,8 +133,7 @@ p87_455	p87_456	40	-8	4.50
 
 ; ============================================================
 ; CIAG LUTY 1987 - III, IV i V poziom
-; I. Luty przy wspolpracy: M. Francuz, A. Gajewska, A. Paterka,
-; K. Recielski, E. i R. Szczesni, A. Trybulec - 17 i 18 VIII 1987
+; Daty 17/18 VIII zachowane z dotychczasowego SRV; skany bez dat.
 ; ============================================================
 
 ; --- Polaczenia z ciagiem Kardas (zerowe shoty - equate)
@@ -209,7 +209,7 @@ l87_52	l87_53	214	-19	7.80
 l87_53	l87_54	341	-3	8.90
 l87_54	l87_55	33	+17	4.90
 l87_55	l87_56	320	+10	3.00
-l87_56	l87_56a	10	+18	3.30
+l87_56	l87_56a	10	+18	3.30 ; skan Jaskinia Psia_pom.2.jpg: 3.30/3.80; pozostawiono 3.30
 l87_56	l87_57	223	-40	2.70
 l87_57	l87_57a	310	-6	2.00
 

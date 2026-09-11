@@ -1,20 +1,17 @@
 # Jaskinia Psia - surowe materialy zrodlowe
 
-- **Zrodlo**: Piotr Graczyk
-- **Autorzy pomiarow**: Piotr Graczyk, Izabella Luty, Rafal M. Kardas; Partie Poznanskie 2018: Witold Hoffmann, Sonia Dudziak, Michal Macioszczyk
-- **Data pomiaru**: 1987-08-11, 1987-08-17, 1987-08-18; Partie Poznanskie: 2018-01-04
-- **Data pozyskania**: 2026-05-14
-- **Dodal**: Dariusz Lubomski
-- **Kompletnosc**: archiwum SVX zawiera przekonwertowany ciag od otworu do polaczenia z Partiami Poznanskimi oraz digitalizacje Partii Poznanskich; skany od Izy Luty zawieraja dodatkowe arkusze pomiarowe, plan i przekroj do dalszej weryfikacji.
+Materialy od Piotra Graczyka i Izabelli Luty, przekazane w [issue #111](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/issues/111).
+Autorzy pomiarow, daty i kompletnosc paczki: [01/README.md](01/README.md).
 
 ## Pliki
 
-- `projekt_svx-20260514T055508Z-3-001.zip` - archiwum SVX z plikiem glownym `psia.svx`, plikami pomiarow 1987 i Partii Poznanskich 2018 oraz wynikami kompilacji.
-- `Pomiary.od.Izy.Luty-20260514T055505Z-3-001.zip` - skany arkuszy pomiarowych, planu i przekroju przekazane jako material zrodlowy.
-- `source/projekt_svx/` - rozpakowana zawartosc archiwum SVX.
-- `source/Pomiary od Izy Luty/` - rozpakowane skany arkuszy, planow i przekrojow.
+- `01/projekt_svx-20260514T055508Z-3-001.zip` - archiwum SVX z pomiarami 1987 i Partii Poznanskich 2018 oraz wynikami kompilacji.
+- `01/Pomiary.od.Izy.Luty-20260514T055505Z-3-001.zip` - archiwum skanow tabel, planu i przekroju.
+- `01/source/projekt_svx/` - rozpakowana zawartosc archiwum SVX.
+- `01/source/Pomiary od Izy Luty/` - rozpakowane skany; zrodlo wartosci pomiarow z 1987 r.
 
-## Uwagi
+## Zrodla weryfikacji
 
-- Aktywne pliki `.SRV` w katalogu jaskini powstaly z cyfrowych plikow SVX, bez recznego przepisywania dodatkowych skanow.
-- Plik `psia_pomiary_1987.svx` w materiale zrodlowym ma komentarz TODO i opisuje sie jako tymczasowy ciag od punktu 0 do polaczenia z Partiami Poznanskimi.
+- [PIG, T.F-09.01](https://jaskiniepolski.pgi.gov.pl/Details/Information/1652), stan opisu 2019 (takze `doc/jaskinie_polski_pig_dump.jsonl`): podzial poziomow miedzy Kardasia i Luty; plan jaskini ich autorstwa, plan i przekroj Partii Poznanskich oraz uzupelnienie z korekta deklinacji w 2019 r. - Piotr Graczyk.
+- R. M. Kardas, [Letnie zamieszanie, Wiercica 58 (1988), s. 13-14](https://www.speleo.waw.pl/wp-content/uploads/2024/03/wiercica58.pdf#page=14): daty i sklady zespolow z 1987 r. Przyjete daty i rozbieznosci opisano krotko przy pomiarach w `PSIA_1987.SRV`.
+- P. Graczyk, [Jaskinia Psia - Partie Poznanskie, Jaskinie 3(96)/2019, s. 29](http://www.jaskinie.org.pl/files/Jaskinie__96_2019.pdf#page=29): zespol z 2018 r., w tym Elzbieta Domagalska pominieta w SVX i PIG. Oryginalne materialy pozostawiono bez zmian.
