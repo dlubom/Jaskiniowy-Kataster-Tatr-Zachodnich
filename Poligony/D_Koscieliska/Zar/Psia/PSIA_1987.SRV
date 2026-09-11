@@ -3,26 +3,29 @@ CAVE_ID         "T.F-09.01"
 CAVE_NAME       "Jaskinia Psia"
 SURVEY_ID       "PSIA_1987"
 SURVEY_NAME     "Pomiary 1987 (Kardas + Luty)"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-09-11"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
 SOURCE_REF      "_RAW/01"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM            "R. M. Kardas, I. Luty, M. Francuz, A. Gajewska, A. Paterka, K. Recielski, E. i R. Szczesni, A. Trybulec"
+TEAM            "R. M. Kardas (I i II poziom), I. Luty (III, IV i V poziom); wspolpraca: M. Francuz, A. Gajewska, A. Paterek, K. Recielski, E. i R. Szczesni, A. Trybulec"
 INSTRUMENT      "busola geologiczna Meridian, klinometr Freiberg, tasma parciana"
-SURVEY_DATE     "1987-08-11"
+SURVEY_DATE     "1987-08-10"
 SURVEY_DATE     "1987-08-17"
 SURVEY_DATE     "1987-08-18"
 SURVEY_GRADE    "nieznane"
-PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "weryfikacja skanow: przyjeto 10 VIII 1987 (PIG: 11 VIII), doprecyzowano autorstwo wg skanow i PIG oraz poprawiono znak dh w komentarzu; wartosci pomiarow bez zmian"
 #]
 
 #prefix Psia
 #units meters order=AVD
 #units A=D V=D
-#date 1987-08-11
+; Przyjeto 10 VIII 1987 zamiast 11 VIII: data 10 VIII widoczna na skanie Psia pomiary x+1.jpg.
+; Pierwsza tabela (Psia pomiary 1.jpg) nie ma czytelnej daty; 10 VIII przyjeto takze dla jej 24 pomiarow.
+; Skany sa zrodlem nadrzednym; opis PIG (T.F-09.01) podaje 11, 17 i 18 VIII 1987.
+#date 1987-08-10
 
 ; Kolumny w oryginale (skany tabel): S., C, AZYMUT, KAT PION., ODL. RZECZ.
 ; Wartosci odleglosci - metry, katy - stopnie. Dziesietny przecinek z oryginalu zamieniony na kropke.
@@ -32,7 +35,7 @@ PROCESSING      "zachowano istniejacy aktywny plik SRV"
 
 ; ============================================================
 ; CIAG KARDAS 1987 - I i II poziom
-; R. M. Kardas, A. Paterka, M. Francuz - 11 i 17 VIII 1987
+; R. M. Kardas, A. Paterek, M. Francuz - przyjete daty: 10 i 17 VIII 1987
 ; ============================================================
 
 ; --- Ciag glowny od otworu (0) do punktu 14 (przekaz do I. Luty)
@@ -65,7 +68,8 @@ p87_20	p87_24	77	+44.5	13.50 ; ciag nad progiem
 p87_24	p87_25	106	-14	5.60
 p87_18	p87_19	240	0	5.05 ; salka boczna
 
-; --- Boczne ciagi mierzone 17 VIII 1987 (R. M. Kardas + A. Paterka)
+; --- Boczne ciagi mierzone 17 VIII 1987 (R. M. Kardas + A. Paterek)
+;     data i sklad zespolu z naglowka skanu: Psia pomiary x.jpg (32 pomiary)
 #date 1987-08-17
 
 ; --- Boczny ciag z punktu 17
@@ -92,7 +96,7 @@ p87_219	p87_2110	245	0	5.50 ; odl. zred, pomiar bez kata pionowego -> orientacyj
 
 ; --- Ciag nad otworem (0) - 17 VIII 1987
 p87_0	p87_01	235	+38	5.20 ; ciag nad otworem - 0 - otwor
-p87_0	p87_02	290	-14	2.00 ; 0 - otwor dx=2.658 dy=2.780 dh=0.220
+p87_0	p87_02	290	-14	2.00 ; 0 - otwor dx=2.658 dy=2.780 dh=-0.220
 p87_02	p87_03	300	-30	3.10
 p87_03	p87_04	0	-90	0.70 ; - przeniesienie punktu na poziom dna
 p87_04	p87_05	313	-21	6.50
@@ -106,9 +110,10 @@ p87_05	p87_012	265	+7	1.30
 p87_012	p87_013	26	-8	6.65
 p87_013	p87_014	277	-12	2.20	; cd. w nastepnej tabeli
 
-; --- Ciag boczny w dolnych (?) partiach (R. M. Kardas + M. Francuz - 11 VIII 1987)
+; --- Ciag boczny w dolnych (?) partiach (R. M. Kardas + M. Francuz - 10 VIII 1987)
 ;     polaczenie ciagu od stacji p87_05 ze stacja p87_2 ciagu glownego
-#date 1987-08-11
+;     data z naglowka skanu: Psia pomiary x+1.jpg
+#date 1987-08-10
 p87_05	p87_015	189	+18	2.50
 p87_015	p87_016	225	-15	3.15
 p87_016	p87_017	238	+6	2.25
@@ -132,8 +137,8 @@ p87_455	p87_456	40	-8	4.50
 
 ; ============================================================
 ; CIAG LUTY 1987 - III, IV i V poziom
-; I. Luty przy wspolpracy: M. Francuz, A. Gajewska, A. Paterka,
-; K. Recielski, E. i R. Szczesni, A. Trybulec - 17 i 18 VIII 1987
+; I. Luty - 17 i 18 VIII 1987
+; Wspolpracownicy calego zespolu pomiarowego 1987 wg PIG: patrz TEAM.
 ; ============================================================
 
 ; --- Polaczenia z ciagiem Kardas (zerowe shoty - equate)
