@@ -1,6 +1,6 @@
 # Jaskinia Czarna — stan prac i dalsze kroki
 
-Aktualizacja: 2026-09-12. Gałąź robocza: `codex/czarna-digitalizacja`,
+Aktualizacja: 2026-09-13. Gałąź robocza: `codex/czarna-digitalizacja`,
 utworzona z `origin/master` na `446edc4`.
 Dokument służy wznowieniu pracy bez historii rozmowy. Aktualizuj go po każdym
 zakończonym etapie, razem z dowodami, wykonanymi sprawdzeniami i następnym krokiem.
@@ -28,6 +28,8 @@ Dotychczasowe polecenie nie obejmuje PR; nie zgłaszaj nieuruchomionego CI jako 
 1. Przeczytaj główny [CLAUDE.md](../../../../CLAUDE.md) i lokalny [AGENTS.md](AGENTS.md).
 2. Sprawdź `git status --short --branch`, `git log -5 --oneline` oraz zakres zmian.
 3. Przeczytaj [raport digitalizacji](DIGITALIZACJA_RAPORT.md) i [CZ_GL_R.SRV](CZ_GL_R.SRV).
+   Wpływ czterech niepewnych odczytów opisuje [analiza wariantów](WARIANTY_ODCZYTU.md)
+   z kompletem wyników w [JSON](WARIANTY_ODCZYTU.json).
 4. Sięgaj do rzeczywistych skanów wskazanych w raporcie; tabele i OCR są wtórne.
 5. Przeczytaj [raport deklinacji](BOROWIEC_DEKLINACJA_RAPORT.md) jako zapis wcześniejszego
    eksperymentu. Jego wyników nie uznawaj za ponownie zweryfikowane ani za ocenę nowego ciągu.
@@ -39,6 +41,10 @@ Dotychczasowe polecenie nie obejmuje PR; nie zgłaszaj nieuruchomionego CI jako 
   Obejmuje `CZ_GL_R.SRV` i `DIGITALIZACJA_RAPORT.md`. Niezależny przegląd
   nie wykazał usterek P1/P2; potwierdził izolację danych i sumy odcinków,
   ale nie powtarzał wszystkich odczytów skanów.
+- Dokumentację celu i przekazania pracy opublikowano osobno jako
+  `6fe56a8f8e8961d7528c48df208de7f0f7b6fc5d`
+  (`Czarna: zapisz cel, stan prac i instrukcje kontynuacji`). Oba pierwsze
+  commity potwierdzono na zdalnej gałęzi; sam push nie uruchomił CI.
 - Inwentaryzacja źródeł jest ukończona: rozróżniono brakujące odczyty, kopie
   fotografii, już cyfrowe pomiary i odczytane partie oczekujące na dowiązanie.
 - Brakujący dziennik obejmuje 76 odcinków 0–76 i dwa odcinki 6–a–b.
@@ -55,6 +61,14 @@ Dotychczasowe polecenie nie obejmuje PR; nie zgłaszaj nieuruchomionego CI jako 
   79 stacji, 78 odcinków, 0 pętli. Nie wykonano kompilacji w aplikacji Walls.
 - Pełna walidacja po aktualizacji gałęzi: 156 testów, Ruff, sprawdzenie 87 fixów
   GPS z v1.0.2 oraz wszystkie 12 etapów `jktz-validate` zakończyły się sukcesem.
+- Ukończono analizę wszystkich 16 kombinacji niepewnych odczytów: CLI
+  `jktz-czarna-warianty`, testy, raport i wynik JSON z SHA-256 wejścia.
+  Każdą kombinację sprawdzono niezależną kompilacją Survex 1.4.22;
+  48/48 składowych E/N/Z zgadza się w granicach zaokrąglenia do 0,01 m.
+  Największy pojedynczy wpływ ma 39→40 (9,86 m); najdalsza para wariantów
+  różni się o 12,12 m. To wpływ transkrypcji, nie ocena jakości pomiaru.
+  Niezależny przegląd narzędzia nie wykazał usterek P1/P2; nie był kolejnym
+  odczytem skanów. Kontrole publikacji tego etapu zapisano poniżej.
 - Oryginały `_RAW`, istniejące aktywne pomiary i współrzędne otworów zachowano.
   Pełna historia późniejszych zmian i publikacji znajduje się w git.
 
@@ -86,10 +100,14 @@ geometrią. Kreska azymutu pionu 57–58 (`--`, V=−90°) nie jest piątym spor
 
 ## Najbliższy krok i warunki porównania
 
-1. Policz wpływ każdej z czterech alternatyw na lokalne współrzędne oraz
-   wszystkie 16 kombinacji na koniec ciągu. Zachowaj skrypt i wyniki w repo.
-   Podaj różnice E/N/Z, poziome i 3D względem wersji roboczej; bez rankingu pod GNSS.
-2. Następnie rozstrzygaj źródła i znane błędy w jawnych, oddzielnych wariantach.
+1. Wróć do źródeł według wpływu niepewnego odczytu: 39→40 A, 49→50 A,
+   71→72 V, 29→30 D. Obecne fotografie i dwa niezależne odczyty nie dały
+   jednoznacznego rozstrzygnięcia; potrzebne może być lepsze zdjęcie,
+   oryginalny dziennik lub niezależny zapis obserwacji. Nie wybieraj cyfr
+   według uzyskanego domknięcia. Analiza 16 wariantów jest już wykonana.
+2. Rozstrzygaj pochodzenie dziennika i znane błędy istniejących danych
+   w jawnych, oddzielnych wariantach. Pewny błąd jednostek Kujata można
+   wydzielić do osobnej korekty; konflikt 11,09/11,90 m pozostaje odrębny.
 3. Ustal wspólne fizyczne punkty i domiary do GNSS: `KSW-0201` odpowiada
    `Czarna:M:otwor1`, `KSW-0240` — `Czarna:Kujat:0`. Centymetrowa dokładność
    pochodzi z informacji użytkownika; źródłowych raportów GNSS jeszcze nie audytowano.
@@ -102,6 +120,25 @@ geometrią. Kreska azymutu pionu 57–58 (`--`, V=−90°) nie jest piątym spor
 6. Włączenie do głównego WPJ następuje po świadomym wyborze wariantu i dowiązań;
    sama poprawność składni ani mniejszy błąd po dopasowaniu nie wystarczają.
 
+## Weryfikacja etapu wariantów — 2026-09-13
+
+- `uv run pytest -q`: **196 testów zaliczonych**, w tym 40 dotyczących
+  geometrii wariantów, kontraktu wejścia i zachowania źródła przez CLI.
+- `ruff format --check src scripts tests` oraz `ruff check src scripts tests`:
+  sukces, 67 plików zgodnych z formatem.
+- `jktz-render-otwory --check`: sukces, GPS v1.0.2, 87 fixów.
+- Wszystkie 12 etapów `jktz-validate`: sukces, w tym kompilacja bez ostrzeżeń
+  i eksporty. Główny model nadal ma 18512 stacji i 18639 odcinków;
+  roboczy `CZ_GL_R.SRV` pozostaje poza nim.
+- Osobno porównano 16 wariantów z Survex; szczegóły, SHA-256 i tabela
+  kontrolna są w `WARIANTY_ODCZYTU.md`. Maksymalna różnica składowej wynosi
+  0,004899 m przy wyniku Survex zaokrąglonym do 0,01 m.
+- Oryginalne materiały, aktywne SRV, WPJ i otwory nie zostały zmienione.
+  Identyfikator commitu zawierającego ten etap odczytasz przez
+  `git log -1 --format=%H -- src/jktz/czarna_variants.py`.
+  Zdalne opublikowanie sprawdzaj przez porównanie z `git ls-remote origin
+  refs/heads/codex/czarna-digitalizacja`; CI nie uruchamia się od tego pushu.
+
 ## Odtwarzalne narzędzia i aktualizacje
 
 Polecenia uruchamiaj z katalogu głównego repo. Po aktualizacji gałęzi używaj
@@ -109,6 +146,8 @@ CLI z `pyproject.toml`; stare skrypty usunięto w commicie `446edc4`.
 
 ```sh
 uv sync --locked
+uv run jktz-czarna-warianty --output Poligony/D_Koscieliska/Organy/Czarna/WARIANTY_ODCZYTU.json
+uv run pytest -q tests/test_czarna_variants.py
 uv run jktz-survex-stats Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_R.SRV
 uv run jktz-srv-metadata hash-raw Poligony/D_Koscieliska/Organy/Czarna
 uv run jktz-srv-metadata srv-update --help
