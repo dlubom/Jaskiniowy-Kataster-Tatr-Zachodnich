@@ -7,7 +7,7 @@ ale jego różnica nie obejmowała materiałów Czarnej. Nie aktualizowano check
 ## Wynik
 
 **Brakującym odczytem jest dziennik ciągu głównego 0–76 oraz odgałęzienie
-6–a–b („Partie Tęhmy”) w `_RAW/02`. Łącznie 78 odcinków.**
+6–a–b („Partie Tehuby”) w `_RAW/02`. Łącznie 78 odcinków.**
 To inny zestaw liczb i stanowisk niż współrzędne Borowca oraz pomiary partii
 końcowych Kujata obecne już w SRV. Trzy zdjęcia dokumentują cztery strony
 zeszytu: dwie fotografie pokazują tę samą rozkładówkę.
@@ -153,7 +153,7 @@ rozstrzygającego źródła.
 | Odcinek | Pole | Wartość robocza | Alternatywny odczyt | Źródło |
 | --- | --- | --- | --- | --- |
 | 29→30 | D | 13,80 m | 13,60 m | `123630`, lewa strona |
-| 39→40 | A | 25° | 75° | `123630`, ostatni wiersz lewej strony |
+| 39→40 | A | 75° | 25° | `123630`, ostatni wiersz lewej strony; preferencja zaktualizowana 2026-09-13 |
 | 49→50 | A | 68° | 88° | `123630`, prawa strona |
 | 71→72 | V | −1° | +1° | `123052` i `123533`, lewa strona |
 
@@ -162,6 +162,13 @@ sprawdzono na powiększeniach; tabeli nie „domknięto” dopasowaniem do oczek
 geometrii. Uzgodnione trudniejsze zapisy: 55→56 D=5,90 m,
 59→60 D=17,60 m, 74→75 D=17,00 m. W 57→58 azymut jest zastąpiony kreską
 przy V=−90°; w SRV użyto prawidłowego zapisu brakującego azymutu pionu `--`.
+
+Aktualizacja 2026-09-13: [porównanie wyników Gemini](POROWNANIE_GEMINI.md)
+i dodatkowy odczyt skanu przemawiają za A=75° dla 39→40. Zmieniono
+preferowaną wartość roboczą z 25° na 75°, zachowując alternatywę i oznaczenie
+niepewności. Poprawiono też wcześniejszą błędną nazwę „Tehmy” na „Tehuby”.
+Pozostałe D/A/V zachowano; nowy etap nie oznacza zatwierdzenia orientacji
+ani autorstwa dziennika. Szczegóły historii pomiarów i nazw są w tym samym raporcie.
 
 ### Niespójne obliczenia w samym dzienniku
 

@@ -60,7 +60,7 @@ class UncertainReading:
 
 READINGS = (
     UncertainReading("29", "30", "D", "distance", 13.80, 13.60),
-    UncertainReading("39", "40", "A", "azimuth", 25.0, 75.0),
+    UncertainReading("39", "40", "A", "azimuth", 75.0, 25.0),
     UncertainReading("49", "50", "A", "azimuth", 68.0, 88.0),
     UncertainReading("71", "72", "V", "inclination", -1.0, 1.0),
 )

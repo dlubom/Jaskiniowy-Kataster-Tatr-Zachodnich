@@ -1,6 +1,7 @@
 # Czarna — wpływ niepewnych odczytów na koniec ciągu
 
-Obliczenia: 2026-09-12; końcowa weryfikacja: 2026-09-13.
+Aktualizacja obliczeń i niezależnej weryfikacji: 2026-09-13, po porównaniu Gemini.
+Pierwszą wersję analizy wykonano 2026-09-12.
 Źródło: [CZ_GL_R.SRV](CZ_GL_R.SRV), odcinki 0–76.
 Analiza dotyczy czterech nierozstrzygniętych odczytów opisanych w
 [raporcie digitalizacji](DIGITALIZACJA_RAPORT.md). Nie wykorzystuje GPS
@@ -16,13 +17,14 @@ ufności ani oszacowanie całkowitej dokładności pomiarów terenowych.
 
 | Priorytet kontroli | Odcinek i alternatywa | Przesunięcie końca w 3D | Co zmienia się w geometrii |
 | --- | --- | ---: | --- |
-| 1 | 39→40: A 25° → 75° | 9,86 m | Położenie poziome od stacji 40 do końca. |
+| 1 | 39→40: A 75° → 25° | 9,86 m | Położenie poziome od stacji 40 do końca. |
 | 2 | 49→50: A 68° → 88° | 2,39 m | Położenie poziome od stacji 50 do końca. |
 | 3 | 71→72: V −1° → +1° | 0,70 m | Wysokość od stacji 72 do końca; położenie poziome bez zmiany. |
 | 4 | 29→30: D 13,80 → 13,60 m | 0,20 m | Długość i małe przesunięcie przestrzenne od stacji 30. |
 
-Zachowano dotychczasowe wartości robocze w SRV. Żadnej alternatywy
-nie uznano za poprawną wyłącznie na podstawie jej wpływu na wynik.
+Po [ponownym odczycie i porównaniu Gemini](POROWNANIE_GEMINI.md) przyjęto
+75° jako preferowany roboczy A39, zachowując 25° jako alternatywę. Zmiana
+opiera się na grafii skanu, nie na wpływie na wynik. Pozostałe D/A/V zachowano.
 
 ## Warunki eksperymentu
 
@@ -72,10 +74,10 @@ dowolnego pliku Walls. Nazwę wejścia i SHA-256 zapisano w JSON.
 SHA-256 pliku SRV użytego do obliczeń i niezależnych kompilacji:
 
 ```text
-c63c22be945f1376e2b3ed4ef85fe3ecff9ae5bb5eede66ff58b7ea99ba3a6cb
+2c7dda785dee1444c6e99133d183640465dc7a2bd6aae9c3a480698097feb834
 ```
 
-Najdalsza para to `0110` i `1001`: 12,120658 m w 3D, w tym
+Najdalsza para to `0010` i `1101`: 12,120658 m w 3D, w tym
 12,099930 m poziomo. Liczby podano z dodatkowymi cyframi, aby umożliwić
 kontrolę obliczeń, a nie sugerować dokładność odczytu ani pomiaru.
 
@@ -95,27 +97,29 @@ To kontrola geometrii transkrypcji; nie zastępuje ponownego odczytu źródła.
 
 W identyfikatorze wariantu kolejne bity oznaczają użycie alternatywy
 odczytu odpowiednio: **29 D, 39 A, 49 A, 71 V**. `0` zachowuje odczyt
-roboczy, `1` stosuje alternatywę. Liczby poniżej są wynikiem `dump3d`
+roboczy, `1` stosuje alternatywę. Od tej aktualizacji drugi bit oznacza
+**0 = 75°, 1 = 25°**; we wcześniejszej wersji było odwrotnie. Parametry
+i SHA-256, a nie sam identyfikator, określają wariant. Liczby poniżej są wynikiem `dump3d`
 zaokrąglonym do 0,01 m; nie oznacza to centymetrowej dokładności pomiaru.
 
 | Wariant | E końca [m] | N końca [m] | Z końca [m] |
 | --- | ---: | ---: | ---: |
-| 0000 — roboczy | 763,92 | 269,03 | 17,45 |
-| 0001 | 763,92 | 269,03 | 18,15 |
-| 0010 | 764,42 | 266,69 | 17,45 |
-| 0011 | 764,42 | 266,69 | 18,15 |
-| 0100 | 770,26 | 261,48 | 17,45 |
-| 0101 | 770,26 | 261,48 | 18,15 |
-| 0110 | 770,76 | 259,14 | 17,45 |
-| 0111 | 770,76 | 259,14 | 18,15 |
-| 1000 | 763,73 | 268,99 | 17,46 |
-| 1001 | 763,73 | 268,99 | 18,16 |
-| 1010 | 764,23 | 266,65 | 17,46 |
-| 1011 | 764,23 | 266,65 | 18,16 |
-| 1100 | 770,07 | 261,43 | 17,46 |
-| 1101 | 770,07 | 261,43 | 18,16 |
-| 1110 | 770,57 | 259,09 | 17,46 |
-| 1111 | 770,57 | 259,09 | 18,16 |
+| 0000 — roboczy | 770,26 | 261,48 | 17,45 |
+| 0001 | 770,26 | 261,48 | 18,15 |
+| 0010 | 770,76 | 259,14 | 17,45 |
+| 0011 | 770,76 | 259,14 | 18,15 |
+| 0100 | 763,92 | 269,03 | 17,45 |
+| 0101 | 763,92 | 269,03 | 18,15 |
+| 0110 | 764,42 | 266,69 | 17,45 |
+| 0111 | 764,42 | 266,69 | 18,15 |
+| 1000 | 770,07 | 261,43 | 17,46 |
+| 1001 | 770,07 | 261,43 | 18,16 |
+| 1010 | 770,57 | 259,09 | 17,46 |
+| 1011 | 770,57 | 259,09 | 18,16 |
+| 1100 | 763,73 | 268,99 | 17,46 |
+| 1101 | 763,73 | 268,99 | 18,16 |
+| 1110 | 764,23 | 266,65 | 17,46 |
+| 1111 | 764,23 | 266,65 | 18,16 |
 
 ## Co dalej
 

@@ -30,6 +30,8 @@ Dotychczasowe polecenie nie obejmuje PR; nie zgłaszaj nieuruchomionego CI jako 
 3. Przeczytaj [raport digitalizacji](DIGITALIZACJA_RAPORT.md) i [CZ_GL_R.SRV](CZ_GL_R.SRV).
    Wpływ czterech niepewnych odczytów opisuje [analiza wariantów](WARIANTY_ODCZYTU.md)
    z kompletem wyników w [JSON](WARIANTY_ODCZYTU.json).
+   Najnowszy etap to [porównanie Gemini i kontrola nazw](POROWNANIE_GEMINI.md).
+   Wyniki dostarczone przez użytkownika zachowano w [ODCZYTY_MODELI](ODCZYTY_MODELI/README.md).
 4. Sięgaj do rzeczywistych skanów wskazanych w raporcie; tabele i OCR są wtórne.
 5. Przeczytaj [raport deklinacji](BOROWIEC_DEKLINACJA_RAPORT.md) jako zapis wcześniejszego
    eksperymentu. Jego wyników nie uznawaj za ponownie zweryfikowane ani za ocenę nowego ciągu.
@@ -69,6 +71,24 @@ Dotychczasowe polecenie nie obejmuje PR; nie zgłaszaj nieuruchomionego CI jako 
   różni się o 12,12 m. To wpływ transkrypcji, nie ocena jakości pomiaru.
   Niezależny przegląd narzędzia nie wykazał usterek P1/P2; nie był kolejnym
   odczytem skanów. Kontrole publikacji tego etapu zapisano poniżej.
+  Pierwszą wersję analizy opublikowano jako
+  `b36d312a9b551116ce983aff976815df8320e59f`; potwierdzono zdalne SHA,
+  CI nie uruchomiło się od pushu.
+- Porównano dwa dostarczone wyniki Gemini z tą zamrożoną wersją SRV.
+  Flash ma 3 różnice pierwszych wartości D/A/V (jedna zawiera także poprawny
+  odczyt jako alternatywę); Pro ma 11 oraz błędną parę 18→20 zamiast 19→20.
+  Są to rozbieżności względem bazy, nie liczby błędów. Dodatkowe oględziny
+  skanów przez dwóch czytelników i agenta głównego sprawdziły sporne wiersze.
+- Zmieniono preferowaną roboczą wartość A39 z 25° na 75° na podstawie grafii
+  skanu, wspartej dwoma Gemini i dodatkowym odczytem bez dostępu do tych wyników.
+  Zachowano 25° jako alternatywę oraz cztery oznaczenia niepewności.
+  Pozostałe D/A/V pozostają bez zmian. JSON i testowa wartość bazowa narzędzia
+  zostały uaktualnione; drugi bit wariantu oznacza teraz 0=75°, 1=25°.
+- Poprawiono błędną nazwę „Tehmy” na „Tehuby”. PIG i artykuł J. Nowaka
+  rozróżniają współczesne Partie Tehuby oraz historyczną nazwę Techuba.
+  Historia głównego ciągu z lipca 1995 r. (Bobry Żagań, H. Zyzańska,
+  R. Kondratowicz) jest tropem pochodzenia dziennika, a nie ustalonym autorstwem.
+  Źródła i ograniczenia zapisano w `POROWNANIE_GEMINI.md`.
 - Oryginały `_RAW`, istniejące aktywne pomiary i współrzędne otworów zachowano.
   Pełna historia późniejszych zmian i publikacji znajduje się w git.
 
@@ -77,7 +97,7 @@ Dotychczasowe polecenie nie obejmuje PR; nie zgłaszaj nieuruchomionego CI jako 
 | Odcinek | Pole | Roboczo | Alternatywa |
 | --- | --- | --- | --- |
 | 29–30 | D | 13,80 m | 13,60 m |
-| 39–40 | A | 25° | 75° |
+| 39–40 | A | 75° | 25° |
 | 49–50 | A | 68° | 88° |
 | 71–72 | V | −1° | +1° |
 
@@ -101,13 +121,16 @@ geometrią. Kreska azymutu pionu 57–58 (`--`, V=−90°) nie jest piątym spor
 ## Najbliższy krok i warunki porównania
 
 1. Wróć do źródeł według wpływu niepewnego odczytu: 39→40 A, 49→50 A,
-   71→72 V, 29→30 D. Obecne fotografie i dwa niezależne odczyty nie dały
-   jednoznacznego rozstrzygnięcia; potrzebne może być lepsze zdjęcie,
+   71→72 V, 29→30 D. Gemini i ponowne oględziny wzmacniają obecne preferencje,
+   ale czterech niepewności jeszcze nie usunięto; potrzebne może być lepsze zdjęcie,
    oryginalny dziennik lub niezależny zapis obserwacji. Nie wybieraj cyfr
    według uzyskanego domknięcia. Analiza 16 wariantów jest już wykonana.
 2. Rozstrzygaj pochodzenie dziennika i znane błędy istniejących danych
    w jawnych, oddzielnych wariantach. Pewny błąd jednostek Kujata można
    wydzielić do osobnej korekty; konflikt 11,09/11,90 m pozostaje odrębny.
+   Sprawdź trop pomiarów z 1995 r. u ich dysponentów; opis jaskini nie zawiera
+   numeracji umożliwiającej przypisanie naszego dziennika. Nazwy partii
+   pomagają ustalić topologię, ale nie datę ani identyczność stanowisk.
 3. Ustal wspólne fizyczne punkty i domiary do GNSS: `KSW-0201` odpowiada
    `Czarna:M:otwor1`, `KSW-0240` — `Czarna:Kujat:0`. Centymetrowa dokładność
    pochodzi z informacji użytkownika; źródłowych raportów GNSS jeszcze nie audytowano.
@@ -120,7 +143,7 @@ geometrią. Kreska azymutu pionu 57–58 (`--`, V=−90°) nie jest piątym spor
 6. Włączenie do głównego WPJ następuje po świadomym wyborze wariantu i dowiązań;
    sama poprawność składni ani mniejszy błąd po dopasowaniu nie wystarczają.
 
-## Weryfikacja etapu wariantów — 2026-09-13
+## Weryfikacja pierwszej wersji wariantów (`b36d312`) — 2026-09-13
 
 - `uv run pytest -q`: **196 testów zaliczonych**, w tym 40 dotyczących
   geometrii wariantów, kontraktu wejścia i zachowania źródła przez CLI.
@@ -138,6 +161,27 @@ geometrią. Kreska azymutu pionu 57–58 (`--`, V=−90°) nie jest piątym spor
   `git log -1 --format=%H -- src/jktz/czarna_variants.py`.
   Zdalne opublikowanie sprawdzaj przez porównanie z `git ls-remote origin
   refs/heads/codex/czarna-digitalizacja`; CI nie uruchamia się od tego pushu.
+
+## Weryfikacja porównania Gemini — 2026-09-13
+
+- **197 testów zaliczonych**, w tym 41 testów diagnostyki wariantów.
+  Dodany przypadek sprawdza odmowę zastosowania nowej bazy do starego A39=25°.
+- Ruff format i check: sukces, 67 plików. Kontrola otworów: sukces,
+  87 fixów z GPS v1.0.2. Wszystkie 12 etapów `jktz-validate`: sukces.
+- Potwierdzono bajtową zgodność obu kopii Gemini z plikami w Pobranych oraz
+  ich SHA-256. Bazę `POROWNANIE.json` sprawdzono względem `git show b36d312`.
+- Dokładnie jedna wartość D/A/V zmieniona: A39 25° → 75°. Wszystkie 16
+  geometrii po aktualizacji ma dokładnie te same współrzędne co odpowiadające
+  im wcześniejsze warianty, tylko inne identyfikatory i odniesienie delt.
+- Ponownie skompilowano wszystkie 16 wariantów w Survex 1.4.22 bez ostrzeżeń.
+  Zgodność 48/48 składowych, maksymalna różnica 0,004899 m przy zaokrągleniu
+  `dump3d` do 0,01 m. SHA wejścia jest w raporcie wariantów i JSON.
+- Niezależny przegląd całego etapu nie wykazał usterek P1/P2. Nie był kolejnym
+  pełnym odczytem wszystkich skanów ani oceną dokładności terenowej.
+- Etap obejmuje zmianę SRV, odczyty Gemini, raport porównania, odświeżone
+  warianty i dokumentację. Jego commit wskazuje
+  `git log -1 --format=%H -- Poligony/D_Koscieliska/Organy/Czarna/POROWNANIE_GEMINI.md`;
+  stan zdalny sprawdzaj poleceniem `git ls-remote` podanym wyżej.
 
 ## Odtwarzalne narzędzia i aktualizacje
 

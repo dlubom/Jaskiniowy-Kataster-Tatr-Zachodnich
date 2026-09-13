@@ -31,7 +31,7 @@ def survey_text() -> str:
     )
     special = {
         29: "13.80 90 0",
-        39: "10 25 0",
+        39: "10 75 0",
         49: "5 68 60",
         57: "10 -- -90",
         71: "20 0 -1",
@@ -127,6 +127,7 @@ def test_variant_effects_are_local_and_branch_is_not_the_endpoint(tmp_path, surv
         ("0 1 1 0 0\n", "", "78 shots"),
         ("a b 200 90 0\n", "", "78 shots"),
         ("29 30 13.80 90 0", "29 30 13.60 90 0", "baseline changed"),
+        ("39 40 10 75 0", "39 40 10 25 0", "baseline changed"),
         ('"T.E-09.12"', '"T.E-00.00"', "CAVE_ID"),
         ('SURVEY_DATE     "nieznane"', 'SURVEY_DATE     "1981-01-01"', "unknown survey date"),
     ],

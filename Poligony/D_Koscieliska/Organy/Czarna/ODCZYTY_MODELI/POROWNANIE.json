@@ -1,0 +1,264 @@
+{
+  "baseline_sha256": "c63c22be945f1376e2b3ed4ef85fe3ecff9ae5bb5eede66ff58b7ea99ba3a6cb",
+  "models": {
+    "gemini_flash_3.8.md": {
+      "filename": "gemini_flash_3.8.md",
+      "sha256": "833a1ce314c7ac98e563486e5b0e8b15a7399368dae249d6c7423e70fa844672",
+      "transcribed_rows": 115,
+      "unique_pairs": 78,
+      "matching_pairs": 78,
+      "missing_pairs": [],
+      "differences": [
+        {
+          "pair": [
+            "24",
+            "25"
+          ],
+          "field": "D",
+          "srv": 11.1,
+          "model_primary": 21.1,
+          "source_lines": [
+            140
+          ],
+          "source_cells": [
+            "21,10 \\[? skorygowane na 11,10\\]"
+          ]
+        },
+        {
+          "pair": [
+            "39",
+            "40"
+          ],
+          "field": "A",
+          "srv": 25.0,
+          "model_primary": 75.0,
+          "source_lines": [
+            155
+          ],
+          "source_cells": [
+            "75"
+          ]
+        },
+        {
+          "pair": [
+            "49",
+            "50"
+          ],
+          "field": "A",
+          "srv": 68.0,
+          "model_primary": 58.0,
+          "source_lines": [
+            170
+          ],
+          "source_cells": [
+            "58"
+          ]
+        }
+      ]
+    },
+    "gemini_pro.md": {
+      "filename": "gemini_pro.md",
+      "sha256": "f425823de05cb431400014dc31141f9604bd4f8fbd8cd121eae3af5f34f86e63",
+      "transcribed_rows": 115,
+      "unique_pairs": 78,
+      "matching_pairs": 77,
+      "missing_pairs": [
+        [
+          "19",
+          "20"
+        ]
+      ],
+      "differences": [
+        {
+          "pair": [
+            "62",
+            "63"
+          ],
+          "field": "D",
+          "srv": 3.5,
+          "model_primary": 3.3,
+          "source_lines": [
+            11,
+            82
+          ],
+          "source_cells": [
+            "3,30",
+            "3,30"
+          ]
+        },
+        {
+          "pair": [
+            "73",
+            "74"
+          ],
+          "field": "D",
+          "srv": 17.0,
+          "model_primary": 12.0,
+          "source_lines": [
+            22,
+            93
+          ],
+          "source_cells": [
+            "12,00",
+            "12,00"
+          ]
+        },
+        {
+          "pair": [
+            "1",
+            "2"
+          ],
+          "field": "A",
+          "srv": 93.0,
+          "model_primary": 83.0,
+          "source_lines": [
+            48,
+            119
+          ],
+          "source_cells": [
+            "83",
+            "83"
+          ]
+        },
+        {
+          "pair": [
+            "18",
+            "20"
+          ],
+          "issue": "unexpected_station_pair",
+          "model": {
+            "D": 17.5,
+            "A": 85.0,
+            "V": -13.0
+          },
+          "source_lines": [
+            149
+          ]
+        },
+        {
+          "pair": [
+            "20",
+            "21"
+          ],
+          "field": "A",
+          "srv": 115.0,
+          "model_primary": 145.0,
+          "source_lines": [
+            150
+          ],
+          "source_cells": [
+            "145"
+          ]
+        },
+        {
+          "pair": [
+            "24",
+            "25"
+          ],
+          "field": "D",
+          "srv": 11.1,
+          "model_primary": 21.1,
+          "source_lines": [
+            154
+          ],
+          "source_cells": [
+            "21,10"
+          ]
+        },
+        {
+          "pair": [
+            "28",
+            "29"
+          ],
+          "field": "D",
+          "srv": 20.5,
+          "model_primary": 20.4,
+          "source_lines": [
+            158
+          ],
+          "source_cells": [
+            "20,40"
+          ]
+        },
+        {
+          "pair": [
+            "29",
+            "30"
+          ],
+          "field": "D",
+          "srv": 13.8,
+          "model_primary": 13.3,
+          "source_lines": [
+            159
+          ],
+          "source_cells": [
+            "13,30"
+          ]
+        },
+        {
+          "pair": [
+            "32",
+            "33"
+          ],
+          "field": "D",
+          "srv": 10.5,
+          "model_primary": 10.3,
+          "source_lines": [
+            162
+          ],
+          "source_cells": [
+            "10,30"
+          ]
+        },
+        {
+          "pair": [
+            "39",
+            "40"
+          ],
+          "field": "A",
+          "srv": 25.0,
+          "model_primary": 75.0,
+          "source_lines": [
+            169
+          ],
+          "source_cells": [
+            "75"
+          ]
+        },
+        {
+          "pair": [
+            "43",
+            "44"
+          ],
+          "field": "V",
+          "srv": 5.0,
+          "model_primary": 15.0,
+          "source_lines": [
+            180
+          ],
+          "source_cells": [
+            "+15"
+          ]
+        },
+        {
+          "pair": [
+            "46",
+            "47"
+          ],
+          "field": "V",
+          "srv": -19.0,
+          "model_primary": -15.0,
+          "source_lines": [
+            183
+          ],
+          "source_cells": [
+            "-15"
+          ]
+        }
+      ]
+    }
+  },
+  "baseline_commit": "b36d312a9b551116ce983aff976815df8320e59f",
+  "baseline_path": "Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_R.SRV",
+  "method": "Primary D/A/V literals compared to pre-review SRV; duplicate photograph rows collapsed only after checking equal primary values. Alternatives remain in source_cells; mismatch counts are not accuracy scores."
+}
