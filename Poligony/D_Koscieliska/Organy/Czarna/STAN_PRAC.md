@@ -1,6 +1,6 @@
 # Jaskinia Czarna — stan prac i dalsze kroki
 
-Aktualizacja: 2026-09-13. Gałąź robocza: `codex/czarna-digitalizacja`,
+Aktualizacja: 2026-09-14. Gałąź robocza: `codex/czarna-digitalizacja`,
 utworzona z `origin/master` na `446edc4`.
 Dokument służy wznowieniu pracy bez historii rozmowy. Aktualizuj go po każdym
 zakończonym etapie, razem z dowodami, wykonanymi sprawdzeniami i następnym krokiem.
@@ -12,9 +12,10 @@ porównanie ich jakości z pomiarami Borowca przy wykorzystaniu precyzyjnych
 pomiarów otworów. Dopiero na podstawie źródeł i kontrolowanego porównania
 można wybrać podstawowy ciąg i sposób włączenia go do sieci.
 
-Autor, data i instrument dziennika 0–76 pozostają nieznane. Określenia
-„powtórny”, „nowszy” i „Kujata” są hipotezami, nie ustalonymi metadanymi.
-Nie wyprowadzaj ich z nazwy zdjęcia ani z daty listu dotyczącego innych partii.
+Autorem dziennika 0–76 i 6–a–b jest **Ryszard Kujat**. Użytkownik potwierdził
+to 2026-09-13, wskazując nazwę fotografii z dopiskiem `Kujat`. Usunięto
+nieuzasadnioną hipotezę innego autorstwa. Data i instrument pozostają nieustalone;
+daty listu dotyczącego innych partii nie przypisuj temu dziennikowi.
 
 Użytkownik upoważnił do utworzenia gałęzi oraz commitów i pushów, najpierw
 dotychczasowej digitalizacji, następnie dokumentacji stanu w osobnym commicie,
@@ -30,7 +31,9 @@ Dotychczasowe polecenie nie obejmuje PR; nie zgłaszaj nieuruchomionego CI jako 
 3. Przeczytaj [raport digitalizacji](DIGITALIZACJA_RAPORT.md) i [CZ_GL_R.SRV](CZ_GL_R.SRV).
    Wpływ czterech niepewnych odczytów opisuje [analiza wariantów](WARIANTY_ODCZYTU.md)
    z kompletem wyników w [JSON](WARIANTY_ODCZYTU.json).
-   Najnowszy etap to [porównanie Gemini i kontrola nazw](POROWNANIE_GEMINI.md).
+   Najnowszy etap to [porównanie przebiegu Kujat–Borowiec](POROWNANIE_BOROWIEC.md),
+   z nakładką planu i profilu oraz współrzędnymi w JSON. Wcześniej wykonano
+   [porównanie Gemini i kontrolę nazw](POROWNANIE_GEMINI.md).
    Wyniki dostarczone przez użytkownika zachowano w [ODCZYTY_MODELI](ODCZYTY_MODELI/README.md).
 4. Sięgaj do rzeczywistych skanów wskazanych w raporcie; tabele i OCR są wtórne.
 5. Przeczytaj [raport deklinacji](BOROWIEC_DEKLINACJA_RAPORT.md) jako zapis wcześniejszego
@@ -86,9 +89,19 @@ Dotychczasowe polecenie nie obejmuje PR; nie zgłaszaj nieuruchomionego CI jako 
   zostały uaktualnione; drugi bit wariantu oznacza teraz 0=75°, 1=25°.
 - Poprawiono błędną nazwę „Tehmy” na „Tehuby”. PIG i artykuł J. Nowaka
   rozróżniają współczesne Partie Tehuby oraz historyczną nazwę Techuba.
-  Historia głównego ciągu z lipca 1995 r. (Bobry Żagań, H. Zyzańska,
-  R. Kondratowicz) jest tropem pochodzenia dziennika, a nie ustalonym autorstwem.
-  Źródła i ograniczenia zapisano w `POROWNANIE_GEMINI.md`.
+  Źródła zapisano w `POROWNANIE_GEMINI.md`. Etap Gemini opublikowano jako
+  `f8832488a906fe98f38c3bebcbd45c9691369711`; zdalne SHA potwierdzono,
+  sam push nie uruchomił CI.
+- Po korekcie użytkownika wpisano Ryszarda Kujata do `TEAM` nowego SRV
+  i dokumentacji. Nie zmieniono żadnego D/A/V. Odświeżono SHA-256 w analizie
+  wariantów i ponowiono 16 kompilacji kontrolnych z identyczną geometrią.
+- Porównano 76 odcinków Kujata z 74 odcinkami głównego ciągu Borowca,
+  bez dopasowywania obrotu i skali. Długości różnią się o 0,97%, kierunki
+  początku–końca o 0,60°. Plan i większość profilu wskazują ten sam ciąg główny.
+  Numeracja i rozmieszczenie stacji są różne; nie ma tabeli potwierdzonych
+  tożsamości fizycznych stanowisk. Istotna lokalna różnica pionowa występuje
+  przy K64–71 / B52–64, w rejonie Studni Imieninowej. Szczegóły, metoda,
+  źródła i ograniczenia: `POROWNANIE_BOROWIEC.md` oraz powiązany JSON i wykres.
 - Oryginały `_RAW`, istniejące aktywne pomiary i współrzędne otworów zachowano.
   Pełna historia późniejszych zmian i publikacji znajduje się w git.
 
@@ -125,12 +138,13 @@ geometrią. Kreska azymutu pionu 57–58 (`--`, V=−90°) nie jest piątym spor
    ale czterech niepewności jeszcze nie usunięto; potrzebne może być lepsze zdjęcie,
    oryginalny dziennik lub niezależny zapis obserwacji. Nie wybieraj cyfr
    według uzyskanego domknięcia. Analiza 16 wariantów jest już wykonana.
-2. Rozstrzygaj pochodzenie dziennika i znane błędy istniejących danych
-   w jawnych, oddzielnych wariantach. Pewny błąd jednostek Kujata można
-   wydzielić do osobnej korekty; konflikt 11,09/11,90 m pozostaje odrębny.
-   Sprawdź trop pomiarów z 1995 r. u ich dysponentów; opis jaskini nie zawiera
-   numeracji umożliwiającej przypisanie naszego dziennika. Nazwy partii
-   pomagają ustalić topologię, ale nie datę ani identyczność stanowisk.
+2. Sprawdź przebieg obu pomiarów w rejonie Studni Imieninowej, szczególnie
+   zejście K65→66 i odcinek Borowca ku B60. Nakładka planu jest zbieżna,
+   ale profile różnią się lokalnie o około 20–30 m. Nie rozstrzygnięto, czy
+   to inny poziom/droga czy problem danych. Ustal fizyczne odpowiedniki
+   na podstawie szkiców i opisów; podobieństwo geometryczne nie jest dowiązaniem.
+   Autorstwo Kujata jest ustalone, data i instrument nadal nie. Znane błędy
+   istniejących pomiarów rozpatruj osobno: jednostki 6500–6509 oraz 11,09/11,90 m.
 3. Ustal wspólne fizyczne punkty i domiary do GNSS: `KSW-0201` odpowiada
    `Czarna:M:otwor1`, `KSW-0240` — `Czarna:Kujat:0`. Centymetrowa dokładność
    pochodzi z informacji użytkownika; źródłowych raportów GNSS jeszcze nie audytowano.
@@ -182,6 +196,27 @@ geometrią. Kreska azymutu pionu 57–58 (`--`, V=−90°) nie jest piątym spor
   warianty i dokumentację. Jego commit wskazuje
   `git log -1 --format=%H -- Poligony/D_Koscieliska/Organy/Czarna/POROWNANIE_GEMINI.md`;
   stan zdalny sprawdzaj poleceniem `git ls-remote` podanym wyżej.
+
+## Weryfikacja autorstwa i porównania z Borowcem — 2026-09-13/14
+
+- Niezależne obliczenia potwierdziły długości, kierunki, korelacje kształtu,
+  przykłady par odcinków i bilanse wysokości opisane w `POROWNANIE_BOROWIEC.md`.
+  Wykres sprawdzono wizualnie; współrzędne i SHA-256 źródeł są w JSON.
+- Drugi przegląd nie wykazał istotnych usterek obliczeń. Poprawiono dwie
+  nieścisłości opisu: autorstwo dotyczy dziennika, a uwagi o Studni Imieninowej
+  są na fotografii i w raporcie Gemini, nie przy tych wierszach SRV.
+- Potwierdzono semantycznie niezmienione **78 D/A/V** względem `f883248`.
+  Wynik JSON 16 wariantów zmienił tylko SHA wejścia. Ponowne kompilacje
+  Survex dały zgodność 48/48 składowych, maksymalna różnica 0,004899 m.
+- **197 testów zaliczonych**, Ruff format i check: sukces, 67 plików.
+  Kontrola 87 fixów GPS v1.0.2 oraz wszystkie 12 etapów `jktz-validate`:
+  sukces. Główna sieć nadal ma 18512 stacji i 18639 odcinków.
+- `_RAW` Czarnej, aktywny Borowiec, WPJ i otwory są niezmienione względem
+  początku gałęzi. Nowy SRV pozostaje poza WPJ; nie dodano fizycznych dowiązań.
+- Commit tego etapu odczytasz poleceniem
+  `git log -1 --format=%H -- Poligony/D_Koscieliska/Organy/Czarna/POROWNANIE_BOROWIEC.md`.
+  Publikację sprawdzaj przez porównanie ze zdalną gałęzią. Sam push tej gałęzi
+  nie uruchamia CI; lokalnej walidacji nie przedstawiaj jako wyniku CI.
 
 ## Odtwarzalne narzędzia i aktualizacje
 

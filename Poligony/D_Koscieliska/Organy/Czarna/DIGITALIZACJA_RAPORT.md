@@ -1,6 +1,7 @@
 # Jaskinia Czarna — audyt skanów i stan digitalizacji
 
-Data: 2026-09-12. Stan wejściowy: `feff15dc568695cff5322e44232ed59c8d214eed`.
+Data audytu: 2026-09-12. Aktualizacja: 2026-09-13.
+Stan wejściowy: `feff15dc568695cff5322e44232ed59c8d214eed`.
 Audyt lokalnego checkoutu; lokalny `origin/master` był o jeden commit dalej,
 ale jego różnica nie obejmowała materiałów Czarnej. Nie aktualizowano checkoutu.
 
@@ -17,11 +18,13 @@ Przygotowano [CZ_GL_R.SRV](CZ_GL_R.SRV), zawierający roboczy odczyt całych
 warianty w komentarzach. Plik nie został dodany do `KATASTER.wpj`.
 Istniejące pomiary, współrzędne otworów i materiały `_RAW` pozostały bez zmian.
 
-**Nie potwierdzono autora ani daty dziennika ciągu głównego.** Dopisek
-`Kujat` w nazwie jednej fotografii nie stanowi takiego potwierdzenia.
+**Autorem dziennika ciągu głównego jest Ryszard Kujat.** Użytkownik potwierdził
+to 2026-09-13, wskazując dopisek `Kujat` w nazwie fotografii `123052`.
+Daty i instrumentu pomiarowego nadal nie ustalono; przypisanie autora
+nie pozwala przypisać dziennikowi konkretnego roku.
 List Kujata z 3 marca 1981 r. opisuje partie końcowe i boczny ciąg od punktu
 65 Borowca, a nie dziennik 0–76. Na obecnym etapie określenia „powtórny”
-i „nowszy niż Borowiec” pozostają hipotezami wymagającymi ustalenia pochodzenia.
+i „nowszy niż Borowiec” wymagają osobnego porównania geometrii i ustalenia daty.
 
 ## Co pokazują poszczególne skany `_RAW/02`
 
@@ -167,8 +170,10 @@ Aktualizacja 2026-09-13: [porównanie wyników Gemini](POROWNANIE_GEMINI.md)
 i dodatkowy odczyt skanu przemawiają za A=75° dla 39→40. Zmieniono
 preferowaną wartość roboczą z 25° na 75°, zachowując alternatywę i oznaczenie
 niepewności. Poprawiono też wcześniejszą błędną nazwę „Tehmy” na „Tehuby”.
-Pozostałe D/A/V zachowano; nowy etap nie oznacza zatwierdzenia orientacji
-ani autorstwa dziennika. Szczegóły historii pomiarów i nazw są w tym samym raporcie.
+Pozostałe D/A/V zachowano; nowy etap nie oznacza zatwierdzenia orientacji.
+Autorstwo Ryszarda Kujata ustalono następnie z informacji użytkownika,
+nie z odczytów modeli. Szczegóły nazw i źródła przypisania autora są
+w tym samym raporcie.
 
 ### Niespójne obliczenia w samym dzienniku
 
@@ -211,8 +216,8 @@ Przed wyborem pomiaru należy:
    a `CZ_Z_S.SRV` utożsamia go z punktem `SzKostka:1.92`, opisanym przy kracie
    około 50 cm od batinoxa. Centymetrowa dokładność GNSS nie dowodzi
    centymetrowej poprawności takiego utożsamienia.
-2. Ustalić pochodzenie nowego dziennika i nawiązania do odcinka prowadzącego
-   do III otworu. Nie utożsamiać równych numerów z różnych ciągów.
+2. Ustalić datę i orientację dziennika Kujata oraz nawiązania do odcinka
+   prowadzącego do III otworu. Nie utożsamiać równych numerów z różnych ciągów.
 3. Rozstrzygnąć cztery niepewne wiersze oraz przygotować poprawiony wariant
    znanych błędów Kujata i Borowca, z zachowaniem wersji źródłowej.
 4. Zbudować osobne warianty sieci i liczyć błąd dojścia do drugiego otworu

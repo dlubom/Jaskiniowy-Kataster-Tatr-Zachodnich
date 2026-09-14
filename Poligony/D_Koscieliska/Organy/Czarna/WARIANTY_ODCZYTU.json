@@ -3,7 +3,7 @@
   "purpose": "Analiza wrazliwosci; nie wybiera poprawnego odczytu i nie porownuje z GNSS.",
   "input": {
     "path": "Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_R.SRV",
-    "sha256": "2c7dda785dee1444c6e99133d183640465dc7a2bd6aae9c3a480698097feb834"
+    "sha256": "397ac7b7037a1b48f33e80bdd97c61abc7130846ac9a3bbe9e8e13bb1f0632dd"
   },
   "assumptions": {
     "coordinate_frame": "local E/N/Z, station 0 = (0,0,0), endpoint station 76",

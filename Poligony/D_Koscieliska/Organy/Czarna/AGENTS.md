@@ -6,6 +6,10 @@ To punkt wejścia i zapis dowodów; aktualne instrukcje użytkownika mają pierw
 
 - Potwierdzaj odczyty na skanach, zachowując `_RAW` bez zmian. OCR i arkusz
   nie rozstrzygają konfliktu z oryginałem. Nie wymyślaj autora, daty ani nawiązań.
+- Autorem dziennika 0–76 i 6–a–b jest Ryszard Kujat: użytkownik potwierdził
+  to 2026-09-13, wskazując nazwę fotografii `123052` z dopiskiem `Kujat`.
+  Nie szukaj innych autorów tego dziennika. Data i instrument pozostają
+  nieustalone; przypisanie autora nie ustala roku pomiaru.
 - `CZ_GL_R.SRV` jest roboczy, ma cztery niepewne odczyty i pozostaje poza
   głównym WPJ do oceny wariantów oraz ustalenia fizycznie wspólnych punktów.
 - Nie dobieraj cyfr ani znaków do najlepszego domknięcia GNSS. Analizę

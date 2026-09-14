@@ -10,7 +10,7 @@ COORDINATOR_EMAIL "darek.lubomski@gmail.com"
 SOURCE_REF      "_RAW/02"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM            "nieznane"
+TEAM            "Ryszard Kujat"
 INSTRUMENT      "nieznane"
 SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
@@ -22,9 +22,10 @@ PROCESSING      "Odczyt ze skanow S1 S1b S2; 78 odcinkow; 4 wiersze do weryfikac
 ; Cztery nierozstrzygniete odczyty: 29-30, 39-40, 49-50, 71-72.
 ; Wiersze DO_WERYFIKACJI sa aktywne w TYM PLIKU z podana wartoscia robocza.
 ; Kompilacja potwierdza skladnie, nie poprawnosc tych odczytow.
-; Autor, data i instrument dziennika nie sa ustalone.
-; Nazwa fotografii z dopiskiem Kujat nie potwierdza autorstwa ani roku.
-; Nie utozsamiac numeracji z Borowcem lub Kujatem bez identyfikacji punktow.
+; Autor: Ryszard Kujat, potwierdzone przez uzytkownika 2026-09-13,
+; zgodnie z dopiskiem Kujat w nazwie fotografii S1.
+; Data i instrument dziennika pozostaja nieustalone; autor nie ustala roku.
+; Nie utozsamiac numeracji z innymi ciagami bez identyfikacji punktow.
 ; Brak #fix i nawiazan: stacja 0 jest opisana w skanie jako Otwor,
 ; stacja 76 jako Koniec Colorado; nie jest to gotowy trawers do III otworu.
 ; Jednostki katowe przyjete jako stopnie: pion -90 i obliczenia w dzienniku.

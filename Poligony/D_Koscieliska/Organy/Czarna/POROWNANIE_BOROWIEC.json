@@ -1,0 +1,2389 @@
+{
+  "method": "Local ENZ; both first stations translated to zero. No rotation, scale, fitted shift or GNSS. Main chains only. Samples at 1001 equal fractions of each 3D chain length, endpoints included. Correlations are descriptive, samples are not independent observations.",
+  "sources": {
+    "Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_R.SRV": "397ac7b7037a1b48f33e80bdd97c61abc7130846ac9a3bbe9e8e13bb1f0632dd",
+    "Poligony/D_Koscieliska/Organy/Czarna/_RAW/02/czarna-borowiec.srv": "b2187daf372360e39bb982878a18023a5c18569b39f216b0261741988476df5b",
+    "Poligony/D_Koscieliska/Organy/Czarna/CZ_B_DAV.SRV": "b1a8f2835c7cd560f099be4ea484e9cec03f73e10b759c69e8c4ae4f3c629b11"
+  },
+  "kujat": {
+    "stations": 77,
+    "legs": 76,
+    "length_m": 1109.7000000000003,
+    "end_ENZ_m": [
+      770.2628157433186,
+      261.47733351046014,
+      17.454431319224028
+    ],
+    "end_horizontal_m": 813.4342021679232,
+    "end_bearing_deg": 71.249443714362,
+    "z_min_m": -57.57611126706689,
+    "z_min_station": "6",
+    "z_max_m": 79.64624719740792,
+    "z_max_station": "55",
+    "median_leg_m": 15.05
+  },
+  "borowiec": {
+    "stations": 75,
+    "legs": 74,
+    "length_m": 1099.0742104974465,
+    "end_ENZ_m": [
+      763.58,
+      268.09000000000003,
+      22.280000000000015
+    ],
+    "end_horizontal_m": 809.275394720487,
+    "end_bearing_deg": 70.65402199984148,
+    "z_min_m": -52.35,
+    "z_min_station": "5",
+    "z_max_m": 73.78,
+    "z_max_station": "42",
+    "median_leg_m": 11.534984436531172
+  },
+  "active_DAV_vs_archival_RECT_max_station_difference_m": 0.002589827235981627,
+  "length_difference_percent": 0.9667945440867465,
+  "end_difference_ENZ_m": [
+    6.6828157433185424,
+    -6.61266648953989,
+    -4.825568680775987
+  ],
+  "end_difference_3d_m": 10.567568190171098,
+  "end_difference_horizontal_m": 9.401456502108063,
+  "shape_1001_samples": {
+    "correlation_E_N_Z": [
+      0.9995343436090286,
+      0.9966162782764625,
+      0.9690025033123226
+    ],
+    "difference_3d_m": {
+      "min": 0.0,
+      "median": 10.842212798642223,
+      "mean": 12.682170299998734,
+      "rms": 14.649538240272529,
+      "p95": 31.196478208789486,
+      "max": 37.20651639117132
+    },
+    "difference_horizontal_m": {
+      "min": 0.0,
+      "median": 9.337337413615263,
+      "mean": 9.605394967475853,
+      "rms": 10.7415702833373,
+      "p95": 17.628232431814983,
+      "max": 19.42046872769445
+    },
+    "difference_Z_m": {
+      "min": 0.0,
+      "median": 3.899067122284386,
+      "mean": 6.742555395753497,
+      "rms": 9.961307067916948,
+      "p95": 26.176757651454523,
+      "max": 33.3344375231806
+    }
+  },
+  "same_number_station_distance_3d_m": {
+    "min": 4.014825052329824,
+    "median": 82.88880562446064,
+    "mean": 81.95730221968647,
+    "rms": 93.21577952813442,
+    "p95": 171.3323499271819,
+    "max": 183.53588608652296
+  },
+  "nearest_segment_Kujat_to_Borowiec": [
+    {
+      "station": "0",
+      "onto_from": "0W",
+      "onto_to": "0",
+      "fraction": 0.0,
+      "distance_3d_m": 0.0,
+      "onto_arclength_m": 0.0
+    },
+    {
+      "station": "1",
+      "onto_from": "0",
+      "onto_to": "1",
+      "fraction": 0.13771770882623605,
+      "distance_3d_m": 3.531451277323502,
+      "onto_arclength_m": 16.690282694600267
+    },
+    {
+      "station": "2",
+      "onto_from": "1",
+      "onto_to": "2",
+      "fraction": 0.9311694835293786,
+      "distance_3d_m": 3.8391823729500496,
+      "onto_arclength_m": 37.42998986863923
+    },
+    {
+      "station": "3",
+      "onto_from": "2",
+      "onto_to": "3",
+      "fraction": 0.02176342880546328,
+      "distance_3d_m": 4.569590040437931,
+      "onto_arclength_m": 39.05729567243877
+    },
+    {
+      "station": "4",
+      "onto_from": "3",
+      "onto_to": "4",
+      "fraction": 0.13970125889803092,
+      "distance_3d_m": 4.142813621728781,
+      "onto_arclength_m": 61.78855562860654
+    },
+    {
+      "station": "5",
+      "onto_from": "4",
+      "onto_to": "5",
+      "fraction": 0.39771655932737177,
+      "distance_3d_m": 8.086603691592035,
+      "onto_arclength_m": 82.1133709923873
+    },
+    {
+      "station": "6",
+      "onto_from": "4",
+      "onto_to": "5",
+      "fraction": 1.0,
+      "distance_3d_m": 7.925912966793249,
+      "onto_arclength_m": 90.70502607649935
+    },
+    {
+      "station": "7",
+      "onto_from": "5",
+      "onto_to": "6",
+      "fraction": 0.7685160484227151,
+      "distance_3d_m": 3.0581214305561826,
+      "onto_arclength_m": 103.31137644730353
+    },
+    {
+      "station": "8",
+      "onto_from": "6",
+      "onto_to": "7",
+      "fraction": 0.6320895596941584,
+      "distance_3d_m": 3.9967939953179688,
+      "onto_arclength_m": 122.43410855698289
+    },
+    {
+      "station": "9",
+      "onto_from": "7",
+      "onto_to": "8",
+      "fraction": 0.6026875811839398,
+      "distance_3d_m": 2.64318808885435,
+      "onto_arclength_m": 135.1506218759053
+    },
+    {
+      "station": "10",
+      "onto_from": "8",
+      "onto_to": "9",
+      "fraction": 0.789586826535396,
+      "distance_3d_m": 4.456199243269761,
+      "onto_arclength_m": 145.96944373599024
+    },
+    {
+      "station": "11",
+      "onto_from": "9",
+      "onto_to": "10",
+      "fraction": 0.32133311315273655,
+      "distance_3d_m": 4.04501180387952,
+      "onto_arclength_m": 152.54692392109402
+    },
+    {
+      "station": "12",
+      "onto_from": "10",
+      "onto_to": "11",
+      "fraction": 0.34517271733702615,
+      "distance_3d_m": 12.389145494225781,
+      "onto_arclength_m": 173.26892138884568
+    },
+    {
+      "station": "13",
+      "onto_from": "10",
+      "onto_to": "11",
+      "fraction": 0.7261951891922755,
+      "distance_3d_m": 7.145003780046272,
+      "onto_arclength_m": 185.9751542123241
+    },
+    {
+      "station": "14",
+      "onto_from": "11",
+      "onto_to": "12",
+      "fraction": 0.7259151528404375,
+      "distance_3d_m": 8.282838298681861,
+      "onto_arclength_m": 205.61237205254977
+    },
+    {
+      "station": "15",
+      "onto_from": "13",
+      "onto_to": "14",
+      "fraction": 0.2718836024388573,
+      "distance_3d_m": 5.030858009763081,
+      "onto_arclength_m": 226.3154866926876
+    },
+    {
+      "station": "16",
+      "onto_from": "13",
+      "onto_to": "14",
+      "fraction": 0.7669411792238195,
+      "distance_3d_m": 3.5856729996102863,
+      "onto_arclength_m": 236.46510154586022
+    },
+    {
+      "station": "17",
+      "onto_from": "14",
+      "onto_to": "15",
+      "fraction": 0.6587980499081459,
+      "distance_3d_m": 11.37885261664589,
+      "onto_arclength_m": 257.6260832551528
+    },
+    {
+      "station": "18",
+      "onto_from": "15",
+      "onto_to": "16",
+      "fraction": 1.0,
+      "distance_3d_m": 8.858464921512724,
+      "onto_arclength_m": 288.50552409405014
+    },
+    {
+      "station": "19",
+      "onto_from": "16",
+      "onto_to": "17",
+      "fraction": 0.4123442972680704,
+      "distance_3d_m": 5.435635009680365,
+      "onto_arclength_m": 303.3046953450231
+    },
+    {
+      "station": "20",
+      "onto_from": "16",
+      "onto_to": "17",
+      "fraction": 0.8631227249966595,
+      "distance_3d_m": 7.817713793397918,
+      "onto_arclength_m": 319.48328006754383
+    },
+    {
+      "station": "21",
+      "onto_from": "17",
+      "onto_to": "18",
+      "fraction": 0.3690292107865429,
+      "distance_3d_m": 10.08775023067811,
+      "onto_arclength_m": 338.9950099345962
+    },
+    {
+      "station": "22",
+      "onto_from": "17",
+      "onto_to": "18",
+      "fraction": 0.4763041932473652,
+      "distance_3d_m": 14.188135847987093,
+      "onto_arclength_m": 343.238914131439
+    },
+    {
+      "station": "23",
+      "onto_from": "17",
+      "onto_to": "18",
+      "fraction": 0.5773600432467176,
+      "distance_3d_m": 17.100900281383353,
+      "onto_arclength_m": 347.2367833092261
+    },
+    {
+      "station": "24",
+      "onto_from": "18",
+      "onto_to": "19",
+      "fraction": 0.2312993720627176,
+      "distance_3d_m": 17.570180767015106,
+      "onto_arclength_m": 371.76891449525573
+    },
+    {
+      "station": "25",
+      "onto_from": "18",
+      "onto_to": "19",
+      "fraction": 0.3469856762542165,
+      "distance_3d_m": 8.770054789751894,
+      "onto_arclength_m": 375.6761899196328
+    },
+    {
+      "station": "26",
+      "onto_from": "18",
+      "onto_to": "19",
+      "fraction": 0.8484561605336229,
+      "distance_3d_m": 9.701246262854685,
+      "onto_arclength_m": 392.6132276525695
+    },
+    {
+      "station": "27",
+      "onto_from": "20",
+      "onto_to": "21",
+      "fraction": 0.7471496304762062,
+      "distance_3d_m": 9.153756822596783,
+      "onto_arclength_m": 437.8648585577158
+    },
+    {
+      "station": "28",
+      "onto_from": "21",
+      "onto_to": "22",
+      "fraction": 0.16489271389946883,
+      "distance_3d_m": 7.530479220920765,
+      "onto_arclength_m": 450.71158773644726
+    },
+    {
+      "station": "29",
+      "onto_from": "22",
+      "onto_to": "23",
+      "fraction": 0.641731615403551,
+      "distance_3d_m": 10.766494057953043,
+      "onto_arclength_m": 473.70506118669766
+    },
+    {
+      "station": "30",
+      "onto_from": "23",
+      "onto_to": "24",
+      "fraction": 0.17811948268410513,
+      "distance_3d_m": 7.656714105624184,
+      "onto_arclength_m": 482.172751493215
+    },
+    {
+      "station": "31",
+      "onto_from": "24",
+      "onto_to": "25",
+      "fraction": 0.3614191808290511,
+      "distance_3d_m": 7.884321163629203,
+      "onto_arclength_m": 506.2832133655874
+    },
+    {
+      "station": "32",
+      "onto_from": "25",
+      "onto_to": "26",
+      "fraction": 0.9231922368337606,
+      "distance_3d_m": 3.9013636421565008,
+      "onto_arclength_m": 523.4595758529163
+    },
+    {
+      "station": "33",
+      "onto_from": "26",
+      "onto_to": "27",
+      "fraction": 0.17566933729987458,
+      "distance_3d_m": 8.403519450462905,
+      "onto_arclength_m": 526.4782466721531
+    },
+    {
+      "station": "34",
+      "onto_from": "26",
+      "onto_to": "27",
+      "fraction": 0.9507900508700431,
+      "distance_3d_m": 5.598549802920458,
+      "onto_arclength_m": 536.3681248222454
+    },
+    {
+      "station": "35",
+      "onto_from": "27",
+      "onto_to": "28",
+      "fraction": 0.6215899923119523,
+      "distance_3d_m": 5.8118464090023165,
+      "onto_arclength_m": 542.656734804504
+    },
+    {
+      "station": "36",
+      "onto_from": "27",
+      "onto_to": "28",
+      "fraction": 0.932094440882189,
+      "distance_3d_m": 1.4261476614656639,
+      "onto_arclength_m": 545.4844553630421
+    },
+    {
+      "station": "37",
+      "onto_from": "29",
+      "onto_to": "30",
+      "fraction": 0.5562828998526949,
+      "distance_3d_m": 2.704202064900911,
+      "onto_arclength_m": 566.8562675943907
+    },
+    {
+      "station": "38",
+      "onto_from": "30",
+      "onto_to": "31",
+      "fraction": 0.11336540476811917,
+      "distance_3d_m": 5.8581191530062116,
+      "onto_arclength_m": 578.4681456653261
+    },
+    {
+      "station": "39",
+      "onto_from": "31",
+      "onto_to": "32",
+      "fraction": 0.14979009384428563,
+      "distance_3d_m": 11.661173251434926,
+      "onto_arclength_m": 591.0257801294107
+    },
+    {
+      "station": "40",
+      "onto_from": "31",
+      "onto_to": "32",
+      "fraction": 0.4772461255020045,
+      "distance_3d_m": 9.6483405403026,
+      "onto_arclength_m": 603.0577437439578
+    },
+    {
+      "station": "41",
+      "onto_from": "31",
+      "onto_to": "32",
+      "fraction": 0.8767629856545067,
+      "distance_3d_m": 6.994611416822469,
+      "onto_arclength_m": 617.7374926568671
+    },
+    {
+      "station": "42",
+      "onto_from": "32",
+      "onto_to": "33",
+      "fraction": 0.5522168966562191,
+      "distance_3d_m": 4.499333417162457,
+      "onto_arclength_m": 641.3098129264698
+    },
+    {
+      "station": "43",
+      "onto_from": "32",
+      "onto_to": "33",
+      "fraction": 0.9586823642379293,
+      "distance_3d_m": 5.18641344853427,
+      "onto_arclength_m": 655.3274592211242
+    },
+    {
+      "station": "44",
+      "onto_from": "33",
+      "onto_to": "34",
+      "fraction": 0.7639326549285511,
+      "distance_3d_m": 4.601981014612279,
+      "onto_arclength_m": 675.4162194154701
+    },
+    {
+      "station": "45",
+      "onto_from": "33",
+      "onto_to": "34",
+      "fraction": 1.0,
+      "distance_3d_m": 5.495700577325933,
+      "onto_arclength_m": 681.1836466167367
+    },
+    {
+      "station": "46",
+      "onto_from": "34",
+      "onto_to": "35",
+      "fraction": 0.8720430622875819,
+      "distance_3d_m": 5.0165635459874505,
+      "onto_arclength_m": 700.8536831329482
+    },
+    {
+      "station": "47",
+      "onto_from": "35",
+      "onto_to": "36",
+      "fraction": 0.6243986419385211,
+      "distance_3d_m": 3.0614608708857376,
+      "onto_arclength_m": 719.1372604453836
+    },
+    {
+      "station": "48",
+      "onto_from": "37",
+      "onto_to": "38",
+      "fraction": 0.05234524293854806,
+      "distance_3d_m": 5.224443516459442,
+      "onto_arclength_m": 741.2984307683995
+    },
+    {
+      "station": "49",
+      "onto_from": "37",
+      "onto_to": "38",
+      "fraction": 0.511776736309625,
+      "distance_3d_m": 3.3710243463290563,
+      "onto_arclength_m": 755.0024813176386
+    },
+    {
+      "station": "50",
+      "onto_from": "37",
+      "onto_to": "38",
+      "fraction": 0.9393873041091423,
+      "distance_3d_m": 4.806077368863734,
+      "onto_arclength_m": 767.7573684358806
+    },
+    {
+      "station": "51",
+      "onto_from": "38",
+      "onto_to": "39",
+      "fraction": 0.46185299568587995,
+      "distance_3d_m": 5.15244696100134,
+      "onto_arclength_m": 777.7916894787571
+    },
+    {
+      "station": "52",
+      "onto_from": "38",
+      "onto_to": "39",
+      "fraction": 1.0,
+      "distance_3d_m": 3.9046804242104596,
+      "onto_arclength_m": 787.3769578069607
+    },
+    {
+      "station": "53",
+      "onto_from": "39",
+      "onto_to": "40",
+      "fraction": 0.6815446769963615,
+      "distance_3d_m": 5.014651718674891,
+      "onto_arclength_m": 792.8641586118985
+    },
+    {
+      "station": "54",
+      "onto_from": "41",
+      "onto_to": "42",
+      "fraction": 0.3484706253430737,
+      "distance_3d_m": 6.588595268241712,
+      "onto_arclength_m": 816.7262202504539
+    },
+    {
+      "station": "55",
+      "onto_from": "41",
+      "onto_to": "42",
+      "fraction": 1.0,
+      "distance_3d_m": 6.757904903943968,
+      "onto_arclength_m": 823.6422160708363
+    },
+    {
+      "station": "56",
+      "onto_from": "42",
+      "onto_to": "43",
+      "fraction": 0.14744200970010932,
+      "distance_3d_m": 4.045167643142123,
+      "onto_arclength_m": 824.2854199032664
+    },
+    {
+      "station": "57",
+      "onto_from": "42",
+      "onto_to": "43",
+      "fraction": 0.6718445340347593,
+      "distance_3d_m": 4.48347654486379,
+      "onto_arclength_m": 826.5730834672272
+    },
+    {
+      "station": "58",
+      "onto_from": "45",
+      "onto_to": "46",
+      "fraction": 0.16867689139049408,
+      "distance_3d_m": 1.7013780144669812,
+      "onto_arclength_m": 841.3040657600382
+    },
+    {
+      "station": "59",
+      "onto_from": "45",
+      "onto_to": "46",
+      "fraction": 1.0,
+      "distance_3d_m": 7.314241818952815,
+      "onto_arclength_m": 846.8884041019884
+    },
+    {
+      "station": "60",
+      "onto_from": "47",
+      "onto_to": "48",
+      "fraction": 0.2906557209938836,
+      "distance_3d_m": 5.5443990793930995,
+      "onto_arclength_m": 860.5628525413239
+    },
+    {
+      "station": "61",
+      "onto_from": "48",
+      "onto_to": "49",
+      "fraction": 0.17377667477503408,
+      "distance_3d_m": 2.3934524127972456,
+      "onto_arclength_m": 869.7353688126062
+    },
+    {
+      "station": "62",
+      "onto_from": "49",
+      "onto_to": "50",
+      "fraction": 0.6466577114723523,
+      "distance_3d_m": 2.9927651762193523,
+      "onto_arclength_m": 880.5033315894364
+    },
+    {
+      "station": "63",
+      "onto_from": "49",
+      "onto_to": "50",
+      "fraction": 1.0,
+      "distance_3d_m": 4.507695400451769,
+      "onto_arclength_m": 881.5422841037182
+    },
+    {
+      "station": "64",
+      "onto_from": "52",
+      "onto_to": "53",
+      "fraction": 0.1735393068624077,
+      "distance_3d_m": 2.1522478785446344,
+      "onto_arclength_m": 898.938762532803
+    },
+    {
+      "station": "65",
+      "onto_from": "53",
+      "onto_to": "54",
+      "fraction": 0.060920816691786304,
+      "distance_3d_m": 9.076462179719545,
+      "onto_arclength_m": 903.4664877761796
+    },
+    {
+      "station": "66",
+      "onto_from": "52",
+      "onto_to": "53",
+      "fraction": 0.32592664297900004,
+      "distance_3d_m": 28.140859791528705,
+      "onto_arclength_m": 899.5657711483447
+    },
+    {
+      "station": "67",
+      "onto_from": "53",
+      "onto_to": "54",
+      "fraction": 0.44807273982463064,
+      "distance_3d_m": 25.237864390426232,
+      "onto_arclength_m": 910.6298048784137
+    },
+    {
+      "station": "68",
+      "onto_from": "56",
+      "onto_to": "57",
+      "fraction": 1.0,
+      "distance_3d_m": 26.080254738582873,
+      "onto_arclength_m": 943.10540797775
+    },
+    {
+      "station": "69",
+      "onto_from": "57",
+      "onto_to": "58",
+      "fraction": 0.48194380554426763,
+      "distance_3d_m": 27.422553575293637,
+      "onto_arclength_m": 946.4265673308731
+    },
+    {
+      "station": "70",
+      "onto_from": "58",
+      "onto_to": "59",
+      "fraction": 1.0,
+      "distance_3d_m": 27.679379083977924,
+      "onto_arclength_m": 955.9188296897978
+    },
+    {
+      "station": "71",
+      "onto_from": "63",
+      "onto_to": "64",
+      "fraction": 1.0,
+      "distance_3d_m": 21.528319488366613,
+      "onto_arclength_m": 999.3953114783471
+    },
+    {
+      "station": "72",
+      "onto_from": "65",
+      "onto_to": "66",
+      "fraction": 0.4423529091142555,
+      "distance_3d_m": 21.890212771304668,
+      "onto_arclength_m": 1014.8568606694238
+    },
+    {
+      "station": "73",
+      "onto_from": "68",
+      "onto_to": "69",
+      "fraction": 1.0,
+      "distance_3d_m": 13.451618010440198,
+      "onto_arclength_m": 1046.3936846141576
+    },
+    {
+      "station": "74",
+      "onto_from": "70",
+      "onto_to": "71",
+      "fraction": 0.18434647275175095,
+      "distance_3d_m": 9.358629231060064,
+      "onto_arclength_m": 1056.7554918328972
+    },
+    {
+      "station": "75",
+      "onto_from": "71",
+      "onto_to": "72",
+      "fraction": 0.5546288979452189,
+      "distance_3d_m": 8.63067136489202,
+      "onto_arclength_m": 1080.7411177843228
+    },
+    {
+      "station": "76",
+      "onto_from": "72",
+      "onto_to": "73",
+      "fraction": 1.0,
+      "distance_3d_m": 10.567568190171098,
+      "onto_arclength_m": 1099.0742104974465
+    }
+  ],
+  "nearest_segment_Borowiec_to_Kujat": [
+    {
+      "station": "0W",
+      "onto_from": "0",
+      "onto_to": "1",
+      "fraction": 0.0,
+      "distance_3d_m": 0.0,
+      "onto_arclength_m": 0.0
+    },
+    {
+      "station": "0",
+      "onto_from": "0",
+      "onto_to": "1",
+      "fraction": 0.9811650098841959,
+      "distance_3d_m": 3.603147563495013,
+      "onto_arclength_m": 15.502407156170296
+    },
+    {
+      "station": "1",
+      "onto_from": "1",
+      "onto_to": "2",
+      "fraction": 0.21097865652130549,
+      "distance_3d_m": 4.2651512205974615,
+      "onto_arclength_m": 20.01957313042611
+    },
+    {
+      "station": "2",
+      "onto_from": "2",
+      "onto_to": "3",
+      "fraction": 0.4081481643078134,
+      "distance_3d_m": 3.4079853073483806,
+      "onto_arclength_m": 37.92237045440063
+    },
+    {
+      "station": "3",
+      "onto_from": "3",
+      "onto_to": "4",
+      "fraction": 1.0,
+      "distance_3d_m": 4.777386957633226,
+      "onto_arclength_m": 61.0
+    },
+    {
+      "station": "4",
+      "onto_from": "4",
+      "onto_to": "5",
+      "fraction": 0.6678037101310759,
+      "distance_3d_m": 7.31025259064194,
+      "onto_arclength_m": 74.35607420262151
+    },
+    {
+      "station": "5",
+      "onto_from": "5",
+      "onto_to": "6",
+      "fraction": 0.6321619377024861,
+      "distance_3d_m": 4.87001001801507,
+      "onto_arclength_m": 91.74675294094226
+    },
+    {
+      "station": "6",
+      "onto_from": "7",
+      "onto_to": "8",
+      "fraction": 0.17531596632096302,
+      "distance_3d_m": 3.6086650236995483,
+      "onto_arclength_m": 115.278408570202
+    },
+    {
+      "station": "7",
+      "onto_from": "8",
+      "onto_to": "9",
+      "fraction": 0.7034266700949725,
+      "distance_3d_m": 2.316801751611805,
+      "onto_arclength_m": 140.1962600462821
+    },
+    {
+      "station": "8",
+      "onto_from": "9",
+      "onto_to": "10",
+      "fraction": 0.21845922748218966,
+      "distance_3d_m": 2.6129575666589075,
+      "onto_arclength_m": 146.7341270387934
+    },
+    {
+      "station": "9",
+      "onto_from": "10",
+      "onto_to": "11",
+      "fraction": 0.3180003359689714,
+      "distance_3d_m": 4.671217565564306,
+      "onto_arclength_m": 157.51720181423244
+    },
+    {
+      "station": "10",
+      "onto_from": "11",
+      "onto_to": "12",
+      "fraction": 0.27357850070954615,
+      "distance_3d_m": 8.406534736747178,
+      "onto_arclength_m": 166.72628571433282
+    },
+    {
+      "station": "11",
+      "onto_from": "13",
+      "onto_to": "14",
+      "fraction": 0.44538659505786127,
+      "distance_3d_m": 7.312962562456263,
+      "onto_arclength_m": 205.49680922016876
+    },
+    {
+      "station": "12",
+      "onto_from": "14",
+      "onto_to": "15",
+      "fraction": 0.19335285887579676,
+      "distance_3d_m": 8.31187586630753,
+      "onto_arclength_m": 220.60572774929105
+    },
+    {
+      "station": "13",
+      "onto_from": "14",
+      "onto_to": "15",
+      "fraction": 0.6575985172859317,
+      "distance_3d_m": 2.9227239392526654,
+      "onto_arclength_m": 229.98349004917577
+    },
+    {
+      "station": "14",
+      "onto_from": "16",
+      "onto_to": "17",
+      "fraction": 0.05618582466903382,
+      "distance_3d_m": 5.865117910409169,
+      "onto_arclength_m": 248.33495365831445
+    },
+    {
+      "station": "15",
+      "onto_from": "16",
+      "onto_to": "17",
+      "fraction": 1.0,
+      "distance_3d_m": 14.19409489646469,
+      "onto_arclength_m": 267.4
+    },
+    {
+      "station": "16",
+      "onto_from": "18",
+      "onto_to": "19",
+      "fraction": 0.29959327350785064,
+      "distance_3d_m": 6.3548005191219605,
+      "onto_arclength_m": 293.7716214342617
+    },
+    {
+      "station": "17",
+      "onto_from": "19",
+      "onto_to": "20",
+      "fraction": 1.0,
+      "distance_3d_m": 9.233092286332873,
+      "onto_arclength_m": 325.7
+    },
+    {
+      "station": "18",
+      "onto_from": "24",
+      "onto_to": "25",
+      "fraction": 1.0,
+      "distance_3d_m": 14.637523340534274,
+      "onto_arclength_m": 383.99999999999994
+    },
+    {
+      "station": "19",
+      "onto_from": "25",
+      "onto_to": "26",
+      "fraction": 1.0,
+      "distance_3d_m": 10.968670484409989,
+      "onto_arclength_m": 404.59999999999997
+    },
+    {
+      "station": "20",
+      "onto_from": "25",
+      "onto_to": "26",
+      "fraction": 1.0,
+      "distance_3d_m": 14.401763184444475,
+      "onto_arclength_m": 404.59999999999997
+    },
+    {
+      "station": "21",
+      "onto_from": "27",
+      "onto_to": "28",
+      "fraction": 0.8261800239936598,
+      "distance_3d_m": 7.795348526978042,
+      "onto_arclength_m": 435.80557631671627
+    },
+    {
+      "station": "22",
+      "onto_from": "28",
+      "onto_to": "29",
+      "fraction": 0.6466452522512267,
+      "distance_3d_m": 10.960421051719463,
+      "onto_arclength_m": 451.3562276711501
+    },
+    {
+      "station": "23",
+      "onto_from": "29",
+      "onto_to": "30",
+      "fraction": 0.6490628155340604,
+      "distance_3d_m": 7.304531851183211,
+      "onto_arclength_m": 467.55706685437
+    },
+    {
+      "station": "24",
+      "onto_from": "30",
+      "onto_to": "31",
+      "fraction": 0.9330499031541362,
+      "distance_3d_m": 8.940738861211768,
+      "onto_arclength_m": 491.5275230146598
+    },
+    {
+      "station": "25",
+      "onto_from": "31",
+      "onto_to": "32",
+      "fraction": 0.6215624589392024,
+      "distance_3d_m": 9.492991177567003,
+      "onto_arclength_m": 498.68053086813455
+    },
+    {
+      "station": "26",
+      "onto_from": "32",
+      "onto_to": "33",
+      "fraction": 0.22871578852278124,
+      "distance_3d_m": 3.1713600630341,
+      "onto_arclength_m": 504.6015157794892
+    },
+    {
+      "station": "27",
+      "onto_from": "34",
+      "onto_to": "35",
+      "fraction": 0.09664534612601751,
+      "distance_3d_m": 5.59851414838628,
+      "onto_arclength_m": 523.8281947498192
+    },
+    {
+      "station": "28",
+      "onto_from": "36",
+      "onto_to": "37",
+      "fraction": 0.03597979256504432,
+      "distance_3d_m": 1.3644133784651846,
+      "onto_arclength_m": 536.0447817060965
+    },
+    {
+      "station": "29",
+      "onto_from": "36",
+      "onto_to": "37",
+      "fraction": 0.3651873955302565,
+      "distance_3d_m": 3.8626968813325684,
+      "onto_arclength_m": 542.8593790874764
+    },
+    {
+      "station": "30",
+      "onto_from": "38",
+      "onto_to": "39",
+      "fraction": 0.2581689445049497,
+      "distance_3d_m": 3.8365415580406337,
+      "onto_arclength_m": 571.0179565288367
+    },
+    {
+      "station": "31",
+      "onto_from": "38",
+      "onto_to": "39",
+      "fraction": 0.36579282087534354,
+      "distance_3d_m": 6.56474204391743,
+      "onto_arclength_m": 572.9013743653186
+    },
+    {
+      "station": "32",
+      "onto_from": "41",
+      "onto_to": "42",
+      "fraction": 0.1120222462802039,
+      "distance_3d_m": 8.0224175070775,
+      "onto_arclength_m": 618.7516471502322
+    },
+    {
+      "station": "33",
+      "onto_from": "43",
+      "onto_to": "44",
+      "fraction": 0.10257141343880352,
+      "distance_3d_m": 4.94177597468757,
+      "onto_arclength_m": 653.7232282581833
+    },
+    {
+      "station": "34",
+      "onto_from": "44",
+      "onto_to": "45",
+      "fraction": 0.7699790704515582,
+      "distance_3d_m": 5.275188303116695,
+      "onto_arclength_m": 677.4588597720257
+    },
+    {
+      "station": "35",
+      "onto_from": "46",
+      "onto_to": "47",
+      "fraction": 0.23644887454748095,
+      "distance_3d_m": 3.302850159954852,
+      "onto_arclength_m": 704.1526223784045
+    },
+    {
+      "station": "36",
+      "onto_from": "47",
+      "onto_to": "48",
+      "fraction": 0.3103932397896209,
+      "distance_3d_m": 8.102736570034834,
+      "onto_arclength_m": 724.9318816963186
+    },
+    {
+      "station": "37",
+      "onto_from": "47",
+      "onto_to": "48",
+      "fraction": 0.9348610682317061,
+      "distance_3d_m": 5.332282646633393,
+      "onto_arclength_m": 735.860068694055
+    },
+    {
+      "station": "38",
+      "onto_from": "50",
+      "onto_to": "51",
+      "fraction": 0.15384461637251223,
+      "distance_3d_m": 4.903817577910854,
+      "onto_arclength_m": 766.9230617020881
+    },
+    {
+      "station": "39",
+      "onto_from": "52",
+      "onto_to": "53",
+      "fraction": 0.21648543567101772,
+      "distance_3d_m": 3.455382499321179,
+      "onto_arclength_m": 787.4184776596368
+    },
+    {
+      "station": "40",
+      "onto_from": "52",
+      "onto_to": "53",
+      "fraction": 1.0,
+      "distance_3d_m": 5.632089732408201,
+      "onto_arclength_m": 794.0000000000002
+    },
+    {
+      "station": "41",
+      "onto_from": "53",
+      "onto_to": "54",
+      "fraction": 0.8180242193649806,
+      "distance_3d_m": 6.690087820264505,
+      "onto_arclength_m": 809.7878674337443
+    },
+    {
+      "station": "42",
+      "onto_from": "55",
+      "onto_to": "56",
+      "fraction": 0.9149983662679267,
+      "distance_3d_m": 4.06516672636532,
+      "onto_arclength_m": 827.798490360981
+    },
+    {
+      "station": "43",
+      "onto_from": "57",
+      "onto_to": "58",
+      "fraction": 0.4461647840229091,
+      "distance_3d_m": 1.4981991274992492,
+      "onto_arclength_m": 835.7616478402292
+    },
+    {
+      "station": "44",
+      "onto_from": "57",
+      "onto_to": "58",
+      "fraction": 0.5371647840229088,
+      "distance_3d_m": 5.458272253325079,
+      "onto_arclength_m": 836.6716478402293
+    },
+    {
+      "station": "45",
+      "onto_from": "57",
+      "onto_to": "58",
+      "fraction": 0.9701647840229086,
+      "distance_3d_m": 2.022257403730739,
+      "onto_arclength_m": 841.0016478402292
+    },
+    {
+      "station": "46",
+      "onto_from": "59",
+      "onto_to": "60",
+      "fraction": 0.3303301564447556,
+      "distance_3d_m": 4.43821336907618,
+      "onto_arclength_m": 856.2138107534279
+    },
+    {
+      "station": "47",
+      "onto_from": "59",
+      "onto_to": "60",
+      "fraction": 0.9268998996328224,
+      "distance_3d_m": 6.16855837792651,
+      "onto_arclength_m": 866.7134382335379
+    },
+    {
+      "station": "48",
+      "onto_from": "60",
+      "onto_to": "61",
+      "fraction": 0.8096514808107591,
+      "distance_3d_m": 2.1959561812379325,
+      "onto_arclength_m": 876.9061662889186
+    },
+    {
+      "station": "49",
+      "onto_from": "61",
+      "onto_to": "62",
+      "fraction": 0.9239867991154214,
+      "distance_3d_m": 3.476051264186266,
+      "onto_arclength_m": 887.5006785518622
+    },
+    {
+      "station": "50",
+      "onto_from": "62",
+      "onto_to": "63",
+      "fraction": 0.08027542463958225,
+      "distance_3d_m": 3.155491239943597,
+      "onto_arclength_m": 888.4809639862389
+    },
+    {
+      "station": "51",
+      "onto_from": "63",
+      "onto_to": "64",
+      "fraction": 0.18634668832877693,
+      "distance_3d_m": 6.479651512518208,
+      "onto_arclength_m": 894.4020269807676
+    },
+    {
+      "station": "52",
+      "onto_from": "63",
+      "onto_to": "64",
+      "fraction": 0.9422317964059723,
+      "distance_3d_m": 2.10722208533176,
+      "onto_arclength_m": 905.3623610478869
+    },
+    {
+      "station": "53",
+      "onto_from": "63",
+      "onto_to": "64",
+      "fraction": 1.0,
+      "distance_3d_m": 4.024398976770392,
+      "onto_arclength_m": 906.2000000000003
+    },
+    {
+      "station": "54",
+      "onto_from": "64",
+      "onto_to": "65",
+      "fraction": 1.0,
+      "distance_3d_m": 19.603237249932974,
+      "onto_arclength_m": 914.2000000000003
+    },
+    {
+      "station": "55",
+      "onto_from": "64",
+      "onto_to": "65",
+      "fraction": 1.0,
+      "distance_3d_m": 24.17239823254897,
+      "onto_arclength_m": 914.2000000000003
+    },
+    {
+      "station": "56",
+      "onto_from": "67",
+      "onto_to": "68",
+      "fraction": 0.7752930853383437,
+      "distance_3d_m": 29.257117083611945,
+      "onto_arclength_m": 960.4664566520679
+    },
+    {
+      "station": "57",
+      "onto_from": "68",
+      "onto_to": "69",
+      "fraction": 0.3056697860543419,
+      "distance_3d_m": 25.69558895860905,
+      "onto_arclength_m": 967.9627788763936
+    },
+    {
+      "station": "58",
+      "onto_from": "69",
+      "onto_to": "70",
+      "fraction": 0.23865527207996504,
+      "distance_3d_m": 27.368715191840348,
+      "onto_arclength_m": 982.0616775165277
+    },
+    {
+      "station": "59",
+      "onto_from": "69",
+      "onto_to": "70",
+      "fraction": 0.5101633117511511,
+      "distance_3d_m": 26.45808317447794,
+      "onto_arclength_m": 986.5687109750694
+    },
+    {
+      "station": "60",
+      "onto_from": "70",
+      "onto_to": "71",
+      "fraction": 0.11542408174442613,
+      "distance_3d_m": 32.143765416240626,
+      "onto_arclength_m": 996.6622093896556
+    },
+    {
+      "station": "61",
+      "onto_from": "70",
+      "onto_to": "71",
+      "fraction": 0.458002281843727,
+      "distance_3d_m": 31.962377474790962,
+      "onto_arclength_m": 1002.4860387913436
+    },
+    {
+      "station": "62",
+      "onto_from": "70",
+      "onto_to": "71",
+      "fraction": 0.606952974288113,
+      "distance_3d_m": 31.19230905643967,
+      "onto_arclength_m": 1005.0182005628982
+    },
+    {
+      "station": "63",
+      "onto_from": "70",
+      "onto_to": "71",
+      "fraction": 0.8890131559294273,
+      "distance_3d_m": 27.811523603077603,
+      "onto_arclength_m": 1009.8132236508005
+    },
+    {
+      "station": "64",
+      "onto_from": "71",
+      "onto_to": "72",
+      "fraction": 0.4139992411434522,
+      "distance_3d_m": 19.87235243563892,
+      "onto_arclength_m": 1019.9799848228694
+    },
+    {
+      "station": "65",
+      "onto_from": "71",
+      "onto_to": "72",
+      "fraction": 0.8888641119233766,
+      "distance_3d_m": 22.2814596623244,
+      "onto_arclength_m": 1029.4772822384678
+    },
+    {
+      "station": "66",
+      "onto_from": "72",
+      "onto_to": "73",
+      "fraction": 0.48838998556001656,
+      "distance_3d_m": 20.909701036536305,
+      "onto_arclength_m": 1040.4910197400807
+    },
+    {
+      "station": "67",
+      "onto_from": "72",
+      "onto_to": "73",
+      "fraction": 0.7180099154112275,
+      "distance_3d_m": 19.480360290674138,
+      "onto_arclength_m": 1044.6241784774024
+    },
+    {
+      "station": "68",
+      "onto_from": "73",
+      "onto_to": "74",
+      "fraction": 0.23608198446169384,
+      "distance_3d_m": 16.353984680757474,
+      "onto_arclength_m": 1053.713393735849
+    },
+    {
+      "station": "69",
+      "onto_from": "73",
+      "onto_to": "74",
+      "fraction": 0.5881908226347091,
+      "distance_3d_m": 8.997841231731023,
+      "onto_arclength_m": 1059.6992439847904
+    },
+    {
+      "station": "70",
+      "onto_from": "73",
+      "onto_to": "74",
+      "fraction": 0.9706367699634662,
+      "distance_3d_m": 9.813283963511081,
+      "onto_arclength_m": 1066.2008250893791
+    },
+    {
+      "station": "71",
+      "onto_from": "74",
+      "onto_to": "75",
+      "fraction": 0.6268678219293726,
+      "distance_3d_m": 12.22860586081034,
+      "onto_arclength_m": 1077.3567529727995
+    },
+    {
+      "station": "72",
+      "onto_from": "75",
+      "onto_to": "76",
+      "fraction": 0.3762158229219502,
+      "distance_3d_m": 7.290273757288574,
+      "onto_arclength_m": 1093.481611395971
+    },
+    {
+      "station": "73",
+      "onto_from": "75",
+      "onto_to": "76",
+      "fraction": 0.7435697150140892,
+      "distance_3d_m": 8.19890904320434,
+      "onto_arclength_m": 1103.0328125903666
+    }
+  ],
+  "coordinates": {
+    "Kujat": [
+      {
+        "station": "0",
+        "s_m": 0.0,
+        "E_m": 0.0,
+        "N_m": 0.0,
+        "Z_m": 0.0
+      },
+      {
+        "station": "1",
+        "s_m": 15.8,
+        "E_m": 11.548349255133624,
+        "N_m": -0.4032772423487177,
+        "Z_m": -10.775574088987476
+      },
+      {
+        "station": "2",
+        "s_m": 35.8,
+        "E_m": 22.132209821107452,
+        "N_m": -0.9579538708527577,
+        "Z_m": -27.736536012115995
+      },
+      {
+        "station": "3",
+        "s_m": 41.0,
+        "E_m": 26.205676599321563,
+        "N_m": -2.203337644855371,
+        "Z_m": -30.719133481141434
+      },
+      {
+        "station": "4",
+        "s_m": 61.0,
+        "E_m": 39.676035443844654,
+        "N_m": 9.925427936896398,
+        "Z_m": -39.17149871595542
+      },
+      {
+        "station": "5",
+        "s_m": 81.0,
+        "E_m": 54.26783229416038,
+        "N_m": 3.4287414089410886,
+        "Z_m": -51.20779917899639
+      },
+      {
+        "station": "6",
+        "s_m": 98.0,
+        "E_m": 70.02755717373233,
+        "N_m": 3.7038284299648647,
+        "Z_m": -57.57611126706689
+      },
+      {
+        "station": "7",
+        "s_m": 112.0,
+        "E_m": 75.16789738787043,
+        "N_m": 15.813711084581076,
+        "Z_m": -52.78782926050753
+      },
+      {
+        "station": "8",
+        "s_m": 130.7,
+        "E_m": 88.30758771695399,
+        "N_m": 20.33806929495972,
+        "Z_m": -40.27508692159688
+      },
+      {
+        "station": "9",
+        "s_m": 144.2,
+        "E_m": 92.85978716675808,
+        "N_m": 30.562476661366258,
+        "Z_m": -32.7259827247418
+      },
+      {
+        "station": "10",
+        "s_m": 155.79999999999998,
+        "E_m": 100.42031272726877,
+        "N_m": 35.47233936892576,
+        "Z_m": -25.425866188563685
+      },
+      {
+        "station": "11",
+        "s_m": 161.2,
+        "E_m": 102.73536665548995,
+        "N_m": 39.17720010685025,
+        "Z_m": -22.25182582618433
+      },
+      {
+        "station": "12",
+        "s_m": 181.39999999999998,
+        "E_m": 118.42788612376405,
+        "N_m": 46.49474211065287,
+        "Z_m": -32.655594939367425
+      },
+      {
+        "station": "13",
+        "s_m": 196.49999999999997,
+        "E_m": 125.74739642279754,
+        "N_m": 59.699488235310284,
+        "Z_m": -32.39206360216444
+      },
+      {
+        "station": "14",
+        "s_m": 216.69999999999996,
+        "E_m": 145.20580070681495,
+        "N_m": 63.13052991211573,
+        "Z_m": -36.59187975668318
+      },
+      {
+        "station": "15",
+        "s_m": 236.89999999999995,
+        "E_m": 164.42107580661175,
+        "N_m": 68.27924735744814,
+        "Z_m": -33.08418656781119
+      },
+      {
+        "station": "16",
+        "s_m": 247.19999999999996,
+        "E_m": 171.02566046378183,
+        "N_m": 76.15028485022317,
+        "Z_m": -32.36569488824669
+      },
+      {
+        "station": "17",
+        "s_m": 267.4,
+        "E_m": 190.16389713798236,
+        "N_m": 77.8246635990918,
+        "Z_m": -38.60783817462063
+      },
+      {
+        "station": "18",
+        "s_m": 287.59999999999997,
+        "E_m": 207.84750431890734,
+        "N_m": 73.08635533569375,
+        "Z_m": -30.070949287458504
+      },
+      {
+        "station": "19",
+        "s_m": 308.2,
+        "E_m": 222.31180146026426,
+        "N_m": 83.21436522897703,
+        "Z_m": -40.680733630605616
+      },
+      {
+        "station": "20",
+        "s_m": 325.7,
+        "E_m": 239.2983915793356,
+        "N_m": 84.70049929635725,
+        "Z_m": -44.61737708162325
+      },
+      {
+        "station": "21",
+        "s_m": 338.09999999999997,
+        "E_m": 249.0309726128809,
+        "N_m": 80.16212222680099,
+        "Z_m": -38.41737708162326
+      },
+      {
+        "station": "22",
+        "s_m": 358.29999999999995,
+        "E_m": 263.18368385116605,
+        "N_m": 88.33319386998795,
+        "Z_m": -50.29063917793121
+      },
+      {
+        "station": "23",
+        "s_m": 363.69999999999993,
+        "E_m": 268.4584421017534,
+        "N_m": 89.45437834737338,
+        "Z_m": -50.57325334164311
+      },
+      {
+        "station": "24",
+        "s_m": 372.8999999999999,
+        "E_m": 276.51260178200016,
+        "N_m": 86.83742323065627,
+        "Z_m": -46.97852695954179
+      },
+      {
+        "station": "25",
+        "s_m": 383.99999999999994,
+        "E_m": 283.7458159899153,
+        "N_m": 83.15191651007882,
+        "Z_m": -39.40834516284806
+      },
+      {
+        "station": "26",
+        "s_m": 404.59999999999997,
+        "E_m": 303.6852179637811,
+        "N_m": 81.75761769798625,
+        "Z_m": -34.4247541134949
+      },
+      {
+        "station": "27",
+        "s_m": 424.9,
+        "E_m": 297.8468113227193,
+        "N_m": 68.64434168115486,
+        "Z_m": -20.070486455407984
+      },
+      {
+        "station": "28",
+        "s_m": 438.09999999999997,
+        "E_m": 297.8468113227193,
+        "N_m": 62.447317052381095,
+        "Z_m": -8.41557822967015
+      },
+      {
+        "station": "29",
+        "s_m": 458.59999999999997,
+        "E_m": 308.6192076054439,
+        "N_m": 52.74780787263688,
+        "Z_m": 6.080110784654073
+      },
+      {
+        "station": "30",
+        "s_m": 472.4,
+        "E_m": 322.0470868032025,
+        "N_m": 55.847878053676,
+        "Z_m": 5.357874588501447
+      },
+      {
+        "station": "31",
+        "s_m": 492.9,
+        "E_m": 340.8915751408245,
+        "N_m": 54.86028026817606,
+        "Z_m": 13.36786272253156
+      },
+      {
+        "station": "32",
+        "s_m": 502.2,
+        "E_m": 346.1858974059276,
+        "N_m": 50.09325108886113,
+        "Z_m": 19.345787492616374
+      },
+      {
+        "station": "33",
+        "s_m": 512.7,
+        "E_m": 348.6805625379086,
+        "N_m": 43.23921496964255,
+        "Z_m": 26.89885539617221
+      },
+      {
+        "station": "34",
+        "s_m": 523.2,
+        "E_m": 359.0641274159905,
+        "N_m": 44.69852984479462,
+        "Z_m": 27.44838293672312
+      },
+      {
+        "station": "35",
+        "s_m": 529.7,
+        "E_m": 365.045900399633,
+        "N_m": 43.96406047557722,
+        "Z_m": 25.013440079519693
+      },
+      {
+        "station": "36",
+        "s_m": 535.3000000000001,
+        "E_m": 368.4160645292845,
+        "N_m": 48.43641933184206,
+        "Z_m": 25.013440079519693
+      },
+      {
+        "station": "37",
+        "s_m": 556.0000000000001,
+        "E_m": 386.8346229450543,
+        "N_m": 57.821143587676595,
+        "Z_m": 26.09679437374863
+      },
+      {
+        "station": "38",
+        "s_m": 566.5000000000001,
+        "E_m": 396.0552636323222,
+        "N_m": 60.46511975849058,
+        "Z_m": 30.36752912604453
+      },
+      {
+        "station": "39",
+        "s_m": 584.0000000000001,
+        "E_m": 403.99107100837784,
+        "N_m": 62.591512936193645,
+        "Z_m": 14.91594625101331
+      },
+      {
+        "station": "40",
+        "s_m": 596.2000000000002,
+        "E_m": 415.26044843974853,
+        "N_m": 65.61113351813094,
+        "Z_m": 11.34901145339592
+      },
+      {
+        "station": "41",
+        "s_m": 616.5000000000001,
+        "E_m": 434.7473181396517,
+        "N_m": 66.63239708428085,
+        "Z_m": 16.944449776481004
+      },
+      {
+        "station": "42",
+        "s_m": 636.6000000000001,
+        "E_m": 454.4509842795783,
+        "N_m": 70.46240179970617,
+        "Z_m": 15.892497055997833
+      },
+      {
+        "station": "43",
+        "s_m": 651.6000000000001,
+        "E_m": 465.37954447932015,
+        "N_m": 69.50627667356815,
+        "Z_m": 26.12247245693531
+      },
+      {
+        "station": "44",
+        "s_m": 672.3000000000002,
+        "E_m": 485.9223047229965,
+        "N_m": 71.30353531242088,
+        "Z_m": 27.926596331811833
+      },
+      {
+        "station": "45",
+        "s_m": 679.0000000000002,
+        "E_m": 491.40978752221196,
+        "N_m": 71.20775094386809,
+        "Z_m": 31.769558455363843
+      },
+      {
+        "station": "46",
+        "s_m": 699.4000000000002,
+        "E_m": 511.33665202443086,
+        "N_m": 75.44333674732417,
+        "Z_m": 30.701904948007787
+      },
+      {
+        "station": "47",
+        "s_m": 719.5000000000002,
+        "E_m": 527.4537411055734,
+        "N_m": 85.51441175612257,
+        "Z_m": 24.157985043418936
+      },
+      {
+        "station": "48",
+        "s_m": 737.0000000000002,
+        "E_m": 544.033896640153,
+        "N_m": 86.9649874048949,
+        "Z_m": 29.565782444980513
+      },
+      {
+        "station": "49",
+        "s_m": 751.2000000000003,
+        "E_m": 556.5987106431509,
+        "N_m": 90.5678898431722,
+        "Z_m": 35.1141644695282
+      },
+      {
+        "station": "50",
+        "s_m": 765.4000000000003,
+        "E_m": 562.9817193076719,
+        "N_m": 93.14679274337173,
+        "Z_m": 47.533764310907614
+      },
+      {
+        "station": "51",
+        "s_m": 775.3000000000003,
+        "E_m": 569.4776828622001,
+        "N_m": 96.60075783304363,
+        "Z_m": 54.158157313860315
+      },
+      {
+        "station": "52",
+        "s_m": 785.6000000000003,
+        "E_m": 576.7223765740405,
+        "N_m": 101.30551693990303,
+        "Z_m": 59.767939374515095
+      },
+      {
+        "station": "53",
+        "s_m": 794.0000000000002,
+        "E_m": 578.46644131664,
+        "N_m": 109.5106964408167,
+        "Z_m": 59.328317342074364
+      },
+      {
+        "station": "54",
+        "s_m": 813.3000000000002,
+        "E_m": 587.9465558527794,
+        "N_m": 118.99081097695608,
+        "Z_m": 73.21157548861034
+      },
+      {
+        "station": "55",
+        "s_m": 822.4000000000002,
+        "E_m": 592.3349914057198,
+        "N_m": 123.69683194988934,
+        "Z_m": 79.64624719740792
+      },
+      {
+        "station": "56",
+        "s_m": 828.3000000000002,
+        "E_m": 597.002797491319,
+        "N_m": 126.39179104993502,
+        "Z_m": 77.24650100326069
+      },
+      {
+        "station": "57",
+        "s_m": 831.3000000000002,
+        "E_m": 599.9041192655503,
+        "N_m": 126.035553529848,
+        "Z_m": 76.57164784022909
+      },
+      {
+        "station": "58",
+        "s_m": 841.3000000000002,
+        "E_m": 599.9041192655503,
+        "N_m": 126.035553529848,
+        "Z_m": 66.57164784022909
+      },
+      {
+        "station": "59",
+        "s_m": 850.4000000000002,
+        "E_m": 593.4694475567527,
+        "N_m": 126.035553529848,
+        "Z_m": 60.13697613143151
+      },
+      {
+        "station": "60",
+        "s_m": 868.0000000000002,
+        "E_m": 603.2645298187117,
+        "N_m": 140.02438073813985,
+        "Z_m": 55.87915076887736
+      },
+      {
+        "station": "61",
+        "s_m": 879.0000000000002,
+        "E_m": 611.1336203725041,
+        "N_m": 147.3624263937346,
+        "Z_m": 53.592122169882
+      },
+      {
+        "station": "62",
+        "s_m": 888.2000000000003,
+        "E_m": 618.0944614890901,
+        "N_m": 153.2032656073456,
+        "Z_m": 55.031319248252125
+      },
+      {
+        "station": "63",
+        "s_m": 891.7000000000003,
+        "E_m": 620.6928750568615,
+        "N_m": 155.0226943748855,
+        "Z_m": 53.55215533215968
+      },
+      {
+        "station": "64",
+        "s_m": 906.2000000000003,
+        "E_m": 631.6361639700916,
+        "N_m": 164.53555029524784,
+        "Z_m": 53.55215533215968
+      },
+      {
+        "station": "65",
+        "s_m": 914.2000000000003,
+        "E_m": 638.3199973559542,
+        "N_m": 165.12030994540692,
+        "Z_m": 49.19504305203946
+      },
+      {
+        "station": "66",
+        "s_m": 934.0000000000002,
+        "E_m": 643.1355622226278,
+        "N_m": 163.36758767275964,
+        "Z_m": 30.069711691515906
+      },
+      {
+        "station": "67",
+        "s_m": 950.0000000000002,
+        "E_m": 646.975127660603,
+        "N_m": 177.69704096626856,
+        "Z_m": 36.0634171861705
+      },
+      {
+        "station": "68",
+        "s_m": 963.5000000000002,
+        "E_m": 655.6052234113164,
+        "N_m": 187.98198858161334,
+        "Z_m": 34.652282932057176
+      },
+      {
+        "station": "69",
+        "s_m": 978.1000000000003,
+        "E_m": 663.5460557530514,
+        "N_m": 200.20979808817685,
+        "Z_m": 33.8881779709102
+      },
+      {
+        "station": "70",
+        "s_m": 994.7000000000003,
+        "E_m": 679.8619759810488,
+        "N_m": 202.21314118909834,
+        "Z_m": 36.19845144684729
+      },
+      {
+        "station": "71",
+        "s_m": 1011.7000000000003,
+        "E_m": 692.8767984032637,
+        "N_m": 213.13387388341673,
+        "Z_m": 36.791742890789806
+      },
+      {
+        "station": "72",
+        "s_m": 1031.7000000000003,
+        "E_m": 709.8351770897391,
+        "N_m": 223.73064498266754,
+        "Z_m": 36.442694762044134
+      },
+      {
+        "station": "73",
+        "s_m": 1049.7000000000003,
+        "E_m": 723.419949533749,
+        "N_m": 235.53970750449668,
+        "Z_m": 36.442694762044134
+      },
+      {
+        "station": "74",
+        "s_m": 1066.7000000000003,
+        "E_m": 734.3473388984202,
+        "N_m": 248.5624630375193,
+        "Z_m": 36.442694762044134
+      },
+      {
+        "station": "75",
+        "s_m": 1083.7000000000003,
+        "E_m": 747.6903935411839,
+        "N_m": 256.2660792273308,
+        "Z_m": 29.258184312452244
+      },
+      {
+        "station": "76",
+        "s_m": 1109.7000000000003,
+        "E_m": 770.2628157433186,
+        "N_m": 261.47733351046014,
+        "Z_m": 17.454431319224028
+      }
+    ],
+    "Borowiec": [
+      {
+        "station": "0W",
+        "s_m": 0.0,
+        "E_m": 0.0,
+        "N_m": 0.0,
+        "Z_m": 0.0
+      },
+      {
+        "station": "0",
+        "s_m": 15.915630681817168,
+        "E_m": 13.58,
+        "N_m": 1.15,
+        "Z_m": -8.22
+      },
+      {
+        "station": "1",
+        "s_m": 21.540557348005805,
+        "E_m": 16.2,
+        "N_m": 2.7,
+        "Z_m": -12.950000000000001
+      },
+      {
+        "station": "2",
+        "s_m": 38.60451058282217,
+        "E_m": 25.88,
+        "N_m": 0.10000000000000009,
+        "Z_m": -26.76
+      },
+      {
+        "station": "3",
+        "s_m": 59.40937059196426,
+        "E_m": 39.7,
+        "N_m": 12.969999999999999,
+        "Z_m": -35.49
+      },
+      {
+        "station": "4",
+        "s_m": 76.43989025520413,
+        "E_m": 53.650000000000006,
+        "N_m": 11.159999999999998,
+        "Z_m": -45.09
+      },
+      {
+        "station": "5",
+        "s_m": 90.70502607649935,
+        "E_m": 65.33000000000001,
+        "N_m": 7.369999999999998,
+        "Z_m": -52.35
+      },
+      {
+        "station": "6",
+        "s_m": 107.1085226549731,
+        "E_m": 75.82000000000001,
+        "N_m": 19.759999999999998,
+        "Z_m": -50.0
+      },
+      {
+        "station": "7",
+        "s_m": 131.3544315882344,
+        "E_m": 93.66000000000001,
+        "N_m": 26.68,
+        "Z_m": -35.11
+      },
+      {
+        "station": "8",
+        "s_m": 137.65320130937837,
+        "E_m": 96.12,
+        "N_m": 32.13,
+        "Z_m": -33.13
+      },
+      {
+        "station": "9",
+        "s_m": 148.1855989471435,
+        "E_m": 99.0,
+        "N_m": 40.040000000000006,
+        "Z_m": -26.800000000000004
+      },
+      {
+        "station": "10",
+        "s_m": 161.75819634042088,
+        "E_m": 107.76,
+        "N_m": 47.470000000000006,
+        "Z_m": -19.570000000000004
+      },
+      {
+        "station": "11",
+        "s_m": 195.10592190004488,
+        "E_m": 135.24,
+        "N_m": 64.49000000000001,
+        "Z_m": -27.770000000000003
+      },
+      {
+        "station": "12",
+        "s_m": 209.5793078204161,
+        "E_m": 146.45000000000002,
+        "N_m": 71.67000000000002,
+        "Z_m": -33.45
+      },
+      {
+        "station": "13",
+        "s_m": 220.7413596031306,
+        "E_m": 156.98000000000002,
+        "N_m": 68.23000000000002,
+        "Z_m": -32.080000000000005
+      },
+      {
+        "station": "14",
+        "s_m": 241.24324732109454,
+        "E_m": 172.53000000000003,
+        "N_m": 81.43000000000002,
+        "Z_m": -30.010000000000005
+      },
+      {
+        "station": "15",
+        "s_m": 266.11101360598633,
+        "E_m": 193.62000000000003,
+        "N_m": 91.59000000000002,
+        "Z_m": -38.400000000000006
+      },
+      {
+        "station": "16",
+        "s_m": 288.50552409405014,
+        "E_m": 211.36000000000004,
+        "N_m": 81.20000000000002,
+        "Z_m": -29.520000000000003
+      },
+      {
+        "station": "17",
+        "s_m": 324.3958500886688,
+        "E_m": 240.59000000000003,
+        "N_m": 93.71000000000002,
+        "Z_m": -46.17
+      },
+      {
+        "station": "18",
+        "s_m": 363.95683718454393,
+        "E_m": 274.01000000000005,
+        "N_m": 81.99000000000002,
+        "Z_m": -28.540000000000003
+      },
+      {
+        "station": "19",
+        "s_m": 397.7315821872823,
+        "E_m": 305.26000000000005,
+        "N_m": 92.52000000000002,
+        "Z_m": -35.84
+      },
+      {
+        "station": "20",
+        "s_m": 408.92669719339096,
+        "E_m": 315.66,
+        "N_m": 89.61000000000003,
+        "Z_m": -32.89
+      },
+      {
+        "station": "21",
+        "s_m": 447.6581108004361,
+        "E_m": 294.62,
+        "N_m": 69.79000000000002,
+        "Z_m": -7.109999999999999
+      },
+      {
+        "station": "22",
+        "s_m": 466.1760723513196,
+        "E_m": 308.04,
+        "N_m": 65.83000000000003,
+        "Z_m": 5.020000000000001
+      },
+      {
+        "station": "23",
+        "s_m": 477.90837391580385,
+        "E_m": 316.42,
+        "N_m": 59.910000000000025,
+        "Z_m": 10.71
+      },
+      {
+        "station": "24",
+        "s_m": 501.84948082421556,
+        "E_m": 339.89,
+        "N_m": 63.85000000000002,
+        "Z_m": 13.32
+      },
+      {
+        "station": "25",
+        "s_m": 514.1170437443722,
+        "E_m": 350.47999999999996,
+        "N_m": 59.00000000000002,
+        "Z_m": 17.17
+      },
+      {
+        "station": "26",
+        "s_m": 524.236855995595,
+        "E_m": 348.18999999999994,
+        "N_m": 50.84000000000002,
+        "Z_m": 22.700000000000003
+      },
+      {
+        "station": "27",
+        "s_m": 536.9960017350244,
+        "E_m": 360.2099999999999,
+        "N_m": 50.19000000000002,
+        "Z_m": 26.930000000000003
+      },
+      {
+        "station": "28",
+        "s_m": 546.1028617866558,
+        "E_m": 368.7799999999999,
+        "N_m": 49.490000000000016,
+        "Z_m": 23.930000000000003
+      },
+      {
+        "station": "29",
+        "s_m": 553.4292933873738,
+        "E_m": 373.7199999999999,
+        "N_m": 54.88000000000002,
+        "Z_m": 23.460000000000004
+      },
+      {
+        "station": "30",
+        "s_m": 577.5662463848008,
+        "E_m": 395.9199999999999,
+        "N_m": 64.09000000000002,
+        "Z_m": 25.680000000000003
+      },
+      {
+        "station": "31",
+        "s_m": 585.5219298878067,
+        "E_m": 403.5999999999999,
+        "N_m": 64.88000000000002,
+        "Z_m": 27.6
+      },
+      {
+        "station": "32",
+        "s_m": 622.2656830983866,
+        "E_m": 435.56999999999994,
+        "N_m": 72.65000000000002,
+        "Z_m": 11.240000000000002
+      },
+      {
+        "station": "33",
+        "s_m": 656.7523674852627,
+        "E_m": 467.19999999999993,
+        "N_m": 74.41000000000003,
+        "Z_m": 24.870000000000005
+      },
+      {
+        "station": "34",
+        "s_m": 681.1836466167367,
+        "E_m": 491.0799999999999,
+        "N_m": 76.28000000000003,
+        "Z_m": 29.680000000000003
+      },
+      {
+        "station": "35",
+        "s_m": 703.7399140384534,
+        "E_m": 513.2199999999999,
+        "N_m": 80.38000000000002,
+        "Z_m": 28.340000000000003
+      },
+      {
+        "station": "36",
+        "s_m": 728.3993949737854,
+        "E_m": 533.42,
+        "N_m": 92.76000000000002,
+        "Z_m": 21.500000000000004
+      },
+      {
+        "station": "37",
+        "s_m": 739.7370622823635,
+        "E_m": 543.1899999999999,
+        "N_m": 91.79000000000002,
+        "Z_m": 27.17
+      },
+      {
+        "station": "38",
+        "s_m": 769.565340811303,
+        "E_m": 566.9399999999999,
+        "N_m": 95.10000000000002,
+        "Z_m": 44.91
+      },
+      {
+        "station": "39",
+        "s_m": 787.3769578069607,
+        "E_m": 578.2199999999999,
+        "N_m": 102.67000000000002,
+        "Z_m": 56.42999999999999
+      },
+      {
+        "station": "40",
+        "s_m": 795.4280819520724,
+        "E_m": 581.5299999999999,
+        "N_m": 109.78000000000002,
+        "Z_m": 54.60999999999999
+      },
+      {
+        "station": "41",
+        "s_m": 813.0271984071675,
+        "E_m": 591.2999999999998,
+        "N_m": 118.36000000000001,
+        "Z_m": 66.47
+      },
+      {
+        "station": "42",
+        "s_m": 823.6422160708363,
+        "E_m": 595.4999999999999,
+        "N_m": 124.81000000000002,
+        "Z_m": 73.78
+      },
+      {
+        "station": "43",
+        "s_m": 828.0046351245265,
+        "E_m": 598.8299999999999,
+        "N_m": 127.08000000000001,
+        "Z_m": 72.11
+      },
+      {
+        "station": "44",
+        "s_m": 834.5546427581099,
+        "E_m": 605.31,
+        "N_m": 126.79,
+        "Z_m": 71.2
+      },
+      {
+        "station": "45",
+        "s_m": 840.1709938867343,
+        "E_m": 601.9,
+        "N_m": 125.71000000000001,
+        "Z_m": 66.87
+      },
+      {
+        "station": "46",
+        "s_m": 846.8884041019884,
+        "E_m": 599.4599999999999,
+        "N_m": 129.75,
+        "Z_m": 62.09
+      },
+      {
+        "station": "47",
+        "s_m": 857.5685258241411,
+        "E_m": 606.91,
+        "N_m": 137.15,
+        "Z_m": 60.14
+      },
+      {
+        "station": "48",
+        "s_m": 867.8704965094032,
+        "E_m": 611.15,
+        "N_m": 144.38,
+        "Z_m": 54.15
+      },
+      {
+        "station": "49",
+        "s_m": 878.6019269825508,
+        "E_m": 617.59,
+        "N_m": 151.9,
+        "Z_m": 58.29
+      },
+      {
+        "station": "50",
+        "s_m": 881.5422841037182,
+        "E_m": 619.32,
+        "N_m": 154.22,
+        "Z_m": 57.769999999999996
+      },
+      {
+        "station": "51",
+        "s_m": 886.3703478978287,
+        "E_m": 622.25,
+        "N_m": 157.35,
+        "Z_m": 59.989999999999995
+      },
+      {
+        "station": "52",
+        "s_m": 898.2247226177369,
+        "E_m": 631.27,
+        "N_m": 163.68,
+        "Z_m": 55.62
+      },
+      {
+        "station": "53",
+        "s_m": 902.339294284387,
+        "E_m": 632.74,
+        "N_m": 167.5,
+        "Z_m": 56.04
+      },
+      {
+        "station": "54",
+        "s_m": 920.8418941017101,
+        "E_m": 648.23,
+        "N_m": 174.75,
+        "Z_m": 63.1
+      },
+      {
+        "station": "55",
+        "s_m": 926.4384376778828,
+        "E_m": 651.99,
+        "N_m": 178.86,
+        "Z_m": 63.64
+      },
+      {
+        "station": "56",
+        "s_m": 935.8264726160368,
+        "E_m": 657.35,
+        "N_m": 186.56,
+        "Z_m": 63.980000000000004
+      },
+      {
+        "station": "57",
+        "s_m": 943.10540797775,
+        "E_m": 659.7900000000001,
+        "N_m": 192.18,
+        "Z_m": 60.050000000000004
+      },
+      {
+        "station": "58",
+        "s_m": 949.9965834943074,
+        "E_m": 664.0200000000001,
+        "N_m": 197.45000000000002,
+        "Z_m": 61.400000000000006
+      },
+      {
+        "station": "59",
+        "s_m": 955.9188296897978,
+        "E_m": 668.1000000000001,
+        "N_m": 201.74,
+        "Z_m": 61.25000000000001
+      },
+      {
+        "station": "60",
+        "s_m": 967.9375900252068,
+        "E_m": 673.7500000000001,
+        "N_m": 210.9,
+        "Z_m": 66.60000000000001
+      },
+      {
+        "station": "61",
+        "s_m": 974.0161836125426,
+        "E_m": 677.2300000000001,
+        "N_m": 215.85,
+        "Z_m": 66.02000000000001
+      },
+      {
+        "station": "62",
+        "s_m": 977.0492843362246,
+        "E_m": 680.2400000000001,
+        "N_m": 216.21,
+        "Z_m": 65.92000000000002
+      },
+      {
+        "station": "63",
+        "s_m": 983.8962179564666,
+        "E_m": 682.7900000000001,
+        "N_m": 220.87,
+        "Z_m": 61.600000000000016
+      },
+      {
+        "station": "64",
+        "s_m": 999.3953114783471,
+        "E_m": 696.9000000000001,
+        "N_m": 222.94,
+        "Z_m": 55.530000000000015
+      },
+      {
+        "station": "65",
+        "s_m": 1010.1427856002048,
+        "E_m": 702.3000000000001,
+        "N_m": 232.23,
+        "Z_m": 55.740000000000016
+      },
+      {
+        "station": "66",
+        "s_m": 1020.7996050131441,
+        "E_m": 706.6800000000001,
+        "N_m": 240.76,
+        "Z_m": 51.09000000000002
+      },
+      {
+        "station": "67",
+        "s_m": 1025.960351083239,
+        "E_m": 709.34,
+        "N_m": 244.0,
+        "Z_m": 48.08000000000002
+      },
+      {
+        "station": "68",
+        "s_m": 1036.9028416589717,
+        "E_m": 713.6700000000001,
+        "N_m": 248.96,
+        "Z_m": 39.34000000000002
+      },
+      {
+        "station": "69",
+        "s_m": 1046.3936846141576,
+        "E_m": 723.0300000000001,
+        "N_m": 248.92000000000002,
+        "Z_m": 37.77000000000002
+      },
+      {
+        "station": "70",
+        "s_m": 1053.7612011563854,
+        "E_m": 727.46,
+        "N_m": 253.69000000000003,
+        "Z_m": 41.22000000000002
+      },
+      {
+        "station": "71",
+        "s_m": 1070.0039349164394,
+        "E_m": 737.96,
+        "N_m": 264.29,
+        "Z_m": 34.80000000000002
+      },
+      {
+        "station": "72",
+        "s_m": 1089.36315494205,
+        "E_m": 754.72,
+        "N_m": 265.36,
+        "Z_m": 25.170000000000016
+      },
+      {
+        "station": "73",
+        "s_m": 1099.0742104974465,
+        "E_m": 763.58,
+        "N_m": 268.09000000000003,
+        "Z_m": 22.280000000000015
+      }
+    ]
+  },
+  "schema_version": 1,
+  "analysis_date": "2026-09-13",
+  "limitations": [
+    "Raw recorded axes: date, fix, declination and network corrections ignored.",
+    "Common origin is a drawing assumption, not a physical tie.",
+    "Shape correlation partly reflects the dominant direction; samples are dependent.",
+    "Nearest-segment matches do not establish physical station identity or monotone correspondence.",
+    "Kujat baseline retains four unresolved readings."
+  ]
+}

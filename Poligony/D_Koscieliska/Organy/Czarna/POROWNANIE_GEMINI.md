@@ -103,24 +103,25 @@ Studnia Smoluchowskiego. „Techuba” nie jest więc zwykłą literówką.
 [lokalny PDF](_RAW/03/Czarna%20-%20Jaskinie%2069.pdf), pierwsza strona PDF;
 [wydanie PZA](https://nowe.pza.org.pl/jaskinie/kwartalnik/jaskinie__69_2012.pdf).
 
-Historia dokumentacji według PIG:
+Wybrane informacje z historii dokumentacji według PIG:
 
 | Pomiar | Autorzy / datowanie |
 | --- | --- |
 | Główny otwór → Colorado | Naukowe Koło Geodetów AGH, kierownik Władysław Borowiec, 1972–1973 |
 | Ciągi szkieletowe nawiązane do Borowca | Ryszard Kujat, 1975; część ciągów o nieznanej dacie |
-| Partie Tehuby | I. Luty z zespołem, 1979–1981; uzupełnienia 1995 |
-| Aktualizacja głównego ciągu | Speleoklub Bobry Żagań, H. Zyzańska i R. Kondratowicz, lipiec 1995 |
 
 Źródło: [PIG, „Historia dokumentacji”](https://jaskiniepolski.pgi.gov.pl/Details/Information/1445).
-Pomiar z 1995 r. jest tropem do sprawdzenia, **nie potwierdzeniem autorstwa
-naszego dziennika**. Opis nie identyfikuje numerów 0–76 ani 6–a–b.
+Ta historia nie datuje automatycznie dziennika 0–76 ani jego odgałęzienia
+6–a–b. Dwa odcinki tego odgałęzienia nie są dokumentacją całych Partii Tehuby.
 
-Autor, data i instrument `CZ_GL_R.SRV` nadal pozostają nieznane. Nazwa partii
-ani podobny zakres korytarzy nie wystarczają do przypisania zespołu. Dwa
-odcinki 6–a–b nie są dokumentacją całych Partii Tehuby. Następny krok to
-ustalenie pochodzenia dziennika i fizycznych punktów nawiązania, zwłaszcza
-w rejonie Sali Św. Bernarda i Studni Imieninowej.
+**Autorem dziennika odczytanego do `CZ_GL_R.SRV` jest Ryszard Kujat.**
+Użytkownik potwierdził to 2026-09-13, wskazując nazwę fotografii
+`20220325_123052 ciąg gł Czarna 1_Kujat.jpg`. To źródło przypisania autora
+w metadanych `TEAM`; wcześniejsze przypuszczenie o innym zespole wycofano.
+Data i instrument pozostają nieustalone. Autorstwo Kujata nie oznacza,
+że ten konkretny dziennik pochodzi z 1975 r. lub z roku listu.
+Następny krok to ustalenie daty, orientacji i fizycznych punktów nawiązania,
+zwłaszcza w rejonie Sali Św. Bernarda i Studni Imieninowej.
 
 ## Wpływ na pliki i dalszą analizę
 
