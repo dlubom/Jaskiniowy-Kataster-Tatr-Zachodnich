@@ -3,7 +3,7 @@ CAVE_ID         "T.E-09.12"
 CAVE_NAME       "Jaskinia Czarna"
 SURVEY_ID       "GL_R1"
 SURVEY_NAME     "Ciag glowny ze skanow - odczyt roboczy, 4 wiersze niepewne"
-UPDATE_DATE     "2026-09-13"
+UPDATE_DATE     "2026-09-16"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -81,8 +81,8 @@ PROCESSING      "Odczyt ze skanow S1 S1b S2; 78 odcinkow; 4 wiersze do weryfikac
 
 ; S2: 19-60
 19	20	17.50	85	-13	; Lh_scan=17.04; dh_scan=-3.93
-; ARYTMETYKA: z D,V wynika Lh=10.739, dh=+6.200; nie poprawiono D,A,V.
-20	21	12.40	115	30	; Lh_scan=10.23; dh_scan=6.20
+; Ponowna kontrola skanu 2026-09-16: Lh=10.73, nie 10.23; D,A,V bez zmian.
+20	21	12.40	115	30	; Lh_scan=10.73; dh_scan=6.20
 21	22	20.20	60	-36	; Lh_scan=16.34; dh_scan=-11.86
 22	23	5.40	78	-3	; Lh_scan=5.40; dh_scan=-0.28
 23	24	9.20	108	23	; Lh_scan=8.46; dh_scan=3.58

@@ -1,6 +1,6 @@
 # Jaskinia Czarna — stan prac i dalsze kroki
 
-Aktualizacja: 2026-09-14. Gałąź robocza: `codex/czarna-digitalizacja`,
+Aktualizacja: 2026-09-16. Gałąź robocza: `codex/czarna-digitalizacja`,
 utworzona z `origin/master` na `446edc4`.
 Dokument służy wznowieniu pracy bez historii rozmowy. Aktualizuj go po każdym
 zakończonym etapie, razem z dowodami, wykonanymi sprawdzeniami i następnym krokiem.
@@ -31,9 +31,10 @@ Dotychczasowe polecenie nie obejmuje PR; nie zgłaszaj nieuruchomionego CI jako 
 3. Przeczytaj [raport digitalizacji](DIGITALIZACJA_RAPORT.md) i [CZ_GL_R.SRV](CZ_GL_R.SRV).
    Wpływ czterech niepewnych odczytów opisuje [analiza wariantów](WARIANTY_ODCZYTU.md)
    z kompletem wyników w [JSON](WARIANTY_ODCZYTU.json).
-   Najnowszy etap to [porównanie przebiegu Kujat–Borowiec](POROWNANIE_BOROWIEC.md),
-   z nakładką planu i profilu oraz współrzędnymi w JSON. Wcześniej wykonano
-   [porównanie Gemini i kontrolę nazw](POROWNANIE_GEMINI.md).
+   Najnowszy etap to [kontrola wyniku Claude Opus 5](POROWNANIE_OPUS.md):
+   bez zmiany D/A/V, z korektą komentarza Lh20→21 na 10,73 m.
+   Wcześniej wykonano [porównanie przebiegu Kujat–Borowiec](POROWNANIE_BOROWIEC.md)
+   z nakładką planu i profilu oraz [porównanie Gemini](POROWNANIE_GEMINI.md).
    Wyniki dostarczone przez użytkownika zachowano w [ODCZYTY_MODELI](ODCZYTY_MODELI/README.md).
 4. Sięgaj do rzeczywistych skanów wskazanych w raporcie; tabele i OCR są wtórne.
 5. Przeczytaj [raport deklinacji](BOROWIEC_DEKLINACJA_RAPORT.md) jako zapis wcześniejszego
@@ -104,6 +105,21 @@ Dotychczasowe polecenie nie obejmuje PR; nie zgłaszaj nieuruchomionego CI jako 
   źródła i ograniczenia: `POROWNANIE_BOROWIEC.md` oraz powiązany JSON i wykres.
 - Oryginały `_RAW`, istniejące aktywne pomiary i współrzędne otworów zachowano.
   Pełna historia późniejszych zmian i publikacji znajduje się w git.
+- Porównano wynik opisany przez użytkownika jako Claude Opus 5: 78/78 par,
+  21 różnic D/A/V na 20 odcinkach względem `fc33499`; 18 konfliktów po
+  uwzględnieniu alternatyw. Nie są to liczniki udowodnionych błędów.
+  Kontrola fotografii nie uzasadnia zmiany D/A/V. Wskazanie A49→50=88°
+  przez Opusa i nowego czytelnika wspiera zachowanie już znanej alternatywy;
+  V71→72 nadal nie rozstrzygnięto. Nie pozyskano daty ani dowiązań.
+- Przy kontroli pełnych Lh/Δh poprawiono nasz pomocniczy odczyt Lh20→21
+  z 10,23 na 10,73 m. Wartość była już w obu Gemini; teraz potwierdzono
+  ją z fotografii. Poprawiono komentarz SRV i usunięto ten błędny przykład
+  „arytmetyki źródła” z raportu. D/A/V i geometria są identyczne.
+- Słabsze hipotezy Opusa D59→60=12,60 m i V a→b=−32° zachowano
+  w raporcie do kontroli na lepszym materiale. Porównanie grafii przemawia
+  nadal za 17,60 m i −37°. Nie dodano tych hipotez do 16 wariantów;
+  cztery formalnie oznaczone niepewności nie są gwarancją czytelności
+  wszystkich pozostałych cyfr. Pomocnicze Δh58→59 także pozostaje niepewne.
 
 ## Cztery odczyty do potwierdzenia
 
@@ -138,6 +154,8 @@ geometrią. Kreska azymutu pionu 57–58 (`--`, V=−90°) nie jest piątym spor
    ale czterech niepewności jeszcze nie usunięto; potrzebne może być lepsze zdjęcie,
    oryginalny dziennik lub niezależny zapis obserwacji. Nie wybieraj cyfr
    według uzyskanego domknięcia. Analiza 16 wariantów jest już wykonana.
+   Wynik Opusa nie rozstrzygnął tych pól. Przy lepszym materiale sprawdź
+   także D59→60, V a→b i pomocnicze Δh58→59 zgodnie z `POROWNANIE_OPUS.md`.
 2. Sprawdź przebieg obu pomiarów w rejonie Studni Imieninowej, szczególnie
    zejście K65→66 i odcinek Borowca ku B60. Nakładka planu jest zbieżna,
    ale profile różnią się lokalnie o około 20–30 m. Nie rozstrzygnięto, czy
@@ -217,6 +235,34 @@ geometrią. Kreska azymutu pionu 57–58 (`--`, V=−90°) nie jest piątym spor
   `git log -1 --format=%H -- Poligony/D_Koscieliska/Organy/Czarna/POROWNANIE_BOROWIEC.md`.
   Publikację sprawdzaj przez porównanie ze zdalną gałęzią. Sam push tej gałęzi
   nie uruchamia CI; lokalnej walidacji nie przedstawiaj jako wyniku CI.
+
+## Kontrola Opusa i korekta komentarza — 2026-09-16
+
+- Pełne zestawienie 234 D/A/V oraz 156 Lh/Δh z modelem, oboma Gemini
+  i zamrożonym `fc33499` zapisano w `ODCZYTY_MODELI/POROWNANIE_OPUS.json`.
+  Kopia wyniku jest identyczna z Downloads; pochodzenie i SHA w indeksie.
+- Nowy czytelnik odczytał sporne fragmenty przed poznaniem SRV i modeli.
+  Przy D59→60 ujawniono następnie konflikt i porównano grafię; zachowano
+  17,60 m jako preferencję. Dwóch czytelników potwierdziło Lh20→21=10,73.
+  Nie zmieniono D/A/V; korekta dotyczy komentarza i daty aktualizacji.
+- Potwierdzono identyczność 78 pomiarów i dyrektyw geometrii względem
+  `fc33499`. Odświeżone JSONy wariantów i porównania z Borowcem zmieniły
+  tylko SHA SRV; wyniki liczbowe i wykresy pozostają identyczne.
+- Osobna kompilacja roboczego SRV: 79 stacji, 78 odcinków, 1122,50 m,
+  bez ostrzeżeń. Nie powtarzano 16 kompilacji identycznych wariantów.
+- **197 testów**, Ruff format/check i pełne **12/12 etapów `jktz-validate`**:
+  sukces. Kontrola źródła GPS v1.0.2 potwierdziła 87 fixów. Pierwsza próba
+  bramki zatrzymała się na DNS sandboxu; ponowienie z dostępem do sieci
+  zakończyło się sukcesem. Nie był to błąd danych.
+- `_RAW`, pozostałe SRV, WPJ i otwory są niezmienione. Praca nadal dotyczy
+  izolowanego ciągu roboczego; nie ustalono daty ani fizycznych dowiązań.
+- Niezależny przegląd całego etapu nie wykazał istotnych usterek. Osobny
+  parser potwierdził wszystkie liczniki, alternatywy, numery linii i SHA;
+  czytelnik skanów potwierdził wierny opis jego odczytów i niepewności.
+- Commit etapu odczytasz przez
+  `git log -1 --format=%H -- Poligony/D_Koscieliska/Organy/Czarna/POROWNANIE_OPUS.md`.
+  Publikację porównaj ze zdalną gałęzią przez `git ls-remote`; lokalnej bramki
+  nie przedstawiaj jako CI. Sam push tej gałęzi nie uruchamia workflow.
 
 ## Odtwarzalne narzędzia i aktualizacje
 

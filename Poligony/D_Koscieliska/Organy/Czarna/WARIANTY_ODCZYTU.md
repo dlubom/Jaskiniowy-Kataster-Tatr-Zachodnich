@@ -71,15 +71,22 @@ lub czterech wartości bazowych wymaga ponownej oceny założeń. Opcja `--input
 pozwala podać inną kopię tego samego formatu, ale nie służy do analizy
 dowolnego pliku Walls. Nazwę wejścia i SHA-256 zapisano w JSON.
 
-SHA-256 pliku SRV użytego do obliczeń i niezależnych kompilacji:
+SHA-256 bieżącego pliku SRV użytego do ponownego wygenerowania JSON:
 
 ```text
-397ac7b7037a1b48f33e80bdd97c61abc7130846ac9a3bbe9e8e13bb1f0632dd
+578be7dacfd1c6d90f7b6d98d8561e35e2b9987e7ca4cc29f99441661d644ed0
 ```
 
-SHA odświeżono po wpisaniu autorstwa Ryszarda Kujata 2026-09-13.
-Zmiana dotyczyła metadanych i komentarzy; wszystkie D/A/V oraz wyniki
-16 wariantów pozostały identyczne. Ponowiono również kompilacje kontrolne.
+SHA odświeżono ponownie 2026-09-16 po korekcie komentarza Lh20→21
+z 10,23 na 10,73 m i daty aktualizacji. Potwierdzono identyczność wszystkich
+D/A/V i dyrektyw geometrii względem `fc33499`; ponownie wygenerowany JSON
+16 wariantów zmienił wyłącznie SHA wejścia. Kompilacje wszystkich wariantów
+opisane niżej dotyczą kontroli z 2026-09-13, po wpisaniu autorstwa Kujata.
+Tamte kompilacje używały SHA-256
+`397ac7b7037a1b48f33e80bdd97c61abc7130846ac9a3bbe9e8e13bb1f0632dd`.
+W tym etapie nie ponawiano 16 kompilacji; geometria wejścia jest identyczna.
+Słabsze odczyty D59→60=12,60 i V a→b=−32, opisane w
+[raporcie Opusa](POROWNANIE_OPUS.md), nie zostały włączone do zestawu wariantów.
 
 Najdalsza para to `0010` i `1101`: 12,120658 m w 3D, w tym
 12,099930 m poziomo. Liczby podano z dodatkowymi cyframi, aby umożliwić

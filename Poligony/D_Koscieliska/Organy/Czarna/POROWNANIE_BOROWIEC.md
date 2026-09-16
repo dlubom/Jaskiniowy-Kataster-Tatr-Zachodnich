@@ -7,6 +7,11 @@ obrotu i skali. Lokalny wyjątek stanowi profil w rejonie Studni Imieninowej.
 Nie ustalono jeszcze fizycznej tożsamości poszczególnych punktów ani przewagi
 jakościowej któregoś pomiaru.
 
+Kontrola 2026-09-16: po korekcie wyłącznie komentarza Lh20→21 i daty
+aktualizacji w SRV odświeżono SHA-256 tego wejścia w JSON. Potwierdzono
+identyczność D/A/V i dyrektyw geometrii względem `fc33499`; wszystkie liczby
+porównania i wykresy pozostały bez zmian. [Szczegóły kontroli](POROWNANIE_OPUS.md).
+
 Autorem dziennika odczytanego do `CZ_GL_R.SRV` jest **Ryszard Kujat**, zgodnie z informacją
 użytkownika z 2026-09-13 i dopiskiem `Kujat` w nazwie fotografii `123052`.
 Wcześniejszą spekulację o innym autorstwie usunięto. Data i instrument tego

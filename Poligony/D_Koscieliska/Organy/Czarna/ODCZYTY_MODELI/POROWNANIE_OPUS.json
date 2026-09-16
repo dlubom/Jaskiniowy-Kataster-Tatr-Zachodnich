@@ -1,0 +1,1685 @@
+{
+  "inputs": {
+    "srv": {
+      "path": "CZ_GL_R.SRV",
+      "sha256": "397ac7b7037a1b48f33e80bdd97c61abc7130846ac9a3bbe9e8e13bb1f0632dd"
+    },
+    "opus": {
+      "path": "ODCZYTY_MODELI/claude_opus_5.md",
+      "sha256": "493f7a5548f52aa8b1e9fd5edc4105b15136a5bcf9ba8f121c76df0d03b15897",
+      "received_filename": "transkrypcja_dziennik_Czarna.md"
+    },
+    "flash": {
+      "path": "ODCZYTY_MODELI/gemini_flash_3.8.md",
+      "sha256": "833a1ce314c7ac98e563486e5b0e8b15a7399368dae249d6c7423e70fa844672"
+    },
+    "pro": {
+      "path": "ODCZYTY_MODELI/gemini_pro.md",
+      "sha256": "f425823de05cb431400014dc31141f9604bd4f8fbd8cd121eae3af5f34f86e63"
+    }
+  },
+  "method": "Parsed instrument D/A/V only; numbers in bracket alternatives retained. Deduplicate same FROM/TO across repeated photographs. Compare first value from first appearance with current SRV. Missing vertical azimuth normalized to null. Differences are not source-confirmed errors. Prior known values comprise current SRV, both Gemini with alternatives, and four documented SRV alternatives.",
+  "counts": {
+    "srv": {
+      "row_count": 78,
+      "unique_pairs": 78,
+      "repeated_pairs": 0,
+      "extra_occurrences": 0,
+      "expected_pairs_covered": 78,
+      "missing_pairs": [],
+      "unexpected_pairs": [],
+      "differences_fields_first": 0,
+      "differences_legs_first": 0,
+      "duplicate_primary_conflicts": []
+    },
+    "opus": {
+      "row_count": 115,
+      "unique_pairs": 78,
+      "repeated_pairs": 37,
+      "extra_occurrences": 37,
+      "expected_pairs_covered": 78,
+      "missing_pairs": [],
+      "unexpected_pairs": [],
+      "differences_fields_first": 21,
+      "differences_legs_first": 20,
+      "duplicate_primary_conflicts": [],
+      "differences_fields_after_alternatives": 18,
+      "novel_primary_values": 17,
+      "novel_primary_legs": 16,
+      "novel_alternative_values": 1
+    },
+    "flash": {
+      "row_count": 115,
+      "unique_pairs": 78,
+      "repeated_pairs": 37,
+      "extra_occurrences": 37,
+      "expected_pairs_covered": 78,
+      "missing_pairs": [],
+      "unexpected_pairs": [],
+      "differences_fields_first": 2,
+      "differences_legs_first": 2,
+      "duplicate_primary_conflicts": []
+    },
+    "pro": {
+      "row_count": 115,
+      "unique_pairs": 78,
+      "repeated_pairs": 37,
+      "extra_occurrences": 37,
+      "expected_pairs_covered": 77,
+      "missing_pairs": [
+        "19-20"
+      ],
+      "unexpected_pairs": [
+        "18-20"
+      ],
+      "differences_fields_first": 10,
+      "differences_legs_first": 10,
+      "duplicate_primary_conflicts": []
+    }
+  },
+  "opus_differences": [
+    {
+      "leg": "7-8",
+      "field": "A",
+      "srv": 71.0,
+      "opus": 74.0,
+      "opus_values": [
+        74.0
+      ],
+      "opus_lines": [
+        28,
+        105
+      ],
+      "srv_line": 68,
+      "previous": {
+        "flash": [
+          71.0
+        ],
+        "pro": [
+          71.0
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": true,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "74",
+        "74"
+      ]
+    },
+    {
+      "leg": "60-61",
+      "field": "A",
+      "srv": 47.0,
+      "opus": 43.0,
+      "opus_values": [
+        43.0
+      ],
+      "opus_lines": [
+        54,
+        126
+      ],
+      "srv_line": 133,
+      "previous": {
+        "flash": [
+          47.0
+        ],
+        "pro": [
+          47.0
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": true,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "43",
+        "43"
+      ]
+    },
+    {
+      "leg": "62-63",
+      "field": "D",
+      "srv": 3.5,
+      "opus": 3.1,
+      "opus_values": [
+        3.1
+      ],
+      "opus_lines": [
+        56,
+        128
+      ],
+      "srv_line": 135,
+      "previous": {
+        "flash": [
+          3.5,
+          3.1
+        ],
+        "pro": [
+          3.3
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": false,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "3,10",
+        "3,10"
+      ]
+    },
+    {
+      "leg": "71-72",
+      "field": "V",
+      "srv": -1.0,
+      "opus": 1.0,
+      "opus_values": [
+        1.0
+      ],
+      "opus_lines": [
+        65,
+        137
+      ],
+      "srv_line": 148,
+      "previous": {
+        "flash": [
+          -1.0
+        ],
+        "pro": [
+          -1.0
+        ]
+      },
+      "documented_srv_alternatives": [
+        1
+      ],
+      "first_value_new": false,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "+1",
+        "+1"
+      ]
+    },
+    {
+      "leg": "73-74",
+      "field": "D",
+      "srv": 17.0,
+      "opus": 12.0,
+      "opus_values": [
+        12.0
+      ],
+      "opus_lines": [
+        67,
+        139
+      ],
+      "srv_line": 150,
+      "previous": {
+        "flash": [
+          17.0
+        ],
+        "pro": [
+          12.0
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": false,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "12,00",
+        "12,00"
+      ]
+    },
+    {
+      "leg": "74-75",
+      "field": "D",
+      "srv": 17.0,
+      "opus": 12.0,
+      "opus_values": [
+        12.0,
+        17.0
+      ],
+      "opus_lines": [
+        68,
+        140
+      ],
+      "srv_line": 152,
+      "previous": {
+        "flash": [
+          17.0
+        ],
+        "pro": [
+          17.0
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": true,
+      "srv_present_as_alternative": true,
+      "opus_literal_fields": [
+        "12,00 [? 17,00]",
+        "12,00 [?]"
+      ]
+    },
+    {
+      "leg": "a-b",
+      "field": "V",
+      "srv": -37.0,
+      "opus": -32.0,
+      "opus_values": [
+        -32.0
+      ],
+      "opus_lines": [
+        74,
+        144
+      ],
+      "srv_line": 157,
+      "previous": {
+        "flash": [
+          -37.0
+        ],
+        "pro": [
+          -37.0
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": true,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "−32",
+        "−32 [?]"
+      ]
+    },
+    {
+      "leg": "24-25",
+      "field": "V",
+      "srv": 43.0,
+      "opus": 13.0,
+      "opus_values": [
+        13.0
+      ],
+      "opus_lines": [
+        163
+      ],
+      "srv_line": 89,
+      "previous": {
+        "flash": [
+          43.0
+        ],
+        "pro": [
+          43.0
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": true,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "+13"
+      ]
+    },
+    {
+      "leg": "28-29",
+      "field": "V",
+      "srv": 45.0,
+      "opus": -45.0,
+      "opus_values": [
+        -45.0
+      ],
+      "opus_lines": [
+        167
+      ],
+      "srv_line": 93,
+      "previous": {
+        "flash": [
+          45.0
+        ],
+        "pro": [
+          45.0
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": true,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "−45"
+      ]
+    },
+    {
+      "leg": "36-37",
+      "field": "V",
+      "srv": 3.0,
+      "opus": 5.0,
+      "opus_values": [
+        5.0,
+        3.0
+      ],
+      "opus_lines": [
+        175
+      ],
+      "srv_line": 102,
+      "previous": {
+        "flash": [
+          3.0
+        ],
+        "pro": [
+          3.0
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": true,
+      "srv_present_as_alternative": true,
+      "opus_literal_fields": [
+        "+5 [? +3]"
+      ]
+    },
+    {
+      "leg": "37-38",
+      "field": "V",
+      "srv": 24.0,
+      "opus": 29.0,
+      "opus_values": [
+        29.0,
+        24.0
+      ],
+      "opus_lines": [
+        176
+      ],
+      "srv_line": 103,
+      "previous": {
+        "flash": [
+          24.0
+        ],
+        "pro": [
+          24.0
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": true,
+      "srv_present_as_alternative": true,
+      "opus_literal_fields": [
+        "+29 [? +24]"
+      ]
+    },
+    {
+      "leg": "38-39",
+      "field": "D",
+      "srv": 17.5,
+      "opus": 17.1,
+      "opus_values": [
+        17.1
+      ],
+      "opus_lines": [
+        177
+      ],
+      "srv_line": 104,
+      "previous": {
+        "flash": [
+          17.5
+        ],
+        "pro": [
+          17.5
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": true,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "17,10"
+      ]
+    },
+    {
+      "leg": "38-39",
+      "field": "V",
+      "srv": -62.0,
+      "opus": 62.0,
+      "opus_values": [
+        62.0
+      ],
+      "opus_lines": [
+        177
+      ],
+      "srv_line": 104,
+      "previous": {
+        "flash": [
+          -62.0
+        ],
+        "pro": [
+          -62.0
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": true,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "+62"
+      ]
+    },
+    {
+      "leg": "39-40",
+      "field": "A",
+      "srv": 75.0,
+      "opus": 35.0,
+      "opus_values": [
+        35.0
+      ],
+      "opus_lines": [
+        178
+      ],
+      "srv_line": 107,
+      "previous": {
+        "flash": [
+          75.0
+        ],
+        "pro": [
+          75.0
+        ]
+      },
+      "documented_srv_alternatives": [
+        25
+      ],
+      "first_value_new": true,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "35"
+      ]
+    },
+    {
+      "leg": "42-43",
+      "field": "A",
+      "srv": 95.0,
+      "opus": 91.0,
+      "opus_values": [
+        91.0
+      ],
+      "opus_lines": [
+        193
+      ],
+      "srv_line": 110,
+      "previous": {
+        "flash": [
+          95.0
+        ],
+        "pro": [
+          95.0
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": true,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "91"
+      ]
+    },
+    {
+      "leg": "44-45",
+      "field": "D",
+      "srv": 6.7,
+      "opus": 6.2,
+      "opus_values": [
+        6.2
+      ],
+      "opus_lines": [
+        195
+      ],
+      "srv_line": 113,
+      "previous": {
+        "flash": [
+          6.7
+        ],
+        "pro": [
+          6.7
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": true,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "6,20"
+      ]
+    },
+    {
+      "leg": "48-49",
+      "field": "A",
+      "srv": 74.0,
+      "opus": 24.0,
+      "opus_values": [
+        24.0
+      ],
+      "opus_lines": [
+        199
+      ],
+      "srv_line": 117,
+      "previous": {
+        "flash": [
+          74.0
+        ],
+        "pro": [
+          74.0
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": true,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "24"
+      ]
+    },
+    {
+      "leg": "49-50",
+      "field": "A",
+      "srv": 68.0,
+      "opus": 88.0,
+      "opus_values": [
+        88.0
+      ],
+      "opus_lines": [
+        200
+      ],
+      "srv_line": 119,
+      "previous": {
+        "flash": [
+          58.0
+        ],
+        "pro": [
+          68.0
+        ]
+      },
+      "documented_srv_alternatives": [
+        88
+      ],
+      "first_value_new": false,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "88"
+      ]
+    },
+    {
+      "leg": "53-54",
+      "field": "D",
+      "srv": 19.3,
+      "opus": 15.3,
+      "opus_values": [
+        15.3
+      ],
+      "opus_lines": [
+        204
+      ],
+      "srv_line": 123,
+      "previous": {
+        "flash": [
+          19.3
+        ],
+        "pro": [
+          19.3
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": true,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "15,30"
+      ]
+    },
+    {
+      "leg": "55-56",
+      "field": "D",
+      "srv": 5.9,
+      "opus": 5.8,
+      "opus_values": [
+        5.8
+      ],
+      "opus_lines": [
+        206
+      ],
+      "srv_line": 125,
+      "previous": {
+        "flash": [
+          5.9
+        ],
+        "pro": [
+          5.9
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": true,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "5,80"
+      ]
+    },
+    {
+      "leg": "59-60",
+      "field": "D",
+      "srv": 17.6,
+      "opus": 12.6,
+      "opus_values": [
+        12.6
+      ],
+      "opus_lines": [
+        211
+      ],
+      "srv_line": 130,
+      "previous": {
+        "flash": [
+          17.6
+        ],
+        "pro": [
+          17.6
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "first_value_new": true,
+      "srv_present_as_alternative": false,
+      "opus_literal_fields": [
+        "12,60"
+      ]
+    }
+  ],
+  "opus_alternatives": [
+    {
+      "leg": "65-66",
+      "field": "V",
+      "srv": -75.0,
+      "opus": -75.0,
+      "opus_values": [
+        -75.0,
+        -25.0
+      ],
+      "opus_lines": [
+        59,
+        131
+      ],
+      "srv_line": 140,
+      "previous": {
+        "flash": [
+          -75.0,
+          -71.0
+        ],
+        "pro": [
+          -75.0
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "new_alternative_values": [
+        -25.0
+      ],
+      "opus_literal_fields": [
+        "−75 [? −25]",
+        "−75 [?]"
+      ]
+    },
+    {
+      "leg": "74-75",
+      "field": "D",
+      "srv": 17.0,
+      "opus": 12.0,
+      "opus_values": [
+        12.0,
+        17.0
+      ],
+      "opus_lines": [
+        68,
+        140
+      ],
+      "srv_line": 152,
+      "previous": {
+        "flash": [
+          17.0
+        ],
+        "pro": [
+          17.0
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "new_alternative_values": [],
+      "opus_literal_fields": [
+        "12,00 [? 17,00]",
+        "12,00 [?]"
+      ]
+    },
+    {
+      "leg": "36-37",
+      "field": "V",
+      "srv": 3.0,
+      "opus": 5.0,
+      "opus_values": [
+        5.0,
+        3.0
+      ],
+      "opus_lines": [
+        175
+      ],
+      "srv_line": 102,
+      "previous": {
+        "flash": [
+          3.0
+        ],
+        "pro": [
+          3.0
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "new_alternative_values": [],
+      "opus_literal_fields": [
+        "+5 [? +3]"
+      ]
+    },
+    {
+      "leg": "37-38",
+      "field": "V",
+      "srv": 24.0,
+      "opus": 29.0,
+      "opus_values": [
+        29.0,
+        24.0
+      ],
+      "opus_lines": [
+        176
+      ],
+      "srv_line": 103,
+      "previous": {
+        "flash": [
+          24.0
+        ],
+        "pro": [
+          24.0
+        ]
+      },
+      "documented_srv_alternatives": [],
+      "new_alternative_values": [],
+      "opus_literal_fields": [
+        "+29 [? +24]"
+      ]
+    }
+  ],
+  "baseline_commit": "fc33499bc127d784e8e0638ad3e45af9a3d85834",
+  "comparison_date": "2026-09-16",
+  "model_label": "Claude Opus 5 — oznaczenie podane przez użytkownika; brak logu wykonania i identyfikatora modelu.",
+  "auxiliary_comparison": {
+    "method": "All per-leg Lh and dh read mechanically from first Opus table occurrence, compared with current SRV comments, without judging original scan. Alternatives retained from every occurrence. Previous Gemini values include bracket alternatives. Summary rows and margin notes excluded.",
+    "summary": {
+      "expected_legs": 78,
+      "compared_legs": 78,
+      "compared_fields": 230,
+      "compared_unique_fields": 156,
+      "different_unique_fields": 27,
+      "different_legs": 24,
+      "different_field_counts": {
+        "Lh": 10,
+        "dh": 17
+      },
+      "different_after_alternatives": 24,
+      "novel_primary_fields": 21,
+      "novel_alternatives_count": 9,
+      "duplicate_primary_conflicts": []
+    },
+    "differences": [
+      {
+        "leg": "1-2",
+        "field": "Lh",
+        "srv": 10.59,
+        "opus": 10.53,
+        "opus_values": [
+          10.53,
+          10.6
+        ],
+        "opus_lines": [
+          22,
+          99
+        ],
+        "srv_line": 60,
+        "previous": {
+          "flash": [
+            10.73,
+            10.59
+          ],
+          "pro": [
+            10.59
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "4-5",
+        "field": "Lh",
+        "srv": 15.97,
+        "opus": 15.93,
+        "opus_values": [
+          15.93,
+          15.97
+        ],
+        "opus_lines": [
+          25,
+          102
+        ],
+        "srv_line": 64,
+        "previous": {
+          "flash": [
+            15.97
+          ],
+          "pro": [
+            15.97
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": true
+      },
+      {
+        "leg": "16-17",
+        "field": "Lh",
+        "srv": 19.21,
+        "opus": 19.2,
+        "opus_values": [
+          19.2,
+          19.21
+        ],
+        "opus_lines": [
+          37,
+          114
+        ],
+        "srv_line": 78,
+        "previous": {
+          "flash": [
+            19.21,
+            19.2
+          ],
+          "pro": [
+            19.21
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": false,
+        "srv_present_as_alternative": true
+      },
+      {
+        "leg": "20-21",
+        "field": "Lh",
+        "srv": 10.23,
+        "opus": 10.73,
+        "opus_values": [
+          10.73
+        ],
+        "opus_lines": [
+          159
+        ],
+        "srv_line": 85,
+        "previous": {
+          "flash": [
+            10.73
+          ],
+          "pro": [
+            10.73
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": false,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "21-22",
+        "field": "dh",
+        "srv": -11.86,
+        "opus": -11.88,
+        "opus_values": [
+          -11.88
+        ],
+        "opus_lines": [
+          160
+        ],
+        "srv_line": 86,
+        "previous": {
+          "flash": [
+            -11.86
+          ],
+          "pro": [
+            -11.86
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "23-24",
+        "field": "dh",
+        "srv": 3.58,
+        "opus": 3.18,
+        "opus_values": [
+          3.18
+        ],
+        "opus_lines": [
+          162
+        ],
+        "srv_line": 88,
+        "previous": {
+          "flash": [
+            3.58
+          ],
+          "pro": [
+            3.58
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "24-25",
+        "field": "Lh",
+        "srv": 8.11,
+        "opus": 11.1,
+        "opus_values": [
+          11.1,
+          10.81
+        ],
+        "opus_lines": [
+          163
+        ],
+        "srv_line": 89,
+        "previous": {
+          "flash": [
+            8.11
+          ],
+          "pro": [
+            15.44
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "24-25",
+        "field": "dh",
+        "srv": 7.56,
+        "opus": 2.56,
+        "opus_values": [
+          2.56
+        ],
+        "opus_lines": [
+          163
+        ],
+        "srv_line": 89,
+        "previous": {
+          "flash": [
+            7.56
+          ],
+          "pro": [
+            14.39
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "27-28",
+        "field": "dh",
+        "srv": 11.68,
+        "opus": 11.63,
+        "opus_values": [
+          11.63
+        ],
+        "opus_lines": [
+          166
+        ],
+        "srv_line": 92,
+        "previous": {
+          "flash": [
+            11.63
+          ],
+          "pro": [
+            11.63
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": false,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "28-29",
+        "field": "dh",
+        "srv": 14.49,
+        "opus": -14.45,
+        "opus_values": [
+          -14.45
+        ],
+        "opus_lines": [
+          167
+        ],
+        "srv_line": 93,
+        "previous": {
+          "flash": [
+            14.45
+          ],
+          "pro": [
+            14.45
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "36-37",
+        "field": "dh",
+        "srv": 1.07,
+        "opus": 1.02,
+        "opus_values": [
+          1.02
+        ],
+        "opus_lines": [
+          175
+        ],
+        "srv_line": 102,
+        "previous": {
+          "flash": [
+            1.07
+          ],
+          "pro": [
+            1.07
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "37-38",
+        "field": "Lh",
+        "srv": 9.59,
+        "opus": 9.19,
+        "opus_values": [
+          9.19
+        ],
+        "opus_lines": [
+          176
+        ],
+        "srv_line": 103,
+        "previous": {
+          "flash": [
+            9.59
+          ],
+          "pro": [
+            9.59
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "38-39",
+        "field": "dh",
+        "srv": -15.44,
+        "opus": 15.44,
+        "opus_values": [
+          15.44,
+          -15.44
+        ],
+        "opus_lines": [
+          177
+        ],
+        "srv_line": 104,
+        "previous": {
+          "flash": [
+            -15.44
+          ],
+          "pro": [
+            -15.44
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": true
+      },
+      {
+        "leg": "39-40",
+        "field": "Lh",
+        "srv": 11.66,
+        "opus": 11.6,
+        "opus_values": [
+          11.6
+        ],
+        "opus_lines": [
+          178
+        ],
+        "srv_line": 107,
+        "previous": {
+          "flash": [
+            11.66
+          ],
+          "pro": [
+            11.66
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "40-41",
+        "field": "dh",
+        "srv": 5.59,
+        "opus": 5.53,
+        "opus_values": [
+          5.53
+        ],
+        "opus_lines": [
+          191
+        ],
+        "srv_line": 108,
+        "previous": {
+          "flash": [
+            5.59
+          ],
+          "pro": [
+            5.59
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "41-42",
+        "field": "dh",
+        "srv": -1.04,
+        "opus": -1.09,
+        "opus_values": [
+          -1.09
+        ],
+        "opus_lines": [
+          192
+        ],
+        "srv_line": 109,
+        "previous": {
+          "flash": [
+            -1.04
+          ],
+          "pro": [
+            -1.04
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "44-45",
+        "field": "dh",
+        "srv": 3.84,
+        "opus": 3.54,
+        "opus_values": [
+          3.54
+        ],
+        "opus_lines": [
+          195
+        ],
+        "srv_line": 113,
+        "previous": {
+          "flash": [
+            3.84
+          ],
+          "pro": [
+            3.84
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "53-54",
+        "field": "dh",
+        "srv": 13.87,
+        "opus": 13.09,
+        "opus_values": [
+          13.09
+        ],
+        "opus_lines": [
+          204
+        ],
+        "srv_line": 123,
+        "previous": {
+          "flash": [
+            13.87
+          ],
+          "pro": [
+            13.87
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "55-56",
+        "field": "Lh",
+        "srv": 5.38,
+        "opus": 5.3,
+        "opus_values": [
+          5.3
+        ],
+        "opus_lines": [
+          206
+        ],
+        "srv_line": 125,
+        "previous": {
+          "flash": [
+            5.38
+          ],
+          "pro": [
+            5.38
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "55-56",
+        "field": "dh",
+        "srv": -2.39,
+        "opus": -2.59,
+        "opus_values": [
+          -2.59
+        ],
+        "opus_lines": [
+          206
+        ],
+        "srv_line": 125,
+        "previous": {
+          "flash": [
+            -2.39
+          ],
+          "pro": [
+            -2.39
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "58-59",
+        "field": "dh",
+        "srv": -6.44,
+        "opus": -6.43,
+        "opus_values": [
+          -6.43
+        ],
+        "opus_lines": [
+          210
+        ],
+        "srv_line": 129,
+        "previous": {
+          "flash": [
+            -6.43
+          ],
+          "pro": [
+            -6.43
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": false,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "59-60",
+        "field": "Lh",
+        "srv": 17.07,
+        "opus": 12.07,
+        "opus_values": [
+          12.07
+        ],
+        "opus_lines": [
+          211
+        ],
+        "srv_line": 130,
+        "previous": {
+          "flash": [
+            17.07
+          ],
+          "pro": [
+            17.07
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "59-60",
+        "field": "dh",
+        "srv": -4.24,
+        "opus": -4.04,
+        "opus_values": [
+          -4.04,
+          -3.05
+        ],
+        "opus_lines": [
+          211
+        ],
+        "srv_line": 130,
+        "previous": {
+          "flash": [
+            -4.24
+          ],
+          "pro": [
+            -4.24
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "60-61",
+        "field": "dh",
+        "srv": -2.27,
+        "opus": -2.37,
+        "opus_values": [
+          -2.37
+        ],
+        "opus_lines": [
+          54,
+          126
+        ],
+        "srv_line": 133,
+        "previous": {
+          "flash": [
+            -2.27
+          ],
+          "pro": [
+            -2.27
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "71-72",
+        "field": "dh",
+        "srv": -0.35,
+        "opus": 0.35,
+        "opus_values": [
+          0.35
+        ],
+        "opus_lines": [
+          65,
+          137
+        ],
+        "srv_line": 148,
+        "previous": {
+          "flash": [
+            -0.35
+          ],
+          "pro": [
+            -0.35
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": true,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "73-74",
+        "field": "Lh",
+        "srv": 17.0,
+        "opus": 12.0,
+        "opus_values": [
+          12.0
+        ],
+        "opus_lines": [
+          67,
+          139
+        ],
+        "srv_line": 150,
+        "previous": {
+          "flash": [
+            17.0
+          ],
+          "pro": [
+            12.0
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": false,
+        "srv_present_as_alternative": false
+      },
+      {
+        "leg": "a-b",
+        "field": "dh",
+        "srv": -3.25,
+        "opus": -3.05,
+        "opus_values": [
+          -3.05
+        ],
+        "opus_lines": [
+          74,
+          144
+        ],
+        "srv_line": 157,
+        "previous": {
+          "flash": [
+            -3.05
+          ],
+          "pro": [
+            -3.05
+          ]
+        },
+        "new_first_value_vs_gemini_and_srv": false,
+        "srv_present_as_alternative": false
+      }
+    ],
+    "novel_alternatives": [
+      {
+        "leg": "0-1",
+        "field": "Lh",
+        "srv": 11.8,
+        "opus": 11.8,
+        "opus_values": [
+          11.8,
+          11.55
+        ],
+        "opus_lines": [
+          21,
+          98
+        ],
+        "srv_line": 59,
+        "previous": {
+          "flash": [
+            11.8,
+            11.56
+          ],
+          "pro": [
+            11.8
+          ]
+        },
+        "novel_alternatives": [
+          11.55
+        ]
+      },
+      {
+        "leg": "1-2",
+        "field": "Lh",
+        "srv": 10.59,
+        "opus": 10.53,
+        "opus_values": [
+          10.53,
+          10.6
+        ],
+        "opus_lines": [
+          22,
+          99
+        ],
+        "srv_line": 60,
+        "previous": {
+          "flash": [
+            10.73,
+            10.59
+          ],
+          "pro": [
+            10.59
+          ]
+        },
+        "novel_alternatives": [
+          10.6
+        ]
+      },
+      {
+        "leg": "7-8",
+        "field": "Lh",
+        "srv": 14.08,
+        "opus": 14.08,
+        "opus_values": [
+          14.08,
+          13.9
+        ],
+        "opus_lines": [
+          28,
+          105
+        ],
+        "srv_line": 68,
+        "previous": {
+          "flash": [
+            14.08
+          ],
+          "pro": [
+            14.08
+          ]
+        },
+        "novel_alternatives": [
+          13.9
+        ]
+      },
+      {
+        "leg": "8-9",
+        "field": "Lh",
+        "srv": 11.19,
+        "opus": 11.19,
+        "opus_values": [
+          11.19,
+          11.13
+        ],
+        "opus_lines": [
+          29,
+          106
+        ],
+        "srv_line": 69,
+        "previous": {
+          "flash": [
+            11.19
+          ],
+          "pro": [
+            11.19
+          ]
+        },
+        "novel_alternatives": [
+          11.13
+        ]
+      },
+      {
+        "leg": "74-75",
+        "field": "Lh",
+        "srv": 14.4,
+        "opus": 14.4,
+        "opus_values": [
+          14.4,
+          15.4
+        ],
+        "opus_lines": [
+          68,
+          140
+        ],
+        "srv_line": 152,
+        "previous": {
+          "flash": [
+            14.4
+          ],
+          "pro": [
+            14.4
+          ]
+        },
+        "novel_alternatives": [
+          15.4
+        ]
+      },
+      {
+        "leg": "24-25",
+        "field": "Lh",
+        "srv": 8.11,
+        "opus": 11.1,
+        "opus_values": [
+          11.1,
+          10.81
+        ],
+        "opus_lines": [
+          163
+        ],
+        "srv_line": 89,
+        "previous": {
+          "flash": [
+            8.11
+          ],
+          "pro": [
+            15.44
+          ]
+        },
+        "novel_alternatives": [
+          10.81
+        ]
+      },
+      {
+        "leg": "44-45",
+        "field": "Lh",
+        "srv": 6.46,
+        "opus": 6.46,
+        "opus_values": [
+          6.46,
+          5.08
+        ],
+        "opus_lines": [
+          195
+        ],
+        "srv_line": 113,
+        "previous": {
+          "flash": [
+            6.46,
+            5.46
+          ],
+          "pro": [
+            5.46
+          ]
+        },
+        "novel_alternatives": [
+          5.08
+        ]
+      },
+      {
+        "leg": "48-49",
+        "field": "dh",
+        "srv": 5.53,
+        "opus": 5.53,
+        "opus_values": [
+          5.53,
+          5.55
+        ],
+        "opus_lines": [
+          199
+        ],
+        "srv_line": 117,
+        "previous": {
+          "flash": [
+            5.53
+          ],
+          "pro": [
+            5.33
+          ]
+        },
+        "novel_alternatives": [
+          5.55
+        ]
+      },
+      {
+        "leg": "59-60",
+        "field": "dh",
+        "srv": -4.24,
+        "opus": -4.04,
+        "opus_values": [
+          -4.04,
+          -3.05
+        ],
+        "opus_lines": [
+          211
+        ],
+        "srv_line": 130,
+        "previous": {
+          "flash": [
+            -4.24
+          ],
+          "pro": [
+            -4.24
+          ]
+        },
+        "novel_alternatives": [
+          -3.05
+        ]
+      }
+    ]
+  }
+}

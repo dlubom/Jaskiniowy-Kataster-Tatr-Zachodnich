@@ -1,7 +1,7 @@
 {
   "method": "Local ENZ; both first stations translated to zero. No rotation, scale, fitted shift or GNSS. Main chains only. Samples at 1001 equal fractions of each 3D chain length, endpoints included. Correlations are descriptive, samples are not independent observations.",
   "sources": {
-    "Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_R.SRV": "397ac7b7037a1b48f33e80bdd97c61abc7130846ac9a3bbe9e8e13bb1f0632dd",
+    "Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_R.SRV": "578be7dacfd1c6d90f7b6d98d8561e35e2b9987e7ca4cc29f99441661d644ed0",
     "Poligony/D_Koscieliska/Organy/Czarna/_RAW/02/czarna-borowiec.srv": "b2187daf372360e39bb982878a18023a5c18569b39f216b0261741988476df5b",
     "Poligony/D_Koscieliska/Organy/Czarna/CZ_B_DAV.SRV": "b1a8f2835c7cd560f099be4ea484e9cec03f73e10b759c69e8c4ae4f3c629b11"
   },

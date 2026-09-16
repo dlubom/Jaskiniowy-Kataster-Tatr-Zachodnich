@@ -1,6 +1,6 @@
 # Jaskinia Czarna — audyt skanów i stan digitalizacji
 
-Data audytu: 2026-09-12. Aktualizacja: 2026-09-13.
+Data audytu: 2026-09-12. Aktualizacja: 2026-09-16.
 Stan wejściowy: `feff15dc568695cff5322e44232ed59c8d214eed`.
 Audyt lokalnego checkoutu; lokalny `origin/master` był o jeden commit dalej,
 ale jego różnica nie obejmowała materiałów Czarnej. Nie aktualizowano checkoutu.
@@ -184,11 +184,17 @@ odczytu instrumentu. Dlatego nie zastąpiono nimi wartości D/A/V.
 | --- | --- | --- | --- |
 | 2→3 | 5,20 m, −35° | Δh=−4,97 m | −2,983 m |
 | 10→11 | 5,40 m, +36° | Lh=3,28 m | 4,369 m |
-| 20→21 | 12,40 m, +30° | Lh=10,23 m | 10,739 m |
 | 44→45 | 6,70 m, +35° | Lh=6,46 m | 5,488 m |
 | 64→65 | 8,00 m, −33° | Δh=−3,64 m | −4,357 m |
 | 65→66 | 19,80 m, −75° | Δh=−18,72 m | −19,125 m |
 | 74→75 | 17,00 m, −25° | Lh=14,40 m | 15,407 m |
+
+Kontrola 2026-09-16, opisana w [porównaniu Opusa](POROWNANIE_OPUS.md),
+skorygowała wcześniejszy odczyt Lh20→21 z 10,23 na **10,73 m**.
+Fotografia potwierdza wartość podaną już przez oba Gemini i ponownie przez
+Opusa. Był to błąd naszego odczytu kolumny pomocniczej, nie wykazany błąd
+rachunku w dzienniku. Usunięto ten przykład z tabeli i poprawiono komentarz
+SRV; wszystkie D/A/V pozostały bez zmian.
 
 Komentarze SRV zaznaczają także inne różnice większe niż 0,15 m.
 Ten próg służy jedynie do wskazania rozbieżnych rachunków, nie jest
