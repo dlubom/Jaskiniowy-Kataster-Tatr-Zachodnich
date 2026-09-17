@@ -1,0 +1,67 @@
+{
+  "base_commit": "446edc42a470e653253a29fdcf78bc89ba562d35",
+  "transcription_commit": "c878b7bd1e428595854a8191a5c5b2339bb978b9",
+  "survex": "cavern - Survex 1.4.22",
+  "coordinate_resolution_m": 0.01,
+  "input_sha256": {
+    "KATASTER.wpj": "efe271bddce9b7e774fd98dd85ab8e314a1395242d42b8eed251f1157e1dc302",
+    "Poligony/OTWORY.SRV": "926c327a9b1821e8f177d746505ea9aa61db33f41b245ef71109614f74f0156c",
+    "Poligony/D_Koscieliska/Organy/Czarna/CZ_Z_S.SRV": "32d1d8c88b97bc6f8fb72e950ec02d9b06c6111b2f84725942526c564aade254",
+    "Poligony/D_Koscieliska/Organy/Czarna/CZ_B_DAV.SRV": "b1a8f2835c7cd560f099be4ea484e9cec03f73e10b759c69e8c4ae4f3c629b11",
+    "Poligony/D_Koscieliska/Organy/Czarna/CZ_K_S.SRV": "fa9a2440a95121abf39c3738fd29193eac03856bd333b42867f5ce513d5f17a6",
+    "Poligony/D_Koscieliska/Organy/Czarna/CZ_W_S.SRV": "7551bcea09f72b157162a3937309e4460e5e82cb0f7cfb7420233d41223df33a",
+    "Poligony/D_Koscieliska/Organy/Czarna/CZ_N_S.SRV": "66430580f71efb64606256d5e92eb111d07f93bc9fe7318a4bb443074954817a",
+    "Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_R.SRV": "0faefeda7e5bd7c65985928a2834c230d8e7e1bd33416f85d8ea91e0cae3e758",
+    "Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_N.SRV": "9f8df15c4be8cc720a27fffc9b35365bcbba94be4f6f49cf9d24eb2d69ff1905"
+  },
+  "previous_srv_files_byte_identical": 205,
+  "transcription_rows_unchanged": 78,
+  "transcription_length_m": 1122.5,
+  "baseline": {
+    "stations": 18512,
+    "legs": 18639,
+    "loops": 203
+  },
+  "both_traverses": {
+    "stations": 18591,
+    "legs": 18718,
+    "loops": 203
+  },
+  "old_node_labels_checked": 12080,
+  "max_existing_node_shift_m": 0.0,
+  "max_existing_node_shift_one_fix_m": 0.0,
+  "gnss_III_UTM34N": [
+    418581.57,
+    5455524.64,
+    1403.92
+  ],
+  "closure_mixed": {
+    "delta_ENZ_m": [
+      -7.47,
+      7.19,
+      2.85
+    ],
+    "horizontal_m": 10.36807600280785,
+    "spatial_m": 10.752650835956686
+  },
+  "closure_borowiec_with_old_kujat_tail": {
+    "delta_ENZ_m": [
+      -6.92,
+      9.05,
+      2.87
+    ],
+    "horizontal_m": 11.392493142416194,
+    "spatial_m": 11.74843819407499
+  },
+  "closure_new_kujat": null,
+  "new_kujat_limitation": "No second identified tie; no loop closure available.",
+  "raw_endpoint_comparison_NOT_closure": {
+    "delta_ENZ_m": [
+      6.681348777790504,
+      -6.61166782143448,
+      -4.825846913968327
+    ],
+    "horizontal_m": 9.39971131851797,
+    "spatial_m": 10.566142688253478
+  }
+}
