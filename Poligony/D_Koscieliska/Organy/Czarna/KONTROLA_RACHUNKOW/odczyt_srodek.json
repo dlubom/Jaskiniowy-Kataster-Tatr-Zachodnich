@@ -1,0 +1,1163 @@
+{
+  "reader": "independent_middle",
+  "source_files": [
+    "Poligony/D_Koscieliska/Organy/Czarna/_RAW/02/20220325_123630 ciąg gł Czarna2.jpg"
+  ],
+  "method": "Odczyt wizualny z pełnej fotografii, obrotu i powiększeń, przed porównaniem do SRV i surowych odpowiedzi modeli. Wcześniej przeczytano wymagane instrukcje i raporty zawierające znane niepewności; nie był to eksperyment całkowicie zaślepiony. Obliczenia nie były użyte do wypełniania pól.",
+  "rows": [
+    {
+      "from": "19",
+      "to": "20",
+      "D": 17.5,
+      "A": 85.0,
+      "V": -13.0,
+      "Lh": 17.04,
+      "dh": -3.93,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "20",
+      "to": "21",
+      "D": 12.4,
+      "A": 115.0,
+      "V": 30.0,
+      "Lh": 10.73,
+      "dh": 6.2,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Lh=10,73 czytelne; azymut 115 i kąt +30 poprawiane/pogrubione, zachowany końcowy zapis."
+    },
+    {
+      "from": "21",
+      "to": "22",
+      "D": 20.2,
+      "A": 60.0,
+      "V": -36.0,
+      "Lh": 16.34,
+      "dh": -11.86,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "22",
+      "to": "23",
+      "D": 5.4,
+      "A": 78.0,
+      "V": -3.0,
+      "Lh": 5.4,
+      "dh": -0.28,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "23",
+      "to": "24",
+      "D": 9.2,
+      "A": 108.0,
+      "V": 23.0,
+      "Lh": 8.46,
+      "dh": 3.58,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "24",
+      "to": "25",
+      "D": 11.1,
+      "A": 117.0,
+      "V": 43.0,
+      "Lh": 8.11,
+      "dh": 7.56,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "25",
+      "to": "26",
+      "D": 20.6,
+      "A": 94.0,
+      "V": 14.0,
+      "Lh": 19.98,
+      "dh": 4.97,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "26",
+      "to": "27",
+      "D": 20.3,
+      "A": 204.0,
+      "V": 45.0,
+      "Lh": 14.35,
+      "dh": 14.35,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "27",
+      "to": "28",
+      "D": 13.2,
+      "A": 180.0,
+      "V": 62.0,
+      "Lh": 6.18,
+      "dh": 11.63,
+      "uncertain_fields": [
+        "dh"
+      ],
+      "alternatives": {
+        "dh": [
+          11.68
+        ]
+      },
+      "note": "Ostatnia cyfra Δh jest miękka: preferuję 3, możliwe 8; odczytuję +11,63 bez wnioskowania rachunkowego."
+    },
+    {
+      "from": "28",
+      "to": "29",
+      "D": 20.5,
+      "A": 132.0,
+      "V": 45.0,
+      "Lh": 14.49,
+      "dh": 14.49,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "29",
+      "to": "30",
+      "D": 13.8,
+      "A": 77.0,
+      "V": -3.0,
+      "Lh": 13.8,
+      "dh": -0.71,
+      "uncertain_fields": [
+        "D",
+        "Lh"
+      ],
+      "alternatives": {
+        "D": [
+          13.6
+        ],
+        "Lh": [
+          13.6
+        ]
+      },
+      "note": "W obu długościach preferuję zapis 13,80, lecz rozmazane 8/6 pozostaje niepewne."
+    },
+    {
+      "from": "30",
+      "to": "31",
+      "D": 20.5,
+      "A": 93.0,
+      "V": 23.0,
+      "Lh": 18.87,
+      "dh": 8.0,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "31",
+      "to": "32",
+      "D": 9.3,
+      "A": 132.0,
+      "V": 40.0,
+      "Lh": 7.11,
+      "dh": 5.97,
+      "uncertain_fields": [
+        "dh"
+      ],
+      "alternatives": {
+        "dh": [
+          5.77
+        ]
+      },
+      "note": "Preferuję +5,97; rozmyta przedostatnia cyfra może wyglądać jak 7."
+    },
+    {
+      "from": "32",
+      "to": "33",
+      "D": 10.5,
+      "A": 160.0,
+      "V": 46.0,
+      "Lh": 7.28,
+      "dh": 7.54,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "33",
+      "to": "34",
+      "D": 10.5,
+      "A": 82.0,
+      "V": 3.0,
+      "Lh": 10.5,
+      "dh": 0.54,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "34",
+      "to": "35",
+      "D": 6.5,
+      "A": 97.0,
+      "V": -22.0,
+      "Lh": 6.02,
+      "dh": -2.42,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "35",
+      "to": "36",
+      "D": 5.6,
+      "A": 37.0,
+      "V": 0.0,
+      "Lh": 5.6,
+      "dh": 0.0,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "36",
+      "to": "37",
+      "D": 20.7,
+      "A": 63.0,
+      "V": 3.0,
+      "Lh": 20.7,
+      "dh": 1.07,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "37",
+      "to": "38",
+      "D": 10.5,
+      "A": 74.0,
+      "V": 24.0,
+      "Lh": 9.59,
+      "dh": 4.26,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "38",
+      "to": "39",
+      "D": 17.5,
+      "A": 75.0,
+      "V": -62.0,
+      "Lh": 8.2,
+      "dh": -15.44,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "39",
+      "to": "40",
+      "D": 12.2,
+      "A": 75.0,
+      "V": -17.0,
+      "Lh": 11.66,
+      "dh": -3.55,
+      "uncertain_fields": [
+        "A",
+        "dh"
+      ],
+      "alternatives": {
+        "A": [
+          25
+        ],
+        "dh": [
+          -3.58
+        ]
+      },
+      "note": "Preferuję azymut 75, możliwe 25; Δh preferuję −3,55, ale ostatnia cyfra może być 8."
+    },
+    {
+      "from": "40",
+      "to": "41",
+      "D": 20.3,
+      "A": 87.0,
+      "V": 16.0,
+      "Lh": 19.5,
+      "dh": 5.59,
+      "uncertain_fields": [
+        "dh"
+      ],
+      "alternatives": {
+        "dh": [
+          5.55
+        ]
+      },
+      "note": "Δh preferuję +5,59, lecz końcowa cyfra ma mały kontrast; możliwe +5,55."
+    },
+    {
+      "from": "41",
+      "to": "42",
+      "D": 20.1,
+      "A": 79.0,
+      "V": -3.0,
+      "Lh": 20.1,
+      "dh": -1.04,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "42",
+      "to": "43",
+      "D": 15.0,
+      "A": 95.0,
+      "V": 43.0,
+      "Lh": 10.96,
+      "dh": 10.23,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "43",
+      "to": "44",
+      "D": 20.7,
+      "A": 85.0,
+      "V": 5.0,
+      "Lh": 20.7,
+      "dh": 1.75,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "44",
+      "to": "45",
+      "D": 6.7,
+      "A": 91.0,
+      "V": 35.0,
+      "Lh": 6.46,
+      "dh": 3.84,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Lh=6,46 i Δh=+3,84 odczytane bezpośrednio mimo możliwej niespójności rachunku z D=6,70 oraz V=+35."
+    },
+    {
+      "from": "45",
+      "to": "46",
+      "D": 20.4,
+      "A": 78.0,
+      "V": -3.0,
+      "Lh": 20.4,
+      "dh": -1.06,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "46",
+      "to": "47",
+      "D": 20.1,
+      "A": 58.0,
+      "V": -19.0,
+      "Lh": 19.0,
+      "dh": -6.54,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "47",
+      "to": "48",
+      "D": 17.5,
+      "A": 85.0,
+      "V": 18.0,
+      "Lh": 16.63,
+      "dh": 5.4,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "48",
+      "to": "49",
+      "D": 14.2,
+      "A": 74.0,
+      "V": 23.0,
+      "Lh": 13.06,
+      "dh": 5.53,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "49",
+      "to": "50",
+      "D": 14.2,
+      "A": 68.0,
+      "V": 61.0,
+      "Lh": 6.86,
+      "dh": 12.4,
+      "uncertain_fields": [
+        "A"
+      ],
+      "alternatives": {
+        "A": [
+          88
+        ]
+      },
+      "note": "Azymut wygląda raczej na 68, ale pierwszy znak może być 8; pomocnicze Lh i Δh czytelne."
+    },
+    {
+      "from": "50",
+      "to": "51",
+      "D": 9.9,
+      "A": 62.0,
+      "V": 42.0,
+      "Lh": 7.34,
+      "dh": 6.62,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "51",
+      "to": "52",
+      "D": 10.3,
+      "A": 57.0,
+      "V": 33.0,
+      "Lh": 8.63,
+      "dh": 5.6,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "52",
+      "to": "53",
+      "D": 8.4,
+      "A": 12.0,
+      "V": -3.0,
+      "Lh": 8.4,
+      "dh": -0.43,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "53",
+      "to": "54",
+      "D": 19.3,
+      "A": 45.0,
+      "V": 46.0,
+      "Lh": 13.39,
+      "dh": 13.87,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "54",
+      "to": "55",
+      "D": 9.1,
+      "A": 43.0,
+      "V": 45.0,
+      "Lh": 6.43,
+      "dh": 6.43,
+      "uncertain_fields": [
+        "dh"
+      ],
+      "alternatives": {
+        "dh": [
+          6.48
+        ]
+      },
+      "note": "Δh mocno poprawiane lub pogrubione; preferuję +6,43, dopuszczam +6,48."
+    },
+    {
+      "from": "55",
+      "to": "56",
+      "D": 5.9,
+      "A": 60.0,
+      "V": -24.0,
+      "Lh": 5.38,
+      "dh": -2.39,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "56",
+      "to": "57",
+      "D": 3.0,
+      "A": 97.0,
+      "V": -13.0,
+      "Lh": 2.92,
+      "dh": -0.67,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej."
+    },
+    {
+      "from": "57",
+      "to": "58",
+      "D": 10.0,
+      "A": null,
+      "V": -90.0,
+      "Lh": 0.0,
+      "dh": -10.0,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Azymut zastąpiony wyraźną kreską, zapisany jako null; V=−90°, D=10,00, Lh=0,00 oraz Δh=−10,00 czytelne. Nie podstawiono azymutu liczbowego."
+    },
+    {
+      "from": "58",
+      "to": "59",
+      "D": 9.1,
+      "A": 270.0,
+      "V": -45.0,
+      "Lh": 6.43,
+      "dh": -6.48,
+      "uncertain_fields": [
+        "Lh",
+        "dh"
+      ],
+      "alternatives": {
+        "dh": [
+          -6.43,
+          -6.44,
+          -6.45
+        ],
+        "Lh": [
+          6.45
+        ]
+      },
+      "note": "Pierwszy odczyt wizualny Lh=6,43 oraz Δh=−6,48. Po porównaniu z SRV i powrocie do powiększenia dopuszczam Lh=6,45; ostatnia cyfra Δh styka się z linią tabeli i pozostaje nierozstrzygnięta (3/4/5/8). D=9,10 i V=−45 czytelne. Nie uzupełniono z rachunku."
+    },
+    {
+      "from": "59",
+      "to": "60",
+      "D": 17.6,
+      "A": 35.0,
+      "V": -14.0,
+      "Lh": 17.07,
+      "dh": -4.24,
+      "uncertain_fields": [
+        "D"
+      ],
+      "alternatives": {
+        "D": [
+          12.6
+        ]
+      },
+      "note": "D preferuję 17,60 na podstawie grafii 7 i porównania z Lh=17,07 w tej samej linii; możliwe wizualnie 12,60. Δh=−4,24."
+    }
+  ],
+  "aggregates": [
+    {
+      "label": "Margines przy 25→26",
+      "raw": "Podnóże D…skiego (−36,63)",
+      "value": -36.63,
+      "field": "dh",
+      "from": null,
+      "to": "26",
+      "note": "Liczba odczytana bezpośrednio; nazwa częściowo nieczytelna. Pozycja wskazuje stację 26, lecz nie ma jawnego numeru stacji ani początku sumy."
+    },
+    {
+      "label": "Margines stacji 29",
+      "raw": "29 (+3,86)",
+      "value": 3.86,
+      "field": "dh",
+      "from": null,
+      "to": "29",
+      "note": "Czytelny numer i wartość. Brak jawnego początku sumy."
+    },
+    {
+      "label": "Margines stacji 38",
+      "raw": "38 (+28,09) Komin w Sali …",
+      "value": 28.09,
+      "field": "dh",
+      "from": null,
+      "to": "38",
+      "note": "Końcowe 09 pogrubione/poprawiane; liczba czytelna. Dalsza nazwa opisu niepewna."
+    },
+    {
+      "label": "Margines stacji 45",
+      "raw": "45 (+29,47)",
+      "value": 29.47,
+      "field": "dh",
+      "from": null,
+      "to": "45",
+      "note": "Odczyt bezpośredni; nawias i koniec liczby czytelne. Brak jawnego początku sumy."
+    },
+    {
+      "label": "Margines stacji 52",
+      "raw": "52 (+57,42)",
+      "value": 57.42,
+      "field": "dh",
+      "from": null,
+      "to": "52",
+      "note": "Cyfra 7 mocno pogrubiona; końcówka preferowana 42, słabsza od pierwszych cyfr. Brak jawnego początku sumy."
+    },
+    {
+      "label": "Suma przed pionem 57→58",
+      "raw": "Σ Δh +74,23 [poprawiane]",
+      "value": 74.23,
+      "field": "dh",
+      "from": null,
+      "to": "57",
+      "note": "Wyraźne Σ Δh, liczba wielokrotnie nadpisana; preferowany odczyt +74,23, wartość pozostaje niepewna. Nie utożsamiać bez sprawdzenia z sumą od 0."
+    },
+    {
+      "label": "Opis przy stacji 57",
+      "raw": "Stanowisko nad Błotnym Progiem [odczyt częściowy]",
+      "value": null,
+      "field": "unknown",
+      "from": null,
+      "to": "57",
+      "note": "Po ponownym powiększeniu marginesu preferuję Błotnym zamiast pierwszego odczytu Białym. Tekst w czterech wierszach przy podsumowaniu przed pionem. Nazwa częściowo słaba; nie wpływa na wartości tabeli."
+    }
+  ],
+  "post_read_comparison": {
+    "method": "Porównanie wykonano po zapisaniu własnej tabeli. Liczniki dotyczą pierwszych wartości, nie oceny alternatyw. Pola oznaczone przez czytelnika jako niepewne nie są klasyfikowane jako dowiedzione błędy modelu. Brak pary jest osobno, nie pięcioma błędami liczbowymi. Ocena tylko środkowej fotografii; nie ranking globalny.",
+    "models": [
+      {
+        "model_file": "gemini_flash_3.8.md",
+        "missing_pairs": [],
+        "different_unambiguous_primary_fields": 3,
+        "different_uncertain_primary_fields": 3,
+        "unambiguous_differences": [
+          {
+            "from": "24",
+            "to": "25",
+            "field": "D",
+            "reader": 11.1,
+            "model_primary": 21.1
+          },
+          {
+            "from": "28",
+            "to": "29",
+            "field": "Lh",
+            "reader": 14.49,
+            "model_primary": 14.45
+          },
+          {
+            "from": "28",
+            "to": "29",
+            "field": "dh",
+            "reader": 14.49,
+            "model_primary": 14.45
+          }
+        ],
+        "uncertain_differences": [
+          {
+            "from": "39",
+            "to": "40",
+            "field": "dh",
+            "reader": -3.55,
+            "model_primary": -3.58
+          },
+          {
+            "from": "49",
+            "to": "50",
+            "field": "A",
+            "reader": 68.0,
+            "model_primary": 58.0
+          },
+          {
+            "from": "58",
+            "to": "59",
+            "field": "dh",
+            "reader": -6.48,
+            "model_primary": -6.43
+          }
+        ]
+      },
+      {
+        "model_file": "gemini_pro.md",
+        "missing_pairs": [
+          "19→20"
+        ],
+        "different_unambiguous_primary_fields": 17,
+        "different_uncertain_primary_fields": 4,
+        "unambiguous_differences": [
+          {
+            "from": "20",
+            "to": "21",
+            "field": "A",
+            "reader": 115.0,
+            "model_primary": 145.0
+          },
+          {
+            "from": "24",
+            "to": "25",
+            "field": "D",
+            "reader": 11.1,
+            "model_primary": 21.1
+          },
+          {
+            "from": "24",
+            "to": "25",
+            "field": "Lh",
+            "reader": 8.11,
+            "model_primary": 15.44
+          },
+          {
+            "from": "24",
+            "to": "25",
+            "field": "dh",
+            "reader": 7.56,
+            "model_primary": 14.39
+          },
+          {
+            "from": "27",
+            "to": "28",
+            "field": "Lh",
+            "reader": 6.18,
+            "model_primary": 6.19
+          },
+          {
+            "from": "28",
+            "to": "29",
+            "field": "D",
+            "reader": 20.5,
+            "model_primary": 20.4
+          },
+          {
+            "from": "28",
+            "to": "29",
+            "field": "Lh",
+            "reader": 14.49,
+            "model_primary": 14.45
+          },
+          {
+            "from": "28",
+            "to": "29",
+            "field": "dh",
+            "reader": 14.49,
+            "model_primary": 14.45
+          },
+          {
+            "from": "32",
+            "to": "33",
+            "field": "D",
+            "reader": 10.5,
+            "model_primary": 10.3
+          },
+          {
+            "from": "32",
+            "to": "33",
+            "field": "Lh",
+            "reader": 7.28,
+            "model_primary": 7.22
+          },
+          {
+            "from": "43",
+            "to": "44",
+            "field": "V",
+            "reader": 5.0,
+            "model_primary": 15.0
+          },
+          {
+            "from": "43",
+            "to": "44",
+            "field": "Lh",
+            "reader": 20.7,
+            "model_primary": 20.0
+          },
+          {
+            "from": "43",
+            "to": "44",
+            "field": "dh",
+            "reader": 1.75,
+            "model_primary": 5.35
+          },
+          {
+            "from": "44",
+            "to": "45",
+            "field": "Lh",
+            "reader": 6.46,
+            "model_primary": 5.46
+          },
+          {
+            "from": "46",
+            "to": "47",
+            "field": "V",
+            "reader": -19.0,
+            "model_primary": -15.0
+          },
+          {
+            "from": "46",
+            "to": "47",
+            "field": "dh",
+            "reader": -6.54,
+            "model_primary": -6.84
+          },
+          {
+            "from": "48",
+            "to": "49",
+            "field": "dh",
+            "reader": 5.53,
+            "model_primary": 5.33
+          }
+        ],
+        "uncertain_differences": [
+          {
+            "from": "29",
+            "to": "30",
+            "field": "D",
+            "reader": 13.8,
+            "model_primary": 13.3
+          },
+          {
+            "from": "29",
+            "to": "30",
+            "field": "Lh",
+            "reader": 13.8,
+            "model_primary": 13.3
+          },
+          {
+            "from": "39",
+            "to": "40",
+            "field": "dh",
+            "reader": -3.55,
+            "model_primary": -3.58
+          },
+          {
+            "from": "58",
+            "to": "59",
+            "field": "dh",
+            "reader": -6.48,
+            "model_primary": -6.43
+          }
+        ]
+      },
+      {
+        "model_file": "claude_opus_5.md",
+        "missing_pairs": [],
+        "different_unambiguous_primary_fields": 27,
+        "different_uncertain_primary_fields": 6,
+        "unambiguous_differences": [
+          {
+            "from": "21",
+            "to": "22",
+            "field": "dh",
+            "reader": -11.86,
+            "model_primary": -11.88
+          },
+          {
+            "from": "23",
+            "to": "24",
+            "field": "dh",
+            "reader": 3.58,
+            "model_primary": 3.18
+          },
+          {
+            "from": "24",
+            "to": "25",
+            "field": "V",
+            "reader": 43.0,
+            "model_primary": 13.0
+          },
+          {
+            "from": "24",
+            "to": "25",
+            "field": "Lh",
+            "reader": 8.11,
+            "model_primary": 11.1
+          },
+          {
+            "from": "24",
+            "to": "25",
+            "field": "dh",
+            "reader": 7.56,
+            "model_primary": 2.56
+          },
+          {
+            "from": "28",
+            "to": "29",
+            "field": "V",
+            "reader": 45.0,
+            "model_primary": -45.0
+          },
+          {
+            "from": "28",
+            "to": "29",
+            "field": "dh",
+            "reader": 14.49,
+            "model_primary": -14.45
+          },
+          {
+            "from": "36",
+            "to": "37",
+            "field": "V",
+            "reader": 3.0,
+            "model_primary": 5.0
+          },
+          {
+            "from": "36",
+            "to": "37",
+            "field": "dh",
+            "reader": 1.07,
+            "model_primary": 1.02
+          },
+          {
+            "from": "37",
+            "to": "38",
+            "field": "V",
+            "reader": 24.0,
+            "model_primary": 29.0
+          },
+          {
+            "from": "37",
+            "to": "38",
+            "field": "Lh",
+            "reader": 9.59,
+            "model_primary": 9.19
+          },
+          {
+            "from": "38",
+            "to": "39",
+            "field": "D",
+            "reader": 17.5,
+            "model_primary": 17.1
+          },
+          {
+            "from": "38",
+            "to": "39",
+            "field": "V",
+            "reader": -62.0,
+            "model_primary": 62.0
+          },
+          {
+            "from": "38",
+            "to": "39",
+            "field": "dh",
+            "reader": -15.44,
+            "model_primary": 15.44
+          },
+          {
+            "from": "39",
+            "to": "40",
+            "field": "Lh",
+            "reader": 11.66,
+            "model_primary": 11.6
+          },
+          {
+            "from": "41",
+            "to": "42",
+            "field": "dh",
+            "reader": -1.04,
+            "model_primary": -1.09
+          },
+          {
+            "from": "42",
+            "to": "43",
+            "field": "A",
+            "reader": 95.0,
+            "model_primary": 91.0
+          },
+          {
+            "from": "44",
+            "to": "45",
+            "field": "D",
+            "reader": 6.7,
+            "model_primary": 6.2
+          },
+          {
+            "from": "44",
+            "to": "45",
+            "field": "dh",
+            "reader": 3.84,
+            "model_primary": 3.54
+          },
+          {
+            "from": "48",
+            "to": "49",
+            "field": "A",
+            "reader": 74.0,
+            "model_primary": 24.0
+          },
+          {
+            "from": "53",
+            "to": "54",
+            "field": "D",
+            "reader": 19.3,
+            "model_primary": 15.3
+          },
+          {
+            "from": "53",
+            "to": "54",
+            "field": "dh",
+            "reader": 13.87,
+            "model_primary": 13.09
+          },
+          {
+            "from": "55",
+            "to": "56",
+            "field": "D",
+            "reader": 5.9,
+            "model_primary": 5.8
+          },
+          {
+            "from": "55",
+            "to": "56",
+            "field": "Lh",
+            "reader": 5.38,
+            "model_primary": 5.3
+          },
+          {
+            "from": "55",
+            "to": "56",
+            "field": "dh",
+            "reader": -2.39,
+            "model_primary": -2.59
+          },
+          {
+            "from": "59",
+            "to": "60",
+            "field": "Lh",
+            "reader": 17.07,
+            "model_primary": 12.07
+          },
+          {
+            "from": "59",
+            "to": "60",
+            "field": "dh",
+            "reader": -4.24,
+            "model_primary": -4.04
+          }
+        ],
+        "uncertain_differences": [
+          {
+            "from": "39",
+            "to": "40",
+            "field": "A",
+            "reader": 75.0,
+            "model_primary": 35.0
+          },
+          {
+            "from": "40",
+            "to": "41",
+            "field": "dh",
+            "reader": 5.59,
+            "model_primary": 5.53
+          },
+          {
+            "from": "49",
+            "to": "50",
+            "field": "A",
+            "reader": 68.0,
+            "model_primary": 88.0
+          },
+          {
+            "from": "58",
+            "to": "59",
+            "field": "Lh",
+            "reader": 6.43,
+            "model_primary": 6.45
+          },
+          {
+            "from": "58",
+            "to": "59",
+            "field": "dh",
+            "reader": -6.48,
+            "model_primary": -6.43
+          },
+          {
+            "from": "59",
+            "to": "60",
+            "field": "D",
+            "reader": 17.6,
+            "model_primary": 12.6
+          }
+        ]
+      }
+    ]
+  },
+  "arithmetic_observations": [
+    {
+      "check": "−42,87 (margines stacji19, ze źródeł porównania) + Σ19→26",
+      "sum_scan_dh": 6.24,
+      "result": -36.63,
+      "margin": -36.63,
+      "note": "Dokładna zgodność do 0,01 m; margines19 należy zweryfikować na odpowiedniej fotografii przez drugiego czytelnika."
+    },
+    {
+      "check": "Margines26 + Σ26→29",
+      "sum_scan_dh": 40.47,
+      "result": 3.84,
+      "margin": 3.86,
+      "note": "Przy własnym Δh27=11,63 różnica −0,02 m; wariant11,68 dałby +0,03 m. Żaden wariant nie daje dokładnego dopasowania."
+    },
+    {
+      "check": "Margines29 + Σ29→38",
+      "sum_scan_dh": 24.25,
+      "result": 28.11,
+      "margin": 28.09,
+      "note": "Różnica +0,02 m. Razem zakres26→38 kompensuje dwie różnice, nie stanowi to podstawy podmieniania cyfr."
+    },
+    {
+      "check": "Margines38 + Σ38→45",
+      "sum_scan_dh": 1.38,
+      "result": 29.47,
+      "margin": 29.47,
+      "note": "Dokładna zgodność; wspiera łączny bilans i preferowane Δh39=−3,55, Δh40=+5,59. Sama suma nie rozstrzyga każdego składnika."
+    },
+    {
+      "check": "Margines45 + Σ45→52",
+      "sum_scan_dh": 27.95,
+      "result": 57.42,
+      "margin": 57.42,
+      "note": "Dokładna zgodność do 0,01 m."
+    },
+    {
+      "check": "Margines52 + Σ52→57",
+      "sum_scan_dh": 16.81,
+      "result": 74.23,
+      "margin": 74.23,
+      "note": "Dokładna zgodność do 0,01 m dla preferowanego odczytu pogrubionej sumy; nie jest nowym odczytem cyfry."
+    },
+    {
+      "check": "44→45 trygonometria",
+      "calc_Lh": 5.488318696736245,
+      "calc_dh": 3.8429621235520086,
+      "note": "Δh=3,84 wspiera D=6,70,V=35. Lh6,46 jawnie odbiega o0,972 m; pomocniczy zapis nie może automatycznie zmienić D/V."
+    },
+    {
+      "check": "57→58 pion",
+      "calc_Lh": 0.0,
+      "calc_dh": -10.0,
+      "note": "Cztery zapisane wielkości wzajemnie spójne; azymut nie ma znaczenia geometrycznego dla idealnego pionu."
+    },
+    {
+      "check": "59→60 alternatywne D",
+      "candidates": [
+        {
+          "D": 17.6,
+          "calc_Lh": 17.07720478245754,
+          "calc_dh": -4.2578253625541524
+        },
+        {
+          "D": 12.6,
+          "calc_Lh": 12.225726151077556,
+          "calc_dh": -3.0482158845558134
+        }
+      ],
+      "note": "Czytelne Δh=−4,24 i preferowane Lh=17,07 wspierają D17,60. D12,60 byłoby bliskie12,23 oraz−3,05 i niezgodne z obydwoma pomocniczymi zapisami; nie zakładam nieomylności rachunków źródłowych."
+    }
+  ]
+}

@@ -65,3 +65,14 @@ marginesowe; kreskę azymutu pionu znormalizowano do braku wartości.
 Liczby po `[?]` zachowano jako alternatywne odczyty danej kolumny.
 [Raport Opusa](../POROWNANIE_OPUS.md) oddziela rozbieżności od kontroli źródła
 i opisuje jedyną przyjętą korektę: komentarz Lh, bez zmiany D/A/V.
+
+## Pełna kontrola rachunkowa — 2026-09-17
+
+[Raport](../KONTROLA_RACHUNKOW.md) i `../KONTROLA_RACHUNKOW/wyniki.json`
+porównują każdy wiersz ze skanem, D cos V / D sin V, sumami i marginaliami.
+Ranking na 376 rozstrzygniętych polach: Flash 370, Pro 348, Opus 337;
+14 pól referencji wyłączono jednakowo. Podano także wynik z alternatywami
+oraz osobny historyczny punkt odniesienia Codexa (375), nieporównywalny
+z pojedynczym surowym promptem. Pliki dostarczone przez użytkownika są niezmienione.
+Parser `src/jktz/czarna_model_readings.py` zachowuje 115 wierszy na model,
+37 powtórek zdjęć, oryginalną błędną parę Pro i literalne alternatywy.

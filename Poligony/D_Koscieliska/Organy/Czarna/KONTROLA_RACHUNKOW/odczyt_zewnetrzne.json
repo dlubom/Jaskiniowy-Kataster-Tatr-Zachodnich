@@ -1,0 +1,576 @@
+{
+  "reader": "independent_outer",
+  "source_files": [
+    "_RAW/02/20220325_123052 ciąg gł Czarna 1_Kujat.jpg",
+    "_RAW/02/20220325_123533 ciąg gł Czarna 1a.jpg"
+  ],
+  "method_note": "Najpierw obejrzano oba całe kadry i wszystkie powiększenia D/A/V/Lh/dh. Następnie porównano SRV i trzy surowe wyniki modeli. Kontekst wcześniejszych raportów i pytanie o różnicę 0,10 m były znane przed końcem odczytu; nie jest to całkowicie ślepy eksperyment. Pola liczbowe są odczytami, nie wynikiem rachunku. Nie znaleziono sum D lub Lh na tych dwóch stronach. Wszystkie marginalne zakresy 0→stacja są jawnie oznaczoną interpretacją.",
+  "rows": [
+    {
+      "from": "0",
+      "to": "1",
+      "D": 15.8,
+      "A": 92.0,
+      "V": -43.0,
+      "Lh": 11.8,
+      "dh": -10.84,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. Lh=11,80 i dh=-10,84 odczytane dosłownie, bez zastępowania rachunkiem. Powiększenie dh nadal wskazuje 8, nie 9; brak podstaw wizualnych do -10,94. Przy stacji 0 uwaga Otwór."
+    },
+    {
+      "from": "1",
+      "to": "2",
+      "D": 20.0,
+      "A": 93.0,
+      "V": -58.0,
+      "Lh": 10.59,
+      "dh": -16.96,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. Lh=10,59: ostatnia cyfra 9 widoczna na 123052; drugi kadr ją wspiera. A=93, nie 83."
+    },
+    {
+      "from": "2",
+      "to": "3",
+      "D": 5.2,
+      "A": 107.0,
+      "V": -35.0,
+      "Lh": 4.25,
+      "dh": -4.97,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. dh=-4,97 z wyraźną cyfrą 4, mimo niespójności matematycznej. Margines zawiera niepewny opis po [nieczytelne] 2 m."
+    },
+    {
+      "from": "3",
+      "to": "4",
+      "D": 20.0,
+      "A": 48.0,
+      "V": -25.0,
+      "Lh": 18.12,
+      "dh": -8.45,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. A=48, D=20,00; ciemna poprawka azymutu nie daje podstaw do 118. Lewa klamra obejmuje rejon 2–4."
+    },
+    {
+      "from": "4",
+      "to": "5",
+      "D": 20.0,
+      "A": 114.0,
+      "V": -37.0,
+      "Lh": 15.97,
+      "dh": -12.03,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. Lh=15,97 z widoczną końcową 7; nie 15,93."
+    },
+    {
+      "from": "5",
+      "to": "6",
+      "D": 17.0,
+      "A": 89.0,
+      "V": -22.0,
+      "Lh": 15.76,
+      "dh": -6.38,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. dh=-6,38 widoczne na obu kadrach; obok dopisek wysokości stacji 6."
+    },
+    {
+      "from": "6",
+      "to": "7",
+      "D": 14.0,
+      "A": 23.0,
+      "V": 20.0,
+      "Lh": 13.14,
+      "dh": 4.78,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=14,00, A=23, V=+20; marginalne wejście do Tehuby (6) odczytane jako opis."
+    },
+    {
+      "from": "7",
+      "to": "8",
+      "D": 18.7,
+      "A": 71.0,
+      "V": 42.0,
+      "Lh": 14.08,
+      "dh": 12.5,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. A=71, nie 74. Lh=14,08 zapisane wprost; nie poprawiano na wynik cosinusa."
+    },
+    {
+      "from": "8",
+      "to": "9",
+      "D": 13.5,
+      "A": 24.0,
+      "V": 34.0,
+      "Lh": 11.19,
+      "dh": 7.53,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. dh=+7,53, Lh=11,19 widoczne na obu kadrach."
+    },
+    {
+      "from": "9",
+      "to": "10",
+      "D": 11.6,
+      "A": 57.0,
+      "V": 39.0,
+      "Lh": 9.0,
+      "dh": 7.28,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=11,60, Lh=9,00, dh=+7,28 potwierdzone."
+    },
+    {
+      "from": "10",
+      "to": "11",
+      "D": 5.4,
+      "A": 32.0,
+      "V": 36.0,
+      "Lh": 3.28,
+      "dh": 3.16,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. Lh=3,28 zapisane wprost; dh=+3,16; margines 11(-24,48)."
+    },
+    {
+      "from": "11",
+      "to": "12",
+      "D": 20.2,
+      "A": 65.0,
+      "V": -31.0,
+      "Lh": 17.31,
+      "dh": -10.4,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. Lh=17,31, dh=-10,40 potwierdzone."
+    },
+    {
+      "from": "12",
+      "to": "13",
+      "D": 15.1,
+      "A": 29.0,
+      "V": 1.0,
+      "Lh": 15.1,
+      "dh": 0.25,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. V=+1, D=Lh=15,10, dh=+0,25 potwierdzone."
+    },
+    {
+      "from": "13",
+      "to": "14",
+      "D": 20.2,
+      "A": 80.0,
+      "V": -12.0,
+      "Lh": 19.75,
+      "dh": -4.19,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. A=80, V=-12, Lh=19,75, dh=-4,19 potwierdzone."
+    },
+    {
+      "from": "14",
+      "to": "15",
+      "D": 20.2,
+      "A": 75.0,
+      "V": 10.0,
+      "Lh": 19.88,
+      "dh": 3.5,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. Lh=19,88, dh=+3,50 potwierdzone; nie zmieniano rachunkiem."
+    },
+    {
+      "from": "15",
+      "to": "16",
+      "D": 10.3,
+      "A": 40.0,
+      "V": 4.0,
+      "Lh": 10.3,
+      "dh": 0.71,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=10,30, V=+4, dh=+0,71 potwierdzone."
+    },
+    {
+      "from": "16",
+      "to": "17",
+      "D": 20.2,
+      "A": 85.0,
+      "V": -18.0,
+      "Lh": 19.21,
+      "dh": -6.24,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. Lh poprawione ciemnym ołówkiem. Pierwszy ogląd pozostawiał 19,20/19,21; dodatkowe powiększenie obu kadrów pokazało ciemny końcowy 1 na starszym śladzie przypominającym 0. Przyjęto finalny zapis 19,21."
+    },
+    {
+      "from": "17",
+      "to": "18",
+      "D": 20.2,
+      "A": 105.0,
+      "V": 25.0,
+      "Lh": 18.3,
+      "dh": 8.53,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=20,20, Lh=18,30, dh=+8,53 potwierdzone."
+    },
+    {
+      "from": "18",
+      "to": "19",
+      "D": 20.6,
+      "A": 55.0,
+      "V": -31.0,
+      "Lh": 17.65,
+      "dh": -10.55,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=20,60, Lh=17,65, dh=-10,55; margines 19(-42,87)."
+    },
+    {
+      "from": "60",
+      "to": "61",
+      "D": 11.0,
+      "A": 47.0,
+      "V": -12.0,
+      "Lh": 10.75,
+      "dh": -2.27,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. A=47, dh=-2,27 czytelne w ostrzejszym 123052, zgodne z drugim kadrem; nie 43 i -2,37."
+    },
+    {
+      "from": "61",
+      "to": "62",
+      "D": 9.2,
+      "A": 50.0,
+      "V": 9.0,
+      "Lh": 9.2,
+      "dh": 1.43,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=9,20; +9 i +1,43 potwierdzone."
+    },
+    {
+      "from": "62",
+      "to": "63",
+      "D": 3.5,
+      "A": 55.0,
+      "V": -25.0,
+      "Lh": 3.07,
+      "dh": -1.37,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=3,50: środkowa cyfra ma grafię 5; Lh=3,07 i dh=-1,37 odczytane dosłownie. Odczyty 3,10 i 3,30 z modeli nie są tu preferowane."
+    },
+    {
+      "from": "63",
+      "to": "64",
+      "D": 14.5,
+      "A": 49.0,
+      "V": 0.0,
+      "Lh": 14.5,
+      "dh": 0.0,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=14,50, V=0, dh=0,00. W marginesie krawędź Studni Imieninowej i +51,39."
+    },
+    {
+      "from": "64",
+      "to": "65",
+      "D": 8.0,
+      "A": 85.0,
+      "V": -33.0,
+      "Lh": 6.7,
+      "dh": -3.64,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=8,00, V=-33, Lh=6,70, dh=-3,64 odczytane dosłownie; nie naprawiano niezgodności trygonometrycznej."
+    },
+    {
+      "from": "65",
+      "to": "66",
+      "D": 19.8,
+      "A": 110.0,
+      "V": -75.0,
+      "Lh": 5.1,
+      "dh": -18.72,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. V=-75, D=19,80, Lh=5,10, dh=-18,72. Obok Studnia Imieninowa +29,03. Liczby widoczne w 123052, zgodne z drugim kadrem."
+    },
+    {
+      "from": "66",
+      "to": "67",
+      "D": 16.0,
+      "A": 15.0,
+      "V": 22.0,
+      "Lh": 14.83,
+      "dh": 5.98,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. A=15, V=+22, Lh=14,83, dh=+5,98 potwierdzone."
+    },
+    {
+      "from": "67",
+      "to": "68",
+      "D": 13.5,
+      "A": 40.0,
+      "V": -6.0,
+      "Lh": 13.5,
+      "dh": -1.4,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=13,50, V=-6, dh=-1,40 potwierdzone."
+    },
+    {
+      "from": "68",
+      "to": "69",
+      "D": 14.6,
+      "A": 33.0,
+      "V": -3.0,
+      "Lh": 14.6,
+      "dh": -0.75,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=14,60, V=-3, dh=-0,75 potwierdzone."
+    },
+    {
+      "from": "69",
+      "to": "70",
+      "D": 16.6,
+      "A": 83.0,
+      "V": 8.0,
+      "Lh": 16.6,
+      "dh": 2.3,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=16,60 i dh=+2,30 zapisane dosłownie; słaby dopisek marginalny +26,3? odnotowany oddzielnie."
+    },
+    {
+      "from": "70",
+      "to": "71",
+      "D": 17.0,
+      "A": 50.0,
+      "V": 2.0,
+      "Lh": 17.0,
+      "dh": 0.58,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=17,00, V=+2, dh=+0,58 potwierdzone."
+    },
+    {
+      "from": "71",
+      "to": "72",
+      "D": 20.0,
+      "A": 58.0,
+      "V": -1.0,
+      "Lh": 20.0,
+      "dh": -0.35,
+      "uncertain_fields": [
+        "V"
+      ],
+      "alternatives": {
+        "V": [
+          1.0
+        ]
+      },
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. V preferowane -1, ale znak jest zamazany i przecięty śladem; +1 pozostaje alternatywą wizualną. dh=-0,35 ma czytelny minus, również w drugim kadrze. Nie utożsamiać wsparcia dh z jednoznacznym odczytem V."
+    },
+    {
+      "from": "72",
+      "to": "73",
+      "D": 18.0,
+      "A": 49.0,
+      "V": 0.0,
+      "Lh": 18.0,
+      "dh": 0.0,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=18,00, V=0 i dh=0,00; margines +35,39."
+    },
+    {
+      "from": "73",
+      "to": "74",
+      "D": 17.0,
+      "A": 40.0,
+      "V": 0.0,
+      "Lh": 17.0,
+      "dh": 0.0,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=17,00, nie 12,00; grafia 7 zgodna z sąsiednimi 17,00."
+    },
+    {
+      "from": "74",
+      "to": "75",
+      "D": 17.0,
+      "A": 60.0,
+      "V": -25.0,
+      "Lh": 14.4,
+      "dh": -7.17,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=17,00, Lh=14,40, dh=-7,17 potwierdzone; nie poprawiano Lh z rachunku."
+    },
+    {
+      "from": "75",
+      "to": "76",
+      "D": 26.0,
+      "A": 77.0,
+      "V": -27.0,
+      "Lh": 23.16,
+      "dh": -11.8,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=26,00, Lh=23,16, dh=-11,80. Uwaga Koniec Kolorado."
+    },
+    {
+      "from": "6",
+      "to": "a",
+      "D": 7.4,
+      "A": 302.0,
+      "V": 8.0,
+      "Lh": 7.4,
+      "dh": 1.03,
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. V=+8, D=Lh=7,40, dh=+1,03. Margines -58,70."
+    },
+    {
+      "from": "a",
+      "to": "b",
+      "D": 5.4,
+      "A": 270.0,
+      "V": -37.0,
+      "Lh": 4.21,
+      "dh": -3.25,
+      "uncertain_fields": [
+        "V"
+      ],
+      "alternatives": {
+        "V": [
+          -32.0
+        ]
+      },
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. V preferowane -37; 7 podobna do innych cyfr 7, ale fotografia nie wyklucza słabszej hipotezy -32. dh=-3,25: środkowa cyfra 2, nie 0; margines -61,95."
+    }
+  ],
+  "aggregates": [
+    {
+      "label": "wysokość przy stacji 6",
+      "raw": "6(-59,73)",
+      "value": -59.73,
+      "field": "dh",
+      "from": "0",
+      "to": "6",
+      "note": "Blady dopisek przy 5→6, powiększenie 123052 wskazuje -59,73. Numer i wartość trudniejsze w drugim kadrze. Zakres od 0 to interpretacja dopisku wysokości, nie jawnie wypisana suma."
+    },
+    {
+      "label": "wysokość przy stacji 11",
+      "raw": "11(-24,48)",
+      "value": -24.48,
+      "field": "dh",
+      "from": "0",
+      "to": "11",
+      "note": "Widoczne w obu kadrach; zakres od 0 interpretowany jako wysokość względem otworu."
+    },
+    {
+      "label": "wysokość przy stacji 19",
+      "raw": "19(-42,87)",
+      "value": -42.87,
+      "field": "dh",
+      "from": "0",
+      "to": "19",
+      "note": "Widoczne w prawym dolnym rogu obu kadrów; zakres od 0 interpretowany jako wysokość względem otworu."
+    },
+    {
+      "label": "krawędź Studni Imieninowej",
+      "raw": "64 - Krawędź Studni Imieninowej +51,39",
+      "value": 51.39,
+      "field": "dh",
+      "from": "0",
+      "to": "64",
+      "note": "Numer 64 i +51,39 w ostrym 123052; fotografia pod kątem potwierdza układ, gorzej czytelne cyfry. Początek 0 jest interpretacją wysokości."
+    },
+    {
+      "label": "Studnia Imieninowa",
+      "raw": "Studnia Imieninowa +29,03",
+      "value": 29.03,
+      "field": "dh",
+      "from": "0",
+      "to": "66",
+      "note": "Dopisek na wysokości 65→66; obie fotografie zgodne. Numer 66 nie jest wypisany w samym dopisku, przypisanie według wiersza."
+    },
+    {
+      "label": "słaby dopisek przy 69→70",
+      "raw": "+26,3?",
+      "value": null,
+      "field": "unknown",
+      "from": null,
+      "to": null,
+      "note": "Ołówek bardzo blady, możliwe przekreślenie/korekta. Wizualnie +26,3, słabsze +2,63; nie traktować jako pewnej wysokości ani wyniku. Druga fotografia nie rozstrzyga."
+    },
+    {
+      "label": "wysokość przy 72→73",
+      "raw": "+35,39",
+      "value": 35.39,
+      "field": "dh",
+      "from": "0",
+      "to": "73",
+      "note": "Obie fotografie zgodne. Numer 73 przypisany według wiersza i podkreślenia; od 0 to interpretacja wysokości."
+    },
+    {
+      "label": "podsumowanie pod 75→76",
+      "raw": "ΣΔh +20,79",
+      "value": 20.79,
+      "field": "dh",
+      "from": null,
+      "to": null,
+      "note": "Obie fotografie jednoznacznie pokazują +20,79. Zakres sumy nie jest zapisany; nie utożsamiać automatycznie z sumą wierszy 60–76 ani wynikiem całego ciągu."
+    },
+    {
+      "label": "osobny wynik obok podsumowania",
+      "raw": "+16,42",
+      "value": 16.42,
+      "field": "dh",
+      "from": "0",
+      "to": "76",
+      "note": "Wyraźny plus, nie minus. Obie fotografie zgodne. Interpretacja jako wysokość st76 względem 0 wynika z umiejscowienia; sam zakres nie jest wypisany."
+    },
+    {
+      "label": "wysokość stacji a",
+      "raw": "-58,70",
+      "value": -58.7,
+      "field": "dh",
+      "from": "0",
+      "to": "a",
+      "note": "Blady zapis widoczny w 123052 i słabiej w 123533, obok 6→a. Od 0 to interpretacja wysokości."
+    },
+    {
+      "label": "wysokość stacji b",
+      "raw": "-61,95",
+      "value": -61.95,
+      "field": "dh",
+      "from": "0",
+      "to": "b",
+      "note": "Blady zapis z czytelnym 9 w 123052; 123533 mniej ostry. Od 0 to interpretacja wysokości; nie -61,75."
+    },
+    {
+      "label": "uwaga terenowa przy 2→3",
+      "raw": "po [nieczytelne] 2 m",
+      "value": 2.0,
+      "field": "unknown",
+      "from": "2",
+      "to": "3",
+      "note": "Liczba 2 m w uwagach, nie suma długości ani kolumna pomiarowa. Nie używać do rachunku bez ustalenia znaczenia."
+    }
+  ]
+}

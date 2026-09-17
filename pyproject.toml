@@ -19,6 +19,7 @@ jktz-render-otwory = "jktz.cli.render_otwory:main"
 jktz-srv-metadata = "jktz.cli.srv_metadata:main"
 jktz-survex-stats = "jktz.cli.survex_stats:main"
 jktz-czarna-warianty = "jktz.cli.czarna_warianty:main"
+jktz-czarna-kontrola = "jktz.czarna_crosscheck:main"
 
 [dependency-groups]
 dev = [

@@ -1,0 +1,161 @@
+{
+  "failures": [],
+  "counters": {
+    "assertions": 16912,
+    "arithmetic_records": 937,
+    "aggregate_raw_lines": 80
+  },
+  "reference_rows": 78,
+  "excluded_fields": 14,
+  "strict_both": 12,
+  "review_both_including_strict": 62,
+  "over_review_threshold": 16,
+  "ranking": [
+    {
+      "model": "gemini_flash_3.8",
+      "assessed": 376,
+      "correct": 370,
+      "including_alternatives": 373,
+      "wrong": 6,
+      "rows_raw": 115,
+      "pairs_unique": 78
+    },
+    {
+      "model": "gemini_pro",
+      "assessed": 376,
+      "correct": 348,
+      "including_alternatives": 348,
+      "wrong": 23,
+      "missing": 5,
+      "rows_raw": 115,
+      "pairs_unique": 78
+    },
+    {
+      "model": "claude_opus_5",
+      "assessed": 376,
+      "correct": 337,
+      "including_alternatives": 343,
+      "wrong": 39,
+      "rows_raw": 115,
+      "pairs_unique": 78
+    },
+    {
+      "model": "Codex_initial_7472374",
+      "assessed": 376,
+      "correct": 375,
+      "including_alternatives": 375,
+      "wrong": 1,
+      "rows_raw": 78,
+      "pairs_unique": 78
+    }
+  ],
+  "checkpoints": [
+    {
+      "station": "6",
+      "scan_sum": -59.63,
+      "trig_sum": -57.57611126706689,
+      "checkpoint": -59.73,
+      "interval": null
+    },
+    {
+      "station": "11",
+      "scan_sum": -24.38,
+      "trig_sum": -22.25182582618433,
+      "checkpoint": -24.48,
+      "interval": 35.25
+    },
+    {
+      "station": "19",
+      "scan_sum": -42.769999999999996,
+      "trig_sum": -40.680733630605616,
+      "checkpoint": -42.87,
+      "interval": -18.39
+    },
+    {
+      "station": "26",
+      "scan_sum": -36.529999999999994,
+      "trig_sum": -34.4247541134949,
+      "checkpoint": -36.63,
+      "interval": 6.24
+    },
+    {
+      "station": "29",
+      "scan_sum": 3.9400000000000084,
+      "trig_sum": 6.080110784654073,
+      "checkpoint": 3.86,
+      "interval": 40.47
+    },
+    {
+      "station": "38",
+      "scan_sum": 28.190000000000005,
+      "trig_sum": 30.36752912604453,
+      "checkpoint": 28.09,
+      "interval": 24.25
+    },
+    {
+      "station": "45",
+      "scan_sum": 29.570000000000007,
+      "trig_sum": 31.769558455363843,
+      "checkpoint": 29.47,
+      "interval": 1.3800000000000026
+    },
+    {
+      "station": "52",
+      "scan_sum": 57.52000000000001,
+      "trig_sum": 59.76793937451511,
+      "checkpoint": 57.42,
+      "interval": 27.950000000000003
+    },
+    {
+      "station": "57",
+      "scan_sum": 74.33000000000001,
+      "trig_sum": 76.5716478402291,
+      "checkpoint": 74.23,
+      "interval": 16.809999999999995
+    },
+    {
+      "station": "64",
+      "scan_sum": 51.44000000000001,
+      "trig_sum": 53.55215533215969,
+      "checkpoint": 51.39,
+      "interval": -22.89
+    },
+    {
+      "station": "66",
+      "scan_sum": 29.080000000000013,
+      "trig_sum": 30.06971169151592,
+      "checkpoint": 29.03,
+      "interval": -22.36
+    },
+    {
+      "station": "73",
+      "scan_sum": 35.44000000000001,
+      "trig_sum": 36.44269476204415,
+      "checkpoint": 35.39,
+      "interval": 6.36
+    },
+    {
+      "station": "76",
+      "scan_sum": 16.47000000000001,
+      "trig_sum": 17.454431319224042,
+      "checkpoint": 16.42,
+      "interval": -18.97
+    },
+    {
+      "station": "a",
+      "scan_sum": -58.6,
+      "trig_sum": -56.546230319962405,
+      "checkpoint": -58.7,
+      "interval": 1.03
+    },
+    {
+      "station": "b",
+      "scan_sum": -61.85,
+      "trig_sum": -59.79603144498346,
+      "checkpoint": -61.95,
+      "interval": -3.25
+    }
+  ],
+  "reference_sha256": "8f2dfd8167ea7d644f3df1335d1862d50e0badca284d1f7b68758f93ad6d8cb3",
+  "results_sha256": "2b9201caf9d1e5ce2265b5ef0168cbe4eae7be0ea9d3415781927c4eb9f54efa"
+}

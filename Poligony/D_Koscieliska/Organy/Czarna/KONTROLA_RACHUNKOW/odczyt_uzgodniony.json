@@ -1,0 +1,1536 @@
+{
+  "method": [
+    "Zakres: 76 odcinków 0–76 oraz 6–a–b; 78 unikalnych wierszy × 5 pól = 390. Fotografie 123052 i 123533 przedstawiają te same strony. 123630 obejmuje 19–60.",
+    "Źródłem odniesienia jest ponowny odczyt fotografii przez czytelnika stron zewnętrznych i czytelnika środka oraz kontrola głównego czytelnika na powiększeniach. Czytelnicy znali wcześniejsze raporty; nie był to test całkowicie zaślepiony. Surowe wyniki obu czytelników zachowano osobno.",
+    "Wszystkie 78 wierszy obejrzano i przeliczono; nie oznacza to potwierdzenia wszystkich cyfr. Lista uncertain_fields wyłącza identyczne pola referencji z ocen wszystkich modeli. Pytajnik modelu nie wyłącza jego pierwszej propozycji z oceny. Rozstrzygnięte pola nie są wybrane głosowaniem modeli ani dopasowaniem do geometrii.",
+    "Długość zredukowana Lh = D cos(V), Δh = D sin(V), D_aux = hypot(Lh,Δh), V_aux = atan2(Δh,Lh). Kąty w stopniach. A pozostaje poza tym sprawdzeniem; żadna z tych kolumn ani sum wysokości nie potwierdza azymutu.",
+    "Kolumny pomocnicze i sumy są rachunkami tego samego autora, nie niezależnym pomiarem. Mogą wspierać odczyt cyfry/znaku, ale mogą też powielać błąd. Nie zastąpiono D/A/V wynikiem odwrotnego rachunku. Nie wykorzystano GNSS ani poligonu Borowca do wyboru cyfr.",
+    "Dla pól nierozstrzygniętych obliczenia używają jawnie preferowanej wartości; lista alternatyw i zakresy sum zachowują wpływ niepewności. Próg 0,05 m jest tylko przeglądowym progiem rozbieżności, nie oszacowaniem błędu instrumentu; ścisłe zaokrąglenie do centymetra sprawdzono osobno (0,005 m).",
+    "Dopiski wysokości zinterpretowano względem stacji 0; przy 26,66,73,76,a,b przypisanie wynika z położenia zapisu. Suma przy 57 jest nadpisana i niepewna. Suma +20,79 nie ma ustalonego zakresu, więc nie wymuszano jej zgodności."
+  ],
+  "reviewed_sources": [
+    {
+      "path": "_RAW/02/20220325_123052 ciąg gł Czarna 1_Kujat.jpg",
+      "sha256": "00ff9823393112963438ce1deb269a6cddc34e58ff5d3cb79fa95da9d365f410"
+    },
+    {
+      "path": "_RAW/02/20220325_123533 ciąg gł Czarna 1a.jpg",
+      "sha256": "1615c135d8360d957ce40a5bd956c3d7f268b136116d6f566d0db84ae031a4e3"
+    },
+    {
+      "path": "_RAW/02/20220325_123630 ciąg gł Czarna2.jpg",
+      "sha256": "1afa97184c1a071f4f780d7c1d07f8c7286db728314720227c1129b3912ede8a"
+    },
+    {
+      "path": "KONTROLA_RACHUNKOW/odczyt_zewnetrzne.json",
+      "sha256": "033e205353b5a49f97de945c5a55573936ff3a98d3be43f6a5f0e5a380d5726b"
+    },
+    {
+      "path": "KONTROLA_RACHUNKOW/odczyt_srodek.json",
+      "sha256": "fae03b10a4f9e8131333c8cf4f2a0355412fad7d10328c9e5573d3b31037c5e7"
+    },
+    {
+      "path": "KONTROLA_RACHUNKOW/CODEX_PIERWOTNY.SRV.txt",
+      "sha256": "c63c22be945f1376e2b3ed4ef85fe3ecff9ae5bb5eede66ff58b7ea99ba3a6cb",
+      "origin": "git show 74723744834ee9badf4b5334f9319de651c73c6c:Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_R.SRV"
+    }
+  ],
+  "rows": [
+    {
+      "from": "0",
+      "to": "1",
+      "values": {
+        "D": 15.8,
+        "A": 92.0,
+        "V": -43.0,
+        "Lh": 11.8,
+        "dh": -10.84
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. Lh=11,80 i dh=-10,84 odczytane dosłownie, bez zastępowania rachunkiem. Powiększenie dh nadal wskazuje 8, nie 9; brak podstaw wizualnych do -10,94. Przy stacji 0 uwaga Otwór.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "1",
+      "to": "2",
+      "values": {
+        "D": 20.0,
+        "A": 93.0,
+        "V": -58.0,
+        "Lh": 10.59,
+        "dh": -16.96
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. Lh=10,59: ostatnia cyfra 9 widoczna na 123052; drugi kadr ją wspiera. A=93, nie 83.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "2",
+      "to": "3",
+      "values": {
+        "D": 5.2,
+        "A": 107.0,
+        "V": -35.0,
+        "Lh": 4.25,
+        "dh": -4.97
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. dh=-4,97 z wyraźną cyfrą 4, mimo niespójności matematycznej. Margines zawiera niepewny opis po [nieczytelne] 2 m.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "3",
+      "to": "4",
+      "values": {
+        "D": 20.0,
+        "A": 48.0,
+        "V": -25.0,
+        "Lh": 18.12,
+        "dh": -8.45
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. A=48, D=20,00; ciemna poprawka azymutu nie daje podstaw do 118. Lewa klamra obejmuje rejon 2–4.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "4",
+      "to": "5",
+      "values": {
+        "D": 20.0,
+        "A": 114.0,
+        "V": -37.0,
+        "Lh": 15.97,
+        "dh": -12.03
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. Lh=15,97 z widoczną końcową 7; nie 15,93.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "5",
+      "to": "6",
+      "values": {
+        "D": 17.0,
+        "A": 89.0,
+        "V": -22.0,
+        "Lh": 15.76,
+        "dh": -6.38
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. dh=-6,38 widoczne na obu kadrach; obok dopisek wysokości stacji 6.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "6",
+      "to": "7",
+      "values": {
+        "D": 14.0,
+        "A": 23.0,
+        "V": 20.0,
+        "Lh": 13.14,
+        "dh": 4.78
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=14,00, A=23, V=+20; marginalne wejście do Tehuby (6) odczytane jako opis.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "7",
+      "to": "8",
+      "values": {
+        "D": 18.7,
+        "A": 71.0,
+        "V": 42.0,
+        "Lh": 14.08,
+        "dh": 12.5
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. A=71, nie 74. Lh=14,08 zapisane wprost; nie poprawiano na wynik cosinusa.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "8",
+      "to": "9",
+      "values": {
+        "D": 13.5,
+        "A": 24.0,
+        "V": 34.0,
+        "Lh": 11.19,
+        "dh": 7.53
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. dh=+7,53, Lh=11,19 widoczne na obu kadrach.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "9",
+      "to": "10",
+      "values": {
+        "D": 11.6,
+        "A": 57.0,
+        "V": 39.0,
+        "Lh": 9.0,
+        "dh": 7.28
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=11,60, Lh=9,00, dh=+7,28 potwierdzone.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "10",
+      "to": "11",
+      "values": {
+        "D": 5.4,
+        "A": 32.0,
+        "V": 36.0,
+        "Lh": 3.28,
+        "dh": 3.16
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. Lh=3,28 zapisane wprost; dh=+3,16; margines 11(-24,48).",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "11",
+      "to": "12",
+      "values": {
+        "D": 20.2,
+        "A": 65.0,
+        "V": -31.0,
+        "Lh": 17.31,
+        "dh": -10.4
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. Lh=17,31, dh=-10,40 potwierdzone.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "12",
+      "to": "13",
+      "values": {
+        "D": 15.1,
+        "A": 29.0,
+        "V": 1.0,
+        "Lh": 15.1,
+        "dh": 0.25
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. V=+1, D=Lh=15,10, dh=+0,25 potwierdzone.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "13",
+      "to": "14",
+      "values": {
+        "D": 20.2,
+        "A": 80.0,
+        "V": -12.0,
+        "Lh": 19.75,
+        "dh": -4.19
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. A=80, V=-12, Lh=19,75, dh=-4,19 potwierdzone.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "14",
+      "to": "15",
+      "values": {
+        "D": 20.2,
+        "A": 75.0,
+        "V": 10.0,
+        "Lh": 19.88,
+        "dh": 3.5
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. Lh=19,88, dh=+3,50 potwierdzone; nie zmieniano rachunkiem.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "15",
+      "to": "16",
+      "values": {
+        "D": 10.3,
+        "A": 40.0,
+        "V": 4.0,
+        "Lh": 10.3,
+        "dh": 0.71
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=10,30, V=+4, dh=+0,71 potwierdzone.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "16",
+      "to": "17",
+      "values": {
+        "D": 20.2,
+        "A": 85.0,
+        "V": -18.0,
+        "Lh": 19.21,
+        "dh": -6.24
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. Lh poprawione ciemnym ołówkiem. Pierwszy ogląd pozostawiał 19,20/19,21; dodatkowe powiększenie obu kadrów pokazało ciemny końcowy 1 na starszym śladzie przypominającym 0. Przyjęto finalny zapis 19,21.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "17",
+      "to": "18",
+      "values": {
+        "D": 20.2,
+        "A": 105.0,
+        "V": 25.0,
+        "Lh": 18.3,
+        "dh": 8.53
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=20,20, Lh=18,30, dh=+8,53 potwierdzone.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "18",
+      "to": "19",
+      "values": {
+        "D": 20.6,
+        "A": 55.0,
+        "V": -31.0,
+        "Lh": 17.65,
+        "dh": -10.55
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=20,60, Lh=17,65, dh=-10,55; margines 19(-42,87).",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "19",
+      "to": "20",
+      "values": {
+        "D": 17.5,
+        "A": 85.0,
+        "V": -13.0,
+        "Lh": 17.04,
+        "dh": -3.93
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "20",
+      "to": "21",
+      "values": {
+        "D": 12.4,
+        "A": 115.0,
+        "V": 30.0,
+        "Lh": 10.73,
+        "dh": 6.2
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Lh=10,73 czytelne; azymut 115 i kąt +30 poprawiane/pogrubione, zachowany końcowy zapis.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "21",
+      "to": "22",
+      "values": {
+        "D": 20.2,
+        "A": 60.0,
+        "V": -36.0,
+        "Lh": 16.34,
+        "dh": -11.86
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "22",
+      "to": "23",
+      "values": {
+        "D": 5.4,
+        "A": 78.0,
+        "V": -3.0,
+        "Lh": 5.4,
+        "dh": -0.28
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "23",
+      "to": "24",
+      "values": {
+        "D": 9.2,
+        "A": 108.0,
+        "V": 23.0,
+        "Lh": 8.46,
+        "dh": 3.58
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "24",
+      "to": "25",
+      "values": {
+        "D": 11.1,
+        "A": 117.0,
+        "V": 43.0,
+        "Lh": 8.11,
+        "dh": 7.56
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "25",
+      "to": "26",
+      "values": {
+        "D": 20.6,
+        "A": 94.0,
+        "V": 14.0,
+        "Lh": 19.98,
+        "dh": 4.97
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "26",
+      "to": "27",
+      "values": {
+        "D": 20.3,
+        "A": 204.0,
+        "V": 45.0,
+        "Lh": 14.35,
+        "dh": 14.35
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "27",
+      "to": "28",
+      "values": {
+        "D": 13.2,
+        "A": 180.0,
+        "V": 62.0,
+        "Lh": 6.18,
+        "dh": 11.63
+      },
+      "uncertain_fields": [
+        "dh"
+      ],
+      "alternatives": {
+        "dh": [
+          11.68
+        ]
+      },
+      "note": "Ostatnia cyfra Δh jest miękka: preferuję 3, możliwe 8; odczytuję +11,63 bez wnioskowania rachunkowego.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "28",
+      "to": "29",
+      "values": {
+        "D": 20.5,
+        "A": 132.0,
+        "V": 45.0,
+        "Lh": 14.49,
+        "dh": 14.49
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "29",
+      "to": "30",
+      "values": {
+        "D": 13.8,
+        "A": 77.0,
+        "V": -3.0,
+        "Lh": 13.8,
+        "dh": -0.71
+      },
+      "uncertain_fields": [
+        "D",
+        "Lh"
+      ],
+      "alternatives": {
+        "D": [
+          13.6
+        ],
+        "Lh": [
+          13.6
+        ]
+      },
+      "note": "W obu długościach preferuję zapis 13,80, lecz rozmazane 8/6 pozostaje niepewne.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "30",
+      "to": "31",
+      "values": {
+        "D": 20.5,
+        "A": 93.0,
+        "V": 23.0,
+        "Lh": 18.87,
+        "dh": 8.0
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "31",
+      "to": "32",
+      "values": {
+        "D": 9.3,
+        "A": 132.0,
+        "V": 40.0,
+        "Lh": 7.11,
+        "dh": 5.97
+      },
+      "uncertain_fields": [
+        "dh"
+      ],
+      "alternatives": {
+        "dh": [
+          5.77
+        ]
+      },
+      "note": "Preferuję +5,97; rozmyta przedostatnia cyfra może wyglądać jak 7.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "32",
+      "to": "33",
+      "values": {
+        "D": 10.5,
+        "A": 160.0,
+        "V": 46.0,
+        "Lh": 7.28,
+        "dh": 7.54
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "33",
+      "to": "34",
+      "values": {
+        "D": 10.5,
+        "A": 82.0,
+        "V": 3.0,
+        "Lh": 10.5,
+        "dh": 0.54
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "34",
+      "to": "35",
+      "values": {
+        "D": 6.5,
+        "A": 97.0,
+        "V": -22.0,
+        "Lh": 6.02,
+        "dh": -2.42
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "35",
+      "to": "36",
+      "values": {
+        "D": 5.6,
+        "A": 37.0,
+        "V": 0.0,
+        "Lh": 5.6,
+        "dh": 0.0
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "36",
+      "to": "37",
+      "values": {
+        "D": 20.7,
+        "A": 63.0,
+        "V": 3.0,
+        "Lh": 20.7,
+        "dh": 1.07
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "37",
+      "to": "38",
+      "values": {
+        "D": 10.5,
+        "A": 74.0,
+        "V": 24.0,
+        "Lh": 9.59,
+        "dh": 4.26
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "38",
+      "to": "39",
+      "values": {
+        "D": 17.5,
+        "A": 75.0,
+        "V": -62.0,
+        "Lh": 8.2,
+        "dh": -15.44
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "39",
+      "to": "40",
+      "values": {
+        "D": 12.2,
+        "A": 75.0,
+        "V": -17.0,
+        "Lh": 11.66,
+        "dh": -3.55
+      },
+      "uncertain_fields": [
+        "A",
+        "dh"
+      ],
+      "alternatives": {
+        "A": [
+          25
+        ],
+        "dh": [
+          -3.58
+        ]
+      },
+      "note": "Preferuję azymut 75, możliwe 25; Δh preferuję −3,55, ale ostatnia cyfra może być 8.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "40",
+      "to": "41",
+      "values": {
+        "D": 20.3,
+        "A": 87.0,
+        "V": 16.0,
+        "Lh": 19.5,
+        "dh": 5.59
+      },
+      "uncertain_fields": [
+        "dh"
+      ],
+      "alternatives": {
+        "dh": [
+          5.55
+        ]
+      },
+      "note": "Δh preferuję +5,59, lecz końcowa cyfra ma mały kontrast; możliwe +5,55.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "41",
+      "to": "42",
+      "values": {
+        "D": 20.1,
+        "A": 79.0,
+        "V": -3.0,
+        "Lh": 20.1,
+        "dh": -1.04
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "42",
+      "to": "43",
+      "values": {
+        "D": 15.0,
+        "A": 95.0,
+        "V": 43.0,
+        "Lh": 10.96,
+        "dh": 10.23
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "43",
+      "to": "44",
+      "values": {
+        "D": 20.7,
+        "A": 85.0,
+        "V": 5.0,
+        "Lh": 20.7,
+        "dh": 1.75
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "44",
+      "to": "45",
+      "values": {
+        "D": 6.7,
+        "A": 91.0,
+        "V": 35.0,
+        "Lh": 6.46,
+        "dh": 3.84
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Lh=6,46 i Δh=+3,84 odczytane bezpośrednio mimo możliwej niespójności rachunku z D=6,70 oraz V=+35.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "45",
+      "to": "46",
+      "values": {
+        "D": 20.4,
+        "A": 78.0,
+        "V": -3.0,
+        "Lh": 20.4,
+        "dh": -1.06
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "46",
+      "to": "47",
+      "values": {
+        "D": 20.1,
+        "A": 58.0,
+        "V": -19.0,
+        "Lh": 19.0,
+        "dh": -6.54
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "47",
+      "to": "48",
+      "values": {
+        "D": 17.5,
+        "A": 85.0,
+        "V": 18.0,
+        "Lh": 16.63,
+        "dh": 5.4
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "48",
+      "to": "49",
+      "values": {
+        "D": 14.2,
+        "A": 74.0,
+        "V": 23.0,
+        "Lh": 13.06,
+        "dh": 5.53
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "49",
+      "to": "50",
+      "values": {
+        "D": 14.2,
+        "A": 68.0,
+        "V": 61.0,
+        "Lh": 6.86,
+        "dh": 12.4
+      },
+      "uncertain_fields": [
+        "A"
+      ],
+      "alternatives": {
+        "A": [
+          88
+        ]
+      },
+      "note": "Azymut wygląda raczej na 68, ale pierwszy znak może być 8; pomocnicze Lh i Δh czytelne.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "50",
+      "to": "51",
+      "values": {
+        "D": 9.9,
+        "A": 62.0,
+        "V": 42.0,
+        "Lh": 7.34,
+        "dh": 6.62
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "51",
+      "to": "52",
+      "values": {
+        "D": 10.3,
+        "A": 57.0,
+        "V": 33.0,
+        "Lh": 8.63,
+        "dh": 5.6
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "52",
+      "to": "53",
+      "values": {
+        "D": 8.4,
+        "A": 12.0,
+        "V": -3.0,
+        "Lh": 8.4,
+        "dh": -0.43
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "53",
+      "to": "54",
+      "values": {
+        "D": 19.3,
+        "A": 45.0,
+        "V": 46.0,
+        "Lh": 13.39,
+        "dh": 13.87
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "54",
+      "to": "55",
+      "values": {
+        "D": 9.1,
+        "A": 43.0,
+        "V": 45.0,
+        "Lh": 6.43,
+        "dh": 6.43
+      },
+      "uncertain_fields": [
+        "dh"
+      ],
+      "alternatives": {
+        "dh": [
+          6.48
+        ]
+      },
+      "note": "Δh mocno poprawiane lub pogrubione; preferuję +6,43, dopuszczam +6,48.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "55",
+      "to": "56",
+      "values": {
+        "D": 5.9,
+        "A": 60.0,
+        "V": -24.0,
+        "Lh": 5.38,
+        "dh": -2.39
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "56",
+      "to": "57",
+      "values": {
+        "D": 3.0,
+        "A": 97.0,
+        "V": -13.0,
+        "Lh": 2.92,
+        "dh": -0.67
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Wszystkie pięć pól odczytano bezpośrednio z powiększenia fotografii; brak dodatkowej wątpliwości wizualnej.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "57",
+      "to": "58",
+      "values": {
+        "D": 10.0,
+        "A": null,
+        "V": -90.0,
+        "Lh": 0.0,
+        "dh": -10.0
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Azymut zastąpiony wyraźną kreską, zapisany jako null; V=−90°, D=10,00, Lh=0,00 oraz Δh=−10,00 czytelne. Nie podstawiono azymutu liczbowego.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "58",
+      "to": "59",
+      "values": {
+        "D": 9.1,
+        "A": 270.0,
+        "V": -45.0,
+        "Lh": 6.45,
+        "dh": -6.44
+      },
+      "uncertain_fields": [
+        "Lh",
+        "dh"
+      ],
+      "alternatives": {
+        "Lh": [
+          6.43
+        ],
+        "dh": [
+          -6.48,
+          -6.43,
+          -6.45
+        ]
+      },
+      "note": "Pierwszy odczyt wizualny Lh=6,43 oraz Δh=−6,48. Po porównaniu z SRV i powrocie do powiększenia dopuszczam Lh=6,45; ostatnia cyfra Δh styka się z linią tabeli i pozostaje nierozstrzygnięta (3/4/5/8). D=9,10 i V=−45 czytelne. Nie uzupełniono z rachunku. Czytelnik główny po własnym obejrzeniu preferuje Lh6,45 i Δh−6,44 jak dotychczasowy SRV; brak rozstrzygnięcia obu pól. W obliczeniach tej uzgodnionej tabeli użyto tych preferencji.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "59",
+      "to": "60",
+      "values": {
+        "D": 17.6,
+        "A": 35.0,
+        "V": -14.0,
+        "Lh": 17.07,
+        "dh": -4.24
+      },
+      "uncertain_fields": [
+        "D"
+      ],
+      "alternatives": {
+        "D": [
+          12.6
+        ]
+      },
+      "note": "D preferuję 17,60 na podstawie grafii 7 i porównania z Lh=17,07 w tej samej linii; możliwe wizualnie 12,60. Δh=−4,24.",
+      "reader_file": "odczyt_srodek.json"
+    },
+    {
+      "from": "60",
+      "to": "61",
+      "values": {
+        "D": 11.0,
+        "A": 47.0,
+        "V": -12.0,
+        "Lh": 10.75,
+        "dh": -2.27
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. A=47, dh=-2,27 czytelne w ostrzejszym 123052, zgodne z drugim kadrem; nie 43 i -2,37.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "61",
+      "to": "62",
+      "values": {
+        "D": 9.2,
+        "A": 50.0,
+        "V": 9.0,
+        "Lh": 9.2,
+        "dh": 1.43
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=9,20; +9 i +1,43 potwierdzone.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "62",
+      "to": "63",
+      "values": {
+        "D": 3.5,
+        "A": 55.0,
+        "V": -25.0,
+        "Lh": 3.07,
+        "dh": -1.37
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=3,50: środkowa cyfra ma grafię 5; Lh=3,07 i dh=-1,37 odczytane dosłownie. Odczyty 3,10 i 3,30 z modeli nie są tu preferowane.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "63",
+      "to": "64",
+      "values": {
+        "D": 14.5,
+        "A": 49.0,
+        "V": 0.0,
+        "Lh": 14.5,
+        "dh": 0.0
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=14,50, V=0, dh=0,00. W marginesie krawędź Studni Imieninowej i +51,39.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "64",
+      "to": "65",
+      "values": {
+        "D": 8.0,
+        "A": 85.0,
+        "V": -33.0,
+        "Lh": 6.7,
+        "dh": -3.64
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=8,00, V=-33, Lh=6,70, dh=-3,64 odczytane dosłownie; nie naprawiano niezgodności trygonometrycznej.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "65",
+      "to": "66",
+      "values": {
+        "D": 19.8,
+        "A": 110.0,
+        "V": -75.0,
+        "Lh": 5.1,
+        "dh": -18.72
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. V=-75, D=19,80, Lh=5,10, dh=-18,72. Obok Studnia Imieninowa +29,03. Liczby widoczne w 123052, zgodne z drugim kadrem.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "66",
+      "to": "67",
+      "values": {
+        "D": 16.0,
+        "A": 15.0,
+        "V": 22.0,
+        "Lh": 14.83,
+        "dh": 5.98
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. A=15, V=+22, Lh=14,83, dh=+5,98 potwierdzone.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "67",
+      "to": "68",
+      "values": {
+        "D": 13.5,
+        "A": 40.0,
+        "V": -6.0,
+        "Lh": 13.5,
+        "dh": -1.4
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=13,50, V=-6, dh=-1,40 potwierdzone.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "68",
+      "to": "69",
+      "values": {
+        "D": 14.6,
+        "A": 33.0,
+        "V": -3.0,
+        "Lh": 14.6,
+        "dh": -0.75
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=14,60, V=-3, dh=-0,75 potwierdzone.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "69",
+      "to": "70",
+      "values": {
+        "D": 16.6,
+        "A": 83.0,
+        "V": 8.0,
+        "Lh": 16.6,
+        "dh": 2.3
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=16,60 i dh=+2,30 zapisane dosłownie; słaby dopisek marginalny +26,3? odnotowany oddzielnie.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "70",
+      "to": "71",
+      "values": {
+        "D": 17.0,
+        "A": 50.0,
+        "V": 2.0,
+        "Lh": 17.0,
+        "dh": 0.58
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=17,00, V=+2, dh=+0,58 potwierdzone.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "71",
+      "to": "72",
+      "values": {
+        "D": 20.0,
+        "A": 58.0,
+        "V": -1.0,
+        "Lh": 20.0,
+        "dh": -0.35
+      },
+      "uncertain_fields": [
+        "V"
+      ],
+      "alternatives": {
+        "V": [
+          1.0
+        ]
+      },
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. V preferowane -1, ale znak jest zamazany i przecięty śladem; +1 pozostaje alternatywą wizualną. dh=-0,35 ma czytelny minus, również w drugim kadrze. Nie utożsamiać wsparcia dh z jednoznacznym odczytem V.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "72",
+      "to": "73",
+      "values": {
+        "D": 18.0,
+        "A": 49.0,
+        "V": 0.0,
+        "Lh": 18.0,
+        "dh": 0.0
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=18,00, V=0 i dh=0,00; margines +35,39.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "73",
+      "to": "74",
+      "values": {
+        "D": 17.0,
+        "A": 40.0,
+        "V": 0.0,
+        "Lh": 17.0,
+        "dh": 0.0
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=Lh=17,00, nie 12,00; grafia 7 zgodna z sąsiednimi 17,00.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "74",
+      "to": "75",
+      "values": {
+        "D": 17.0,
+        "A": 60.0,
+        "V": -25.0,
+        "Lh": 14.4,
+        "dh": -7.17
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=17,00, Lh=14,40, dh=-7,17 potwierdzone; nie poprawiano Lh z rachunku.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "75",
+      "to": "76",
+      "values": {
+        "D": 26.0,
+        "A": 77.0,
+        "V": -27.0,
+        "Lh": 23.16,
+        "dh": -11.8
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. D=26,00, Lh=23,16, dh=-11,80. Uwaga Koniec Kolorado.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "6",
+      "to": "a",
+      "values": {
+        "D": 7.4,
+        "A": 302.0,
+        "V": 8.0,
+        "Lh": 7.4,
+        "dh": 1.03
+      },
+      "uncertain_fields": [],
+      "alternatives": {},
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. V=+8, D=Lh=7,40, dh=+1,03. Margines -58,70.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    },
+    {
+      "from": "a",
+      "to": "b",
+      "values": {
+        "D": 5.4,
+        "A": 270.0,
+        "V": -37.0,
+        "Lh": 4.21,
+        "dh": -3.25
+      },
+      "uncertain_fields": [
+        "V"
+      ],
+      "alternatives": {
+        "V": [
+          -32.0
+        ]
+      },
+      "note": "Obie fotografie zgodne; 123052 jest ostrzejsza. V preferowane -37; 7 podobna do innych cyfr 7, ale fotografia nie wyklucza słabszej hipotezy -32. dh=-3,25: środkowa cyfra 2, nie 0; margines -61,95.",
+      "reader_file": "odczyt_zewnetrzne.json"
+    }
+  ],
+  "checkpoints": [
+    {
+      "label": "wysokość przy stacji 6",
+      "raw": "6(-59,73)",
+      "value": -59.73,
+      "field": "dh",
+      "from": "0",
+      "to": "6",
+      "note": "Blady dopisek przy 5→6, powiększenie 123052 wskazuje -59,73. Numer i wartość trudniejsze w drugim kadrze. Zakres od 0 to interpretacja dopisku wysokości, nie jawnie wypisana suma.",
+      "station": "6",
+      "uncertain": false
+    },
+    {
+      "label": "wysokość przy stacji 11",
+      "raw": "11(-24,48)",
+      "value": -24.48,
+      "field": "dh",
+      "from": "0",
+      "to": "11",
+      "note": "Widoczne w obu kadrach; zakres od 0 interpretowany jako wysokość względem otworu.",
+      "station": "11",
+      "uncertain": false,
+      "previous_station": "6",
+      "previous_value": -59.73
+    },
+    {
+      "label": "wysokość przy stacji 19",
+      "raw": "19(-42,87)",
+      "value": -42.87,
+      "field": "dh",
+      "from": "0",
+      "to": "19",
+      "note": "Widoczne w prawym dolnym rogu obu kadrów; zakres od 0 interpretowany jako wysokość względem otworu.",
+      "station": "19",
+      "uncertain": false,
+      "previous_station": "11",
+      "previous_value": -24.48
+    },
+    {
+      "label": "Margines przy 25→26",
+      "raw": "Podnóże D…skiego (−36,63)",
+      "value": -36.63,
+      "field": "dh",
+      "from": null,
+      "to": "26",
+      "note": "Liczba odczytana bezpośrednio; nazwa częściowo nieczytelna. Pozycja wskazuje stację 26, lecz nie ma jawnego numeru stacji ani początku sumy.",
+      "station": "26",
+      "uncertain": false,
+      "previous_station": "19",
+      "previous_value": -42.87
+    },
+    {
+      "label": "Margines stacji 29",
+      "raw": "29 (+3,86)",
+      "value": 3.86,
+      "field": "dh",
+      "from": null,
+      "to": "29",
+      "note": "Czytelny numer i wartość. Brak jawnego początku sumy.",
+      "station": "29",
+      "uncertain": false,
+      "previous_station": "26",
+      "previous_value": -36.63
+    },
+    {
+      "label": "Margines stacji 38",
+      "raw": "38 (+28,09) Komin w Sali …",
+      "value": 28.09,
+      "field": "dh",
+      "from": null,
+      "to": "38",
+      "note": "Końcowe 09 pogrubione/poprawiane; liczba czytelna. Dalsza nazwa opisu niepewna.",
+      "station": "38",
+      "uncertain": false,
+      "previous_station": "29",
+      "previous_value": 3.86
+    },
+    {
+      "label": "Margines stacji 45",
+      "raw": "45 (+29,47)",
+      "value": 29.47,
+      "field": "dh",
+      "from": null,
+      "to": "45",
+      "note": "Odczyt bezpośredni; nawias i koniec liczby czytelne. Brak jawnego początku sumy.",
+      "station": "45",
+      "uncertain": false,
+      "previous_station": "38",
+      "previous_value": 28.09
+    },
+    {
+      "label": "Margines stacji 52",
+      "raw": "52 (+57,42)",
+      "value": 57.42,
+      "field": "dh",
+      "from": null,
+      "to": "52",
+      "note": "Cyfra 7 mocno pogrubiona; końcówka preferowana 42, słabsza od pierwszych cyfr. Brak jawnego początku sumy.",
+      "station": "52",
+      "uncertain": false,
+      "previous_station": "45",
+      "previous_value": 29.47
+    },
+    {
+      "label": "Suma przed pionem 57→58",
+      "raw": "Σ Δh +74,23 [poprawiane]",
+      "value": 74.23,
+      "field": "dh",
+      "from": null,
+      "to": "57",
+      "note": "Wyraźne Σ Δh, liczba wielokrotnie nadpisana; preferowany odczyt +74,23, wartość pozostaje niepewna. Nie utożsamiać bez sprawdzenia z sumą od 0.",
+      "station": "57",
+      "uncertain": true,
+      "previous_station": "52",
+      "previous_value": 57.42
+    },
+    {
+      "label": "krawędź Studni Imieninowej",
+      "raw": "64 - Krawędź Studni Imieninowej +51,39",
+      "value": 51.39,
+      "field": "dh",
+      "from": "0",
+      "to": "64",
+      "note": "Numer 64 i +51,39 w ostrym 123052; fotografia pod kątem potwierdza układ, gorzej czytelne cyfry. Początek 0 jest interpretacją wysokości.",
+      "station": "64",
+      "uncertain": false,
+      "previous_station": "57",
+      "previous_value": 74.23
+    },
+    {
+      "label": "Studnia Imieninowa",
+      "raw": "Studnia Imieninowa +29,03",
+      "value": 29.03,
+      "field": "dh",
+      "from": "0",
+      "to": "66",
+      "note": "Dopisek na wysokości 65→66; obie fotografie zgodne. Numer 66 nie jest wypisany w samym dopisku, przypisanie według wiersza.",
+      "station": "66",
+      "uncertain": false,
+      "previous_station": "64",
+      "previous_value": 51.39
+    },
+    {
+      "label": "wysokość przy 72→73",
+      "raw": "+35,39",
+      "value": 35.39,
+      "field": "dh",
+      "from": "0",
+      "to": "73",
+      "note": "Obie fotografie zgodne. Numer 73 przypisany według wiersza i podkreślenia; od 0 to interpretacja wysokości.",
+      "station": "73",
+      "uncertain": false,
+      "previous_station": "66",
+      "previous_value": 29.03
+    },
+    {
+      "label": "osobny wynik obok podsumowania",
+      "raw": "+16,42",
+      "value": 16.42,
+      "field": "dh",
+      "from": "0",
+      "to": "76",
+      "note": "Wyraźny plus, nie minus. Obie fotografie zgodne. Interpretacja jako wysokość st76 względem 0 wynika z umiejscowienia; sam zakres nie jest wypisany.",
+      "station": "76",
+      "uncertain": false,
+      "previous_station": "73",
+      "previous_value": 35.39
+    },
+    {
+      "label": "wysokość stacji a",
+      "raw": "-58,70",
+      "value": -58.7,
+      "field": "dh",
+      "from": "0",
+      "to": "a",
+      "note": "Blady zapis widoczny w 123052 i słabiej w 123533, obok 6→a. Od 0 to interpretacja wysokości.",
+      "station": "a",
+      "uncertain": false,
+      "previous_station": "6",
+      "previous_value": -59.73
+    },
+    {
+      "label": "wysokość stacji b",
+      "raw": "-61,95",
+      "value": -61.95,
+      "field": "dh",
+      "from": "0",
+      "to": "b",
+      "note": "Blady zapis z czytelnym 9 w 123052; 123533 mniej ostry. Od 0 to interpretacja wysokości; nie -61,75.",
+      "station": "b",
+      "uncertain": false,
+      "previous_station": "a",
+      "previous_value": -58.7
+    }
+  ],
+  "unresolved_aggregates": [
+    {
+      "label": "słaby dopisek przy 69→70",
+      "raw": "+26,3?",
+      "value": null,
+      "field": "unknown",
+      "from": null,
+      "to": null,
+      "note": "Ołówek bardzo blady, możliwe przekreślenie/korekta. Wizualnie +26,3, słabsze +2,63; nie traktować jako pewnej wysokości ani wyniku. Druga fotografia nie rozstrzyga."
+    },
+    {
+      "label": "podsumowanie pod 75→76",
+      "raw": "ΣΔh +20,79",
+      "value": 20.79,
+      "field": "dh",
+      "from": null,
+      "to": null,
+      "note": "Obie fotografie jednoznacznie pokazują +20,79. Zakres sumy nie jest zapisany; nie utożsamiać automatycznie z sumą wierszy 60–76 ani wynikiem całego ciągu."
+    },
+    {
+      "label": "uwaga terenowa przy 2→3",
+      "raw": "po [nieczytelne] 2 m",
+      "value": 2.0,
+      "field": "unknown",
+      "from": "2",
+      "to": "3",
+      "note": "Liczba 2 m w uwagach, nie suma długości ani kolumna pomiarowa. Nie używać do rachunku bez ustalenia znaczenia."
+    },
+    {
+      "label": "Opis przy stacji 57",
+      "raw": "Stanowisko nad Błotnym Progiem [odczyt częściowy]",
+      "value": null,
+      "field": "unknown",
+      "from": null,
+      "to": "57",
+      "note": "Po ponownym powiększeniu marginesu preferuję Błotnym zamiast pierwszego odczytu Białym. Tekst w czterech wierszach przy podsumowaniu przed pionem. Nazwa częściowo słaba; nie wpływa na wartości tabeli."
+    }
+  ],
+  "findings": [
+    "Sprawdzono 78/78 wierszy. Dla preferowanych odczytów 12 wierszy ma obie kolumny zgodne z zaokrągleniem do centymetra, kolejne 50 mieści się w różnicy 0,05 m, a 16 ma co najmniej jedną większą rozbieżność. Nie oznacza to 16 błędnych D/V: część zapisów pomocniczych w źródle jest niespójna, np. 2→3, 10→11 i 44→45. Przeliczenie nie jest automatyczną korektą obserwacji.",
+    "a→b: wszystkie trzy modele podały Δh=−3,05, podczas gdy obie fotografie wskazują −3,25. Różnica marginesów −61,95−(−58,70)=−3,25 i 5,40·sin(−37°)=−3,249801 m potwierdzają ten odczyt. Lh=4,21 to osobna niespójność źródła (cos daje 4,312632), której nie poprawiono w transkrypcji. Wizualna słaba alternatywa V=−32 pozostaje wyłączona z rankingu; rachunek silnie wspiera −37.",
+    "Nie każda matematycznie spójna transkrypcja jest poprawna: dla 73→74 Gemini Pro i Opus mają D=Lh=12,00 przy V=0, czyli ich rachunek się zgadza, lecz obie fotografie mają 17,00. Dla 2→3 Gemini mają Δh=−2,97 bliskie sin(V), lecz na fotografii jest −4,97. Ranking ocenia wierność zapisowi, a nie wygładzanie błędów źródła.",
+    "D 59→60: skan preferuje 17,60, ale grafia dopuszcza słabsze 12,60; pole wyłączono z rankingu. Dla 17,60 obliczenia Lh=17,077205 i Δh=−4,257825 m są bliskie zapisom 17,07/−4,24. Dla 12,60 otrzymuje się 12,225726/−3,048216 m. Kolumny silnie wspierają 17,60. Samo Lh>12,60 wyklucza 12,60 jako długość zgodną z tą kolumną.",
+    "V 71→72: zapisane Δh=−0,35 oraz różnica dopisków 66→73 wspierają −1°. Dla +1° różnica względem Δh wynosi około −0,699 m. Zachowano wizualną niepewność znaku; A 39→40 i A 49→50 nie da się potwierdzić Lh, Δh ani ich sumami.",
+    "Przy stacjach 6,11,19,26 suma zapisanej kolumny Δh jest o 0,10 m większa niż margines. Przyrosty 6→11,11→19,19→26 zgadzają się dokładnie. Nie znaleziono cyfry uzasadniającej poprawienie tej różnicy. Również przyrosty 38→45,45→52,52→57 oraz 64→66,66→73,73→76,6→a,a→b zgadzają się dla preferowanych odczytów. Suma przy 57 jest nadpisana; zgodność rachunkowa wspiera jej odczyt +74,23.",
+    "Dwie nowe wątpliwości pomocnicze są jawne: Δh27→28 (preferowane 11,63, alternatywa 11,68 w bieżącym SRV) oraz Lh/Δh58→59. Nie zastąpiono komentarzy SRV niepewną preferencją nowego czytelnika. W sumach i rankingu ujawniono także pozostałe miękkie cyfry; łącznie wyłączono 14 pól referencji w 11 wierszach.",
+    "Dopisek ΣΔh +20,79 jest czytelny, ale nie ma ustalonego zakresu. Przy założeniu pełnego ciągu suma zapisanych Δh wynosi 16,47 m (16,52 m z niezmienionych komentarzy SRV), a z D,V wynosi 17,454431 m. Żadna z tych wartości nie jest 20,79; to nierozstrzygnięta suma, nie dowód wyboru innego pomiaru. Osobny dopisek +16,42 jest zgodny z ostatnim przyrostem od +35,39, choć całkowite sumowanie kolumny daje resztę. Zakresy wszystkich niepewnych sum są w JSON.",
+    "Surowe transkrypcje: Flash 370/376 poprawnych pierwszych pól (373 z alternatywami), Pro 348/376, Opus 337/376 (343 z alternatywami). Pro ma 23 różne wartości oraz brak pięciu pól pary 19→20 z powodu zapisania 18→20. Ranking pozostaje Flash→Pro→Opus także dla samych D/A/V (227/228,216/228,212/228) i samych Lh/Δh (143/148,132/148,125/148).",
+    "Pierwotny Codex z 7472374 uzyskał 375/376: błąd Lh20→21=10,23, który wszystkie trzy modele miały poprawnie jako 10,73. To punkt odniesienia po ówczesnej kontroli czytelników, nie uczciwy benchmark pojedynczego wywołania modelu. Pierwotne A39=25 i jego alternatywa 75 pozostają w zamrożonym wejściu; pole jest nierozstrzygnięte wizualnie i nie uczestniczy w punktacji. Nie przyznano nam punktu za późniejszą korektę opartą na modelach.",
+    "Nie zmieniono D/A/V, oryginalnych plików _RAW ani trzech surowych transkrypcji modeli. Wynik umacnia część preferencji i ujawnia ograniczenia; nie ustala daty, deklinacji ani fizycznych dowiązań i nie włącza pliku do WPJ."
+  ]
+}

@@ -1,6 +1,6 @@
 # Jaskinia Czarna — stan prac i dalsze kroki
 
-Aktualizacja: 2026-09-16. Gałąź robocza: `codex/czarna-digitalizacja`,
+Aktualizacja: 2026-09-17. Gałąź robocza: `codex/czarna-digitalizacja`,
 utworzona z `origin/master` na `446edc4`.
 Dokument służy wznowieniu pracy bez historii rozmowy. Aktualizuj go po każdym
 zakończonym etapie, razem z dowodami, wykonanymi sprawdzeniami i następnym krokiem.
@@ -31,8 +31,11 @@ Dotychczasowe polecenie nie obejmuje PR; nie zgłaszaj nieuruchomionego CI jako 
 3. Przeczytaj [raport digitalizacji](DIGITALIZACJA_RAPORT.md) i [CZ_GL_R.SRV](CZ_GL_R.SRV).
    Wpływ czterech niepewnych odczytów opisuje [analiza wariantów](WARIANTY_ODCZYTU.md)
    z kompletem wyników w [JSON](WARIANTY_ODCZYTU.json).
-   Najnowszy etap to [kontrola wyniku Claude Opus 5](POROWNANIE_OPUS.md):
-   bez zmiany D/A/V, z korektą komentarza Lh20→21 na 10,73 m.
+   Najnowszy etap to [pełna kontrola rachunkowa](KONTROLA_RACHUNKOW.md):
+   78 wierszy, 5 pól, sumy i marginesy oraz ranking surowych odczytów modeli.
+   Surowe nowe odczyty, uzgodniona referencja, wyniki i niezależna weryfikacja
+   są w `KONTROLA_RACHUNKOW/`. Poprzedni etap to
+   [kontrola wyniku Claude Opus 5](POROWNANIE_OPUS.md) i poprawa Lh20→21 na 10,73 m.
    Wcześniej wykonano [porównanie przebiegu Kujat–Borowiec](POROWNANIE_BOROWIEC.md)
    z nakładką planu i profilu oraz [porównanie Gemini](POROWNANIE_GEMINI.md).
    Wyniki dostarczone przez użytkownika zachowano w [ODCZYTY_MODELI](ODCZYTY_MODELI/README.md).
@@ -149,6 +152,12 @@ geometrią. Kreska azymutu pionu 57–58 (`--`, V=−90°) nie jest piątym spor
 
 ## Najbliższy krok i warunki porównania
 
+Pełna kontrola Lh, Δh i dopisków jest już wykonana w `KONTROLA_RACHUNKOW.md`.
+Nie powtarzaj samego porównania modeli. Następnym krokiem jest lepszy materiał
+dla 4 znanych odczytów D/A/V i pomocniczych 27→28/58→59 lub identyfikacja
+fizycznych odpowiedników przy Studni Imieninowej. Rachunki silnie wspierają
+D59→60=17,60 i V a→b=−37; same nie rozstrzygają azymutów.
+
 1. Wróć do źródeł według wpływu niepewnego odczytu: 39→40 A, 49→50 A,
    71→72 V, 29→30 D. Gemini i ponowne oględziny wzmacniają obecne preferencje,
    ale czterech niepewności jeszcze nie usunięto; potrzebne może być lepsze zdjęcie,
@@ -264,6 +273,53 @@ geometrią. Kreska azymutu pionu 57–58 (`--`, V=−90°) nie jest piątym spor
   Publikację porównaj ze zdalną gałęzią przez `git ls-remote`; lokalnej bramki
   nie przedstawiaj jako CI. Sam push tej gałęzi nie uruchamia workflow.
 
+## Pełna kontrola rachunkowa i ranking — 2026-09-16/17
+
+- Ponownie obejrzano wszystkie **78 wierszy × 5 pól = 390 pól** na trzech
+  fotografiach. Dwa ujęcia tych samych stron nie są niezależnymi pomiarami.
+  Odczyty czytelników zachowano w `odczyt_zewnetrzne.json` i `odczyt_srodek.json`;
+  wspólna referencja i notatki w `odczyt_uzgodniony.json` nie zastępują ich.
+- CLI `uv run jktz-czarna-kontrola` odtwarza raport Markdown i pełny JSON:
+  D cos V, D sin V, hypot, atan2, sumy, **15 punktów kontrolnych**, ich przyrosty
+  i granice przy alternatywnych Δh. Surowe wartości modeli, numery linii,
+  wszystkie 115 wierszy każdego modelu i 37 powtórek pozostają w wyniku.
+- Dla preferowanych cyfr 12 wierszy ma obie składowe zgodne do 0,005 m,
+  kolejne 50 do 0,05 m; 16 przekracza 0,05 m. To diagnostyka niespójności
+  kolumn, nie stwierdzenie 16 błędów pomiarów D/V. Azymut nie podlega tym testom.
+- Δh a→b=**−3,25** potwierdzają fotografia, różnica marginaliów i sin(−37°).
+  Wszystkie trzy surowe modele podały −3,05. Przy 2→3 Gemini podały wartość
+  bliższą rachunkowi, ale sprzeczną ze skanem: −2,97 zamiast zapisanego −4,97.
+  Nie zastąpiono błędu źródła liczbą wyliczoną przez model.
+- Stała różnica 0,10 m między zapisanymi Δh a marginesami 6/11/19/26
+  pozostaje niewyjaśniona. Przyrosty tych marginaliów oraz szeregu dalszych
+  odcinków się zgadzają. Nie dopasowano żadnej cyfry do sumy.
+  Dopisek +20,79 ma nieznany zakres; +16,42 jest osobnym wynikiem.
+- W punktacji wyłączono **14 pól referencji w 11 wierszach**. Oprócz czterech
+  znanych D/A/V obejmuje to słabsze hipotezy D59→60, V a→b i niepewne
+  pomocnicze cyfry; komplet jest jawny w tabeli oraz JSON. Δh27→28 nowy
+  czytelnik preferuje 11,63, a SRV ma 11,68; Lh/Δh58→59 także pozostają
+  nierozstrzygnięte. Nie zmieniono komentarzy SRV na podstawie tych preferencji.
+- Ranking pierwszych wartości surowych modeli: **Flash 370/376**, **Pro
+  348/376**, **Opus 337/376**; z jawnymi alternatywami odpowiednio 373/348/343.
+  Pro ma 23 różne wartości i 5 braków przez błędną parę 18→20.
+  Kolejność utrzymuje się dla D/A/V i Lh/Δh ocenianych osobno.
+- Pierwotny Codex z `7472374` ma **375/376** (błąd Lh20→21 poprawny u wszystkich
+  trzech modeli). Jest pokazany jako punkt odniesienia po kontroli czytelników,
+  nie wynik porównywalnego pojedynczego promptu. Zamrożony
+  `CODEX_PIERWOTNY.SRV.txt` ma zachowane cztery alternatywy i SHA.
+- Nie zmieniono D/A/V, SRV, WPJ, otworów, `_RAW` ani surowych transkrypcji.
+  Kontrola wspiera odczyty, ale nie ustala fizycznych dowiązań ani daty.
+- Niezależny przegląd odtworzył liczebności, punktację, kumulacje i granice.
+  Osobne przeliczenie Decimal przez szereg Taylora sprawdziło wszystkie
+  156 składowych (maksymalna różnica 3,6e−15 m). Zapis kontroli całości:
+  `KONTROLA_RACHUNKOW/WERYFIKACJA.md`.
+- **234 testy**, w tym 37 nowych testów parsera i obliczeń: sukces.
+  Ruff format/check: sukces, 71 plików. Pełne **12/12 etapów `jktz-validate`**: sukces, w tym 87 fixów GPS v1.0.2,
+  Survex 1.4.22 bez ostrzeżeń i eksporty. Sieć główna: 18512 stacji / 18639 odcinków.
+- Commit etapu: `git log -1 --format=%H -- Poligony/D_Koscieliska/Organy/Czarna/KONTROLA_RACHUNKOW.md`.
+  Zdalny stan sprawdzaj `git ls-remote`. Dla gałęzi nie ma PR; sam push nie
+  uruchamia CI, więc nie jest ono warunkiem spełnionym przez lokalną bramkę.
+
 ## Odtwarzalne narzędzia i aktualizacje
 
 Polecenia uruchamiaj z katalogu głównego repo. Po aktualizacji gałęzi używaj
@@ -272,7 +328,8 @@ CLI z `pyproject.toml`; stare skrypty usunięto w commicie `446edc4`.
 ```sh
 uv sync --locked
 uv run jktz-czarna-warianty --output Poligony/D_Koscieliska/Organy/Czarna/WARIANTY_ODCZYTU.json
-uv run pytest -q tests/test_czarna_variants.py
+uv run jktz-czarna-kontrola
+uv run pytest -q tests/test_czarna_variants.py tests/test_czarna_crosscheck.py tests/test_czarna_model_readings.py
 uv run jktz-survex-stats Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_R.SRV
 uv run jktz-srv-metadata hash-raw Poligony/D_Koscieliska/Organy/Czarna
 uv run jktz-srv-metadata srv-update --help

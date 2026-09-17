@@ -2,6 +2,7 @@
 
 Przed zmianami przeczytaj główny [CLAUDE.md](../../../../CLAUDE.md), następnie
 [STAN_PRAC.md](STAN_PRAC.md) oraz [DIGITALIZACJA_RAPORT.md](DIGITALIZACJA_RAPORT.md).
+Pełna kontrola kolumn, sum i modeli jest w [KONTROLA_RACHUNKOW.md](KONTROLA_RACHUNKOW.md).
 To punkt wejścia i zapis dowodów; aktualne instrukcje użytkownika mają pierwszeństwo.
 
 - Potwierdzaj odczyty na skanach, zachowując `_RAW` bez zmian. OCR i arkusz

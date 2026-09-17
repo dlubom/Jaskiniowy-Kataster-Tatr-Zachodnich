@@ -1,0 +1,213 @@
+import collections, hashlib, json, math, pathlib, re, subprocess
+
+ROOT = pathlib.Path.cwd()
+BASE = ROOT / 'Poligony/D_Koscieliska/Organy/Czarna'
+OUT = BASE / 'KONTROLA_RACHUNKOW'
+reference = json.loads((OUT / 'odczyt_uzgodniony.json').read_text())
+result = json.loads((OUT / 'wyniki.json').read_text())
+FIELDS = ('D', 'A', 'V', 'Lh', 'dh')
+failures, counters = [], collections.Counter()
+
+def eq(a, b, label):
+    counters['assertions'] += 1
+    if isinstance(a, bool) or isinstance(b, bool) or a is None or b is None:
+        ok = a == b
+    elif isinstance(a, (int,float)) and isinstance(b, (int,float)):
+        ok = abs(a-b) <= 1e-10
+    else:
+        ok = a == b
+    if not ok:
+        failures.append((label, a, b))
+
+def compare_arithmetic(values, actual, label):
+    D, V, Lh, dh = [values[k] for k in ('D','V','Lh','dh')]
+    if None in (D,V,Lh,dh):
+        raise AssertionError(('incomplete',label,values))
+    theta = V * math.pi / 180
+    horizontal, vertical = D*math.cos(theta), D*math.sin(theta)
+    hres, vres = Lh-horizontal, dh-vertical
+    expected = {'calculated_Lh':horizontal,'calculated_dh':vertical,
+                'norm_distance_from_aux':math.sqrt(Lh*Lh+dh*dh),
+                'norm_residual_m':math.sqrt(Lh*Lh+dh*dh)-D,
+                'inclination_from_aux_deg':math.atan2(dh,Lh)*180/math.pi,
+                'Lh_equals_D_at_nonzero_V':Lh==D and V!=0,
+                'azimuth_testable':False}
+    eq(actual['status'],'complete',label+'/status')
+    for k,v in expected.items():eq(actual[k],v,label+'/'+k)
+    for f,residual in [('Lh',hres),('dh',vres)]:
+        eq(actual['residual_scan_minus_calculated'][f],residual,label+'/residual/'+f)
+        eq(actual['strict_rounding_0_005m'][f],abs(residual)<=.005,label+'/strict/'+f)
+        eq(actual['within_0_05m'][f],abs(residual)<=.05,label+'/review/'+f)
+    counters['arithmetic_records'] += 1
+
+refs = {(r['from'],r['to']):r for r in reference['rows']}
+expected_pairs = {(str(n),str(n+1)) for n in range(76)} | {('6','a'),('a','b')}
+eq(set(refs),expected_pairs,'reference pairs')
+eq(len(reference['rows']),78,'reference rows')
+eq(len(result['rows']),78,'output rows')
+for r in result['rows']:
+    key=(r['from'],r['to']);src=refs[key]
+    for f in ('values','uncertain_fields','alternatives','note','reader_file'):eq(r[f],src[f],str(key)+'/'+f)
+    compare_arithmetic(src['values'],r['arithmetic'],'reference/'+str(key))
+
+excluded = [{'from':r['from'],'to':r['to'],'field':f} for r in reference['rows'] for f in FIELDS if f in r['uncertain_fields'] or (r['values'][f] is None and f!='A')]
+eq(len(excluded),14,'exclusions count')
+
+def normalize(s):return s.replace('−','-').replace('\\','').replace(',','.')
+
+def parse_cell(s):
+    vals=[float(n) for n in re.findall(r'[-+]?\d+(?:\.\d+)?',re.sub(r'([+-])\s+(?=\d)', r'\1', normalize(s)))]
+    return (vals[0] if vals else None),list(dict.fromkeys(vals[1:]))
+
+def parse_md(text):
+    out=[]
+    for line_no,line in enumerate(text.splitlines(),1):
+        if not line.startswith('|'):continue
+        cells=[c.strip() for c in line.strip('|').split('|')]
+        if len(cells)<7 or not all(re.fullmatch(r'(?:\d+|a|b)',c) for c in cells[:2]):continue
+        parsed={k:parse_cell(cells[n]) for k,n in [('D',4),('A',2),('V',3),('Lh',5),('dh',6)]}
+        out.append({'from':cells[0],'to':cells[1],'line':line_no,'raw':line,
+                    'values':{k:v[0] for k,v in parsed.items()},'alternatives':{k:v[1] for k,v in parsed.items()}})
+    return out
+
+def parse_srv(text):
+    out=[]; pending={}
+    for line_no,line in enumerate(text.splitlines(),1):
+        if line.startswith('; DO_WERYFIKACJI:'):
+            m=re.search(r'([DAV])=([+-]?[0-9.]+).*?(?:odczyt |alternatywa |pozostaje )([+-]?[0-9.]+)',line)
+            if m:pending={m[1]:[float(m[3].rstrip('.'))]}
+            else:
+                m=re.search(r'([DAV])=([+-]?[0-9.]+).*?([+-]?[0-9.]+)\.',line)
+                if m:pending={m[1]:[float(m[3].rstrip('.'))]}
+        if not re.match(r'^(?:\d+|a)\s+(?:\d+|a|b)\s+',line):continue
+        main,comment=line.split(';',1);cells=main.split()
+        vals={'D':float(cells[2]),'A':None if cells[3]=='--' else float(cells[3]),'V':float(cells[4])}
+        for field,pat in [('Lh',r'Lh_scan=([+\-\d.]+)'),('dh',r'dh_scan=([+\-\d.]+)')]:vals[field]=float(re.search(pat,comment)[1])
+        out.append({'from':cells[0],'to':cells[1],'line':line_no,'raw':line,'values':vals,'alternatives':pending})
+        pending={}
+    return out
+
+def independent_comparison(rows):
+    unique={};repeat_conflicts=[]
+    for r in rows:
+        key=(r['from'],r['to'])
+        if key not in unique:unique[key]=r
+        elif unique[key]['values']!=r['values']:repeat_conflicts.append(key)
+    counts=collections.Counter();by_field={f:collections.Counter() for f in FIELDS};mismatches=[]
+    for key,ref in refs.items():
+        for f in FIELDS:
+            if f in ref['uncertain_fields']:continue
+            expected=ref['values'][f];counts['assessed']+=1;by_field[f]['assessed']+=1
+            row=unique.get(key)
+            if row is None:
+                counts['missing']+=1;by_field[f]['missing']+=1;mismatches.append((key,f,None,expected,'missing_pair'));continue
+            primary=row['values'][f]
+            if primary==expected:
+                counts['correct']+=1;by_field[f]['correct']+=1
+            else:
+                counts['wrong']+=1;by_field[f]['wrong']+=1;mismatches.append((key,f,primary,expected,'different'))
+            if primary==expected or expected in row['alternatives'].get(f,[]):
+                counts['including_alternatives']+=1;by_field[f]['including_alternatives']+=1
+    return counts,by_field,mismatches,unique,repeat_conflicts
+
+all_rankings=[];model_summary=[]
+for model in result['models']:
+    name=model['model']
+    if name=='Codex_initial_7472374':
+        content=subprocess.check_output(['git','show',model['git_commit']+':Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_R.SRV'],cwd=ROOT)
+        raw=content.decode();parsed=parse_srv(raw)
+    else:
+        content=(BASE/'ODCZYTY_MODELI'/f'{name}.md').read_bytes();raw=content.decode();parsed=parse_md(raw)
+    eq(hashlib.sha256(content).hexdigest(),model['sha256'],name+'/sha')
+    eq(len(parsed),len(model['rows']),name+'/raw count')
+    for r,actual in zip(parsed,model['rows']):
+        label=name+'/'+str(r['line'])
+        for f in ('from','to','line','raw','values'):eq(r[f],actual[f],label+'/'+f)
+        eq({f:r['alternatives'].get(f,[]) for f in FIELDS},{f:actual['alternatives'].get(f,[]) for f in FIELDS},label+'/alternatives')
+        compare_arithmetic(r['values'],actual['arithmetic'],label+'/math')
+        key=(r['from'],r['to']);ref=refs.get(key)
+        if ref:
+            cross={**r['values'],'Lh':ref['values']['Lh'],'dh':ref['values']['dh']}
+            compare_arithmetic(cross,actual['arithmetic_against_reference_aux'],label+'/reference_aux')
+            for alt in actual['single_alternative_checks']:
+                alt_values={**cross,alt['field']:alt['alternative']}
+                compare_arithmetic(alt_values,alt['arithmetic'],label+'/alternative')
+        else:eq(actual.get('arithmetic_against_reference_aux'),None,label+'/no reference pair')
+    for a in model['aggregates']:
+        eq(raw.splitlines()[a['line']-1],a['raw'],name+'/aggregate line'+str(a['line']))
+        counters['aggregate_raw_lines']+=1
+    counts,by_field,mismatches,unique,repeat_conflicts=independent_comparison(parsed)
+    c=model['comparison']
+    eq(dict(counts),c['counts'],name+'/counts')
+    eq({k:dict(v) for k,v in by_field.items()},c['by_field'],name+'/by_field')
+    actual_mismatches=[((m['from'],m['to']),m['field'],m['primary'],m['reference'],m['status']) for m in c['mismatches']]
+    eq(mismatches,actual_mismatches,name+'/mismatches')
+    for mismatch in c['mismatches']:
+        if mismatch['status']=='missing_pair':continue
+        row=unique[(mismatch['from'],mismatch['to'])]
+        eq(mismatch['line'],row['line'],name+'/mismatch line')
+        eq(mismatch['correct_in_alternatives'],mismatch['reference'] in row['alternatives'].get(mismatch['field'],[]),name+'/mismatch alternatives')
+    eq(c['excluded'],excluded,name+'/excluded')
+    eq(c['rows_raw'],len(parsed),name+'/rows_raw')
+    eq(c['pairs_unique'],len(unique),name+'/pairs_unique')
+    eq({tuple(x) for x in c['missing_pairs']},set(refs)-set(unique),name+'/missing_pairs')
+    eq({tuple(x) for x in c['extra_pairs']},set(unique)-set(refs),name+'/extra_pairs')
+    eq(c['repeat_conflicts'],repeat_conflicts,name+'/repeat_conflicts')
+    all_rankings.append({'model':name,**dict(counts),'by_field':{k:dict(v) for k,v in by_field.items()}})
+    model_summary.append({'model':name,**dict(counts),'rows_raw':len(parsed),'pairs_unique':len(unique)})
+all_rankings.sort(key=lambda x:x['correct'],reverse=True)
+eq(all_rankings,result['ranking'],'ranking')
+
+current=parse_srv((BASE/'CZ_GL_R.SRV').read_text());counts,bf,mm,unique,repeat=independent_comparison(current)
+eq(dict(counts),result['current_srv_comparison']['counts'],'current counts')
+eq({k:dict(v) for k,v in bf.items()},result['current_srv_comparison']['by_field'],'current by_field')
+eq(result['current_srv_comparison']['excluded'],excluded,'current exclusions')
+eq(len(mm),0,'current assessed mismatches')
+for row in result['rows']:
+    expected=unique[(row['from'],row['to'])]
+    for field in ('line','raw','values'):eq(row['current_srv'][field],expected[field],'current row '+str((row['from'],row['to']))+'/'+field)
+
+# Independent graph walking for each path to origin, including 6-a-b.
+parents={r['to']:r for r in reference['rows']}
+def path_to(station):
+    path=[];seen=set()
+    while station!='0':
+        if station in seen:raise ValueError('cycle')
+        seen.add(station);row=parents[station];path.append(row);station=row['from']
+    return list(reversed(path))
+def path_sums(rows):
+    scan=sum(r['values']['dh'] for r in rows)
+    trig=sum(r['values']['D']*math.sin(r['values']['V']*math.pi/180) for r in rows)
+    choices=[[r['values']['dh']]+r['alternatives'].get('dh',[]) for r in rows]
+    return scan,trig,[sum(min(x) for x in choices),sum(max(x) for x in choices)]
+checkpoint_rows=[]
+eq(len(reference['checkpoints']),15,'checkpoint source count')
+eq(len(result['checkpoints']),15,'checkpoint output count')
+for src,actual in zip(reference['checkpoints'],result['checkpoints']):
+    for k,v in src.items():eq(actual[k],v,'checkpoint source/'+src['station']+'/'+k)
+    path=path_to(src['station']);scan,trig,bounds=path_sums(path);label='checkpoint/'+src['station']
+    for f,expected in [('sum_written_dh',scan),('sum_trig_dh',trig),('residual_written',scan-src['value']),('residual_trig',trig-src['value'])]:eq(actual[f],expected,label+'/'+f)
+    for got,want in zip(actual['written_dh_bounds'],bounds):eq(got,want,label+'/bounds')
+    interval=None
+    if 'previous_station' in src:
+        old_path=path_to(src['previous_station']);eq(path[:len(old_path)],old_path,label+'/ancestor')
+        interval_rows=path[len(old_path):];interval,_,ibounds=path_sums(interval_rows)
+        difference=src['value']-src['previous_value']
+        for f,v in [('interval_written',interval),('interval_checkpoints',difference),('interval_residual',interval-difference)]:eq(actual[f],v,label+'/'+f)
+        for got,want in zip(actual['interval_written_bounds'],ibounds):eq(got,want,label+'/interval bounds')
+    checkpoint_rows.append({'station':src['station'],'scan_sum':scan,'trig_sum':trig,'checkpoint':src['value'],'interval':interval})
+
+for field in ('D','Lh','dh'):
+    for label,selected in [('main',reference['rows'][:76]),('branch',reference['rows'][76:])]:
+        eq(sum(r['values'][field] for r in selected),result['sums'][field][label],'sums/'+field+'/'+label)
+for entry in result['inputs']+result['reviewed_sources']:
+    eq(hashlib.sha256((BASE/entry['path']).read_bytes()).hexdigest(),entry['sha256'],'input sha/'+entry['path'])
+eq(reference['unresolved_aggregates'],result['unresolved_aggregates'],'unresolved aggregates retained')
+
+strict=sum(all(r['arithmetic']['strict_rounding_0_005m'].values()) for r in result['rows'])
+within=sum(all(r['arithmetic']['within_0_05m'].values()) for r in result['rows'])
+summary={'failures':failures,'counters':dict(counters),'reference_rows':len(refs),'excluded_fields':len(excluded),'strict_both':strict,'review_both_including_strict':within,'over_review_threshold':78-within,'ranking':model_summary,'checkpoints':checkpoint_rows,
+'reference_sha256':hashlib.sha256((OUT/'odczyt_uzgodniony.json').read_bytes()).hexdigest(),'results_sha256':hashlib.sha256((OUT/'wyniki.json').read_bytes()).hexdigest()}
+pathlib.Path('/tmp/czarna_independent_verify.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n')
+print(json.dumps({k:v for k,v in summary.items() if k!='checkpoints'},ensure_ascii=False,indent=2))
+if failures:raise SystemExit(1)

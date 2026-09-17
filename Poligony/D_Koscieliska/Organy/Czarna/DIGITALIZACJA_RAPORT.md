@@ -1,6 +1,6 @@
 # Jaskinia Czarna — audyt skanów i stan digitalizacji
 
-Data audytu: 2026-09-12. Aktualizacja: 2026-09-16.
+Data audytu: 2026-09-12. Aktualizacja: 2026-09-17.
 Stan wejściowy: `feff15dc568695cff5322e44232ed59c8d214eed`.
 Audyt lokalnego checkoutu; lokalny `origin/master` był o jeden commit dalej,
 ale jego różnica nie obejmowała materiałów Czarnej. Nie aktualizowano checkoutu.
@@ -174,6 +174,17 @@ Pozostałe D/A/V zachowano; nowy etap nie oznacza zatwierdzenia orientacji.
 Autorstwo Ryszarda Kujata ustalono następnie z informacji użytkownika,
 nie z odczytów modeli. Szczegóły nazw i źródła przypisania autora są
 w tym samym raporcie.
+
+### Kontrola wszystkich kolumn i sum — 2026-09-17
+
+[Pełny raport kontroli rachunkowej](KONTROLA_RACHUNKOW.md) obejmuje każdy z 78
+wierszy, 156 składowych Lh/Δh, 15 dopisków kontrolnych oraz surowe odczyty modeli.
+Potwierdzono Δh a→b=−3,25 mimo −3,05 u wszystkich trzech modeli.
+Niepewne pomocnicze Δh27→28 i Lh/Δh58→59 pozostawiono jawne; nie zmieniono SRV.
+Suma Δh w niezmienionym SRV wynosi 16,52 m; z preferencją nowego czytelnika
+Δh27→28=11,63 wynosi 16,47 m. To dwie transkrypcje, nie dwie korekty pomiarów.
+Raport podaje granice przy alternatywach, niewyjaśnioną różnicę 0,10 m
+pierwszych dopisków i nieustalony zakres sumy +20,79.
 
 ### Niespójne obliczenia w samym dzienniku
 
