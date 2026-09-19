@@ -179,6 +179,19 @@
 .SURVEY	Ciag glowny Jaskini Czarnej - Borowiec DAV z deklinacja
 .NAME	CZ_B_DAV
 .STATUS	8
+.BOOK	Ciag glowny Kujata - wariant roboczy do oceny
+.NAME	CZKUJAT
+.STATUS	8
+.SURVEY	Ciag Kujata 0-76 i Partie Tehuby - 3 odczyty niepewne
+.NAME	CZ_GL_R
+.STATUS	8
+.SURVEY	Ustawienie Kujata przy otworze - zalozenie przegladowe
+.NAME	CZ_GL_N
+.STATUS	8
+.SURVEY	HIPOTEZA Kujat 74 = Borowiec 70 - dojscie do III otworu
+.NAME	CZ_GL_P
+.STATUS	8
+.ENDBOOK
 .SURVEY	Pomiary Kujata 1981 - partie koncowe
 .NAME	CZ_K_S
 .STATUS	8

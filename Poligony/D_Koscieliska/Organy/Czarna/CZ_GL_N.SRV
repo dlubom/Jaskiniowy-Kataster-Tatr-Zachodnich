@@ -1,0 +1,31 @@
+#[
+CAVE_ID         "T.E-09.12"
+CAVE_NAME       "Jaskinia Czarna"
+SURVEY_ID       "GL_N1"
+SURVEY_NAME     "Ustawienie poczatku Kujata - zalozenie przegladowe"
+UPDATE_DATE     "2026-09-19"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "Dariusz Lubomski"
+COORDINATOR_EMAIL "darek.lubomski@gmail.com"
+SOURCE_REF      "_RAW/02"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "nieznane"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "nieznane"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "Zalozenie K0 przy glownym otworze; brak zmierzonego domiaru; drugie hipotetyczne polaczenie K74=B70 w CZ_GL_P; patrz DWA_CIAGI.md"
+#]
+
+; ZALOZENIE PRZEGLADOWE: CiagSkany:0 ustawiony przy GNSS glownego otworu.
+; Dziennik opisuje K0 jako Otwor, ale nie dokumentuje domiaru do punktu GNSS.
+; Zerowy wektor sluzy nakladce do oceny, nie potwierdza tozsamosci stanowisk.
+; Samo ustawienie poczatku nie tworzy petli.
+; Drugie, hipotetyczne polaczenie K74=B70 jest w CZ_GL_P.SRV.
+; Przez dawne pomiary Kujata daje dojscie do III otworu; K76 to Koniec Colorado.
+#prefix2 Czarna
+#prefix NawiazanieKujat
+#units meters order=DAV
+#units A=D V=D DECL=0
+M:otwor1 CiagSkany:0 0 0 0
+#note CiagSkany:0 /Kujat K0: ustawienie przy otworze jest zalozeniem do oceny
