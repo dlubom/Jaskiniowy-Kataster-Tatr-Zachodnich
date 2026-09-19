@@ -111,6 +111,14 @@ Fotografie z `_RAW/02`: `20220325_123052 ciąg gł Czarna 1_Kujat.jpg`
 (19–60). Autor Ryszard Kujat został potwierdzony przez użytkownika na
 podstawie nazwy pierwszej fotografii. Daty i instrumentu nie ustalono.
 
+Kwerenda historyczna z 2026-09-19 niezależnie potwierdziła pełne nazwisko
+Ryszarda Kujata i jego przynależność do STJ KW Kraków. **Dla dziennika 0–76
+około 1975 r. pozostaje hipotezą kontekstową; data pomiaru jest nieustalona.**
+Rok 1975 w inwentarzu dotyczy prac przy północnym otworze i katalogowanego
+dziennika, którego tożsamości z naszymi kartkami nie potwierdzono.
+[Datowanie, skład osobowy i źródła](DATOWANIE_KUJATA.md) rozdzielają te dowody
+od daty listu 3 III 1981. Nie zmieniono `SURVEY_DATE`, `#date` ani geometrii.
+
 | Odcinek | Pole | Roboczo | Alternatywa |
 | --- | --- | ---: | ---: |
 | 29–30 | D | 13,80 m | 13,60 m |
