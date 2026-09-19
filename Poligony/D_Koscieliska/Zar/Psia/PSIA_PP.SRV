@@ -3,18 +3,18 @@ CAVE_ID         "T.F-09.01"
 CAVE_NAME       "Jaskinia Psia"
 SURVEY_ID       "PSIA_PP"
 SURVEY_NAME     "Partie Poznanskie 2018"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-09-19"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
 SOURCE_REF      "_RAW/01"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM            "Witold Hoffmann, Sonia Dudziak, Michal Macioszczyk"
+TEAM            "Sonia Dudziak, Elzbieta Domagalska, Witold Hoffmann, Michal Macioszczyk"
 INSTRUMENT      "DistoX, TopoDroid 3.4.5e"
 SURVEY_DATE     "2018-01-04"
 SURVEY_GRADE    "nieznane"
-PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "uzupelniono sklad zespolu wg P. Graczyka, Jaskinie 3(96)/2019, s. 29; pomiary bez zmian"
 #]
 
 #prefix Psia
