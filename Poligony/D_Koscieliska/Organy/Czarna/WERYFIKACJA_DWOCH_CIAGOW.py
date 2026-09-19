@@ -62,6 +62,9 @@ def main() -> None:
     corrected = [row for row in expected_rows if row[:2] == ["49", "50"]]
     assert corrected == [["49", "50", "14.20", "68", "61"]]
     corrected[0][3] = "88"  # User's source reading, accepted 2026-09-19.
+    uncertain = [row for row in expected_rows if row[:2] == ["39", "40"]]
+    assert uncertain == [["39", "40", "12.20", "75", "-17"]]
+    uncertain[0][2] = "12.80"  # User's working value; 12.20 remains an alternative.
     assert rows == expected_rows, "Unexpected transcription change"
     assert len(rows) == 78
     assert re.findall(r"^#date\s+(\S+)", transcription, re.M) == [ADOPTED_DATE]
@@ -81,6 +84,7 @@ def main() -> None:
         cave_only: bool = False,
         without_date: bool = False,
         tail_route_only: bool = False,
+        distance_39_40: str | None = None,
     ):
         directory.mkdir()
         paths = [Path(p) for p in preserved] + [
@@ -90,9 +94,22 @@ def main() -> None:
             target_path = directory / path
             target_path.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(root / path, target_path)
+        control = transcription
+        if distance_39_40 is not None:
+            assert distance_39_40 in {"12.20", "12.80"}
+            control, replaced = re.subn(
+                r"(?m)^(39[ \t]+40[ \t]+)\S+",
+                rf"\g<1>{distance_39_40}",
+                control,
+            )
+            assert replaced == 1
         if without_date:
-            control = transcription.replace(f"#date {ADOPTED_DATE}", "#units DECL=0")
-            assert measurements(control) == rows
+            control = control.replace(f"#date {ADOPTED_DATE}", "#units DECL=0")
+        control_rows = [row.copy() for row in rows]
+        if distance_39_40 is not None:
+            control_rows[39][2] = distance_39_40
+        assert measurements(control) == control_rows
+        if control != transcription:
             (directory / CAVE / "CZ_GL_R.SRV").write_text(control)
         if tail_route_only:
             # Keep the original AVD readings and date of III entrance -> B70.
@@ -182,6 +199,22 @@ def main() -> None:
             tail_route_only=True,
         )
         assert kujat_counts["loops"] == 0, "Kujat closure must be measured on an unadjusted route"
+        kujat_short, kujat_short_counts = compile_case(
+            scratch / "kujat-route-D12.20-one-fix",
+            isolated(["CZ_GL_R.SRV", "CZ_GL_N.SRV", "CZ_GL_P.SRV", "CZ_K_S.SRV"]),
+            one_fix=True,
+            cave_only=True,
+            tail_route_only=True,
+            distance_39_40="12.20",
+        )
+        assert kujat_short_counts == kujat_counts
+        mixed_short, mixed_short_counts = compile_case(
+            scratch / "mixed-D12.20-one-fix",
+            project,
+            one_fix=True,
+            distance_39_40="12.20",
+        )
+        assert mixed_short_counts == new_counts
         assert all(pos == parallel[name] for name, pos in old.items())
         assert all(pos == parallel_free[name] for name, pos in old_free.items())
         max_shift = max(math.dist(pos, new[name]) for name, pos in old.items())
@@ -251,6 +284,25 @@ def main() -> None:
         assert rows[73][:2] == ["73", "74"]
         borowiec_length = sum(float(r[2]) for r in b_rows[:71]) + tail_length
         assert b_rows[70][:2] == ["69", "70"]
+        # A single 0.60 m distance change on a loop-free route must move every
+        # downstream station by the same vector, including the released III fix.
+        long_delta = closure(kujat)
+        short_delta = closure(kujat_short)
+        sensitivity = difference(kujat[THIRD], kujat_short[THIRD])
+        angle = math.radians(float(rows[39][4]))
+        assert rows[39][:2] == ["39", "40"]
+        assert math.isclose(sensitivity["spatial_m"], 0.60, abs_tol=0.02)
+        assert math.isclose(sensitivity["horizontal_m"], 0.60 * math.cos(angle), abs_tol=0.02)
+        assert math.isclose(sensitivity["delta_ENZ_m"][2], 0.60 * math.sin(angle), abs_tol=0.02)
+        for station in ("Czarna:CiagSkany:40", "Czarna:CiagSkany:74"):
+            delta_at_station = difference(kujat[station], kujat_short[station])
+            assert all(
+                abs(a - b) <= 0.02
+                for a, b in zip(delta_at_station["delta_ENZ_m"], sensitivity["delta_ENZ_m"])
+            )
+        for station in ("Czarna:M:otwor1", "Czarna:CiagSkany:0", "Czarna:CiagSkany:39"):
+            assert kujat[station] == kujat_short[station]
+        better_distance = "12.20" if short_delta["spatial_m"] < long_delta["spatial_m"] else "12.80"
         shifts = sorted(
             ((math.dist(pos, new[name]), name) for name, pos in old.items()), reverse=True
         )
@@ -272,7 +324,16 @@ def main() -> None:
                     "old_deg": 68,
                     "new_deg": 88,
                     "basis": "User source reading, 2026-09-19",
-                }
+                },
+                {
+                    "from": "39",
+                    "to": "40",
+                    "field": "D",
+                    "old_m": 12.20,
+                    "new_m": 12.80,
+                    "status": "Working value; source reading unresolved between 12.20 and 12.80",
+                    "basis": "User edit, 2026-09-19; not selected by GNSS closure",
+                },
             ],
             "transcription_length_m": round(sum(float(row[2]) for row in rows), 2),
             "baseline": old_counts,
@@ -290,6 +351,43 @@ def main() -> None:
             "closure_mixed_without_join": closure(parallel_free),
             "closure_borowiec_with_old_kujat_tail": closure(borowiec),
             "closure_new_kujat_conditional_on_K74_B70": closure(kujat),
+            "distance_39_40_experiment": {
+                "field": "CZ_GL_R.SRV 39->40 D[m]",
+                "active_distance_m": 12.80,
+                "fixed_anchor": "Czarna:M:otwor1",
+                "released_gnss_target": THIRD,
+                "definition": "Calculated III entrance minus its released GNSS position",
+                "isolated_route_loops": kujat_counts["loops"],
+                "variants": {
+                    "12.20": {
+                        "isolated_kujat": short_delta,
+                        "mixed_network": closure(mixed_short),
+                        "route_length_m": round(kujat_length - 0.60, 2),
+                        "closure_percent": 100 * short_delta["spatial_m"] / (kujat_length - 0.60),
+                    },
+                    "12.80": {
+                        "isolated_kujat": long_delta,
+                        "mixed_network": closure(new_free),
+                        "route_length_m": round(kujat_length, 2),
+                        "closure_percent": 100 * long_delta["spatial_m"] / kujat_length,
+                    },
+                },
+                "smaller_isolated_3d_error_distance_m": float(better_distance),
+                "isolated_3d_error_difference_m": abs(
+                    long_delta["spatial_m"] - short_delta["spatial_m"]
+                ),
+                "endpoint_shift_12.80_minus_12.20": sensitivity,
+                "sensitivity_crosscheck": (
+                    "0.60 m 3D; horizontal 0.60*cos(-17 deg), vertical 0.60*sin(-17 deg); "
+                    "same displacement at K40, K74 and III, upstream stations unchanged; "
+                    "tolerance 0.02 m for coordinates rounded to 0.01 m"
+                ),
+                "limitation": (
+                    "Conditional on K0 at entrance I and K74=B70; dates, declination and "
+                    "old tail unchanged. Smaller closure does not resolve the source digit. "
+                    "12.80 remains the user's active working value."
+                ),
+            },
             "independent_routes": {
                 "kujat": {
                     "length_m": round(kujat_length, 2),
