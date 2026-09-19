@@ -26,7 +26,7 @@ hipotetyczne połączenie, **wyłącz z kompilacji osobną pozycję
 Pozostaw `CZ_GL_R` i `CZ_GL_N` włączone; wróci układ dwóch ciągów bez
 wewnętrznego połączenia. Skrypt audytu odtwarza oba warianty niezależnie.
 
-Kujat dodaje **78 odcinków / 1123,10 m** (1110,30 m głównego ciągu
+Kujat dodaje **78 odcinków / 1122,50 m** (1109,70 m głównego ciągu
 + 12,80 m Tehuby) oraz dwa zerowe wektory: ustawienie początku i hipotezę K74=B70.
 **To powtórny pomiar przebiegu, nie przyrost długości jaskini.** Zbiorcza suma
 aktywnych odcinków i eksporty zawierają oba ciągi; nie używaj tej sumy jako
@@ -73,23 +73,23 @@ do Colorado, podobnie jak B70–73. Długości tych końcowych odcinków wynosz�
 odpowiednio 43,00 m i 45,31 m.
 
 Porównanie bez łącznika, po przyjęciu daty i przy obu fixach,
-dla aktualnego roboczego D39→40=12,80 m:
+dla przyjętego D39→40=12,20 m:
 
 | Punkt nowego Kujata | Odległość 3D od B70 |
 | --- | ---: |
-| K70 | 70,28 m |
-| K71 | 53,29 m |
-| K72 | 33,82 m |
-| K73 | 16,18 m |
-| **K74** | **2,99 m** |
-| K75 | 19,46 m |
-| K76 | 45,22 m |
+| K70 | 70,78 m |
+| K71 | 53,80 m |
+| K72 | 34,29 m |
+| K73 | 16,59 m |
+| **K74** | **2,54 m** |
+| K75 | 18,88 m |
+| K76 | 44,64 m |
 
-Dla K74 różnica wynosi +1,90 m E, −0,29 m N i −2,29 m Z
-(1,92 m poziomo). To przesłanka do wyboru **kandydata**, nie potwierdzenie
+Dla K74 różnica wynosi +1,34 m E, −0,42 m N i −2,12 m Z
+(1,40 m poziomo). To przesłanka do wyboru **kandydata**, nie potwierdzenie
 stanowiska. Borowiec w tym porównaniu jest już wyrównany do obu otworów.
 Przy liczeniu obu tras niezależnie tylko od głównego otworu różnica K74–B70
-wynosi **13,06 m 3D**. Nie należy przedstawiać 2,99 m jako niezależnego
+wynosi **12,74 m 3D**. Nie należy przedstawiać 2,54 m jako niezależnego
 niezamknięcia dwóch pomiarów.
 
 Numeracja nie jest zgodna jeden do jednego. Nie połączono K70 z B70 ani
@@ -107,19 +107,19 @@ fixa III otworu**, a następnie porównaniu wyliczonej pozycji III otworu
 z jego współrzędnymi kontrolnymi. Podano `pozycja obliczona − GNSS`
 w siatce UTM 34N. Zachowano aktualne daty i korekty wszystkich istniejących
 plików; nie dopasowywano deklinacji do zamknięcia.
-Poniższa tabela opisuje aktywny wariant D39→40=12,80 m.
+Poniższa tabela opisuje przyjęty wariant D39→40=12,20 m.
 
 | Wariant kontroli | ΔE | ΔN | ΔZ | Poziomo | 3D |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Dotychczasowa sieć bez K74=B70 (kontrola porównawcza) | −7,47 m | +7,19 m | +2,85 m | 10,37 m | **10,75 m** |
-| Wspólna sieć z hipotezą K74=B70 | −3,16 m | +3,32 m | +0,14 m | 4,58 m | **4,59 m** |
+| Wspólna sieć z hipotezą K74=B70 | −3,44 m | +3,23 m | +0,23 m | 4,72 m | **4,72 m** |
 | Izolowany Borowiec + dawne dojście Kujata | −6,92 m | +9,05 m | +2,87 m | 11,39 m | **11,75 m** |
-| Izolowany nowy Kujat + dawne dojście, warunkowo K74=B70 | +1,15 m | +0,06 m | −2,08 m | 1,15 m | **2,38 m** |
+| Izolowany nowy Kujat + dawne dojście, warunkowo K74=B70 | +0,59 m | −0,07 m | −1,91 m | 0,59 m | **2,00 m** |
 
 Trasa Borowca 0W→B70→dawny Kujat 12→III otwór ma **1164,62 m /
 84 mierzone odcinki**, a względne niezamknięcie 3D wynosi **1,01%**.
-Trasa nowego Kujata K0→K74→dawny Kujat 12→III otwór ma **1178,16 m /
-87 mierzonych odcinków** i warunkowe niezamknięcie **0,20%**.
+Trasa nowego Kujata K0→K74→dawny Kujat 12→III otwór ma **1177,56 m /
+87 mierzonych odcinków** i warunkowe niezamknięcie **0,17%**.
 Nie wliczano zerowych łączników do liczby mierzonych odcinków.
 
 Obie trasy korzystają z **tych samych 110,86 m / 13 odcinków dawnego
@@ -130,14 +130,14 @@ od B70 przez dawny K12 do III otworu. Pozostałe dawne gałęzie pominięto
 wyłącznie w tymczasowej kopii do kontroli. Sieć ta ma 0 pętli i po usunięciu
 fixa III otworu nie jest wyrównywana do jego GNSS.
 
-**2,38 m to wynik warunkowy przy K74=B70 oraz ustawieniu K0 na fixie
+**2,00 m to wynik warunkowy przy K74=B70 oraz ustawieniu K0 na fixie
 głównego otworu.** Nie dowodzi poprawności tych założeń, rzeczywistej daty
-ani większej dokładności instrumentu Kujata. **4,59 m** dotyczy wspólnej,
+ani większej dokładności instrumentu Kujata. **4,72 m** dotyczy wspólnej,
 wewnętrznie wyrównanej sieci i nie jest niezależnym błędem Kujata.
 
 Przy obu fixach dodatkowa pętla przesuwa 339 dotychczasowych nazwanych
 punktów na poziomie rozdzielczości `dump3d`; największe przesunięcie wynosi
-**0,28 m**. Oba fixy pozostają niezmienione. To wynik wyrównania, nie edycja
+**0,23 m**. Oba fixy pozostają niezmienione. To wynik wyrównania, nie edycja
 starych pomiarów. Po wyłączeniu `CZ_GL_P` stare współrzędne wracają do
 wartości bazowych (rozdzielczość kontroli 0,01 m).
 Współrzędnych kontrolnych GNSS nie audytowano ponownie pod kątem dokładności
@@ -145,7 +145,7 @@ ani zgodności punktu terenowego z historyczną stacją.
 
 Dodatkowe porównanie kształtu, bez dat, obrotu, skali i wyrównania:
 po ustawieniu obu początków w (0,0,0), końce K76 i B73 różnią się o
-**11,72 m poziomo / 12,74 m w 3D**. To różnica dwóch niepotwierdzonych jako
+**11,47 m poziomo / 12,45 m w 3D**. To różnica dwóch niepotwierdzonych jako
 tożsame końców, nie błąd zamknięcia. Ten rachunek celowo pomija korekty
 orientacji obu pomiarów i nie opisuje ich aktualnego położenia w projekcie.
 
@@ -178,9 +178,12 @@ samego nowego Kujata. Do porównania odczytu w jego dzienniku służy
 powyższa wydzielona trasa.
 
 Wynik pozostaje warunkowy przy K0 na GNSS otworu I i hipotezie K74=B70;
-nie dowodzi odczytu cyfry ze skanu ani poprawności nawiązań. W aktywnym
-SRV zachowano wpisane przez użytkownika **12,80 m jako wartość roboczą**
-z alternatywą 12,20 m. Eksperyment nie zmienia automatycznie transkrypcji.
+nie dowodzi odczytu cyfry ze skanu ani poprawności nawiązań. Użytkownik
+przyjął **12,20 m** po porównaniu odczytu i lokalnej kontroli sin/cos:
+`12,20*cos(17°)=11,6669 m`, `12,20*sin(−17°)=−3,5669 m`.
+Z `Lh=11,66 m` wynika `D=12,1928 m`. W SRV pozostaje zwykła uwaga
+o niepewności z alternatywą 12,80 m; wybór wartości aktywnej jest zatwierdzony.
+Dla `dh_scan` zachowano −3,55 m z alternatywą −3,59 m.
 
 ## Przyjęta data i wpływ deklinacji
 
@@ -200,11 +203,11 @@ pomiary zachowują swoje korekty i wyrównanie. W siatce UTM 34N:
 | Wielkość | Wynik |
 | --- | ---: |
 | Obrót kierunku K0→K76 względem wariantu `DECL=0` | +2,209° |
-| Przesunięcie K76: ΔE / ΔN / ΔZ | +9,42 / −29,92 / 0,00 m |
-| Przesunięcie K76 poziomo | 31,37 m |
-| Odległość K76–B73 przed dodaniem daty: poziomo / 3D | 29,14 / 29,23 m |
-| Odległość K76–B73 po dodaniu daty: poziomo / 3D | **2,48 / 3,41 m** |
-| Różnica K76−B73 po dodaniu daty: ΔE / ΔN / ΔZ | +1,67 / −1,83 / −2,34 m |
+| Przesunięcie K76: ΔE / ΔN / ΔZ | +9,42 / −29,90 / 0,00 m |
+| Przesunięcie K76 poziomo | 31,35 m |
+| Odległość K76–B73 przed dodaniem daty: poziomo / 3D | 29,15 / 29,23 m |
+| Odległość K76–B73 po dodaniu daty: poziomo / 3D | **2,25 / 3,13 m** |
+| Różnica K76−B73 po dodaniu daty: ΔE / ΔN / ΔZ | +1,11 / −1,96 / −2,17 m |
 
 Obrót jest efektem zastosowania daty w aktualnej kompilacji Survex,
 mierzonym względem wariantu `DECL=0`; nie jest dopasowaniem do Borowca.
@@ -216,9 +219,9 @@ W tym wariancie bez łącznika zmiana daty zachowuje wysokości nowego
 ciągu i współrzędne starej sieci na poziomie rozdzielczości `dump3d` (0,01 m).
 Wpływ dodania łącznika i wyrównania opisano osobno powyżej.
 
-**3,41 m jest odległością końców dwóch ciągów w projekcie, a nie błędem
+**3,13 m jest odległością końców dwóch ciągów w projekcie, a nie błędem
 zamknięcia Kujata.** Nie potwierdzono fizycznej tożsamości K76 i B73.
-Wartość 12,74 m pochodzi z innego porównania: obu surowych ciągów
+Wartość 12,45 m pochodzi z innego porównania: obu surowych ciągów
 bez korekt orientacji, po przesunięciu początków do zera.
 
 Aktualne połączenia:
@@ -234,15 +237,15 @@ wspólne dawne dojście do III otworu. Usunięcie łącznika `CZ_GL_P` odtwarza
 stan bez wewnętrznego dowiązania i bez możliwości obliczenia zamknięcia
 nowego Kujata między otworami.
 
-## Źródło odczytu i nierozstrzygnięte wartości
+## Źródło odczytu i zachowane alternatywy
 
 [CZ_GL_R.SRV](CZ_GL_R.SRV) przeniesiono z eksperymentów zapisanych w commicie
 [`c878b7b`](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/tree/c878b7b/Poligony/D_Koscieliska/Organy/Czarna).
-Z 78 rekordów D/A/V **76 pozostało bez zmian**. W odcinku 49→50
+Z 78 rekordów D/A/V **77 pozostało bez zmian**. W odcinku 49→50
 azymut wynosi **88°**, zgodnie z jednoznacznym odczytem i poleceniem użytkownika
-z 2026-09-19; poprzednia wartość 68° była robocza. Użytkownik zmienił też
-robocze D39→40 z 12,20 m na **12,80 m**, pozostawiając odczyt nierozstrzygnięty.
-Nie zmieniono pozostałych D/A/V. Uwzględniono potwierdzone przez użytkownika
+z 2026-09-19; poprzednia wartość 68° była robocza. Dla D39→40 użytkownik
+przyjął **12,20 m**, zachowując 12,80 m jako niepewną alternatywę w komentarzu.
+Nie zmieniono pozostałych D/A/V względem wcześniejszej transkrypcji. Uwzględniono potwierdzone przez użytkownika
 pomocnicze odczyty: dh27→28=11,63 m, Lh58→59=6,43 m i Lh74→75=15,40 m.
 Uwagi z prawej strony tabel i przeliczone komentarze `ARYTMETYKA`
 umieszczono przy właściwych wierszach; arytmetyka jest na końcu.
@@ -264,9 +267,10 @@ dziennika, którego tożsamości z naszymi kartkami nie potwierdzono.
 [Datowanie, skład osobowy i źródła](DATOWANIE_KUJATA.md) rozdzielają te dowody
 od daty listu 3 III 1981. Przyjęcie `#date` nie potwierdza datowania kartek.
 
-| Odcinek | Pole | Roboczo | Alternatywa |
+| Odcinek | Pole | Przyjęto | Alternatywa |
 | --- | --- | ---: | ---: |
-| 39–40 | D | 12,80 m | 12,20 m |
+| 39–40 | D | 12,20 m | 12,80 m |
+| 39–40 | dh_scan | −3,55 m | −3,59 m |
 
 Użytkownik potwierdził D29→30=13,80 m, A39→40=75° i V71→72=−1°;
 ich wcześniejsze oznaczenia niepewności usunięto.
@@ -305,9 +309,9 @@ przy 69→70 i zakres sumy +20,79 pozostają niepewne. Nie utożsamiano stanowis
 obu ciągów na podstawie dopisanych nazw.
 
 A49→50=88° zastępuje robocze 68° według odczytu użytkownika, nie przez
-optymalizację geometrii. Nierozstrzygnięte pozostaje D39→40. Dla jego
-aktywnej wartości 12,80 m różnica surowych końców obu ciągów wynosi
-12,74 m; nadal nie jest błędem zamknięcia. Błędy dojścia starej sieci do
+optymalizację geometrii. D39→40=12,20 m jest przyjęte przez użytkownika,
+a niepewność źródłowa pozostaje w komentarzu. Różnica surowych końców
+obu ciągów wynosi 12,45 m; nadal nie jest błędem zamknięcia. Błędy dojścia starej sieci do
 III otworu bez nowego łącznika (10,75 m i 11,75 m) pozostają wynikami
 kontrolnymi. Wyniki po dodaniu hipotezy są w tabeli powyżej.
 
@@ -317,19 +321,19 @@ kontrolnymi. Wyniki po dodaniu hipotezy są w tabeli powyżej.
 zapisują SHA-256 wejść, zachowanie transkrypcji, liczniki kompilacji, kontrolę
 starych współrzędnych oraz oba obliczalne niezamknięcia.
 
-- 76 rekordów nowego dziennika zgodnych z `c878b7b`; wyjątki D/A/V
-  to zatwierdzone A49→50=88° i robocze D39→40=12,80 m wpisane przez użytkownika.
-  Skrypt wymaga dokładnie tych zmian i odrzuca inne. 205 istniejących SRV spoza `_RAW` pozostaje
+- 77 rekordów nowego dziennika zgodnych z `c878b7b`; jedyny wyjątek D/A/V
+  to zatwierdzone A49→50=88°. D39→40=12,20 m jest zgodne z tą transkrypcją.
+  Skrypt pilnuje przyjętych wartości i odrzuca inne zmiany. 205 istniejących SRV spoza `_RAW` pozostaje
   zgodnych bajtowo z bazą `446edc4`.
 - Jedenaście kontrolnych kompilacji Survex 1.4.22 bez ostrzeżeń: układ bazowy,
   połączony i bez łącznika, wariant bez daty, trzy pełne kontrole bez fixa III
   oraz dwie izolowane trasy do III otworu; dodatkowo izolowany Kujat i wspólna
-  sieć dla D39→40=12,20 m. Sprawdzono 12 080 starych nazwanych
+  sieć dla alternatywnego D39→40=12,80 m. Sprawdzono 12 080 starych nazwanych
   stacji, zgodność K74=B70 po połączeniu i zachowanie obu fixów.
 - Sieć główna: **18 591 stacji / 18 719 odcinków**, przyrost +79/+80,
   **204 pętle** (wcześniej 203) i 76 komponentów. Dochodzą 78 wektorów
   pomiarowych i dwa zerowe łączniki. Dane dawnych SRV pozostają identyczne;
-  ich współrzędne po wyrównaniu zmieniają się maksymalnie o 0,28 m.
+  ich współrzędne po wyrównaniu zmieniają się maksymalnie o 0,23 m.
 - **156 testów**, Ruff format/check i wszystkie **12/12 etapów
   `jktz-validate`** przeszły, w tym 87 fixów GPS v1.0.2 i eksporty.
 - Niezależny przegląd integracji nie wykazał istotnych usterek. Nie był

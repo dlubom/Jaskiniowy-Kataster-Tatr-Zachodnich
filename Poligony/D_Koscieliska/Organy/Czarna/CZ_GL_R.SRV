@@ -2,7 +2,7 @@
 CAVE_ID         "T.E-09.12"
 CAVE_NAME       "Jaskinia Czarna"
 SURVEY_ID       "GL_R1"
-SURVEY_NAME     "Ciag glowny Kujata - wariant roboczy, 1 odczyt niepewny"
+SURVEY_NAME     "Ciag glowny Kujata - wariant roboczy"
 UPDATE_DATE     "2026-09-19"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
@@ -14,14 +14,11 @@ TEAM            "Ryszard Kujat"
 INSTRUMENT      "nieznane"
 SURVEY_DATE     "1975-08-20"
 SURVEY_GRADE    "nieznane"
-PROCESSING      "78 odcinkow ze skanow; A49-50=88 wg uzytkownika; niepewny D39-40: 12.80 lub 12.20 m; #date 1975-08-20 przyjety obliczeniowo wg akcji 20-21 VIII 1975 (Taternik 4/1977 s.184), nie data potwierdzona; deklinacja z daty; CZ_GL_N ustawia poczatek przegladowo"
+PROCESSING      "78 odcinkow ze skanow; A49-50=88 i D39-40=12.20 przyjete przez uzytkownika; alternatywa D39-40=12.80 w komentarzu; #date 1975-08-20 przyjety obliczeniowo wg akcji 20-21 VIII 1975 (Taternik 4/1977 s.184), nie data potwierdzona; deklinacja z daty; CZ_GL_N ustawia poczatek przegladowo"
 #]
 
 ; WARIANT ROBOCZY W KATASTER.wpj - do oceny rownolegle z Borowcem.
 ; Ciag glowny z dziennika 0-76 oraz Partie Tehuby 6-a-b.
-; Nierozstrzygniety odczyt: D39-40 (12.80 lub 12.20 m).
-; Wiersz DO_WERYFIKACJI jest aktywny z podana wartoscia robocza.
-; Kompilacja potwierdza skladnie, nie poprawnosc odczytu.
 ; Autor: Ryszard Kujat, potwierdzone przez uzytkownika 2026-09-13,
 ; zgodnie z dopiskiem Kujat w nazwie fotografii S1.
 ; Historyczna data i instrument dziennika pozostaja nieustalone.
@@ -106,7 +103,7 @@ PROCESSING      "78 odcinkow ze skanow; A49-50=88 wg uzytkownika; niepewny D39-4
 36	37	20.70	63	3	; Lh_scan=20.70; dh_scan=1.07
 37	38	10.50	74	24	; Lh_scan=9.59; dh_scan=4.26; 38 (+28.09); Komin Smoluchowskiego
 38	39	17.50	75	-62	; Lh_scan=8.20; dh_scan=-15.44
-39	40	12.80	75	-17	; Lh_scan=11.66; dh_scan=-3.55; DO_WERYFIKACJI: D=12.80 roboczo, alternatywa 12.20; ARYTMETYKA: Lh=12.241, dh=-3.742
+39	40	12.20	75	-17	; Lh_scan=11.66; dh_scan=-3.55; UWAGA: odczyt D niepewny, alternatywa 12.80 m; dh_scan: alternatywa -3.59
 40	41	20.30	87	16	; Lh_scan=19.50; dh_scan=5.59
 41	42	20.10	79	-3	; Lh_scan=20.10; dh_scan=-1.04
 42	43	15.00	95	43	; Lh_scan=10.96; dh_scan=10.23

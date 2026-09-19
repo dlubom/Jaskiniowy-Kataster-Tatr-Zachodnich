@@ -21,10 +21,10 @@ PROCESSING      "Hipoteza K74=B70=dawny Kujat13 na polecenie uzytkownika; list p
 ; Przyjeto CiagSkany:74 = Borowiec:70 = dawny Kujat:13.
 ; List Kujata potwierdza TYLKO ostatnia rownosc, nie numer 74 nowego dziennika.
 ; K74 wybrano przy znanym odejsciu B70 do Sali Bernarda i III otworu:
-; bez lacznika przy D39-40=12.80: K74-B70 to 2.99 m 3D, K70-B70 to 70.28 m.
+; bez lacznika przy D39-40=12.20: K74-B70 to 2.54 m 3D, K70-B70 to 70.78 m.
 ; Dalszy ciag K74-76 i B70-73 biegnie do Colorado. Numeracje nie sa identyczne.
 ; Bliskosc geometryczna nie dowodzi tozsamosci; brak szkicu wspolnego punktu.
-; Zero oznacza ZALOZONE utozsamienie, nie zmierzony domiar 0 m ani 2.99 m.
+; Zero oznacza ZALOZONE utozsamienie, nie zmierzony domiar 0 m ani 2.54 m.
 ; Laczy oba ciagi, tworzy petle i zmienia wyrownanie istniejacej sieci.
 ; Wylacz ten osobny plik w WPJ, aby wrocic do wariantu bez polaczenia.
 ; Warunkowe niezamkniecia i kontrola wplywu: DWA_CIAGI.md i skrypt audytu.
