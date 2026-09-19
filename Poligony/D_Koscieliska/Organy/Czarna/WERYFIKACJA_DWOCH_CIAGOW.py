@@ -44,6 +44,14 @@ def measurements(text: str) -> list[list[str]]:
 def main() -> None:
     root = Path.cwd()
     project = (root / "KATASTER.wpj").read_text()
+    join_block = (
+        ".SURVEY\tHIPOTEZA Kujat 74 = Borowiec 70 - dojscie do III otworu\n"
+        ".NAME\tCZ_GL_P\n.STATUS\t8\n"
+    )
+    assert project.count(join_block) == 1
+    parallel_project = project.replace(join_block, "")
+    join_rows = measurements((root / CAVE / "CZ_GL_P.SRV").read_text())
+    assert join_rows == [["CiagSkany:74", "Borowiec:70", "0", "0", "0"]]
     baseline = run("git", "show", f"{BASE}:KATASTER.wpj")
     fixes = (root / "Poligony/OTWORY.SRV").read_text()
     transcription = (root / CAVE / "CZ_GL_R.SRV").read_text()
@@ -72,9 +80,12 @@ def main() -> None:
         one_fix: bool = False,
         cave_only: bool = False,
         without_date: bool = False,
+        tail_route_only: bool = False,
     ):
         directory.mkdir()
-        paths = [Path(p) for p in preserved] + [CAVE / n for n in ["CZ_GL_R.SRV", "CZ_GL_N.SRV"]]
+        paths = [Path(p) for p in preserved] + [
+            CAVE / n for n in ["CZ_GL_R.SRV", "CZ_GL_N.SRV", "CZ_GL_P.SRV"]
+        ]
         for path in paths:
             target_path = directory / path
             target_path.parent.mkdir(parents=True, exist_ok=True)
@@ -83,6 +94,15 @@ def main() -> None:
             control = transcription.replace(f"#date {ADOPTED_DATE}", "#units DECL=0")
             assert measurements(control) == rows
             (directory / CAVE / "CZ_GL_R.SRV").write_text(control)
+        if tail_route_only:
+            # Keep the original AVD readings and date of III entrance -> B70.
+            # Other branches are irrelevant to this independent, loop-free route.
+            tail = (root / CAVE / "CZ_K_S.SRV").read_text()
+            route = tail.split(";Korytarz Trzech Studni", 1)[0]
+            tie = next(s for s in tail.splitlines() if s.split()[:2] == ["12", "Borowiec:70"])
+            route += tie + "\n"
+            assert measurements(route) == tail_route
+            (directory / CAVE / "CZ_K_S.SRV").write_text(route)
         fix_text = fixes
         if cave_only:
             fix_text = (
@@ -135,24 +155,45 @@ def main() -> None:
             body += f".SURVEY {name}\n.NAME {Path(name).stem}\n.PATH {CAVE}\n.STATUS 8\n"
         return body + ".ENDBOOK\n"
 
+    tail_rows = measurements((root / CAVE / "CZ_K_S.SRV").read_text())
+    tail_route = tail_rows[:12] + [r for r in tail_rows if r[:2] == ["12", "Borowiec:70"]]
+    assert len(tail_route) == 13 and tail_route[0][:2] == ["0", "1"]
+    tail_length = sum(float(r[4]) for r in tail_route)  # AVD, unlike the main DAV journal.
+
     with tempfile.TemporaryDirectory(prefix="czarna-dwa-ciagi-") as tmp:
         scratch = Path(tmp)
         old, old_counts = compile_case(scratch / "baseline", baseline)
         new, new_counts = compile_case(scratch / "new", project)
-        undated, _ = compile_case(scratch / "control-decl-zero", project, without_date=True)
+        parallel, parallel_counts = compile_case(scratch / "parallel-no-join", parallel_project)
+        undated, _ = compile_case(
+            scratch / "control-decl-zero", parallel_project, without_date=True
+        )
         old_free, _ = compile_case(scratch / "baseline-one-fix", baseline, True)
         new_free, _ = compile_case(scratch / "new-one-fix", project, True)
+        parallel_free, _ = compile_case(scratch / "parallel-one-fix", parallel_project, True)
         borowiec, _ = compile_case(
             scratch / "isolated-one-fix", isolated(["CZ_B_DAV.SRV", "CZ_K_S.SRV"]), True, True
         )
+        kujat, kujat_counts = compile_case(
+            scratch / "kujat-route-one-fix",
+            isolated(["CZ_GL_R.SRV", "CZ_GL_N.SRV", "CZ_GL_P.SRV", "CZ_K_S.SRV"]),
+            one_fix=True,
+            cave_only=True,
+            tail_route_only=True,
+        )
+        assert kujat_counts["loops"] == 0, "Kujat closure must be measured on an unadjusted route"
+        assert all(pos == parallel[name] for name, pos in old.items())
+        assert all(pos == parallel_free[name] for name, pos in old_free.items())
         max_shift = max(math.dist(pos, new[name]) for name, pos in old.items())
         max_free_shift = max(math.dist(pos, new_free[name]) for name, pos in old_free.items())
-        assert max_shift == max_free_shift == 0, "Existing network shifted at dump3d resolution"
-        assert new_counts["loops"] == old_counts["loops"]
+        assert parallel_counts["loops"] == old_counts["loops"]
+        assert new_counts["loops"] == old_counts["loops"] + 1
         assert new_counts["stations"] - old_counts["stations"] == 79
-        assert new_counts["legs"] - old_counts["legs"] == 79
+        assert new_counts["legs"] - old_counts["legs"] == 80
+        assert new["Czarna:CiagSkany:74"] == new["Czarna:Borowiec:70"]
         assert all(pos == undated[name] for name, pos in old.items())
         target = old[THIRD]
+        assert new[THIRD] == target and new["Czarna:M:otwor1"] == old["Czarna:M:otwor1"]
 
         def difference(left, right):
             delta = [round(a - b, 2) for a, b in zip(left, right)]
@@ -169,12 +210,12 @@ def main() -> None:
             north = nodes[k76][1] - nodes[k0][1]
             return math.degrees(math.atan2(east, north))
 
-        rotation = (bearing(new) - bearing(undated) + 180) % 360 - 180
+        rotation = (bearing(parallel) - bearing(undated) + 180) % 360 - 180
         assert abs(rotation) > 0.01, "Adopted date did not change the traverse orientation"
         # Date correction rotates the traverse horizontally; it cannot change heights.
         assert all(
             pos[2] == undated[name][2]
-            for name, pos in new.items()
+            for name, pos in parallel.items()
             if name.startswith("Czarna:CiagSkany:")
         )
 
@@ -205,7 +246,14 @@ def main() -> None:
         assert b_rows[0][:2] == ["0W", "0"] and b_rows[-1][:2] == ["72", "73"]
         delta = [k - b for k, b in zip(endpoint(rows[:76]), endpoint(b_rows))]
         paths = [Path("KATASTER.wpj"), Path("Poligony/OTWORY.SRV")]
-        paths += [CAVE / name for name in [*OLD, "CZ_GL_R.SRV", "CZ_GL_N.SRV"]]
+        paths += [CAVE / name for name in [*OLD, "CZ_GL_R.SRV", "CZ_GL_N.SRV", "CZ_GL_P.SRV"]]
+        kujat_length = sum(float(r[2]) for r in rows[:74]) + tail_length
+        assert rows[73][:2] == ["73", "74"]
+        borowiec_length = sum(float(r[2]) for r in b_rows[:71]) + tail_length
+        assert b_rows[70][:2] == ["69", "70"]
+        shifts = sorted(
+            ((math.dist(pos, new[name]), name) for name, pos in old.items()), reverse=True
+        )
         report = {
             "base_commit": BASE,
             "transcription_commit": TRANSCRIPTION,
@@ -229,14 +277,63 @@ def main() -> None:
             "transcription_length_m": round(sum(float(row[2]) for row in rows), 2),
             "baseline": old_counts,
             "both_traverses": new_counts,
+            "parallel_without_join": parallel_counts,
             "old_node_labels_checked": len(old),
             "max_existing_node_shift_m": max_shift,
             "max_existing_node_shift_one_fix_m": max_free_shift,
+            "existing_labels_shifted": sum(d > 0 for d, _ in shifts),
+            "largest_existing_node_shifts": [
+                {"station": n, "distance_m": d} for d, n in shifts[:5]
+            ],
             "gnss_III_UTM34N": target,
             "closure_mixed": closure(new_free),
+            "closure_mixed_without_join": closure(parallel_free),
             "closure_borowiec_with_old_kujat_tail": closure(borowiec),
-            "closure_new_kujat": None,
-            "new_kujat_limitation": "No second identified tie; no loop closure available.",
+            "closure_new_kujat_conditional_on_K74_B70": closure(kujat),
+            "independent_routes": {
+                "kujat": {
+                    "length_m": round(kujat_length, 2),
+                    "measured_legs": 74 + 13,
+                    "closure_percent": 100 * closure(kujat)["spatial_m"] / kujat_length,
+                },
+                "borowiec": {
+                    "length_m": round(borowiec_length, 2),
+                    "measured_legs": 71 + 13,
+                    "closure_percent": 100 * closure(borowiec)["spatial_m"] / borowiec_length,
+                },
+                "shared_tail_length_m": round(tail_length, 2),
+            },
+            "hypothetical_join": {
+                "identity": "CiagSkany:74 = Borowiec:70 = historical Kujat:13",
+                "status": "Review hypothesis authorized by user; physical identity unconfirmed",
+                "selection_basis": (
+                    "Known B70 junction to III entrance; local proximity and terminal route "
+                    "to Colorado, not closure optimization"
+                ),
+                "before_join_K74_minus_B70": difference(
+                    parallel["Czarna:CiagSkany:74"], parallel["Czarna:Borowiec:70"]
+                ),
+                "before_join_K70_minus_B70": difference(
+                    parallel["Czarna:CiagSkany:70"], parallel["Czarna:Borowiec:70"]
+                ),
+                "candidate_region_before_join": [
+                    {
+                        "kujat_station": i,
+                        **difference(
+                            parallel[f"Czarna:CiagSkany:{i}"], parallel["Czarna:Borowiec:70"]
+                        ),
+                    }
+                    for i in range(70, 77)
+                ],
+                "junction_residual_between_independent_routes": difference(
+                    kujat["Czarna:CiagSkany:74"], borowiec["Czarna:Borowiec:70"]
+                ),
+            },
+            "new_kujat_limitation": (
+                "Closure is conditional on assumed K74=B70 and K0 at main GNSS; "
+                "both routes share the old Kujat tail. Joint-network closure is not "
+                "either traverse's independent error."
+            ),
             "adopted_survey_date": {
                 "value": ADOPTED_DATE,
                 "status": "User-adopted calculation date, not a confirmed journal date",
@@ -245,16 +342,17 @@ def main() -> None:
                 "explicit_declination_override": False,
             },
             "date_effect_in_compiled_project_NOT_closure": {
+                "context": "Parallel traverses with hypothetical internal join removed",
                 "rotation_from_DECL0_deg": rotation,
-                "K76_movement_from_DECL0": difference(new[k76], undated[k76]),
+                "K76_movement_from_DECL0": difference(parallel[k76], undated[k76]),
                 "K76_minus_B73_before_date": difference(undated[k76], undated[b73]),
-                "K76_minus_B73_with_date": difference(new[k76], new[b73]),
+                "K76_minus_B73_with_date": difference(parallel[k76], parallel[b73]),
                 "endpoint_identity_confirmed": False,
                 "compiled_endpoints_UTM34N_m": {
-                    "K0": new[k0],
+                    "K0": parallel[k0],
                     "K76_DECL0": undated[k76],
-                    "K76_dated": new[k76],
-                    "B73": new[b73],
+                    "K76_dated": parallel[k76],
+                    "B73": parallel[b73],
                 },
             },
             "raw_endpoint_comparison_NOT_closure": {

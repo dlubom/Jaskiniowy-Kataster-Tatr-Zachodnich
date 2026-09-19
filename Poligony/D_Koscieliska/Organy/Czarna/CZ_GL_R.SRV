@@ -31,8 +31,9 @@ PROCESSING      "78 odcinkow ze skanow; A49-50=88 wg uzytkownika; 3 niepewne D/A
 ; Zrodla i ograniczenia: DATOWANIE_KUJATA.md; deklinacja wyliczana z #date.
 ; Nie utozsamiac numeracji z innymi ciagami bez identyfikacji punktow.
 ; Ustawienie K0 przy otworze jest zalozeniem w CZ_GL_N.SRV, nie domiarem.
-; W tym dzienniku brak #fix i nawiazan; stacja 0 opisana jako Otwor,
-; stacja 76 jako Koniec Kolorado; nie jest to gotowy trawers do III otworu.
+; W samym dzienniku brak #fix i nawiazan; stacja 0 opisana jako Otwor,
+; stacja 76 jako Koniec Kolorado. CZ_GL_P dodaje HIPOTEZE K74=B70,
+; laczaca ten pomiar z dawnym dojsciem Kujata do III otworu.
 ; Jednostki katowe przyjete jako stopnie: pion -90 i obliczenia w dzienniku.
 ; Usunieto robocze DECL=0: przyjety #date uruchamia model deklinacji.
 ; Orientacja historyczna nadal wymaga weryfikacji; nie dopasowano jej do GNSS.

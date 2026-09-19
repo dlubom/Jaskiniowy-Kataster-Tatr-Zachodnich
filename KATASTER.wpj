@@ -188,6 +188,9 @@
 .SURVEY	Ustawienie Kujata przy otworze - zalozenie przegladowe
 .NAME	CZ_GL_N
 .STATUS	8
+.SURVEY	HIPOTEZA Kujat 74 = Borowiec 70 - dojscie do III otworu
+.NAME	CZ_GL_P
+.STATUS	8
 .ENDBOOK
 .SURVEY	Pomiary Kujata 1981 - partie koncowe
 .NAME	CZ_K_S

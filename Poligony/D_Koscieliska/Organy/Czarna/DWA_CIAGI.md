@@ -6,22 +6,28 @@ W `KATASTER.wpj` są jednocześnie **cała dotychczasowa sieć oparta na Borowcu
 i **osobny, roboczy ciąg główny Ryszarda Kujata 0–76 z Partiami Tehuby 6–a–b**.
 To propozycja do oceny, bez rozstrzygnięcia, który pomiar ma być podstawowy.
 
-Nowy ciąg ma własny prefiks `Czarna:CiagSkany`. Jego jedyne połączenie
-z istniejącą siecią zapisano osobno w [CZ_GL_N.SRV](CZ_GL_N.SRV): K0 ustawiono
-przy `Czarna:M:otwor1`. **To założenie przeglądowe dla nakładki, nie potwierdzony
-zerowy domiar.** Dziennik opisuje K0 jako „Otwór”, ale nie identyfikuje punktu
-GNSS. Połączenie nie tworzy pętli, więc nie powoduje wzajemnego wyrównywania
-obu głównych ciągów. Nie dodano żadnego wewnętrznego utożsamienia ich stacji.
+Nowy ciąg ma własny prefiks `Czarna:CiagSkany`. Początek K0 ustawiono
+przy `Czarna:M:otwor1` w [CZ_GL_N.SRV](CZ_GL_N.SRV) jako założenie do oceny.
+Na polecenie użytkownika dodano aktywne **hipotetyczne utożsamienie
+Kujat 74 = Borowiec 70 = dawny Kujat 13** w osobnym
+[CZ_GL_P.SRV](CZ_GL_P.SRV). Dzięki niemu nowy ciąg korzysta z istniejącego
+dojścia Kujata do III otworu. **To założenie tożsamości stanowisk, nie nowy
+pomiar ani odczyt nawiązania z dziennika.** Tworzy jedną dodatkową pętlę
+i zmienia wyrównanie wspólnej sieci; dane dawnych pomiarów pozostają bez zmian.
 
 ## Co można obejrzeć
 
 Otwórz `KATASTER.wpj`, rozwiń „Jaskinia Czarna”, a następnie
 „Ciag glowny Kujata - wariant roboczy do oceny”. Oba pomiary są dołączone.
 W Walls ich widocznością i kolorem można sterować oddzielnie w Segments;
-wyłączenie widoczności segmentu nie zmienia danych pomiarowych.
+wyłączenie widoczności segmentu nie usuwa go z obliczeń. Aby wyłączyć
+hipotetyczne połączenie, **wyłącz z kompilacji osobną pozycję
+„HIPOTEZA Kujat 74 = Borowiec 70 - dojscie do III otworu” (`CZ_GL_P`)**.
+Pozostaw `CZ_GL_R` i `CZ_GL_N` włączone; wróci układ dwóch ciągów bez
+wewnętrznego połączenia. Skrypt audytu odtwarza oba warianty niezależnie.
 
 Kujat dodaje **78 odcinków / 1122,50 m** (1109,70 m głównego ciągu
-+ 12,80 m Tehuby), a plik ustawienia początku jeden zerowy wektor.
++ 12,80 m Tehuby) oraz dwa zerowe wektory: ustawienie początku i hipotezę K74=B70.
 **To powtórny pomiar przebiegu, nie przyrost długości jaskini.** Zbiorcza suma
 aktywnych odcinków i eksporty zawierają oba ciągi; nie używaj tej sumy jako
 nowej długości Czarnej. Nie dublowano odgałęzień z istniejących plików.
@@ -31,7 +37,8 @@ nowej długości Czarnej. Nie dublowano odgałęzień z istniejących plików.
 Wszystkie dotychczasowe pliki i ich podłączenia pozostają niezmienione.
 Kontrola źródeł nie znalazła odpowiedników 11 wewnętrznych punktów Borowca
 w nowym dzienniku Kujata. Bliskie położenie, podobny profil lub równy numer
-nie są dowodem tożsamości fizycznego stanowiska.
+nie są dowodem tożsamości fizycznego stanowiska. Użytkownik zlecił jednak
+przyjęcie rozsądnego połączenia do przeglądu; poniżej wyraźnie odróżniono je od dowodu.
 
 | Punkt Borowca | Obecne podłączenie | Plik:wiersz | Przy nowym Kujacie |
 | --- | --- | --- | --- |
@@ -46,7 +53,7 @@ nie są dowodem tożsamości fizycznego stanowiska.
 | 31 | powtórzenie 31–30 | CZ_N_S.SRV:148 | brak |
 | 42 | Partie Wawelskie przez Komin Żłobisty | CZ_W_S.SRV:35 | K55 podobny geometrycznie, bez dowodu tożsamości |
 | 65 | boczny korytarz nad Brązowym Progiem | CZ_K_S.SRV:97 | brak |
-| 70 | Sala Bernarda, III otwór i Korytarz Mamuci | CZ_K_S.SRV:67–68 | brak |
+| 70 | Sala Bernarda, III otwór i Korytarz Mamuci | CZ_K_S.SRV:67–68 | **hipoteza K74=B70**, osobno w CZ_GL_P |
 | — | własne Partie Tehuby | CZ_GL_R.SRV, 6→a→b | dołączone bez dodatkowej hipotezy |
 
 List Kujata w `_RAW/02/20220325_124826 list Kujata.jpg` potwierdza jego
@@ -57,9 +64,40 @@ K64 jako rejon krawędzi Studni Imieninowej, zejście K65–66 i K76 jako
 „Koniec Kolorado”. **K76 nie jest III otworem.** W rejonie Studni Imieninowej
 profile różnią się lokalnie o około 20–30 m; nie rozstrzygnięto przyczyny.
 
-Zatem wariant Kujata nie ma jeszcze przeniesionych partii Wawelskich,
-Nowaka ani dojścia do III otworu. Do przeniesienia potrzebne są szkice,
-domiary lub rozpoznanie konkretnych stanowisk. Pozostają dostępne przy Borowcu.
+### Dlaczego wybrano K74, a nie K70
+
+Punktem docelowym jest **B70**, ponieważ list Kujata wiąże właśnie z nim
+stary punkt 13, od którego istnieje zmierzone dojście przez Salę Bernarda
+do północnego otworu. Nowy K74 jest w tym rejonie, a dalsze K74–76 prowadzą
+do Colorado, podobnie jak B70–73. Długości tych końcowych odcinków wynoszą
+odpowiednio 43,00 m i 45,31 m.
+
+Porównanie przed dodaniem łącznika, po przyjęciu daty i przy obu fixach:
+
+| Punkt nowego Kujata | Odległość 3D od B70 |
+| --- | ---: |
+| K70 | 70,78 m |
+| K71 | 53,80 m |
+| K72 | 34,29 m |
+| K73 | 16,59 m |
+| **K74** | **2,54 m** |
+| K75 | 18,88 m |
+| K76 | 44,64 m |
+
+Dla K74 różnica wynosi +1,34 m E, −0,42 m N i −2,12 m Z
+(1,40 m poziomo). To przesłanka do wyboru **kandydata**, nie potwierdzenie
+stanowiska. Borowiec w tym porównaniu jest już wyrównany do obu otworów.
+Przy liczeniu obu tras niezależnie tylko od głównego otworu różnica K74–B70
+wynosi **12,74 m 3D**. Nie należy przedstawiać 2,54 m jako niezależnego
+niezamknięcia dwóch pomiarów.
+
+Numeracja nie jest zgodna jeden do jednego. Nie połączono K70 z B70 ani
+K76 z III otworem. Nie skanowano możliwych połączeń w poszukiwaniu
+najmniejszego błędu GNSS: K74 wybrano w sąsiedztwie udokumentowanego
+odejścia B70, a dopiero potem policzono niezamknięcie. Brak szkicu lub
+opisu utożsamiającego K74 z B70 pozostaje jawnym ograniczeniem.
+Inne lokalne podłączenia nadal mają numery Borowca; nie dopisano im
+odpowiedników Kujata. Wspólna sieć jest teraz połączona także przez B70.
 
 ## Błędy — wspólna definicja i ograniczenia
 
@@ -71,22 +109,37 @@ plików; nie dopasowywano deklinacji do zamknięcia.
 
 | Wariant kontroli | ΔE | ΔN | ΔZ | Poziomo | 3D |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Obecna sieć (Borowiec + istniejące partie, w tym powtórzenia Nowaka) | −7,47 m | +7,19 m | +2,85 m | 10,37 m | **10,75 m** |
-| Izolowany Borowiec + stare partie końcowe Kujata (`CZ_B_DAV` + `CZ_K_S`) | −6,92 m | +9,05 m | +2,87 m | 11,39 m | **11,75 m** |
-| Nowy Kujat 0–76 | — | — | — | — | **niewyznaczalny bez drugiego dowiązania** |
+| Dotychczasowa sieć bez K74=B70 (kontrola porównawcza) | −7,47 m | +7,19 m | +2,85 m | 10,37 m | **10,75 m** |
+| Wspólna sieć z hipotezą K74=B70 | −3,44 m | +3,23 m | +0,23 m | 4,72 m | **4,72 m** |
+| Izolowany Borowiec + dawne dojście Kujata | −6,92 m | +9,05 m | +2,87 m | 11,39 m | **11,75 m** |
+| Izolowany nowy Kujat + dawne dojście, warunkowo K74=B70 | +0,59 m | −0,07 m | −1,91 m | 0,59 m | **2,00 m** |
 
-W drugim wierszu trasa 0W→B70→dawny Kujat 12→III otwór ma **1164,62 m /
-84 odcinki**; względne niezamknięcie 3D to **1,01%**. To kontrola całej trasy
-z dojściem, nie dokładność samego instrumentu Borowca. Pierwszy wiersz jest
-wynikiem sieci z dodatkowymi pomiarami i jej wewnętrznym wyrównaniem.
-Współrzędne `dump3d` są zaokrąglone do 0,01 m; podane wyniki nie mają
-milimetrowej precyzji. Współrzędnych kontrolnych GNSS nie audytowano ponownie
-pod kątem dokładności ani zgodności punktu terenowego z historyczną stacją.
+Trasa Borowca 0W→B70→dawny Kujat 12→III otwór ma **1164,62 m /
+84 mierzone odcinki**, a względne niezamknięcie 3D wynosi **1,01%**.
+Trasa nowego Kujata K0→K74→dawny Kujat 12→III otwór ma **1177,56 m /
+87 mierzonych odcinków** i warunkowe niezamknięcie **0,17%**.
+Nie wliczano zerowych łączników do liczby mierzonych odcinków.
 
-Przy obu fixach Survex raportuje dla części III otwór→B42 przesunięcie
-wyrównania **2,44 m / 340,98 m = 0,71%**. Nie jest to powyższe niezamknięcie
-całej trasy ani błąd Kujata. Nowy dziennik jest drzewem bez pętli:
-brak obliczalnego zamknięcia nie oznacza błędu 0 m.
+Obie trasy korzystają z **tych samych 110,86 m / 13 odcinków dawnego
+pomiaru Kujata**. Są liczone osobno, lecz nie są całkowicie niezależnymi
+pomiarami jaskini. Kontrola nowego Kujata nie zawiera wektorów Borowca:
+pozostawiono tylko nowy dziennik, dwa łączniki i oryginalne 13 odcinków
+od B70 przez dawny K12 do III otworu. Pozostałe dawne gałęzie pominięto
+wyłącznie w tymczasowej kopii do kontroli. Sieć ta ma 0 pętli i po usunięciu
+fixa III otworu nie jest wyrównywana do jego GNSS.
+
+**2,00 m to wynik warunkowy przy K74=B70 oraz ustawieniu K0 na fixie
+głównego otworu.** Nie dowodzi poprawności tych założeń, rzeczywistej daty
+ani większej dokładności instrumentu Kujata. **4,72 m** dotyczy wspólnej,
+wewnętrznie wyrównanej sieci i nie jest niezależnym błędem Kujata.
+
+Przy obu fixach dodatkowa pętla przesuwa 339 dotychczasowych nazwanych
+punktów na poziomie rozdzielczości `dump3d`; największe przesunięcie wynosi
+**0,23 m**. Oba fixy pozostają niezmienione. To wynik wyrównania, nie edycja
+starych pomiarów. Po wyłączeniu `CZ_GL_P` stare współrzędne wracają do
+wartości bazowych (rozdzielczość kontroli 0,01 m).
+Współrzędnych kontrolnych GNSS nie audytowano ponownie pod kątem dokładności
+ani zgodności punktu terenowego z historyczną stacją.
 
 Dodatkowe porównanie kształtu, bez dat, obrotu, skali i wyrównania:
 po ustawieniu obu początków w (0,0,0), końce K76 i B73 różnią się o
@@ -104,7 +157,8 @@ obliczeniowo, nie potwierdzona data dziennika 0–76**. Usunięto `DECL=0`,
 aby model deklinacji wynikał z daty. `CZ_GL_N` zawiera tylko zerowy wektor;
 jego ustawienie `DECL=0` nie nadaje kierunku nowemu pomiarowi.
 
-Kontrola porównuje dwa identyczne projekty: aktualny z datą oraz kopię,
+Kontrola daty usuwa wewnętrzny łącznik K74=B70 z obu porównywanych
+projektów. Porównuje wariant z datą oraz kopię,
 w której tylko Kujat 0–76 wraca do `DECL=0` bez daty. Wszystkie istniejące
 pomiary zachowują swoje korekty i wyrównanie. W siatce UTM 34N:
 
@@ -123,26 +177,27 @@ Osobna kompilacja samego Kujata z referencją projektu raportuje deklinację
 **+1,4° dla 1975-08-20** oraz zbieżność południków **−0,8°** (obie wartości
 zaokrąglone przez Survex). Dlatego obrotu w siatce +2,209° nie należy
 utożsamiać z samą deklinacją magnetyczną. Ta izolowana sieć ma 0 pętli.
-Wszystkie wysokości nowego ciągu i współrzędne starej sieci pozostały
-niezmienione na poziomie rozdzielczości `dump3d` (0,01 m).
+W tym wariancie bez łącznika zmiana daty zachowuje wysokości nowego
+ciągu i współrzędne starej sieci na poziomie rozdzielczości `dump3d` (0,01 m).
+Wpływ dodania łącznika i wyrównania opisano osobno powyżej.
 
 **3,13 m jest odległością końców dwóch ciągów w projekcie, a nie błędem
 zamknięcia Kujata.** Nie potwierdzono fizycznej tożsamości K76 i B73.
 Wcześniejsze 12,45 m pochodzi z innego porównania: obu surowych ciągów
 bez korekt orientacji, po przesunięciu początków do zera.
 
-Połączenia nadal wyglądają tak:
+Aktualne połączenia:
 
 ```text
-główny otwór ── Borowiec ── B70 = dawny Kujat 13 ── dawny Kujat ── otwór północny
-      └─────── Kujat 0–76 (przyjęta data) ── Colorado K76
+główny otwór ── Borowiec ────────────────── B70 ── dawny Kujat ── III otwór
+      └─────── nowy Kujat 0–74 ── [HIPOTEZA K74=B70]
+                              └── K75–76 (Colorado)
 ```
 
-Dolna gałąź ma początek ustawiony przeglądowo przy głównym otworze.
-Nie ma łącznika między nowym ciągiem a dawnym dojściem Kujata do północnego
-otworu. Potrzebny jest zidentyfikowany wspólny punkt albo zmierzony domiar;
-bliskość końców nie zastępuje tego dowodu. **Nie powstała nowa pętla.**
-Kontrolne niezamknięcia starej trasy pozostają 10,75 m i 11,75 m.
+Powstała jedna dodatkowa pętla między dwoma głównymi ciągami. Oba mają
+wspólne dawne dojście do III otworu. Usunięcie łącznika `CZ_GL_P` odtwarza
+stan bez wewnętrznego dowiązania i bez możliwości obliczenia zamknięcia
+nowego Kujata między otworami.
 
 ## Źródło odczytu i nierozstrzygnięte wartości
 
@@ -212,7 +267,8 @@ A49→50=88° zastępuje robocze 68° według odczytu użytkownika, nie przez
 optymalizację geometrii. Pozostały trzy formalnie nierozstrzygnięte D/A/V.
 Po zmianie różnica surowych końców obu ciągów wynosi 12,45 m zamiast
 10,57 m; nadal nie jest błędem zamknięcia. Błędy dojścia starej sieci do
-III otworu (10,75 m i 11,75 m) pozostają takie same.
+III otworu bez nowego łącznika (10,75 m i 11,75 m) pozostają wynikami
+kontrolnymi. Wyniki po dodaniu hipotezy są w tabeli powyżej.
 
 ## Weryfikacja
 
@@ -224,14 +280,14 @@ starych współrzędnych oraz oba obliczalne niezamknięcia.
   to zatwierdzone przez użytkownika A49→50=88°. Skrypt wymaga dokładnie tej
   korekty i odrzuca inne zmiany. 205 istniejących SRV spoza `_RAW` pozostaje
   zgodnych bajtowo z bazą `446edc4`.
-- Sześć kontrolnych kompilacji Survex 1.4.22 bez ostrzeżeń, w tym porównanie
-  przyjętej daty z wariantem `DECL=0`. Dodanie Kujata
-  nie przesuwa żadnej z **12 080 dotychczasowych nazwanych stacji** przy obu
-  fixach ani po zdjęciu fixa III otworu (rozdzielczość porównania: 0,01 m).
-  Niezależny przegląd potwierdził też niezmieniony multizbiór punktów anonimowych.
-- Sieć główna: **18 591 stacji / 18 718 odcinków**, przyrost +79/+79,
-  nadal **203 pętle i 76 komponentów**. Dochodzą 78 wektorów pomiarowych
-  i zerowy wektor ustawienia K0; brak nowych pętli.
+- Dziewięć kontrolnych kompilacji Survex 1.4.22 bez ostrzeżeń: układ bazowy,
+  połączony i bez łącznika, wariant bez daty, trzy pełne kontrole bez fixa III
+  oraz dwie izolowane trasy do III otworu. Sprawdzono 12 080 starych nazwanych
+  stacji, zgodność K74=B70 po połączeniu i zachowanie obu fixów.
+- Sieć główna: **18 591 stacji / 18 719 odcinków**, przyrost +79/+80,
+  **204 pętle** (wcześniej 203) i 76 komponentów. Dochodzą 78 wektorów
+  pomiarowych i dwa zerowe łączniki. Dane dawnych SRV pozostają identyczne;
+  ich współrzędne po wyrównaniu zmieniają się maksymalnie o 0,23 m.
 - **156 testów**, Ruff format/check i wszystkie **12/12 etapów
   `jktz-validate`** przeszły, w tym 87 fixów GPS v1.0.2 i eksporty.
 - Niezależny przegląd integracji nie wykazał istotnych usterek. Nie był

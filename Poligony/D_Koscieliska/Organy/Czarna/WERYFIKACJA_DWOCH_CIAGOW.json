@@ -4,15 +4,16 @@
   "survex": "cavern - Survex 1.4.22",
   "coordinate_resolution_m": 0.01,
   "input_sha256": {
-    "KATASTER.wpj": "83b0e2c08448133e72a6284cdc21b8484b7f893f3901ee6784ed29d7b240e44b",
+    "KATASTER.wpj": "272c25837f5c243dae793c31eb32b22c73ab27d18698da37d885b37354d2ad11",
     "Poligony/OTWORY.SRV": "926c327a9b1821e8f177d746505ea9aa61db33f41b245ef71109614f74f0156c",
     "Poligony/D_Koscieliska/Organy/Czarna/CZ_Z_S.SRV": "32d1d8c88b97bc6f8fb72e950ec02d9b06c6111b2f84725942526c564aade254",
     "Poligony/D_Koscieliska/Organy/Czarna/CZ_B_DAV.SRV": "b1a8f2835c7cd560f099be4ea484e9cec03f73e10b759c69e8c4ae4f3c629b11",
     "Poligony/D_Koscieliska/Organy/Czarna/CZ_K_S.SRV": "fa9a2440a95121abf39c3738fd29193eac03856bd333b42867f5ce513d5f17a6",
     "Poligony/D_Koscieliska/Organy/Czarna/CZ_W_S.SRV": "7551bcea09f72b157162a3937309e4460e5e82cb0f7cfb7420233d41223df33a",
     "Poligony/D_Koscieliska/Organy/Czarna/CZ_N_S.SRV": "66430580f71efb64606256d5e92eb111d07f93bc9fe7318a4bb443074954817a",
-    "Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_R.SRV": "e29693e0a2be73fcdb9e7266d6a3a98cd16c5aac772fa54b29b71164e22d4323",
-    "Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_N.SRV": "9f8df15c4be8cc720a27fffc9b35365bcbba94be4f6f49cf9d24eb2d69ff1905"
+    "Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_R.SRV": "a489d31efbae143c7db396fdfaee878743c81708bc197cd1fd13f11adae999cf",
+    "Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_N.SRV": "e0113344ded1857bf1b35f6b02f56d981b08881349c9ad9c7bbcec800bd20797",
+    "Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_P.SRV": "eb562883ca1721f195374d8d1b1599441acb55029e680beac456177dfb301f29"
   },
   "previous_srv_files_byte_identical": 205,
   "transcription_rows_unchanged": 77,
@@ -34,18 +35,55 @@
   },
   "both_traverses": {
     "stations": 18591,
+    "legs": 18719,
+    "loops": 204
+  },
+  "parallel_without_join": {
+    "stations": 18591,
     "legs": 18718,
     "loops": 203
   },
   "old_node_labels_checked": 12080,
-  "max_existing_node_shift_m": 0.0,
-  "max_existing_node_shift_one_fix_m": 0.0,
+  "max_existing_node_shift_m": 0.22671568099038134,
+  "max_existing_node_shift_one_fix_m": 6.232126442833263,
+  "existing_labels_shifted": 339,
+  "largest_existing_node_shifts": [
+    {
+      "station": "Czarna:Kujat:25",
+      "distance_m": 0.22671568099038134
+    },
+    {
+      "station": "Czarna:Kujat:19",
+      "distance_m": 0.22671568095204037
+    },
+    {
+      "station": "Czarna:Borowiec:72",
+      "distance_m": 0.2204540768915204
+    },
+    {
+      "station": "Czarna:Kujat:6501",
+      "distance_m": 0.22045407684927476
+    },
+    {
+      "station": "Czarna:Kujat:26",
+      "distance_m": 0.22045407684927476
+    }
+  ],
   "gnss_III_UTM34N": [
     418581.57,
     5455524.64,
     1403.92
   ],
   "closure_mixed": {
+    "delta_ENZ_m": [
+      -3.44,
+      3.23,
+      0.23
+    ],
+    "horizontal_m": 4.718739238398324,
+    "spatial_m": 4.724341223916833
+  },
+  "closure_mixed_without_join": {
     "delta_ENZ_m": [
       -7.47,
       7.19,
@@ -63,8 +101,133 @@
     "horizontal_m": 11.392493142416194,
     "spatial_m": 11.74843819407499
   },
-  "closure_new_kujat": null,
-  "new_kujat_limitation": "No second identified tie; no loop closure available.",
+  "closure_new_kujat_conditional_on_K74_B70": {
+    "delta_ENZ_m": [
+      0.59,
+      -0.07,
+      -1.91
+    ],
+    "horizontal_m": 0.5941380311005179,
+    "spatial_m": 2.000274981096349
+  },
+  "independent_routes": {
+    "kujat": {
+      "length_m": 1177.56,
+      "measured_legs": 87,
+      "closure_percent": 0.16986607740551218
+    },
+    "borowiec": {
+      "length_m": 1164.62,
+      "measured_legs": 84,
+      "closure_percent": 1.0087778078941552
+    },
+    "shared_tail_length_m": 110.86
+  },
+  "hypothetical_join": {
+    "identity": "CiagSkany:74 = Borowiec:70 = historical Kujat:13",
+    "status": "Review hypothesis authorized by user; physical identity unconfirmed",
+    "selection_basis": "Known B70 junction to III entrance; local proximity and terminal route to Colorado, not closure optimization",
+    "before_join_K74_minus_B70": {
+      "delta_ENZ_m": [
+        1.34,
+        -0.42,
+        -2.12
+      ],
+      "horizontal_m": 1.4042791745233567,
+      "spatial_m": 2.542911716910361
+    },
+    "before_join_K70_minus_B70": {
+      "delta_ENZ_m": [
+        -54.89,
+        -44.63,
+        -2.36
+      ],
+      "horizontal_m": 70.74425064978779,
+      "spatial_m": 70.78360403370262
+    },
+    "candidate_region_before_join": [
+      {
+        "kujat_station": 70,
+        "delta_ENZ_m": [
+          -54.89,
+          -44.63,
+          -2.36
+        ],
+        "horizontal_m": 70.74425064978779,
+        "spatial_m": 70.78360403370262
+      },
+      {
+        "kujat_station": 71,
+        "delta_ENZ_m": [
+          -41.47,
+          -34.22,
+          -1.77
+        ],
+        "horizontal_m": 53.765874865010794,
+        "spatial_m": 53.795001626545194
+      },
+      {
+        "kujat_station": 72,
+        "delta_ENZ_m": [
+          -24.11,
+          -24.29,
+          -2.12
+        ],
+        "horizontal_m": 34.22420488484721,
+        "spatial_m": 34.28980314904126
+      },
+      {
+        "kujat_station": 73,
+        "delta_ENZ_m": [
+          -10.08,
+          -13.01,
+          -2.12
+        ],
+        "horizontal_m": 16.45802235993134,
+        "spatial_m": 16.594001928407746
+      },
+      {
+        "kujat_station": 74,
+        "delta_ENZ_m": [
+          1.34,
+          -0.42,
+          -2.12
+        ],
+        "horizontal_m": 1.4042791745233567,
+        "spatial_m": 2.542911716910361
+      },
+      {
+        "kujat_station": 75,
+        "delta_ENZ_m": [
+          14.97,
+          6.76,
+          -9.3
+        ],
+        "horizontal_m": 16.425544131017396,
+        "spatial_m": 18.875605950538382
+      },
+      {
+        "kujat_station": 76,
+        "delta_ENZ_m": [
+          37.73,
+          11.1,
+          -21.11
+        ],
+        "horizontal_m": 39.32890667181074,
+        "spatial_m": 44.636252082808205
+      }
+    ],
+    "junction_residual_between_independent_routes": {
+      "delta_ENZ_m": [
+        7.51,
+        -9.12,
+        -4.78
+      ],
+      "horizontal_m": 11.814165226540553,
+      "spatial_m": 12.744524314386943
+    }
+  },
+  "new_kujat_limitation": "Closure is conditional on assumed K74=B70 and K0 at main GNSS; both routes share the old Kujat tail. Joint-network closure is not either traverse's independent error.",
   "adopted_survey_date": {
     "value": "1975-08-20",
     "status": "User-adopted calculation date, not a confirmed journal date",
@@ -73,6 +236,7 @@
     "explicit_declination_override": false
   },
   "date_effect_in_compiled_project_NOT_closure": {
+    "context": "Parallel traverses with hypothetical internal join removed",
     "rotation_from_DECL0_deg": 2.2089942496833146,
     "K76_movement_from_DECL0": {
       "delta_ENZ_m": [
