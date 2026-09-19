@@ -1,6 +1,6 @@
 # Czarna — dwa główne ciągi do przeglądu
 
-Stan: 2026-09-17. Baza PR: `446edc4` (`origin/master`).
+Stan: 2026-09-19. Baza PR: `446edc4` (`origin/master`).
 
 W `KATASTER.wpj` są jednocześnie **cała dotychczasowa sieć oparta na Borowcu**
 i **osobny, roboczy ciąg główny Ryszarda Kujata 0–76 z Partiami Tehuby 6–a–b**.
@@ -54,7 +54,7 @@ List Kujata w `_RAW/02/20220325_124826 list Kujata.jpg` potwierdza jego
 Dotyczy to partii końcowych w `CZ_K_S.SRV`, a nie nowego dziennika 0–76.
 Fotografia `20220325_124904.jpg` potwierdza te opisy. Nowy dziennik oznacza
 K64 jako rejon krawędzi Studni Imieninowej, zejście K65–66 i K76 jako
-„Koniec Colorado”. **K76 nie jest III otworem.** W rejonie Studni Imieninowej
+„Koniec Kolorado”. **K76 nie jest III otworem.** W rejonie Studni Imieninowej
 profile różnią się lokalnie o około 20–30 m; nie rozstrzygnięto przyczyny.
 
 Zatem wariant Kujata nie ma jeszcze przeniesionych partii Wawelskich,
@@ -90,7 +90,7 @@ brak obliczalnego zamknięcia nie oznacza błędu 0 m.
 
 Dodatkowe porównanie kształtu, bez dat, obrotu, skali i wyrównania:
 po ustawieniu obu początków w (0,0,0), końce K76 i B73 różnią się o
-**9,40 m poziomo / 10,57 m w 3D**. To różnica dwóch niepotwierdzonych jako
+**11,47 m poziomo / 12,45 m w 3D**. To różnica dwóch niepotwierdzonych jako
 tożsame końców, nie błąd zamknięcia. Nowy Kujat zachowuje `DECL=0` jako
 roboczy brak korekty; data i orientacja pozostają nieustalone.
 
@@ -98,8 +98,11 @@ roboczy brak korekty; data i orientacja pozostają nieustalone.
 
 [CZ_GL_R.SRV](CZ_GL_R.SRV) przeniesiono z eksperymentów zapisanych w commicie
 [`c878b7b`](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/tree/c878b7b/Poligony/D_Koscieliska/Organy/Czarna).
-Przeniesiono wszystkie 78 D/A/V bez zmian; dostosowano jedynie opis włączenia
-oraz metadane. Oryginalne źródła w `_RAW` pozostały nienaruszone.
+Z 78 rekordów D/A/V **77 pozostało bez zmian**. W odcinku 49→50
+azymut wynosi **88°**, zgodnie z jednoznacznym odczytem i poleceniem użytkownika
+z 2026-09-19; poprzednia wartość 68° była robocza. Nie zmieniono żadnego
+innego D/A/V. Uzupełniono komentarze z prawej strony tabel na fotografiach.
+Oryginalne źródła w `_RAW` tej gałęzi pozostały nienaruszone.
 Raporty wcześniejszych odczytów i analiz pozostają w podlinkowanej historii.
 
 Fotografie z `_RAW/02`: `20220325_123052 ciąg gł Czarna 1_Kujat.jpg`
@@ -112,15 +115,45 @@ podstawie nazwy pierwszej fotografii. Daty i instrumentu nie ustalono.
 | --- | --- | ---: | ---: |
 | 29–30 | D | 13,80 m | 13,60 m |
 | 39–40 | A | 75° | 25° |
-| 49–50 | A | 68° | 88° |
 | 71–72 | V | −1° | +1° |
 
 Nie wybierano cyfr ani znaków według uzyskanego zamknięcia.
 `Lh_scan` i `dh_scan` to pomocnicze odczyty obliczeń z dziennika, zawierające
-niespójności źródła; nie sterują geometrią. Cztery oznaczenia nie są gwarancją
+niespójności źródła; nie sterują geometrią. Trzy oznaczenia nie są gwarancją
 bezbłędności pozostałych cyfr. Znane starsze problemy (jednostki gałęzi
 6500–6509, 11,09/11,90 m, współrzędna B64, daty przyjęte i odsyłacze metadanych)
 nie są naprawiane w tym PR i nadal ograniczają ocenę historycznych danych.
+
+## Uwagi z prawej strony pomiarów
+
+Komentarze `UWAGA_S1/S1b` i `UWAGA_S2` w SRV zachowują opisy z kolumny
+uwag. `MARGINES_` oraz komentarze podsumowań przenoszą pomocnicze dopiski
+wysokościowe, także tam, gdzie brak osobnego opisu. Użyto ASCII i kropek
+dziesiętnych wymaganych w SRV. Nawiasy kwadratowe oraz `?` oznaczają
+niepewne fragmenty, a nie litery dopisane w źródle.
+
+| Położenie dopisku | Odczyt opisu | Uwagi do odczytu |
+| --- | --- | --- |
+| 0→1 | Otwór | S1/S1b |
+| 2→3 | po [doliczeniu?] 2 m | S1/S1b; środkowe słowo słabe, nie zastosowano dodatkowego przesunięcia do D/A/V |
+| przy stacji 6 / wierszu 6→7 | wejście do Tehuby (6) | S1/S1b; numer 6 podany jawnie |
+| 25→26 | Podnóże [D…skiego?] (−36,63) | S2; nie rozstrzygnięto nazwy |
+| 37→38 | 38 (+28,09); Komin [Świerczewskiego?] | S2; nazwa jest niepewnym odczytem |
+| 56→57 | Stanowisko nad [nieczytelne] Progiem | S2; odczyty „Białym” / „Błotnym” pozostają nierozstrzygnięte |
+| przy stacji 64 / wierszu 63→64 | 64 – Krawędź Studni Imieninowej +51,39 | S1/S1b; numer 64 podany jawnie |
+| 65→66 | Studnia Imieninowa +29,03 | S1/S1b; brak numeru w samym dopisku, przypisanie według jego położenia |
+| 75→76 | Koniec Kolorado | S1/S1b; w źródle zapis przez K, łamany „Kolora / do.” |
+
+Kontrolne wysokości i sumy zachowano jako zapisy źródłowe, **nie jako fixy
+ani dane sterujące geometrią**. Poprawiana suma przed 57→58, blada liczba
+przy 69→70 i zakres sumy +20,79 pozostają niepewne. Nie utożsamiano stanowisk
+obu ciągów na podstawie dopisanych nazw.
+
+A49→50=88° zastępuje robocze 68° według odczytu użytkownika, nie przez
+optymalizację geometrii. Pozostały trzy formalnie nierozstrzygnięte D/A/V.
+Po zmianie różnica surowych końców obu ciągów wynosi 12,45 m zamiast
+10,57 m; nadal nie jest błędem zamknięcia. Błędy dojścia starej sieci do
+III otworu (10,75 m i 11,75 m) pozostają takie same.
 
 ## Weryfikacja
 
@@ -128,8 +161,10 @@ nie są naprawiane w tym PR i nadal ograniczają ocenę historycznych danych.
 zapisują SHA-256 wejść, zachowanie transkrypcji, liczniki kompilacji, kontrolę
 starych współrzędnych oraz oba obliczalne niezamknięcia.
 
-- 78 rekordów nowego dziennika zgodnych z `c878b7b`; 205 istniejących SRV
-  spoza `_RAW` zgodnych bajtowo z bazą `446edc4`.
+- 77 rekordów nowego dziennika zgodnych z `c878b7b`; jedyny wyjątek D/A/V
+  to zatwierdzone przez użytkownika A49→50=88°. Skrypt wymaga dokładnie tej
+  korekty i odrzuca inne zmiany. 205 istniejących SRV spoza `_RAW` pozostaje
+  zgodnych bajtowo z bazą `446edc4`.
 - Pięć kontrolnych kompilacji Survex 1.4.22 bez ostrzeżeń. Dodanie Kujata
   nie przesuwa żadnej z **12 080 dotychczasowych nazwanych stacji** przy obu
   fixach ani po zdjęciu fixa III otworu (rozdzielczość porównania: 0,01 m).

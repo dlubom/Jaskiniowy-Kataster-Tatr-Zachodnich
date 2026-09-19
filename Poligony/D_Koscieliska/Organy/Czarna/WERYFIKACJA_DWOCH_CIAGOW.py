@@ -48,7 +48,12 @@ def main() -> None:
     transcription = (root / CAVE / "CZ_GL_R.SRV").read_text()
     old_transcription = run("git", "show", f"{TRANSCRIPTION}:{CAVE}/CZ_GL_R.SRV")
     rows = measurements(transcription)
-    assert rows == measurements(old_transcription), "Transcription measurements changed"
+    original_rows = measurements(old_transcription)
+    expected_rows = [row.copy() for row in original_rows]
+    corrected = [row for row in expected_rows if row[:2] == ["49", "50"]]
+    assert corrected == [["49", "50", "14.20", "68", "61"]]
+    corrected[0][3] = "88"  # User's source reading, accepted 2026-09-19.
+    assert rows == expected_rows, "Unexpected transcription change"
     assert len(rows) == 78
     # Every previously active SRV is byte-identical, including the GPS snapshot.
     old_paths = run("git", "ls-tree", "-r", "--name-only", BASE).splitlines()
@@ -171,7 +176,17 @@ def main() -> None:
                 str(p): hashlib.sha256((root / p).read_bytes()).hexdigest() for p in paths
             },
             "previous_srv_files_byte_identical": len(preserved),
-            "transcription_rows_unchanged": len(rows),
+            "transcription_rows_unchanged": sum(a == b for a, b in zip(rows, original_rows)),
+            "approved_transcription_changes": [
+                {
+                    "from": "49",
+                    "to": "50",
+                    "field": "A",
+                    "old_deg": 68,
+                    "new_deg": 88,
+                    "basis": "User source reading, 2026-09-19",
+                }
+            ],
             "transcription_length_m": round(sum(float(row[2]) for row in rows), 2),
             "baseline": old_counts,
             "both_traverses": new_counts,
