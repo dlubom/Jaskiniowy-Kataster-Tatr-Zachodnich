@@ -30,8 +30,16 @@ Podaje 74 punkty wewnątrz jaskini, teodolit Theo 020 i stalową ruletkę.
 **To opis pomiaru Borowca; nie identyfikuje narzędzi ani daty naszego
 azymutalno-taśmowego dziennika Kujata** [2].
 
-Pozostawiono `SURVEY_DATE "nieznane"` i brak `#date` w `CZ_GL_R`.
-Hipoteza nie zmienia deklinacji ani geometrii. Obecne `1975-08-20` w `CZ_K_S`
+**Decyzja użytkownika z 2026-09-19:** do obliczeń przyjęto pierwszy dzień
+akcji opisanej w „Taterniku”, czyli **1975-08-20**. W `CZ_GL_R` ustawiono
+`SURVEY_DATE "1975-08-20"` oraz aktywne `#date 1975-08-20`, usuwając
+`DECL=0`. Komentarz przy danych wyraźnie odróżnia datę przyjętą od historycznej.
+Nie stwierdzono, że pomiar faktycznie wykonano tego dnia. Nie wprowadzono
+fikcyjnej dokładności do wniosków historycznych: okres 20–21 VIII dotyczy
+akcji otwierania otworu, a pojedynczy dzień jest założeniem dla modelu deklinacji.
+Wpływ na geometrię opisano w [DWA_CIAGI.md](DWA_CIAGI.md).
+
+Obecne `1975-08-20` w `CZ_K_S`
 jest wcześniejszym założeniem obliczeniowym, a nie nowo potwierdzoną datą
 pomiaru. Pomiary lokalizujące otwór mogły poprzedzać jego otwarcie; nie należy
 traktować 20 VIII jako dolnej granicy dla wszystkich odcinków. Nie ustalono

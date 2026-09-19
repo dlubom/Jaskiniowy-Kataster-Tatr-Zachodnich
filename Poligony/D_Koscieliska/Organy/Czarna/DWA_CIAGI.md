@@ -91,8 +91,58 @@ brak obliczalnego zamknięcia nie oznacza błędu 0 m.
 Dodatkowe porównanie kształtu, bez dat, obrotu, skali i wyrównania:
 po ustawieniu obu początków w (0,0,0), końce K76 i B73 różnią się o
 **11,47 m poziomo / 12,45 m w 3D**. To różnica dwóch niepotwierdzonych jako
-tożsame końców, nie błąd zamknięcia. Nowy Kujat zachowuje `DECL=0` jako
-roboczy brak korekty; data i orientacja pozostają nieustalone.
+tożsame końców, nie błąd zamknięcia. Ten rachunek celowo pomija korekty
+orientacji obu pomiarów i nie opisuje ich aktualnego położenia w projekcie.
+
+## Przyjęta data i wpływ deklinacji
+
+Na polecenie użytkownika z 2026-09-19 w `CZ_GL_R.SRV` przyjęto
+**`#date 1975-08-20`**, pierwszy dzień akcji otwarcia północnego otworu
+opisanej w „Taterniku” 4/1977, s. 184 (20–21 VIII 1975).
+`SURVEY_DATE` ma tę samą wartość; komentarze wskazują, że to **data przyjęta
+obliczeniowo, nie potwierdzona data dziennika 0–76**. Usunięto `DECL=0`,
+aby model deklinacji wynikał z daty. `CZ_GL_N` zawiera tylko zerowy wektor;
+jego ustawienie `DECL=0` nie nadaje kierunku nowemu pomiarowi.
+
+Kontrola porównuje dwa identyczne projekty: aktualny z datą oraz kopię,
+w której tylko Kujat 0–76 wraca do `DECL=0` bez daty. Wszystkie istniejące
+pomiary zachowują swoje korekty i wyrównanie. W siatce UTM 34N:
+
+| Wielkość | Wynik |
+| --- | ---: |
+| Obrót kierunku K0→K76 względem wariantu `DECL=0` | +2,209° |
+| Przesunięcie K76: ΔE / ΔN / ΔZ | +9,42 / −29,90 / 0,00 m |
+| Przesunięcie K76 poziomo | 31,35 m |
+| Odległość K76–B73 przed dodaniem daty: poziomo / 3D | 29,15 / 29,23 m |
+| Odległość K76–B73 po dodaniu daty: poziomo / 3D | **2,25 / 3,13 m** |
+| Różnica K76−B73 po dodaniu daty: ΔE / ΔN / ΔZ | +1,11 / −1,96 / −2,17 m |
+
+Obrót jest efektem zastosowania daty w aktualnej kompilacji Survex,
+mierzonym względem wariantu `DECL=0`; nie jest dopasowaniem do Borowca.
+Osobna kompilacja samego Kujata z referencją projektu raportuje deklinację
+**+1,4° dla 1975-08-20** oraz zbieżność południków **−0,8°** (obie wartości
+zaokrąglone przez Survex). Dlatego obrotu w siatce +2,209° nie należy
+utożsamiać z samą deklinacją magnetyczną. Ta izolowana sieć ma 0 pętli.
+Wszystkie wysokości nowego ciągu i współrzędne starej sieci pozostały
+niezmienione na poziomie rozdzielczości `dump3d` (0,01 m).
+
+**3,13 m jest odległością końców dwóch ciągów w projekcie, a nie błędem
+zamknięcia Kujata.** Nie potwierdzono fizycznej tożsamości K76 i B73.
+Wcześniejsze 12,45 m pochodzi z innego porównania: obu surowych ciągów
+bez korekt orientacji, po przesunięciu początków do zera.
+
+Połączenia nadal wyglądają tak:
+
+```text
+główny otwór ── Borowiec ── B70 = dawny Kujat 13 ── dawny Kujat ── otwór północny
+      └─────── Kujat 0–76 (przyjęta data) ── Colorado K76
+```
+
+Dolna gałąź ma początek ustawiony przeglądowo przy głównym otworze.
+Nie ma łącznika między nowym ciągiem a dawnym dojściem Kujata do północnego
+otworu. Potrzebny jest zidentyfikowany wspólny punkt albo zmierzony domiar;
+bliskość końców nie zastępuje tego dowodu. **Nie powstała nowa pętla.**
+Kontrolne niezamknięcia starej trasy pozostają 10,75 m i 11,75 m.
 
 ## Źródło odczytu i nierozstrzygnięte wartości
 
@@ -113,11 +163,12 @@ podstawie nazwy pierwszej fotografii. Daty i instrumentu nie ustalono.
 
 Kwerenda historyczna z 2026-09-19 niezależnie potwierdziła pełne nazwisko
 Ryszarda Kujata i jego przynależność do STJ KW Kraków. **Dla dziennika 0–76
-około 1975 r. pozostaje hipotezą kontekstową; data pomiaru jest nieustalona.**
+około 1975 r. pozostaje hipotezą historyczną; do obliczeń użytkownik przyjął
+1975-08-20.**
 Rok 1975 w inwentarzu dotyczy prac przy północnym otworze i katalogowanego
 dziennika, którego tożsamości z naszymi kartkami nie potwierdzono.
 [Datowanie, skład osobowy i źródła](DATOWANIE_KUJATA.md) rozdzielają te dowody
-od daty listu 3 III 1981. Nie zmieniono `SURVEY_DATE`, `#date` ani geometrii.
+od daty listu 3 III 1981. Przyjęcie `#date` nie potwierdza datowania kartek.
 
 | Odcinek | Pole | Roboczo | Alternatywa |
 | --- | --- | ---: | ---: |
@@ -173,7 +224,8 @@ starych współrzędnych oraz oba obliczalne niezamknięcia.
   to zatwierdzone przez użytkownika A49→50=88°. Skrypt wymaga dokładnie tej
   korekty i odrzuca inne zmiany. 205 istniejących SRV spoza `_RAW` pozostaje
   zgodnych bajtowo z bazą `446edc4`.
-- Pięć kontrolnych kompilacji Survex 1.4.22 bez ostrzeżeń. Dodanie Kujata
+- Sześć kontrolnych kompilacji Survex 1.4.22 bez ostrzeżeń, w tym porównanie
+  przyjętej daty z wariantem `DECL=0`. Dodanie Kujata
   nie przesuwa żadnej z **12 080 dotychczasowych nazwanych stacji** przy obu
   fixach ani po zdjęciu fixa III otworu (rozdzielczość porównania: 0,01 m).
   Niezależny przegląd potwierdził też niezmieniony multizbiór punktów anonimowych.

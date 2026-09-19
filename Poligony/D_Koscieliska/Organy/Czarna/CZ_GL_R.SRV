@@ -12,9 +12,9 @@ LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "Ryszard Kujat"
 INSTRUMENT      "nieznane"
-SURVEY_DATE     "nieznane"
+SURVEY_DATE     "1975-08-20"
 SURVEY_GRADE    "nieznane"
-PROCESSING      "78 odcinkow ze skanow z uwagami; A49-50=88 wg odczytu uzytkownika; 3 niepewne D/A/V; wariant w WPJ; DECL=0 roboczo; CZ_GL_N ustawia poczatek przegladowo"
+PROCESSING      "78 odcinkow ze skanow; A49-50=88 wg uzytkownika; 3 niepewne D/A/V; #date 1975-08-20 przyjety obliczeniowo wg akcji 20-21 VIII 1975 (Taternik 4/1977 s.184), nie data potwierdzona; deklinacja z daty; CZ_GL_N ustawia poczatek przegladowo"
 #]
 
 ; WARIANT ROBOCZY W KATASTER.wpj - do oceny rownolegle z Borowcem.
@@ -24,14 +24,18 @@ PROCESSING      "78 odcinkow ze skanow z uwagami; A49-50=88 wg odczytu uzytkowni
 ; Kompilacja potwierdza skladnie, nie poprawnosc tych odczytow.
 ; Autor: Ryszard Kujat, potwierdzone przez uzytkownika 2026-09-13,
 ; zgodnie z dopiskiem Kujat w nazwie fotografii S1.
-; Data i instrument dziennika pozostaja nieustalone; autor nie ustala roku.
+; Historyczna data i instrument dziennika pozostaja nieustalone.
+; DATA PRZYJETA OBLICZENIOWO: 1975-08-20, na polecenie uzytkownika 2026-09-19.
+; Taternik 4/1977, s.184 datuje akcje otwarcia otworu polnocnego na 20-21 VIII 1975.
+; Przyjeto pierwszy dzien tej akcji; to NIE potwierdzona data dziennika 0-76.
+; Zrodla i ograniczenia: DATOWANIE_KUJATA.md; deklinacja wyliczana z #date.
 ; Nie utozsamiac numeracji z innymi ciagami bez identyfikacji punktow.
 ; Ustawienie K0 przy otworze jest zalozeniem w CZ_GL_N.SRV, nie domiarem.
 ; W tym dzienniku brak #fix i nawiazan; stacja 0 opisana jako Otwor,
 ; stacja 76 jako Koniec Kolorado; nie jest to gotowy trawers do III otworu.
 ; Jednostki katowe przyjete jako stopnie: pion -90 i obliczenia w dzienniku.
-; DECL=0 jest JAWNYM roboczym brakiem korekty, nie ustalona deklinacja.
-; Brak #date jest celowy. Przed ocena GNSS trzeba ustalic orientacje i date.
+; Usunieto robocze DECL=0: przyjety #date uruchamia model deklinacji.
+; Orientacja historyczna nadal wymaga weryfikacji; nie dopasowano jej do GNSS.
 ; Wpisano odleglosc rzeczywista, azymut i kat pionowy ze skanu.
 ; Nie odtwarzano katow z obliczonych kolumn poziomych lub Delta h.
 ; Komentarze Lh_scan i dh_scan sa pomocniczym odczytem kolumn obliczeniowych.
@@ -52,7 +56,8 @@ PROCESSING      "78 odcinkow ze skanow z uwagami; A49-50=88 wg odczytu uzytkowni
 #prefix2 Czarna
 #prefix CiagSkany
 #units meters order=DAV
-#units A=D V=D DECL=0
+#units A=D V=D
+#date 1975-08-20
 
 ; FROM TO D[m] A[deg] V[deg]
 

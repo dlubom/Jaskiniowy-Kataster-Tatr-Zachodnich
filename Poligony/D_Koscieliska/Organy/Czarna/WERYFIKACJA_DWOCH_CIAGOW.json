@@ -11,7 +11,7 @@
     "Poligony/D_Koscieliska/Organy/Czarna/CZ_K_S.SRV": "fa9a2440a95121abf39c3738fd29193eac03856bd333b42867f5ce513d5f17a6",
     "Poligony/D_Koscieliska/Organy/Czarna/CZ_W_S.SRV": "7551bcea09f72b157162a3937309e4460e5e82cb0f7cfb7420233d41223df33a",
     "Poligony/D_Koscieliska/Organy/Czarna/CZ_N_S.SRV": "66430580f71efb64606256d5e92eb111d07f93bc9fe7318a4bb443074954817a",
-    "Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_R.SRV": "19d9ac9c8c43966397c4f8c635e53e6ae5396d08c6937a663fb6ed4bd28a6bea",
+    "Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_R.SRV": "e29693e0a2be73fcdb9e7266d6a3a98cd16c5aac772fa54b29b71164e22d4323",
     "Poligony/D_Koscieliska/Organy/Czarna/CZ_GL_N.SRV": "9f8df15c4be8cc720a27fffc9b35365bcbba94be4f6f49cf9d24eb2d69ff1905"
   },
   "previous_srv_files_byte_identical": 205,
@@ -65,6 +65,66 @@
   },
   "closure_new_kujat": null,
   "new_kujat_limitation": "No second identified tie; no loop closure available.",
+  "adopted_survey_date": {
+    "value": "1975-08-20",
+    "status": "User-adopted calculation date, not a confirmed journal date",
+    "source": "Taternik 4/1977 p.184: opening expedition 20-21 August 1975",
+    "historical_journal_date": null,
+    "explicit_declination_override": false
+  },
+  "date_effect_in_compiled_project_NOT_closure": {
+    "rotation_from_DECL0_deg": 2.2089942496833146,
+    "K76_movement_from_DECL0": {
+      "delta_ENZ_m": [
+        9.42,
+        -29.9,
+        0.0
+      ],
+      "horizontal_m": 31.34878626039611,
+      "spatial_m": 31.34878626039611
+    },
+    "K76_minus_B73_before_date": {
+      "delta_ENZ_m": [
+        -8.31,
+        27.94,
+        -2.17
+      ],
+      "horizontal_m": 29.149608916759075,
+      "spatial_m": 29.230268558465216
+    },
+    "K76_minus_B73_with_date": {
+      "delta_ENZ_m": [
+        1.11,
+        -1.96,
+        -2.17
+      ],
+      "horizontal_m": 2.252487513838867,
+      "spatial_m": 3.127714820759719
+    },
+    "endpoint_identity_confirmed": false,
+    "compiled_endpoints_UTM34N_m": {
+      "K0": [
+        417791.68,
+        5455240.34,
+        1323.42
+      ],
+      "K76_DECL0": [
+        418562.44,
+        5455499.48,
+        1340.87
+      ],
+      "K76_dated": [
+        418571.86,
+        5455469.58,
+        1340.87
+      ],
+      "B73": [
+        418570.75,
+        5455471.54,
+        1343.04
+      ]
+    }
+  },
   "raw_endpoint_comparison_NOT_closure": {
     "delta_ENZ_m": [
       7.178442993281578,

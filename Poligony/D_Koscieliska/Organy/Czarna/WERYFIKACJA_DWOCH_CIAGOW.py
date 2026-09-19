@@ -17,6 +17,7 @@ TRANSCRIPTION = "c878b7bd1e428595854a8191a5c5b2339bb978b9"
 CAVE = Path("Poligony/D_Koscieliska/Organy/Czarna")
 OLD = ["CZ_Z_S.SRV", "CZ_B_DAV.SRV", "CZ_K_S.SRV", "CZ_W_S.SRV", "CZ_N_S.SRV"]
 THIRD = "Czarna:Kujat:0"
+ADOPTED_DATE = "1975-08-20"
 
 
 def run(*args: str) -> str:
@@ -55,6 +56,8 @@ def main() -> None:
     corrected[0][3] = "88"  # User's source reading, accepted 2026-09-19.
     assert rows == expected_rows, "Unexpected transcription change"
     assert len(rows) == 78
+    assert re.findall(r"^#date\s+(\S+)", transcription, re.M) == [ADOPTED_DATE]
+    assert not re.search(r"^#units[^\n]*\bDECL=", transcription, re.M | re.I)
     # Every previously active SRV is byte-identical, including the GPS snapshot.
     old_paths = run("git", "ls-tree", "-r", "--name-only", BASE).splitlines()
     preserved = [p for p in old_paths if p.upper().endswith(".SRV") and "/_RAW/" not in p]
@@ -63,13 +66,23 @@ def main() -> None:
         assert (root / path).read_bytes() == original, path
     ref = next(line for line in project.splitlines() if line.startswith(".REF"))
 
-    def compile_case(directory: Path, text: str, one_fix: bool = False, cave_only: bool = False):
+    def compile_case(
+        directory: Path,
+        text: str,
+        one_fix: bool = False,
+        cave_only: bool = False,
+        without_date: bool = False,
+    ):
         directory.mkdir()
         paths = [Path(p) for p in preserved] + [CAVE / n for n in ["CZ_GL_R.SRV", "CZ_GL_N.SRV"]]
         for path in paths:
             target_path = directory / path
             target_path.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(root / path, target_path)
+        if without_date:
+            control = transcription.replace(f"#date {ADOPTED_DATE}", "#units DECL=0")
+            assert measurements(control) == rows
+            (directory / CAVE / "CZ_GL_R.SRV").write_text(control)
         fix_text = fixes
         if cave_only:
             fix_text = (
@@ -126,6 +139,7 @@ def main() -> None:
         scratch = Path(tmp)
         old, old_counts = compile_case(scratch / "baseline", baseline)
         new, new_counts = compile_case(scratch / "new", project)
+        undated, _ = compile_case(scratch / "control-decl-zero", project, without_date=True)
         old_free, _ = compile_case(scratch / "baseline-one-fix", baseline, True)
         new_free, _ = compile_case(scratch / "new-one-fix", project, True)
         borowiec, _ = compile_case(
@@ -137,7 +151,32 @@ def main() -> None:
         assert new_counts["loops"] == old_counts["loops"]
         assert new_counts["stations"] - old_counts["stations"] == 79
         assert new_counts["legs"] - old_counts["legs"] == 79
+        assert all(pos == undated[name] for name, pos in old.items())
         target = old[THIRD]
+
+        def difference(left, right):
+            delta = [round(a - b, 2) for a, b in zip(left, right)]
+            return {
+                "delta_ENZ_m": delta,
+                "horizontal_m": math.hypot(*delta[:2]),
+                "spatial_m": math.hypot(*delta),
+            }
+
+        k0, k76, b73 = "Czarna:CiagSkany:0", "Czarna:CiagSkany:76", "Czarna:Borowiec:73"
+
+        def bearing(nodes):
+            east = nodes[k76][0] - nodes[k0][0]
+            north = nodes[k76][1] - nodes[k0][1]
+            return math.degrees(math.atan2(east, north))
+
+        rotation = (bearing(new) - bearing(undated) + 180) % 360 - 180
+        assert abs(rotation) > 0.01, "Adopted date did not change the traverse orientation"
+        # Date correction rotates the traverse horizontally; it cannot change heights.
+        assert all(
+            pos[2] == undated[name][2]
+            for name, pos in new.items()
+            if name.startswith("Czarna:CiagSkany:")
+        )
 
         def closure(nodes):
             delta = [round(a - b, 2) for a, b in zip(nodes[THIRD], target)]
@@ -198,6 +237,26 @@ def main() -> None:
             "closure_borowiec_with_old_kujat_tail": closure(borowiec),
             "closure_new_kujat": None,
             "new_kujat_limitation": "No second identified tie; no loop closure available.",
+            "adopted_survey_date": {
+                "value": ADOPTED_DATE,
+                "status": "User-adopted calculation date, not a confirmed journal date",
+                "source": "Taternik 4/1977 p.184: opening expedition 20-21 August 1975",
+                "historical_journal_date": None,
+                "explicit_declination_override": False,
+            },
+            "date_effect_in_compiled_project_NOT_closure": {
+                "rotation_from_DECL0_deg": rotation,
+                "K76_movement_from_DECL0": difference(new[k76], undated[k76]),
+                "K76_minus_B73_before_date": difference(undated[k76], undated[b73]),
+                "K76_minus_B73_with_date": difference(new[k76], new[b73]),
+                "endpoint_identity_confirmed": False,
+                "compiled_endpoints_UTM34N_m": {
+                    "K0": new[k0],
+                    "K76_DECL0": undated[k76],
+                    "K76_dated": new[k76],
+                    "B73": new[b73],
+                },
+            },
             "raw_endpoint_comparison_NOT_closure": {
                 "delta_ENZ_m": delta,
                 "horizontal_m": math.hypot(*delta[:2]),
