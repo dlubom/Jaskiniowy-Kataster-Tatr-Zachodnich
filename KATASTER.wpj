@@ -1090,9 +1090,6 @@
 .SURVEY	Marmurowa Partie II Sali
 .NAME	MARMUR_S2
 .STATUS	8
-.SURVEY	Marmurowa Piaskownica II
-.NAME	MARMUR_P
-.STATUS	8
 .ENDBOOK
 .BOOK	Studnia w Kazalnicy
 .NAME	STKAZALN
