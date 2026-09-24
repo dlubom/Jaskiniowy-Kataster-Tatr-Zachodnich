@@ -177,7 +177,14 @@ def _load_best_measurements(path: Path) -> dict[str, dict[str, str]]:
         if reader.fieldnames is None or not required.issubset(reader.fieldnames):
             missing = ", ".join(sorted(required.difference(reader.fieldnames or ())))
             raise RenderError(f"{path} is missing required columns: {missing}")
-        rows = {row["object_id"]: row for row in reader if row.get("object_id")}
+        rows = {}
+        for row in reader:
+            object_id = row.get("object_id")
+            if not object_id:
+                continue
+            if object_id in rows:
+                raise RenderError(f"{path}:{reader.line_num}: duplicate object_id {object_id}")
+            rows[object_id] = row
     if not rows:
         raise RenderError(f"{path} has no best-measurements rows.")
     return rows
@@ -261,7 +268,7 @@ def _format_fix(station_id: str, lon: str, lat: str, elevation_m: str, suffix: s
 
 
 def _required_measurement_value(row: dict[str, str], key: str, *, object_id: str) -> str:
-    value = row.get(key, "").strip()
+    value = (row.get(key) or "").strip()
     if not value:
         raise RenderError(f"{object_id} has empty {key} in best-measurements.csv.")
     return value

@@ -21,6 +21,14 @@ and builds release exports.
 - **Windows path limitation**: The project should be extracted to a short root path (e.g., `C:/`) because deep Windows paths can prevent some caves from displaying
 - Python release tooling is managed with `uv`; validate it with
   `uv run ruff check src scripts tests .agents/skills` and `uv run pytest`.
+- The required Python gate is `uv run jktz-quality`: Ruff, fresh tests, at least
+  90% line and 85% branch coverage, and CRAP <= 30 per function. Run
+  `uv run jktz-mutation` on POSIX/Python >= 3.10 for at least 80% killed mutations
+  in each configured core module; incomplete/error runs fail. Use Python 3.12 to
+  match CI. See `doc/PYTHON_QUALITY.md` for scope, reports, and enforcement.
+  Do not lower thresholds, narrow scope, or add exclusions to make a check pass.
+  Add behavior-based regression tests for confirmed bugs; metrics alone do not
+  authorize unrelated production refactoring.
 
 ## Local development setup
 
@@ -48,7 +56,7 @@ It does four things:
 
 Defined in `.pre-commit-config.yaml`. Run via the [pre-commit framework](https://pre-commit.com/).
 
-- **pre-commit** (every `git commit`, fast): `ruff format`, `ruff check --fix`, `pytest`. Only the staged Python files under `src/`, `scripts/`, `tests/`, `.agents/skills/` are passed to ruff. If `ruff format` modifies a file, the commit **fails** (does not auto-stage) — review and re-stage only the intended files, then commit again. This is the standard pre-commit framework behavior; it guarantees no commit ships unformatted code.
+- **pre-commit** (every `git commit`, fast): `ruff format`, `ruff check --fix`, `jktz-quality` (fresh tests, coverage and CRAP). The first two hooks receive staged Python files under `src/`, `scripts/`, `tests/`, `.agents/skills/`, and `web/`; the quality gate checks the whole source scope. If `ruff format` modifies a file, the commit **fails** (does not auto-stage) — review and re-stage only the intended files, then commit again. This is the standard pre-commit framework behavior; it guarantees no commit ships unformatted code.
 - **pre-push** (every `git push`, slow): `uv run jktz-validate` — full cavern compile + exports pipeline. The validation fails if `cavern` emits any compile warnings. Takes a few minutes. Requires Survex and GDAL on PATH.
 
 If a hook fails, resolve the cause and rerun it. Use the Docker validation skill when local Survex/GDAL are unavailable. Report infrastructure blockers separately from data failures; do not silently bypass hooks. Full validation also downloads the latest GPS release, so it needs network access.

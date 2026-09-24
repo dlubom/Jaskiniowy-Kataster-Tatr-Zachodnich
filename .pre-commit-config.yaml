@@ -17,7 +17,7 @@ repos:
         entry: uv run ruff format
         language: system
         types_or: [python]
-        files: ^(src/|scripts/|tests/|\.agents/skills/)
+        files: ^(src/|scripts/|tests/|\.agents/skills/|web/)
         stages: [pre-commit]
 
       - id: ruff-check
@@ -25,16 +25,20 @@ repos:
         entry: uv run ruff check --fix
         language: system
         types_or: [python]
-        files: ^(src/|scripts/|tests/|\.agents/skills/)
+        files: ^(src/|scripts/|tests/|\.agents/skills/|web/)
         stages: [pre-commit]
 
-      - id: pytest
-        name: pytest
-        entry: uv run pytest
+      - id: jktz-quality
+        name: Python quality (lint, coverage, CRAP)
+        entry: uv run jktz-quality
         language: system
         pass_filenames: false
         always_run: true
         stages: [pre-commit]
+
+      # The full mutation campaign runs in the required Linux CI job. Keeping
+      # it out of local hooks also permits commits/pushes on Windows, where
+      # mutmut's POSIX fork-based runner is unavailable.
 
       - id: jktz-validate
         name: jktz-validate (full validation, requires cavern + GDAL)
