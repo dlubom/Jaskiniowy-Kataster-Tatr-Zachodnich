@@ -13,8 +13,10 @@
 *.err
 cavern_output.txt
 
-#Claude
+#Local Claude settings retained after migration
 .claude/settings.local.json
+
+#Local backups
 *.bak
 
 #macOS - pliki metadanych folderow

@@ -7,6 +7,7 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 ## [Unreleased]
 
 ### Zmienione
+- Przejście na Codex jako domyślnego agenta projektu oraz uporządkowanie instrukcji, skilli i hooków.
 - Zweryfikowano datowanie i autorstwo pomiarów Jaskini Psiej oraz uporządkowano odnośniki do źródeł. W komentarzach SRV opisano niepewne odczyty; wartości pomiarów i oryginalne materiały `_RAW` pozostają bez zmian.
 
 ## [v1.4.6] - 2026-06-21

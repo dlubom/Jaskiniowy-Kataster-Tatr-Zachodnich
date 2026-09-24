@@ -1,52 +1,47 @@
 ---
 name: add-cave
-description: Add a new cave to the Jaskiniowy Kataster Tatr Zachodnich project. Creates the full directory structure, SRV files, _RAW/ folder, and KATASTER.wpj entry.
-argument-hint: <cave-id> <valley-path> [source-zip]
+description: Add a cave from source surveys, register its entrance through the GPS template, and create canonical SRV and RAW metadata.
 ---
 
 Add a new cave to the kataster project.
 
-Arguments: $ARGUMENTS
+Read the inputs from the user request; ask only for required values that cannot be established from the repository or supplied sources.
 Expected format: `<cave-id> "<valley/subdir/path>" [/path/to/source.zip]`
-Example: `/add-cave T.D-08.07 "Dolina Koscieliska/Organy" /tmp/MROZN.SRV.zip`
+Example: `$add-cave T.D-08.07 "D_Koscieliska/Organy" /tmp/MROZN.SRV.zip`
 
 ---
 
 ## Step 1 — Look up cave data in PIG database (single call)
 
-The cave ID is ASCII — search for it directly with a single grep:
+The cave ID is ASCII — search for it directly with a fixed-string search:
 
 ```bash
-grep '"<cave-id>"' doc/jaskinie_polski_pig_dump.jsonl
+rg -F '"<cave-id>"' doc/jaskinie_polski_pig_dump.jsonl
 ```
 
 Parse the returned JSON for:
 - `name` → CAVE_NAME (use ASCII equivalents for diacritics: ą→a, ć→c, ł→l, ó→o, ś→s, ź/ż→z, ę→e, ń→n)
-- `latitude`, `longitude`, `absolute_height_masl` → entrance coordinates
-- `other_names`, `authors_of_study`, `editorial` → for README and metadata
+- `latitude`, `longitude`, `absolute_height_masl` → archival location context; not the active GPS fix
+- `other_names`, `authors_of_study`, `editorial` → inventory context. These fields do not establish authorship of the supplied survey; derive survey team/date from the actual sources.
 
 If not found by ID, try searching by partial ASCII name.
 
-## Step 2 — Determine coordinates (coordinate source priority)
+## Step 2 — Identify the entrance and GPS object
 
-**Always use decimal degrees** for `#fix` (preferred format, per project convention).
+Active entrance fixes come from the published `best-measurements.csv` in
+`dlubom/gps-kataster-obiektow-tatr`, through `gps_fix(...)` in
+`Poligony/OTWORY.SRV.j2`. Establish the GPS `object_id` and the corresponding
+survey station from source evidence. Do not replace these with PIG coordinates
+or a station inferred from a convenient geometric fit.
 
-### Which coordinates to use?
-
-Coordinate sources in order of preference:
-1. **GPS from `_RAW/` source files** — most accurate if the survey team recorded GPS readings in their original data. Check source files for GPS stations, `*fix`, or coordinate blocks. If found, use these.
-2. **PIG dump** (`latitude`, `longitude`, `absolute_height_masl`) — official registry data; good fallback. Already in decimal degrees — round to 6 decimal places.
-3. **Ask the user** — if neither source has reliable coords, ask the user to provide them.
-
-**Ask the user explicitly:** after reading the `_RAW/` files, ask: "Do the source files contain GPS coordinates? If yes, which station and what values?" This matters because survey-measured GPS is more accurate than the PIG registry, and the `#fix` station must match the actual survey network.
-
-Format: `E<lon>  N<lat>` (decimal degrees, 6 decimal places)
-Example: `E19.898750  N49.246611  1270.0m`
+Read any supplied GNSS/source coordinates as provenance. If the object mapping
+or entrance station cannot be established, report the missing information and
+leave registration incomplete; do not invent a fix or an anchor shot.
 
 ## Step 3 — Determine directory path
 
 Valley path from arguments (use ASCII, no diacritics in directory names):
-`Poligony/<valley-path>/<Cave Name ASCII>/`
+`Poligony/<valley-path>/<Cave_Directory_ASCII>/`
 
 Check if the valley subdirectory already exists. Match the style of neighbouring caves in that directory.
 
@@ -57,17 +52,17 @@ If a source ZIP was provided:
 2. List contents: `find /tmp/<cave_ascii>_raw -not -path "*/__MACOSX*" -type f`
 3. Read each survey file to understand its format (units, station naming, number of readings)
 
-**If the source files are in Survex format (`.svx` files):** use the `/svx-to-srv` skill to perform the conversion before proceeding to Step 9. The skill handles measurement conversion, equate→zero-shot mapping, splay shots, declination, and the critical issue of junction stations positioned only by duplicate shots. Skip the manual survey-file skeleton in Step 9 — the skill produces all section `.SRV` files directly.
+**If the source files are in Survex format (`.svx` files):** use the `$svx-to-srv` skill to perform the conversion before proceeding to Step 9. The skill handles measurement conversion, equate→zero-shot mapping, splay shots, declination, and the critical issue of junction stations positioned only by duplicate shots. Skip the manual survey-file skeleton in Step 9 — the skill produces all section `.SRV` files directly.
 
 ## Step 5 — Create directory structure
 
 ```bash
-mkdir -p "Poligony/<valley-path>/<Cave Name ASCII>/_RAW/01"
+mkdir -p "Poligony/<valley-path>/<Cave_Directory_ASCII>/_RAW/01"
 ```
 
 Copy source files to `_RAW/01/` preserving original names (never rename raw files):
 ```bash
-cp /tmp/<cave_ascii>_raw/<file> "Poligony/<valley-path>/<Cave Name ASCII>/_RAW/01/"
+cp /tmp/<cave_ascii>_raw/<file> "Poligony/<valley-path>/<Cave_Directory_ASCII>/_RAW/01/"
 ```
 
 ## Step 6 — Create `_RAW/01/README.md`
@@ -76,12 +71,12 @@ Use the metadata CLI instead of composing the README manually:
 
 ```bash
 uv run jktz-srv-metadata raw-set \
-  "Poligony/<valley-path>/<Cave Name ASCII>/_RAW/01/README.md" \
+  "Poligony/<valley-path>/<Cave_Directory_ASCII>/_RAW/01/README.md" \
   --title "<Cave Name ASCII> - paczka zrodlowa 01" \
   --status "dostępny" \
   --origin "<origin / who provided the data>" \
-  --authors "<authors from source/PIG or nieznane>" \
-  --dates "<dates from source/PIG or nieznane>" \
+  --authors "<confirmed survey authors from source evidence or nieznane>" \
+  --dates "<confirmed survey dates from source evidence or nieznane>" \
   --acquired "<date obtained or nieznane>" \
   --added-by "<person who added files or nieznane>" \
   --license-value "<source license or nieznane>" \
@@ -96,32 +91,26 @@ fields as `nieznane`. If no raw material is available, use
 
 ## Step 7 — Determine station prefix
 
-See the **Prefix Convention** section in [`CLAUDE.md`](../../../CLAUDE.md) for the rules (CamelCase including short prepositions, single-section vs multi-section patterns, `#prefix2` for cave systems, scope rules).
+See the **Prefix Convention** section in [`AGENTS.md`](../../../AGENTS.md) for the rules (CamelCase including short prepositions, single-section vs multi-section patterns, `#prefix2` for cave systems, scope rules).
 
 For a typical single-section cave: cave name in CamelCase, no spaces, no diacritics (e.g. `Mrozna`, `MietusiaWyznia`).
 
-## Step 8 — Append entrance entry to `Poligony/OTWORY.SRV`
+## Step 8 — Update the entrance template and render the snapshot
 
-All entrance fixes/flags/notes for every cave live in a single shared file: `Poligony/OTWORY.SRV`.
-
-Append a block like this (alphabetised by cave prefix) to `Poligony/OTWORY.SRV`:
+Add this block in cave-prefix order to `Poligony/OTWORY.SRV.j2`:
 
 ```
-#fix    <PREFIX>:<STATION>   E<lon-dd>  N<lat-dd>  <elevation>m
+{{ gps_fix('<PREFIX>:<STATION>', '<OBJECT-ID>') }}
 #flag   <PREFIX>:<STATION>   /<Cave Label>
 #flag   <PREFIX>:<STATION>   /ENTRANCE
 #note   <PREFIX>:<STATION>   /<Cave Label>
 ```
 
-`<PREFIX>:<STATION>` is the fully-qualified entrance station name (e.g. `Marmurowa:0`, `MietusiaWyznia:ot_gps`, `WielkaSniezna:Ciag:0`). The station must exist in the cave's survey file — Walls/cavern resolves it across the whole project tree.
-
-If the entrance station is unknown, comment out the block and add a TODO note:
-```
-; #fix   <PREFIX>:???   E<lon-dd>  N<lat-dd>  <elevation>m  ; TODO: uzupelnic numer stacji wejscia
-; #flag  <PREFIX>:???   /<Cave Label>
-; #flag  <PREFIX>:???   /ENTRANCE
-; #note  <PREFIX>:???   /<Cave Label>
-```
+Use the fully qualified station name, e.g. `Marmurowa:0` or
+`WielkaSniezna:Ciag:0`. Confirm it exists in the survey network.
+Run `uv run jktz-render-otwory`, inspect the complete diff, and include both
+the template and generated `Poligony/OTWORY.SRV` snapshot in the change.
+Do not edit the generated snapshot directly. Missing GPS rows are errors.
 
 ## Step 9 — Create the survey file (`CAVE.SRV` or `CAVE_<SECTION_SHORTNAME>.SRV`)
 
@@ -131,13 +120,13 @@ First create the Walls body without a hand-written metadata block:
 #prefix <PREFIX>
 #units meters order=DAV
 #units A=D V=D
-; do NOT add #units DECL= when #date is present — declination derives from #date (see CLAUDE.md);
+; do NOT add #units DECL= when #date is present — declination derives from #date (see AGENTS.md);
 ; use #units DECL=X.X instead of #date only when the file has no reliable date
 #date <YYYY-MM-DD>
 
 ;<Section description>
 
-FROM    TO      DISTANCE    AZIMUTH     INCLINATION
+;FROM   TO      DISTANCE    AZIMUTH     INCLINATION
 0       1       4.61        293         2
 1       2       2.06        303         7
 
@@ -151,7 +140,7 @@ Then atomically prepend the validated metadata block:
 
 ```bash
 uv run jktz-srv-metadata srv-set \
-  "Poligony/<valley-path>/<Cave Name ASCII>/<CAVE_FILE>.SRV" \
+  "Poligony/<valley-path>/<Cave_Directory_ASCII>/<CAVE_FILE>.SRV" \
   --cave-id "T.X-NN.MM" \
   --cave-name "<Cave Name ASCII>" \
   --survey-id "<SURVEY_ID>" \
@@ -168,16 +157,16 @@ to `nieznane`. `SURVEY_ID` and `SURVEY_NAME` cannot be `nieznane`.
 `DATA_SOURCE` in active `.SRV`; preserve source provenance in the RAW README.
 Use `--dry-run` to inspect the complete file without writing it.
 
-If the raw source file contains multiple readings per shot, note this and leave measurements as TODO:
+For confirmed repeated instrument readings, use `$average-shots` on a working copy. Keep independent surveys separate. If the grouping is unknown, document it without inventing measurements:
 ```
-; TODO: przetworzyc pomiary z _RAW/<filename>
+; TODO: przetworzyc pomiary z _RAW/01/<filename>
 ; Plik zrodlowy zawiera pomiary potrojne — wymagaja usrednienia lub konwersji.
 ; Stacje numerowane od <first-station> — numer stacji otworu nieznany.
 ```
 
 ## Step 10 — Update KATASTER.wpj
 
-**IMPORTANT: Ask the user to close Walls before this step.** Walls overwrites the .wpj file when it saves, discarding any manually added entries.
+**Close Walls if it has this project open before editing it.** Walls overwrites the .wpj file when it saves, discarding any manually added entries.
 
 Find the correct `.BOOK` parent in KATASTER.wpj. The path hierarchy corresponds to the directory structure:
 - Each `.BOOK` with `.PATH <dir>` builds the cumulative path from the project root
@@ -222,10 +211,17 @@ Concrete example — Marmurowa (multi-section):
 .ENDBOOK
 ```
 
-Use `Edit` tool with sufficient surrounding context to make the match unique.
+Apply a focused, encoding-preserving edit with enough surrounding context to identify the parent book uniquely.
 Verify with: `grep -n "<CAVE_SHORT_ID>" KATASTER.wpj`
 
-## Step 11 — Summary
+## Step 11 — Validate and document
+
+Update `LISTA_JASKIN.md` and add a short entry under `Unreleased` in
+`CHANGELOG.md`. Run `uv run jktz-validate` (or `$docker-validate`) and review
+metadata, source preservation, entrance mappings, and compile warnings.
+Commit/push only when included in the user request.
+
+## Summary
 
 Report to the user:
 - Files created (list all paths)

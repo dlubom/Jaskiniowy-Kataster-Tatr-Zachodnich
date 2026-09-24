@@ -13,7 +13,7 @@ class ExternalToolError(RuntimeError):
 def _missing_tool_msg(tool: str) -> str:
     return (
         f"External tool '{tool}' not found on PATH. "
-        f"Install Survex/GDAL natively or run via /docker-validate or /docker-exports."
+        f"Install Survex/GDAL natively or use the Codex $docker-validate or $docker-exports skill."
     )
 
 

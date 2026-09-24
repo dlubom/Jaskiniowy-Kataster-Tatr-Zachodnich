@@ -17,7 +17,7 @@ repos:
         entry: uv run ruff format
         language: system
         types_or: [python]
-        files: ^(src|scripts|tests)/
+        files: ^(src/|scripts/|tests/|\.agents/skills/)
         stages: [pre-commit]
 
       - id: ruff-check
@@ -25,7 +25,7 @@ repos:
         entry: uv run ruff check --fix
         language: system
         types_or: [python]
-        files: ^(src|scripts|tests)/
+        files: ^(src/|scripts/|tests/|\.agents/skills/)
         stages: [pre-commit]
 
       - id: pytest

@@ -11,7 +11,7 @@ def check(root: Path = Path("Poligony")) -> None:
 
     Cavern on case-sensitive filesystems (Linux) only tries lowercase,
     Initial-cap, and ALL-UPPERCASE filename variants when resolving ``.NAME``
-    references in ``.wpj`` paths (CLAUDE.md:62). Excludes ``_RAW/``.
+    references in ``.wpj`` paths (AGENTS.md). Excludes ``_RAW/``.
     """
     lowercase_extensions: list[str] = []
     lowercase_basenames: list[str] = []
@@ -29,7 +29,7 @@ def check(root: Path = Path("Poligony")) -> None:
     if lowercase_extensions or lowercase_basenames:
         lines = [
             "ERROR: SRV filename format violation "
-            "(basename and .SRV must be UPPERCASE, per CLAUDE.md:62):"
+            "(basename and .SRV must be UPPERCASE, per AGENTS.md):"
         ]
         lines.extend(lowercase_extensions)
         lines.extend(lowercase_basenames)
