@@ -33,6 +33,11 @@ nie przejdzie.
 
 ### Sprawdzenie zmian
 
+Progi, zakres, raporty i reguły pracy opisuje [polityka jakości Pythona](doc/PYTHON_QUALITY.md).
+Główna bramka lokalna to `uv run jktz-quality` (95% linii, 90% gałęzi,
+CRAP <= 25); mutacje: `uv run jktz-mutation` (81% na moduł rdzenia, POSIX,
+Python >= 3.10; środowisko zgodne z CI: `uv sync --locked --python 3.12`).
+
 ```bash
 uv run pytest -q
 uv run ruff format --check src scripts tests .agents/skills
@@ -82,6 +87,11 @@ Python tests can run without Survex and GDAL, but the full pre-push validation
 will not pass without them.
 
 ### Validating changes
+
+See the [Python quality policy](doc/PYTHON_QUALITY.md) for scope and enforcement.
+Run `uv run jktz-quality` (95% lines, 90% branches, CRAP <= 25) and
+`uv run jktz-mutation` (81% per core module; POSIX and Python >= 3.10).
+Use `uv sync --locked --python 3.12` to match CI.
 
 ```bash
 uv run pytest -q

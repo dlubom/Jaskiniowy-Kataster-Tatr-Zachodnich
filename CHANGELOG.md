@@ -7,6 +7,7 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 ## [Unreleased]
 
 ### Zmienione
+- Dodano twarde bramki jakości narzędzi Pythona (95% linii, 90% gałęzi, CRAP ≤25, mutacje ≥81% na moduł rdzenia), kontrolę kompletności zakresu i testowane przygotowanie metadanych wydań zamiast `sed`/`awk`. Poprawiono odrzucanie wadliwego CSV GPS, śledzenie stanu jednostek Walls i pomijanie własnego pliku ZIP podczas pakowania; testy porównawcze migracji chronią także formatowanie Markdown release notes.
 - Przejście na Codex jako domyślnego agenta projektu oraz uporządkowanie instrukcji, skilli i hooków.
 - Zweryfikowano datowanie i autorstwo pomiarów Jaskini Psiej oraz uporządkowano odnośniki do źródeł. W komentarzach SRV opisano niepewne odczyty; wartości pomiarów i oryginalne materiały `_RAW` pozostają bez zmian.
 

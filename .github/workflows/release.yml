@@ -37,13 +37,24 @@ jobs:
         run: uv sync --locked
 
       - name: Validate Python tooling
-        run: |
-          uv run ruff format --check src scripts tests .agents/skills
-          uv run ruff check src scripts tests .agents/skills
-          uv run pytest
+        run: uv run jktz-quality
 
-      - name: Set version in INFO.txt
-        run: sed -i 's/__VERSION__/${{ steps.version.outputs.VERSION }}/' INFO.txt
+      - name: Run mutation gate
+        run: uv run jktz-mutation
+
+      - name: Upload quality reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-quality
+          path: logs/quality/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Prepare release metadata
+        env:
+          RELEASE_VERSION: ${{ steps.version.outputs.VERSION }}
+        run: uv run jktz-release-metadata "$RELEASE_VERSION" --notes release_notes.md
 
       - name: Check rendered entrance snapshot
         env:
@@ -60,14 +71,6 @@ jobs:
 
       - name: Build release ZIP
         run: uv run jktz-build-zip ${{ steps.version.outputs.VERSION }}
-
-      - name: Extract release notes from CHANGELOG.md
-        id: notes
-        run: |
-          # Extract content between the first ## [vX.Y.Z] header and the next ## header
-          NOTES=$(awk '/^## \['"${{ steps.version.outputs.VERSION }}"'\]/{found=1; next} found && /^## \[/{exit} found{print}' CHANGELOG.md)
-          # Write to file for the release action
-          echo "$NOTES" > release_notes.md
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2

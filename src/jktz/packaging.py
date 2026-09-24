@@ -18,6 +18,9 @@ EXCLUDE_PATTERNS: tuple[str, ...] = (
     ".codex/*",
     ".venv/*",
     ".pytest_cache/*",
+    ".coverage*",
+    "htmlcov/*",
+    "mutants/*",
     ".ruff_cache/*",
     ".playwright-mcp/*",
     ".idea/*",
@@ -82,14 +85,14 @@ def build_release_zip(
     if zip_path is None:
         zip_path = root / f"JKTZ-{version}.zip"
     else:
-        zip_path = Path(zip_path)
+        zip_path = Path(zip_path).resolve()
     if zip_path.exists():
         zip_path.unlink()
 
     included = 0
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
         for file in sorted(root.rglob("*")):
-            if not file.is_file():
+            if not file.is_file() or file.resolve() == zip_path:
                 continue
             rel = file.relative_to(root).as_posix()
             if is_excluded(rel):

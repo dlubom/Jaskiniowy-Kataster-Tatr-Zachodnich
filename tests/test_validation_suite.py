@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import io
+import sys
 from pathlib import Path, PureWindowsPath
+from unittest.mock import Mock
 
 import pytest
 
@@ -95,3 +98,116 @@ def test_rendered_entrances_check_wraps_renderer_errors(monkeypatch) -> None:
 
     with pytest.raises(CheckFailed, match="entrance snapshot check failed: snapshot is stale"):
         suite._check_rendered_entrances()
+
+
+def test_indentation_handles_partial_writes_and_preserves_stream_interface():
+    target = io.StringIO()
+    stream = suite._IndentingStream(target, "> ")
+
+    assert stream.write("") == 0
+    stream.write("first")
+    stream.write(" line\nsecond\n")
+    stream.write("third\r")
+    stream.write("fourth")
+    stream.flush()
+
+    assert target.getvalue() == "> first line\n> second\n> third\r> fourth"
+    assert stream.getvalue() == target.getvalue()
+
+
+def test_indentation_restores_stdout_when_export_fails():
+    original = sys.stdout
+
+    with pytest.raises(RuntimeError, match="export failed"), suite._indent_stdout():
+        raise RuntimeError("export failed")
+
+    assert sys.stdout is original
+
+
+def test_exports_run_before_artifact_checks_with_shared_destination(tmp_path, monkeypatch, capsys):
+    context = ValidationContext(exports_dir=tmp_path / "artifacts", exports_version="custom")
+    calls = []
+
+    def export(**kwargs):
+        calls.append(("export", kwargs))
+        print("compiler output")
+
+    monkeypatch.setattr(suite.pipeline, "run_exports", export)
+    for name in ("empty_shapefiles", "shapefiles_count", "shapefiles_extent"):
+        monkeypatch.setattr(
+            getattr(suite, name),
+            "check",
+            lambda _name=name, **kwargs: calls.append((_name, kwargs)),
+        )
+
+    suite._check_exports(context)
+
+    assert calls == [
+        ("export", {"version": "custom", "outdir": context.exports_dir}),
+        ("empty_shapefiles", {"outdir": context.exports_dir}),
+        ("shapefiles_count", {"outdir": context.exports_dir, "version": "custom"}),
+        ("shapefiles_extent", {"outdir": context.exports_dir, "version": "custom"}),
+    ]
+    assert capsys.readouterr().out == "                   compiler output\n"
+
+
+def test_validation_contract_compiles_then_checks_the_same_log(tmp_path, monkeypatch):
+    context = ValidationContext(cavern_log=tmp_path / "compile.txt")
+    compile_project = Mock()
+    unattached = Mock()
+    warnings = Mock()
+    exports = Mock()
+    monkeypatch.setattr(suite.exports_tools, "cavern", compile_project)
+    monkeypatch.setattr(suite.unattached, "check", unattached)
+    monkeypatch.setattr(suite.cavern_warnings, "check", warnings)
+    monkeypatch.setattr(suite, "_check_exports", exports)
+
+    for step in validation_steps(context)[8:]:
+        step.check()
+
+    compile_project.assert_called_once_with(["KATASTER.wpj"], log_to=context.cavern_log)
+    unattached.assert_called_once_with(log_path=context.cavern_log)
+    warnings.assert_called_once_with(log_path=context.cavern_log)
+    exports.assert_called_once_with(context)
+
+
+@pytest.mark.parametrize("create_exports", [False, True])
+def test_successful_default_validation_cleans_only_its_temporary_exports(
+    tmp_path, monkeypatch, create_exports
+):
+    monkeypatch.chdir(tmp_path)
+    retained = tmp_path / "retained.txt"
+    retained.write_text("keep")
+    contexts = []
+
+    def steps(context):
+        contexts.append(context)
+
+        def generate():
+            if create_exports:
+                context.exports_dir.mkdir()
+                (context.exports_dir / "generated.txt").write_text("remove")
+
+        return (ValidationStep("Generate", None, generate),)
+
+    monkeypatch.setattr(suite, "validation_steps", steps)
+
+    run_validation()
+
+    assert contexts == [ValidationContext()]
+    assert not (tmp_path / "validate-exports").exists()
+    assert retained.read_text() == "keep"
+
+
+def test_validation_stops_at_first_failure_without_success_message(capsys):
+    later = Mock()
+    steps = [
+        ValidationStep("Invalid", "Invalid", Mock(side_effect=CheckFailed("bad data"))),
+        ValidationStep("Later", "Later", later),
+    ]
+
+    with pytest.raises(CheckFailed, match="bad data"):
+        run_steps(steps)
+
+    later.assert_not_called()
+    assert capsys.readouterr().out == "[1/2] Invalid...\n"

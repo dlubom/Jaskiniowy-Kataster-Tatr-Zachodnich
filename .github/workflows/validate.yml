@@ -29,16 +29,54 @@ jobs:
       - name: Sync Python tooling
         run: uv sync --locked
 
-      - name: Run Ruff and Pytest
-        run: |
-          uv run ruff format --check src scripts tests .agents/skills
-          uv run ruff check src scripts tests .agents/skills
-          uv run pytest
+      - name: Run Python quality gate
+        run: uv run jktz-quality
+
+      - name: Upload quality reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-quality
+          path: logs/quality/
+          if-no-files-found: warn
+          retention-days: 14
 
       - name: Check rendered entrance snapshot
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: uv run jktz-render-otwory --check
+
+  mutation-tests:
+    name: mutation-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Sync Python tooling
+        run: uv sync --locked
+
+      - name: Run mutation gate
+        run: uv run jktz-mutation
+
+      - name: Upload mutation reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mutation-quality
+          path: logs/quality/
+          if-no-files-found: warn
+          retention-days: 14
 
   validate:
     strategy:
@@ -115,7 +153,7 @@ jobs:
 
   pr-release-package:
     if: github.event_name == 'pull_request'
-    needs: [python-tools, validate]
+    needs: [python-tools, mutation-tests, validate]
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -152,7 +190,9 @@ jobs:
         run: uv sync --locked
 
       - name: Set version in INFO.txt
-        run: sed -i 's/__VERSION__/${{ steps.package.outputs.version }}/' INFO.txt
+        env:
+          PACKAGE_VERSION: ${{ steps.package.outputs.version }}
+        run: uv run jktz-release-metadata "$PACKAGE_VERSION"
 
       - name: Render latest entrance fixes
         env:

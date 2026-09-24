@@ -127,7 +127,7 @@ def main() -> int:
 
     print("\n=== Setup complete ===\n")
     print("From now on:")
-    print("  * `git commit` runs ruff format + ruff check --fix + pytest")
+    print("  * `git commit` runs formatting, lint, tests, coverage and CRAP gates")
     print(
         "    If ruff modifies a file, the commit fails. Review and re-stage "
         "only the intended files, then commit again."
@@ -136,6 +136,7 @@ def main() -> int:
         "  * `git push` runs `uv run jktz-validate` (full cavern compile + "
         "exports check, can take a few minutes)."
     )
+    print("  * GitHub Actions also runs the required Linux mutation-testing gate")
 
     if missing:
         print()
@@ -144,7 +145,7 @@ def main() -> int:
             print(
                 _yellow(
                     "      The pre-push hook will fail until these are installed. "
-                    "Use `git push --no-verify` to bypass intentionally."
+                    "Install the tools or use the documented Docker validation skill."
                 )
             )
 

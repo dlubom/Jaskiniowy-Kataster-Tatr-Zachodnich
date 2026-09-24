@@ -3,6 +3,8 @@ from __future__ import annotations
 import zipfile
 from pathlib import Path
 
+import pytest
+
 from jktz.packaging import EXCLUDE_PATTERNS, build_release_zip, is_excluded
 
 
@@ -147,3 +149,36 @@ def test_exclude_patterns_is_immutable_tuple() -> None:
     assert "scripts/*" in EXCLUDE_PATTERNS
     assert "tests/*" in EXCLUDE_PATTERNS
     assert "docs/*" in EXCLUDE_PATTERNS
+
+
+@pytest.mark.parametrize("output", ["custom.zip", "artifacts/custom.zip"])
+def test_custom_output_never_archives_itself(tmp_path, monkeypatch, output):
+    monkeypatch.chdir(tmp_path)
+    (tmp_path / "KATASTER.wpj").write_text("project")
+    target = Path(output)
+    target.parent.mkdir(exist_ok=True)
+    target.write_bytes(b"old archive")
+
+    result = build_release_zip("test", zip_path=target, root=tmp_path)
+
+    assert result == tmp_path / output
+    assert result.is_absolute()
+    with zipfile.ZipFile(result) as archive:
+        assert archive.namelist() == ["KATASTER.wpj"]
+        assert archive.read("KATASTER.wpj") == b"project"
+
+
+@pytest.mark.parametrize(
+    "artifact",
+    [".coverage", ".coverage.runner.123", "htmlcov/index.html", "mutants/src/tool.py"],
+)
+def test_quality_artifacts_are_not_release_data(tmp_path, artifact):
+    path = tmp_path / artifact
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("quality output")
+    (tmp_path / "KATASTER.wpj").write_text("project")
+
+    output = build_release_zip("test", root=tmp_path)
+
+    with zipfile.ZipFile(output) as archive:
+        assert archive.namelist() == ["KATASTER.wpj"]
