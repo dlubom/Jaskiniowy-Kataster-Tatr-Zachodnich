@@ -56,10 +56,10 @@ show_missing = true
 precision = 2
 
 [tool.jktz.quality]
-line_min = 90
-branch_min = 85
-crap_max = 30
-mutation_min = 80
+line_min = 95
+branch_min = 90
+crap_max = 25
+mutation_min = 81
 
 [tool.mutmut]
 source_paths = ["src/"]

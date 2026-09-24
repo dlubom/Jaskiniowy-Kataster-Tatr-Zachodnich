@@ -5,10 +5,17 @@ Progi w `pyproject.toml` są wspólne dla lokalnych poleceń i CI.
 | Kontrola | Próg | Zakres |
 | --- | --- | --- |
 | Ruff i pytest | bez błędów | `src`, `scripts`, `.agents/skills`, `web`; testy w `tests` |
-| Pokrycie linii | co najmniej 90% | cały powyższy kod, także nieimportowane pliki |
-| Pokrycie gałęzi | co najmniej 85% | decyzje i alternatywne ścieżki wykonania |
-| CRAP | najwyżej 30 na funkcję | funkcje, metody i funkcje zagnieżdżone |
-| Testy mutacyjne | co najmniej 80% w **każdym** wybranym module | SRV, RAW, zapis atomowy, wejścia GPS i stan jednostek Walls |
+| Pokrycie linii | co najmniej 95% | cały powyższy kod, także nieimportowane pliki |
+| Pokrycie gałęzi | co najmniej 90% | decyzje i alternatywne ścieżki wykonania |
+| CRAP | najwyżej 25 na funkcję | funkcje, metody i funkcje zagnieżdżone |
+| Testy mutacyjne | co najmniej 81% w **każdym** wybranym module | SRV, RAW, zapis atomowy, wejścia GPS i stan jednostek Walls |
+| Kompletność zakresu | bez pominiętych plików i całkowicie nieprzetestowanych funkcji | żywy kod Pythona w repo; archiwalne `_RAW` nie są narzędziami |
+
+Test inventory porównuje śledzone i nowe nieignorowane pliki `.py` z zakresem
+kontroli; nowy plik poza dozwolonymi katalogami zatrzymuje bramkę. Raport musi
+zawierać każdy plik źródłowy oraz każdą funkcję objętą analizą złożoności.
+Funkcja z zerową liczbą wykonanych wierszy blokuje wynik niezależnie od
+globalnego pokrycia i CRAP. Lista zmierzonych plików jest zapisana w `quality.json`.
 
 Pokrycie nie dowodzi poprawności. Testy sprawdzają wynik i skutki uboczne:
 zachowanie bajtów, brak zapisu po błędzie, granice wartości, odrzucenie wadliwych
@@ -43,10 +50,10 @@ Stosujemy `C² × (1 − p)³ + C`, gdzie `C` jest złożonością cyklomatyczn�
 a `p` to mniejsza z wartości pokrycia linii i gałęzi danej funkcji (0–1).
 Przy braku gałęzi decydują linie. Jest to konserwatywny wariant CRAP:
 dużo wykonanych linii nie zasłania nieprzetestowanych rozgałęzień.
-Przy pełnym pokryciu CRAP jest równy złożoności; funkcja o złożoności >30
+Przy pełnym pokryciu CRAP jest równy złożoności; funkcja o złożoności >25
 nie może przejść przez samo dodanie testów.
 
-30 to próg ostrzegający przed skupieniem ryzyka, nie nakaz dzielenia każdej
+25 to próg ostrzegający przed skupieniem ryzyka, nie nakaz dzielenia każdej
 dłuższej funkcji. W istniejącym kodzie najpierw uzupełniamy test brakującego
 kontraktu i poprawiamy odtworzony błąd. Sama metryka nie uzasadnia refaktoryzacji
 ani zmiany danych pomiarowych.
@@ -103,8 +110,8 @@ Dokumentacja narzędzi: [Coverage.py](https://coverage.readthedocs.io/),
 
 Przed zmianą przechodziło 168 testów; pokrycie wynosiło 78,41% linii
 i 73,42% gałęzi (`src`, `scripts`, skille; skrypt `web` nie był jeszcze objęty
-pomiarem). Po włączeniu całego zakresu i testów regresji: 374 testy,
-96,08% linii, 93,38% gałęzi, najwyższy CRAP 21,54 przy limicie 30.
+pomiarem). Po włączeniu całego zakresu i testów regresji: 384 testy,
+96,08% linii, 93,40% gałęzi, najwyższy CRAP 21,54 przy limicie 25.
 Nie dodano wykluczeń pokrycia dla osiągnięcia progów.
 
 | Moduł mutowany | Zabite / wszystkie | Wynik |
@@ -126,3 +133,36 @@ Regresje zabezpieczają potwierdzone błędy: ciche nadpisanie powtórzonego
 do archiwum. Logika przygotowania wersji i release notes przeszła z `sed`/`awk`
 do testowanego polecenia Pythona. Pełna lokalna walidacja Survex/GDAL przeszła;
 dane pomiarowe i archiwalne źródła nie zostały zmienione.
+
+## Kontrola kompletności i zgodności migracji
+
+Spis kodu obejmuje 46 plików produkcyjnych: 41 w `src`, trzy pomocniki skilli,
+bootstrap i skrypt web. Wszystkie 144 nazwane funkcje/metody występują
+w analizie CRAP i każda ma wykonane wiersze w testach. Zachowano sześć
+wcześniejszych poleceń CLI, dodając trzy nowe; pozostały też trzy helpery
+Python i dziewięć opisów skilli. Test inventory chroni ten zakres bez
+zakodowania stałej liczby plików.
+
+| Kontrakt | Dowód |
+| --- | --- |
+| Podmiana wersji w `INFO.txt` | porównanie bajtów z rzeczywistym `sed` dla 65 wersji z CHANGELOG i jednej etykiety PR |
+| Pełna treść release notes | porównanie 65 sekcji `v*` z rzeczywistym `awk`; jedyną normalizacją są puste linie na początku |
+| Markdown | regresje dla początkowego wcięcia, końcowych spacji i zwykłych H2 wewnątrz opisu |
+| Wersja i artefakty workflow | testy obu ścieżek: release i PR; zachowane `body_path`, nazwy ZIP, render/check wejść, kolejność eksportu, upload i link |
+| Kompletność ZIP | integracja poleceń odczytanych z workflow sprawdza dokładny zestaw plików, bajty źródeł/eksportów, wersję INFO i wykluczenia |
+
+Testy porównawcze w `tests/test_release_metadata.py` uruchamiają stare operacje
+na tymczasowych kopiach; brak `sed`/`awk` na POSIX powoduje błąd. Na Windows
+brak tych opcjonalnych narzędzi pomija tylko porównanie ze starym shellem;
+testy zachowania Pythona i integracji paczek działają nadal. Porównanie
+odtwarza LF dawnego workflow Linux niezależnie od `core.autocrlf` checkoutu.
+Puste `[Unreleased]` pozostaje dozwolone; publikowany tag nadal wymaga opisu.
+
+Audyt znalazł i naprawił dwie regresje nowego parsera release notes: usuwanie
+znaczących spacji oraz ucinanie treści na zwykłym H2. Odrzucanie brakującej,
+pustej lub zduplikowanej sekcji publikowanej wersji pozostaje świadomym
+zaostrzeniem. Testy integracyjne są w `tests/test_release_workflow.py`.
+
+Te sprawdzenia potwierdzają kompletny zakres narzędzi i zbadane kontrakty.
+Nie są dowodem równoważności dla wszystkich możliwych wejść; pokrycie nie
+wynosi 100%, a wynik mutacyjny dotyczy wymienionych pięciu modułów.

@@ -15,10 +15,10 @@ def extract_release_notes(changelog: str, version: str) -> str:
     if len(matches) != 1:
         raise ValueError(f"CHANGELOG.md must contain exactly one section for {version}")
     start = matches[0].end()
-    following = re.search(r"^##(?:[ \t]|$)", changelog[start:], re.MULTILINE)
+    following = re.search(r"^##[ \t]+\[", changelog[start:], re.MULTILINE)
     end = start + following.start() if following else len(changelog)
-    notes = changelog[start:end].strip()
-    if not notes:
+    notes = changelog[start:end].strip("\r\n")
+    if not notes.strip():
         raise ValueError(f"Release notes for {version} are empty")
     return notes + "\n"
 

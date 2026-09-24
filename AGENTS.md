@@ -22,13 +22,16 @@ and builds release exports.
 - Python release tooling is managed with `uv`; validate it with
   `uv run ruff check src scripts tests .agents/skills` and `uv run pytest`.
 - The required Python gate is `uv run jktz-quality`: Ruff, fresh tests, at least
-  90% line and 85% branch coverage, and CRAP <= 30 per function. Run
-  `uv run jktz-mutation` on POSIX/Python >= 3.10 for at least 80% killed mutations
+  95% line and 90% branch coverage, and CRAP <= 25 per function. Run
+  `uv run jktz-mutation` on POSIX/Python >= 3.10 for at least 81% killed mutations
   in each configured core module; incomplete/error runs fail. Use Python 3.12 to
   match CI. See `doc/PYTHON_QUALITY.md` for scope, reports, and enforcement.
   Do not lower thresholds, narrow scope, or add exclusions to make a check pass.
   Add behavior-based regression tests for confirmed bugs; metrics alone do not
   authorize unrelated production refactoring.
+  The gate also rejects live Python files outside the declared scope and
+  functions with no executed statements. Keep the inventory check active when
+  moving or adding tooling; archival `_RAW` packages are not executable tooling.
 
 ## Local development setup
 

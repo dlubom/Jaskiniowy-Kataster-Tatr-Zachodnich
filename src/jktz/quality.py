@@ -75,6 +75,8 @@ def coverage_result(root: Path, report: dict, policy: dict) -> dict:
             if name not in measured:
                 raise ValueError(f"Missing function coverage: {filename}:{name}")
             summary = measured[name]["summary"]
+            if summary["num_statements"] and not summary["covered_lines"]:
+                failures.append(f"Untested function: {filename}:{name}")
             coverage = min(
                 fraction(summary, "covered_lines", "num_statements"),
                 fraction(summary, "covered_branches", "num_branches"),
@@ -92,6 +94,7 @@ def coverage_result(root: Path, report: dict, policy: dict) -> dict:
             if score > policy["crap_max"]:
                 failures.append(f"CRAP {score:.2f} > {policy['crap_max']}: {filename}:{name}")
     return {
+        "files": sorted(expected),
         "line_percent": line_pct,
         "branch_percent": branch_pct,
         "functions": sorted(functions, key=lambda row: row["crap"], reverse=True),

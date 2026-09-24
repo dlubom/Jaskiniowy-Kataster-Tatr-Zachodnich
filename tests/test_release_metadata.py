@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+import os
+import re
+import shutil
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -18,18 +22,29 @@ def test_info_version_preserves_encoding_and_newlines(tmp_path: Path, newline: b
     assert info.read_bytes() == original.replace(b"__VERSION__", b"pr-123-a1b2c3d")
 
 
-def test_extracts_literal_version_until_next_heading() -> None:
+def test_extracts_literal_version_until_next_release_heading() -> None:
     changelog = (
-        "# Changelog\n\n## [v1x2x3]\nWrong release\n\n"
+        "# Changelog\n\n## [Unreleased]\n\n## [v1x2x3]\nWrong release\n\n"
         "## [v1.2.3] - 2026-09-24\n\n### Fixed\n- Poprawiono źródła.\n\n"
-        "## Other heading\nNot part of this release\n"
+        "## Other heading\nMore details for this release\n\n"
+        "## [v1.2.2]\nNot part of this release\n"
     )
 
-    assert extract_release_notes(changelog, "v1.2.3") == "### Fixed\n- Poprawiono źródła.\n"
+    assert extract_release_notes(changelog, "v1.2.3") == (
+        "### Fixed\n- Poprawiono źródła.\n\n## Other heading\nMore details for this release\n"
+    )
 
 
 def test_extracts_final_section_with_crlf_and_no_final_newline() -> None:
     assert extract_release_notes("## [v1]\r\n\r\nLast release", "v1") == "Last release\n"
+
+
+def test_release_notes_preserve_markdown_indentation_and_line_breaks() -> None:
+    changelog = "## [v1]\n\n    indented code\nlast line with a hard break  \n\n## [v0]\nOld\n"
+
+    assert extract_release_notes(changelog, "v1") == (
+        "    indented code\nlast line with a hard break  \n"
+    )
 
 
 @pytest.mark.parametrize(
@@ -95,3 +110,70 @@ def test_cli_prepares_info_and_notes(tmp_path: Path, capsys: pytest.CaptureFixtu
 def test_cli_reports_missing_input(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["v1", "--root", str(tmp_path)]) == 1
     assert "error:" in capsys.readouterr().err
+
+
+@pytest.mark.skipif(os.name == "nt" and shutil.which("awk") is None, reason="awk absent on Windows")
+def test_all_repository_release_sections_match_legacy_awk(tmp_path: Path) -> None:
+    # Exact awk program from release.yml before migration (commit 0c3e806).
+    # The old NOTES=$(awk ...); echo "$NOTES" normalizes trailing LF only.
+    # Legacy release ran on Linux. Normalize an autocrlf checkout before
+    # comparing it; separate tests cover CRLF inputs and byte preservation.
+    changelog = (Path(__file__).parents[1] / "CHANGELOG.md").read_text(encoding="utf-8")
+    source = tmp_path / "CHANGELOG.md"
+    source.write_bytes(changelog.encode("utf-8"))
+    # Only tags matching the workflow's v* trigger are release inputs;
+    # Unreleased may legitimately be empty after publishing a version.
+    versions = re.findall(r"^## \[(v[^\]]+)\]", changelog, re.MULTILINE)
+    assert versions
+
+    for version in versions:
+        program = (
+            r"/^## \[" + version + r"\]/{found=1; next} "
+            r"found && /^## \[/{exit} found{print}"
+        )
+        legacy = subprocess.run(
+            ["awk", program, str(source)], check=True, capture_output=True
+        ).stdout
+        legacy_notes = legacy.rstrip(b"\n") + b"\n"
+        current = extract_release_notes(changelog, version).encode("utf-8")
+        # Only empty leading lines are intentionally omitted. Every content
+        # byte, including Markdown indentation and trailing spaces, must agree.
+        assert current == legacy_notes.lstrip(b"\n"), version
+
+
+@pytest.mark.skipif(os.name == "nt" and shutil.which("awk") is None, reason="awk absent on Windows")
+def test_markdown_headings_inside_notes_match_legacy_awk(tmp_path: Path) -> None:
+    changelog = (
+        "## [v1]\n\n    indented code\n\n## Migration details\n"
+        "Do not lose this paragraph.\n\n## [v0]\nPrevious release.\n"
+    )
+    source = tmp_path / "CHANGELOG.md"
+    source.write_bytes(changelog.encode("utf-8"))
+    program = r"/^## \[v1\]/{found=1; next} found && /^## \[/{exit} found{print}"
+    legacy = subprocess.run(["awk", program, str(source)], check=True, capture_output=True).stdout
+
+    assert extract_release_notes(changelog, "v1").encode("utf-8") == (
+        legacy.rstrip(b"\n").lstrip(b"\n") + b"\n"
+    )
+
+
+@pytest.mark.skipif(os.name == "nt" and shutil.which("sed") is None, reason="sed absent on Windows")
+def test_release_and_pr_info_bytes_match_legacy_sed(tmp_path: Path) -> None:
+    root = Path(__file__).parents[1]
+    original = (root / "INFO.txt").read_bytes()
+    changelog = (root / "CHANGELOG.md").read_text(encoding="utf-8")
+    versions = re.findall(r"^## \[(v[^\]]+)\]", changelog, re.MULTILINE)
+    versions.append("pr-127-a1b2c3d")
+    info = tmp_path / "INFO.txt"
+
+    for version in versions:
+        info.write_bytes(original)
+        # Reading stdout is equivalent to old sed -i without platform-specific
+        # BSD/GNU in-place flags. Only this temporary copy is passed to sed.
+        legacy = subprocess.run(
+            ["sed", f"s/__VERSION__/{version}/", str(info)], check=True, capture_output=True
+        ).stdout
+
+        prepare_release_metadata(version, tmp_path)
+
+        assert info.read_bytes() == legacy, version

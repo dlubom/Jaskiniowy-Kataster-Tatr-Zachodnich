@@ -120,6 +120,21 @@ def test_missing_function_coverage_cannot_pass(tmp_path: Path) -> None:
         coverage_result(tmp_path, report, POLICY)
 
 
+def test_wholly_untested_function_cannot_hide_behind_high_global_coverage(tmp_path: Path) -> None:
+    report = make_report(
+        tmp_path,
+        "def omitted(value):\n    return value\n",
+        {"omitted": {"summary": summary(lines=1, covered=0, branches=0, hit=0)}},
+    )
+
+    result = coverage_result(tmp_path, report, POLICY)
+
+    assert result["line_percent"] == 100
+    assert result["functions"][0]["crap"] == 2
+    assert result["failures"] == ["Untested function: src/example.py:omitted"]
+    assert result["files"] == ["src/example.py"]
+
+
 def test_empty_coverage_report_cannot_pass(tmp_path: Path) -> None:
     report = make_report(tmp_path, "", {})
     report["totals"] = summary(lines=0, covered=0, branches=0, hit=0)
