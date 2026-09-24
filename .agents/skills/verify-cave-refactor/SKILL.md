@@ -7,6 +7,18 @@ Compare source measurements and compiled outputs using the same Survex version,
 settings, and explicit input revisions. Read the data contracts in
 [AGENTS.md](../../../AGENTS.md).
 
+## References when results differ
+
+Consult [walls.rst](../../../doc/Survex_manual/walls.rst) for known differences
+between Walls and Survex, [datafile.rst](../../../doc/Survex_manual/datafile.rst)
+for source directives, and [survexport.rst](../../../doc/Survex_manual/survexport.rst)
+or [dump3d.rst](../../../doc/Survex_manual/dump3d.rst) for the selected output.
+Use [Walls_manual.md](../../../doc/Walls_manual.md) and its original PDF to
+resolve native Walls syntax. When comparing the two programs, record the Walls
+build as well as the Survex version: different IGRF models can change
+date-derived declination even with identical measurements. Reproduce unexplained
+behavior on a minimal temporary input before proposing source-data changes.
+
 ## Inputs
 
 - `$verify-cave-refactor <cave-prefix>`: compare HEAD with the current working

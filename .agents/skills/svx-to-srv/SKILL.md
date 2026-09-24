@@ -22,6 +22,19 @@ $svx-to-srv T.D-10.01 "Poligony/D_Mietusia/M_Swistowka/Mietusia_Wyznia/_RAW/01/m
 
 Write converted files outside `_RAW/`. Register the entrance through `Poligony/OTWORY.SRV.j2` and render the snapshot (see `$add-cave` Step 8).
 
+## References for nontrivial syntax
+
+Consult [datafile.rst](../../../doc/Survex_manual/datafile.rst) for the source
+`*data`, units, calibration and flags, and
+[Walls_manual.md](../../../doc/Walls_manual.md) for the target directives.
+Verify ambiguous Markdown syntax/tables against
+[the original PDF](../../../doc/Walls_manual.pdf).
+[Survex's Walls reader](../../../doc/Survex_manual/walls.rst) documents
+compatibility limits; do not infer full equivalence from compilation alone.
+Record the actual compiler/build versions when resolving discrepancies,
+including their IGRF models for date-derived declination. The rules below also
+include project policy; distinguish it from the source format's semantics.
+
 ## Conversion rules
 
 ### Measurement format

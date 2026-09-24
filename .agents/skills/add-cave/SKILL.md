@@ -13,7 +13,9 @@ Example: `$add-cave T.D-08.07 "D_Koscieliska/Organy" /tmp/MROZN.SRV.zip`
 
 ## Step 1 — Look up cave data in PIG database (single call)
 
-The cave ID is ASCII — search for it directly with a fixed-string search:
+The supplied cave ID is the inventory number (`inventory_number`, e.g.
+`T.B-14.01`), not PIG's internal `cave_id` (`001018` for Dziura).
+Search for it directly with a fixed-string search:
 
 ```bash
 rg -F '"<cave-id>"' doc/jaskinie_polski_pig_dump.jsonl
@@ -24,7 +26,15 @@ Parse the returned JSON for:
 - `latitude`, `longitude`, `absolute_height_masl` → archival location context; not the active GPS fix
 - `other_names`, `authors_of_study`, `editorial` → inventory context. These fields do not establish authorship of the supplied survey; derive survey team/date from the actual sources.
 
-If not found by ID, try searching by partial ASCII name.
+Parse each matching line and confirm the exact `inventory_number`; a full-text
+hit may mention another cave in a description. If not found, search `name` and
+`other_names` using Polish spelling with diacritics or a distinctive fragment.
+Do not transliterate the query before searching or treat one empty name search
+as proof of absence. See [JSONL lookup examples](../../../doc/README.md#pig).
+
+For uncertain Walls syntax while creating the survey, consult
+[Walls_manual.md](../../../doc/Walls_manual.md), checking ambiguous conversion
+or layout against [the PDF](../../../doc/Walls_manual.pdf).
 
 ## Step 2 — Identify the entrance and GPS object
 
