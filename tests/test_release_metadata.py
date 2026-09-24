@@ -160,7 +160,9 @@ def test_markdown_headings_inside_notes_match_legacy_awk(tmp_path: Path) -> None
 @pytest.mark.skipif(os.name == "nt" and shutil.which("sed") is None, reason="sed absent on Windows")
 def test_release_and_pr_info_bytes_match_legacy_sed(tmp_path: Path) -> None:
     root = Path(__file__).parents[1]
-    original = (root / "INFO.txt").read_bytes()
+    # Replay the original Linux checkout, not Windows sed's CRLF translation.
+    # The separate LF/CRLF preservation test checks native input byte stability.
+    original = (root / "INFO.txt").read_bytes().replace(b"\r\n", b"\n")
     changelog = (root / "CHANGELOG.md").read_text(encoding="utf-8")
     versions = re.findall(r"^## \[(v[^\]]+)\]", changelog, re.MULTILINE)
     versions.append("pr-127-a1b2c3d")
