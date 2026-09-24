@@ -4,6 +4,11 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Zmienione
+- Zweryfikowano datowanie i autorstwo pomiarów Jaskini Psiej oraz uporządkowano odnośniki do źródeł. W komentarzach SRV opisano niepewne odczyty; wartości pomiarów i oryginalne materiały `_RAW` pozostają bez zmian.
+
 ## [v1.4.6] - 2026-06-21
 
 Wprowadzono spojny kontrakt metadanych dla aktywnych pomiarow SRV i materialow zrodlowych.
