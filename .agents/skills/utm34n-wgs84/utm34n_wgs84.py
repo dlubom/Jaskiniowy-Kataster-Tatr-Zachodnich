@@ -17,13 +17,15 @@ Examples:
     # WGS84 -> UTM34N (e.g. an existing #fix line)
     python3 utm34n_wgs84.py to-utm 19.8947380569 49.2454436384 1391.87
 """
+
+import math
 import sys
 
 try:
     from pyproj import Transformer
 except ImportError:
     print("Error: pyproj is not installed.", file=sys.stderr)
-    print("Install it with:  pip3 install pyproj", file=sys.stderr)
+    print("Install it with:  uv sync --locked", file=sys.stderr)
     sys.exit(1)
 
 # UTM34N ranges for the Tatra Mountains region
@@ -47,7 +49,7 @@ def utm34n_to_wgs84(easting, northing, elevation=None):
         (lon, lat, elevation) tuple. elevation is None if not provided.
     """
     tr = Transformer.from_crs(32634, 4326, always_xy=True)
-    lon, lat = tr.transform(easting, northing)
+    lon, lat = tr.transform(easting, northing, errcheck=True)
     return lon, lat, elevation
 
 
@@ -63,7 +65,7 @@ def wgs84_to_utm34n(lon, lat, elevation=None):
         (easting, northing, elevation) tuple. elevation is None if not provided.
     """
     tr = Transformer.from_crs(4326, 32634, always_xy=True)
-    easting, northing = tr.transform(lon, lat)
+    easting, northing = tr.transform(lon, lat, errcheck=True)
     return easting, northing, elevation
 
 
@@ -71,13 +73,11 @@ def _warn_utm(easting, northing):
     warnings = []
     if not (TATRA_E_MIN <= easting <= TATRA_E_MAX):
         warnings.append(
-            f"WARNING: easting={easting} outside Tatra UTM34N range "
-            f"({TATRA_E_MIN}-{TATRA_E_MAX})"
+            f"WARNING: easting={easting} outside Tatra UTM34N range ({TATRA_E_MIN}-{TATRA_E_MAX})"
         )
     if not (TATRA_N_MIN <= northing <= TATRA_N_MAX):
         warnings.append(
-            f"WARNING: northing={northing} outside Tatra UTM34N range "
-            f"({TATRA_N_MIN}-{TATRA_N_MAX})"
+            f"WARNING: northing={northing} outside Tatra UTM34N range ({TATRA_N_MIN}-{TATRA_N_MAX})"
         )
     return warnings
 
@@ -85,15 +85,9 @@ def _warn_utm(easting, northing):
 def _warn_wgs84(lon, lat):
     warnings = []
     if not (TATRA_LON_MIN <= lon <= TATRA_LON_MAX):
-        warnings.append(
-            f"WARNING: lon={lon} outside Tatra range "
-            f"({TATRA_LON_MIN}-{TATRA_LON_MAX})"
-        )
+        warnings.append(f"WARNING: lon={lon} outside Tatra range ({TATRA_LON_MIN}-{TATRA_LON_MAX})")
     if not (TATRA_LAT_MIN <= lat <= TATRA_LAT_MAX):
-        warnings.append(
-            f"WARNING: lat={lat} outside Tatra range "
-            f"({TATRA_LAT_MIN}-{TATRA_LAT_MAX})"
-        )
+        warnings.append(f"WARNING: lat={lat} outside Tatra range ({TATRA_LAT_MIN}-{TATRA_LAT_MAX})")
     return warnings
 
 
@@ -103,13 +97,16 @@ def _usage_and_exit():
 
 
 def main():
-    if len(sys.argv) < 4:
+    if len(sys.argv) not in (4, 5):
         _usage_and_exit()
 
     direction = sys.argv[1]
     a = float(sys.argv[2])
     b = float(sys.argv[3])
     elev = sys.argv[4] if len(sys.argv) > 4 else None
+
+    if not all(math.isfinite(float(value)) for value in sys.argv[2:]):
+        raise ValueError("Coordinates and elevation must be finite numbers")
 
     if direction == "to-wgs84":
         for w in _warn_utm(a, b):
@@ -131,8 +128,9 @@ def main():
         elev_str = f"  elev={elev}" if elev else ""
         print(f"easting={easting:.2f}  northing={northing:.2f}{elev_str}")
     else:
-        print(f"Error: unknown direction '{direction}'. Use 'to-wgs84' or 'to-utm'.",
-              file=sys.stderr)
+        print(
+            f"Error: unknown direction '{direction}'. Use 'to-wgs84' or 'to-utm'.", file=sys.stderr
+        )
         _usage_and_exit()
 
 

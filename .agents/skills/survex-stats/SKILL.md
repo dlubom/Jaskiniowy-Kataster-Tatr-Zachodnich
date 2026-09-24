@@ -1,23 +1,26 @@
-# Skill: survex-stats
+---
+name: survex-stats
+description: Compile a Survex or Walls source and inspect its compilation statistics without writing output beside the source.
+---
 
 Compiles a Survex `.svx` file (or the main `KATASTER.wpj` project) using `cavern` and prints compilation output and statistics. Useful for cross-checking a raw Survex source against the Walls project data, or for validating the whole project.
 
 ## When to use
 
-- When you want to compile and inspect a Survex `.svx` file — for example after `/svx-to-srv` conversion, to verify shot counts, warnings, or total length before comparing with the Walls result.
-- When you want to validate the entire project by compiling `KATASTER.wpj` with cavern (same check as the GitHub CI).
+- When you want to compile and inspect a Survex `.svx` file — for example after `$svx-to-srv` conversion, to verify shot counts, warnings, or total length before comparing with the Walls result.
+- When you want to validate the entire project by compiling `KATASTER.wpj` with cavern (a compile/statistics check; full CI also validates metadata, warnings, GPS snapshots, and exports).
 
 ## Usage
 
 ```
-/survex-stats <path/to/file.svx>
-/survex-stats KATASTER.wpj
+$survex-stats <path/to/file.svx>
+$survex-stats KATASTER.wpj
 ```
 
 Examples:
 ```
-/survex-stats Poligony/D_Mietusia/M_Swistowka/Mietusia_Wyznia/_RAW/mietusia_wyznia.svx
-/survex-stats KATASTER.wpj
+$survex-stats Poligony/D_Mietusia/M_Swistowka/Mietusia_Wyznia/_RAW/01/<source>.svx
+$survex-stats KATASTER.wpj
 ```
 
 ## Steps
@@ -42,4 +45,4 @@ Examples:
    - Whether compilation succeeded or failed
    - Any warnings or errors cavern reported
    - Key stats: total survey length, number of stations (if present in output)
-   - For `KATASTER.wpj`: flag any `error:` lines or "not attached to a fixed/control point" warnings, as these are what the GitHub CI checks for
+   - For `KATASTER.wpj`: flag any `error:` lines or "not attached to a fixed/control point" warnings, and explain that `jktz-survex-stats` alone does not enforce the full warning-free validation contract

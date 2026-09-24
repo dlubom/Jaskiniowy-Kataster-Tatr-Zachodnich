@@ -1,4 +1,7 @@
-# Skill: svx-to-srv
+---
+name: svx-to-srv
+description: Convert Survex survey files to Walls SRV while preserving measurements, station identities, and provenance.
+---
 
 Converts a Survex (`.svx`) cave survey into Walls (`.SRV`) format for inclusion in the Jaskiniowy Kataster Tatr Zachodnich project.
 
@@ -9,15 +12,15 @@ When new cave survey data arrives in Survex format (`.svx` files) and needs to b
 ## Usage
 
 ```
-/svx-to-srv <cave-id> <path/to/source.svx> [or ZIP with multiple .svx files]
+$svx-to-srv <cave-id> <path/to/source.svx> [or ZIP with multiple .svx files]
 ```
 
 Example:
 ```
-/svx-to-srv T.D-10.01 "Poligony/D_Mietusia/M_Swistowka/Mietusia_Wyznia/_RAW/source/mietusia_wyznia.svx"
+$svx-to-srv T.D-10.01 "Poligony/D_Mietusia/M_Swistowka/Mietusia_Wyznia/_RAW/01/mietusia_wyznia.svx"
 ```
 
-This produced 16 section SRV files in `Poligony/D_Mietusia/M_Swistowka/Mietusia_Wyznia/`. The cave's entrance fix is appended to the shared `Poligony/OTWORY.SRV` (see `/add-cave` Step 8).
+Write converted files outside `_RAW/`. Register the entrance through `Poligony/OTWORY.SRV.j2` and render the snapshot (see `$add-cave` Step 8).
 
 ## Conversion rules
 
@@ -38,14 +41,21 @@ The field order maps directly: `FROM TO DISTANCE AZIMUTH INCLINATION`
 | `*date YYYY.MM.DD` | `#date YYYY-MM-DD` and repeated `SURVEY_DATE "YYYY-MM-DD"` in metadata | Dash separator in Walls |
 | `*team ...` | repeated `TEAM "..."` in metadata block | Preserve multiple source team lines |
 | `*instrument ...` | repeated `INSTRUMENT "..."` in metadata block | Preserve multiple source instrument lines |
-| `*entrance` | `#flag`, `#note`, `#fix` appended to `Poligony/OTWORY.SRV` | Fully-qualified station name (e.g. `Marmurowa:0`). See add-cave skill Step 8 for coordinate conversion |
+| `*entrance` | `gps_fix`, `#flag`, `#note` in `Poligony/OTWORY.SRV.j2` | Establish the GPS object ID and station identity, then render `OTWORY.SRV`. See add-cave Step 8. |
 
-### What to skip (do NOT convert)
+The calibration mapping above covers unit scale only. For a non-unit `scale`,
+non-default units, or a different `*data` layout, work out the complete transform
+and verify it against source compilation; do not silently omit the scale.
+Record explicit source declinations even when the project's date-derived policy
+changes the active correction. A discrepancy requires explanation, not tuning
+the measurements to match a target length.
+
+### Flags and passage data
 
 | Survex construct | Action |
 |-----------------|--------|
 | `*flags duplicate` shots | **Convert with `#S /Duplicate` tag** — append `#S /Duplicate` to each shot line. This preserves station topology (no disconnected components) while allowing the shots to be detached/hidden in Walls UI to exclude from statistics. |
-| `*flags surface` shots | **Skip** — exception: the GPS→entrance shot that anchors the cave (keep as zero-shot or use coordinates from PIG) |
+| `*flags surface` shots | Inspect their role before excluding them. Preserve real anchor/tie measurements and their surface classification when required; never turn a nonzero shot into a zero-shot or substitute a PIG fix. |
 | `*data passage` (LRUD) | **Convert** — Walls supports LRUD as `<L,R,U,D>` appended to the shot line. Survex LRUD blocks are separate lines; in Walls they are inline. Optionally set style with `#units LRUD=F/T/FB/TB`. |
 | `*flags not X` | Mark end of flag X — check this **before** checking `*flags X` (it's a substring of it, causing a bug if order is wrong) |
 
@@ -66,8 +76,8 @@ One zero-shot per equate. Place them in a `; === Polaczenia z innymi cigami ===`
 ### Prefixes and station naming
 
 - Survex uses hierarchical prefixes (`*begin section`, `*end section`) — flatten according to the project's prefix convention
-- For prefix structure (single `#prefix` Pattern A vs two-level `#prefix2`+`#prefix` Pattern B), CamelCase rules including short prepositions, scope rules, and which pattern applies to which cave system, see the **Prefix Convention** section in [`CLAUDE.md`](../../../CLAUDE.md)
-- Pattern A example: section names become station infixes: `traba.1` → `tb_1` (with `#prefix td1001`); station full name: `td1001_tb_1`
+- For prefix structure (single `#prefix` Pattern A vs two-level `#prefix2`+`#prefix` Pattern B), CamelCase rules including short prepositions, scope rules, and which pattern applies to which cave system, see the **Prefix Convention** section in [`AGENTS.md`](../../../AGENTS.md)
+- Single-prefix example: `traba.1` → `tb_1` under `#prefix MietusiaWyznia`; full station name: `MietusiaWyznia:tb_1`. Maintain an explicit name map across files and equates.
 
 ---
 
@@ -111,22 +121,12 @@ tb_1    tb_3    2.82    57.8    72.4
 
 This preserves topology (tb_1 is connected) while allowing the duplicate shots to be detached/hidden in Walls UI.
 
-### Legacy workaround: zero-shot
+### Repairing missing junctions
 
-If duplicate shots were already skipped, add a zero-shot for each affected junction station:
-
-```srv
-sd_12    tb_0    0    0    0
-tb_0     tb_1    0    0    0   ; fixes disconnected tb_1
-sd_14    tb_2    0    0    0
-```
-
-### Real example: Mietusia Wyżnia (T.D-10.01), section TB (Trąba)
-
-- `traba.svx` had `tb_0` and `tb_2` equated to `suche_dno`
-- `tb_1` was intermediate in duplicate shots → positioned between `sd_12` and `sd_14`
-- Duplicate shots were skipped during initial conversion → `tb_1` became a floating island
-- Applied legacy fix: added `tb_0 tb_1 0 0 0` in `MWYZN_TB.SRV` (line 25)
+If a previous conversion dropped a measured duplicate traverse, restore its
+source measurements. A zero-shot may represent a documented `*equate`, never
+an invented identity between distinct stations. Compilation success alone does
+not justify collapsing a junction or selecting one of two conflicting surveys.
 
 ---
 
@@ -141,9 +141,9 @@ MWYZN_TB.SRV   ; traba
 ...
 ```
 
-The prefix structure (single `#prefix` vs `#prefix2`+`#prefix`) follows the project convention — see the **Prefix Convention** section in [`CLAUDE.md`](../../../CLAUDE.md).
+The prefix structure (single `#prefix` vs `#prefix2`+`#prefix`) follows the project convention — see the **Prefix Convention** section in [`AGENTS.md`](../../../AGENTS.md).
 
-The cave's entrance fix/flag/note goes into the shared `Poligony/OTWORY.SRV`.
+Register the entrance in `Poligony/OTWORY.SRV.j2`, then render the shared snapshot.
 
 ## Metadata requirements
 
@@ -180,9 +180,9 @@ Required conversion metadata:
 
 - [ ] Read all `.svx` files to understand the structure (main file, `*include` chain)
 - [ ] Map Survex section names to SRV file abbreviations
-- [ ] Convert measurements, converting `*flags duplicate` with `#S /Duplicate` and skipping `*flags surface`
+- [ ] Convert measurements, converting `*flags duplicate` with `#S /Duplicate` and preserving necessary surface connections
 - [ ] Map `*equate` directives to zero-shots
-- [ ] **Check for junction stations in duplicate shots** — add zero-shots as needed (see critical section above)
+- [ ] **Check for junction stations in duplicate shots** — retain the measured traverse; zero-shots require source equates
 - [ ] Drop `*declination` / `*calibrate declination` when `#date` is present (declination derives from `#date`); use `#units DECL=` instead of `#date` only when there is no reliable date. Mind the sign: `*calibrate declination X` → `DECL=-X`
 - [ ] Convert `*calibrate compass/clino/tape` (instrument corrections) → `#units INCA=/INCV=/INCD=` with the sign flipped — never drop these
 - [ ] Place all shots in correct chronological order per `*date`
@@ -190,19 +190,19 @@ Required conversion metadata:
 
 ## Adding the converted cave to the project
 
-Once all `.SRV` files are ready, use the `/add-cave` skill to register the cave in the project:
+Once all `.SRV` files are ready, use the `$add-cave` skill to register the cave in the project:
 
 ```
-/add-cave <cave-id> "<valley/subdir/path>"
+$add-cave <cave-id> "<valley/subdir/path>"
 ```
 
-The `/add-cave` skill handles:
+The `$add-cave` skill handles:
 - Placing `_RAW/` source files with a `README.md`
-- Appending the entrance fix/flag/note to `Poligony/OTWORY.SRV` (from PIG dump or GPS)
+- Mapping the entrance to a GPS object in `Poligony/OTWORY.SRV.j2` and rendering the snapshot
 - Adding `.BOOK`/`.SURVEY` entries to `KATASTER.wpj`
-- Updating `CHANGELOG.md` and committing
+- Updating `LISTA_JASKIN.md` and `CHANGELOG.md` under `Unreleased`
 
-When running `/add-cave` after SVX conversion, the section `.SRV` files are already created — skip the survey-file skeleton step and point the skill at the existing files.
+When running `$add-cave` after SVX conversion, the section `.SRV` files are already created — skip the survey-file skeleton step and point the skill at the existing files.
 
 ## Common pitfalls
 

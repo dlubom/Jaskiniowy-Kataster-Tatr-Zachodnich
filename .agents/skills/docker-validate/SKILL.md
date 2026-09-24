@@ -1,17 +1,20 @@
-# Skill: docker-validate
+---
+name: docker-validate
+description: Run the full JKTZ data validation in Docker when local Survex or GDAL is unavailable.
+---
 
-Runs the validation pipeline locally using Docker (same `jktz-survex` image as `/docker-exports`, built from `docker/Dockerfile.survexImage-release` by default, or `docker/Dockerfile.survexImage-commit` for the commit-pinned variant). Checks SRV file naming, invalid directives, compiles with cavern, and reports any unattached-station errors. Mirrors the Linux job in GitHub Actions `validate.yml`.
+Runs the validation pipeline locally using Docker (same `jktz-survex` image as `$docker-exports`, built from `docker/Dockerfile.survexImage-release` by default, or `docker/Dockerfile.survexImage-commit` for the commit-pinned variant). Checks filenames, metadata, directives, numeric formatting, prefixes, entrance snapshot/coordinates, warning-free compilation, connectivity, and exports. Mirrors the Linux job in GitHub Actions `validate.yml`.
 
 ## When to use
 
 - Before committing or pushing, to catch validation errors locally.
-- When you want to reproduce exactly what GitHub Actions runs on Linux.
+- When you want to run the same data-validation command as Linux CI (Python lint/tests are separate checks).
 - When `cavern` is not installed locally but Docker is available.
 
 ## Usage
 
 ```
-/docker-validate
+$docker-validate
 ```
 
 No arguments — always validates the current working tree.
@@ -42,6 +45,8 @@ Show the build output. If the build fails, stop and report the error.
 
 ### 2. Run the validation
 
+The entrance snapshot check downloads the latest GPS release and needs network access. If GitHub requires authentication, use the existing authorized token via an environment variable; never embed it in a command or repository file.
+
 ```bash
 docker run --rm -v "$(pwd):/project" jktz-survex uv run jktz-validate
 ```
@@ -52,9 +57,9 @@ docker run --rm -v "$(pwd):/project" jktz-survex uv run jktz-validate
 docker run --rm -v "C:/path/to/repo:/project" jktz-survex uv run jktz-validate
 ```
 
-Show the **full output** to the user.
+Retain the log and report failed checks with relevant output.
 
 ### 3. Report results
 
-- If the script exits 0: tell the user validation passed and highlight any warnings from the cavern output.
+- If the script exits 0: report validation passed; compile warnings are failures in this pipeline.
 - If the script exits non-zero: show which check failed and suggest a fix (e.g. rename `.srv` → `.SRV`, remove `#<` directives).

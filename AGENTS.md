@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Codex is the default coding agent for this repository. Read this file for project contracts and use the relevant skills in `.agents/skills/`. Model selection and personal permissions remain in the user's Codex settings; this repository does not override them.
 
 ## Project Overview
 
@@ -8,19 +8,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - **Coordinate system**: WGS 84 geographic (lon/lat) for `#fix` entrance points; UTM projection for compiled 3D output
 - **License**: Creative Commons Attribution-ShareAlike 4.0
-- **Current version**: v1.0.0 — semantic versioning, tracked in `CHANGELOG.md`
+- **Version history**: see `CHANGELOG.md`; ordinary changes go under `Unreleased`
 - **Language**: Polish (cave names, documentation, comments in survey files)
 
 ## Tools & Processing
 
-This is a data project, not a software application. The Python tooling is only
-for release automation around the survey data.
+This is a data project, not a software application. Python tooling validates survey data, manages metadata and entrance snapshots,
+and builds release exports.
 
 - **Walls software** processes the data: reads `.SRV` survey files, compiles into binary `.NT*` files, and exports `.wrl` (VRML 3D models)
 - The main project file `KATASTER.wpj` is opened in Walls to compile and visualize all survey data
 - **Windows path limitation**: The project should be extracted to a short root path (e.g., `C:/`) because deep Windows paths can prevent some caves from displaying
 - Python release tooling is managed with `uv`; validate it with
-  `uv run ruff check scripts tests` and `uv run pytest`.
+  `uv run ruff check src scripts tests .agents/skills` and `uv run pytest`.
 
 ## Local development setup
 
@@ -42,16 +42,18 @@ It does four things:
 4. Reports (warning only, never fails) whether these optional system tools are available:
    - **Survex** (`cavern`) — needed by `uv run jktz-validate`. Install: https://survex.com/download.html
    - **GDAL** (`ogr2ogr`) — needed by the exports step of `jktz-validate`. Windows: conda-forge or OSGeo4W. macOS: `brew install gdal`. Linux: `apt install gdal-bin`.
-   - **Docker** — optional; enables `/docker-validate` and `/docker-exports` as a fallback if Survex/GDAL aren't installed locally.
+   - **Docker** — optional; enables `$docker-validate` and `$docker-exports` as a fallback if Survex/GDAL aren't installed locally.
 
 ### Git hooks
 
 Defined in `.pre-commit-config.yaml`. Run via the [pre-commit framework](https://pre-commit.com/).
 
-- **pre-commit** (every `git commit`, fast): `ruff format`, `ruff check --fix`, `pytest`. Only the staged Python files under `src/`, `scripts/`, `tests/` are passed to ruff. If `ruff format` modifies a file, the commit **fails** (does not auto-stage) — re-stage with `git add -u` and commit again. This is the standard pre-commit framework behavior; it guarantees no commit ships unformatted code.
-- **pre-push** (every `git push`, slow): `uv run jktz-validate` — full cavern compile + exports pipeline. The validation fails if `cavern` emits any compile warnings. Takes a few minutes. Requires Survex and GDAL on PATH. Bypass intentionally with `git push --no-verify`.
+- **pre-commit** (every `git commit`, fast): `ruff format`, `ruff check --fix`, `pytest`. Only the staged Python files under `src/`, `scripts/`, `tests/`, `.agents/skills/` are passed to ruff. If `ruff format` modifies a file, the commit **fails** (does not auto-stage) — review and re-stage only the intended files, then commit again. This is the standard pre-commit framework behavior; it guarantees no commit ships unformatted code.
+- **pre-push** (every `git push`, slow): `uv run jktz-validate` — full cavern compile + exports pipeline. The validation fails if `cavern` emits any compile warnings. Takes a few minutes. Requires Survex and GDAL on PATH.
 
-If the pre-push hook fails because Survex/GDAL aren't installed, fix them locally or use `git push --no-verify` for that push. CI will still run the full validation on the PR.
+If a hook fails, resolve the cause and rerun it. Use the Docker validation skill when local Survex/GDAL are unavailable. Report infrastructure blockers separately from data failures; do not silently bypass hooks. Full validation also downloads the latest GPS release, so it needs network access.
+
+These are Git hooks, installed by the bootstrap for both manual and Codex commits/pushes. There are no separate agent lifecycle hooks to install.
 
 ## Repository Structure
 
@@ -59,7 +61,7 @@ If the pre-push hook fails because Survex/GDAL aren't installed, fix them locall
 KATASTER.wpj              # Main Walls project file (hierarchical cave/survey tree)
 CHANGELOG.md              # Version history (semver, from v0.00 to current)
 INFO.txt                  # Project description, links, contributor credits
-Poligony/                 # SOURCE DATA: ~150 .SRV survey files organized by valley
+Poligony/                 # SOURCE DATA: .SRV survey files organized by valley
   OTWORY.SRV.j2           # SHARED template: #fix/#flag/#note entrance entries for every cave
   D_Bystra/
   D_Chocholowska/
@@ -74,7 +76,7 @@ Poligony/                 # SOURCE DATA: ~150 .SRV survey files organized by val
   _Domiary_Pow_/          # Surface measurement connections between caves
 Powierzchnia/             # Terrain model (DEM from contour lines)
 KATASTER/                 # COMPILED OUTPUT (git-ignored .NT* files)
-.github/workflows/        # GitHub Actions (automated release ZIP on tag push)
+.github/workflows/        # GitHub Actions: PR validation/packages, releases, Pages
 ```
 
 ## Key File Formats
@@ -100,12 +102,12 @@ Use `uv` for the Python release tooling:
 
 ```
 uv sync --locked
-uv run ruff format --check scripts tests
-uv run ruff check scripts tests
+uv run ruff format --check src scripts tests .agents/skills
+uv run ruff check src scripts tests .agents/skills
 uv run pytest
 ```
 
-To preview a rendered entrances file without creating local
+To preview a rendered entrances file without changing the versioned
 `Poligony/OTWORY.SRV`, write it to a temporary path:
 
 ```
@@ -213,7 +215,7 @@ PROCESSING      "utworzono aktywny plik SRV z materialow zrodlowych"
 ## Data Conventions
 
 - **Cave IDs** follow the pattern `T.{region}-{number}.{sub}` (e.g., `T.C-16.01` for Jaskinia Kalacka, `T.B-14.01` for Dziura)
-- **Station naming**: `{cave_id}_{survey_id}` prefix (e.g., `tb1401_A1` for Dziura survey A1)
+- **Station naming**: preserve source station identifiers; qualify them with the cave/section prefixes below. Do not infer station identity from matching measurements or geometry.
 - **`#prefix` / `#prefix2` convention**: see the **Prefix Convention** subsection below
 - **Directory hierarchy**: Valley → Mountain/Region → Cave → Survey files
 - **SRV file naming**: UPPERCASE basename + `.SRV` extension (e.g., `DZIUR_S.SRV`, `MARMUR_OT.SRV`, `TC1601A1.SRV`). The basename must match the `.NAME` directive in `KATASTER.wpj`. This is required for Linux compatibility — `cavern` (Survex) on case-sensitive filesystems only tries: all-lowercase, Initial-cap, and ALL-UPPERCASE variants when resolving `.NAME` references.
@@ -243,12 +245,12 @@ Two options, picked by cave shape:
 
 ### Detecting Data Quality Issues in SRV Files
 
-**Important:** SRV files may contain non-UTF-8 bytes (CP1250/Latin-1 legacy encoding). Always use `LC_ALL=C` with grep/sed to handle these correctly. The Edit tool (which operates in UTF-8) will corrupt these bytes — use `LC_ALL=C sed -i ''` instead for byte-safe replacements.
+**Important:** SRV files may contain non-UTF-8 bytes (CP1250/Latin-1 legacy encoding). Always use `LC_ALL=C` with grep/sed to handle these correctly. Inspect the bytes before editing. Preserve encoding and line endings; use byte-aware replacements or the metadata CLI rather than decoding legacy data as UTF-8.
 
 **Walls duplicate-vector warnings** — with `Options | Compilation | Look for Duplicates` enabled, Walls logs duplicate FROM/TO station pairs independently of segment tags. Adding `#S L` or `#S /Duplicate` is useful for statistics/segment handling, but it does **not** suppress the "Duplication of shot" warning. Fix depending on the data:
 - Repeated instrument readings for the same leg: average them into one measurement.
-- Truly duplicate survey/resurvey leg: choose one source or keep both only if you accept the Walls warning when duplicate checking is enabled.
-- Conflicting measurements with the same station names: do not blindly average; resolve from source material, or rename the alternate traverse stations and tie the endpoints explicitly.
+- Independent surveys/resurveys must remain distinguishable. Do not discard one merely to silence duplicate warnings; record the source and explain any exclusion from statistics.
+- Conflicting measurements with the same station names: do not blindly average; resolve from source material, or namespace the alternate traverse separately. Tie stations only with independent evidence of identity.
 
 **Decimal comma (,) instead of dot (.)** — Walls treats comma as whitespace, shifting all subsequent fields:
 ```bash
@@ -315,7 +317,7 @@ The `_RAW/` contents are not processed by Walls but are tracked in git for refer
 
 ## .gitignore
 
-Compiled Walls outputs are git-ignored: `*.nta`, `*.ntn`, `*.ntv`, `*.nts`, `*.ntp`, `*.wrl`, `*.log`, `*.lst`. The `logs/` directory is also ignored. Only `.SRV` source data and `.wpj` project file are tracked.
+Compiled Walls outputs are git-ignored: `*.nta`, `*.ntn`, `*.ntv`, `*.nts`, `*.ntp`, `*.wrl`, `*.log`, `*.lst`. The `logs/` directory is also ignored. Source archives, documentation, templates, and tooling are also tracked.
 `Poligony/OTWORY.SRV` is versioned intentionally: it is generated from
 `Poligony/OTWORY.SRV.j2`, but kept in Git so coordinate changes have normal
 review diffs. CI verifies that the snapshot matches the latest GPS release.
@@ -325,6 +327,9 @@ review diffs. CI verifies that the snapshot matches the latest GPS release.
 The project uses [semantic versioning](https://semver.org/) starting from v1.0.0. All version history is in `CHANGELOG.md`.
 
 ### Release process
+
+Only release when explicitly requested. A draft PR request does not authorize merging, tagging, or publishing.
+
 1. Update `CHANGELOG.md` with a new `## [vX.Y.Z] - YYYY-MM-DD` entry
 2. Commit, merge to master
 3. Create an annotated tag: `git tag -a vX.Y.Z -m "vX.Y.Z - description"`
@@ -335,7 +340,7 @@ The project uses [semantic versioning](https://semver.org/) starting from v1.0.0
 
 The version in `INFO.txt` is set automatically — the `__VERSION__` placeholder is replaced with the tag name during the release build.
 
-The release ZIP excludes: `.git/`, `.github/`, `.claude/`, `.venv/`, Python/tool caches, Python tooling files (`pyproject.toml`, `uv.lock`, `tests/`), `.gitignore`, `CLAUDE.md`, `CONTRIBUTING.md`, `doc/`, `scripts/`, `Poligony/OTWORY.SRV.j2`, `logs/`, `*/_RAW/*`, `.DS_Store`, local Survex build directories, validation scratch outputs, previous `JKTZ-*.zip` files, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
+The release ZIP excludes: `.git/`, `.github/`, legacy `.claude/`, `.agents/`, `.codex/`, `.venv/`, Python/tool caches, Python tooling files (`pyproject.toml`, `uv.lock`, `tests/`), `.gitignore`, `AGENTS.md`, `CONTRIBUTING.md`, `doc/`, `scripts/`, `Poligony/OTWORY.SRV.j2`, `logs/`, `*/_RAW/*`, `.DS_Store`, local Survex build directories, validation scratch outputs, previous `JKTZ-*.zip` files, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
 
 Pull requests build a temporary test release package after validation succeeds.
 The package is uploaded as a GitHub Actions artifact with short retention and
@@ -346,7 +351,7 @@ These PR packages are not GitHub Releases and do not affect `/releases/latest`.
 
 ## Documentation Resources (`doc/`)
 
-When working with this project, Claude Code can use the following reference materials:
+When working with this project, Codex can use the following reference materials:
 
 ### Walls Software Documentation
 - **`doc/Walls_manual.md`** — Markdown version of the Walls cave survey software manual. Use this for details on `.SRV` file syntax, directives (`#fix`, `#units`, `#date`, etc.), project file structure, and compilation options.
@@ -364,15 +369,16 @@ When working with this project, Claude Code can use the following reference mate
 - Finding alternative cave names (`other_names` field)
 - Checking geographic location and access descriptions
 
-**Always search by cave ID, not name** — the ID is ASCII and unambiguous. Cave names contain Polish diacritics (ź, ą, etc.) that cause grep to fail silently:
+Prefer the inventory ID for an unambiguous lookup, using `rg -F`:
 
 ```bash
-# Correct — search by ID (always works)
-grep '"T.B-14.01"' doc/jaskinie_polski_pig_dump.jsonl
-
-# Avoid — searching by name may fail on diacritics
-grep -i "dziura" doc/jaskinie_polski_pig_dump.jsonl
+rg -F '"T.B-14.01"' doc/jaskinie_polski_pig_dump.jsonl
 ```
+
+Name searches also work with matching Unicode spelling; aliases and diacritics
+can make them incomplete. The dump is an archival reference, not a current
+measurement source. Do not infer survey authors from inventory editors, or
+choose ambiguous scan digits by agreement with compiled length/closure.
 
 Returns data including:
 - Official name: "Dziura" with aliases "Jaskinia Strążyska, Zbójnicka Jama"
@@ -384,105 +390,42 @@ Returns data including:
 ## Git Commits
 
 When creating commits in this project:
-- **Do NOT add `Co-Authored-By` lines** — commit messages should not include Claude Code attribution
+- **Do NOT add `Co-Authored-By` lines** — commit messages should not include agent attribution
 - Use Polish language for commit messages when appropriate
 - Keep messages concise and descriptive
 - When releasing a new version, create an **annotated tag** (`git tag -a vX.Y.Z -m "..."`) on master after merging — see "Versioning and Releases" above
 
 ## Available Skills
 
-### `/add-cave` — `.claude/skills/add-cave/SKILL.md`
+Repository skills live under `.agents/skills/<name>/SKILL.md`. Codex discovers
+their `name` and `description`; invoke one with `$skill-name` in a prompt or let
+Codex select it when relevant. These examples are prompts, not shell commands.
+Run shell commands from the repository root; use `uv run` for Python tooling.
 
-Guides through adding a new cave end-to-end. Usage:
+| Skill | Purpose |
+| --- | --- |
+| `$add-cave` | Add source material, survey metadata, GPS mapping, and project entries |
+| `$svx-to-srv` | Convert Survex source measurements to Walls |
+| `$average-shots` | Average confirmed repeat instrument readings in a working SRV |
+| `$survex-stats` | Compile a source and inspect statistics |
+| `$verify-cave-refactor` | Compare source data and compiled output before/after a refactor |
+| `$gnss-to-wgs84` | Convert PUWG 1992 (X northing, Y easting) to WGS84 |
+| `$utm34n-wgs84` | Convert WGS84 UTM 34N and geographic coordinates |
+| `$docker-validate` | Run full data validation using Docker |
+| `$docker-exports` | Build local release exports using Docker |
 
-```
-/add-cave <cave-id> "<valley/subdir/path>" [/path/to/source.zip]
-```
-
-Example:
-```
-/add-cave T.D-08.07 "Dolina Koscieliska/Organy" /tmp/MROZN.SRV.zip
-```
-
-Covers: PIG lookup → coordinate conversion → directory creation → `_RAW/` + README → entrance entry appended to `Poligony/OTWORY.SRV.j2` → survey file skeleton(s) → `KATASTER.wpj` entry.
-
-### `/average-shots` — `.claude/skills/average-shots/SKILL.md`
-
-Averages multiple repeat shots for the same leg (forward A→B + backward B→A) into a single measurement in a survey `.SRV` file. Use after importing raw DistoX data. Usage:
-
-```
-/average-shots <path/to/FILE.SRV>
-```
-
-### `/survex-stats` — `.claude/skills/survex-stats/SKILL.md`
-
-Compiles a Survex `.svx` file with `cavern` and prints the output and statistics. Useful for cross-checking raw source data before or after conversion. Usage:
-
-```
-/survex-stats <path/to/file.svx>
-```
-
-### `/svx-to-srv` — `.claude/skills/svx-to-srv/SKILL.md`
-
-Converts Survex (`.svx`) survey files to Walls (`.SRV`) format. Covers measurement conversion, equate→zero-shot mapping, flag handling, and the critical issue of junction stations positioned only by duplicate shots. Usage:
-
-```
-/svx-to-srv <cave-id> <path/to/source.svx>
-```
-
-### `/docker-exports` — `.claude/skills/docker-exports/SKILL.md`
-
-Builds the `jktz-survex` Docker image and/or runs the release export pipeline locally, generating `.3d`, `.dxf`, `.shp`, and `.err` files in `exports/JKTZ-<VERSION>/`. Mirrors the GitHub Actions release pipeline. Usage:
-
-```
-/docker-exports [VERSION]
-/docker-exports --build-only
-/docker-exports --run-only [VERSION]
-```
-
-### `/docker-validate` — `.claude/skills/docker-validate/SKILL.md`
-
-Runs the validation pipeline locally using Docker (same `jktz-survex` image as `/docker-exports`). Checks SRV naming, invalid directives, compiles with cavern, and reports unattached-station errors. Mirrors the Linux job in GitHub Actions `validate.yml`. Usage:
-
-```
-/docker-validate
-```
-
-### `/verify-cave-refactor` — `.claude/skills/verify-cave-refactor/SKILL.md`
-
-Verifies that a refactor of a single cave's SRV files (split, prefix rename, formatting) did not change the survey itself. Compiles the project before and after the change, exports station coordinates for the named cave, and diffs them. Usage:
-
-```
-/verify-cave-refactor <cave-prefix>
-```
-
-Example:
-```
-/verify-cave-refactor Marmurowa
-```
-
-### `/gnss-to-wgs84` — `.claude/skills/gnss-to-wgs84/SKILL.md`
-
-Converts coordinates from Polish EPSG:2180 (PUWG 1992 / "uklad 1992") to WGS84 geographic (EPSG:4326). Useful when processing GNSS survey reports. Requires `pyproj` (`pip3 install pyproj`). Usage:
-
-```
-/gnss-to-wgs84 <X_northing> <Y_easting> [<elevation>]
-```
-
-Example:
-```
-/gnss-to-wgs84 152168.79 564375.07 1486.69
-```
+Skill helper scripts stay beside their `SKILL.md`; they are checked by the
+same Ruff/pytest gates as the installed Python tooling.
 
 ## Workflow for Adding a New Cave
 
-Use the `/add-cave` skill (see above) or follow these steps manually:
+Use the `$add-cave` skill (see above) or follow these steps manually:
 
-1. **Research the cave** in `doc/jaskinie_polski_pig_dump.jsonl` — search by cave ID (see PIG section above) to find official coordinates, dimensions, and documentation history
+1. **Research the cave** in `doc/jaskinie_polski_pig_dump.jsonl` — search by cave ID (see PIG section above) to find archival inventory context, dimensions, and documentation history; active entrance fixes come from the GPS project
 2. Create a directory under the appropriate valley in `Poligony/` (use underscores, no spaces, short names)
 3. Create the cave's survey `.SRV` body and run `uv run jktz-srv-metadata srv-set` for each file
 4. Append entrance fix/flag/note for the cave to `Poligony/OTWORY.SRV.j2` (fully-qualified station name, e.g. `Marmurowa:0`)
-5. If using Claude for adding cave: **Close Walls** before editing `KATASTER.wpj` — Walls overwrites the file on save, discarding any manually added entries
+5. **Close Walls if it has this project open** before editing `KATASTER.wpj` — Walls overwrites the file on save, discarding any manually added entries
 6. Add `.BOOK`/`.SURVEY` entries to `KATASTER.wpj` referencing the new files
-7. Update `CHANGELOG.md` with a new version entry
+7. Update `LISTA_JASKIN.md` and add a concise entry under `Unreleased` in `CHANGELOG.md`
 8. All new data should be coordinated through the project coordinator (darek.lubomski@gmail.com)

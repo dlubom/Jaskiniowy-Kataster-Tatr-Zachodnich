@@ -14,13 +14,15 @@ Output:
     lat=49.23364130  lon=19.88454604  elev=1486.69
     #fix	STATION	E19.88454604	N49.23364130	1486.69
 """
+
+import math
 import sys
 
 try:
     from pyproj import Transformer
 except ImportError:
     print("Error: pyproj is not installed.", file=sys.stderr)
-    print("Install it with:  pip3 install pyproj", file=sys.stderr)
+    print("Install it with:  uv sync --locked", file=sys.stderr)
     sys.exit(1)
 
 # EPSG:2180 ranges for the Tatra Mountains region
@@ -47,8 +49,10 @@ def validate_input(x, y):
         y_as_x = TATRA_X_MIN <= y <= TATRA_X_MAX
         if x_as_y and y_as_x:
             warnings.append(
-                f"WARNING: X/Y look SWAPPED! X={x} is in easting range, Y={y} is in northing range.\n"
-                f"  Expected: X (northing) ~ {TATRA_X_MIN}-{TATRA_X_MAX}, Y (easting) ~ {TATRA_Y_MIN}-{TATRA_Y_MAX}\n"
+                f"WARNING: X/Y look SWAPPED! X={x} is in easting range, "
+                f"Y={y} is in northing range.\n"
+                f"  Expected: X (northing) ~ {TATRA_X_MIN}-{TATRA_X_MAX}, "
+                f"Y (easting) ~ {TATRA_Y_MIN}-{TATRA_Y_MAX}\n"
                 f"  Try: python3 gnss_to_wgs84.py {y} {x}"
             )
         else:
@@ -62,9 +66,7 @@ def validate_input(x, y):
             f"WARNING: X={x} outside Tatra northing range ({TATRA_X_MIN}-{TATRA_X_MAX})"
         )
     elif not y_ok:
-        warnings.append(
-            f"WARNING: Y={y} outside Tatra easting range ({TATRA_Y_MIN}-{TATRA_Y_MAX})"
-        )
+        warnings.append(f"WARNING: Y={y} outside Tatra easting range ({TATRA_Y_MIN}-{TATRA_Y_MAX})")
 
     return warnings
 
@@ -81,12 +83,12 @@ def validate_output(lat, lon):
 
 def convert(x_northing, y_easting):
     tr = Transformer.from_crs(2180, 4326, always_xy=True)
-    lon, lat = tr.transform(y_easting, x_northing)
+    lon, lat = tr.transform(y_easting, x_northing, errcheck=True)
     return lat, lon
 
 
 def main():
-    if len(sys.argv) < 3:
+    if len(sys.argv) not in (3, 4):
         print("Usage: python3 gnss_to_wgs84.py <X_northing> <Y_easting> [<elevation>]")
         print()
         print("  X = northing from GNSS report (e.g. 152168.79)")
@@ -99,6 +101,9 @@ def main():
     x = float(sys.argv[1])
     y = float(sys.argv[2])
     elev = sys.argv[3] if len(sys.argv) > 3 else None
+
+    if not all(math.isfinite(float(value)) for value in sys.argv[1:]):
+        raise ValueError("Coordinates and elevation must be finite numbers")
 
     # Validate input (EPSG:2180 range)
     for w in validate_input(x, y):

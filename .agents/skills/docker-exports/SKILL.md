@@ -1,4 +1,7 @@
-# Skill: docker-exports
+---
+name: docker-exports
+description: Build the project Survex Docker image and generate local 3D, DXF, and shapefile exports.
+---
 
 Builds the `jktz-survex` Docker image and/or runs the release export pipeline locally, producing `.3d`, `.dxf`, `.shp`, and `.err` files in `<OUTDIR>/` (default `exports/`), with version embedded in filenames.
 
@@ -19,9 +22,9 @@ Default to the `release` variant unless the user asks for the commit-based image
 ## Usage
 
 ```
-/docker-exports [VERSION] [OUTDIR]
-/docker-exports --build-only
-/docker-exports --run-only [VERSION] [OUTDIR]
+$docker-exports [VERSION] [OUTDIR]
+$docker-exports --build-only
+$docker-exports --run-only [VERSION] [OUTDIR]
 ```
 
 - `VERSION` — version label embedded in output filenames, e.g. `v1.2.6`. Defaults to `local`.
@@ -31,11 +34,11 @@ Default to the `release` variant unless the user asks for the commit-based image
 
 Examples:
 ```
-/docker-exports v1.2.6
-/docker-exports v1.2.6 exports/pr-check
-/docker-exports --build-only
-/docker-exports --run-only v1.2.7
-/docker-exports
+$docker-exports v1.2.6
+$docker-exports v1.2.6 exports/pr-check
+$docker-exports --build-only
+$docker-exports --run-only v1.2.7
+$docker-exports
 ```
 
 ## Steps

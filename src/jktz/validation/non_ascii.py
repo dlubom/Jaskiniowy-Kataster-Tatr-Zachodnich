@@ -15,7 +15,7 @@ def _is_allowed(b: int) -> bool:
 def check(root: Path = Path("Poligony")) -> None:
     """Reject non-ASCII bytes in SRV filenames, directory names, and SRV content.
 
-    Walls' file paths and survey text require ASCII (CLAUDE.md:128). Bytes
+    Walls' file paths and survey text require ASCII (AGENTS.md). Bytes
     outside ``[TAB, CR, printable ASCII]`` are flagged. Excludes ``_RAW/``.
     """
     path_errors: list[str] = []
@@ -48,7 +48,7 @@ def check(root: Path = Path("Poligony")) -> None:
     if path_errors or content_errors:
         lines = [
             "ERROR: non-ASCII byte(s) found in SRV files or paths "
-            "(use ASCII equivalents per CLAUDE.md):"
+            "(use ASCII equivalents per AGENTS.md):"
         ]
         lines.extend(path_errors)
         lines.extend(content_errors)

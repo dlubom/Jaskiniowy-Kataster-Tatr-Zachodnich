@@ -19,31 +19,41 @@ Algorithm:
 import math
 import re
 import sys
-from datetime import date
+from pathlib import Path
+
+from jktz.metadata.io import atomic_write, encode_srv, read_srv
 
 
 def circular_mean_degrees(angles):
     """Circular mean for angles in degrees (handles 0/360 boundary)."""
     sin_sum = sum(math.sin(math.radians(a)) for a in angles)
     cos_sum = sum(math.cos(math.radians(a)) for a in angles)
+    if math.hypot(sin_sum, cos_sum) < 1e-12:
+        raise ValueError("Azimuths have no unambiguous circular mean")
     return (math.degrees(math.atan2(sin_sum, cos_sum)) + 360) % 360
 
 
 def is_shot_line(line):
     """Return True if line is a survey shot: FROM TO DIST AZ INC."""
     stripped = line.strip()
-    if not stripped or stripped[0] in (';', '#'):
+    if not stripped or stripped[0] in (";", "#"):
         return False
     parts = stripped.split()
     if len(parts) != 5:
         return False
     try:
-        float(parts[2])
-        float(parts[3])
-        float(parts[4])
-        return True
+        values = [float(value) for value in parts[2:]]
     except ValueError:
         return False
+    if not all(math.isfinite(value) for value in values):
+        raise ValueError("Non-finite survey measurement")
+    # Anonymous endpoints identify independent splays, not repeated named legs.
+    return (
+        parts[0] not in {"-", "--", "*"}
+        and parts[1] not in {"-", "--", "*"}
+        and parts[0] != parts[1]
+        and values[0] > 0
+    )
 
 
 def parse_shot(line):
@@ -51,25 +61,38 @@ def parse_shot(line):
     return parts[0], parts[1], float(parts[2]), float(parts[3]), float(parts[4])
 
 
-def format_shot(frm, to, dist, az, inc, indent=""):
-    return f"{indent}{frm}\t{to}\t{dist:.3f}\t{az:.2f}\t{inc:.2f}\n"
+def format_shot(frm, to, dist, az, inc, indent="", newline="\n"):
+    return f"{indent}{frm}\t{to}\t{dist:.3f}\t{az:.2f}\t{inc:.2f}{newline}"
 
 
 def get_indent(line):
-    m = re.match(r'^(\s*)', line)
+    m = re.match(r"^(\s*)", line)
     return m.group(1) if m else ""
 
 
 def average_shots(srv_file):
-    with open(srv_file, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
+    path = Path(srv_file).resolve()
+    if "_RAW" in path.parts:
+        raise ValueError("Never average archival _RAW files; use a working copy")
+    lines = re.split(r"(?<=\n)|(?<=\r)(?!\n)", read_srv(path))
+    if lines and not lines[-1]:
+        lines.pop()
 
     result = []
     i = 0
     stats = {"groups": 0, "shots_before": 0, "shots_after": 0}
 
+    in_metadata = False
     while i < len(lines):
         line = lines[i]
+        if line.strip().startswith("#["):
+            in_metadata = True
+        if in_metadata:
+            result.append(line)
+            i += 1
+            if line.strip().startswith("#]"):
+                in_metadata = False
+            continue
 
         if not is_shot_line(line):
             result.append(line)
@@ -102,7 +125,7 @@ def average_shots(srv_file):
             all_dist, all_az, all_inc = [], [], []
             fwd_count = bwd_count = 0
 
-            for (s_frm, s_to, s_dist, s_az, s_inc) in group:
+            for s_frm, s_to, s_dist, s_az, s_inc in group:
                 all_dist.append(s_dist)
                 if s_frm == fwd_from and s_to == fwd_to:
                     all_az.append(s_az)
@@ -117,7 +140,11 @@ def average_shots(srv_file):
             avg_az = circular_mean_degrees(all_az)
             avg_inc = sum(all_inc) / len(all_inc)
 
-            result.append(format_shot(fwd_from, fwd_to, avg_dist, avg_az, avg_inc, indent))
+            last_line = lines[i - 1]
+            newline = next(
+                (ending for ending in ("\r\n", "\n", "\r") if last_line.endswith(ending)), ""
+            )
+            result.append(format_shot(fwd_from, fwd_to, avg_dist, avg_az, avg_inc, indent, newline))
             stats["groups"] += 1
             stats["shots_after"] += 1
 
@@ -127,8 +154,8 @@ def average_shots(srv_file):
                 f"-> dist={avg_dist:.3f}  az={avg_az:.2f}  inc={avg_inc:.2f}"
             )
 
-    with open(srv_file, 'w', encoding='utf-8') as f:
-        f.writelines(result)
+    if stats["groups"]:
+        atomic_write(path, encode_srv("".join(result)))
 
     removed = stats["shots_before"] - stats["shots_after"]
     print(

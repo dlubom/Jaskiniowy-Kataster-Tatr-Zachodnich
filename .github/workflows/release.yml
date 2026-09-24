@@ -38,8 +38,8 @@ jobs:
 
       - name: Validate Python tooling
         run: |
-          uv run ruff format --check src scripts tests
-          uv run ruff check src scripts tests
+          uv run ruff format --check src scripts tests .agents/skills
+          uv run ruff check src scripts tests .agents/skills
           uv run pytest
 
       - name: Set version in INFO.txt

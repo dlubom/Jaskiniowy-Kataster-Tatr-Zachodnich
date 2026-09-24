@@ -9,6 +9,7 @@ from jktz.packaging import EXCLUDE_PATTERNS, build_release_zip, is_excluded
 def test_is_excluded_matches_known_patterns() -> None:
     assert is_excluded(".git/config")
     assert is_excluded(".github/workflows/validate.yml")
+    assert is_excluded(".claude/settings.local.json")
     assert is_excluded("CONTRIBUTING.md")
     assert is_excluded("scripts/initial-setup.py")
     assert is_excluded("src/jktz/cli/validate.py")
@@ -69,7 +70,13 @@ def test_build_release_zip_includes_data_and_excludes_tooling(tmp_path: Path) ->
     (tmp_path / "docs" / "release-notes.md").write_text("docs are not release data")
     (tmp_path / "pyproject.toml").write_text("[project]")
     (tmp_path / "uv.lock").write_text("")
-    (tmp_path / "CLAUDE.md").write_text("instructions")
+    (tmp_path / "AGENTS.md").write_text("instructions")
+    (tmp_path / ".claude").mkdir()
+    (tmp_path / ".claude" / "settings.local.json").write_text('{"private": true}')
+    (tmp_path / ".agents" / "skills" / "example").mkdir(parents=True)
+    (tmp_path / ".agents" / "skills" / "example" / "SKILL.md").write_text("skill")
+    (tmp_path / ".codex").mkdir()
+    (tmp_path / ".codex" / "config.toml").write_text("# local settings")
     (tmp_path / "CONTRIBUTING.md").write_text("developer instructions")
     (tmp_path / "cavern_output.txt").write_text("log")
     (tmp_path / "previous.NTA").write_bytes(b"\x00" * 10)
@@ -105,7 +112,10 @@ def test_build_release_zip_includes_data_and_excludes_tooling(tmp_path: Path) ->
     assert "docs/release-notes.md" not in names
     assert "pyproject.toml" not in names
     assert "uv.lock" not in names
-    assert "CLAUDE.md" not in names
+    assert "AGENTS.md" not in names
+    assert ".claude/settings.local.json" not in names
+    assert ".agents/skills/example/SKILL.md" not in names
+    assert ".codex/config.toml" not in names
     assert "CONTRIBUTING.md" not in names
     assert "cavern_output.txt" not in names
     assert "previous.NTA" not in names

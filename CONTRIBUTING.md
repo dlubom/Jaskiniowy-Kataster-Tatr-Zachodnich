@@ -35,14 +35,21 @@ nie przejdzie.
 
 ```bash
 uv run pytest -q
-uv run ruff format --check src scripts tests
-uv run ruff check src scripts tests
+uv run ruff format --check src scripts tests .agents/skills
+uv run ruff check src scripts tests .agents/skills
 uv run jktz-render-otwory --check
 uv run jktz-validate
 ```
 
-Agenci powinni dodatkowo przeczytać `CLAUDE.md`, ponieważ opisuje on kontrakty
-danych Walls/Survex, `_RAW`, metadanych i publikacji wydań.
+Domyślnym agentem projektu jest Codex. Instrukcje w `AGENTS.md` opisują kontrakty
+danych Walls/Survex, `_RAW`, metadanych i publikacji wydań. Skille znajdują się
+w `.agents/skills/`; można wywołać je w poleceniu dla Codex, np.
+`$docker-validate`. Skrypty pomocnicze skilli uruchamiaj przez `uv run python`.
+Hooki Git działają niezależnie od agenta i wymagają instalacji powyższym
+skryptem. Projekt korzysta z modelu i uprawnień wybranych w ustawieniach Codex.
+
+Dokumentacja Codex: [AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md),
+[skille](https://learn.chatgpt.com/docs/build-skills).
 
 ## English
 
@@ -78,11 +85,18 @@ will not pass without them.
 
 ```bash
 uv run pytest -q
-uv run ruff format --check src scripts tests
-uv run ruff check src scripts tests
+uv run ruff format --check src scripts tests .agents/skills
+uv run ruff check src scripts tests .agents/skills
 uv run jktz-render-otwory --check
 uv run jktz-validate
 ```
 
-Agents should also read `CLAUDE.md`, which defines the Walls/Survex, `_RAW`,
-metadata, and release contracts for this repository.
+Codex is the default project agent. Read `AGENTS.md`, which defines the Walls/Survex, `_RAW`,
+metadata, and release contracts for this repository. Skills live in
+`.agents/skills/`; invoke them in a Codex prompt, e.g. `$docker-validate`.
+Run skill helpers through `uv run python`. Git hooks work independently of
+the agent and must be installed using the bootstrap above. The project uses
+the model and permissions selected in your Codex settings.
+
+Codex documentation: [AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md),
+[skills](https://learn.chatgpt.com/docs/build-skills).

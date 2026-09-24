@@ -1,17 +1,26 @@
-# Skill: average-shots
+---
+name: average-shots
+description: Average consecutive repeat instrument readings for a confirmed survey leg in a working SRV file, preserving splays and source material.
+---
 
 Averages multiple survey shots for the same cave passage leg into a single shot in a Walls `.SRV` file.
 
 ## When to use
 
-DistoX and other electronic distance meters record several repeat measurements per leg during a cave survey, including both a **forward shot** (A→B) and a **backward shot** (B→A) for quality control. Before incorporating data into the project, these repeated shots must be condensed into a single representative measurement per leg.
+DistoX and other electronic distance meters record several repeat measurements per leg during a cave survey, including both a **forward shot** (A→B) and a **backward shot** (B→A) for quality control. Before incorporating data into the project, confirmed repeated instrument readings can be condensed into a representative measurement per leg.
 
-Use this skill when a `.SRV` file contains multiple shots for the same station pair (typically 3 forward + 3 backward = 6 shots per leg).
+Use only after source evidence confirms these are repeated readings from the
+same measurement session, not independent surveys, rescans, or conflicting
+traverses. Confirm metre distances, degree angles, and `order=DAV` before running
+the helper; it does not interpret arbitrary Walls unit/calibration directives.
+Run it on a working copy outside `_RAW/`, then inspect the full diff. It handles
+only plain five-field shot lines; annotated shots, LRUD and missing azimuths
+need separate source-aware handling.
 
 ## Usage
 
 ```
-/average-shots <path/to/FILE.SRV>
+$average-shots <path/to/FILE.SRV>
 ```
 
 ## Algorithm
@@ -72,6 +81,7 @@ FROM  TO  DIST  AZ  INC
 - Inclination: 2 decimal places
 - Tab-separated fields, same indentation as the original
 
+Original byte encoding and line endings are preserved; writes are atomic.
 Non-shot lines (metadata `#[...]`, directives `#date`, `#units`, `#prefix`, comments `;`, zero-distance branch connections) are preserved unchanged.
 
 ## Edge cases
@@ -81,15 +91,15 @@ Non-shot lines (metadata `#[...]`, directives `#date`, `#units`, `#prefix`, comm
 | Only forward shots (no backsight) | Average the forward shots only |
 | Only backward shots (no foresight) | Average as-is (no direction flip needed since the first shot defines forward) |
 | Single shot for a leg | Keep unchanged |
-| Zero-distance connection shots (`A  B  0  0  0`) | Keep unchanged (single-shot group) |
+| Zero-distance ties and anonymous splays (`A - ...`) | Preserve each line unchanged; never group them |
 | Groups spanning across section breaks | Groups are only formed from **consecutive** same-pair shots |
 
 ## Implementation
 
-The script lives at `.claude/skills/average-shots/average_shots.py`. Run it directly:
+The script lives at `.agents/skills/average-shots/average_shots.py`. Run it directly:
 
 ```
-python .claude/skills/average-shots/average_shots.py <path/to/FILE.SRV>
+uv run python .agents/skills/average-shots/average_shots.py <path/to/FILE.SRV>
 ```
 
 ## What to update after averaging

@@ -15,7 +15,7 @@ What it does:
      .pre-commit-config.yaml).
   4. Warns about missing optional system tools (cavern, ogr2ogr, docker)
      but does not fail the setup. These are needed for the pre-push hook
-     (`uv run jktz-validate`) and the /docker-* skills.
+     (`uv run jktz-validate`) and the Codex Docker skills.
 
 Idempotent: safe to re-run any time.
 """
@@ -71,7 +71,7 @@ SYSTEM_TOOLS = [
     ),
     (
         "docker",
-        "Docker (optional, enables /docker-validate and /docker-exports "
+        "Docker (optional, enables $docker-validate and $docker-exports "
         "as a fallback if cavern/GDAL aren't installed locally).",
     ),
 ]
@@ -129,8 +129,8 @@ def main() -> int:
     print("From now on:")
     print("  * `git commit` runs ruff format + ruff check --fix + pytest")
     print(
-        "    If ruff modifies a file, the commit fails. Re-stage with "
-        "`git add -u` and commit again."
+        "    If ruff modifies a file, the commit fails. Review and re-stage "
+        "only the intended files, then commit again."
     )
     print(
         "  * `git push` runs `uv run jktz-validate` (full cavern compile + "
