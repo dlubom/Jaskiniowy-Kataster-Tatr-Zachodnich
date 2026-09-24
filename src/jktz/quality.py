@@ -75,7 +75,7 @@ def coverage_result(root: Path, report: dict, policy: dict) -> dict:
             if name not in measured:
                 raise ValueError(f"Missing function coverage: {filename}:{name}")
             summary = measured[name]["summary"]
-            if summary["num_statements"] and not summary["covered_lines"]:
+            if not summary["covered_lines"]:
                 failures.append(f"Untested function: {filename}:{name}")
             coverage = min(
                 fraction(summary, "covered_lines", "num_statements"),

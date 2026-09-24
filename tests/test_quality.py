@@ -135,6 +135,20 @@ def test_wholly_untested_function_cannot_hide_behind_high_global_coverage(tmp_pa
     assert result["files"] == ["src/example.py"]
 
 
+def test_placeholder_function_with_zero_statements_cannot_pass(tmp_path: Path) -> None:
+    # Coverage.py reports 0/0 statements for an uncalled ellipsis-only function.
+    report = make_report(
+        tmp_path,
+        "def placeholder():\n    ...\n",
+        {"placeholder": {"summary": summary(lines=0, covered=0, branches=0, hit=0)}},
+    )
+
+    result = coverage_result(tmp_path, report, POLICY)
+
+    assert result["line_percent"] == 100
+    assert result["failures"] == ["Untested function: src/example.py:placeholder"]
+
+
 def test_empty_coverage_report_cannot_pass(tmp_path: Path) -> None:
     report = make_report(tmp_path, "", {})
     report["totals"] = summary(lines=0, covered=0, branches=0, hit=0)

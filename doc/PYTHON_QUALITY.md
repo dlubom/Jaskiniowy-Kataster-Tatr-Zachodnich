@@ -110,7 +110,7 @@ Dokumentacja narzędzi: [Coverage.py](https://coverage.readthedocs.io/),
 
 Przed zmianą przechodziło 168 testów; pokrycie wynosiło 78,41% linii
 i 73,42% gałęzi (`src`, `scripts`, skille; skrypt `web` nie był jeszcze objęty
-pomiarem). Po włączeniu całego zakresu i testów regresji: 384 testy,
+pomiarem). Po włączeniu całego zakresu i testów regresji: 385 testów,
 96,08% linii, 93,40% gałęzi, najwyższy CRAP 21,54 przy limicie 25.
 Nie dodano wykluczeń pokrycia dla osiągnięcia progów.
 
