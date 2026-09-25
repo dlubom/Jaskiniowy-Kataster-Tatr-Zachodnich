@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "stage": "P03",
+  "provenance": {
+    "sha256": "4a494ead03cade750f670d50aa38661abda9b3e1f131d67f27a252982752c2a5",
+    "bytes": 680,
+    "input_format": "PocketTopo v3",
+    "tool": "jktz-release-tools",
+    "tool_version": "0.1.0",
+    "algorithm_version": "p03-1"
+  },
+  "settings": {
+    "index_base": 0,
+    "repeat_policy": "explicit_source_pinned_confirmation_only",
+    "min_resultant": 1e-12,
+    "ambiguity_rule": "resultant_length <= min_resultant",
+    "distance_mean": "arithmetic",
+    "azimuth_mean": "circular_fsum",
+    "inclination_mean": "signed_arithmetic_after_direction_normalization",
+    "outlier_removal": false,
+    "declination_applied": false,
+    "date_inference": false,
+    "crs_assumed": null
+  },
+  "plan": {
+    "source_sha256": "4a494ead03cade750f670d50aa38661abda9b3e1f131d67f27a252982752c2a5",
+    "confirmations": [],
+    "exclusions": []
+  },
+  "groups": [
+    {
+      "id": 0,
+      "source_indices": [
+        0
+      ],
+      "confirmation_evidence": null,
+      "kind": "leg",
+      "trip_index": 0,
+      "from_raw": -2147483647,
+      "to_raw": -2147483646,
+      "status": "ready",
+      "reason": null,
+      "normalized_readings": [
+        {
+          "source_index": 0,
+          "distance_m": 10.0,
+          "azimuth_deg": 0.0,
+          "inclination_deg": 0.0,
+          "reversed": false
+        }
+      ],
+      "average": {
+        "count": 1,
+        "distance_m": 10.0,
+        "azimuth_deg": 0.0,
+        "inclination_deg": 0.0,
+        "resultant_length": 1.0,
+        "azimuth_max_deviation_deg": 0.0,
+        "distance_spread_m": 0.0,
+        "inclination_spread_deg": 0.0
+      },
+      "warnings": []
+    },
+    {
+      "id": 1,
+      "source_indices": [
+        1
+      ],
+      "confirmation_evidence": null,
+      "kind": "leg",
+      "trip_index": 0,
+      "from_raw": -2147483646,
+      "to_raw": -2147483645,
+      "status": "ready",
+      "reason": null,
+      "normalized_readings": [
+        {
+          "source_index": 1,
+          "distance_m": 10.0,
+          "azimuth_deg": 90.0,
+          "inclination_deg": 0.0,
+          "reversed": false
+        }
+      ],
+      "average": {
+        "count": 1,
+        "distance_m": 10.0,
+        "azimuth_deg": 90.0,
+        "inclination_deg": 0.0,
+        "resultant_length": 1.0,
+        "azimuth_max_deviation_deg": 0.0,
+        "distance_spread_m": 0.0,
+        "inclination_spread_deg": 0.0
+      },
+      "warnings": []
+    }
+  ],
+  "record_trace": [
+    {
+      "source_index": 0,
+      "group_id": 0,
+      "disposition": "retained_single",
+      "reason": "not_averaged",
+      "comment": null,
+      "flags": 0,
+      "flipped": false,
+      "roll_raw": 0
+    },
+    {
+      "source_index": 1,
+      "group_id": 1,
+      "disposition": "retained_single",
+      "reason": "not_averaged",
+      "comment": "flipped extended segment",
+      "flags": 3,
+      "flipped": true,
+      "roll_raw": 0
+    }
+  ],
+  "station_map": [
+    {
+      "raw": -2147483647,
+      "kind": "plain",
+      "source_text": "0",
+      "walls_name": null,
+      "survex_name": null,
+      "status": "target_mapping_deferred_p04"
+    },
+    {
+      "raw": -2147483646,
+      "kind": "plain",
+      "source_text": "1",
+      "walls_name": null,
+      "survex_name": null,
+      "status": "target_mapping_deferred_p04"
+    },
+    {
+      "raw": -2147483645,
+      "kind": "plain",
+      "source_text": "2",
+      "walls_name": null,
+      "survex_name": null,
+      "status": "target_mapping_deferred_p04"
+    }
+  ],
+  "trips": [
+    {
+      "index": 0,
+      "source_ticks": 632401344000000000,
+      "comment": "P01 synthetic drawing vertices",
+      "date_reliability": "unverified_device_clock",
+      "established_date": null,
+      "date_evidence": null,
+      "used_date": null,
+      "declination": {
+        "source_raw": 0,
+        "mode": "explicit",
+        "stored_degrees": 0.0,
+        "applied_degrees": null,
+        "status": "not_applied_p03"
+      }
+    }
+  ],
+  "references": {
+    "count": 0,
+    "crs": null,
+    "status": "retained_only_crs_unknown",
+    "active_fixes": 0
+  },
+  "drawings": {
+    "outline": {
+      "elements": 10,
+      "status": "retained_not_exported",
+      "mapping_applied": false
+    },
+    "sideview": {
+      "elements": 10,
+      "status": "retained_not_exported",
+      "mapping_applied": false
+    }
+  },
+  "completeness": {
+    "source_decode": "complete",
+    "source_shots": 2,
+    "traced_shots": 2,
+    "ready_measurements": 2,
+    "held_shots": 0,
+    "exports_created": false,
+    "conversion_complete": false
+  },
+  "limitations": [
+    "Device dates are unverified; no date-derived correction was applied.",
+    "Stored explicit declinations are retained, not validated or applied in P03.",
+    "Auto declination and reference CRS need independent evidence.",
+    "Target station names, survey and drawing exports remain P04-P06."
+  ]
+}

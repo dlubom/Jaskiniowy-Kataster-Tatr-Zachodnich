@@ -1,0 +1,245 @@
+{
+  "date": "2026-09-25",
+  "baseline_commit": "62047ee3e53a6fbca6ebce488c5d4e446059b0da",
+  "scope": "P03 averaging, explicit groups, lossless source/report preparation, tests and evidence; no original survey/RAW/native fixture changes",
+  "python": "3.12.13",
+  "input_sha256": {
+    "src/jktz/pockettopo/__init__.py": "f6255c1d6f17bad1d8c3016cc9a0950538332bb01fb90ef82d51d35b2a91956f",
+    "src/jktz/pockettopo/averaging.py": "dcfdf09864069a1be8a4d783acec2bb52321b61c7e653716574cc5ad021b0f2a",
+    "src/jktz/pockettopo/grouping.py": "08426ddf033fdfbc3323f85b2f446f461219f7fb1dc11d995a88c42df615f2f6",
+    "src/jktz/pockettopo/model.py": "35d85dc4655cf55d48f35d593a43486b01fea4117e09bc31f4d391a00d71be02",
+    "src/jktz/pockettopo/parser.py": "57eed978b45f4aefe75536435d521cc5a656d8ccb54108b6d5de739d6496f783",
+    "src/jktz/pockettopo/report.py": "1291fc40d238e519fa3d87fdb2ee8c666d5c13737c791e1e5ffc87d4e90dba5a",
+    "tests/test_pockettopo_averaging.py": "2dea39aff9d787fe90590f5529253859d9c6de8b395aa7bf85aa65cb5019c14b",
+    "tests/test_pockettopo_fixtures.py": "385d688096a78225d6cd0cfc6d529b26371796fb4036e53b1ba130a65aec0100",
+    "tests/test_pockettopo_grouping.py": "987c51c75204c71cf73a7c63bd20d041088f8768e6d24d928c234cf1eebba981",
+    "tests/test_pockettopo_parser.py": "c6173adb62142f96f07e4597f347ef23ed57975f207bec6f4fcb843568fe4040",
+    "tests/test_pockettopo_report.py": "bc9aafc36efd167e10f09aec05dc833a25e25ef449ba56d60a2881deda9dbbe8",
+    "pyproject.toml": "766e76e762b49985b64ace26340284c085965d6d766b4f32cd02a7bf946e4db4",
+    "uv.lock": "e36e639704be80ca0f6af1b3b74e0b1e6839a52e0b9719cb7b52d988b61a614d"
+  },
+  "quality": {
+    "command": "uv run --python 3.12 jktz-quality",
+    "exit_code": 0,
+    "tests_passed": 785,
+    "p03_tests_passed": 189,
+    "line_percent": 96.88652191724702,
+    "branch_percent": 94.59798994974874,
+    "max_crap": 21.542410714285715,
+    "failures": [],
+    "pockettopo_coverage": {
+      "src/jktz/pockettopo/__init__.py": {
+        "covered_lines": 5,
+        "num_statements": 5,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100.00",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100.00",
+        "num_branches": 0,
+        "num_partial_branches": 0,
+        "covered_branches": 0,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100.00"
+      },
+      "src/jktz/pockettopo/averaging.py": {
+        "covered_lines": 72,
+        "num_statements": 72,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100.00",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100.00",
+        "num_branches": 18,
+        "num_partial_branches": 0,
+        "covered_branches": 18,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100.00"
+      },
+      "src/jktz/pockettopo/grouping.py": {
+        "covered_lines": 92,
+        "num_statements": 92,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100.00",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100.00",
+        "num_branches": 48,
+        "num_partial_branches": 0,
+        "covered_branches": 48,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100.00"
+      },
+      "src/jktz/pockettopo/model.py": {
+        "covered_lines": 88,
+        "num_statements": 88,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100.00",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100.00",
+        "num_branches": 6,
+        "num_partial_branches": 0,
+        "covered_branches": 6,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100.00"
+      },
+      "src/jktz/pockettopo/parser.py": {
+        "covered_lines": 151,
+        "num_statements": 151,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100.00",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100.00",
+        "num_branches": 38,
+        "num_partial_branches": 0,
+        "covered_branches": 38,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100.00"
+      },
+      "src/jktz/pockettopo/report.py": {
+        "covered_lines": 92,
+        "num_statements": 92,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100.00",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100.00",
+        "num_branches": 34,
+        "num_partial_branches": 0,
+        "covered_branches": 34,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100.00"
+      }
+    }
+  },
+  "mutation": {
+    "command": "uv run --python 3.12 jktz-mutation",
+    "exit_code": 0,
+    "killed": 1860,
+    "total": 2090,
+    "score": 88.99521531100478,
+    "modules": [
+      {
+        "file": "src/jktz/metadata/io.py",
+        "killed": 33,
+        "total": 39,
+        "score": 84.61538461538461
+      },
+      {
+        "file": "src/jktz/metadata/raw.py",
+        "killed": 104,
+        "total": 114,
+        "score": 91.2280701754386
+      },
+      {
+        "file": "src/jktz/metadata/srv.py",
+        "killed": 303,
+        "total": 368,
+        "score": 82.33695652173913
+      },
+      {
+        "file": "src/jktz/entrances/render.py",
+        "killed": 284,
+        "total": 350,
+        "score": 81.14285714285714
+      },
+      {
+        "file": "src/jktz/validation/measurements.py",
+        "killed": 108,
+        "total": 114,
+        "score": 94.73684210526316
+      },
+      {
+        "file": "src/jktz/pockettopo/model.py",
+        "killed": 37,
+        "total": 37,
+        "score": 100.0
+      },
+      {
+        "file": "src/jktz/pockettopo/parser.py",
+        "killed": 635,
+        "total": 703,
+        "score": 90.3271692745377
+      },
+      {
+        "file": "src/jktz/pockettopo/averaging.py",
+        "killed": 173,
+        "total": 182,
+        "score": 95.05494505494505
+      },
+      {
+        "file": "src/jktz/pockettopo/grouping.py",
+        "killed": 183,
+        "total": 183,
+        "score": 100.0
+      }
+    ],
+    "failures": [],
+    "survivors_recorded_in": "mutation.json",
+    "first_attempt": {
+      "exit_code": 1,
+      "killed": 1858,
+      "total": 2090,
+      "reason": "Two grouping mutants removed forward index progress; external timeout (-24) is not a valid kill.",
+      "mutants": [
+        "jktz.pockettopo.grouping.x_make_groups__mutmut_39",
+        "jktz.pockettopo.grouping.x_make_groups__mutmut_40"
+      ],
+      "resolution": "Test-only one-second POSIX watchdog asserts termination on tiny fixtures, restores signal state; full fresh campaign passed. No production refactor or threshold weakening."
+    }
+  },
+  "gps_snapshot": {
+    "command": "uv run --python 3.12 jktz-render-otwory --check",
+    "exit_code": 0,
+    "release": "dlubom/gps-kataster-obiektow-tatr@v1.0.2",
+    "gps_fixes": 87
+  },
+  "originals": {
+    "p01_SHA256SUMS": {
+      "verified": 55,
+      "failures": 0
+    },
+    "repeat_candidates_SHA256SUMS": {
+      "verified": 21,
+      "failures": 0
+    }
+  },
+  "independent_review": {
+    "open_critical": 0,
+    "open_important": 0,
+    "open_minor": 0,
+    "verdict": "P03 production, tests and evidence ready; final quality and mutation gate outputs verified by root.",
+    "resolved_findings": [
+      "Exactly identical noncardinal directions now have R=1 even at threshold nextafter(1,0); nearby distinct directions still obey threshold.",
+      "GUI fixtures shared filename source.top; evidence paths now use unique case directories with manifest paths and uniqueness assertion. Nine reports reproduced."
+    ],
+    "checked": [
+      "PRD contracts and implementation",
+      "189 focused P03 tests",
+      "Lossless native source JSON and all nine report readbacks",
+      "Corpus and production code hashes",
+      "Grouping termination watchdog and signal restoration"
+    ],
+    "limits": "Independent reviewer did not rerun full quality/mutation; root ran fresh gates and recorded actual outputs."
+  },
+  "limits": [
+    "No remote CI, push, PR, merge, tag or release in this P03 task.",
+    "No full cavern/GDAL pre-push pipeline: no push or survey/export change.",
+    "Reports prepare D/A/V; dates remain unverified, explicit declinations unapplied, Auto unresolved and CRS unknown.",
+    "Target names, SRV/SVX, graphics, CLI, skill and atomic output package remain P04-P06."
+  ]
+}

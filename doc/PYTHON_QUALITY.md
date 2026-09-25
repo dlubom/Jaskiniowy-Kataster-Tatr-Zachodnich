@@ -8,7 +8,7 @@ Progi w `pyproject.toml` są wspólne dla lokalnych poleceń i CI.
 | Pokrycie linii | co najmniej 95% | cały powyższy kod, także nieimportowane pliki |
 | Pokrycie gałęzi | co najmniej 90% | decyzje i alternatywne ścieżki wykonania |
 | CRAP | najwyżej 25 na funkcję | funkcje, metody i funkcje zagnieżdżone |
-| Testy mutacyjne | co najmniej 81% w **każdym** wybranym module | SRV, RAW, zapis atomowy, wejścia GPS, stan jednostek Walls oraz model i parser PocketTopo |
+| Testy mutacyjne | co najmniej 81% w **każdym** wybranym module | SRV, RAW, zapis atomowy, wejścia GPS, stan jednostek Walls oraz model, parser, średnie i grupowanie PocketTopo |
 | Kompletność zakresu | bez pominiętych plików i całkowicie nieprzetestowanych funkcji | żywy kod Pythona w repo; archiwalne `_RAW` nie są narzędziami |
 
 Test inventory porównuje śledzone i nowe nieignorowane pliki `.py` z zakresem

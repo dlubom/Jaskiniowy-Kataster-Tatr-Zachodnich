@@ -13,6 +13,7 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 - Trzy rzeczywiste wzorce PocketTopo z test2: 15 serii potrójnych, szkice planu i przekroju oraz natywne TXT/DXF; zgodność 50 rekordów i 2540 wierzchołków.
 - P02 PocketTopo: ścisły parser `.top` v3 i niezmienny model surowych danych, niezależne testy rekordów i uszkodzeń oraz rozszerzenie bramki mutacyjnej o parser i model.
+- P03 PocketTopo: średnie wyłącznie dla jawnie potwierdzonych serii powiązanych z SHA-256 źródła, normalizacja kierunków, raport każdego rekordu i surowe dane JSON; testy graniczne oraz mutacje matematyki i grupowania.
 
 ## [v1.4.7] - 2026-09-25
 

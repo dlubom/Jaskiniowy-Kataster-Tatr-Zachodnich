@@ -1,14 +1,15 @@
 # PocketTopo: konwersja pomiarów i ekstrakcja szkiców
 
-Stan: **2026-09-25 — P02 zakończone, następny etap P03 (średnie i raport)**.
+Stan: **2026-09-25 — P03 zakończone, następny etap P04 (eksport SRV/SVX)**.
 Branch roboczy: `codex/pockettopo-convert`, początek: `a6c235c898eed57902a2d6ba18db60917e01faee`.
 
 ## Wznowienie po wyczyszczeniu kontekstu
 
 1. Przeczytaj `AGENTS.md`, ten PRD i sprawdź `git status` oraz bieżący branch.
-2. **Następne zadanie: P03 — średnie i raport.** Nie powtarzaj researchu,
-   tworzenia wzorców P01 ani implementacji parsera P02.
-3. Przeczytaj [format v3](FORMAT_V3.md), [API i wyniki P02](evidence/p02/README.md)
+2. **Następne zadanie: P04 — eksport SRV/SVX.** Nie powtarzaj researchu,
+   wzorców P01, parsera P02 ani średnich i raportu P03.
+3. Przeczytaj [format v3](FORMAT_V3.md), [API i wyniki P03](evidence/p03/README.md),
+   [parser P02](evidence/p02/README.md)
    oraz [oczekiwania dla każdego rekordu](evidence/p01/EXPECTATIONS.md).
    Wzorce `cases/*/expected.json` są niezależne od przyszłego parsera.
    Dostęp do aplikacji opisuje [instrukcja macOS](POCKETTOPO_MACOS.md).
@@ -18,11 +19,12 @@ Branch roboczy: `codex/pockettopo-convert`, początek: `a6c235c898eed57902a2d6ba
 Polecenie do wznowienia:
 
 > Kontynuuj na `codex/pockettopo-convert` według `doc/pockettopo/PRD.md`.
-> Wykonaj P03: grupy potwierdzonych powtórzeń, matematykę średnich i raport
-> ze śladem każdego rekordu, korzystając z modelu i parsera P02.
-> Nie uznawaj samych nazw stacji i podobnej geometrii za potwierdzenie powtórzeń.
-> Zachowaj surowe wartości i niezależne oryginały; sprawdź przypadki graniczne,
-> zapisz wyniki walidacji oraz postęp w PRD. Zakończ po P03.
+> Wykonaj P04: eksport SRV/SVX z modelu i raportu P02/P03, z zachowaniem
+> semantyki, jawną polityką korekt i odwracalnym mapowaniem nazw bez kolizji.
+> Sprawdź kompilację obu formatów, zgodność geometrii i rzeczywisty Walls.
+> Zachowaj osobno niepotwierdzone powtórzenia; dat tripów nie uznawaj za
+> potwierdzone daty terenowe. Zapisz wyniki walidacji oraz postęp w PRD.
+> Zakończ po P04.
 
 ## Cel i ustalone wybory
 
@@ -122,6 +124,8 @@ upoważnia do przyjęcia jawnego zera ani automatycznego wyliczenia IGRF.
 Docelowo: `src/jktz/pockettopo/` (model, parser, matematyka, eksport, raport),
 `src/jktz/cli/pockettopo.py` oraz `.agents/skills/pockettopo-convert/SKILL.md`.
 P02 udostępnia już bibliotekę `parse_bytes` / `read_top` oraz niezmienny model.
+P03 dodaje `prepare_conversion`, `ProcessingPlan`, `RepeatConfirmation` i
+`Exclusion`: dokument źródłowy JSON i raport w pamięci, bez zapisu pakietu.
 Proponowane komendy `uv run jktz-pockettopo inspect ...` i `convert ...`
 **jeszcze nie istnieją**. Nie budujemy łańcucha `.top → zaokrąglony SRV → średnie`.
 
@@ -130,8 +134,8 @@ Proponowane komendy `uv run jktz-pockettopo inspect ...` i `convert ...`
 | P00 Research i dostęp | Źródła, decyzje, natywny eksport Shadow i instrukcja wznowienia zapisane w repo | Gotowe |
 | P01 Wzorce aplikacji | 6 małych `.top` (2 GUI, 4 natywny model/API), TXT/DXF, oczekiwania każdego pola, końcowe 4 zera i Auto; resvg sprawdzony na macOS/Linux | Gotowe — [dowody](evidence/p01/README.md) |
 | P02 Parser i model | Ścisły odczyt wszystkich struktur; 211 testów P02, pełny korpus 258/258, jakość i mutacje | Gotowe — [dowody](evidence/p02/README.md) |
-| P03 Średnie i raport | Grupy potwierdzonych powtórzeń, matematyka, ślad każdego rekordu i testy graniczne | Następny |
-| P04 SRV/SVX | Zachowanie semantyki, kompilacja obu formatów i porównanie geometrii; sprawdzenie w Walls | Do zrobienia |
+| P03 Średnie i raport | Grupy potwierdzonych powtórzeń, matematyka, ślad każdego rekordu i testy graniczne | Gotowe — [dowody](evidence/p03/README.md) |
+| P04 SRV/SVX | Zachowanie semantyki, kompilacja obu formatów i porównanie geometrii; sprawdzenie w Walls | Następny |
 | P05 SVG/PNG | Oba widoki i warianty, XSection, warstwy, renderer bez GUI; kontrola punktów i obrazów | Do zrobienia |
 | P06 CLI i skill | Atomowy pakiet wynikowy, instrukcje skilla, niezależna próba użycia i pełna walidacja | Do zrobienia |
 
@@ -176,7 +180,7 @@ EOF po schemacie albo dokładnie cztery zera; pozostałe sufiksy są błędem.
 macOS i Linux; integracja w konwerterze/CI pozostaje P05/P06.
 
 Do rozstrzygnięcia w etapach: podkład w pętlach/rozgałęzieniach, ogólna projekcja
-XSection z domiarami, progi niejednoznaczności średniej, fonty/paleta rysunków
+XSection z domiarami, fonty/paleta rysunków
 oraz format profilu metadanych dla aktywnego JKTZ. Natywny DXF uśrednia własnym
 algorytmem i nie zastępuje kontraktu średnich P03. Odczyt pełnego korpusu 258 plików
 sprawdzono w P02; porównanie przyszłych eksportów korpusu oraz audyt współrzędnych
@@ -199,4 +203,22 @@ mutacje modelu 37/37, parsera 635/703, każdy z siedmiu modułów ≥81%.
 [Dowody i instrukcja biblioteki](evidence/p02/README.md),
 [korpus i reprodukcja](evidence/p02/CORPUS.md),
 [wyniki bramek](evidence/p02/repository-checks.json).
-Następny etap: **P03**. CLI, eksporty i raport konwersji jeszcze nie istnieją.
+Był to stan zakończenia P02; aktualny stan opisuje P03 poniżej.
+
+P03 (2026-09-25): jawne potwierdzenia serii i wyłączenia są związane z SHA-256
+źródła; każdy rekord ma ślad i przyczynę decyzji. Brak potwierdzeń pozostawia
+wszystkie odczyty osobno. Średnie normalizują kierunki, zachowują surowe wartości
+i raportują R oraz rozrzuty. Domyślnie R ≤ 1e-12 oznacza nieokreślony azymut;
+próg jest jawny, konfigurowalny i testowany. Piony zachowują azymut z ostrzeżeniem.
+Dokument źródłowy oraz raport mają zgodną z JSON reprezentację w pamięci;
+przykładowe wyniki, dziewięć raportów wzorców i reprodukcja są w repozytorium.
+
+Korpus P03: 258 źródeł / 262 zgodne obiekty Git, wszystkie 37 801 rekordów
+rozliczone, 37 426 gotowych D/A/V i 375 zatrzymanych z przyczyną; zero
+automatycznych potwierdzeń powtórzeń. Bramka: 785 testów (189 nowych P03),
+96,89% linii / 94,60% gałęzi, maksymalny CRAP 21,54. Mutacje: matematyka
+173/182 (95,05%), grupowanie 183/183 (100%); wszystkie dziewięć modułów ≥81%,
+brak niepełnych wyników. Przegląd poprawił skrajny próg R dla identycznych
+kierunków oraz kolizję nazw dwóch raportów dowodowych.
+[API i dowody](evidence/p03/README.md), [wyniki bramek](evidence/p03/repository-checks.json).
+Następny etap: **P04**. Eksporty, CLI i atomowy pakiet wynikowy pozostają do wykonania.

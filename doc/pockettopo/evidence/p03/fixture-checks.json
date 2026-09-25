@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "code_sha256": {
+    "src/jktz/pockettopo/__init__.py": "f6255c1d6f17bad1d8c3016cc9a0950538332bb01fb90ef82d51d35b2a91956f",
+    "src/jktz/pockettopo/averaging.py": "dcfdf09864069a1be8a4d783acec2bb52321b61c7e653716574cc5ad021b0f2a",
+    "src/jktz/pockettopo/grouping.py": "08426ddf033fdfbc3323f85b2f446f461219f7fb1dc11d995a88c42df615f2f6",
+    "src/jktz/pockettopo/model.py": "35d85dc4655cf55d48f35d593a43486b01fea4117e09bc31f4d391a00d71be02",
+    "src/jktz/pockettopo/parser.py": "57eed978b45f4aefe75536435d521cc5a656d8ccb54108b6d5de739d6496f783",
+    "src/jktz/pockettopo/report.py": "1291fc40d238e519fa3d87fdb2ee8c666d5c13737c791e1e5ffc87d4e90dba5a"
+  },
+  "fixtures": [
+    {
+      "path": "doc/pockettopo/evidence/p01/cases/api-cardinal/api-cardinal.top",
+      "report_path": "doc/pockettopo/evidence/p03/api-cardinal/conversion-report.json",
+      "sha256": "64ac69ee1746272a503895256523f386765847c01da81009292fdf29225a9c8e",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 11,
+        "traced_shots": 11,
+        "ready_measurements": 9,
+        "held_shots": 0,
+        "exports_created": false,
+        "conversion_complete": false
+      },
+      "confirmed_groups": 1
+    },
+    {
+      "path": "doc/pockettopo/evidence/p01/cases/api-drawings/api-drawings.top",
+      "report_path": "doc/pockettopo/evidence/p03/api-drawings/conversion-report.json",
+      "sha256": "4a494ead03cade750f670d50aa38661abda9b3e1f131d67f27a252982752c2a5",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 2,
+        "traced_shots": 2,
+        "ready_measurements": 2,
+        "held_shots": 0,
+        "exports_created": false,
+        "conversion_complete": false
+      },
+      "confirmed_groups": 0
+    },
+    {
+      "path": "doc/pockettopo/evidence/p01/cases/api-references/api-references.top",
+      "report_path": "doc/pockettopo/evidence/p03/api-references/conversion-report.json",
+      "sha256": "9034cf5e52f92a8713c7823bd9be52bdb50b294966a9e9713c538b937b7feb5f",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 1,
+        "traced_shots": 1,
+        "ready_measurements": 1,
+        "held_shots": 0,
+        "exports_created": false,
+        "conversion_complete": false
+      },
+      "confirmed_groups": 0
+    },
+    {
+      "path": "doc/pockettopo/evidence/p01/cases/api-trips-ids/api-trips-ids.top",
+      "report_path": "doc/pockettopo/evidence/p03/api-trips-ids/conversion-report.json",
+      "sha256": "adb83280b6d5a70f383b5542727f675b3ff8a5740058b601d3d49ed27b14895b",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 4,
+        "traced_shots": 4,
+        "ready_measurements": 4,
+        "held_shots": 0,
+        "exports_created": false,
+        "conversion_complete": false
+      },
+      "confirmed_groups": 0
+    },
+    {
+      "path": "doc/pockettopo/evidence/p01/cases/gui-cardinal/source.top",
+      "report_path": "doc/pockettopo/evidence/p03/gui-cardinal/conversion-report.json",
+      "sha256": "27b93102584d76840192d97e242cc30df38edbc551da244a033773095ae87bfb",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 1,
+        "traced_shots": 1,
+        "ready_measurements": 1,
+        "held_shots": 0,
+        "exports_created": false,
+        "conversion_complete": false
+      },
+      "confirmed_groups": 0
+    },
+    {
+      "path": "doc/pockettopo/evidence/p01/cases/gui-colors/source.top",
+      "report_path": "doc/pockettopo/evidence/p03/gui-colors/conversion-report.json",
+      "sha256": "5c7355c7212f99ba11fe76d0d6739c3e3a34c7c060909b3efd41aea5c1f3b362",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 1,
+        "traced_shots": 1,
+        "ready_measurements": 1,
+        "held_shots": 0,
+        "exports_created": false,
+        "conversion_complete": false
+      },
+      "confirmed_groups": 0
+    },
+    {
+      "path": "doc/pockettopo/evidence/repeat-candidates/DS201208/DS201208.top",
+      "report_path": "doc/pockettopo/evidence/p03/DS201208/conversion-report.json",
+      "sha256": "edf6da168275bf334f413557e402ad14a03191141779a1466d71d230702da870",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 25,
+        "traced_shots": 25,
+        "ready_measurements": 24,
+        "held_shots": 1,
+        "exports_created": false,
+        "conversion_complete": false
+      },
+      "confirmed_groups": 0
+    },
+    {
+      "path": "doc/pockettopo/evidence/repeat-candidates/okna/okna.top",
+      "report_path": "doc/pockettopo/evidence/p03/okna/conversion-report.json",
+      "sha256": "52e16f9561f2fbf3b66e595c29fce113c9ed1cc44fc5865897cb5f06b1aaba94",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 14,
+        "traced_shots": 14,
+        "ready_measurements": 13,
+        "held_shots": 1,
+        "exports_created": false,
+        "conversion_complete": false
+      },
+      "confirmed_groups": 0
+    },
+    {
+      "path": "doc/pockettopo/evidence/repeat-candidates/zach0dni2/zach0dni2.top",
+      "report_path": "doc/pockettopo/evidence/p03/zach0dni2/conversion-report.json",
+      "sha256": "a7a165750b0a3b03b19f72050219ffd28b22defa7fc68163a383b98236e994e4",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 11,
+        "traced_shots": 11,
+        "ready_measurements": 10,
+        "held_shots": 1,
+        "exports_created": false,
+        "conversion_complete": false
+      },
+      "confirmed_groups": 0
+    }
+  ]
+}
