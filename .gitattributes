@@ -1,3 +1,8 @@
 # Force LF for shell scripts — they run in Linux Docker containers
 *.sh text eol=lf
 
+# Native evidence is byte-exact data, including TXT/DXF padding and CRLF.
+# Review its provenance/checksums instead of applying text normalization/merges.
+doc/pockettopo/evidence/shadow/*.top binary
+doc/pockettopo/evidence/shadow/*.txt binary
+doc/pockettopo/evidence/shadow/*.dxf binary

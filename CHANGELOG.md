@@ -4,6 +4,12 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Dodano
+
+- PRD konwertera PocketTopo do Walls/Survex i szkiców SVG/PNG, zapis researchu oraz sprawdzoną pomoc do natywnych eksportów przez Wine na macOS.
+
 ## [v1.4.7] - 2026-09-25
 
 ### Zmienione

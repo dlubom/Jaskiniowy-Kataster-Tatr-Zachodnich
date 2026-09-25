@@ -12,6 +12,8 @@ Instrukcje projektu i jego polityka przetwarzania są w [AGENTS.md](../AGENTS.md
 | Kompilacja i opcje cavern | [cavern.rst](Survex_manual/cavern.rst) |
 | Eksport, dane 3D i wizualizacja | [survexport.rst](Survex_manual/survexport.rst), [dump3d.rst](Survex_manual/dump3d.rst), [aven.rst](Survex_manual/aven.rst) |
 | Nazwy, numery i historia dokumentacji jaskiń | [JSONL PIG](jaskinie_polski_pig_dump.jsonl) |
+| Plan konwertera PocketTopo, stan prac i wznowienie zadania | [PocketTopo PRD](pockettopo/PRD.md) |
+| Obsługa PocketTopo przez Wine na macOS do testów i eksportu wzorców | [PocketTopo na macOS](pockettopo/POCKETTOPO_MACOS.md) |
 
 ## Walls
 
