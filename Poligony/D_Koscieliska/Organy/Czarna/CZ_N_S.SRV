@@ -3,7 +3,7 @@ CAVE_ID         "T.E-09.12"
 CAVE_NAME       "Jaskinia Czarna"
 SURVEY_ID       "N1"
 SURVEY_NAME     "Pomiary Jakuba Nowaka 2012-2015"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-09-25"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -17,7 +17,8 @@ SURVEY_DATE     "2012-12-09"
 SURVEY_DATE     "2014-12-13"
 SURVEY_DATE     "2015-12-31"
 SURVEY_GRADE    "nieznane"
-PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "Bezposrednie nawiazania do KujatGlowny:7, 17 i 37; pomiary bez zmian."
+PROCESSING      "B7-B9, B14 i B31 zachowuja numery zrodlowe w lokalnych prefiksach Nowaka."
 #]
 
 #prefix2 Czarna
@@ -91,11 +92,11 @@ PROCESSING      "zachowano istniejacy aktywny plik SRV"
 
 ;--- Komin Herkulesa ---
 ;Pomiary: Jakub Nowak, Sylwia Golosz-Romanska, Przemyslaw Styrna;
-;2012-11-03. Dowiazanie: punkt 15 ciagu glownego Borowca.
+;2012-11-03. Nawiazanie: KujatGlowny:17 (zrodlowy punkt Borowca 15).
 #prefix NowakHerkules
 #date 2012-11-03
 
-Borowiec:15	1	3.5	106	-6
+KujatGlowny:17	1	3.5	106	-6
 1	2	2.46	26	28
 2	3	6.68	54	-29
 3	4	8.33	0	-90
@@ -112,18 +113,18 @@ Borowiec:15	1	3.5	106	-6
 7.2	7.3	3.01	225	30
 7.3	7.4	5.56	200	35
 7.4	7.5	8.26	266	20
-7.5	Borowiec:15	11.7	283	-10
+7.5	KujatGlowny:17	11.7	283	-10
 7.3	7.3.1	14.3	323	-50
 7.4	7.4.1	10.6	193	60
 
 ;--- Kominy nad Sala Lukowa ---
 ;Pomiary: Jakub Nowak, Miroslaw Pindel, Przemyslaw Styrna;
-;2012-12-01 i 2012-12-09. Dowiazanie: punkty 15 i 14 ciagu glownego Borowca.
+;2012-12-01 i 2012-12-09. Nawiazanie: KujatGlowny:17; lokalny punkt B14.
 #prefix NowakLukowa
 #date 2012-12-09
 
-Borowiec:15	14p	17.7	242	22
-14p	Borowiec:14	8	230	20
+KujatGlowny:17	14p	17.7	242	22
+14p	B14	8	230	20
 14p	14p.1	8.92	163	60
 14p.1	14p.2	14.17	170	65
 14p.2	14p.3	8.4	160	65
@@ -141,12 +142,12 @@ Borowiec:15	14p	17.7	242	22
 
 ;--- Studnia pod Kaluza ---
 ;Pomiary: Jakub Nowak, Krzysztof Kukulka; 2014-12-13.
-;Dowiazanie: punkty 31 i 30 ciagu glownego Borowca.
+;Nawiazanie: KujatGlowny:37; lokalny punkt B31.
 #prefix NowakKaluza
 #date 2014-12-13
 
-Borowiec:31	Borowiec:30	8	265	-15
-Borowiec:30	30.1	9.35	242	-16
+B31	KujatGlowny:37	8	265	-15
+KujatGlowny:37	30.1	9.35	242	-16
 30.1	30.2	6.7	228	-2
 30.2	30.3	4.8	275	-66	;P5
 30.3	30.4	4.8	15	-44	;P2
@@ -157,12 +158,12 @@ Borowiec:30	30.1	9.35	242	-16
 ;--- Stromy Meander, Kominy przy filarze, Komin w Sali pod Progiem ---
 ;Pomiary w 2015 r.: Jakub Nowak, Joanna Nowak, Sylwia Golosz,
 ;Kaja Fidzinska, Florian Malek, Bartosz Berdel, Przemyslaw Styrna
-;i Krzysztof Kukulka. Dowiazanie: punkty 6, 7, 8 i 9 ciagu glownego
-;Borowca; deniwelacja w rysunkach Nowaka odnosi sie do punktu 6.
+;i Krzysztof Kukulka. Nawiazanie: KujatGlowny:7; lokalne punkty B7-B9.
+;Deniwelacja w rysunkach Nowaka odnosi sie do zrodlowego punktu Borowca 6.
 #prefix NowakStromy
 #date 2015-12-31
 
-Borowiec:6	0	5.77	83	18.2
+KujatGlowny:7	0	5.77	83	18.2
 0	1	10.56	260.1	54.7
 1	2	5.03	269.4	23
 2	3	3.33	269.4	70.6
@@ -226,18 +227,18 @@ Borowiec:6	0	5.77	83	18.2
 0.5.7	0.5.8	3.2	229.9	33.7
 0.5.8	0.5.9	4.39	149.8	49.1
 0.5.9	0.5.10	3.56	180	37.8
-Borowiec:6	Borowiec:7	25.7	67.8	37.7
-Borowiec:7	Borowiec:8	5.88	21.5	18.3
-Borowiec:8	Borowiec:9	7.79	12.7	49.6
-Borowiec:8	8p	6.6	353.4	2.4
+KujatGlowny:7	B7	25.7	67.8	37.7
+B7	B8	5.88	21.5	18.3
+B8	B9	7.79	12.7	49.6
+B8	8p	6.6	353.4	2.4
 1.2.5	1.2.5.1	7.48	32.8	18.3
 1.2.5.1	1.2.5.2	2.85	54.1	35.7
 1.2.5.2	1.2.5.3	1.71	39.9	51.3
 1.2.5.3	1.2.5.4	2.23	34.5	56.7
-1.2.5.4	Borowiec:8	5.87	123.7	-0.8
+1.2.5.4	B8	5.87	123.7	-0.8
 1.2.5.4	8p	5.07	55.7	4.6
-Borowiec:9	0.11	7.83	200.5	37.5
-Borowiec:9	9.1	6.5	192.8	27.7
+B9	0.11	7.83	200.5	37.5
+B9	9.1	6.5	192.8	27.7
 9.1	9.2	6.85	154	58.8
 9.2	9.3	5.07	159.7	49.7
 9.3	9.4	12.67	185.4	65.4

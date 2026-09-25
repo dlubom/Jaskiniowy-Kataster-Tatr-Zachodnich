@@ -173,21 +173,27 @@
 .NAME	JCZ
 .PATH	Czarna
 .STATUS	8
-.SURVEY	Fragment Jaskini Czarnej
+.SURVEY	Fragment Jaskini Czarnej - Szymon Kostka
 .NAME	CZ_Z_S
 .STATUS	8
-.SURVEY	Ciag glowny Jaskini Czarnej - Borowiec DAV z deklinacja
-.NAME	CZ_B_DAV
+.SURVEY	Ciag glowny i Partie Tehuby - Ryszard Kujat
+.NAME	CZ_GL_K
 .STATUS	8
-.SURVEY	Pomiary Kujata 1981 - partie koncowe
+.SURVEY	Gorna droga B52-B70 - Wladyslaw Borowiec
+.NAME	CZ_B_G
+.STATUS	8
+.SURVEY	Partie koncowe i dojscie do III otworu - Ryszard Kujat
 .NAME	CZ_K_S
 .STATUS	8
-.SURVEY	Partie Wawelskie - pomiary Kotarby
+.SURVEY	Partie Wawelskie - Stanislaw Kotarba
 .NAME	CZ_W_S
 .STATUS	8
 .SURVEY	Pomiary Jakuba Nowaka 2012-2015
 .NAME	CZ_N_S
 .STATUS	8
+.SURVEY	Historyczny ciag glowny - Wladyslaw Borowiec (odlaczony)
+.NAME	CZ_B_DAV
+.STATUS	10
 .ENDBOOK
 .BOOK	Jaskinia Zimna
 .NAME	JZIMNA

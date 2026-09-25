@@ -3,7 +3,7 @@ CAVE_ID         "T.E-09.12"
 CAVE_NAME       "Jaskinia Czarna"
 SURVEY_ID       "B1_DAV"
 SURVEY_NAME     "Ciag glowny - pomiary geodezyjne NKG AGH, azymuty magnetyczne"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-09-25"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -47,8 +47,8 @@ PROCESSING      "zachowano istniejacy aktywny plik SRV"
 #units meters order=DAV
 #units A=D V=D
 #date 1972-03-15
-; Otwor w tym pliku: Czarna:M:otwor1 - fix/flag/note w Poligony/OTWORY.SRV
-M:otwor1	0W	0.000	0.000	0.000
+; Otwor w tym pliku: Czarna:KujatGlowny:0 - fix/flag/note w Poligony/OTWORY.SRV
+KujatGlowny:0	0W	0.000	0.000	0.000
 0W	0	15.916	85.160	-31.096
 0	1	5.625	59.391	-57.235
 1	2	17.064	105.035	-54.028

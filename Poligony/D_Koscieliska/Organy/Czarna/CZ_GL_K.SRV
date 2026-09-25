@@ -1,0 +1,125 @@
+#[
+CAVE_ID         "T.E-09.12"
+CAVE_NAME       "Jaskinia Czarna"
+SURVEY_ID       "GL_K1"
+SURVEY_NAME     "Ciag glowny Ryszarda Kujata i Partie Tehuby"
+UPDATE_DATE     "2026-09-25"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "Dariusz Lubomski"
+COORDINATOR_EMAIL "darek.lubomski@gmail.com"
+SOURCE_REF      "_RAW/02"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "Ryszard Kujat"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "1975-08-20"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "Transkrypcja 78 odcinkow z dziennika Kujata; nawiazanie punktu 0 do otworu glownego."
+PROCESSING      "#date 1975-08-20 przyjety do obliczen deklinacji; data dziennika nieustalona."
+#]
+
+; Ciag glowny 0-76 i Partie Tehuby 6-a-b.
+; Zrodla: _RAW/02, fotografie 20220325_123052, 123533 i 123630.
+; Lh_scan, dh_scan i ARYTMETYKA to uwagi pomocnicze ze sprawdzenia dziennika.
+; Punkt 76: koniec Colorado.
+#prefix2 Czarna
+#prefix KujatGlowny
+#units meters order=DAV
+#units A=D V=D
+#date 1975-08-20
+
+; Otwor glowny: punkt 0, fix/flag/note w Poligony/OTWORY.SRV
+
+#note 7 /Stromy Meander
+#note 17 /Herkules i Sala Lukowa
+#note 37 /Studnia pod Kaluza
+#note 55 /Partie Wawelskie
+
+; FROM TO D[m] A[deg] V[deg]
+
+
+; S1/S1b: 0-19
+0	1	15.80	92	-43	; Lh_scan=11.80; dh_scan=-10.84; Otwor; ARYTMETYKA: Lh=11.555, dh=-10.776
+1	2	20.00	93	-58	; Lh_scan=10.59; dh_scan=-16.96
+2	3	5.20	107	-35	; Lh_scan=4.25; dh_scan=-4.97; po [dodaniu? / obnizeniu?] 2 m; ARYTMETYKA: Lh=4.260, dh=-2.983
+3	4	20.00	48	-25	; Lh_scan=18.12; dh_scan=-8.45
+4	5	20.00	114	-37	; Lh_scan=15.97; dh_scan=-12.03
+5	6	17.00	89	-22	; Lh_scan=15.76; dh_scan=-6.38; Margines: 6 (-59.73)
+6	7	14.00	23	20	; Lh_scan=13.14; dh_scan=4.78; wejscie do Tehuby (6)
+7	8	18.70	71	42	; Lh_scan=14.08; dh_scan=12.50; ARYTMETYKA: Lh=13.897, dh=+12.513
+8	9	13.50	24	34	; Lh_scan=11.19; dh_scan=7.53
+9	10	11.60	57	39	; Lh_scan=9.00; dh_scan=7.28
+10	11	5.40	32	36	; Lh_scan=3.28; dh_scan=3.16; Margines: 11 (-24.48); ARYTMETYKA: Lh=4.369, dh=+3.174
+11	12	20.20	65	-31	; Lh_scan=17.31; dh_scan=-10.40
+12	13	15.10	29	1	; Lh_scan=15.10; dh_scan=0.25
+13	14	20.20	80	-12	; Lh_scan=19.75; dh_scan=-4.19
+14	15	20.20	75	10	; Lh_scan=19.88; dh_scan=3.50
+15	16	10.30	40	4	; Lh_scan=10.30; dh_scan=0.71
+16	17	20.20	85	-18	; Lh_scan=19.21; dh_scan=-6.24
+17	18	20.20	105	25	; Lh_scan=18.30; dh_scan=8.53
+18	19	20.60	55	-31	; Lh_scan=17.65; dh_scan=-10.55; Margines: 19 (-42.87)
+
+; S2: 19-60
+19	20	17.50	85	-13	; Lh_scan=17.04; dh_scan=-3.93
+20	21	12.40	115	30	; Lh_scan=10.73; dh_scan=6.20; Lh=10.73 potwierdzone na skanie 2026-09-16 (poprzednio 10.23)
+21	22	20.20	60	-36	; Lh_scan=16.34; dh_scan=-11.86
+22	23	5.40	78	-3	; Lh_scan=5.40; dh_scan=-0.28
+23	24	9.20	108	23	; Lh_scan=8.46; dh_scan=3.58
+24	25	11.10	117	43	; Lh_scan=8.11; dh_scan=7.56
+25	26	20.60	94	14	; Lh_scan=19.98; dh_scan=4.97; Podnoze Wegierskiego (-36.63)
+26	27	20.30	204	45	; Lh_scan=14.35; dh_scan=14.35
+27	28	13.20	180	62	; Lh_scan=6.18; dh_scan=11.63
+28	29	20.50	132	45	; Lh_scan=14.49; dh_scan=14.49; Margines: 29 (+3.86)
+29	30	13.80	77	-3	; Lh_scan=13.80; dh_scan=-0.71
+30	31	20.50	93	23	; Lh_scan=18.87; dh_scan=8.00
+31	32	9.30	132	40	; Lh_scan=7.11; dh_scan=5.97
+32	33	10.50	160	46	; Lh_scan=7.28; dh_scan=7.54
+33	34	10.50	82	3	; Lh_scan=10.50; dh_scan=0.54
+34	35	6.50	97	-22	; Lh_scan=6.02; dh_scan=-2.42
+35	36	5.60	37	0	; Lh_scan=5.60; dh_scan=0.00
+36	37	20.70	63	3	; Lh_scan=20.70; dh_scan=1.07
+37	38	10.50	74	24	; Lh_scan=9.59; dh_scan=4.26; 38 (+28.09); Komin Smoluchowskiego
+38	39	17.50	75	-62	; Lh_scan=8.20; dh_scan=-15.44
+39	40	12.20	75	-17	; Lh_scan=11.66; dh_scan=-3.55; UWAGA: odczyt D niepewny, alternatywa 12.80 m; dh_scan: alternatywa -3.59
+40	41	20.30	87	16	; Lh_scan=19.50; dh_scan=5.59
+41	42	20.10	79	-3	; Lh_scan=20.10; dh_scan=-1.04
+42	43	15.00	95	43	; Lh_scan=10.96; dh_scan=10.23
+43	44	20.70	85	5	; Lh_scan=20.70; dh_scan=1.75
+44	45	6.70	91	35	; Lh_scan=6.46; dh_scan=3.84; Margines: 45 (+29.47); ARYTMETYKA: Lh=5.488, dh=+3.843
+45	46	20.40	78	-3	; Lh_scan=20.40; dh_scan=-1.06
+46	47	20.10	58	-19	; Lh_scan=19.00; dh_scan=-6.54
+47	48	17.50	85	18	; Lh_scan=16.63; dh_scan=5.40
+48	49	14.20	74	23	; Lh_scan=13.06; dh_scan=5.53
+49	50	14.20	88	61	; Lh_scan=6.86; dh_scan=12.40
+50	51	9.90	62	42	; Lh_scan=7.34; dh_scan=6.62
+51	52	10.30	57	33	; Lh_scan=8.63; dh_scan=5.60; Margines: 52 (+57.42)
+52	53	8.40	12	-3	; Lh_scan=8.40; dh_scan=-0.43
+53	54	19.30	45	46	; Lh_scan=13.39; dh_scan=13.87
+54	55	9.10	43	45	; Lh_scan=6.43; dh_scan=6.43
+55	56	5.90	60	-24	; Lh_scan=5.38; dh_scan=-2.39
+56	57	3.00	97	-13	; Lh_scan=2.92; dh_scan=-0.67; Stanowisko nad Blotnym Progiem
+57	58	10.00	--	-90	; Lh_scan=0.00; dh_scan=-10.00; Przed wierszem: suma dh +74.23? (liczba nadpisana, zakres nieustalony)
+58	59	9.10	270	-45	; Lh_scan=6.43; dh_scan=-6.44
+59	60	17.60	35	-14	; Lh_scan=17.07; dh_scan=-4.24
+
+; S1/S1b: 60-76
+60	61	11.00	47	-12	; Lh_scan=10.75; dh_scan=-2.27
+61	62	9.20	50	9	; Lh_scan=9.20; dh_scan=1.43
+62	63	3.50	55	-25	; Lh_scan=3.07; dh_scan=-1.37
+63	64	14.50	49	0	; Lh_scan=14.50; dh_scan=0.00; 64 - Krawedz Studni Imieninowej +51.39
+64	65	8.00	85	-33	; Lh_scan=6.70; dh_scan=-3.64; ARYTMETYKA: Lh=6.709, dh=-4.357
+65	66	19.80	110	-75	; Lh_scan=5.10; dh_scan=-18.72; Studnia Imieninowa +29.03 (dopisek bez numeru stacji); ARYTMETYKA: Lh=5.125, dh=-19.125
+66	67	16.00	15	22	; Lh_scan=14.83; dh_scan=5.98
+67	68	13.50	40	-6	; Lh_scan=13.50; dh_scan=-1.40
+68	69	14.60	33	-3	; Lh_scan=14.60; dh_scan=-0.75
+69	70	16.60	83	8	; Lh_scan=16.60; dh_scan=2.30; Margines: +26.3? lub +2.63?; ARYTMETYKA: Lh=16.438, dh=+2.310
+70	71	17.00	50	2	; Lh_scan=17.00; dh_scan=0.58
+71	72	20.00	58	-1	; Lh_scan=20.00; dh_scan=-0.35
+72	73	18.00	49	0	; Lh_scan=18.00; dh_scan=0.00; Margines: +35.39 (bez numeru stacji)
+73	74	17.00	40	0	; Lh_scan=17.00; dh_scan=0.00
+74	75	17.00	60	-25	; Lh_scan=15.40; dh_scan=-7.17
+75	76	26.00	77	-27	; Lh_scan=23.16; dh_scan=-11.80; Koniec Kolorado; Pod wierszem: suma dh +20.79 (zakres nieustalony), osobno +16.42
+
+; S1/S1b: Partie Tehuby 6-a-b
+6	a	7.40	302	8	; Lh_scan=7.40; dh_scan=1.03; Margines: -58.70
+a	b	5.40	270	-37	; Lh_scan=4.21; dh_scan=-3.25; Margines: -61.95

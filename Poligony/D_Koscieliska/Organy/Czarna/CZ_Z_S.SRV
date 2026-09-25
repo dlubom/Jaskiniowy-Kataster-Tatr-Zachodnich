@@ -2,19 +2,19 @@
 CAVE_ID         "T.E-09.12"
 CAVE_NAME       "Jaskinia Czarna"
 SURVEY_ID       "Z1"
-SURVEY_NAME     "Fragment Jaskini Czarnej"
-UPDATE_DATE     "2026-06-05"
+SURVEY_NAME     "Fragment Jaskini Czarnej - pomiary Szymona Kostki"
+UPDATE_DATE     "2026-09-25"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
 SOURCE_REF      "_RAW/01"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM            "nieznane"
+TEAM            "Szymon Kostka"
 INSTRUMENT      "DistoX"
 SURVEY_DATE     "2011-10-02"
 SURVEY_GRADE    "nieznane"
-PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "Zachowano osobny pomiar Szymona Kostki i nawiazanie 1.92 do otworu glownego."
 #]
 
 #prefix2 Czarna
@@ -22,8 +22,8 @@ PROCESSING      "zachowano istniejacy aktywny plik SRV"
 #date 2011-10-02
 #units meters order=AVD
 #units A=D V=D
-; Otwor w tym pliku: Czarna:M:otwor1 - fix/flag/note w Poligony/OTWORY.SRV
-M:otwor1 1.92 0.0 0.0 0.0
+; Otwor w tym pliku: Czarna:KujatGlowny:0 - fix/flag/note w Poligony/OTWORY.SRV
+KujatGlowny:0 1.92 0.0 0.0 0.0
 1.0	-	80.63	27.62	5.51
 1.0	-	16.48	83.56	0.66
 1.0	1.1	219.47	-7.05	2.313
