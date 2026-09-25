@@ -1,14 +1,16 @@
 # PocketTopo: konwersja pomiarów i ekstrakcja szkiców
 
-Stan: **2026-09-25 — P04 zakończone, następny etap P05 (SVG/PNG)**.
+Stan: **2026-09-25 — P05 zakończone, następny etap P06 (CLI i skill)**.
 Branch roboczy: `codex/pockettopo-convert`, początek: `a6c235c898eed57902a2d6ba18db60917e01faee`.
 
 ## Wznowienie po wyczyszczeniu kontekstu
 
 1. Przeczytaj `AGENTS.md`, ten PRD i sprawdź `git status` oraz bieżący branch.
-2. **Następne zadanie: P05 — SVG/PNG.** Nie powtarzaj researchu,
-   wzorców P01, parsera P02, średnich P03 ani eksportów pomiarów P04.
-3. Przeczytaj [format v3](FORMAT_V3.md), [API i wyniki P04](evidence/p04/README.md),
+2. **Następne zadanie: P06 — CLI i skill.** Nie powtarzaj researchu,
+   wzorców P01, parsera P02, średnich P03, eksportów P04 ani rysunków P05.
+3. Przeczytaj [API i wyniki P05](evidence/p05/README.md),
+   [projekcję i ograniczenia](evidence/p05/projection.md),
+   [format v3](FORMAT_V3.md), [API i wyniki P04](evidence/p04/README.md),
    [ograniczenia kompilacji](evidence/p04/COMPILER_LIMITS.md),
    [API i wyniki P03](evidence/p03/README.md),
    [parser P02](evidence/p02/README.md)
@@ -21,13 +23,12 @@ Branch roboczy: `codex/pockettopo-convert`, początek: `a6c235c898eed57902a2d6ba
 Polecenie do wznowienia:
 
 > Kontynuuj na `codex/pockettopo-convert` według `doc/pockettopo/PRD.md`.
-> Wykonaj P05: plan i przekrój rozwinięty, każdy jako SVG i PNG w wariantach
-> same kreski oraz kreski z pomiarami, z osobnymi warstwami. Zachowaj geometrię
-> szkicu, kolejność, kolory, singletony, Flip i XSection. Porównaj współrzędne
-> z natywnymi DXF oraz obrazy; rozstrzygnij pętle, rozgałęzienia i projekcję
-> XSection z domiarami. Użyj modelu i raportu P02–P04, sprawdzonego resvg;
-> nie uznawaj dat tripów ani niepotwierdzonych serii za potwierdzone.
-> Zapisz wyniki oraz postęp w repozytorium. Zakończ po P05.
+> Wykonaj P06: CLI inspect/convert, atomowy katalog wynikowy z jawną polityką
+> kolizji i skill pockettopo-convert. Użyj bibliotek P02–P05 oraz raportów;
+> zachowaj 4 SVG/PNG i źródłowy JSON, sprawdź ostrzeżenia i kompletność
+> kompilacji. Nie uznawaj dat urządzenia, powtórzeń ani położenia rozłącznych
+> części za potwierdzone. Wykonaj niezależną próbę użycia, testy błędów zapisu
+> i pełne bramki, zapisz wyniki oraz postęp. Zakończ po P06.
 
 ## Cel i ustalone wybory
 
@@ -131,6 +132,8 @@ P03 dodaje `prepare_conversion`, `ProcessingPlan`, `RepeatConfirmation` i
 `Exclusion`: dokument źródłowy JSON i raport w pamięci, bez zapisu pakietu.
 P04 udostępnia `export_surveys`, `SurveyExport`, `CorrectionPolicy` i
 `CorrectionOverride`: teksty SRV/SVX, mapa nazw i raport decyzji w pamięci.
+P05 dodaje `export_drawings`, `DrawingExport`, `DrawingSettings` i
+`RenderingError`: cztery SVG i opcjonalnie cztery PNG przez resvg 0.48.1.
 Proponowane komendy `uv run jktz-pockettopo inspect ...` i `convert ...`
 **jeszcze nie istnieją**. Nie budujemy łańcucha `.top → zaokrąglony SRV → średnie`.
 
@@ -141,8 +144,8 @@ Proponowane komendy `uv run jktz-pockettopo inspect ...` i `convert ...`
 | P02 Parser i model | Ścisły odczyt wszystkich struktur; 211 testów P02, pełny korpus 258/258, jakość i mutacje | Gotowe — [dowody](evidence/p02/README.md) |
 | P03 Średnie i raport | Grupy potwierdzonych powtórzeń, matematyka, ślad każdego rekordu i testy graniczne | Gotowe — [dowody](evidence/p03/README.md) |
 | P04 SRV/SVX | Zachowanie semantyki, kompilacja obu formatów i porównanie geometrii; sprawdzenie w Walls | Gotowe — [dowody](evidence/p04/README.md) |
-| P05 SVG/PNG | Oba widoki i warianty, XSection, warstwy, renderer bez GUI; kontrola punktów i obrazów | Następny |
-| P06 CLI i skill | Atomowy pakiet wynikowy, instrukcje skilla, niezależna próba użycia i pełna walidacja | Do zrobienia |
+| P05 SVG/PNG | Oba widoki i warianty, XSection, warstwy, renderer bez GUI; kontrola punktów i obrazów | Gotowe — [dowody](evidence/p05/README.md) |
+| P06 CLI i skill | Atomowy pakiet wynikowy, instrukcje skilla, niezależna próba użycia i pełna walidacja | Następny |
 
 P01 obejmuje kierunki kardynalne i granicę północy, pomiary przód/tył, kilka tripów,
 różne deklinacje, plain ID i major.minor, komentarze UTF-8, wszystkie kolory,
@@ -175,21 +178,21 @@ W P01/P05 wybrać i sprawdzić renderer PNG działający lokalnie i w CI.
 
 Natywna próba Shadow: wszystkie 32 rekordy tekstowe porównane ze źródłem,
 liczności szkiców zgodne, źródło identyczne bajtowo. Pełny audyt współrzędnych
-DXF pozostaje do wykonania. Szczegóły i pliki: [dowód Shadow](evidence/shadow/README.md).
+DXF ukończono w [P05](evidence/p05/projection.md). Szczegóły i pliki: [dowód Shadow](evidence/shadow/README.md).
 
 P01 rozstrzygnęło zakończenie: PocketTopo 1.372 zapisuje Int32 `0` po drugim
 rysunku, lecz jego czytnik ignoruje cały sufiks. Kontrakt P02 dopuszcza dokładnie
 EOF po schemacie albo dokładnie cztery zera; pozostałe sufiksy są błędem.
 [Dowód natywnego API](evidence/p01/NATIVE_API.md) opisuje również sentinel Auto.
 [Renderer resvg 0.48.1](evidence/p01/renderer/README.md) dał identyczne PNG na
-macOS i Linux; integracja w konwerterze/CI pozostaje P05/P06.
+macOS i Linux; P05 integruje bibliotekę oraz przypięty renderer w CI.
 
-Do rozstrzygnięcia w etapach: podkład w pętlach/rozgałęzieniach, ogólna projekcja
-XSection z domiarami, fonty/paleta rysunków
-oraz format profilu metadanych dla aktywnego JKTZ. Natywny DXF uśrednia własnym
+P05 rozstrzygnęło podkład w pętlach/rozgałęzieniach, projekcję XSection
+z domiarami i paletę oraz przyjęło wektorowe glify etykiet. Do ustalenia
+pozostaje format profilu metadanych dla aktywnego JKTZ. Natywny DXF uśrednia własnym
 algorytmem i nie zastępuje kontraktu średnich P03. Odczyt pełnego korpusu 258 plików
 sprawdzono w P02, a porównanie eksportów pomiarowych korpusu wykonano w P04.
-Porównanie eksportów szkiców oraz audyt współrzędnych Shadow pozostają P05.
+Porównanie eksportów szkiców oraz audyt współrzędnych Shadow zapisano w P05.
 Nie deklarować pełnej zgodności przed spełnieniem kryteriów odbioru.
 
 Uzupełnienie P01 (2026-09-25): trzy rzeczywiste źródła z test2 zawierają 15 serii
@@ -267,5 +270,19 @@ pomijanie rozłącznych części mimo exit 0 oraz crash cavern 1.4.22 przy dodat
 odcinku sprzecznym z zerowym powiązaniem. P06 musi kontrolować ostrzeżenia,
 kompletność geometrii i błędy procesu; nie tworzyć sztucznych fixów.
 
-Następny etap: **P05**. Nie wdrożono jeszcze szkiców SVG/PNG, CLI, skilla
-ani atomowego pakietu wynikowego; `conversion_complete` pozostaje `false`.
+P05 (2026-09-25): plan i rozwinięcie w wariantach same kreski / kreski
+z pomiarami, osobne warstwy, natywna paleta, singletony, jawne stany pustego
+szkicu i ostrzeżenia podkładu. SVG zachowuje każdy wierzchołek; PNG powstaje
+z tego samego SVG przez przypięty resvg 0.48.1, bez fontów systemowych.
+Nowe natywne wzorce rozstrzygają pętle, rozgałęzienia, Flip i XSection
+z domiarami. Pełny audyt Shadow obejmuje oba szkice i każdą linię pomiarową.
+
+Pełny korpus: 258 źródeł / 262 zgodne obiekty Git, 1032 SVG i 1032 PNG,
+952 211 zachowanych wierzchołków, 10 XSection. Zachowano niezmienioną politykę
+P03/P04: 439 rekordów nadal zatrzymanych, brak automatycznych potwierdzeń
+powtórzeń i dat. Podkład nie wyrównuje pętli ani nie ustala wzajemnego położenia
+rozłącznych części; takie ograniczenia są raportowane i widocznie oznaczone.
+[Wyniki, obrazy, reprodukcja i bramki P05](evidence/p05/README.md).
+
+Następny etap: **P06**. CLI, skill i atomowy pakiet wynikowy pozostają
+niewdrożone; `conversion_complete` pozostaje `false`.

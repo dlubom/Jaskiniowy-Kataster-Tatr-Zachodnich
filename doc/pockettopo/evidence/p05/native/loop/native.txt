@@ -1,0 +1,7 @@
+[1]: 2005/01/01     0.00  "P05 unadjusted nonclosing loop"
+
+
+           0           1  10.000    0.00    0.00  [1]    "north"
+           1           2   6.000   90.00    0.00  [1]    "east"
+           2           0  11.000  210.00    0.00  [1]    "nonclosing loop to known root"
+           2           3   3.000  180.00   30.00  [1]  < "branch after loop"

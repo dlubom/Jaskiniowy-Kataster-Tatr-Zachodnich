@@ -1,5 +1,6 @@
 """PocketTopo v3 source parsing and auditable measurement preparation."""
 
+from jktz.pockettopo.drawings import DrawingExport, DrawingSettings, RenderingError, export_drawings
 from jktz.pockettopo.export import SurveyExport, export_surveys
 from jktz.pockettopo.export_policy import CorrectionOverride, CorrectionPolicy
 from jktz.pockettopo.grouping import Exclusion, RepeatConfirmation
@@ -22,6 +23,8 @@ __all__ = [
     "CorrectionOverride",
     "CorrectionPolicy",
     "Drawing",
+    "DrawingExport",
+    "DrawingSettings",
     "Exclusion",
     "Mapping",
     "ParseError",
@@ -30,6 +33,7 @@ __all__ = [
     "ProcessingPlan",
     "Polygon",
     "Reference",
+    "RenderingError",
     "RepeatConfirmation",
     "Shot",
     "StationId",
@@ -38,6 +42,7 @@ __all__ = [
     "Trip",
     "XSection",
     "export_surveys",
+    "export_drawings",
     "parse_bytes",
     "prepare_conversion",
     "read_top",

@@ -74,6 +74,7 @@ only_mutate = [
   "src/jktz/pockettopo/parser.py",
   "src/jktz/pockettopo/averaging.py",
   "src/jktz/pockettopo/grouping.py",
+  "src/jktz/pockettopo/projection.py",
 ]
 pytest_add_cli_args = ["-q", "-x"]
 pytest_add_cli_args_test_selection = [
@@ -88,6 +89,7 @@ pytest_add_cli_args_test_selection = [
   "tests/test_pockettopo_averaging.py",
   "tests/test_pockettopo_grouping.py",
   "tests/test_pockettopo_report.py",
+  "tests/test_pockettopo_projection.py",
 ]
 mutate_only_covered_lines = false
 use_setproctitle = false

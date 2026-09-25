@@ -1,0 +1,199 @@
+=== Validation Started ===
+[1/12] Checking SRV filenames format...
+      SRV filenames format: Passed ✔
+[2/12] Checking SRV metadata contract...
+      SRV metadata contract: Passed ✔
+[3/12] Checking for invalid directives...
+      Invalid directives: Passed ✔
+[4/12] Checking decimal format in numeric fields...
+      Decimal format: Passed ✔
+[5/12] Checking for non-ASCII bytes in SRV files...
+      Non-ASCII bytes: Passed ✔
+[6/12] Checking #prefix values...
+      #prefix values: Passed ✔
+[7/12] Checking rendered entrances snapshot...
+Checked Poligony/OTWORY.SRV from dlubom/gps-kataster-obiektow-tatr@v1.0.2
+GPS fixes: 87
+      Rendered entrances snapshot: Passed ✔
+[8/12] Checking entrance coordinates are inside Tatras extent...
+      Entrance coordinates in Tatras extent: Passed ✔
+[9/12] Compiling with cavern...
+Survex 1.4.22
+Copyright © 1990-2026 Olly Betts
+KATASTER.wpj:5: info: Declination: 1.3° @ 1972-03-15 / 6.0° @ 2024-12-07, grid convergence: -0.8°
+ .REF 5444258.858 420990.593 34 -0.819 1800 2 49 8 45.850 19 54 59.787 27 "WGS 1984"
+
+Removing trailing traverses...
+
+Concatenating traverses...
+
+Simplifying network...
+
+Solving 11 simultaneous equations...
+
+Solving 7 simultaneous equations...
+
+Solving 2 simultaneous equations...
+
+Solving 10 simultaneous equations...
+
+Solving 9 simultaneous equations...
+
+Solving 5 simultaneous equations...
+
+Solving 17 simultaneous equations...
+
+Calculating network...
+
+Calculating traverses...
+
+Calculating trailing traverses...
+
+Calculating statistics...
+
+Approximate full range of grid convergence: -0.9° at KamienneMleko:22 to -0.7° at Koszowa:1.1
+Survey contains 18538 survey stations, joined by 18660 legs.
+There are 198 loops.
+Survey has 76 connected components.
+Total length of survey legs = 70053.50m (69943.68m adjusted)
+Total plan length of survey legs = 50659.82m
+Total vertical length of survey legs = 35645.87m
+Vertical range = 1035.43m (from SzczelinaNadTomII:0 at 2027.84m to Dziura:1.24 at 992.41m)
+North-South range = 5320.20m (from Dziura:1.10 at 5458248.83m to DziuraWStole:3 at 5452928.63m)
+East-West range = 18154.90m (from Koszowa:1.1 at 431570.49m to KamienneMleko:22 at 413415.59m)
+CPU time used  0.06s
+[10/12] Checking for unattached stations...
+      Unattached stations: Passed ✔
+[11/12] Checking cavern compile warnings...
+      Cavern compile warnings: Passed ✔
+[12/12] Checking exports...
+                   === JKTZ exports - version: validate ===
+                       output: /Users/dariuszlubomski/proj/Jaskiniowy-Kataster-Tatr-Zachodnich/validate-exports/
+
+                   [1/4] cavern - compiling survey network
+                   Survex 1.4.22
+                   Copyright © 1990-2026 Olly Betts
+                   KATASTER.wpj:5: info: Declination: 1.3° @ 1972-03-15 / 6.0° @ 2024-12-07, grid convergence: -0.8°
+                    .REF 5444258.858 420990.593 34 -0.819 1800 2 49 8 45.850 19 54 59.787 27 "WGS 1984"
+
+                   Removing trailing traverses...
+
+                   Concatenating traverses...
+
+                   Simplifying network...
+
+                   Solving 11 simultaneous equations...
+
+                   Solving 7 simultaneous equations...
+
+                   Solving 2 simultaneous equations...
+
+                   Solving 10 simultaneous equations...
+
+                   Solving 9 simultaneous equations...
+
+                   Solving 5 simultaneous equations...
+
+                   Solving 17 simultaneous equations...
+
+                   Calculating network...
+
+                   Calculating traverses...
+
+                   Calculating trailing traverses...
+
+                   Calculating statistics...
+
+                   Approximate full range of grid convergence: -0.9° at KamienneMleko:22 to -0.7° at Koszowa:1.1
+                   Survey contains 18538 survey stations, joined by 18660 legs.
+                   There are 198 loops.
+                   Survey has 76 connected components.
+                   Total length of survey legs = 70053.50m (69943.68m adjusted)
+                   Total plan length of survey legs = 50659.82m
+                   Total vertical length of survey legs = 35645.87m
+                   Vertical range = 1035.43m (from SzczelinaNadTomII:0 at 2027.84m to Dziura:1.24 at 992.41m)
+                   North-South range = 5320.20m (from Dziura:1.10 at 5458248.83m to DziuraWStole:3 at 5452928.63m)
+                   East-West range = 18154.90m (from Koszowa:1.1 at 431570.49m to KamienneMleko:22 at 413415.59m)
+                   CPU time used  0.07s
+                   [2/4] survexport - full DXF
+                   [3/4] ogr2ogr - shapefile (all caves)
+                   [4/4] survexport - per-cave DXF + shapefiles
+                         -> BandziochKom
+                         -> Biala
+                         -> Ciepla
+                         -> Czarna
+                         -> CzerwonaStudzienka
+                         -> Dmuchawa
+                         -> Dziura
+                         -> DziuraPodSwist
+                         -> DziuraWStole
+                         -> DziurkaWTrawce
+                         -> Gawra
+                         -> Goryczkowa
+                         -> Harda
+                         -> Kalacka
+                         -> KamienneMleko
+                         -> KasprowaNiznia
+                         -> KoprowaStudnia
+                         -> Koszowa
+                         -> Kozia
+                         -> Lejbusiowa
+                         -> LodowaMalolacka
+                         -> LodowaMietusia
+                         -> LodowaWCiemniaku
+                         -> LustrzanyKorytarz
+                         -> MalaWMulowej
+                         -> Malolacka
+                         -> Marmurowa
+                         -> MeanderWMalymSiodle
+                         -> Mietusia
+                         -> MietusiaWyznia
+                         -> MnichStudniaWyz
+                         -> Mrozna
+                         -> NadBeczka
+                         -> NadPercia
+                         -> NovaKresanica
+                         -> ObcasnaVyv
+                         -> Pawlikowskiego
+                         -> PodProgiem
+                         -> PodZamkiem
+                         -> PoszukiwaczySkarbow
+                         -> PrzyJedrusiowej
+                         -> PrzyPrzechodzie
+                         -> Psia
+                         -> PtasiaStudnia
+                         -> RuraPrzyOknie
+                         -> SchronPodJedrus
+                         -> SmoczaJama
+                         -> SnieznaStudnia
+                         -> SpiacychRycerzy
+                         -> StudniaNaSzlaku
+                         -> StudniaPrzyPrzech
+                         -> StudniaWKazalnicy
+                         -> Swistacza
+                         -> SzaraStudnia
+                         -> SzczelinaMietusia
+                         -> SzczelinaNadLejem
+                         -> SzczelinaNadTomI
+                         -> SzczelinaNadTomII
+                         -> Uplazkowa
+                         -> WielkaSniezna
+                         -> WielkiejTurni
+                         -> WilczySchron
+                         -> Wysoka7Progow
+                         -> WyzKoszowaDziura
+                         -> ZaspalkowaSzczel
+                         -> ZawaliskawaTom
+                         -> ZawalonySchron
+                         -> ZbojeckaDziura
+                         -> ZbojnickaPiwnica
+                         -> ZbojnickaTurnia
+                         -> Ziobrowa
+                         -> Zoska
+                         -> Zwolinskiego
+
+                   === Done ===
+                       /Users/dariuszlubomski/proj/Jaskiniowy-Kataster-Tatr-Zachodnich/validate-exports/
+      Exports: Passed ✔
+
+=== Validation Passed ✔ ===

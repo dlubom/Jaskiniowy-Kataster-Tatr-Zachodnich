@@ -15,6 +15,7 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 - P02 PocketTopo: ścisły parser `.top` v3 i niezmienny model surowych danych, niezależne testy rekordów i uszkodzeń oraz rozszerzenie bramki mutacyjnej o parser i model.
 - P03 PocketTopo: średnie wyłącznie dla jawnie potwierdzonych serii powiązanych z SHA-256 źródła, normalizacja kierunków, raport każdego rekordu i surowe dane JSON; testy graniczne oraz mutacje matematyki i grupowania.
 - P04 PocketTopo: eksport pomiarów SRV/SVX z jawną polityką deklinacji, odwracalnym mapowaniem nazw i śladem zatrzymanych rekordów; porównanie geometrii oraz obowiązkowe testy kompilacji obu formatów w CI Linux/Windows.
+- P05 PocketTopo: plan i przekrój rozwinięty w czterech wariantach SVG/PNG, osobne warstwy, natywna paleta i jawne ograniczenia osnowy; niezależne porównania DXF, cały korpus oraz przypięty renderer resvg w CI.
 
 ### Poprawiono
 

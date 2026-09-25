@@ -1,0 +1,4652 @@
+{
+  "schema_version": 1,
+  "units": "source_sketch_mm",
+  "overlay_policy": "source_order_attachment_unadjusted_forest",
+  "rounding": "converter keeps IEEE float until serialization; native accumulates integer-mm projected legs",
+  "fixture_tolerance_mm": 3,
+  "cases": [
+    {
+      "name": "loop",
+      "source_sha256": "377e54a92f4e1c74fa6930c3ddff792e96989936914df920b4134cb290210f15",
+      "views": {
+        "plan": {
+          "native_dxf_sha256": "4b4fa140c38faebdb256de7cc724ce34761d849ac8536e4eae31ec3c4cf9a7f3",
+          "layers": {
+            "Shots": {
+              "line_count": 4,
+              "maximum_coordinate_error_mm": 0.455205396101519,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": 0,
+                  "source_indices": [
+                    0
+                  ],
+                  "actual_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "native_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 1,
+                  "source_indices": [
+                    1
+                  ],
+                  "actual_start": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "actual_end": [
+                    6000.0,
+                    -10000.0
+                  ],
+                  "native_start": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "native_end": [
+                    6000.0,
+                    -10000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    6000.0,
+                    -10000.0
+                  ],
+                  "actual_end": [
+                    500.304443009456,
+                    -473.5447946038985
+                  ],
+                  "native_start": [
+                    6000.0,
+                    -10000.0
+                  ],
+                  "native_end": [
+                    500.0,
+                    -474.0
+                  ],
+                  "max_coordinate_error_mm": 0.455205396101519
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    6000.0,
+                    -10000.0
+                  ],
+                  "actual_end": [
+                    6000.0,
+                    -7401.8758530737905
+                  ],
+                  "native_start": [
+                    6000.0,
+                    -10000.0
+                  ],
+                  "native_end": [
+                    6000.0,
+                    -7402.0
+                  ],
+                  "max_coordinate_error_mm": 0.12414692620950518
+                }
+              ]
+            },
+            "XSect": {
+              "line_count": 0,
+              "maximum_coordinate_error_mm": 0,
+              "all_coordinates_within_tolerance": true,
+              "lines": []
+            },
+            "Sketch": {
+              "line_count": 0,
+              "maximum_coordinate_error_mm": 0,
+              "all_coordinates_within_tolerance": true,
+              "lines": []
+            }
+          }
+        },
+        "side": {
+          "native_dxf_sha256": "caceeef6979ccff81e81bc2d1b2a3717075269ffc30a43d2c7a408bbab5a636f",
+          "layers": {
+            "Shots": {
+              "line_count": 4,
+              "maximum_coordinate_error_mm": 0.12414692620950518,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": 0,
+                  "source_indices": [
+                    0
+                  ],
+                  "actual_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 1,
+                  "source_indices": [
+                    1
+                  ],
+                  "actual_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    16000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    16000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    16000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    27000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    16000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    27000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    16000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    13401.87585307379,
+                    -1499.9169700883303
+                  ],
+                  "native_start": [
+                    16000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    13402.0,
+                    -1500.0
+                  ],
+                  "max_coordinate_error_mm": 0.12414692620950518
+                }
+              ]
+            },
+            "XSect": {
+              "line_count": 0,
+              "maximum_coordinate_error_mm": 0,
+              "all_coordinates_within_tolerance": true,
+              "lines": []
+            },
+            "Sketch": {
+              "line_count": 0,
+              "maximum_coordinate_error_mm": 0,
+              "all_coordinates_within_tolerance": true,
+              "lines": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "branch",
+      "source_sha256": "d115145aa81c91b0038bc57f8157bf4e6e8b3702c264a526b2d125f1c5f52eef",
+      "views": {
+        "plan": {
+          "native_dxf_sha256": "d372b63a96acfa3d4483c4a115f2c23424e982bd6acadf87e0b1bdc6ee83abbf",
+          "layers": {
+            "Shots": {
+              "line_count": 5,
+              "maximum_coordinate_error_mm": 0.12414692620814094,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": 0,
+                  "source_indices": [
+                    0
+                  ],
+                  "actual_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "native_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 1,
+                  "source_indices": [
+                    1
+                  ],
+                  "actual_start": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "actual_end": [
+                    4000.0,
+                    -10000.0
+                  ],
+                  "native_start": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "native_end": [
+                    4000.0,
+                    -10000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "actual_end": [
+                    7.347880794884119e-13,
+                    -4000.0
+                  ],
+                  "native_start": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "native_end": [
+                    0.0,
+                    -4000.0
+                  ],
+                  "max_coordinate_error_mm": 7.347880794884119e-13
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    4000.0,
+                    -10000.0
+                  ],
+                  "actual_end": [
+                    5732.082764617473,
+                    -10000.0
+                  ],
+                  "native_start": [
+                    4000.0,
+                    -10000.0
+                  ],
+                  "native_end": [
+                    5732.0,
+                    -10000.0
+                  ],
+                  "max_coordinate_error_mm": 0.08276461747300345
+                },
+                {
+                  "group_id": 4,
+                  "source_indices": [
+                    4
+                  ],
+                  "actual_start": [
+                    7.347880794884119e-13,
+                    -4000.0
+                  ],
+                  "actual_end": [
+                    -2598.124146926208,
+                    -3999.9999999999995
+                  ],
+                  "native_start": [
+                    0.0,
+                    -4000.0
+                  ],
+                  "native_end": [
+                    -2598.0,
+                    -4000.0
+                  ],
+                  "max_coordinate_error_mm": 0.12414692620814094
+                }
+              ]
+            },
+            "XSect": {
+              "line_count": 2,
+              "maximum_coordinate_error_mm": 0.23253156264240715,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": 5,
+                  "source_indices": [
+                    5
+                  ],
+                  "actual_start": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "actual_end": [
+                    1224.7674684373576,
+                    -11224.767468437358
+                  ],
+                  "native_start": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "native_end": [
+                    1225.0,
+                    -11225.0
+                  ],
+                  "max_coordinate_error_mm": 0.23253156264240715
+                },
+                {
+                  "group_id": 6,
+                  "source_indices": [
+                    6
+                  ],
+                  "actual_start": [
+                    4000.0,
+                    -10000.0
+                  ],
+                  "actual_end": [
+                    4000.0,
+                    -8267.917235382527
+                  ],
+                  "native_start": [
+                    4000.0,
+                    -10000.0
+                  ],
+                  "native_end": [
+                    4000.0,
+                    -8268.0
+                  ],
+                  "max_coordinate_error_mm": 0.08276461747300345
+                }
+              ]
+            },
+            "Sketch": {
+              "line_count": 0,
+              "maximum_coordinate_error_mm": 0,
+              "all_coordinates_within_tolerance": true,
+              "lines": []
+            }
+          }
+        },
+        "side": {
+          "native_dxf_sha256": "fb49e9d6895e8fc7227fbec6fa642258523c71c2ec107c1d12987e3f11ac4740",
+          "layers": {
+            "Shots": {
+              "line_count": 5,
+              "maximum_coordinate_error_mm": 0.12414692620950518,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": 0,
+                  "source_indices": [
+                    0
+                  ],
+                  "actual_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 1,
+                  "source_indices": [
+                    1
+                  ],
+                  "actual_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    6000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    6000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    16000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    16000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    6000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    7732.082764617473,
+                    -999.9446467255536
+                  ],
+                  "native_start": [
+                    6000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    7732.0,
+                    -1000.0
+                  ],
+                  "max_coordinate_error_mm": 0.08276461747300345
+                },
+                {
+                  "group_id": 4,
+                  "source_indices": [
+                    4
+                  ],
+                  "actual_start": [
+                    16000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    13401.87585307379,
+                    1499.9169700883303
+                  ],
+                  "native_start": [
+                    16000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    13402.0,
+                    1500.0
+                  ],
+                  "max_coordinate_error_mm": 0.12414692620950518
+                }
+              ]
+            },
+            "XSect": {
+              "line_count": 2,
+              "maximum_coordinate_error_mm": 0.7674684373578202,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": 5,
+                  "source_indices": [
+                    5
+                  ],
+                  "actual_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    11224.767468437358,
+                    -999.9446467255536
+                  ],
+                  "native_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    11224.0,
+                    -1000.0
+                  ],
+                  "max_coordinate_error_mm": 0.7674684373578202
+                },
+                {
+                  "group_id": 6,
+                  "source_indices": [
+                    6
+                  ],
+                  "actual_start": [
+                    6000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    6000.0,
+                    999.9446467255536
+                  ],
+                  "native_start": [
+                    6000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    6000.0,
+                    1000.0
+                  ],
+                  "max_coordinate_error_mm": 0.055353274446360956
+                }
+              ]
+            },
+            "Sketch": {
+              "line_count": 0,
+              "maximum_coordinate_error_mm": 0,
+              "all_coordinates_within_tolerance": true,
+              "lines": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "xsection",
+      "source_sha256": "4a591d3f42676d03e9578e016010991843c758c6462f7a22802bef10789c924f",
+      "views": {
+        "plan": {
+          "native_dxf_sha256": "dbead8750ca3343e09fba29202b2bec46e4ec2ff4bf79f650949fa726941942d",
+          "layers": {
+            "Shots": {
+              "line_count": 2,
+              "maximum_coordinate_error_mm": 0.34518512214310704,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": 0,
+                  "source_indices": [
+                    0
+                  ],
+                  "actual_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    871.3451851221431,
+                    -9961.965547439142
+                  ],
+                  "native_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    871.0,
+                    -9962.0
+                  ],
+                  "max_coordinate_error_mm": 0.34518512214310704
+                },
+                {
+                  "group_id": 1,
+                  "source_indices": [
+                    1
+                  ],
+                  "actual_start": [
+                    871.3451851221431,
+                    -9961.965547439142
+                  ],
+                  "actual_end": [
+                    8840.917623073457,
+                    -9264.889399341428
+                  ],
+                  "native_start": [
+                    871.0,
+                    -9962.0
+                  ],
+                  "native_end": [
+                    8841.0,
+                    -9265.0
+                  ],
+                  "max_coordinate_error_mm": 0.34518512214310704
+                }
+              ]
+            },
+            "XSect": {
+              "line_count": 42,
+              "maximum_coordinate_error_mm": 0.8311533364458228,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    871.3451851221431,
+                    -9961.965547439142
+                  ],
+                  "actual_end": [
+                    1045.6142221465718,
+                    -11954.35865692697
+                  ],
+                  "native_start": [
+                    871.0,
+                    -9962.0
+                  ],
+                  "native_end": [
+                    1045.0,
+                    -11954.0
+                  ],
+                  "max_coordinate_error_mm": 0.6142221465718194
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    871.3451851221431,
+                    -9961.965547439142
+                  ],
+                  "actual_end": [
+                    3859.934849353886,
+                    -9700.5619919025
+                  ],
+                  "native_start": [
+                    871.0,
+                    -9962.0
+                  ],
+                  "native_end": [
+                    3860.0,
+                    -9701.0
+                  ],
+                  "max_coordinate_error_mm": 0.4380080975006422
+                },
+                {
+                  "group_id": 4,
+                  "source_indices": [
+                    4
+                  ],
+                  "actual_start": [
+                    871.3451851221431,
+                    -9961.965547439142
+                  ],
+                  "actual_end": [
+                    522.8071110732857,
+                    -5977.179328463485
+                  ],
+                  "native_start": [
+                    871.0,
+                    -9962.0
+                  ],
+                  "native_end": [
+                    522.0,
+                    -5977.0
+                  ],
+                  "max_coordinate_error_mm": 0.8071110732856823
+                },
+                {
+                  "group_id": 5,
+                  "source_indices": [
+                    5
+                  ],
+                  "actual_start": [
+                    871.3451851221431,
+                    -9961.965547439142
+                  ],
+                  "actual_end": [
+                    -4109.6375885974285,
+                    -10397.638140000212
+                  ],
+                  "native_start": [
+                    871.0,
+                    -9962.0
+                  ],
+                  "native_end": [
+                    -4110.0,
+                    -10398.0
+                  ],
+                  "max_coordinate_error_mm": 0.3624114025715244
+                },
+                {
+                  "group_id": 6,
+                  "source_indices": [
+                    6
+                  ],
+                  "actual_start": [
+                    871.3451851221431,
+                    -9961.965547439142
+                  ],
+                  "actual_end": [
+                    4851.831153336446,
+                    -13302.134373743167
+                  ],
+                  "native_start": [
+                    871.0,
+                    -9962.0
+                  ],
+                  "native_end": [
+                    4851.0,
+                    -13302.0
+                  ],
+                  "max_coordinate_error_mm": 0.8311533364458228
+                },
+                {
+                  "group_id": 7,
+                  "source_indices": [
+                    7
+                  ],
+                  "actual_start": [
+                    871.3451851221431,
+                    -9961.965547439142
+                  ],
+                  "actual_end": [
+                    -3772.555111127875,
+                    -6065.1019167511095
+                  ],
+                  "native_start": [
+                    871.0,
+                    -9962.0
+                  ],
+                  "native_end": [
+                    -3773.0,
+                    -6065.0
+                  ],
+                  "max_coordinate_error_mm": 0.44488887212492045
+                },
+                {
+                  "group_id": 8,
+                  "source_indices": [
+                    8
+                  ],
+                  "actual_start": [
+                    871.3451851221431,
+                    -9961.965547439142
+                  ],
+                  "actual_end": [
+                    871.3451851221431,
+                    -9961.965547439142
+                  ],
+                  "native_start": [
+                    871.0,
+                    -9962.0
+                  ],
+                  "native_end": [
+                    871.0,
+                    -9962.0
+                  ],
+                  "max_coordinate_error_mm": 0.34518512214310704
+                },
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    -15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -14825.730962975571,
+                    13007.606890512172
+                  ],
+                  "native_start": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -14826.0,
+                    13008.0
+                  ],
+                  "max_coordinate_error_mm": 0.3931094878280419
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    -15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -12011.410335768258,
+                    15261.403555536643
+                  ],
+                  "native_start": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -12011.0,
+                    15261.0
+                  ],
+                  "max_coordinate_error_mm": 0.41033576825793716
+                },
+                {
+                  "group_id": 4,
+                  "source_indices": [
+                    4
+                  ],
+                  "actual_start": [
+                    -15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -15348.538074048858,
+                    18984.786218975656
+                  ],
+                  "native_start": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -15349.0,
+                    18985.0
+                  ],
+                  "max_coordinate_error_mm": 0.46192595114189317
+                },
+                {
+                  "group_id": 5,
+                  "source_indices": [
+                    5
+                  ],
+                  "actual_start": [
+                    -15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -19980.982773719574,
+                    14564.32740743893
+                  ],
+                  "native_start": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -19981.0,
+                    14564.0
+                  ],
+                  "max_coordinate_error_mm": 0.32740743893009494
+                },
+                {
+                  "group_id": 6,
+                  "source_indices": [
+                    6
+                  ],
+                  "actual_start": [
+                    -15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -11019.514031785697,
+                    11659.831173695975
+                  ],
+                  "native_start": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -11020.0,
+                    11660.0
+                  ],
+                  "max_coordinate_error_mm": 0.4859682143032842
+                },
+                {
+                  "group_id": 7,
+                  "source_indices": [
+                    7
+                  ],
+                  "actual_start": [
+                    -15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -19643.900296250016,
+                    18896.863630688033
+                  ],
+                  "native_start": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -19644.0,
+                    18897.0
+                  ],
+                  "max_coordinate_error_mm": 0.13636931196742808
+                },
+                {
+                  "group_id": 8,
+                  "source_indices": [
+                    8
+                  ],
+                  "actual_start": [
+                    -15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    -5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    -5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -2000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -2000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 4,
+                  "source_indices": [
+                    4
+                  ],
+                  "actual_start": [
+                    -5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 5,
+                  "source_indices": [
+                    5
+                  ],
+                  "actual_start": [
+                    -5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -10000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -10000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 6,
+                  "source_indices": [
+                    6
+                  ],
+                  "actual_start": [
+                    -5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -1325.697594687928,
+                    12000.16605982334
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -1326.0,
+                    12000.0
+                  ],
+                  "max_coordinate_error_mm": 0.3024053120720964
+                },
+                {
+                  "group_id": 7,
+                  "source_indices": [
+                    7
+                  ],
+                  "actual_start": [
+                    -5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -9286.68613953075,
+                    18499.806263539438
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -9286.0,
+                    18500.0
+                  ],
+                  "max_coordinate_error_mm": 0.6861395307496423
+                },
+                {
+                  "group_id": 8,
+                  "source_indices": [
+                    8
+                  ],
+                  "actual_start": [
+                    -5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -5000.0,
+                    14000.0
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -5000.0,
+                    14000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    3585.786437626905,
+                    15000.0
+                  ],
+                  "native_start": [
+                    5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    3586.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.21356237309510107
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    7121.320343559642,
+                    15000.0
+                  ],
+                  "native_start": [
+                    5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    7121.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.3203435596424242
+                },
+                {
+                  "group_id": 4,
+                  "source_indices": [
+                    4
+                  ],
+                  "actual_start": [
+                    5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    7828.42712474619,
+                    15000.0
+                  ],
+                  "native_start": [
+                    5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    7828.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.42712474619020213
+                },
+                {
+                  "group_id": 5,
+                  "source_indices": [
+                    5
+                  ],
+                  "actual_start": [
+                    5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    1464.4660940672638,
+                    15000.0
+                  ],
+                  "native_start": [
+                    5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    1464.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.46609406726383895
+                },
+                {
+                  "group_id": 6,
+                  "source_indices": [
+                    6
+                  ],
+                  "actual_start": [
+                    5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    5000.0,
+                    12000.16605982334
+                  ],
+                  "native_start": [
+                    5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    5000.0,
+                    12000.0
+                  ],
+                  "max_coordinate_error_mm": 0.16605982333931024
+                },
+                {
+                  "group_id": 7,
+                  "source_indices": [
+                    7
+                  ],
+                  "actual_start": [
+                    5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    5000.000000000002,
+                    18499.806263539438
+                  ],
+                  "native_start": [
+                    5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    5000.0,
+                    18500.0
+                  ],
+                  "max_coordinate_error_mm": 0.19373646056192229
+                },
+                {
+                  "group_id": 8,
+                  "source_indices": [
+                    8
+                  ],
+                  "actual_start": [
+                    5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    5000.0,
+                    14000.0
+                  ],
+                  "native_start": [
+                    5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    5000.0,
+                    14000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    13000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    13000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 4,
+                  "source_indices": [
+                    4
+                  ],
+                  "actual_start": [
+                    15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    19000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    19000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 5,
+                  "source_indices": [
+                    5
+                  ],
+                  "actual_start": [
+                    15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    15000.000000000002,
+                    15000.0
+                  ],
+                  "native_start": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 1.8189894035458565e-12
+                },
+                {
+                  "group_id": 6,
+                  "source_indices": [
+                    6
+                  ],
+                  "actual_start": [
+                    15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    11325.697594687928,
+                    12000.16605982334
+                  ],
+                  "native_start": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    11326.0,
+                    12000.0
+                  ],
+                  "max_coordinate_error_mm": 0.3024053120716417
+                },
+                {
+                  "group_id": 7,
+                  "source_indices": [
+                    7
+                  ],
+                  "actual_start": [
+                    15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    19286.686139530753,
+                    18499.806263539438
+                  ],
+                  "native_start": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    19286.0,
+                    18500.0
+                  ],
+                  "max_coordinate_error_mm": 0.6861395307532803
+                },
+                {
+                  "group_id": 8,
+                  "source_indices": [
+                    8
+                  ],
+                  "actual_start": [
+                    15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    15000.0,
+                    14000.0
+                  ],
+                  "native_start": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    15000.0,
+                    14000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    25000,
+                    15000
+                  ],
+                  "actual_end": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    25000,
+                    15000
+                  ],
+                  "actual_end": [
+                    22000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    22000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 4,
+                  "source_indices": [
+                    4
+                  ],
+                  "actual_start": [
+                    25000,
+                    15000
+                  ],
+                  "actual_end": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 5,
+                  "source_indices": [
+                    5
+                  ],
+                  "actual_start": [
+                    25000,
+                    15000
+                  ],
+                  "actual_end": [
+                    30000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    30000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 6,
+                  "source_indices": [
+                    6
+                  ],
+                  "actual_start": [
+                    25000,
+                    15000
+                  ],
+                  "actual_end": [
+                    21325.69759468793,
+                    12000.16605982334
+                  ],
+                  "native_start": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    21326.0,
+                    12000.0
+                  ],
+                  "max_coordinate_error_mm": 0.3024053120716417
+                },
+                {
+                  "group_id": 7,
+                  "source_indices": [
+                    7
+                  ],
+                  "actual_start": [
+                    25000,
+                    15000
+                  ],
+                  "actual_end": [
+                    29286.68613953075,
+                    18499.806263539438
+                  ],
+                  "native_start": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    29286.0,
+                    18500.0
+                  ],
+                  "max_coordinate_error_mm": 0.6861395307496423
+                },
+                {
+                  "group_id": 8,
+                  "source_indices": [
+                    8
+                  ],
+                  "actual_start": [
+                    25000,
+                    15000
+                  ],
+                  "actual_end": [
+                    25000.0,
+                    14000.0
+                  ],
+                  "native_start": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    25000.0,
+                    14000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                }
+              ]
+            },
+            "Sketch": {
+              "line_count": 5,
+              "maximum_coordinate_error_mm": 0.34518512214310704,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": null,
+                  "source_indices": null,
+                  "actual_start": [
+                    -15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    871.3451851221431,
+                    -9961.965547439142
+                  ],
+                  "native_start": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    871.0,
+                    -9962.0
+                  ],
+                  "max_coordinate_error_mm": 0.34518512214310704
+                },
+                {
+                  "group_id": null,
+                  "source_indices": null,
+                  "actual_start": [
+                    -5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    871.3451851221431,
+                    -9961.965547439142
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    871.0,
+                    -9962.0
+                  ],
+                  "max_coordinate_error_mm": 0.34518512214310704
+                },
+                {
+                  "group_id": null,
+                  "source_indices": null,
+                  "actual_start": [
+                    5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    871.3451851221431,
+                    -9961.965547439142
+                  ],
+                  "native_start": [
+                    5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    871.0,
+                    -9962.0
+                  ],
+                  "max_coordinate_error_mm": 0.34518512214310704
+                },
+                {
+                  "group_id": null,
+                  "source_indices": null,
+                  "actual_start": [
+                    15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    871.3451851221431,
+                    -9961.965547439142
+                  ],
+                  "native_start": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    871.0,
+                    -9962.0
+                  ],
+                  "max_coordinate_error_mm": 0.34518512214310704
+                },
+                {
+                  "group_id": null,
+                  "source_indices": null,
+                  "actual_start": [
+                    25000,
+                    15000
+                  ],
+                  "actual_end": [
+                    871.3451851221431,
+                    -9961.965547439142
+                  ],
+                  "native_start": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    871.0,
+                    -9962.0
+                  ],
+                  "max_coordinate_error_mm": 0.34518512214310704
+                }
+              ]
+            }
+          }
+        },
+        "side": {
+          "native_dxf_sha256": "4bcfb2b119b11ac8f6d425c33a12dbc9048ab4e8e77523523c60de3c0b23cd3f",
+          "layers": {
+            "Shots": {
+              "line_count": 2,
+              "maximum_coordinate_error_mm": 0.0,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": 0,
+                  "source_indices": [
+                    0
+                  ],
+                  "actual_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 1,
+                  "source_indices": [
+                    1
+                  ],
+                  "actual_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    18000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    18000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                }
+              ]
+            },
+            "XSect": {
+              "line_count": 42,
+              "maximum_coordinate_error_mm": 0.6861395307532803,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    12000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    12000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 4,
+                  "source_indices": [
+                    4
+                  ],
+                  "actual_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    6000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    6000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 5,
+                  "source_indices": [
+                    5
+                  ],
+                  "actual_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    9999.999999999998,
+                    -0.0
+                  ],
+                  "native_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 1.8189894035458565e-12
+                },
+                {
+                  "group_id": 6,
+                  "source_indices": [
+                    6
+                  ],
+                  "actual_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    13674.302405312073,
+                    -2999.8339401766607
+                  ],
+                  "native_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    13674.0,
+                    -3000.0
+                  ],
+                  "max_coordinate_error_mm": 0.30240531207346066
+                },
+                {
+                  "group_id": 7,
+                  "source_indices": [
+                    7
+                  ],
+                  "actual_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    5713.313860469248,
+                    3499.8062635394376
+                  ],
+                  "native_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    5713.0,
+                    3500.0
+                  ],
+                  "max_coordinate_error_mm": 0.3138604692476292
+                },
+                {
+                  "group_id": 8,
+                  "source_indices": [
+                    8
+                  ],
+                  "actual_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    10000.0,
+                    -1000.0
+                  ],
+                  "native_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    10000.0,
+                    -1000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    -15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -14825.730962975571,
+                    13007.606890512172
+                  ],
+                  "native_start": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -14826.0,
+                    13008.0
+                  ],
+                  "max_coordinate_error_mm": 0.3931094878280419
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    -15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -12011.410335768258,
+                    15261.403555536643
+                  ],
+                  "native_start": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -12011.0,
+                    15261.0
+                  ],
+                  "max_coordinate_error_mm": 0.41033576825793716
+                },
+                {
+                  "group_id": 4,
+                  "source_indices": [
+                    4
+                  ],
+                  "actual_start": [
+                    -15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -15348.538074048858,
+                    18984.786218975656
+                  ],
+                  "native_start": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -15349.0,
+                    18985.0
+                  ],
+                  "max_coordinate_error_mm": 0.46192595114189317
+                },
+                {
+                  "group_id": 5,
+                  "source_indices": [
+                    5
+                  ],
+                  "actual_start": [
+                    -15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -19980.982773719574,
+                    14564.32740743893
+                  ],
+                  "native_start": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -19981.0,
+                    14564.0
+                  ],
+                  "max_coordinate_error_mm": 0.32740743893009494
+                },
+                {
+                  "group_id": 6,
+                  "source_indices": [
+                    6
+                  ],
+                  "actual_start": [
+                    -15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -11019.514031785697,
+                    11659.831173695975
+                  ],
+                  "native_start": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -11020.0,
+                    11660.0
+                  ],
+                  "max_coordinate_error_mm": 0.4859682143032842
+                },
+                {
+                  "group_id": 7,
+                  "source_indices": [
+                    7
+                  ],
+                  "actual_start": [
+                    -15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -19643.900296250016,
+                    18896.863630688033
+                  ],
+                  "native_start": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -19644.0,
+                    18897.0
+                  ],
+                  "max_coordinate_error_mm": 0.13636931196742808
+                },
+                {
+                  "group_id": 8,
+                  "source_indices": [
+                    8
+                  ],
+                  "actual_start": [
+                    -15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    -5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    -5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -2000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -2000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 4,
+                  "source_indices": [
+                    4
+                  ],
+                  "actual_start": [
+                    -5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 5,
+                  "source_indices": [
+                    5
+                  ],
+                  "actual_start": [
+                    -5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -10000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -10000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 6,
+                  "source_indices": [
+                    6
+                  ],
+                  "actual_start": [
+                    -5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -1325.697594687928,
+                    12000.16605982334
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -1326.0,
+                    12000.0
+                  ],
+                  "max_coordinate_error_mm": 0.3024053120720964
+                },
+                {
+                  "group_id": 7,
+                  "source_indices": [
+                    7
+                  ],
+                  "actual_start": [
+                    -5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -9286.68613953075,
+                    18499.806263539438
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -9286.0,
+                    18500.0
+                  ],
+                  "max_coordinate_error_mm": 0.6861395307496423
+                },
+                {
+                  "group_id": 8,
+                  "source_indices": [
+                    8
+                  ],
+                  "actual_start": [
+                    -5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    -5000.0,
+                    14000.0
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    -5000.0,
+                    14000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    3585.786437626905,
+                    15000.0
+                  ],
+                  "native_start": [
+                    5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    3586.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.21356237309510107
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    7121.320343559642,
+                    15000.0
+                  ],
+                  "native_start": [
+                    5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    7121.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.3203435596424242
+                },
+                {
+                  "group_id": 4,
+                  "source_indices": [
+                    4
+                  ],
+                  "actual_start": [
+                    5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    7828.42712474619,
+                    15000.0
+                  ],
+                  "native_start": [
+                    5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    7828.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.42712474619020213
+                },
+                {
+                  "group_id": 5,
+                  "source_indices": [
+                    5
+                  ],
+                  "actual_start": [
+                    5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    1464.4660940672638,
+                    15000.0
+                  ],
+                  "native_start": [
+                    5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    1464.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.46609406726383895
+                },
+                {
+                  "group_id": 6,
+                  "source_indices": [
+                    6
+                  ],
+                  "actual_start": [
+                    5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    5000.0,
+                    12000.16605982334
+                  ],
+                  "native_start": [
+                    5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    5000.0,
+                    12000.0
+                  ],
+                  "max_coordinate_error_mm": 0.16605982333931024
+                },
+                {
+                  "group_id": 7,
+                  "source_indices": [
+                    7
+                  ],
+                  "actual_start": [
+                    5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    5000.000000000002,
+                    18499.806263539438
+                  ],
+                  "native_start": [
+                    5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    5000.0,
+                    18500.0
+                  ],
+                  "max_coordinate_error_mm": 0.19373646056192229
+                },
+                {
+                  "group_id": 8,
+                  "source_indices": [
+                    8
+                  ],
+                  "actual_start": [
+                    5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    5000.0,
+                    14000.0
+                  ],
+                  "native_start": [
+                    5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    5000.0,
+                    14000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    13000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    13000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 4,
+                  "source_indices": [
+                    4
+                  ],
+                  "actual_start": [
+                    15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    19000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    19000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 5,
+                  "source_indices": [
+                    5
+                  ],
+                  "actual_start": [
+                    15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    15000.000000000002,
+                    15000.0
+                  ],
+                  "native_start": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 1.8189894035458565e-12
+                },
+                {
+                  "group_id": 6,
+                  "source_indices": [
+                    6
+                  ],
+                  "actual_start": [
+                    15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    11325.697594687928,
+                    12000.16605982334
+                  ],
+                  "native_start": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    11326.0,
+                    12000.0
+                  ],
+                  "max_coordinate_error_mm": 0.3024053120716417
+                },
+                {
+                  "group_id": 7,
+                  "source_indices": [
+                    7
+                  ],
+                  "actual_start": [
+                    15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    19286.686139530753,
+                    18499.806263539438
+                  ],
+                  "native_start": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    19286.0,
+                    18500.0
+                  ],
+                  "max_coordinate_error_mm": 0.6861395307532803
+                },
+                {
+                  "group_id": 8,
+                  "source_indices": [
+                    8
+                  ],
+                  "actual_start": [
+                    15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    15000.0,
+                    14000.0
+                  ],
+                  "native_start": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    15000.0,
+                    14000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    25000,
+                    15000
+                  ],
+                  "actual_end": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    25000,
+                    15000
+                  ],
+                  "actual_end": [
+                    22000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    22000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 4,
+                  "source_indices": [
+                    4
+                  ],
+                  "actual_start": [
+                    25000,
+                    15000
+                  ],
+                  "actual_end": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 5,
+                  "source_indices": [
+                    5
+                  ],
+                  "actual_start": [
+                    25000,
+                    15000
+                  ],
+                  "actual_end": [
+                    30000.0,
+                    15000.0
+                  ],
+                  "native_start": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    30000.0,
+                    15000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 6,
+                  "source_indices": [
+                    6
+                  ],
+                  "actual_start": [
+                    25000,
+                    15000
+                  ],
+                  "actual_end": [
+                    21325.69759468793,
+                    12000.16605982334
+                  ],
+                  "native_start": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    21326.0,
+                    12000.0
+                  ],
+                  "max_coordinate_error_mm": 0.3024053120716417
+                },
+                {
+                  "group_id": 7,
+                  "source_indices": [
+                    7
+                  ],
+                  "actual_start": [
+                    25000,
+                    15000
+                  ],
+                  "actual_end": [
+                    29286.68613953075,
+                    18499.806263539438
+                  ],
+                  "native_start": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    29286.0,
+                    18500.0
+                  ],
+                  "max_coordinate_error_mm": 0.6861395307496423
+                },
+                {
+                  "group_id": 8,
+                  "source_indices": [
+                    8
+                  ],
+                  "actual_start": [
+                    25000,
+                    15000
+                  ],
+                  "actual_end": [
+                    25000.0,
+                    14000.0
+                  ],
+                  "native_start": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    25000.0,
+                    14000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                }
+              ]
+            },
+            "Sketch": {
+              "line_count": 5,
+              "maximum_coordinate_error_mm": 0.0,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": null,
+                  "source_indices": null,
+                  "actual_start": [
+                    -15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    -15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": null,
+                  "source_indices": null,
+                  "actual_start": [
+                    -5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": null,
+                  "source_indices": null,
+                  "actual_start": [
+                    5000,
+                    15000
+                  ],
+                  "actual_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    5000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": null,
+                  "source_indices": null,
+                  "actual_start": [
+                    15000,
+                    15000
+                  ],
+                  "actual_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    15000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": null,
+                  "source_indices": null,
+                  "actual_start": [
+                    25000,
+                    15000
+                  ],
+                  "actual_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    25000.0,
+                    15000.0
+                  ],
+                  "native_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "api-drawings",
+      "source_sha256": "4a494ead03cade750f670d50aa38661abda9b3e1f131d67f27a252982752c2a5",
+      "views": {
+        "plan": {
+          "native_dxf_sha256": "e6e8b3a94340afc4e76ce96be72c68a3ac2aa27878460996f522f526e180f088",
+          "layers": {
+            "Shots": {
+              "line_count": 2,
+              "maximum_coordinate_error_mm": 0.0,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": 0,
+                  "source_indices": [
+                    0
+                  ],
+                  "actual_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "native_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 1,
+                  "source_indices": [
+                    1
+                  ],
+                  "actual_start": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "actual_end": [
+                    10000.0,
+                    -10000.0
+                  ],
+                  "native_start": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "native_end": [
+                    10000.0,
+                    -10000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                }
+              ]
+            },
+            "XSect": {
+              "line_count": 0,
+              "maximum_coordinate_error_mm": 0,
+              "all_coordinates_within_tolerance": true,
+              "lines": []
+            },
+            "Sketch": {
+              "line_count": 2,
+              "maximum_coordinate_error_mm": 0.0,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": null,
+                  "source_indices": null,
+                  "actual_start": [
+                    -5000,
+                    -6000
+                  ],
+                  "actual_end": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    -6000.0
+                  ],
+                  "native_end": [
+                    0.0,
+                    -10000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": null,
+                  "source_indices": null,
+                  "actual_start": [
+                    5000,
+                    -6000
+                  ],
+                  "actual_end": [
+                    10000.0,
+                    -10000.0
+                  ],
+                  "native_start": [
+                    5000.0,
+                    -6000.0
+                  ],
+                  "native_end": [
+                    10000.0,
+                    -10000.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                }
+              ]
+            }
+          }
+        },
+        "side": {
+          "native_dxf_sha256": "c60464449372449baab896f0b97a4e8e6e5993786059560c4ab88536f6303842",
+          "layers": {
+            "Shots": {
+              "line_count": 2,
+              "maximum_coordinate_error_mm": 0.0,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": 0,
+                  "source_indices": [
+                    0
+                  ],
+                  "actual_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": 1,
+                  "source_indices": [
+                    1
+                  ],
+                  "actual_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    0.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    0.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                }
+              ]
+            },
+            "XSect": {
+              "line_count": 0,
+              "maximum_coordinate_error_mm": 0,
+              "all_coordinates_within_tolerance": true,
+              "lines": []
+            },
+            "Sketch": {
+              "line_count": 2,
+              "maximum_coordinate_error_mm": 0.0,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": null,
+                  "source_indices": null,
+                  "actual_start": [
+                    -5000,
+                    6000
+                  ],
+                  "actual_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    -5000.0,
+                    6000.0
+                  ],
+                  "native_end": [
+                    10000.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                },
+                {
+                  "group_id": null,
+                  "source_indices": null,
+                  "actual_start": [
+                    5000,
+                    6000
+                  ],
+                  "actual_end": [
+                    0.0,
+                    -0.0
+                  ],
+                  "native_start": [
+                    5000.0,
+                    6000.0
+                  ],
+                  "native_end": [
+                    0.0,
+                    -0.0
+                  ],
+                  "max_coordinate_error_mm": 0.0
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "shadow",
+      "source_sha256": "a6554019285dcc50feadb672867c40e5bef0686551060da1670b49cde0bcfb4c",
+      "views": {
+        "plan": {
+          "native_dxf_sha256": "f7af47fafcea84971fe9b03b18ed79a9bd1e24f3e192cbd1110a87c88585eabe",
+          "layers": {
+            "Shots": {
+              "line_count": 30,
+              "maximum_coordinate_error_mm": 1.7972894155955146,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": 1,
+                  "source_indices": [
+                    1
+                  ],
+                  "actual_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    4335.693563135529,
+                    607.0719906100479
+                  ],
+                  "native_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    4336.0,
+                    607.0
+                  ],
+                  "max_coordinate_error_mm": 0.3064368644709248
+                },
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    4335.693563135529,
+                    607.0719906100479
+                  ],
+                  "actual_end": [
+                    7187.8956253707875,
+                    -2875.8299434277533
+                  ],
+                  "native_start": [
+                    4336.0,
+                    607.0
+                  ],
+                  "native_end": [
+                    7188.0,
+                    -2876.0
+                  ],
+                  "max_coordinate_error_mm": 0.3064368644709248
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    7187.8956253707875,
+                    -2875.8299434277533
+                  ],
+                  "actual_end": [
+                    7798.792022505071,
+                    -2314.308142677973
+                  ],
+                  "native_start": [
+                    7188.0,
+                    -2876.0
+                  ],
+                  "native_end": [
+                    7799.0,
+                    -2314.0
+                  ],
+                  "max_coordinate_error_mm": 0.3081426779731373
+                },
+                {
+                  "group_id": 4,
+                  "source_indices": [
+                    4
+                  ],
+                  "actual_start": [
+                    7798.792022505071,
+                    -2314.308142677973
+                  ],
+                  "actual_end": [
+                    8555.859901797672,
+                    -2592.171277628615
+                  ],
+                  "native_start": [
+                    7799.0,
+                    -2314.0
+                  ],
+                  "native_end": [
+                    8556.0,
+                    -2592.0
+                  ],
+                  "max_coordinate_error_mm": 0.3081426779731373
+                },
+                {
+                  "group_id": 5,
+                  "source_indices": [
+                    5
+                  ],
+                  "actual_start": [
+                    8555.859901797672,
+                    -2592.171277628615
+                  ],
+                  "actual_end": [
+                    13357.764949248529,
+                    -5842.824999522345
+                  ],
+                  "native_start": [
+                    8556.0,
+                    -2592.0
+                  ],
+                  "native_end": [
+                    13358.0,
+                    -5843.0
+                  ],
+                  "max_coordinate_error_mm": 0.2350507514711353
+                },
+                {
+                  "group_id": 6,
+                  "source_indices": [
+                    6
+                  ],
+                  "actual_start": [
+                    13357.764949248529,
+                    -5842.824999522345
+                  ],
+                  "actual_end": [
+                    13132.38168874642,
+                    -7715.991993866989
+                  ],
+                  "native_start": [
+                    13358.0,
+                    -5843.0
+                  ],
+                  "native_end": [
+                    13133.0,
+                    -7716.0
+                  ],
+                  "max_coordinate_error_mm": 0.6183112535800319
+                },
+                {
+                  "group_id": 7,
+                  "source_indices": [
+                    7
+                  ],
+                  "actual_start": [
+                    13132.38168874642,
+                    -7715.991993866989
+                  ],
+                  "actual_end": [
+                    15041.232373211824,
+                    -7872.447420636613
+                  ],
+                  "native_start": [
+                    13133.0,
+                    -7716.0
+                  ],
+                  "native_end": [
+                    15042.0,
+                    -7872.0
+                  ],
+                  "max_coordinate_error_mm": 0.7676267881761305
+                },
+                {
+                  "group_id": 8,
+                  "source_indices": [
+                    8
+                  ],
+                  "actual_start": [
+                    15041.232373211824,
+                    -7872.447420636613
+                  ],
+                  "actual_end": [
+                    16738.583812861114,
+                    -9647.377659915344
+                  ],
+                  "native_start": [
+                    15042.0,
+                    -7872.0
+                  ],
+                  "native_end": [
+                    16739.0,
+                    -9647.0
+                  ],
+                  "max_coordinate_error_mm": 0.7676267881761305
+                },
+                {
+                  "group_id": 9,
+                  "source_indices": [
+                    9
+                  ],
+                  "actual_start": [
+                    16738.583812861114,
+                    -9647.377659915344
+                  ],
+                  "actual_end": [
+                    17414.759185659423,
+                    -9674.425140212048
+                  ],
+                  "native_start": [
+                    16739.0,
+                    -9647.0
+                  ],
+                  "native_end": [
+                    17415.0,
+                    -9674.0
+                  ],
+                  "max_coordinate_error_mm": 0.4251402120480634
+                },
+                {
+                  "group_id": 10,
+                  "source_indices": [
+                    10
+                  ],
+                  "actual_start": [
+                    17414.759185659423,
+                    -9674.425140212048
+                  ],
+                  "actual_end": [
+                    18648.19917009524,
+                    -12840.318853958768
+                  ],
+                  "native_start": [
+                    17415.0,
+                    -9674.0
+                  ],
+                  "native_end": [
+                    18649.0,
+                    -12840.0
+                  ],
+                  "max_coordinate_error_mm": 0.8008299047614855
+                },
+                {
+                  "group_id": 11,
+                  "source_indices": [
+                    11
+                  ],
+                  "actual_start": [
+                    17414.759185659423,
+                    -9674.425140212048
+                  ],
+                  "actual_end": [
+                    18582.167975206386,
+                    -11546.830364550988
+                  ],
+                  "native_start": [
+                    17415.0,
+                    -9674.0
+                  ],
+                  "native_end": [
+                    18583.0,
+                    -11547.0
+                  ],
+                  "max_coordinate_error_mm": 0.8320247936135274
+                },
+                {
+                  "group_id": 12,
+                  "source_indices": [
+                    12
+                  ],
+                  "actual_start": [
+                    18582.167975206386,
+                    -11546.830364550988
+                  ],
+                  "actual_end": [
+                    19748.06279328577,
+                    -9950.304181516252
+                  ],
+                  "native_start": [
+                    18583.0,
+                    -11547.0
+                  ],
+                  "native_end": [
+                    19749.0,
+                    -9950.0
+                  ],
+                  "max_coordinate_error_mm": 0.9372067142285232
+                },
+                {
+                  "group_id": 13,
+                  "source_indices": [
+                    13
+                  ],
+                  "actual_start": [
+                    19748.06279328577,
+                    -9950.304181516252
+                  ],
+                  "actual_end": [
+                    18171.78971449707,
+                    -7517.715845445901
+                  ],
+                  "native_start": [
+                    19749.0,
+                    -9950.0
+                  ],
+                  "native_end": [
+                    18173.0,
+                    -7517.0
+                  ],
+                  "max_coordinate_error_mm": 1.2102855029297643
+                },
+                {
+                  "group_id": 14,
+                  "source_indices": [
+                    14
+                  ],
+                  "actual_start": [
+                    18171.78971449707,
+                    -7517.715845445901
+                  ],
+                  "actual_end": [
+                    15950.202710584404,
+                    -7198.833443924285
+                  ],
+                  "native_start": [
+                    18173.0,
+                    -7517.0
+                  ],
+                  "native_end": [
+                    15952.0,
+                    -7198.0
+                  ],
+                  "max_coordinate_error_mm": 1.7972894155955146
+                },
+                {
+                  "group_id": 15,
+                  "source_indices": [
+                    15
+                  ],
+                  "actual_start": [
+                    18171.78971449707,
+                    -7517.715845445901
+                  ],
+                  "actual_end": [
+                    17749.8804836732,
+                    -8947.458629145065
+                  ],
+                  "native_start": [
+                    18173.0,
+                    -7517.0
+                  ],
+                  "native_end": [
+                    17751.0,
+                    -8947.0
+                  ],
+                  "max_coordinate_error_mm": 1.2102855029297643
+                },
+                {
+                  "group_id": 16,
+                  "source_indices": [
+                    16
+                  ],
+                  "actual_start": [
+                    17749.8804836732,
+                    -8947.458629145065
+                  ],
+                  "actual_end": [
+                    14866.323326277503,
+                    -8194.236755342214
+                  ],
+                  "native_start": [
+                    17751.0,
+                    -8947.0
+                  ],
+                  "native_end": [
+                    14868.0,
+                    -8194.0
+                  ],
+                  "max_coordinate_error_mm": 1.6766737224970711
+                },
+                {
+                  "group_id": 17,
+                  "source_indices": [
+                    17
+                  ],
+                  "actual_start": [
+                    19748.06279328577,
+                    -9950.304181516252
+                  ],
+                  "actual_end": [
+                    21224.243461909817,
+                    -9976.206289311469
+                  ],
+                  "native_start": [
+                    19749.0,
+                    -9950.0
+                  ],
+                  "native_end": [
+                    21225.0,
+                    -9976.0
+                  ],
+                  "max_coordinate_error_mm": 0.9372067142285232
+                },
+                {
+                  "group_id": 18,
+                  "source_indices": [
+                    18
+                  ],
+                  "actual_start": [
+                    21224.243461909817,
+                    -9976.206289311469
+                  ],
+                  "actual_end": [
+                    22611.411765718458,
+                    -8033.211076353133
+                  ],
+                  "native_start": [
+                    21225.0,
+                    -9976.0
+                  ],
+                  "native_end": [
+                    22612.0,
+                    -8032.999999999999
+                  ],
+                  "max_coordinate_error_mm": 0.7565380901833123
+                },
+                {
+                  "group_id": 19,
+                  "source_indices": [
+                    19
+                  ],
+                  "actual_start": [
+                    22611.411765718458,
+                    -8033.211076353133
+                  ],
+                  "actual_end": [
+                    24331.311371075724,
+                    -7361.614121906363
+                  ],
+                  "native_start": [
+                    22612.0,
+                    -8032.999999999999
+                  ],
+                  "native_end": [
+                    24332.0,
+                    -7362.0
+                  ],
+                  "max_coordinate_error_mm": 0.6886289242756902
+                },
+                {
+                  "group_id": 20,
+                  "source_indices": [
+                    20
+                  ],
+                  "actual_start": [
+                    24331.311371075724,
+                    -7361.614121906363
+                  ],
+                  "actual_end": [
+                    27146.94280500896,
+                    -10466.389574175726
+                  ],
+                  "native_start": [
+                    24332.0,
+                    -7362.0
+                  ],
+                  "native_end": [
+                    27147.0,
+                    -10467.0
+                  ],
+                  "max_coordinate_error_mm": 0.6886289242756902
+                },
+                {
+                  "group_id": 21,
+                  "source_indices": [
+                    21
+                  ],
+                  "actual_start": [
+                    19748.06279328577,
+                    -9950.304181516252
+                  ],
+                  "actual_end": [
+                    21715.42203144776,
+                    -12280.709043729208
+                  ],
+                  "native_start": [
+                    19749.0,
+                    -9950.0
+                  ],
+                  "native_end": [
+                    21716.0,
+                    -12281.0
+                  ],
+                  "max_coordinate_error_mm": 0.9372067142285232
+                },
+                {
+                  "group_id": 22,
+                  "source_indices": [
+                    22
+                  ],
+                  "actual_start": [
+                    21715.42203144776,
+                    -12280.709043729208
+                  ],
+                  "actual_end": [
+                    25672.911568239397,
+                    -9625.95884807274
+                  ],
+                  "native_start": [
+                    21716.0,
+                    -12281.0
+                  ],
+                  "native_end": [
+                    25673.0,
+                    -9626.0
+                  ],
+                  "max_coordinate_error_mm": 0.5779685522393265
+                },
+                {
+                  "group_id": 23,
+                  "source_indices": [
+                    23
+                  ],
+                  "actual_start": [
+                    25672.911568239397,
+                    -9625.95884807274
+                  ],
+                  "actual_end": [
+                    25307.381902629455,
+                    -8851.382785138972
+                  ],
+                  "native_start": [
+                    25673.0,
+                    -9626.0
+                  ],
+                  "native_end": [
+                    25308.0,
+                    -8852.0
+                  ],
+                  "max_coordinate_error_mm": 0.6180973705450015
+                },
+                {
+                  "group_id": 24,
+                  "source_indices": [
+                    24
+                  ],
+                  "actual_start": [
+                    25307.381902629455,
+                    -8851.382785138972
+                  ],
+                  "actual_end": [
+                    26760.34324963386,
+                    -7237.436064717575
+                  ],
+                  "native_start": [
+                    25308.0,
+                    -8852.0
+                  ],
+                  "native_end": [
+                    26761.0,
+                    -7238.0
+                  ],
+                  "max_coordinate_error_mm": 0.6567503661390219
+                },
+                {
+                  "group_id": 25,
+                  "source_indices": [
+                    25
+                  ],
+                  "actual_start": [
+                    26760.34324963386,
+                    -7237.436064717575
+                  ],
+                  "actual_end": [
+                    28514.92588761581,
+                    -6699.857492512027
+                  ],
+                  "native_start": [
+                    26761.0,
+                    -7238.0
+                  ],
+                  "native_end": [
+                    28515.0,
+                    -6700.0
+                  ],
+                  "max_coordinate_error_mm": 0.6567503661390219
+                },
+                {
+                  "group_id": 26,
+                  "source_indices": [
+                    26
+                  ],
+                  "actual_start": [
+                    28514.92588761581,
+                    -6699.857492512027
+                  ],
+                  "actual_end": [
+                    30189.212463371106,
+                    -6931.014064413619
+                  ],
+                  "native_start": [
+                    28515.0,
+                    -6700.0
+                  ],
+                  "native_end": [
+                    30189.0,
+                    -6931.0
+                  ],
+                  "max_coordinate_error_mm": 0.21246337110642344
+                },
+                {
+                  "group_id": 27,
+                  "source_indices": [
+                    27
+                  ],
+                  "actual_start": [
+                    30189.212463371106,
+                    -6931.014064413619
+                  ],
+                  "actual_end": [
+                    30066.25026206955,
+                    -4266.496407124808
+                  ],
+                  "native_start": [
+                    30189.0,
+                    -6931.0
+                  ],
+                  "native_end": [
+                    30066.0,
+                    -4267.0
+                  ],
+                  "max_coordinate_error_mm": 0.5035928751922256
+                },
+                {
+                  "group_id": 28,
+                  "source_indices": [
+                    28
+                  ],
+                  "actual_start": [
+                    30066.25026206955,
+                    -4266.496407124808
+                  ],
+                  "actual_end": [
+                    32953.786408301356,
+                    -487.15661139445365
+                  ],
+                  "native_start": [
+                    30066.0,
+                    -4267.0
+                  ],
+                  "native_end": [
+                    32953.0,
+                    -488.0
+                  ],
+                  "max_coordinate_error_mm": 0.8433886055463518
+                },
+                {
+                  "group_id": 29,
+                  "source_indices": [
+                    29
+                  ],
+                  "actual_start": [
+                    32953.786408301356,
+                    -487.15661139445365
+                  ],
+                  "actual_end": [
+                    37430.06733438554,
+                    -321.85568036352174
+                  ],
+                  "native_start": [
+                    32953.0,
+                    -488.0
+                  ],
+                  "native_end": [
+                    37429.0,
+                    -323.0
+                  ],
+                  "max_coordinate_error_mm": 1.144319636478258
+                },
+                {
+                  "group_id": 30,
+                  "source_indices": [
+                    30
+                  ],
+                  "actual_start": [
+                    37430.06733438554,
+                    -321.85568036352174
+                  ],
+                  "actual_end": [
+                    40683.41390264491,
+                    2794.0740607250636
+                  ],
+                  "native_start": [
+                    37429.0,
+                    -323.0
+                  ],
+                  "native_end": [
+                    40682.0,
+                    2793.0
+                  ],
+                  "max_coordinate_error_mm": 1.4139026449120138
+                }
+              ]
+            },
+            "XSect": {
+              "line_count": 1,
+              "maximum_coordinate_error_mm": 0.9887179685028968,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": 31,
+                  "source_indices": [
+                    31
+                  ],
+                  "actual_start": [
+                    32953.786408301356,
+                    -487.15661139445365
+                  ],
+                  "actual_end": [
+                    29917.988717968503,
+                    -4090.165989351474
+                  ],
+                  "native_start": [
+                    32953.0,
+                    -488.0
+                  ],
+                  "native_end": [
+                    29917.0,
+                    -4091.0
+                  ],
+                  "max_coordinate_error_mm": 0.9887179685028968
+                }
+              ]
+            },
+            "Sketch": {
+              "line_count": 0,
+              "maximum_coordinate_error_mm": 0,
+              "all_coordinates_within_tolerance": true,
+              "lines": []
+            }
+          }
+        },
+        "side": {
+          "native_dxf_sha256": "f0780c305decac0f540542f254c3e7928d0df7743ba9db7061da905ec06b50eb",
+          "layers": {
+            "Shots": {
+              "line_count": 30,
+              "maximum_coordinate_error_mm": 2.4498574344979716,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": 1,
+                  "source_indices": [
+                    1
+                  ],
+                  "actual_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "actual_end": [
+                    4377.987559963836,
+                    2842.819889616979
+                  ],
+                  "native_start": [
+                    0.0,
+                    -0.0
+                  ],
+                  "native_end": [
+                    4378.0,
+                    2843.0
+                  ],
+                  "max_coordinate_error_mm": 0.18011038302120141
+                },
+                {
+                  "group_id": 2,
+                  "source_indices": [
+                    2
+                  ],
+                  "actual_start": [
+                    4377.987559963836,
+                    2842.819889616979
+                  ],
+                  "actual_end": [
+                    8879.727499803023,
+                    5967.677888639762
+                  ],
+                  "native_start": [
+                    4378.0,
+                    2843.0
+                  ],
+                  "native_end": [
+                    8880.0,
+                    5968.0
+                  ],
+                  "max_coordinate_error_mm": 0.32211136023761355
+                },
+                {
+                  "group_id": 3,
+                  "source_indices": [
+                    3
+                  ],
+                  "actual_start": [
+                    8879.727499803023,
+                    5967.677888639762
+                  ],
+                  "actual_end": [
+                    9709.487188356838,
+                    5987.649349554679
+                  ],
+                  "native_start": [
+                    8880.0,
+                    5968.0
+                  ],
+                  "native_end": [
+                    9710.0,
+                    5988.0
+                  ],
+                  "max_coordinate_error_mm": 0.5128116431624221
+                },
+                {
+                  "group_id": 4,
+                  "source_indices": [
+                    4
+                  ],
+                  "actual_start": [
+                    9709.487188356838,
+                    5987.649349554679
+                  ],
+                  "actual_end": [
+                    10515.936006088748,
+                    7817.85160733353
+                  ],
+                  "native_start": [
+                    9710.0,
+                    5988.0
+                  ],
+                  "native_end": [
+                    10516.0,
+                    7818.0
+                  ],
+                  "max_coordinate_error_mm": 0.5128116431624221
+                },
+                {
+                  "group_id": 5,
+                  "source_indices": [
+                    5
+                  ],
+                  "actual_start": [
+                    10515.936006088748,
+                    7817.85160733353
+                  ],
+                  "actual_end": [
+                    16314.646354467566,
+                    9010.058928064454
+                  ],
+                  "native_start": [
+                    10516.0,
+                    7818.0
+                  ],
+                  "native_end": [
+                    16315.000000000002,
+                    9010.0
+                  ],
+                  "max_coordinate_error_mm": 0.35364553243562113
+                },
+                {
+                  "group_id": 6,
+                  "source_indices": [
+                    6
+                  ],
+                  "actual_start": [
+                    16314.646354467566,
+                    9010.058928064454
+                  ],
+                  "actual_end": [
+                    18201.32391113079,
+                    10141.627660923086
+                  ],
+                  "native_start": [
+                    16315.000000000002,
+                    9010.0
+                  ],
+                  "native_end": [
+                    18202.0,
+                    10142.0
+                  ],
+                  "max_coordinate_error_mm": 0.6760888692115259
+                },
+                {
+                  "group_id": 7,
+                  "source_indices": [
+                    7
+                  ],
+                  "actual_start": [
+                    18201.32391113079,
+                    10141.627660923086
+                  ],
+                  "actual_end": [
+                    20116.575653369833,
+                    11637.19135527057
+                  ],
+                  "native_start": [
+                    18202.0,
+                    10142.0
+                  ],
+                  "native_end": [
+                    20117.0,
+                    11638.0
+                  ],
+                  "max_coordinate_error_mm": 0.8086447294299433
+                },
+                {
+                  "group_id": 8,
+                  "source_indices": [
+                    8
+                  ],
+                  "actual_start": [
+                    20116.575653369833,
+                    11637.19135527057
+                  ],
+                  "actual_end": [
+                    22572.46230873192,
+                    12782.931612054119
+                  ],
+                  "native_start": [
+                    20117.0,
+                    11638.0
+                  ],
+                  "native_end": [
+                    22573.0,
+                    12784.0
+                  ],
+                  "max_coordinate_error_mm": 1.0683879458811134
+                },
+                {
+                  "group_id": 9,
+                  "source_indices": [
+                    9
+                  ],
+                  "actual_start": [
+                    22572.46230873192,
+                    12782.931612054119
+                  ],
+                  "actual_end": [
+                    23249.178424225953,
+                    13585.773625796963
+                  ],
+                  "native_start": [
+                    22573.0,
+                    12784.0
+                  ],
+                  "native_end": [
+                    23250.0,
+                    13587.0
+                  ],
+                  "max_coordinate_error_mm": 1.2263742030372669
+                },
+                {
+                  "group_id": 10,
+                  "source_indices": [
+                    10
+                  ],
+                  "actual_start": [
+                    23249.178424225953,
+                    13585.773625796963
+                  ],
+                  "actual_end": [
+                    26646.862518126683,
+                    13460.303318337485
+                  ],
+                  "native_start": [
+                    23250.0,
+                    13587.0
+                  ],
+                  "native_end": [
+                    26648.0,
+                    13462.0
+                  ],
+                  "max_coordinate_error_mm": 1.6966816625154024
+                },
+                {
+                  "group_id": 11,
+                  "source_indices": [
+                    11
+                  ],
+                  "actual_start": [
+                    23249.178424225953,
+                    13585.773625796963
+                  ],
+                  "actual_end": [
+                    25455.701618312807,
+                    16289.72543638027
+                  ],
+                  "native_start": [
+                    23250.0,
+                    13587.0
+                  ],
+                  "native_end": [
+                    25457.0,
+                    16291.0
+                  ],
+                  "max_coordinate_error_mm": 1.2983816871928866
+                },
+                {
+                  "group_id": 12,
+                  "source_indices": [
+                    12
+                  ],
+                  "actual_start": [
+                    25455.701618312807,
+                    16289.72543638027
+                  ],
+                  "actual_end": [
+                    27432.620073874346,
+                    17405.383726386746
+                  ],
+                  "native_start": [
+                    25457.0,
+                    16291.0
+                  ],
+                  "native_end": [
+                    27434.0,
+                    17407.0
+                  ],
+                  "max_coordinate_error_mm": 1.6162736132537248
+                },
+                {
+                  "group_id": 13,
+                  "source_indices": [
+                    13
+                  ],
+                  "actual_start": [
+                    27432.620073874346,
+                    17405.383726386746
+                  ],
+                  "actual_end": [
+                    30331.26162323838,
+                    18761.067011044513
+                  ],
+                  "native_start": [
+                    27434.0,
+                    17407.0
+                  ],
+                  "native_end": [
+                    30333.0,
+                    18763.0
+                  ],
+                  "max_coordinate_error_mm": 1.9329889554865076
+                },
+                {
+                  "group_id": 14,
+                  "source_indices": [
+                    14
+                  ],
+                  "actual_start": [
+                    30331.26162323838,
+                    18761.067011044513
+                  ],
+                  "actual_end": [
+                    32575.617834260564,
+                    18258.20997564961
+                  ],
+                  "native_start": [
+                    30333.0,
+                    18763.0
+                  ],
+                  "native_end": [
+                    32577.0,
+                    18260.0
+                  ],
+                  "max_coordinate_error_mm": 1.9329889554865076
+                },
+                {
+                  "group_id": 15,
+                  "source_indices": [
+                    15
+                  ],
+                  "actual_start": [
+                    30331.26162323838,
+                    18761.067011044513
+                  ],
+                  "actual_end": [
+                    31821.95670493491,
+                    22081.824179734474
+                  ],
+                  "native_start": [
+                    30333.0,
+                    18763.0
+                  ],
+                  "native_end": [
+                    31824.0,
+                    22084.0
+                  ],
+                  "max_coordinate_error_mm": 2.1758202655255445
+                },
+                {
+                  "group_id": 16,
+                  "source_indices": [
+                    16
+                  ],
+                  "actual_start": [
+                    31821.95670493491,
+                    22081.824179734474
+                  ],
+                  "actual_end": [
+                    34802.26626455167,
+                    21304.550142565502
+                  ],
+                  "native_start": [
+                    31824.0,
+                    22084.0
+                  ],
+                  "native_end": [
+                    34804.0,
+                    21307.0
+                  ],
+                  "max_coordinate_error_mm": 2.4498574344979716
+                },
+                {
+                  "group_id": 17,
+                  "source_indices": [
+                    17
+                  ],
+                  "actual_start": [
+                    27432.620073874346,
+                    17405.383726386746
+                  ],
+                  "actual_end": [
+                    28909.02797334101,
+                    18047.504987826072
+                  ],
+                  "native_start": [
+                    27434.0,
+                    17407.0
+                  ],
+                  "native_end": [
+                    28910.0,
+                    18049.0
+                  ],
+                  "max_coordinate_error_mm": 1.6162736132537248
+                },
+                {
+                  "group_id": 18,
+                  "source_indices": [
+                    18
+                  ],
+                  "actual_start": [
+                    28909.02797334101,
+                    18047.504987826072
+                  ],
+                  "actual_end": [
+                    31296.383476962194,
+                    17305.525406348494
+                  ],
+                  "native_start": [
+                    28910.0,
+                    18049.0
+                  ],
+                  "native_end": [
+                    31297.0,
+                    17307.0
+                  ],
+                  "max_coordinate_error_mm": 1.4950121739275346
+                },
+                {
+                  "group_id": 19,
+                  "source_indices": [
+                    19
+                  ],
+                  "actual_start": [
+                    31296.383476962194,
+                    17305.525406348494
+                  ],
+                  "actual_end": [
+                    33142.75752404211,
+                    16647.87589614588
+                  ],
+                  "native_start": [
+                    31297.0,
+                    17307.0
+                  ],
+                  "native_end": [
+                    33143.0,
+                    16649.0
+                  ],
+                  "max_coordinate_error_mm": 1.4745936515064386
+                },
+                {
+                  "group_id": 20,
+                  "source_indices": [
+                    20
+                  ],
+                  "actual_start": [
+                    33142.75752404211,
+                    16647.87589614588
+                  ],
+                  "actual_end": [
+                    37334.10706574909,
+                    15308.9998678174
+                  ],
+                  "native_start": [
+                    33143.0,
+                    16649.0
+                  ],
+                  "native_end": [
+                    37334.0,
+                    15310.0
+                  ],
+                  "max_coordinate_error_mm": 1.124103854119312
+                },
+                {
+                  "group_id": 21,
+                  "source_indices": [
+                    21
+                  ],
+                  "actual_start": [
+                    27432.620073874346,
+                    17405.383726386746
+                  ],
+                  "actual_end": [
+                    30482.4215745965,
+                    17370.587085846397
+                  ],
+                  "native_start": [
+                    27434.0,
+                    17407.0
+                  ],
+                  "native_end": [
+                    30484.0,
+                    17372.0
+                  ],
+                  "max_coordinate_error_mm": 1.6162736132537248
+                },
+                {
+                  "group_id": 22,
+                  "source_indices": [
+                    22
+                  ],
+                  "actual_start": [
+                    30482.4215745965,
+                    17370.587085846397
+                  ],
+                  "actual_end": [
+                    35247.86195667593,
+                    25658.17889317177
+                  ],
+                  "native_start": [
+                    30484.0,
+                    17372.0
+                  ],
+                  "native_end": [
+                    35249.0,
+                    25660.0
+                  ],
+                  "max_coordinate_error_mm": 1.8211068282289489
+                },
+                {
+                  "group_id": 23,
+                  "source_indices": [
+                    23
+                  ],
+                  "actual_start": [
+                    35247.86195667593,
+                    25658.17889317177
+                  ],
+                  "actual_end": [
+                    36104.354813453436,
+                    26554.850508808795
+                  ],
+                  "native_start": [
+                    35249.0,
+                    25660.0
+                  ],
+                  "native_end": [
+                    36105.0,
+                    26557.0
+                  ],
+                  "max_coordinate_error_mm": 2.1494911912050156
+                },
+                {
+                  "group_id": 24,
+                  "source_indices": [
+                    24
+                  ],
+                  "actual_start": [
+                    36104.354813453436,
+                    26554.850508808795
+                  ],
+                  "actual_end": [
+                    38275.97188196433,
+                    29538.167338740233
+                  ],
+                  "native_start": [
+                    36105.0,
+                    26557.0
+                  ],
+                  "native_end": [
+                    38277.0,
+                    29540.0
+                  ],
+                  "max_coordinate_error_mm": 2.1494911912050156
+                },
+                {
+                  "group_id": 25,
+                  "source_indices": [
+                    25
+                  ],
+                  "actual_start": [
+                    38275.97188196433,
+                    29538.167338740233
+                  ],
+                  "actual_end": [
+                    40111.06069583745,
+                    32658.559789249906
+                  ],
+                  "native_start": [
+                    38277.0,
+                    29540.0
+                  ],
+                  "native_end": [
+                    40112.0,
+                    32659.999999999996
+                  ],
+                  "max_coordinate_error_mm": 1.8326612597666099
+                },
+                {
+                  "group_id": 26,
+                  "source_indices": [
+                    26
+                  ],
+                  "actual_start": [
+                    40111.06069583745,
+                    32658.559789249906
+                  ],
+                  "actual_end": [
+                    41801.22900061886,
+                    37491.5434537694
+                  ],
+                  "native_start": [
+                    40112.0,
+                    32659.999999999996
+                  ],
+                  "native_end": [
+                    41802.0,
+                    37493.0
+                  ],
+                  "max_coordinate_error_mm": 1.4565462305981782
+                },
+                {
+                  "group_id": 27,
+                  "source_indices": [
+                    27
+                  ],
+                  "actual_start": [
+                    41801.22900061886,
+                    37491.5434537694
+                  ],
+                  "actual_end": [
+                    44468.58237971073,
+                    38603.894994896225
+                  ],
+                  "native_start": [
+                    41802.0,
+                    37493.0
+                  ],
+                  "native_end": [
+                    44469.0,
+                    38605.0
+                  ],
+                  "max_coordinate_error_mm": 1.4565462305981782
+                },
+                {
+                  "group_id": 28,
+                  "source_indices": [
+                    28
+                  ],
+                  "actual_start": [
+                    44468.58237971073,
+                    38603.894994896225
+                  ],
+                  "actual_end": [
+                    49224.76512298147,
+                    50573.570249998746
+                  ],
+                  "native_start": [
+                    44469.0,
+                    38605.0
+                  ],
+                  "native_end": [
+                    49225.0,
+                    50575.0
+                  ],
+                  "max_coordinate_error_mm": 1.4297500012544333
+                },
+                {
+                  "group_id": 29,
+                  "source_indices": [
+                    29
+                  ],
+                  "actual_start": [
+                    49224.76512298147,
+                    50573.570249998746
+                  ],
+                  "actual_end": [
+                    53704.097140930666,
+                    53695.618403531174
+                  ],
+                  "native_start": [
+                    49225.0,
+                    50575.0
+                  ],
+                  "native_end": [
+                    53704.0,
+                    53697.0
+                  ],
+                  "max_coordinate_error_mm": 1.4297500012544333
+                },
+                {
+                  "group_id": 30,
+                  "source_indices": [
+                    30
+                  ],
+                  "actual_start": [
+                    53704.097140930666,
+                    53695.618403531174
+                  ],
+                  "actual_end": [
+                    58208.903690007486,
+                    60475.46485868004
+                  ],
+                  "native_start": [
+                    53704.0,
+                    53697.0
+                  ],
+                  "native_end": [
+                    58209.0,
+                    60477.0
+                  ],
+                  "max_coordinate_error_mm": 1.5351413199605304
+                }
+              ]
+            },
+            "XSect": {
+              "line_count": 1,
+              "maximum_coordinate_error_mm": 1.8291512685609632,
+              "all_coordinates_within_tolerance": true,
+              "lines": [
+                {
+                  "group_id": 31,
+                  "source_indices": [
+                    31
+                  ],
+                  "actual_start": [
+                    49224.76512298147,
+                    50573.570249998746
+                  ],
+                  "actual_end": [
+                    44518.686004879,
+                    45601.17084873144
+                  ],
+                  "native_start": [
+                    49225.0,
+                    50575.0
+                  ],
+                  "native_end": [
+                    44519.0,
+                    45603.0
+                  ],
+                  "max_coordinate_error_mm": 1.8291512685609632
+                }
+              ]
+            },
+            "Sketch": {
+              "line_count": 0,
+              "maximum_coordinate_error_mm": 0,
+              "all_coordinates_within_tolerance": true,
+              "lines": []
+            }
+          }
+        }
+      }
+    }
+  ],
+  "projection_module_sha256": "35a97a834956c0119395a835d83e4fd28ac6da9928dd69b7f74ada75be83c3db",
+  "projection_tests_sha256": "18e90454adb2934cae411002e02c97ec4c8a48a2d90270f421a93710d31b98f8",
+  "tests": {
+    "command": "uv run pytest tests/test_pockettopo_projection.py",
+    "passed": 29,
+    "coverage_statements": 156,
+    "coverage_missing_statements": 0,
+    "coverage_branches": 60,
+    "coverage_missing_branches": 0
+  },
+  "limits": {
+    "maximum_total_xsection_splay_lines_both_views": 100000,
+    "overflow": "ValueError: xsection_projection_limit_exceeded: N",
+    "enforced_before_vector_construction": true
+  },
+  "mixed_flip": {
+    "representative": "first_source_reading",
+    "side_direction_status": "unconfirmed",
+    "diagnostic": "mixed_flip_first_source_reading",
+    "source_flags_preserved": true
+  }
+}
