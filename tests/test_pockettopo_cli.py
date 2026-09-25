@@ -7,6 +7,7 @@ import json
 import os
 import runpy
 import shutil
+import struct
 import subprocess
 import sys
 from pathlib import Path
@@ -161,6 +162,62 @@ def test_convert_reports_absolute_package_paths_and_completion_status(
     else:
         assert "INCOMPLETE: package saved" in captured.err
         assert "conversion-report.json" in captured.err
+
+
+def test_convert_completes_when_anonymous_splay_endpoint_coincides_with_named_station(
+    tmp_path, capsys
+):
+    renderer = os.environ.get("RESVG") or shutil.which("resvg")
+    available = renderer and shutil.which("cavern") and shutil.which("dump3d")
+    if not available:
+        if os.environ.get("JKTZ_REQUIRE_CAVERN") == os.environ.get("JKTZ_REQUIRE_RESVG") == "1":
+            pytest.fail("Full CLI conversion requires resvg, cavern and dump3d")
+        pytest.skip("Full CLI conversion requires resvg, cavern and dump3d")
+
+    station_zero, station_one, anonymous = -2147483647, -2147483646, -2147483648
+    # The southward splay from station 1 ends at station 0, which also owns two
+    # splays. Its coincident endpoint must not consume either of their anchors.
+    measurements = (
+        (station_zero, station_one, 1000, 0),
+        (station_zero, anonymous, 2000, 16384),
+        (station_one, anonymous, 1000, -32768),
+        (station_zero, anonymous, 2000, -16384),
+    )
+    mapping = struct.pack("<iii", 0, 0, 500)
+    data = (
+        b"Top\x03"
+        + struct.pack("<i", 1)
+        + struct.pack("<qBh", 0, 0, 0)  # One trip, empty comment, explicit zero declination.
+        + struct.pack("<i", len(measurements))
+        + b"".join(
+            struct.pack("<iiihhBBh", start, end, distance, azimuth, 0, 0, 0, 0)
+            for start, end, distance, azimuth in measurements
+        )
+        + struct.pack("<i", 0)  # No reference coordinates.
+        + mapping
+        + mapping
+        + b"\0"
+        + mapping
+        + b"\0"
+    )
+    source = tmp_path / "coincident-splay.top"
+    source.write_bytes(data)
+    output = tmp_path / "package"
+    exit_code = pockettopo.main(
+        ["convert", str(source), "--output", str(output), "--resvg", renderer]
+    )
+    captured = capsys.readouterr()
+    assert exit_code == 0, captured.err
+    assert captured.err == ""
+    report = json.loads((output / "conversion-report.json").read_text(encoding="utf-8"))
+    assert report["completeness"]["conversion_complete"] is True
+    assert report["completeness"]["held_shots"] == 0
+    assert report["package"]["drawing_notices"] == []
+    for kind in ("srv", "svx"):
+        compiled = report["exports"]["validation"]["formats"][kind]
+        assert compiled["complete"] is True
+        assert compiled["checks"]["legs"]["compiled_splays"] == 3
+        assert compiled["checks"]["legs"]["splay_anchors_complete"] is True
 
 
 @pytest.mark.parametrize(

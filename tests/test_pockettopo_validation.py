@@ -7,6 +7,7 @@ import os
 import shutil
 import struct
 import subprocess
+from itertools import permutations, product
 from pathlib import Path
 
 import pytest
@@ -14,6 +15,50 @@ import pytest
 from jktz.pockettopo import SurveyExport, compilation, export_surveys
 
 CASES = Path(__file__).resolve().parents[1] / "doc/pockettopo/evidence/p01/cases"
+
+
+def _anchor_geometry(capacities, edges):
+    expected = {
+        "names": {index: str(index) for index in range(len(capacities))},
+        "groups": [
+            {"kind": "splay", "from_raw": index}
+            for index, count in enumerate(capacities)
+            for _ in range(count)
+        ],
+    }
+    compiled = {
+        "nodes": {str(index): (index, 0, 0) for index in range(len(capacities))},
+        "legs": [{"from": (start, 0, 0), "to": (end, 0, 0), "splay": True} for start, end in edges],
+    }
+    return expected, compiled
+
+
+def test_splay_anchors_with_coincident_endpoints_ignore_order_and_direction():
+    # Two splays start at 0; the one starting at 1 ends at 0's coordinates.
+    edges = ((0, 2), (1, 0), (0, -2))
+    for ordered in permutations(edges):
+        for reverse in product((False, True), repeat=3):
+            directed = [edge[::-1] if flip else edge for edge, flip in zip(ordered, reverse)]
+            assert compilation._splay_anchors(*_anchor_geometry((2, 1), directed))
+
+
+@pytest.mark.parametrize(
+    "capacities,edges,complete",
+    [
+        ((1, 1, 1), ((0, 1), (1, 2), (0, 3)), True),
+        ((1, 1, 1), ((0, 1), (1, 2), (2, 0)), True),
+        ((1, 1, 1), ((0, 1), (0, 1), (0, 1)), False),
+        ((2,), ((0, 1), (0, 1)), True),
+        ((2,), ((0, 0), (0, 0)), True),
+        ((2,), ((0, 1),), False),
+        ((1,), ((0, 1), (0, 1)), False),
+        ((1, 1), ((0, 2), (0, 3)), False),
+        ((1, 1), ((0, 2), (3, 4)), False),
+        ((), (), True),
+    ],
+)
+def test_splay_anchor_capacity_and_connected_ambiguities(capacities, edges, complete):
+    assert compilation._splay_anchors(*_anchor_geometry(capacities, edges)) is complete
 
 
 def _export(*, kind="nonempty", repeated=False):

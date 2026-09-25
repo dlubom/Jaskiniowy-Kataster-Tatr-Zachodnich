@@ -133,6 +133,33 @@ def _named_edges(expected: dict, nodes: dict) -> list[dict]:
     ]
 
 
+def _assign_splay(
+    index: int, candidates: list[tuple], capacities: Counter, assigned: dict, owners: dict
+) -> bool:
+    """Find an augmenting path without trusting endpoint order or using recursion."""
+    pending = [index]
+    predecessors = {}
+    for current in pending:
+        for position in candidates[current]:
+            if position in predecessors:
+                continue
+            predecessors[position] = current
+            if len(assigned[position]) == capacities[position]:
+                pending.extend(assigned[position])
+                continue
+            # Reassign the whole path only after reaching an anchor with room.
+            while True:
+                previous = owners.get(current)
+                assigned[position].append(current)
+                owners[current] = position
+                if previous is None:
+                    return True
+                assigned[previous].remove(current)
+                position = previous
+                current = predecessors[position]
+    return False
+
+
 def _splay_anchors(expected: dict, compiled: dict) -> bool:
     anchors = Counter(
         compiled["nodes"][name]
@@ -141,14 +168,24 @@ def _splay_anchors(expected: dict, compiled: dict) -> bool:
         for name in (expected["names"][group["from_raw"]],)
         if name in compiled["nodes"]
     )
-    remaining = [leg for leg in compiled["legs"] if leg["splay"]]
-    for position, count in anchors.items():
-        matches = [leg for leg in remaining if position in (leg["from"], leg["to"])]
-        if len(matches) < count:
-            return False
-        for leg in matches[:count]:
-            remaining.remove(leg)
-    return not remaining
+    splays = [leg for leg in compiled["legs"] if leg["splay"]]
+    if sum(anchors.values()) != len(splays):
+        return False
+    # A splay tip can coincide with another named station after cm rounding.
+    # Match all splays to anchor capacities, allowing earlier choices to move.
+    # Keep leg indices distinct even for identical geometry; each leg has at
+    # most two candidates, without expanding anchors into capacity-many slots.
+    candidates = [
+        tuple(
+            position for position in dict.fromkeys((leg["from"], leg["to"])) if position in anchors
+        )
+        for leg in splays
+    ]
+    assigned = {position: [] for position in anchors}
+    owners = {}
+    return all(
+        _assign_splay(index, candidates, anchors, assigned, owners) for index in range(len(splays))
+    )
 
 
 def _leg_checks(expected: dict, compiled: dict) -> dict:
