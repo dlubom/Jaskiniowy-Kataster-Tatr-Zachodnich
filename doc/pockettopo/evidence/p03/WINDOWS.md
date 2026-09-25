@@ -47,5 +47,32 @@ raportami; nowy wynik przypięto do aktualnych hashy testów.
 
 Nieaktualne przebiegi `36138146777` i `36138766046` przerwano po odczytaniu
 błędu Windows; ich poprawne joby Linux nie stanowią dowodu przejścia całego CI.
-Końcowy przebieg poprawionej rewizji należy sprawdzić po pushu w PR #129.
+Końcowy przebieg poprawionej rewizji sprawdzono po pushu w PR #129;
+wynik jest opisany poniżej.
 P03 pozostaje zakończone; następny etap to P04.
+
+## Potwierdzenie CI poprawionej rewizji
+
+Przebieg [36139792618](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/actions/runs/36139792618)
+dla `ae545cd7a7aaee91bb4c6c1fe2219550f345f096` zakończył się sukcesem
+2026-09-25 o 13:19:20 UTC. Sprawdzono wszystkie pięć zadań, w tym wykonanie
+testów Windows, pełną walidację cavern/GDAL na obu systemach oraz budowę
+pakietu PR. Metadane z API i wyniki zapisano w [ci-validation.json](ci-validation.json).
+
+| Zadanie CI | Wynik |
+| --- | --- |
+| `python-tools` | 786 testów, 96,89% linii / 94,60% gałęzi; snapshot GPS zgodny |
+| `mutation-tests` | 1860/2090 (89,00%); każdy z dziewięciu modułów ≥81%, brak wyników niepełnych |
+| `validate (ubuntu-latest)` | Pełna walidacja zaliczona |
+| `validate (windows-latest)` | Pytest oraz pełna walidacja zaliczone |
+| `pr-release-package` | Pakiet PR zbudowany i opublikowany jako artefakt CI |
+
+Pobrany raport mutacji jest identyczny z wersjonowanym `mutation.json`.
+Hashe kodu, testów i konfiguracji odpowiadają `windows-portability.json`.
+Ten zapis zamyka wcześniejszą oczekującą kontrolę Windows i dotyczy wskazanego
+SHA; późniejszy commit dokumentacji ma osobny przebieg CI. Wynik nie oznacza
+ukończenia eksportów P04–P06.
+
+Podczas wznowienia wykonano niezależny przegląd matematyki, grupowania i raportu
+w zakresie `62047ee..ae545cd` względem PRD; nie znaleziono usterek wymagających
+poprawki w P03. Ponowny przebieg 190 testów P03 zakończył się sukcesem.

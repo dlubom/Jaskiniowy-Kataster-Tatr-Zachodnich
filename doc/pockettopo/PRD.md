@@ -232,4 +232,8 @@ Kontrola CI ujawniła problemy testów na Windows: zbyt długie identyfikatory
 parametrów pytest i zależność od domyślnego kodowania przy odczycie JSON.
 Dodano krótkie identyfikatory, jawne UTF-8 i regresję cp1252; aktualnie
 786 testów (190 P03). Kod produkcyjny i wejścia są niezmienione.
-[Dowody i wyniki](evidence/p03/WINDOWS.md). Następny etap nadal P04.
+[Dowody i wyniki](evidence/p03/WINDOWS.md). Końcowe CI dla poprawionej rewizji
+`ae545cd7a7aaee91bb4c6c1fe2219550f345f096` zakończyło się sukcesem:
+jakość Pythona, mutacje, walidacja Linux i Windows oraz pakiet PR — pięć zadań.
+[Zapis weryfikacji CI](evidence/p03/ci-validation.json) zamyka kontrolę po
+poprawkach Windows. Następny etap nadal P04.

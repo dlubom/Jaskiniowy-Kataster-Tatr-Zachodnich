@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-09-25T13:29:02.894859+00:00",
+  "scope": "P03 completion after Windows portability fixes; P04 not started",
+  "source_head_sha": "ae545cd7a7aaee91bb4c6c1fe2219550f345f096",
+  "workflow": {
+    "databaseId": 36139792618,
+    "url": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/actions/runs/36139792618",
+    "createdAt": "2026-09-25T13:15:16Z",
+    "updatedAt": "2026-09-25T13:19:20Z",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "jobs": [
+    {
+      "name": "mutation-tests",
+      "url": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/actions/runs/36139792618/job/108086524744",
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-09-25T13:17:51Z",
+      "checks": [
+        {
+          "name": "Run mutation gate",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "validate (ubuntu-latest)",
+      "url": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/actions/runs/36139792618/job/108086525167",
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-09-25T13:16:10Z",
+      "checks": [
+        {
+          "name": "Run full validation",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "validate (windows-latest)",
+      "url": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/actions/runs/36139792618/job/108086525213",
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-09-25T13:17:07Z",
+      "checks": [
+        {
+          "name": "Run Pytest (Windows)",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run full validation",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "python-tools",
+      "url": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/actions/runs/36139792618/job/108086525267",
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-09-25T13:15:47Z",
+      "checks": [
+        {
+          "name": "Run Python quality gate",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check rendered entrance snapshot",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "pr-release-package",
+      "url": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/actions/runs/36139792618/job/108087403830",
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-09-25T13:19:19Z",
+      "checks": [
+        {
+          "name": "Build PR release ZIP",
+          "conclusion": "success"
+        },
+        {
+          "name": "Upload PR release ZIP",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "quality_from_ci_log": {
+    "tests_passed": 786,
+    "line_percent_rounded": 96.89,
+    "branch_percent_rounded": 94.6
+  },
+  "mutation_from_ci_artifact": {
+    "killed": 1860,
+    "total": 2090,
+    "score": 88.99521531100478,
+    "minimum_module_score": 81.14285714285714,
+    "modules": [
+      {
+        "file": "src/jktz/metadata/io.py",
+        "killed": 33,
+        "total": 39,
+        "score": 84.61538461538461
+      },
+      {
+        "file": "src/jktz/metadata/raw.py",
+        "killed": 104,
+        "total": 114,
+        "score": 91.2280701754386
+      },
+      {
+        "file": "src/jktz/metadata/srv.py",
+        "killed": 303,
+        "total": 368,
+        "score": 82.33695652173913
+      },
+      {
+        "file": "src/jktz/entrances/render.py",
+        "killed": 284,
+        "total": 350,
+        "score": 81.14285714285714
+      },
+      {
+        "file": "src/jktz/validation/measurements.py",
+        "killed": 108,
+        "total": 114,
+        "score": 94.73684210526316
+      },
+      {
+        "file": "src/jktz/pockettopo/model.py",
+        "killed": 37,
+        "total": 37,
+        "score": 100.0
+      },
+      {
+        "file": "src/jktz/pockettopo/parser.py",
+        "killed": 635,
+        "total": 703,
+        "score": 90.3271692745377
+      },
+      {
+        "file": "src/jktz/pockettopo/averaging.py",
+        "killed": 173,
+        "total": 182,
+        "score": 95.05494505494505
+      },
+      {
+        "file": "src/jktz/pockettopo/grouping.py",
+        "killed": 183,
+        "total": 183,
+        "score": 100.0
+      }
+    ],
+    "failures": [],
+    "equals_committed_mutation_json": true,
+    "artifact_sha256": "f11393ba11da5ea55bbaf272f93308053f99f147dee0ab51d105791b942299ef"
+  },
+  "windows_portability_input_hashes_match": true,
+  "next_stage": "P04",
+  "limits": "CI certifies source_head_sha. A later documentation commit has its own checks; this is not evidence for P04-P06 exports."
+}

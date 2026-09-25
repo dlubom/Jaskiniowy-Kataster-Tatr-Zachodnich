@@ -17,7 +17,7 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Poprawiono
 
-- Testy PocketTopo na Windows: krótkie nazwy przypadków z dużymi tekstami oraz jawny odczyt wzorców JSON jako UTF-8, z regresją dla domyślnego cp1252.
+- Testy PocketTopo na Windows: krótkie nazwy przypadków z dużymi tekstami oraz jawny odczyt wzorców JSON jako UTF-8, z regresją dla domyślnego cp1252; zakończenie P03 potwierdzone pełnym CI na Linux i Windows.
 
 ## [v1.4.7] - 2026-09-25
 
