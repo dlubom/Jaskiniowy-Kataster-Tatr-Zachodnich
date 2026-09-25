@@ -1,3 +1,8 @@
 # Force LF for shell scripts — they run in Linux Docker containers
 *.sh text eol=lf
 
+# Frozen fixtures retain exact bytes on every platform (SHA256SUMS).
+tests/fixtures/pockettopo/** -text
+tests/fixtures/pockettopo/**/*.top binary
+tests/fixtures/pockettopo/**/*.dxf binary
+tests/fixtures/pockettopo/**/*.tsv binary

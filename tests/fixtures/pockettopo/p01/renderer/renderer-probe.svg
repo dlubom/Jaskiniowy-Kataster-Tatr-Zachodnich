@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320">
+  <title>P01 renderer probe: axes, seven colors, open strokes, single point</title>
+  <desc>Hand-authored renderer fixture, not a PocketTopo export. Screen x increases right, y down. Seven explicit sRGB colors; each open polyline has three vertices. The one-point stroke is represented by an explicit circle. No fonts or external resources.</desc>
+  <rect id="background" x="0" y="0" width="480" height="320" fill="#ffffff"/>
+  <g id="axes" fill="none" stroke="#000000" stroke-width="2">
+    <path id="x-axis" d="M 32 48 L 192 48 M 184 42 L 192 48 L 184 54"/>
+    <path id="y-axis" d="M 32 48 L 32 128 M 26 120 L 32 128 L 38 120"/>
+    <path id="letter-x" d="M 204 42 L 216 54 M 216 42 L 204 54"/>
+    <path id="letter-y" d="M 26 144 L 32 150 L 38 144 M 32 150 L 32 156"/>
+    <path id="scale-100-px" d="M 300 48 L 400 48 M 300 42 L 300 54 M 400 42 L 400 54"/>
+  </g>
+  <g id="sketch" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <polyline id="color-1-black" points="72,104 96,80 120,104" stroke="#000000"/>
+    <polyline id="color-2-gray" points="144,104 168,80 192,104" stroke="#808080"/>
+    <polyline id="color-3-brown" points="216,104 240,80 264,104" stroke="#a52a2a"/>
+    <polyline id="color-4-blue" points="288,104 312,80 336,104" stroke="#0000ff"/>
+    <polyline id="color-5-red" points="360,104 384,80 408,104" stroke="#ff0000"/>
+    <polyline id="color-6-green" points="72,200 96,176 120,200" stroke="#008000"/>
+    <polyline id="color-7-orange" points="144,200 168,176 192,200" stroke="#ffa500"/>
+  </g>
+  <g id="single-point" fill="#0000ff">
+    <circle id="one-vertex" cx="300" cy="200" r="3"/>
+  </g>
+  <g id="extent-probes" fill="#000000">
+    <rect id="top-left" x="8" y="8" width="4" height="4"/>
+    <rect id="top-right" x="468" y="8" width="4" height="4"/>
+    <rect id="bottom-left" x="8" y="308" width="4" height="4"/>
+    <rect id="bottom-right" x="468" y="308" width="4" height="4"/>
+  </g>
+</svg>
