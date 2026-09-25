@@ -1,24 +1,26 @@
 # PocketTopo: konwersja pomiarów i ekstrakcja szkiców
 
-Stan: **2026-09-25 — research zakończony, implementacja konwertera przed nami**.
+Stan: **2026-09-25 — P01 zakończone, następny etap P02 (parser i model)**.
 Branch roboczy: `codex/pockettopo-convert`, początek: `a6c235c898eed57902a2d6ba18db60917e01faee`.
 
 ## Wznowienie po wyczyszczeniu kontekstu
 
 1. Przeczytaj `AGENTS.md`, ten PRD i sprawdź `git status` oraz bieżący branch.
-2. **Następne zadanie: P01 — przygotować małe wzorce w PocketTopo.** Dostęp do
-   aplikacji i natywny eksport już działają; nie powtarzaj researchu narzędzi.
-3. Przy P01 korzystaj z [instrukcji obsługi na macOS](POCKETTOPO_MACOS.md)
-   oraz [zapisanego przykładu Shadow](evidence/shadow/README.md).
-   Przy implementacji parsera przeczytaj [format v3](FORMAT_V3.md).
+2. **Następne zadanie: P02 — ścisły parser i model.** Nie powtarzaj researchu
+   narzędzi ani tworzenia wzorców P01.
+3. Przeczytaj [format v3](FORMAT_V3.md), [wyniki P01](evidence/p01/README.md)
+   i [oczekiwania dla każdego rekordu](evidence/p01/EXPECTATIONS.md).
+   Wzorce `cases/*/expected.json` są niezależne od przyszłego parsera.
+   Dostęp do aplikacji opisuje [instrukcja macOS](POCKETTOPO_MACOS.md).
 4. Po etapie aktualizuj tabelę postępu i dowody walidacji w repozytorium,
    aby kolejna sesja nie zależała od historii rozmowy ani plików w `/tmp`.
 
 Polecenie do wznowienia:
 
 > Kontynuuj na `codex/pockettopo-convert` według `doc/pockettopo/PRD.md`.
-> Wykonaj P01: małe, niezależne wzorce utworzone i wyeksportowane w PocketTopo.
-> Zachowaj oryginały, wyniki oraz dowody walidacji i zaktualizuj postęp w PRD.
+> Wykonaj P02: ścisły parser i model na podstawie FORMAT_V3.md oraz wzorców P01.
+> Zachowaj surowe wartości i niezależne oryginały, sprawdź błędy wejścia,
+> zapisz wyniki walidacji oraz postęp w PRD. Zakończ po P02.
 
 ## Cel i ustalone wybory
 
@@ -96,6 +98,10 @@ Włączenie do JKTZ wymaga ustalenia daty i polityki korekt. E/N/Z w `.top`
 nie określają CRS: nie zakładamy WGS84/UTM ani nie tworzymy aktywnych fixów
 bez wyjaśnienia układu. Zachowujemy źródłowe referencje i raportujemy ograniczenie.
 
+Ustalenie P01: surowa deklinacja `-32768` oznacza **tryb Auto**, a nie −180°.
+Zachowujemy ją i tryb oddzielnie. Natywne `Auto: 0.00` bez referencji nie
+upoważnia do przyjęcia jawnego zera ani automatycznego wyliczenia IGRF.
+
 ### Szkice
 
 - Zachowujemy każdy wierzchołek, kolor, kolejność, otwarte polilinie i pojedyncze
@@ -119,8 +125,8 @@ Proponowane komendy `uv run jktz-pockettopo inspect ...` i `convert ...`
 | Etap | Wynik i warunek zakończenia | Stan |
 | --- | --- | --- |
 | P00 Research i dostęp | Źródła, decyzje, natywny eksport Shadow i instrukcja wznowienia zapisane w repo | Gotowe |
-| P01 Wzorce aplikacji | Małe `.top`, natywne eksporty, manifesty i oczekiwania; rozstrzygnięcie końcowych 4 zer i najważniejszych pól binarnych | Następny |
-| P02 Parser i model | Ścisły odczyt wszystkich struktur; testy błędów, zakresów i niezależnych wzorców | Do zrobienia |
+| P01 Wzorce aplikacji | 6 małych `.top` (2 GUI, 4 natywny model/API), TXT/DXF, oczekiwania każdego pola, końcowe 4 zera i Auto; resvg sprawdzony na macOS/Linux | Gotowe — [dowody](evidence/p01/README.md) |
+| P02 Parser i model | Ścisły odczyt wszystkich struktur; testy błędów, zakresów i niezależnych wzorców | Następny |
 | P03 Średnie i raport | Grupy potwierdzonych powtórzeń, matematyka, ślad każdego rekordu i testy graniczne | Do zrobienia |
 | P04 SRV/SVX | Zachowanie semantyki, kompilacja obu formatów i porównanie geometrii; sprawdzenie w Walls | Do zrobienia |
 | P05 SVG/PNG | Oba widoki i warianty, XSection, warstwy, renderer bez GUI; kontrola punktów i obrazów | Do zrobienia |
@@ -159,7 +165,16 @@ Natywna próba Shadow: wszystkie 32 rekordy tekstowe porównane ze źródłem,
 liczności szkiców zgodne, źródło identyczne bajtowo. Pełny audyt współrzędnych
 DXF pozostaje do wykonania. Szczegóły i pliki: [dowód Shadow](evidence/shadow/README.md).
 
-Do rozstrzygnięcia w etapach: końcowe cztery zera poza opublikowanym schematem;
-szczegóły podkładu w pętlach/rozwinięciu i XSection; progi niejednoznaczności
-średniej; renderer PNG i format profilu metadanych dla aktywnego JKTZ.
+P01 rozstrzygnęło zakończenie: PocketTopo 1.372 zapisuje Int32 `0` po drugim
+rysunku, lecz jego czytnik ignoruje cały sufiks. Kontrakt P02 dopuszcza dokładnie
+EOF po schemacie albo dokładnie cztery zera; pozostałe sufiksy są błędem.
+[Dowód natywnego API](evidence/p01/NATIVE_API.md) opisuje również sentinel Auto.
+[Renderer resvg 0.48.1](evidence/p01/renderer/README.md) dał identyczne PNG na
+macOS i Linux; integracja w konwerterze/CI pozostaje P05/P06.
+
+Do rozstrzygnięcia w etapach: podkład w pętlach/rozgałęzieniach, ogólna projekcja
+XSection z domiarami, progi niejednoznaczności średniej, fonty/paleta rysunków
+oraz format profilu metadanych dla aktywnego JKTZ. Natywny DXF uśrednia własnym
+algorytmem i nie zastępuje kontraktu średnich P03. Pełny korpus 258 plików
+oraz audyt współrzędnych Shadow pozostają do wykonania w dalszych etapach.
 Nie deklarować pełnej zgodności przed spełnieniem kryteriów odbioru.

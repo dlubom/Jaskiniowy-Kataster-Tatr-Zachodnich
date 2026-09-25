@@ -144,3 +144,16 @@ Walidację liczb, geometrii i ograniczenia tej próby opisuje
 [README dowodu](evidence/shadow/README.md). Eksport aplikacji jest niezależnym
 materiałem porównawczym; zgodność liczności obiektów nie zastępuje porównania
 ich współrzędnych.
+
+## Uzupełnienie z P01
+
+[Wzorce P01](evidence/p01/README.md) zawierają także nowe pliki utworzone
+w GUI i przez [natywny model aplikacji](evidence/p01/NATIVE_API.md).
+Helper C# nie jest własnym writerem ani docelowym konwerterem.
+
+W widoku szkicu ponowne kliknięcie aktywnej ikony szkicu na dolnym pasku
+przełącza plan/sideview. Przed otwarciem menu po rysowaniu wybierz wskaźnik
+(strzałka przed paletą); aktywne narzędzie rysowania może przechwycić kliknięcia.
+Po Undo sprawdź zapisany plik i eksport: samo zniknięcie punktu z widoku nie
+stanowi dowodu zmiany trwałego źródła. Zrzuty są dowodem widocznego fragmentu;
+pełny audyt używa natywnych plików i jawnych oczekiwań.

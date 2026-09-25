@@ -1,0 +1,147 @@
+{
+  "case": "api-references",
+  "expectation_basis": "Literal native-API helper inputs plus documented quantization",
+  "source_SHA256": "9034cf5e52f92a8713c7823bd9be52bdb50b294966a9e9713c538b937b7feb5f",
+  "source": {
+    "header_hex": "546f7003",
+    "trips": [
+      {
+        "ticks": 632401344000000000,
+        "declination_raw": -364,
+        "comment": "Synthetic coordinates in unspecified CRS"
+      }
+    ],
+    "shots": [
+      {
+        "from_id": {
+          "raw": -2147483647,
+          "kind": "plain",
+          "text": "0"
+        },
+        "to_id": {
+          "raw": -2147483646,
+          "kind": "plain",
+          "text": "1"
+        },
+        "distance_mm": 1000,
+        "azimuth_raw": 16384,
+        "inclination_raw": 0,
+        "flags": 0,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": null
+      }
+    ],
+    "references": [
+      {
+        "station": {
+          "raw": -2147483647,
+          "kind": "plain",
+          "text": "0"
+        },
+        "east_mm": -4000000001,
+        "north_mm": -5000000002,
+        "altitude_mm": -1250,
+        "comment": "ujemne E/N/Z; żadnego przypisania CRS"
+      },
+      {
+        "station": {
+          "raw": -2147483647,
+          "kind": "plain",
+          "text": "0"
+        },
+        "east_mm": 6000000003,
+        "north_mm": 7000000004,
+        "altitude_mm": 1500250,
+        "comment": "positive int64 E/N beyond int32"
+      }
+    ],
+    "overview": {
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": 500
+    },
+    "outline": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": []
+    },
+    "sideview": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": []
+    },
+    "trailing_hex": "00000000"
+  },
+  "string_encodings": [
+    {
+      "field": "trips[0].comment",
+      "UTF8_byte_count": 40,
+      "length_prefix_hex": "28"
+    },
+    {
+      "field": "references[0].comment",
+      "UTF8_byte_count": 38,
+      "length_prefix_hex": "26"
+    },
+    {
+      "field": "references[1].comment",
+      "UTF8_byte_count": 31,
+      "length_prefix_hex": "1f"
+    }
+  ],
+  "native_DXF": {
+    "scale": 500,
+    "sketch_transform": "x/500,-y/500",
+    "color_index_mapping": {
+      "1": 0,
+      "2": 9,
+      "3": 32,
+      "4": 5,
+      "5": 1,
+      "6": 3,
+      "7": 30
+    },
+    "station_coordinates_mm": {
+      "outline": [
+        [
+          0,
+          0
+        ],
+        [
+          999,
+          35
+        ]
+      ],
+      "sideview": [
+        [
+          0,
+          0
+        ],
+        [
+          1000,
+          0
+        ]
+      ]
+    }
+  },
+  "limitations": [
+    "Native TXT rounds angles, references and dates; it omits roll, tick fractions, mapping and sketch records.",
+    "Native DXF folds repeated shot readings into its own model; it is not the PRD arithmetic/circular averaging oracle.",
+    "XSection has no splays at selected stations; this verifies source fields and connector anchors, not general projected cross-section geometry.",
+    "No loop or branching geometry is covered by these minimal fixtures.",
+    "Automatic-declination sentinel -32768 is a mode, never a literal -180-degree correction."
+  ]
+}

@@ -9,6 +9,7 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 ### Dodano
 
 - PRD konwertera PocketTopo do Walls/Survex i szkiców SVG/PNG, zapis researchu oraz sprawdzoną pomoc do natywnych eksportów przez Wine na macOS.
+- P01 PocketTopo: sześć niezależnych wzorców aplikacji z natywnymi TXT/DXF, oczekiwaniami i audytem każdego pola oraz wierzchołka; rozpoznanie zakończenia pliku i automatycznej deklinacji, próba resvg na macOS/Linux.
 
 ## [v1.4.7] - 2026-09-25
 

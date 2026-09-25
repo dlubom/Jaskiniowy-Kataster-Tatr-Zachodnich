@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "recorded_date": "2026-09-25",
+  "application": {
+    "label": "PocketTopo 1.372",
+    "assembly_version": "1.3.7.0",
+    "bytes": 380416,
+    "sha256": "048cf57b874238ac142f1e4d3446af639ce3760b4a91724ea00bcc320eb5c371",
+    "path": "/Users/dariuszlubomski/.local/share/pockettopo/app/PocketTopoV1372/PocketTopo.exe"
+  },
+  "environment": {
+    "platform": "macOS arm64",
+    "wine": "wine-11.7 (Staging)",
+    "framework": "Microsoft .NET Framework 2.0.50727 x86",
+    "prefix": "/Users/dariuszlubomski/.local/share/pockettopo/wineprefix"
+  },
+  "helper": {
+    "path": "doc/pockettopo/helpers/pockettopo_fixtures.cs",
+    "sha256": "ae1f32a1034bbd95a59e97db47e887fabb30b06eabe55a960c9c5ebf9090d005",
+    "serialization": "Native DataSet.Write only; no harness BinaryWriter or .top encoder",
+    "reader": "Native DataSet.Read",
+    "exporters": [
+      "Native Survey.WriteText",
+      "Native DXFWriter.WriteDXF"
+    ],
+    "gui": "No MainForm instantiation, no Show/Application.Run; Control instances only for native Mapping geometry",
+    "settings": "Process-local Config.metric=true and Config.angle=360; no registry setters"
+  },
+  "static_findings": [
+    {
+      "method": "PocketTopo.DataSet.Write",
+      "token": "0x06000317",
+      "rva": "0x218f0",
+      "finding": "Calls sideview.Drawing.Write, then BinaryWriter.Write(Int32 0), then BinaryWriter.Close.",
+      "offsets_in_method_body_including_12_byte_header": {
+        "sideview_write": "0x75",
+        "load_zero": "0x7d",
+        "write_int32": "0x7e",
+        "close": "0x85"
+      },
+      "write_member_token": "0x0a00005e",
+      "write_signature_hex": "20010108"
+    },
+    {
+      "method": "PocketTopo.DataSet.Read",
+      "token": "0x06000318",
+      "rva": "0x219c0",
+      "finding": "After sideview.Drawing.Read sets success true and closes reader; does not read or validate tail."
+    },
+    {
+      "method": "PocketTopo.Trip.Write",
+      "token": "0x0600019e",
+      "rva": "0x12bbc",
+      "finding": "Writes Int16 -32768 for automatic=true; otherwise writes declCorr as Int16."
+    },
+    {
+      "method": "PocketTopo.Trip.Read",
+      "token": "0x0600019f",
+      "rva": "0x12c1c",
+      "finding": "Int16 -32768 becomes automatic=true and declCorr=0; other values become automatic=false."
+    },
+    {
+      "method": "PocketTopo.ID.Write / Read",
+      "tokens": [
+        "0x06000331",
+        "0x06000332"
+      ],
+      "rvas": [
+        "0x22300",
+        "0x22348"
+      ],
+      "finding": "Native ID string constructor plus serializer independently generates plain0=-2147483647, major.minor0.0=0, undefined=-2147483648."
+    },
+    {
+      "method": "PocketTopo.DXFWriter.WriteDXF",
+      "finding": "Catches exporter exceptions internally; harness verifies final EOF because return alone is not success evidence."
+    }
+  ],
+  "native_cases": [
+    {
+      "case": "api-cardinal",
+      "creation": "PocketTopo 1.372 native model via reflection",
+      "source": [
+        {
+          "path": "cases/api-cardinal/api-cardinal.top",
+          "bytes": 465,
+          "sha256": "64ac69ee1746272a503895256523f386765847c01da81009292fdf29225a9c8e"
+        },
+        {
+          "path": "cases/api-cardinal/native-plan.dxf",
+          "bytes": 1262,
+          "sha256": "aa63a0b90eed9ecebcf03dabeb4b1cd98b96c4b512db90a167816cc50b5ca4e2"
+        },
+        {
+          "path": "cases/api-cardinal/native-side.dxf",
+          "bytes": 1295,
+          "sha256": "4cf6754bfa0c009d0034f4e0a704d02303d23e80e8236b21dc15db6b28184ce6"
+        },
+        {
+          "path": "cases/api-cardinal/native.txt",
+          "bytes": 870,
+          "sha256": "2ec0ea39b8bfaf135e42067ca1f2ad7e3ba2272580b4de1bd00435b8dc457156"
+        }
+      ],
+      "native_read_accepted": true,
+      "native_text_export_units": "meters and degrees",
+      "native_dxf_options": [
+        "ENS",
+        "ENX",
+        "SEPS",
+        "SEPX"
+      ],
+      "native_dxf_scale": 500,
+      "native_dxf_complete_endsec_eof": true
+    },
+    {
+      "case": "api-drawings",
+      "creation": "PocketTopo 1.372 native model via reflection",
+      "source": [
+        {
+          "path": "cases/api-drawings/api-drawings.top",
+          "bytes": 680,
+          "sha256": "4a494ead03cade750f670d50aa38661abda9b3e1f131d67f27a252982752c2a5"
+        },
+        {
+          "path": "cases/api-drawings/native-plan.dxf",
+          "bytes": 1897,
+          "sha256": "e6e8b3a94340afc4e76ce96be72c68a3ac2aa27878460996f522f526e180f088"
+        },
+        {
+          "path": "cases/api-drawings/native-side.dxf",
+          "bytes": 1915,
+          "sha256": "c60464449372449baab896f0b97a4e8e6e5993786059560c4ab88536f6303842"
+        },
+        {
+          "path": "cases/api-drawings/native-uiP.dxf",
+          "bytes": 1897,
+          "sha256": "e6e8b3a94340afc4e76ce96be72c68a3ac2aa27878460996f522f526e180f088"
+        },
+        {
+          "path": "cases/api-drawings/native-uiS.dxf",
+          "bytes": 1915,
+          "sha256": "c60464449372449baab896f0b97a4e8e6e5993786059560c4ab88536f6303842"
+        },
+        {
+          "path": "cases/api-drawings/native.txt",
+          "bytes": 208,
+          "sha256": "0fbb2c66bfaa19503a72f7401862e76e6625c046216c44c363b2a75616c16a29"
+        }
+      ],
+      "native_read_accepted": true,
+      "native_text_export_units": "meters and degrees",
+      "native_dxf_options": [
+        "ENS",
+        "ENX",
+        "SEPS",
+        "SEPX"
+      ],
+      "native_dxf_scale": 500,
+      "native_dxf_complete_endsec_eof": true
+    },
+    {
+      "case": "api-references",
+      "creation": "PocketTopo 1.372 native model via reflection",
+      "source": [
+        {
+          "path": "cases/api-references/api-references.top",
+          "bytes": 248,
+          "sha256": "9034cf5e52f92a8713c7823bd9be52bdb50b294966a9e9713c538b937b7feb5f"
+        },
+        {
+          "path": "cases/api-references/native-plan.dxf",
+          "bytes": 391,
+          "sha256": "785fb50b0cac5fdc69b49d1a8707598761d4ebb86dabf23fc21cd2e1d64f66ee"
+        },
+        {
+          "path": "cases/api-references/native-side.dxf",
+          "bytes": 377,
+          "sha256": "04ed339700922619ad4c0b7cfce59fc3d3ac6991295086f5a9888fff49d052e5"
+        },
+        {
+          "path": "cases/api-references/native.txt",
+          "bytes": 318,
+          "sha256": "c39de28a9c96a4d02dd0bd9e35956af5ef8a1b1245ed43df8b461c9f83361264"
+        }
+      ],
+      "native_read_accepted": true,
+      "native_text_export_units": "meters and degrees",
+      "native_dxf_options": [
+        "ENS",
+        "ENX",
+        "SEPS",
+        "SEPX"
+      ],
+      "native_dxf_scale": 500,
+      "native_dxf_complete_endsec_eof": true
+    },
+    {
+      "case": "api-trips-ids",
+      "creation": "PocketTopo 1.372 native model via reflection",
+      "source": [
+        {
+          "path": "cases/api-trips-ids/api-trips-ids.top",
+          "bytes": 542,
+          "sha256": "adb83280b6d5a70f383b5542727f675b3ff8a5740058b601d3d49ed27b14895b"
+        },
+        {
+          "path": "cases/api-trips-ids/native-plan.dxf",
+          "bytes": 724,
+          "sha256": "82c9d7d6771ec267fb64df5fd6c22b5d7265aec41f2caa593f47eabec7a68509"
+        },
+        {
+          "path": "cases/api-trips-ids/native-side.dxf",
+          "bytes": 705,
+          "sha256": "ee25ad388a7aed54cddcf42f1cd5233593060566c32c68939e879046aa3e8d50"
+        },
+        {
+          "path": "cases/api-trips-ids/native-ui.txt",
+          "bytes": 741,
+          "sha256": "547ca0d10528c166573926e573fd239ab068a15834c1ee389c32977aa02b8834"
+        },
+        {
+          "path": "cases/api-trips-ids/native.txt",
+          "bytes": 713,
+          "sha256": "1e098483970412ca2cbbda9294d02f027b19d28111e01afda7e7c47c1273d553"
+        }
+      ],
+      "native_read_accepted": true,
+      "native_text_export_units": "meters and degrees",
+      "native_dxf_options": [
+        "ENS",
+        "ENX",
+        "SEPS",
+        "SEPX"
+      ],
+      "native_dxf_scale": 500,
+      "native_dxf_complete_endsec_eof": true
+    }
+  ],
+  "tail_experiment": {
+    "source": "doc/pockettopo/evidence/p01/cases/api-cardinal/api-cardinal.top",
+    "source_sha256": "64ac69ee1746272a503895256523f386765847c01da81009292fdf29225a9c8e",
+    "specification_end": 461,
+    "probes": [
+      {
+        "name": "canonical-four-zero",
+        "bytes": 465,
+        "sha256": "64ac69ee1746272a503895256523f386765847c01da81009292fdf29225a9c8e",
+        "suffix_after_published_schema": "00000000",
+        "native_exit_code": 0,
+        "native_accepted": true,
+        "native_stdout_last_line": "Native DataSet.Read accepted: True"
+      },
+      {
+        "name": "published-schema-eof",
+        "bytes": 461,
+        "sha256": "d71bce93c948608a892b7abb609ae173912a2b5bcefadb55a428b31a0d353caf",
+        "suffix_after_published_schema": "",
+        "native_exit_code": 0,
+        "native_accepted": true,
+        "native_stdout_last_line": "Native DataSet.Read accepted: True"
+      },
+      {
+        "name": "one-zero",
+        "bytes": 462,
+        "sha256": "9dc371a991f0596114c629007d04e3f0b22a91bb83674e685d324ef58fa2ab33",
+        "suffix_after_published_schema": "00",
+        "native_exit_code": 0,
+        "native_accepted": true,
+        "native_stdout_last_line": "Native DataSet.Read accepted: True"
+      },
+      {
+        "name": "two-zero",
+        "bytes": 463,
+        "sha256": "d5c73e7e06fe9b1f465ef5a74cf8f6447f0503540f6cd1a915b6f7684df60c9b",
+        "suffix_after_published_schema": "0000",
+        "native_exit_code": 0,
+        "native_accepted": true,
+        "native_stdout_last_line": "Native DataSet.Read accepted: True"
+      },
+      {
+        "name": "three-zero",
+        "bytes": 464,
+        "sha256": "f4aaa827573c02da673dbdeb8c70512dde301b2695636776c84471aadc1cfbc1",
+        "suffix_after_published_schema": "000000",
+        "native_exit_code": 0,
+        "native_accepted": true,
+        "native_stdout_last_line": "Native DataSet.Read accepted: True"
+      },
+      {
+        "name": "eight-zero",
+        "bytes": 469,
+        "sha256": "d74b581c13c91ffcd9b83bc704735bb43dd226f54378d1d8f271caaec9da1ab1",
+        "suffix_after_published_schema": "0000000000000000",
+        "native_exit_code": 0,
+        "native_accepted": true,
+        "native_stdout_last_line": "Native DataSet.Read accepted: True"
+      },
+      {
+        "name": "four-nonzero",
+        "bytes": 465,
+        "sha256": "83f65cf6485d839fbd7f82635ffb79530b0ee386590f50d2d84248abf5146cfa",
+        "suffix_after_published_schema": "01234567",
+        "native_exit_code": 0,
+        "native_accepted": true,
+        "native_stdout_last_line": "Native DataSet.Read accepted: True"
+      },
+      {
+        "name": "arbitrary-tail",
+        "bytes": 477,
+        "sha256": "3c766dd04cada04c47fd35ae187eb3342f9e66b6047f949e37e65d82748ec089",
+        "suffix_after_published_schema": "5441494c2d49532d4e4f542d52454144",
+        "native_exit_code": 0,
+        "native_accepted": true,
+        "native_stdout_last_line": "Native DataSet.Read accepted: True"
+      },
+      {
+        "name": "missing-side-terminator",
+        "bytes": 460,
+        "sha256": "e28d2958d82b4ccd23e4d315fba4f255b37aa979effbe8962a4d5de6473540e0",
+        "suffix_after_published_schema": "",
+        "native_exit_code": 2,
+        "native_accepted": false,
+        "native_stdout_last_line": "Native DataSet.Read accepted: False"
+      },
+      {
+        "name": "canonical-four-zero-native-rewrite",
+        "native_exit_code": 0,
+        "identical_to_canonical": true,
+        "bytes": 465,
+        "sha256": "64ac69ee1746272a503895256523f386765847c01da81009292fdf29225a9c8e",
+        "native_stdout_last_line": "Native DataSet.Write: Z:\\private\\tmp\\pockettopo-p01-audit\\tail-probes\\canonical-four-zero-native-rewrite.top"
+      },
+      {
+        "name": "published-schema-eof-native-rewrite",
+        "native_exit_code": 0,
+        "identical_to_canonical": true,
+        "bytes": 465,
+        "sha256": "64ac69ee1746272a503895256523f386765847c01da81009292fdf29225a9c8e",
+        "native_stdout_last_line": "Native DataSet.Write: Z:\\private\\tmp\\pockettopo-p01-audit\\tail-probes\\published-schema-eof-native-rewrite.top"
+      },
+      {
+        "name": "four-nonzero-native-rewrite",
+        "native_exit_code": 0,
+        "identical_to_canonical": true,
+        "bytes": 465,
+        "sha256": "64ac69ee1746272a503895256523f386765847c01da81009292fdf29225a9c8e",
+        "native_stdout_last_line": "Native DataSet.Write: Z:\\private\\tmp\\pockettopo-p01-audit\\tail-probes\\four-nonzero-native-rewrite.top"
+      }
+    ]
+  },
+  "interpretation": {
+    "confirmed": "Version 1.372 always writes four zero bytes outside the published schema. Reader accepts arbitrary tails; that leniency is not a sound strict-parser contract.",
+    "proposed_parser_contract": "Accept exactly published-schema EOF or exactly four zero bytes; reject every other suffix.",
+    "automatic_declination": "Preserve raw -32768 and automatic mode separately; never interpret as -180 degrees or assert an explicit zero correction.",
+    "limits": "Native models through reflection are separate provenance from GUI-created fixtures. No historical survey measurements or date reliability inferred."
+  }
+}

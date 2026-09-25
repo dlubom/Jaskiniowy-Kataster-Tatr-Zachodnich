@@ -1,0 +1,508 @@
+{
+  "date": "2026-09-25",
+  "scope": "Synthetic renderer capability probe, not PocketTopo geometry or native palette verification.",
+  "xml_parser": "Python 3.14.7 xml.etree.ElementTree",
+  "png_decoder": "ImageMagick 7.1.2-31 Q16-HDRI aarch64",
+  "xml": {
+    "passed": true,
+    "seven_open_three_vertex_polylines": [
+      {
+        "id": "color-1-black",
+        "color_index": 1,
+        "sRGB": "#000000",
+        "vertices": [
+          [
+            72,
+            104
+          ],
+          [
+            96,
+            80
+          ],
+          [
+            120,
+            104
+          ]
+        ],
+        "open": true
+      },
+      {
+        "id": "color-2-gray",
+        "color_index": 2,
+        "sRGB": "#808080",
+        "vertices": [
+          [
+            144,
+            104
+          ],
+          [
+            168,
+            80
+          ],
+          [
+            192,
+            104
+          ]
+        ],
+        "open": true
+      },
+      {
+        "id": "color-3-brown",
+        "color_index": 3,
+        "sRGB": "#a52a2a",
+        "vertices": [
+          [
+            216,
+            104
+          ],
+          [
+            240,
+            80
+          ],
+          [
+            264,
+            104
+          ]
+        ],
+        "open": true
+      },
+      {
+        "id": "color-4-blue",
+        "color_index": 4,
+        "sRGB": "#0000ff",
+        "vertices": [
+          [
+            288,
+            104
+          ],
+          [
+            312,
+            80
+          ],
+          [
+            336,
+            104
+          ]
+        ],
+        "open": true
+      },
+      {
+        "id": "color-5-red",
+        "color_index": 5,
+        "sRGB": "#ff0000",
+        "vertices": [
+          [
+            360,
+            104
+          ],
+          [
+            384,
+            80
+          ],
+          [
+            408,
+            104
+          ]
+        ],
+        "open": true
+      },
+      {
+        "id": "color-6-green",
+        "color_index": 6,
+        "sRGB": "#008000",
+        "vertices": [
+          [
+            72,
+            200
+          ],
+          [
+            96,
+            176
+          ],
+          [
+            120,
+            200
+          ]
+        ],
+        "open": true
+      },
+      {
+        "id": "color-7-orange",
+        "color_index": 7,
+        "sRGB": "#ffa500",
+        "vertices": [
+          [
+            144,
+            200
+          ],
+          [
+            168,
+            176
+          ],
+          [
+            192,
+            200
+          ]
+        ],
+        "open": true
+      }
+    ],
+    "explicit_single_point_circle": true,
+    "fonts_and_external_resources": false
+  },
+  "pixel_checks_at_1x": [
+    {
+      "check": "color-1",
+      "pixel": [
+        84,
+        92
+      ],
+      "expected_RGBA": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "check": "color-2",
+      "pixel": [
+        156,
+        92
+      ],
+      "expected_RGBA": [
+        128,
+        128,
+        128,
+        255
+      ]
+    },
+    {
+      "check": "color-3",
+      "pixel": [
+        228,
+        92
+      ],
+      "expected_RGBA": [
+        165,
+        42,
+        42,
+        255
+      ]
+    },
+    {
+      "check": "color-4",
+      "pixel": [
+        300,
+        92
+      ],
+      "expected_RGBA": [
+        0,
+        0,
+        255,
+        255
+      ]
+    },
+    {
+      "check": "color-5",
+      "pixel": [
+        372,
+        92
+      ],
+      "expected_RGBA": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "check": "color-6",
+      "pixel": [
+        84,
+        188
+      ],
+      "expected_RGBA": [
+        0,
+        128,
+        0,
+        255
+      ]
+    },
+    {
+      "check": "color-7",
+      "pixel": [
+        156,
+        188
+      ],
+      "expected_RGBA": [
+        255,
+        165,
+        0,
+        255
+      ]
+    },
+    {
+      "check": "x-axis-positive-right",
+      "pixel": [
+        100,
+        48
+      ],
+      "expected_RGBA": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "check": "y-axis-positive-down",
+      "pixel": [
+        32,
+        90
+      ],
+      "expected_RGBA": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "check": "100-px-scale",
+      "pixel": [
+        350,
+        48
+      ],
+      "expected_RGBA": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "check": "one-point-visible",
+      "pixel": [
+        300,
+        200
+      ],
+      "expected_RGBA": [
+        0,
+        0,
+        255,
+        255
+      ]
+    },
+    {
+      "check": "point-surrounding-background",
+      "pixel": [
+        306,
+        200
+      ],
+      "expected_RGBA": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "check": "open-no-closing-edge-1",
+      "pixel": [
+        96,
+        104
+      ],
+      "expected_RGBA": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "check": "open-no-closing-edge-2",
+      "pixel": [
+        168,
+        104
+      ],
+      "expected_RGBA": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "check": "open-no-closing-edge-3",
+      "pixel": [
+        240,
+        104
+      ],
+      "expected_RGBA": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "check": "open-no-closing-edge-4",
+      "pixel": [
+        312,
+        104
+      ],
+      "expected_RGBA": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "check": "open-no-closing-edge-5",
+      "pixel": [
+        384,
+        104
+      ],
+      "expected_RGBA": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "check": "open-no-closing-edge-6",
+      "pixel": [
+        96,
+        200
+      ],
+      "expected_RGBA": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "check": "open-no-closing-edge-7",
+      "pixel": [
+        168,
+        200
+      ],
+      "expected_RGBA": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "check": "corner-marker-1",
+      "pixel": [
+        9,
+        9
+      ],
+      "expected_RGBA": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "check": "corner-marker-2",
+      "pixel": [
+        469,
+        9
+      ],
+      "expected_RGBA": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "check": "corner-marker-3",
+      "pixel": [
+        9,
+        309
+      ],
+      "expected_RGBA": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "check": "corner-marker-4",
+      "pixel": [
+        469,
+        309
+      ],
+      "expected_RGBA": [
+        0,
+        0,
+        0,
+        255
+      ]
+    }
+  ],
+  "pixel_check_scaling": "At 2x, both sample coordinates are multiplied by 2.",
+  "rendered_images": [
+    {
+      "file": "renderer-probe-macos.png",
+      "bytes": 4353,
+      "SHA256": "2e91950578ea1cc497ad452b1161102673547e45e379caf3dda4b3dbcc48dd7a",
+      "width": 480,
+      "height": 320,
+      "all_pixels_opaque": true,
+      "entire_outer_border_white": true,
+      "sample_checks_passed": 23,
+      "sample_mismatches": []
+    },
+    {
+      "file": "renderer-probe-2x-macos.png",
+      "bytes": 9026,
+      "SHA256": "be36b71cbdd3f5791294866e0d9cacd8e6dd72a9f5e868b17be2f5555a182186",
+      "width": 960,
+      "height": 640,
+      "all_pixels_opaque": true,
+      "entire_outer_border_white": true,
+      "sample_checks_passed": 23,
+      "sample_mismatches": []
+    },
+    {
+      "file": "renderer-probe-linux.png",
+      "bytes": 4353,
+      "SHA256": "2e91950578ea1cc497ad452b1161102673547e45e379caf3dda4b3dbcc48dd7a",
+      "width": 480,
+      "height": 320,
+      "all_pixels_opaque": true,
+      "entire_outer_border_white": true,
+      "sample_checks_passed": 23,
+      "sample_mismatches": []
+    },
+    {
+      "file": "renderer-probe-2x-linux.png",
+      "bytes": 9026,
+      "SHA256": "be36b71cbdd3f5791294866e0d9cacd8e6dd72a9f5e868b17be2f5555a182186",
+      "width": 960,
+      "height": 640,
+      "all_pixels_opaque": true,
+      "entire_outer_border_white": true,
+      "sample_checks_passed": 23,
+      "sample_mismatches": []
+    }
+  ],
+  "macos_linux_byte_equal_at_both_resolutions": true,
+  "visual_review": {
+    "performed": true,
+    "image": "renderer-probe-macos.png",
+    "observations": "X arrow points right; Y arrow points down; seven open strokes, single blue point and four corner markers visible without clipping."
+  },
+  "all_checks_passed": true
+}

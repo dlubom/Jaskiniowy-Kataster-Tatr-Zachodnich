@@ -1,0 +1,9 @@
+[1]: 2000/01/01     5.00  "Synthetic reset-looking date, not field evidence"
+[2]: 2026/09/26    -3.50  "Unicode trip: Zażółć gęślą jaźń"
+[3]: 2026/09/27     Auto:    0.00  "Auto declination sentinel; no CRS asserted"
+
+
+           0     0.0       1.000    0.00    0.00  [1]    "plain zero to major.minor zero"
+     0.0        12.65535   2.000   90.00   10.00  [2]  < "Zażółć gęślą jaźń — ąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąą"
+    12.65535               3.000  180.00  -10.00  [3]    "automatic trip splay"
+    12.65535    13.0       4.000  270.00    0.00         "unassigned trip"

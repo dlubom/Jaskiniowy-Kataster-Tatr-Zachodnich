@@ -1,0 +1,5 @@
+[1]: 2005/01/01     0.00  "P01 synthetic drawing vertices"
+
+
+           0           1  10.000    0.00    0.00  [1]    
+           1           2  10.000   90.00    0.00  [1]  < "flipped extended segment"

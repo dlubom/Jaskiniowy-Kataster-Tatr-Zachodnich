@@ -35,6 +35,10 @@ przeliczenia i normalizacje wykonywać w osobnej warstwie.
 - Roll: pełny obrót **256** jednostek; wyświetlacz w górę `0`, lewo `64`, dół `128`.
 - `tripIndex=-1`: bez tripu; nie używać jako pythonowego indeksu ostatniego tripu.
   Nieujemny indeks musi wskazywać istniejący rekord.
+- `Trip.declination=-32768` (`00 80`): tryb **Auto** w PocketTopo 1.372,
+  nie kąt −180°. Zachować surowe pole i tryb oddzielnie. Inne wartości są
+  podpisaną korektą w jednostkach 65536/obrót. Wyświetlane `Auto: 0.00` nie
+  oznacza potwierdzonej jawnej zerowej korekty. [Dowód P01](evidence/p01/NATIVE_API.md).
 - `flags & 1`: flipped. Instrukcja aplikacji wiąże Flip z lewo/prawo na
   przekroju rozwiniętym. Nie traktować jako flagi pomiaru wstecznego.
 - Reference E/N/Z są signed. Format nie podaje CRS.
@@ -57,10 +61,17 @@ wnoszą po 7 bitów od najmniej znaczącej grupy; ustawiony bit 7 zapowiada nast
 grupę. To nie jest stałe pole jedno- lub dwubajtowe. Tekst nie jest zakończony NUL.
 Parser ma sprawdzać przepełnienie, ucięcie, limit długości i poprawność UTF-8.
 
-## Różnica między specyfikacją i zaobserwowanymi plikami
+## Koniec pliku — rozstrzygnięcie P01
 
-Oba lokalne `.top` i sześć próbek `test2`, w tym zapisany przykład Shadow,
-mają po obu rysunkach jeszcze **cztery bajty zerowe**. Specyfikacja ich nie opisuje.
-W P01 sprawdzić pliki zapisane na nowo przez aplikację i ustalić dozwolone
-zakończenia. Nie pomijać dowolnych dodatkowych bajtów ani nie utożsamiać
-zachowania jednego istniejącego parsera ze specyfikacją.
+Sześć nowych [wzorców P01](evidence/p01/README.md), lokalne źródła i próbki
+`test2` mają po obu rysunkach **cztery bajty zerowe**. PocketTopo 1.372
+`DataSet.Write` zapisuje tam dodatkowe Int32 `0`; opublikowany schemat tego
+nie opisuje. `DataSet.Read` ignoruje sufiks, co potwierdzono próbami jego
+usunięcia, zmiany długości i zastąpienia niezerowymi danymi. Ponowny natywny
+zapis przywraca cztery zera. [Metoda, SHA aplikacji i wyniki](evidence/p01/NATIVE_API.md).
+
+**Kontrakt ścisłego parsera P02:** dopuszczać EOF dokładnie po znaczniku końca
+`sideview` (wariant opublikowanego schematu) albo dokładnie `00 00 00 00`
+i EOF (wariant zapisany przez 1.372). Zachować rozpoznany wariant w modelu.
+Każdy inny sufiks odrzucać; pobłażliwość czytnika aplikacji nie dowodzi
+kompletności pliku. Ucięcie samego znacznika końca rysunku zawsze jest błędem.

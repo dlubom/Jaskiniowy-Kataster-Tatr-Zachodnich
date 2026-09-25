@@ -6,6 +6,12 @@ w [POCKETTOPO_MACOS.md](POCKETTOPO_MACOS.md). Ten dokument przechowuje
 ustalenia źródłowe i granice dotychczasowego sprawdzenia; nie potwierdza
 istnienia gotowego konwertera.
 
+**Aktualizacja po P01:** [sześć małych wzorców](evidence/p01/README.md)
+rozstrzyga końcowe cztery zera, dokumentuje deklinację Auto i sprawdza pola,
+kolory, Flip oraz XSection; wybrano i sprawdzono resvg na macOS/Linux.
+Poniższy research zachowuje stan P00. Jego otwarte kwestie należy czytać
+razem z wynikami P01 i bieżącym PRD; parser pozostaje następnym etapem.
+
 ## Źródła i istniejące implementacje
 
 Punktem odniesienia jest specyfikacja „PocketTopo File Formats”, 17.3.2010 bh,

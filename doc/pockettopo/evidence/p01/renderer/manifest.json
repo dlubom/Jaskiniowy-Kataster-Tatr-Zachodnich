@@ -1,0 +1,119 @@
+{
+  "date": "2026-09-25",
+  "purpose": "P01 headless renderer selection and cross-platform capability probe; not PocketTopo converter output.",
+  "renderer": {
+    "name": "resvg CLI",
+    "version": "0.48.1",
+    "release": "https://github.com/linebender/resvg/releases/tag/v0.48.1"
+  },
+  "downloads": [
+    {
+      "platform": "macos-aarch64",
+      "url": "https://github.com/linebender/resvg/releases/download/v0.48.1/resvg-macos-aarch64.zip",
+      "archive_SHA256": "06440eb5aa14a28cbfc7e40ae39e1ffa71adc051b89fbaa913b4f1d9b905d09f",
+      "extracted_binary_SHA256": "50e57a945189f74ee89766a2d5b8e1a8e5254416880f9e57b36d1307e71e94ce",
+      "archive_matches_github_release_asset_digest": true
+    },
+    {
+      "platform": "linux-x86_64",
+      "url": "https://github.com/linebender/resvg/releases/download/v0.48.1/resvg-linux-x86_64.tar.gz",
+      "archive_SHA256": "fa8c26495a187e592c501db15bf9e8a9fdc051d4b2b336b39703d5b59f912b9d",
+      "extracted_binary_SHA256": "8d1dbe4d8e56d3d052668afc69d9d93fba7b723b06f1d3425f29418da9a816af",
+      "archive_matches_github_release_asset_digest": true
+    }
+  ],
+  "environment": {
+    "local": {
+      "os": "macOS 27.0",
+      "build": "26A428",
+      "architecture": "arm64"
+    },
+    "linux": {
+      "os_image": "ubuntu:24.04",
+      "digest": "sha256:008173c23f95b170204355c12626cb5a965d779a7e1283b09e9cffbb1bf33ca3",
+      "architecture": "amd64",
+      "docker_server": "29.4.2",
+      "docker_server_architecture": "aarch64",
+      "execution": "Docker on macOS with amd64 emulation",
+      "network": "none",
+      "root_filesystem": "read-only",
+      "github_actions_executed": false
+    }
+  },
+  "render_options": {
+    "dpi": 96,
+    "background": "#ffffff",
+    "skip_system_fonts": true,
+    "resolutions": [
+      [
+        480,
+        320
+      ],
+      [
+        960,
+        640
+      ]
+    ]
+  },
+  "command_template": [
+    "resvg",
+    "--skip-system-fonts",
+    "--dpi",
+    "96",
+    "--width",
+    "WIDTH",
+    "--height",
+    "HEIGHT",
+    "--background",
+    "#ffffff",
+    "renderer-probe.svg",
+    "OUTPUT.png"
+  ],
+  "artifacts": [
+    {
+      "file": "README.md",
+      "bytes": 5335,
+      "SHA256": "292849c1affc74e0db1fb376f17643a959fc87f20e81070f31781cf05c57c6da"
+    },
+    {
+      "file": "renderer-probe-2x-linux.png",
+      "bytes": 9026,
+      "SHA256": "be36b71cbdd3f5791294866e0d9cacd8e6dd72a9f5e868b17be2f5555a182186"
+    },
+    {
+      "file": "renderer-probe-2x-macos.png",
+      "bytes": 9026,
+      "SHA256": "be36b71cbdd3f5791294866e0d9cacd8e6dd72a9f5e868b17be2f5555a182186"
+    },
+    {
+      "file": "renderer-probe-linux.png",
+      "bytes": 4353,
+      "SHA256": "2e91950578ea1cc497ad452b1161102673547e45e379caf3dda4b3dbcc48dd7a"
+    },
+    {
+      "file": "renderer-probe-macos.png",
+      "bytes": 4353,
+      "SHA256": "2e91950578ea1cc497ad452b1161102673547e45e379caf3dda4b3dbcc48dd7a"
+    },
+    {
+      "file": "renderer-probe.svg",
+      "bytes": 2085,
+      "SHA256": "5c4fb23c55476021bb5ed1d3af27e4690c0352510d433c2e31c61fe5cd18f942"
+    },
+    {
+      "file": "validation.json",
+      "bytes": 8638,
+      "SHA256": "a020a3811d087b48f2d256305b12ccbefd9b2b9151f0d6fc5bf1d1405a22695f"
+    }
+  ],
+  "result": {
+    "all_validation_checks_passed": true,
+    "linux_macos_PNG_identical_at_both_resolutions": true,
+    "remaining_P05_work": [
+      "Integrate pinned renderer dependency and CI job",
+      "Verify exact PocketTopo palette and transform from world to SVG axes",
+      "Convert and compare real PocketTopo plan/side/XSection and empty views",
+      "Define explicit font dependency for labels"
+    ]
+  }
+}

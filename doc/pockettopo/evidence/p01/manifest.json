@@ -1,0 +1,394 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-25",
+  "base_commit": "0852428861a8ecd7a9a7af52586b8e9199e1d6d7",
+  "license": "Own synthetic fixture data and documentation: repository CC BY-SA 4.0; PocketTopo application not redistributed",
+  "hash_scope": "All evidence payloads except Markdown, this root manifest, and SHA256SUMS",
+  "files": [
+    {
+      "path": "cases/api-cardinal/api-cardinal.top",
+      "bytes": 465,
+      "sha256": "64ac69ee1746272a503895256523f386765847c01da81009292fdf29225a9c8e",
+      "role": "native PocketTopo source",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-cardinal/expected.json",
+      "bytes": 8778,
+      "sha256": "a32eb6b22ab9fe4d3728c93a1597d8a19b14c307de09f8449507641d222c20ed",
+      "role": "independent source-field expectations",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-cardinal/native-plan.dxf",
+      "bytes": 1262,
+      "sha256": "aa63a0b90eed9ecebcf03dabeb4b1cd98b96c4b512db90a167816cc50b5ca4e2",
+      "role": "native PocketTopo export",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-cardinal/native-side.dxf",
+      "bytes": 1295,
+      "sha256": "4cf6754bfa0c009d0034f4e0a704d02303d23e80e8236b21dc15db6b28184ce6",
+      "role": "native PocketTopo export",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-cardinal/native-ui.txt",
+      "bytes": 897,
+      "sha256": "ead1ab20e4e3521a79b22b7ede45933a101c0de3dbd390e5991432b009fbdfe2",
+      "role": "native PocketTopo export",
+      "origin": "GUI readback of native-model fixture"
+    },
+    {
+      "path": "cases/api-cardinal/native.txt",
+      "bytes": 870,
+      "sha256": "2ec0ea39b8bfaf135e42067ca1f2ad7e3ba2272580b4de1bd00435b8dc457156",
+      "role": "native PocketTopo export",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-cardinal/ui-table.png",
+      "bytes": 12849,
+      "sha256": "b92a79ea37139c215b8a79303242781f82c9cd8222838aec10abc7d6415e77d6",
+      "role": "PocketTopo window evidence",
+      "origin": "GUI readback of native-model fixture"
+    },
+    {
+      "path": "cases/api-drawings/api-drawings.top",
+      "bytes": 680,
+      "sha256": "4a494ead03cade750f670d50aa38661abda9b3e1f131d67f27a252982752c2a5",
+      "role": "native PocketTopo source",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-drawings/expected.json",
+      "bytes": 9491,
+      "sha256": "93e3c3de6f8c899d76e9e0f284df5ae3e0a2b51995ecfbc9619cafe4f5c968d3",
+      "role": "independent source-field expectations",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-drawings/native-plan.dxf",
+      "bytes": 1897,
+      "sha256": "e6e8b3a94340afc4e76ce96be72c68a3ac2aa27878460996f522f526e180f088",
+      "role": "native PocketTopo export",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-drawings/native-side.dxf",
+      "bytes": 1915,
+      "sha256": "c60464449372449baab896f0b97a4e8e6e5993786059560c4ab88536f6303842",
+      "role": "native PocketTopo export",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-drawings/native-uiP.dxf",
+      "bytes": 1897,
+      "sha256": "e6e8b3a94340afc4e76ce96be72c68a3ac2aa27878460996f522f526e180f088",
+      "role": "native PocketTopo export",
+      "origin": "GUI readback of native-model fixture"
+    },
+    {
+      "path": "cases/api-drawings/native-uiS.dxf",
+      "bytes": 1915,
+      "sha256": "c60464449372449baab896f0b97a4e8e6e5993786059560c4ab88536f6303842",
+      "role": "native PocketTopo export",
+      "origin": "GUI readback of native-model fixture"
+    },
+    {
+      "path": "cases/api-drawings/native.txt",
+      "bytes": 208,
+      "sha256": "0fbb2c66bfaa19503a72f7401862e76e6625c046216c44c363b2a75616c16a29",
+      "role": "native PocketTopo export",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-drawings/ui-graphics-options.png",
+      "bytes": 10805,
+      "sha256": "bf693ffb1ee6767e2f2ce9518fbc76e65d818486370f5e46e547e4b536a9184f",
+      "role": "PocketTopo window evidence",
+      "origin": "GUI readback of native-model fixture"
+    },
+    {
+      "path": "cases/api-drawings/ui-plan.png",
+      "bytes": 11217,
+      "sha256": "ecc97b16d319c2fb10b153096c2f7f3f506ec51ab648b13c3cb526096e2994d7",
+      "role": "PocketTopo window evidence",
+      "origin": "GUI readback of native-model fixture"
+    },
+    {
+      "path": "cases/api-drawings/ui-side.png",
+      "bytes": 11882,
+      "sha256": "860afcd2936dd220d8be54e5625483e1b8e1d8283539534fd17691418bffe338",
+      "role": "PocketTopo window evidence",
+      "origin": "GUI readback of native-model fixture"
+    },
+    {
+      "path": "cases/api-references/api-references.top",
+      "bytes": 248,
+      "sha256": "9034cf5e52f92a8713c7823bd9be52bdb50b294966a9e9713c538b937b7feb5f",
+      "role": "native PocketTopo source",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-references/expected.json",
+      "bytes": 3346,
+      "sha256": "93d8bb70baf630b2be35d6ec0268435c999cc4882b8ea1f143b228b2cc0c7d9f",
+      "role": "independent source-field expectations",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-references/native-plan.dxf",
+      "bytes": 391,
+      "sha256": "785fb50b0cac5fdc69b49d1a8707598761d4ebb86dabf23fc21cd2e1d64f66ee",
+      "role": "native PocketTopo export",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-references/native-side.dxf",
+      "bytes": 377,
+      "sha256": "04ed339700922619ad4c0b7cfce59fc3d3ac6991295086f5a9888fff49d052e5",
+      "role": "native PocketTopo export",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-references/native-ui.txt",
+      "bytes": 347,
+      "sha256": "83fe5e5e3273464fd3b250c51f3ebfc7e411c7f30f0a29de2cc0c54461743a69",
+      "role": "native PocketTopo export",
+      "origin": "GUI readback of native-model fixture"
+    },
+    {
+      "path": "cases/api-references/native.txt",
+      "bytes": 318,
+      "sha256": "c39de28a9c96a4d02dd0bd9e35956af5ef8a1b1245ed43df8b461c9f83361264",
+      "role": "native PocketTopo export",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-references/ui-table.png",
+      "bytes": 9166,
+      "sha256": "61b673f6a69843f976c40c23ea52d09869253701cfa4d3532d531335617434e4",
+      "role": "PocketTopo window evidence",
+      "origin": "GUI readback of native-model fixture"
+    },
+    {
+      "path": "cases/api-trips-ids/api-trips-ids.top",
+      "bytes": 542,
+      "sha256": "adb83280b6d5a70f383b5542727f675b3ff8a5740058b601d3d49ed27b14895b",
+      "role": "native PocketTopo source",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-trips-ids/expected.json",
+      "bytes": 5244,
+      "sha256": "df6e0ca6ba56ca426e7ef44a62802f4af899b5b8fad97c7b9ab10253446cc2a6",
+      "role": "independent source-field expectations",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-trips-ids/native-plan.dxf",
+      "bytes": 724,
+      "sha256": "82c9d7d6771ec267fb64df5fd6c22b5d7265aec41f2caa593f47eabec7a68509",
+      "role": "native PocketTopo export",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-trips-ids/native-side.dxf",
+      "bytes": 705,
+      "sha256": "ee25ad388a7aed54cddcf42f1cd5233593060566c32c68939e879046aa3e8d50",
+      "role": "native PocketTopo export",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-trips-ids/native-ui.txt",
+      "bytes": 741,
+      "sha256": "547ca0d10528c166573926e573fd239ab068a15834c1ee389c32977aa02b8834",
+      "role": "native PocketTopo export",
+      "origin": "GUI readback of native-model fixture"
+    },
+    {
+      "path": "cases/api-trips-ids/native.txt",
+      "bytes": 713,
+      "sha256": "1e098483970412ca2cbbda9294d02f027b19d28111e01afda7e7c47c1273d553",
+      "role": "native PocketTopo export",
+      "origin": "native PocketTopo model/API"
+    },
+    {
+      "path": "cases/api-trips-ids/ui-table.png",
+      "bytes": 10671,
+      "sha256": "d238c9ca0f9d1b5cb8e6ece02fc8f1cc6c4ed94f25ff3b7fa69348820bf1a888",
+      "role": "PocketTopo window evidence",
+      "origin": "GUI readback of native-model fixture"
+    },
+    {
+      "path": "cases/gui-cardinal/expected.json",
+      "bytes": 2325,
+      "sha256": "ab384d96f717ba447e1f49d44e0ad04267ddda642710f9e17962b9b8d93c2a2b",
+      "role": "independent source-field expectations",
+      "origin": "GUI"
+    },
+    {
+      "path": "cases/gui-cardinal/graphics-options.png",
+      "bytes": 10810,
+      "sha256": "1d0e87372018a9100fd4133842e319da0e5403438252a05236b2b594a44400c8",
+      "role": "PocketTopo window evidence",
+      "origin": "GUI"
+    },
+    {
+      "path": "cases/gui-cardinal/native.txt",
+      "bytes": 84,
+      "sha256": "18a7d90e11f25c7b1c8b49e5b5261288da2555e1792f1f0a88d03c480ff7ad27",
+      "role": "native PocketTopo export",
+      "origin": "GUI"
+    },
+    {
+      "path": "cases/gui-cardinal/nativeP.dxf",
+      "bytes": 379,
+      "sha256": "e4b75c1796777e9ac1ecdb2970ab9b84f8bf3e097aa950d01879952f4c2e333b",
+      "role": "native PocketTopo export",
+      "origin": "GUI"
+    },
+    {
+      "path": "cases/gui-cardinal/nativeS.dxf",
+      "bytes": 379,
+      "sha256": "83824f9341ac6fb3af3cba40bb2479d864c67a64ed31d1fda983b3b272a539d5",
+      "role": "native PocketTopo export",
+      "origin": "GUI"
+    },
+    {
+      "path": "cases/gui-cardinal/source.top",
+      "bytes": 78,
+      "sha256": "27b93102584d76840192d97e242cc30df38edbc551da244a033773095ae87bfb",
+      "role": "native PocketTopo source",
+      "origin": "GUI"
+    },
+    {
+      "path": "cases/gui-cardinal/table.png",
+      "bytes": 9182,
+      "sha256": "5ecb32430bc08d053dfc71d3024a60a03fc76bc4101fddd5c8fd7e6739bc2f0d",
+      "role": "PocketTopo window evidence",
+      "origin": "GUI"
+    },
+    {
+      "path": "cases/gui-colors/expected.json",
+      "bytes": 3989,
+      "sha256": "e7bda1959b211e230c31af4bdbdabb9fa6e729cc0c6a0c9fd769e7b244728da3",
+      "role": "independent source-field expectations",
+      "origin": "GUI"
+    },
+    {
+      "path": "cases/gui-colors/graphics-options.png",
+      "bytes": 10805,
+      "sha256": "bf693ffb1ee6767e2f2ce9518fbc76e65d818486370f5e46e547e4b536a9184f",
+      "role": "PocketTopo window evidence",
+      "origin": "GUI"
+    },
+    {
+      "path": "cases/gui-colors/native.txt",
+      "bytes": 84,
+      "sha256": "18a7d90e11f25c7b1c8b49e5b5261288da2555e1792f1f0a88d03c480ff7ad27",
+      "role": "native PocketTopo export",
+      "origin": "GUI"
+    },
+    {
+      "path": "cases/gui-colors/nativeP.dxf",
+      "bytes": 806,
+      "sha256": "2edaa46a885b991365defc497be025147c545934d15f8434f9cc33aa6634cc2c",
+      "role": "native PocketTopo export",
+      "origin": "GUI"
+    },
+    {
+      "path": "cases/gui-colors/nativeS.dxf",
+      "bytes": 379,
+      "sha256": "83824f9341ac6fb3af3cba40bb2479d864c67a64ed31d1fda983b3b272a539d5",
+      "role": "native PocketTopo export",
+      "origin": "GUI"
+    },
+    {
+      "path": "cases/gui-colors/plan.png",
+      "bytes": 10093,
+      "sha256": "eab37f97be45cb7bb48b594853664600e780ab60da5590a1a035a6c9c3bf4eb9",
+      "role": "PocketTopo window evidence",
+      "origin": "GUI"
+    },
+    {
+      "path": "cases/gui-colors/source.top",
+      "bytes": 204,
+      "sha256": "5c7355c7212f99ba11fe76d0d6739c3e3a34c7c060909b3efd41aea5c1f3b362",
+      "role": "native PocketTopo source",
+      "origin": "GUI"
+    },
+    {
+      "path": "native-api-evidence.json",
+      "bytes": 13294,
+      "sha256": "6511d98e96042c9155eade1b597c360d7dca8ff2450165d24fc10ed283632b5d",
+      "role": "validation or provenance data",
+      "origin": "P01 verification"
+    },
+    {
+      "path": "renderer/manifest.json",
+      "bytes": 3629,
+      "sha256": "6990924aa8c7eed72b7e84d841f88c37033e3ae52f7777d4d84d0d596635fbb0",
+      "role": "validation or provenance data",
+      "origin": "renderer probe"
+    },
+    {
+      "path": "renderer/renderer-probe-2x-linux.png",
+      "bytes": 9026,
+      "sha256": "be36b71cbdd3f5791294866e0d9cacd8e6dd72a9f5e868b17be2f5555a182186",
+      "role": "renderer result",
+      "origin": "renderer probe"
+    },
+    {
+      "path": "renderer/renderer-probe-2x-macos.png",
+      "bytes": 9026,
+      "sha256": "be36b71cbdd3f5791294866e0d9cacd8e6dd72a9f5e868b17be2f5555a182186",
+      "role": "renderer result",
+      "origin": "renderer probe"
+    },
+    {
+      "path": "renderer/renderer-probe-linux.png",
+      "bytes": 4353,
+      "sha256": "2e91950578ea1cc497ad452b1161102673547e45e379caf3dda4b3dbcc48dd7a",
+      "role": "renderer result",
+      "origin": "renderer probe"
+    },
+    {
+      "path": "renderer/renderer-probe-macos.png",
+      "bytes": 4353,
+      "sha256": "2e91950578ea1cc497ad452b1161102673547e45e379caf3dda4b3dbcc48dd7a",
+      "role": "renderer result",
+      "origin": "renderer probe"
+    },
+    {
+      "path": "renderer/renderer-probe.svg",
+      "bytes": 2085,
+      "sha256": "5c4fb23c55476021bb5ed1d3af27e4690c0352510d433c2e31c61fe5cd18f942",
+      "role": "synthetic renderer input",
+      "origin": "renderer probe"
+    },
+    {
+      "path": "renderer/validation.json",
+      "bytes": 8638,
+      "sha256": "a020a3811d087b48f2d256305b12ccbefd9b2b9151f0d6fc5bf1d1405a22695f",
+      "role": "validation or provenance data",
+      "origin": "renderer probe"
+    },
+    {
+      "path": "repository-checks.json",
+      "bytes": 2679,
+      "sha256": "56d7b17320ad99f1010edb8f31225a3c981c639289889c4680934d05bd9fc05b",
+      "role": "validation or provenance data",
+      "origin": "P01 verification"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 11879,
+      "sha256": "9efa007dc54923604743cc280672cf4c7903e69510c994f679a7a5c268825efa",
+      "role": "validation or provenance data",
+      "origin": "P01 verification"
+    }
+  ]
+}

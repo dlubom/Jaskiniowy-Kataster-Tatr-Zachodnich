@@ -1,0 +1,8 @@
+api-references   (m, 360)
+
+[1]: 2005/01/01    -2.00  "Synthetic coordinates in unspecified CRS"
+
+           0   -4000000.00   -5000000.00     -1.25    "ujemne E/N/Z; żadnego przypisania CRS"
+           0    6000000.00    7000000.00   1500.25    "positive int64 E/N beyond int32"
+
+           0           1   1.000   90.00    0.00  [1]    

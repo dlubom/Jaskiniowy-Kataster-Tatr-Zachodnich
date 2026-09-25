@@ -1,0 +1,14 @@
+[1]: 2005/01/01     0.00  "P01 synthetic cardinal and repeat readings"
+
+
+           0           1  10.000    0.00    0.00  [1]    "north"
+           1           2   2.000   90.00    0.00  [1]    "east"
+           2           3   3.000  180.00    0.00  [1]    "south"
+           3           4   4.000  270.00    0.00  [1]    "west"
+           4           5   5.000  358.00   10.00  [1]    "confirmed repeat A1"
+           4           5   5.000    2.00   10.00  [1]    "confirmed repeat A2"
+           5           4   5.000  180.00  -10.00  [1]    "confirmed repeat A3 backwards"
+           5           6   1.000    0.00   90.00  [1]    "vertical up"
+           6           7   1.000    0.00  -90.00  [1]    "vertical down"
+           7               1.234   45.00  -20.00  [1]    "splay"
+           7           8   0.000    0.00    0.00  [1]    "zero link"

@@ -1,0 +1,78 @@
+{
+  "date": "2026-09-25",
+  "baseline_commit": "0852428861a8ecd7a9a7af52586b8e9199e1d6d7",
+  "scope": "P01 artifacts, documentation and native C# research helper; production Python and survey data unchanged",
+  "python": "Python 3.12.13",
+  "quality": {
+    "command": "uv run --python 3.12 jktz-quality",
+    "exit_code": 0,
+    "tests_passed": 385,
+    "line_percent": 96.08449252962392,
+    "branch_percent": 93.40490797546013,
+    "max_crap": 21.542410714285715,
+    "failures": []
+  },
+  "mutation": {
+    "command": "uv run --python 3.12 jktz-mutation",
+    "exit_code": 0,
+    "killed": 832,
+    "total": 985,
+    "score": 84.46700507614213,
+    "modules": [
+      {
+        "file": "src/jktz/metadata/io.py",
+        "killed": 33,
+        "total": 39,
+        "score": 84.61538461538461
+      },
+      {
+        "file": "src/jktz/metadata/raw.py",
+        "killed": 104,
+        "total": 114,
+        "score": 91.2280701754386
+      },
+      {
+        "file": "src/jktz/metadata/srv.py",
+        "killed": 303,
+        "total": 368,
+        "score": 82.33695652173913
+      },
+      {
+        "file": "src/jktz/entrances/render.py",
+        "killed": 284,
+        "total": 350,
+        "score": 81.14285714285714
+      },
+      {
+        "file": "src/jktz/validation/measurements.py",
+        "killed": 108,
+        "total": 114,
+        "score": 94.73684210526316
+      }
+    ],
+    "failures": []
+  },
+  "gui_source_preservation": {
+    "all_four_api_working_copies_byte_identical_after_GUI": true,
+    "gui_cardinal_source_SHA256_before_and_after_exports": "27b93102584d76840192d97e242cc30df38edbc551da244a033773095ae87bfb",
+    "gui_colors_source_SHA256_after_final_save_and_exports": "5c7355c7212f99ba11fe76d0d6739c3e3a34c7c060909b3efd41aea5c1f3b362"
+  },
+  "limits": [
+    "Quality and mutation results cover existing declared Python scope, not the future P02 parser or C# helper.",
+    "No remote CI run, push, PR or release was requested; full cavern/GDAL pre-push pipeline was not run for this documentation/fixture-only local commit."
+  ],
+  "independent_review": {
+    "open_critical": 0,
+    "open_important": 0,
+    "open_minor": 0,
+    "verdict": "P01 ready for local commit",
+    "checked": [
+      "Separate binary walk: every field of all six .top files against expected.json",
+      "Native helper inputs and serialization provenance",
+      "55 payload sizes and hashes, JSON, local links and git diff checks",
+      "Renderer: 92 pixel samples, borders, alpha, dimensions and cross-platform equality",
+      "P01 scope and deferred P02-P06 work accurately described"
+    ],
+    "quality_and_mutation": "Results inspected; not rerun by reviewer"
+  }
+}

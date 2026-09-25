@@ -1,0 +1,102 @@
+{
+  "case": "gui-cardinal",
+  "expectation_basis": "GUI input intent; final saved GUI sketch positions independently cross-checked against native DXF",
+  "source_SHA256": "27b93102584d76840192d97e242cc30df38edbc551da244a033773095ae87bfb",
+  "source": {
+    "header_hex": "546f7003",
+    "trips": [],
+    "shots": [
+      {
+        "from_id": {
+          "raw": -2147483647,
+          "kind": "plain",
+          "text": "0"
+        },
+        "to_id": {
+          "raw": -2147483646,
+          "kind": "plain",
+          "text": "1"
+        },
+        "distance_mm": 10000,
+        "azimuth_raw": 0,
+        "inclination_raw": 0,
+        "flags": 0,
+        "roll_raw": 0,
+        "trip_index": -1,
+        "comment": null
+      }
+    ],
+    "references": [],
+    "overview": {
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": 500
+    },
+    "outline": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": []
+    },
+    "sideview": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": []
+    },
+    "trailing_hex": "00000000"
+  },
+  "string_encodings": [],
+  "native_DXF": {
+    "scale": 500,
+    "sketch_transform": "x/500,-y/500",
+    "color_index_mapping": {
+      "1": 0,
+      "2": 9,
+      "3": 32,
+      "4": 5,
+      "5": 1,
+      "6": 3,
+      "7": 30
+    },
+    "station_coordinates_mm": {
+      "outline": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          10000
+        ]
+      ],
+      "sideview": [
+        [
+          0,
+          0
+        ],
+        [
+          10000,
+          0
+        ]
+      ]
+    }
+  },
+  "limitations": [
+    "Native TXT rounds angles, references and dates; it omits roll, tick fractions, mapping and sketch records.",
+    "Native DXF folds repeated shot readings into its own model; it is not the PRD arithmetic/circular averaging oracle.",
+    "XSection has no splays at selected stations; this verifies source fields and connector anchors, not general projected cross-section geometry.",
+    "No loop or branching geometry is covered by these minimal fixtures.",
+    "Automatic-declination sentinel -32768 is a mode, never a literal -180-degree correction."
+  ]
+}

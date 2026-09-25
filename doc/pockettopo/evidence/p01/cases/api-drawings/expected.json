@@ -1,0 +1,472 @@
+{
+  "case": "api-drawings",
+  "expectation_basis": "Literal native-API helper inputs plus documented quantization",
+  "source_SHA256": "4a494ead03cade750f670d50aa38661abda9b3e1f131d67f27a252982752c2a5",
+  "source": {
+    "header_hex": "546f7003",
+    "trips": [
+      {
+        "ticks": 632401344000000000,
+        "declination_raw": 0,
+        "comment": "P01 synthetic drawing vertices"
+      }
+    ],
+    "shots": [
+      {
+        "from_id": {
+          "raw": -2147483647,
+          "kind": "plain",
+          "text": "0"
+        },
+        "to_id": {
+          "raw": -2147483646,
+          "kind": "plain",
+          "text": "1"
+        },
+        "distance_mm": 10000,
+        "azimuth_raw": 0,
+        "inclination_raw": 0,
+        "flags": 0,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": null
+      },
+      {
+        "from_id": {
+          "raw": -2147483646,
+          "kind": "plain",
+          "text": "1"
+        },
+        "to_id": {
+          "raw": -2147483645,
+          "kind": "plain",
+          "text": "2"
+        },
+        "distance_mm": 10000,
+        "azimuth_raw": 16384,
+        "inclination_raw": 0,
+        "flags": 3,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "flipped extended segment"
+      }
+    ],
+    "references": [],
+    "overview": {
+      "origin": {
+        "x": -1234,
+        "y": 5678
+      },
+      "scale": 500
+    },
+    "outline": {
+      "mapping": {
+        "origin": {
+          "x": -100,
+          "y": 200
+        },
+        "scale": 500
+      },
+      "elements": [
+        {
+          "kind": "polygon",
+          "points": [
+            {
+              "x": -6000,
+              "y": -2000
+            },
+            {
+              "x": -5500,
+              "y": -1000
+            },
+            {
+              "x": -4500,
+              "y": -1500
+            }
+          ],
+          "color": 1
+        },
+        {
+          "kind": "polygon",
+          "points": [
+            {
+              "x": -4000,
+              "y": -2000
+            },
+            {
+              "x": -3500,
+              "y": -1000
+            },
+            {
+              "x": -2500,
+              "y": -1500
+            }
+          ],
+          "color": 2
+        },
+        {
+          "kind": "polygon",
+          "points": [
+            {
+              "x": -2000,
+              "y": -2000
+            },
+            {
+              "x": -1500,
+              "y": -1000
+            },
+            {
+              "x": -500,
+              "y": -1500
+            }
+          ],
+          "color": 3
+        },
+        {
+          "kind": "polygon",
+          "points": [
+            {
+              "x": 0,
+              "y": -2000
+            },
+            {
+              "x": 500,
+              "y": -1000
+            },
+            {
+              "x": 1500,
+              "y": -1500
+            }
+          ],
+          "color": 4
+        },
+        {
+          "kind": "polygon",
+          "points": [
+            {
+              "x": 2000,
+              "y": -2000
+            },
+            {
+              "x": 2500,
+              "y": -1000
+            },
+            {
+              "x": 3500,
+              "y": -1500
+            }
+          ],
+          "color": 5
+        },
+        {
+          "kind": "polygon",
+          "points": [
+            {
+              "x": 4000,
+              "y": -2000
+            },
+            {
+              "x": 4500,
+              "y": -1000
+            },
+            {
+              "x": 5500,
+              "y": -1500
+            }
+          ],
+          "color": 6
+        },
+        {
+          "kind": "polygon",
+          "points": [
+            {
+              "x": 6000,
+              "y": -2000
+            },
+            {
+              "x": 6500,
+              "y": -1000
+            },
+            {
+              "x": 7500,
+              "y": -1500
+            }
+          ],
+          "color": 7
+        },
+        {
+          "kind": "polygon",
+          "points": [
+            {
+              "x": -7500,
+              "y": 3500
+            }
+          ],
+          "color": 1
+        },
+        {
+          "kind": "xsection",
+          "position": {
+            "x": -5000,
+            "y": -6000
+          },
+          "station": {
+            "raw": -2147483646,
+            "kind": "plain",
+            "text": "1"
+          },
+          "direction": -1
+        },
+        {
+          "kind": "xsection",
+          "position": {
+            "x": 5000,
+            "y": -6000
+          },
+          "station": {
+            "raw": -2147483645,
+            "kind": "plain",
+            "text": "2"
+          },
+          "direction": 16384
+        }
+      ]
+    },
+    "sideview": {
+      "mapping": {
+        "origin": {
+          "x": 300,
+          "y": -400
+        },
+        "scale": 500
+      },
+      "elements": [
+        {
+          "kind": "polygon",
+          "points": [
+            {
+              "x": -6000,
+              "y": 2000
+            },
+            {
+              "x": -5500,
+              "y": 1000
+            },
+            {
+              "x": -4500,
+              "y": 1500
+            }
+          ],
+          "color": 1
+        },
+        {
+          "kind": "polygon",
+          "points": [
+            {
+              "x": -4000,
+              "y": 2000
+            },
+            {
+              "x": -3500,
+              "y": 1000
+            },
+            {
+              "x": -2500,
+              "y": 1500
+            }
+          ],
+          "color": 2
+        },
+        {
+          "kind": "polygon",
+          "points": [
+            {
+              "x": -2000,
+              "y": 2000
+            },
+            {
+              "x": -1500,
+              "y": 1000
+            },
+            {
+              "x": -500,
+              "y": 1500
+            }
+          ],
+          "color": 3
+        },
+        {
+          "kind": "polygon",
+          "points": [
+            {
+              "x": 0,
+              "y": 2000
+            },
+            {
+              "x": 500,
+              "y": 1000
+            },
+            {
+              "x": 1500,
+              "y": 1500
+            }
+          ],
+          "color": 4
+        },
+        {
+          "kind": "polygon",
+          "points": [
+            {
+              "x": 2000,
+              "y": 2000
+            },
+            {
+              "x": 2500,
+              "y": 1000
+            },
+            {
+              "x": 3500,
+              "y": 1500
+            }
+          ],
+          "color": 5
+        },
+        {
+          "kind": "polygon",
+          "points": [
+            {
+              "x": 4000,
+              "y": 2000
+            },
+            {
+              "x": 4500,
+              "y": 1000
+            },
+            {
+              "x": 5500,
+              "y": 1500
+            }
+          ],
+          "color": 6
+        },
+        {
+          "kind": "polygon",
+          "points": [
+            {
+              "x": 6000,
+              "y": 2000
+            },
+            {
+              "x": 6500,
+              "y": 1000
+            },
+            {
+              "x": 7500,
+              "y": 1500
+            }
+          ],
+          "color": 7
+        },
+        {
+          "kind": "polygon",
+          "points": [
+            {
+              "x": 7500,
+              "y": -3500
+            }
+          ],
+          "color": 7
+        },
+        {
+          "kind": "xsection",
+          "position": {
+            "x": -5000,
+            "y": 6000
+          },
+          "station": {
+            "raw": -2147483646,
+            "kind": "plain",
+            "text": "1"
+          },
+          "direction": -1
+        },
+        {
+          "kind": "xsection",
+          "position": {
+            "x": 5000,
+            "y": 6000
+          },
+          "station": {
+            "raw": -2147483645,
+            "kind": "plain",
+            "text": "2"
+          },
+          "direction": 16384
+        }
+      ]
+    },
+    "trailing_hex": "00000000"
+  },
+  "string_encodings": [
+    {
+      "field": "trips[0].comment",
+      "UTF8_byte_count": 30,
+      "length_prefix_hex": "1e"
+    },
+    {
+      "field": "shots[1].comment",
+      "UTF8_byte_count": 24,
+      "length_prefix_hex": "18"
+    }
+  ],
+  "native_DXF": {
+    "scale": 500,
+    "sketch_transform": "x/500,-y/500",
+    "color_index_mapping": {
+      "1": 0,
+      "2": 9,
+      "3": 32,
+      "4": 5,
+      "5": 1,
+      "6": 3,
+      "7": 30
+    },
+    "station_coordinates_mm": {
+      "outline": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          10000
+        ],
+        [
+          10000,
+          10000
+        ]
+      ],
+      "sideview": [
+        [
+          0,
+          0
+        ],
+        [
+          10000,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "limitations": [
+    "Native TXT rounds angles, references and dates; it omits roll, tick fractions, mapping and sketch records.",
+    "Native DXF folds repeated shot readings into its own model; it is not the PRD arithmetic/circular averaging oracle.",
+    "XSection has no splays at selected stations; this verifies source fields and connector anchors, not general projected cross-section geometry.",
+    "No loop or branching geometry is covered by these minimal fixtures.",
+    "Automatic-declination sentinel -32768 is a mode, never a literal -180-degree correction."
+  ]
+}

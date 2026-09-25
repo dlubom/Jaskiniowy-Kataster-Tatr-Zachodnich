@@ -1,0 +1,326 @@
+{
+  "date": "2026-09-25",
+  "scope": "P01 independent literal-input / binary / native TXT / DXF audit",
+  "oracle_sources": [
+    "helpers/pockettopo_fixtures.cs literal Model.Trip/Shot/Reference/Polygon/Section inputs, not a .top writer",
+    "GUI input intent and final screenshot; GUI coordinates transcribed from saved source then compared vertex-by-vertex with independent native DXF"
+  ],
+  "cases": [
+    {
+      "case": "api-cardinal",
+      "source_bytes": 465,
+      "source_SHA256": "64ac69ee1746272a503895256523f386765847c01da81009292fdf29225a9c8e",
+      "every_literal_source_field_matches": true,
+      "trips": 1,
+      "shots": 11,
+      "references": 0,
+      "binary_field_count": 132,
+      "UTF8_strings_checked": 12,
+      "source_tail_hex": "00000000",
+      "text_exports": [
+        {
+          "file": "native-ui.txt",
+          "SHA256": "ead1ab20e4e3521a79b22b7ede45933a101c0de3dbd390e5991432b009fbdfe2",
+          "trips_checked": 1,
+          "shots_checked": 11,
+          "references_checked": 0,
+          "all_fields_exposed_by_TXT_match": true
+        },
+        {
+          "file": "native.txt",
+          "SHA256": "2ec0ea39b8bfaf135e42067ca1f2ad7e3ba2272580b4de1bd00435b8dc457156",
+          "trips_checked": 1,
+          "shots_checked": 11,
+          "references_checked": 0,
+          "all_fields_exposed_by_TXT_match": true
+        }
+      ],
+      "DXF_exports": [
+        {
+          "file": "native-plan.dxf",
+          "SHA256": "aa63a0b90eed9ecebcf03dabeb4b1cd98b96c4b512db90a167816cc50b5ca4e2",
+          "raw_entity_count": 17,
+          "polygons_and_points_checked": 0,
+          "sketch_vertices_checked": 0,
+          "other_entities_checked": 17,
+          "every_coordinate_color_order_and_open_flag_matches": true
+        },
+        {
+          "file": "native-side.dxf",
+          "SHA256": "4cf6754bfa0c009d0034f4e0a704d02303d23e80e8236b21dc15db6b28184ce6",
+          "raw_entity_count": 17,
+          "polygons_and_points_checked": 0,
+          "sketch_vertices_checked": 0,
+          "other_entities_checked": 17,
+          "every_coordinate_color_order_and_open_flag_matches": true
+        }
+      ]
+    },
+    {
+      "case": "api-trips-ids",
+      "source_bytes": 542,
+      "source_SHA256": "adb83280b6d5a70f383b5542727f675b3ff8a5740058b601d3d49ed27b14895b",
+      "every_literal_source_field_matches": true,
+      "trips": 3,
+      "shots": 4,
+      "references": 0,
+      "binary_field_count": 71,
+      "UTF8_strings_checked": 7,
+      "source_tail_hex": "00000000",
+      "text_exports": [
+        {
+          "file": "native-ui.txt",
+          "SHA256": "547ca0d10528c166573926e573fd239ab068a15834c1ee389c32977aa02b8834",
+          "trips_checked": 3,
+          "shots_checked": 4,
+          "references_checked": 0,
+          "all_fields_exposed_by_TXT_match": true
+        },
+        {
+          "file": "native.txt",
+          "SHA256": "1e098483970412ca2cbbda9294d02f027b19d28111e01afda7e7c47c1273d553",
+          "trips_checked": 3,
+          "shots_checked": 4,
+          "references_checked": 0,
+          "all_fields_exposed_by_TXT_match": true
+        }
+      ],
+      "DXF_exports": [
+        {
+          "file": "native-plan.dxf",
+          "SHA256": "82c9d7d6771ec267fb64df5fd6c22b5d7265aec41f2caa593f47eabec7a68509",
+          "raw_entity_count": 7,
+          "polygons_and_points_checked": 0,
+          "sketch_vertices_checked": 0,
+          "other_entities_checked": 7,
+          "every_coordinate_color_order_and_open_flag_matches": true
+        },
+        {
+          "file": "native-side.dxf",
+          "SHA256": "ee25ad388a7aed54cddcf42f1cd5233593060566c32c68939e879046aa3e8d50",
+          "raw_entity_count": 7,
+          "polygons_and_points_checked": 0,
+          "sketch_vertices_checked": 0,
+          "other_entities_checked": 7,
+          "every_coordinate_color_order_and_open_flag_matches": true
+        }
+      ]
+    },
+    {
+      "case": "api-references",
+      "source_bytes": 248,
+      "source_SHA256": "9034cf5e52f92a8713c7823bd9be52bdb50b294966a9e9713c538b937b7feb5f",
+      "every_literal_source_field_matches": true,
+      "trips": 1,
+      "shots": 1,
+      "references": 2,
+      "binary_field_count": 42,
+      "UTF8_strings_checked": 3,
+      "source_tail_hex": "00000000",
+      "text_exports": [
+        {
+          "file": "native-ui.txt",
+          "SHA256": "83fe5e5e3273464fd3b250c51f3ebfc7e411c7f30f0a29de2cc0c54461743a69",
+          "trips_checked": 1,
+          "shots_checked": 1,
+          "references_checked": 2,
+          "all_fields_exposed_by_TXT_match": true
+        },
+        {
+          "file": "native.txt",
+          "SHA256": "c39de28a9c96a4d02dd0bd9e35956af5ef8a1b1245ed43df8b461c9f83361264",
+          "trips_checked": 1,
+          "shots_checked": 1,
+          "references_checked": 2,
+          "all_fields_exposed_by_TXT_match": true
+        }
+      ],
+      "DXF_exports": [
+        {
+          "file": "native-plan.dxf",
+          "SHA256": "785fb50b0cac5fdc69b49d1a8707598761d4ebb86dabf23fc21cd2e1d64f66ee",
+          "raw_entity_count": 2,
+          "polygons_and_points_checked": 0,
+          "sketch_vertices_checked": 0,
+          "other_entities_checked": 2,
+          "every_coordinate_color_order_and_open_flag_matches": true
+        },
+        {
+          "file": "native-side.dxf",
+          "SHA256": "04ed339700922619ad4c0b7cfce59fc3d3ac6991295086f5a9888fff49d052e5",
+          "raw_entity_count": 2,
+          "polygons_and_points_checked": 0,
+          "sketch_vertices_checked": 0,
+          "other_entities_checked": 2,
+          "every_coordinate_color_order_and_open_flag_matches": true
+        }
+      ]
+    },
+    {
+      "case": "api-drawings",
+      "source_bytes": 680,
+      "source_SHA256": "4a494ead03cade750f670d50aa38661abda9b3e1f131d67f27a252982752c2a5",
+      "every_literal_source_field_matches": true,
+      "trips": 1,
+      "shots": 2,
+      "references": 0,
+      "binary_field_count": 196,
+      "UTF8_strings_checked": 2,
+      "source_tail_hex": "00000000",
+      "text_exports": [
+        {
+          "file": "native.txt",
+          "SHA256": "0fbb2c66bfaa19503a72f7401862e76e6625c046216c44c363b2a75616c16a29",
+          "trips_checked": 1,
+          "shots_checked": 2,
+          "references_checked": 0,
+          "all_fields_exposed_by_TXT_match": true
+        }
+      ],
+      "DXF_exports": [
+        {
+          "file": "native-plan.dxf",
+          "SHA256": "e6e8b3a94340afc4e76ce96be72c68a3ac2aa27878460996f522f526e180f088",
+          "raw_entity_count": 44,
+          "polygons_and_points_checked": 8,
+          "sketch_vertices_checked": 22,
+          "other_entities_checked": 8,
+          "every_coordinate_color_order_and_open_flag_matches": true
+        },
+        {
+          "file": "native-side.dxf",
+          "SHA256": "c60464449372449baab896f0b97a4e8e6e5993786059560c4ab88536f6303842",
+          "raw_entity_count": 44,
+          "polygons_and_points_checked": 8,
+          "sketch_vertices_checked": 22,
+          "other_entities_checked": 8,
+          "every_coordinate_color_order_and_open_flag_matches": true
+        }
+      ]
+    },
+    {
+      "case": "gui-cardinal",
+      "source_bytes": 78,
+      "source_SHA256": "27b93102584d76840192d97e242cc30df38edbc551da244a033773095ae87bfb",
+      "every_literal_source_field_matches": true,
+      "trips": 0,
+      "shots": 1,
+      "references": 0,
+      "binary_field_count": 26,
+      "UTF8_strings_checked": 0,
+      "source_tail_hex": "00000000",
+      "text_exports": [
+        {
+          "file": "native.txt",
+          "SHA256": "18a7d90e11f25c7b1c8b49e5b5261288da2555e1792f1f0a88d03c480ff7ad27",
+          "trips_checked": 0,
+          "shots_checked": 1,
+          "references_checked": 0,
+          "all_fields_exposed_by_TXT_match": true
+        }
+      ],
+      "DXF_exports": [
+        {
+          "file": "nativeP.dxf",
+          "SHA256": "e4b75c1796777e9ac1ecdb2970ab9b84f8bf3e097aa950d01879952f4c2e333b",
+          "raw_entity_count": 2,
+          "polygons_and_points_checked": 0,
+          "sketch_vertices_checked": 0,
+          "other_entities_checked": 2,
+          "every_coordinate_color_order_and_open_flag_matches": true
+        },
+        {
+          "file": "nativeS.dxf",
+          "SHA256": "83824f9341ac6fb3af3cba40bb2479d864c67a64ed31d1fda983b3b272a539d5",
+          "raw_entity_count": 2,
+          "polygons_and_points_checked": 0,
+          "sketch_vertices_checked": 0,
+          "other_entities_checked": 2,
+          "every_coordinate_color_order_and_open_flag_matches": true
+        }
+      ]
+    },
+    {
+      "case": "gui-colors",
+      "source_bytes": 204,
+      "source_SHA256": "5c7355c7212f99ba11fe76d0d6739c3e3a34c7c060909b3efd41aea5c1f3b362",
+      "every_literal_source_field_matches": true,
+      "trips": 0,
+      "shots": 1,
+      "references": 0,
+      "binary_field_count": 71,
+      "UTF8_strings_checked": 0,
+      "source_tail_hex": "00000000",
+      "text_exports": [
+        {
+          "file": "native.txt",
+          "SHA256": "18a7d90e11f25c7b1c8b49e5b5261288da2555e1792f1f0a88d03c480ff7ad27",
+          "trips_checked": 0,
+          "shots_checked": 1,
+          "references_checked": 0,
+          "all_fields_exposed_by_TXT_match": true
+        }
+      ],
+      "DXF_exports": [
+        {
+          "file": "nativeP.dxf",
+          "SHA256": "2edaa46a885b991365defc497be025147c545934d15f8434f9cc33aa6634cc2c",
+          "raw_entity_count": 11,
+          "polygons_and_points_checked": 9,
+          "sketch_vertices_checked": 9,
+          "other_entities_checked": 2,
+          "every_coordinate_color_order_and_open_flag_matches": true
+        },
+        {
+          "file": "nativeS.dxf",
+          "SHA256": "83824f9341ac6fb3af3cba40bb2479d864c67a64ed31d1fda983b3b272a539d5",
+          "raw_entity_count": 2,
+          "polygons_and_points_checked": 0,
+          "sketch_vertices_checked": 0,
+          "other_entities_checked": 2,
+          "every_coordinate_color_order_and_open_flag_matches": true
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Native TXT rounds angles, references and dates; it omits roll, tick fractions, mapping and sketch records.",
+    "Native DXF folds repeated shot readings into its own model; it is not the PRD arithmetic/circular averaging oracle.",
+    "XSection has no splays at selected stations; this verifies source fields and connector anchors, not general projected cross-section geometry.",
+    "No loop or branching geometry is covered by these minimal fixtures.",
+    "Automatic-declination sentinel -32768 is a mode, never a literal -180-degree correction."
+  ],
+  "totals": {
+    "trips": 6,
+    "shots": 20,
+    "references": 2,
+    "binary_field_count": 538,
+    "sketch_vertices": 53,
+    "DXF_entities": 157
+  },
+  "additional_GUI_DXF_exports": [
+    {
+      "case": "api-drawings",
+      "file": "native-uiP.dxf",
+      "matches_validated_API_file": "native-plan.dxf",
+      "byte_identical": true,
+      "SHA256": "e6e8b3a94340afc4e76ce96be72c68a3ac2aa27878460996f522f526e180f088",
+      "entity_count_already_in_primary_total": true
+    },
+    {
+      "case": "api-drawings",
+      "file": "native-uiS.dxf",
+      "matches_validated_API_file": "native-side.dxf",
+      "byte_identical": true,
+      "SHA256": "c60464449372449baab896f0b97a4e8e6e5993786059560c4ab88536f6303842",
+      "entity_count_already_in_primary_total": true
+    }
+  ],
+  "validation_tools": {
+    "binary_inspector_SHA256": "16a56276f87cc60d4d2f5e2a582f1f527710919de8442aeea0202291ae9c6022",
+    "literal_input_helper": "../../helpers/pockettopo_fixtures.cs",
+    "literal_input_helper_SHA256": "ae1f32a1034bbd95a59e97db47e887fabb30b06eabe55a960c9c5ebf9090d005",
+    "implementation": "One-off standard-library Python audit, no production parser dependency; temporary script not part of tooling scope."
+  },
+  "all_checks_passed": true
+}
