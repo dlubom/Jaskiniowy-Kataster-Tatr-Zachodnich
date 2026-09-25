@@ -1,0 +1,1036 @@
+{
+  "schema_version": 1,
+  "stage": "P06",
+  "provenance": {
+    "sha256": "4a494ead03cade750f670d50aa38661abda9b3e1f131d67f27a252982752c2a5",
+    "bytes": 680,
+    "input_format": "PocketTopo v3",
+    "tool": "jktz-release-tools",
+    "tool_version": "0.1.0",
+    "algorithm_version": "p06-1",
+    "source_name": "api-drawings.top"
+  },
+  "settings": {
+    "index_base": 0,
+    "repeat_policy": "explicit_source_pinned_confirmation_only",
+    "min_resultant": 1e-12,
+    "ambiguity_rule": "resultant_length <= min_resultant",
+    "distance_mean": "arithmetic",
+    "azimuth_mean": "circular_fsum",
+    "inclination_mean": "signed_arithmetic_after_direction_normalization",
+    "outlier_removal": false,
+    "declination_applied": true,
+    "date_inference": false,
+    "crs_assumed": null,
+    "correction_policy": "stored_explicit_or_source_pinned_override",
+    "correction_overrides": null,
+    "angular_correction": "compiler_declination_directive",
+    "decimal_places": 12,
+    "walls_name_limit": 8,
+    "survex_separator": ":",
+    "source_comments": "ascii_json_chunks_160_characters",
+    "drawing_settings": {
+      "pixels_per_metre": 40.0,
+      "padding_mm": 250.0,
+      "stroke_width_mm": 30.0,
+      "label_height_mm": 200.0,
+      "background": "#ffffff",
+      "max_dimension": 4096,
+      "max_pixels": 16000000
+    }
+  },
+  "plan": {
+    "source_sha256": "4a494ead03cade750f670d50aa38661abda9b3e1f131d67f27a252982752c2a5",
+    "confirmations": [],
+    "exclusions": []
+  },
+  "groups": [
+    {
+      "id": 0,
+      "source_indices": [
+        0
+      ],
+      "confirmation_evidence": null,
+      "kind": "leg",
+      "trip_index": 0,
+      "from_raw": -2147483647,
+      "to_raw": -2147483646,
+      "status": "ready",
+      "reason": null,
+      "normalized_readings": [
+        {
+          "source_index": 0,
+          "distance_m": 10.0,
+          "azimuth_deg": 0.0,
+          "inclination_deg": 0.0,
+          "reversed": false
+        }
+      ],
+      "average": {
+        "count": 1,
+        "distance_m": 10.0,
+        "azimuth_deg": 0.0,
+        "inclination_deg": 0.0,
+        "resultant_length": 1.0,
+        "azimuth_max_deviation_deg": 0.0,
+        "distance_spread_m": 0.0,
+        "inclination_spread_deg": 0.0
+      },
+      "warnings": [],
+      "export": {
+        "status": "exported",
+        "reason": "explicit_correction",
+        "declination_degrees": 0.0,
+        "correction_provenance": "stored_explicit",
+        "correction_evidence": null,
+        "srv_line": 18,
+        "svx_line": 27
+      }
+    },
+    {
+      "id": 1,
+      "source_indices": [
+        1
+      ],
+      "confirmation_evidence": null,
+      "kind": "leg",
+      "trip_index": 0,
+      "from_raw": -2147483646,
+      "to_raw": -2147483645,
+      "status": "ready",
+      "reason": null,
+      "normalized_readings": [
+        {
+          "source_index": 1,
+          "distance_m": 10.0,
+          "azimuth_deg": 90.0,
+          "inclination_deg": 0.0,
+          "reversed": false
+        }
+      ],
+      "average": {
+        "count": 1,
+        "distance_m": 10.0,
+        "azimuth_deg": 90.0,
+        "inclination_deg": 0.0,
+        "resultant_length": 1.0,
+        "azimuth_max_deviation_deg": 0.0,
+        "distance_spread_m": 0.0,
+        "inclination_spread_deg": 0.0
+      },
+      "warnings": [],
+      "export": {
+        "status": "exported",
+        "reason": "explicit_correction",
+        "declination_degrees": 0.0,
+        "correction_provenance": "stored_explicit",
+        "correction_evidence": null,
+        "srv_line": 24,
+        "svx_line": 33
+      }
+    }
+  ],
+  "record_trace": [
+    {
+      "source_index": 0,
+      "group_id": 0,
+      "disposition": "retained_single",
+      "reason": "not_averaged",
+      "comment": null,
+      "flags": 0,
+      "flipped": false,
+      "roll_raw": 0,
+      "export": {
+        "status": "exported",
+        "reason": "explicit_correction",
+        "declination_degrees": 0.0,
+        "correction_provenance": "stored_explicit",
+        "correction_evidence": null,
+        "srv_line": 18,
+        "svx_line": 27
+      }
+    },
+    {
+      "source_index": 1,
+      "group_id": 1,
+      "disposition": "retained_single",
+      "reason": "not_averaged",
+      "comment": "flipped extended segment",
+      "flags": 3,
+      "flipped": true,
+      "roll_raw": 0,
+      "export": {
+        "status": "exported",
+        "reason": "explicit_correction",
+        "declination_degrees": 0.0,
+        "correction_provenance": "stored_explicit",
+        "correction_evidence": null,
+        "srv_line": 24,
+        "svx_line": 33
+      }
+    }
+  ],
+  "station_map": [
+    {
+      "raw": -2147483647,
+      "kind": "plain",
+      "source_text": "0",
+      "walls_name": "0",
+      "survex_name": "0",
+      "status": "mapped",
+      "walls_mapping": "literal",
+      "survex_mapping": "literal"
+    },
+    {
+      "raw": -2147483646,
+      "kind": "plain",
+      "source_text": "1",
+      "walls_name": "1",
+      "survex_name": "1",
+      "status": "mapped",
+      "walls_mapping": "literal",
+      "survex_mapping": "literal"
+    },
+    {
+      "raw": -2147483645,
+      "kind": "plain",
+      "source_text": "2",
+      "walls_name": "2",
+      "survex_name": "2",
+      "status": "mapped",
+      "walls_mapping": "literal",
+      "survex_mapping": "literal"
+    }
+  ],
+  "trips": [
+    {
+      "index": 0,
+      "source_ticks": 632401344000000000,
+      "comment": "P01 synthetic drawing vertices",
+      "date_reliability": "unverified_device_clock",
+      "established_date": null,
+      "date_evidence": null,
+      "used_date": null,
+      "declination": {
+        "source_raw": 0,
+        "mode": "explicit",
+        "stored_degrees": 0.0,
+        "applied_degrees": 0.0,
+        "status": "applied",
+        "selected_degrees": 0.0,
+        "provenance": "stored_explicit",
+        "evidence": null,
+        "unresolved_reason": null
+      }
+    }
+  ],
+  "references": {
+    "count": 0,
+    "crs": null,
+    "status": "retained_only_crs_unknown",
+    "active_fixes": 0
+  },
+  "drawings": {
+    "artifacts": {
+      "plan-sketch": {
+        "view": "plan",
+        "variant": "sketch",
+        "sketch_status": "nonempty",
+        "mapping": {
+          "origin": {
+            "x": -100,
+            "y": 200
+          },
+          "scale": 500
+        },
+        "mapping_applied_to_geometry": false,
+        "source_units": "mm",
+        "axes": "x_right_y_down",
+        "viewport": {
+          "viewbox_mm": [
+            -7825.0,
+            -2325.0,
+            15650.0,
+            6150.0
+          ],
+          "width_px": 626,
+          "height_px": 246,
+          "effective_pixels_per_metre": 40.0,
+          "requested_pixels_per_metre": 40.0
+        },
+        "settings": {
+          "pixels_per_metre": 40.0,
+          "padding_mm": 250.0,
+          "stroke_width_mm": 30.0,
+          "label_height_mm": 200.0,
+          "background": "#ffffff",
+          "max_dimension": 4096,
+          "max_pixels": 16000000
+        },
+        "font": "jktz-grid-3x5-v1-paths-no-system-fonts",
+        "palette_srgb": [
+          "#000000",
+          "#b0b0b0",
+          "#a52a2a",
+          "#0000ff",
+          "#ff0000",
+          "#00c000",
+          "#ffa500"
+        ],
+        "overlay_notices": [],
+        "xsections": [
+          {
+            "element_index": 8,
+            "position": {
+              "x": -5000,
+              "y": -6000
+            },
+            "station": {
+              "raw": -2147483646
+            },
+            "direction": -1
+          },
+          {
+            "element_index": 9,
+            "position": {
+              "x": 5000,
+              "y": -6000
+            },
+            "station": {
+              "raw": -2147483645
+            },
+            "direction": 16384
+          }
+        ],
+        "sketch_vertices": 22
+      },
+      "plan-measurements": {
+        "view": "plan",
+        "variant": "measurements",
+        "sketch_status": "nonempty",
+        "mapping": {
+          "origin": {
+            "x": -100,
+            "y": 200
+          },
+          "scale": 500
+        },
+        "mapping_applied_to_geometry": false,
+        "source_units": "mm",
+        "axes": "x_right_y_down",
+        "viewport": {
+          "viewbox_mm": [
+            -7825.0,
+            -10325.0,
+            18400.0,
+            14150.0
+          ],
+          "width_px": 736,
+          "height_px": 566,
+          "effective_pixels_per_metre": 40.0,
+          "requested_pixels_per_metre": 40.0
+        },
+        "settings": {
+          "pixels_per_metre": 40.0,
+          "padding_mm": 250.0,
+          "stroke_width_mm": 30.0,
+          "label_height_mm": 200.0,
+          "background": "#ffffff",
+          "max_dimension": 4096,
+          "max_pixels": 16000000
+        },
+        "font": "jktz-grid-3x5-v1-paths-no-system-fonts",
+        "palette_srgb": [
+          "#000000",
+          "#b0b0b0",
+          "#a52a2a",
+          "#0000ff",
+          "#ff0000",
+          "#00c000",
+          "#ffa500"
+        ],
+        "overlay_notices": [],
+        "xsections": [
+          {
+            "element_index": 8,
+            "position": {
+              "x": -5000,
+              "y": -6000
+            },
+            "station": {
+              "raw": -2147483646
+            },
+            "direction": -1
+          },
+          {
+            "element_index": 9,
+            "position": {
+              "x": 5000,
+              "y": -6000
+            },
+            "station": {
+              "raw": -2147483645
+            },
+            "direction": 16384
+          }
+        ],
+        "sketch_vertices": 22
+      },
+      "side-sketch": {
+        "view": "side",
+        "variant": "sketch",
+        "sketch_status": "nonempty",
+        "mapping": {
+          "origin": {
+            "x": 300,
+            "y": -400
+          },
+          "scale": 500
+        },
+        "mapping_applied_to_geometry": false,
+        "source_units": "mm",
+        "axes": "x_right_y_down",
+        "viewport": {
+          "viewbox_mm": [
+            -6325.0,
+            -3825.0,
+            14150.0,
+            6150.0
+          ],
+          "width_px": 566,
+          "height_px": 246,
+          "effective_pixels_per_metre": 40.0,
+          "requested_pixels_per_metre": 40.0
+        },
+        "settings": {
+          "pixels_per_metre": 40.0,
+          "padding_mm": 250.0,
+          "stroke_width_mm": 30.0,
+          "label_height_mm": 200.0,
+          "background": "#ffffff",
+          "max_dimension": 4096,
+          "max_pixels": 16000000
+        },
+        "font": "jktz-grid-3x5-v1-paths-no-system-fonts",
+        "palette_srgb": [
+          "#000000",
+          "#b0b0b0",
+          "#a52a2a",
+          "#0000ff",
+          "#ff0000",
+          "#00c000",
+          "#ffa500"
+        ],
+        "overlay_notices": [],
+        "xsections": [
+          {
+            "element_index": 8,
+            "position": {
+              "x": -5000,
+              "y": 6000
+            },
+            "station": {
+              "raw": -2147483646
+            },
+            "direction": -1
+          },
+          {
+            "element_index": 9,
+            "position": {
+              "x": 5000,
+              "y": 6000
+            },
+            "station": {
+              "raw": -2147483645
+            },
+            "direction": 16384
+          }
+        ],
+        "sketch_vertices": 22
+      },
+      "side-measurements": {
+        "view": "side",
+        "variant": "measurements",
+        "sketch_status": "nonempty",
+        "mapping": {
+          "origin": {
+            "x": 300,
+            "y": -400
+          },
+          "scale": 500
+        },
+        "mapping_applied_to_geometry": false,
+        "source_units": "mm",
+        "axes": "x_right_y_down",
+        "viewport": {
+          "viewbox_mm": [
+            -6325.0,
+            -3825.0,
+            16900.0,
+            10150.0
+          ],
+          "width_px": 676,
+          "height_px": 406,
+          "effective_pixels_per_metre": 40.0,
+          "requested_pixels_per_metre": 40.0
+        },
+        "settings": {
+          "pixels_per_metre": 40.0,
+          "padding_mm": 250.0,
+          "stroke_width_mm": 30.0,
+          "label_height_mm": 200.0,
+          "background": "#ffffff",
+          "max_dimension": 4096,
+          "max_pixels": 16000000
+        },
+        "font": "jktz-grid-3x5-v1-paths-no-system-fonts",
+        "palette_srgb": [
+          "#000000",
+          "#b0b0b0",
+          "#a52a2a",
+          "#0000ff",
+          "#ff0000",
+          "#00c000",
+          "#ffa500"
+        ],
+        "overlay_notices": [],
+        "xsections": [
+          {
+            "element_index": 8,
+            "position": {
+              "x": -5000,
+              "y": 6000
+            },
+            "station": {
+              "raw": -2147483646
+            },
+            "direction": -1
+          },
+          {
+            "element_index": 9,
+            "position": {
+              "x": 5000,
+              "y": 6000
+            },
+            "station": {
+              "raw": -2147483645
+            },
+            "direction": 16384
+          }
+        ],
+        "sketch_vertices": 22
+      }
+    },
+    "geometry": {
+      "views": {
+        "plan": {
+          "survey": [
+            {
+              "group_id": 0,
+              "source_indices": [
+                0
+              ],
+              "start": [
+                0.0,
+                -0.0
+              ],
+              "end": [
+                0.0,
+                -10000.0
+              ],
+              "component": 0,
+              "reverse_attachment": false,
+              "target_station_position": [
+                0.0,
+                -10000.0
+              ],
+              "closure_residual_mm": 0.0
+            },
+            {
+              "group_id": 1,
+              "source_indices": [
+                1
+              ],
+              "start": [
+                0.0,
+                -10000.0
+              ],
+              "end": [
+                10000.0,
+                -10000.0
+              ],
+              "component": 0,
+              "reverse_attachment": false,
+              "target_station_position": [
+                10000.0,
+                -10000.0
+              ],
+              "closure_residual_mm": 0.0
+            }
+          ],
+          "splays": [],
+          "stations": [
+            {
+              "raw": -2147483647,
+              "label": "0",
+              "position": [
+                0.0,
+                -0.0
+              ],
+              "component": 0
+            },
+            {
+              "raw": -2147483646,
+              "label": "1",
+              "position": [
+                0.0,
+                -10000.0
+              ],
+              "component": 0
+            },
+            {
+              "raw": -2147483645,
+              "label": "2",
+              "position": [
+                10000.0,
+                -10000.0
+              ],
+              "component": 0
+            }
+          ],
+          "xsections": [
+            {
+              "element_index": 8,
+              "position": [
+                -5000,
+                -6000
+              ],
+              "station_raw": -2147483646,
+              "direction": -1,
+              "status": "projected",
+              "connector": {
+                "start": [
+                  -5000,
+                  -6000
+                ],
+                "end": [
+                  0.0,
+                  -10000.0
+                ]
+              },
+              "splays": []
+            },
+            {
+              "element_index": 9,
+              "position": [
+                5000,
+                -6000
+              ],
+              "station_raw": -2147483645,
+              "direction": 16384,
+              "status": "projected",
+              "connector": {
+                "start": [
+                  5000,
+                  -6000
+                ],
+                "end": [
+                  10000.0,
+                  -10000.0
+                ]
+              },
+              "splays": []
+            }
+          ],
+          "notices": []
+        },
+        "side": {
+          "survey": [
+            {
+              "group_id": 0,
+              "source_indices": [
+                0
+              ],
+              "start": [
+                0.0,
+                -0.0
+              ],
+              "end": [
+                10000.0,
+                -0.0
+              ],
+              "component": 0,
+              "reverse_attachment": false,
+              "target_station_position": [
+                10000.0,
+                -0.0
+              ],
+              "closure_residual_mm": 0.0
+            },
+            {
+              "group_id": 1,
+              "source_indices": [
+                1
+              ],
+              "start": [
+                10000.0,
+                -0.0
+              ],
+              "end": [
+                0.0,
+                -0.0
+              ],
+              "component": 0,
+              "reverse_attachment": false,
+              "target_station_position": [
+                0.0,
+                -0.0
+              ],
+              "closure_residual_mm": 0.0
+            }
+          ],
+          "splays": [],
+          "stations": [
+            {
+              "raw": -2147483647,
+              "label": "0",
+              "position": [
+                0.0,
+                -0.0
+              ],
+              "component": 0
+            },
+            {
+              "raw": -2147483646,
+              "label": "1",
+              "position": [
+                10000.0,
+                -0.0
+              ],
+              "component": 0
+            },
+            {
+              "raw": -2147483645,
+              "label": "2",
+              "position": [
+                0.0,
+                -0.0
+              ],
+              "component": 0
+            }
+          ],
+          "xsections": [
+            {
+              "element_index": 8,
+              "position": [
+                -5000,
+                6000
+              ],
+              "station_raw": -2147483646,
+              "direction": -1,
+              "status": "projected",
+              "connector": {
+                "start": [
+                  -5000,
+                  6000
+                ],
+                "end": [
+                  10000.0,
+                  -0.0
+                ]
+              },
+              "splays": []
+            },
+            {
+              "element_index": 9,
+              "position": [
+                5000,
+                6000
+              ],
+              "station_raw": -2147483645,
+              "direction": 16384,
+              "status": "projected",
+              "connector": {
+                "start": [
+                  5000,
+                  6000
+                ],
+                "end": [
+                  0.0,
+                  -0.0
+                ]
+              },
+              "splays": []
+            }
+          ],
+          "notices": []
+        }
+      },
+      "diagnostics": [],
+      "policy": "source_order_attachment_unadjusted_forest",
+      "units": "millimetres",
+      "axes": "x_right_y_down",
+      "components": 1,
+      "loop_adjustment": false,
+      "references_applied": false,
+      "mapping_applied": false,
+      "mixed_flip_policy": "first_source_reading_unconfirmed_side_direction"
+    },
+    "renderer": {
+      "name": "resvg",
+      "required_version": "0.48.1",
+      "actual_version": "0.48.1",
+      "dpi": 96,
+      "system_fonts": false,
+      "status": "rendered"
+    }
+  },
+  "completeness": {
+    "source_decode": "complete",
+    "source_shots": 2,
+    "traced_shots": 2,
+    "ready_measurements": 2,
+    "held_shots": 0,
+    "exports_created": true,
+    "conversion_complete": true,
+    "exported_measurements": 2,
+    "exported_source_shots": 2,
+    "measurement_export_complete": true,
+    "survey_texts_created": true,
+    "svg_drawings_created": 4,
+    "png_drawings_created": 4,
+    "atomic_package_created": true,
+    "package_artifacts_complete": true,
+    "compilation_complete": true,
+    "drawing_overlay_complete": true
+  },
+  "limitations": [
+    "Device dates remain unverified; no date or IGRF directive was emitted.",
+    "Stored explicit corrections are reproduced, not historically verified.",
+    "Auto and missing-trip corrections require independently evidenced overrides.",
+    "Reference CRS is unknown; source coordinates produce no active fixes.",
+    "Unconfirmed readings remain separate, including duplicate named vectors.",
+    "Compiler loop adjustment is not an oracle for the source readings.",
+    "Survey overlays follow the declared projection policy; source sketches do not move.",
+    "Compilation uses Survex for both formats; it is not a runtime test in Walls. Completeness does not establish dates, repeats, CRS or historical correctness."
+  ],
+  "exports": {
+    "srv": {
+      "status": "created"
+    },
+    "svx": {
+      "status": "created",
+      "minimum_version": "1.4.12"
+    },
+    "active_measurements": 2,
+    "geometry_status": "nonempty",
+    "validation": {
+      "complete": true,
+      "geometry_status": "nonempty",
+      "tools": {
+        "cavern": {
+          "command": [
+            "cavern",
+            "--version"
+          ],
+          "status": "ok",
+          "returncode": 0,
+          "signal": null,
+          "stdout": "cavern - Survex 1.4.22\n",
+          "stderr": "",
+          "warnings": []
+        },
+        "dump3d": {
+          "command": [
+            "dump3d",
+            "--version"
+          ],
+          "status": "ok",
+          "returncode": 0,
+          "signal": null,
+          "stdout": "dump3d - Survex 1.4.22\n",
+          "stderr": "",
+          "warnings": []
+        }
+      },
+      "formats": {
+        "srv": {
+          "compile": {
+            "command": [
+              "cavern",
+              "-o",
+              "<scratch>/survey.3d",
+              "<scratch>/survey.SRV"
+            ],
+            "status": "ok",
+            "returncode": 0,
+            "signal": null,
+            "stdout": "Survex 1.4.22\nCopyright (C) 1990-2026 Olly Betts\n<scratch>/survey.SRV:18:1: info: Survey has no fixed points. Therefore I've fixed 0 at (0,0,0)\n\nRemoving trailing traverses...\n\nConcatenating traverses...\n\nSimplifying network...\n\nCalculating network...\n\nCalculating traverses...\n\nCalculating trailing traverses...\n\nCalculating statistics...\n\nSurvey contains 3 survey stations, joined by 2 legs.\nThere are 0 loops.\nTotal length of survey legs =   20.00m (  20.00m adjusted)\nTotal plan length of survey legs =   20.00m\nTotal vertical length of survey legs =    0.00m\nVertical range = 0.00m (from 2 at 0.00m to 2 at 0.00m)\nNorth-South range = 10.00m (from 2 at 10.00m to 0 at 0.00m)\nEast-West range = 10.00m (from 2 at 10.00m to 1 at 0.00m)\nCPU time used  0.00s\n",
+            "stderr": "",
+            "warnings": []
+          },
+          "dump": {
+            "command": [
+              "dump3d",
+              "--legs",
+              "<scratch>/survey.3d"
+            ],
+            "status": "ok",
+            "returncode": 0,
+            "signal": null,
+            "stdout": "TITLE \"survey\"\nDATE \"@1790347645\"\nDATE_NUMERIC 1790347645\nVERSION 8\nSEPARATOR ':'\n--\nLEG 0.00 0.00 0.00 0.00 10.00 0.00 [] STYLE=NORMAL\nLEG 0.00 10.00 0.00 10.00 10.00 0.00 [] STYLE=NORMAL\nNODE 10.00 10.00 0.00 [2] UNDERGROUND\nNODE 0.00 10.00 0.00 [1] UNDERGROUND\nNODE 0.00 0.00 0.00 [0] UNDERGROUND\nSTOP\n",
+            "stderr": "",
+            "warnings": []
+          },
+          "checks": {
+            "expected_named_stations": [
+              "0",
+              "1",
+              "2"
+            ],
+            "compiled_named_stations": [
+              "0",
+              "1",
+              "2"
+            ],
+            "missing_named_stations": [],
+            "unexpected_named_stations": [],
+            "broken_zero_link_group_ids": [],
+            "legs": {
+              "source_named_leg_groups": 2,
+              "source_splay_groups": 0,
+              "compiled_named_legs": 2,
+              "compiled_splays": 0,
+              "missing_named_edge_group_ids": [],
+              "unexpected_named_leg_indices": [],
+              "compiler_combined_named_edges": false,
+              "splay_anchors_complete": true,
+              "complete": true
+            },
+            "complete": true
+          },
+          "complete": true
+        },
+        "svx": {
+          "compile": {
+            "command": [
+              "cavern",
+              "-o",
+              "<scratch>/survey.3d",
+              "<scratch>/survey.svx"
+            ],
+            "status": "ok",
+            "returncode": 0,
+            "signal": null,
+            "stdout": "Survex 1.4.22\nCopyright (C) 1990-2026 Olly Betts\n<scratch>/survey.svx:27:1: info: Survey has no fixed points. Therefore I've fixed 0 at (0,0,0)\n\nRemoving trailing traverses...\n\nConcatenating traverses...\n\nSimplifying network...\n\nCalculating network...\n\nCalculating traverses...\n\nCalculating trailing traverses...\n\nCalculating statistics...\n\nSurvey contains 3 survey stations, joined by 2 legs.\nThere are 0 loops.\nTotal length of survey legs =   20.00m (  20.00m adjusted)\nTotal plan length of survey legs =   20.00m\nTotal vertical length of survey legs =    0.00m\nVertical range = 0.00m (from 2 at 0.00m to 2 at 0.00m)\nNorth-South range = 10.00m (from 2 at 10.00m to 0 at 0.00m)\nEast-West range = 10.00m (from 2 at 10.00m to 1 at 0.00m)\nCPU time used  0.00s\n",
+            "stderr": "",
+            "warnings": []
+          },
+          "dump": {
+            "command": [
+              "dump3d",
+              "--legs",
+              "<scratch>/survey.3d"
+            ],
+            "status": "ok",
+            "returncode": 0,
+            "signal": null,
+            "stdout": "TITLE \"survey\"\nDATE \"@1790347645\"\nDATE_NUMERIC 1790347645\nVERSION 8\nSEPARATOR ':'\n--\nLEG 0.00 0.00 0.00 0.00 10.00 0.00 [] STYLE=NORMAL\nLEG 0.00 10.00 0.00 10.00 10.00 0.00 [] STYLE=NORMAL\nNODE 10.00 10.00 0.00 [2] UNDERGROUND\nNODE 0.00 10.00 0.00 [1] UNDERGROUND\nNODE 0.00 0.00 0.00 [0] UNDERGROUND\nSTOP\n",
+            "stderr": "",
+            "warnings": []
+          },
+          "checks": {
+            "expected_named_stations": [
+              "0",
+              "1",
+              "2"
+            ],
+            "compiled_named_stations": [
+              "0",
+              "1",
+              "2"
+            ],
+            "missing_named_stations": [],
+            "unexpected_named_stations": [],
+            "broken_zero_link_group_ids": [],
+            "legs": {
+              "source_named_leg_groups": 2,
+              "source_splay_groups": 0,
+              "compiled_named_legs": 2,
+              "compiled_splays": 0,
+              "missing_named_edge_group_ids": [],
+              "unexpected_named_leg_indices": [],
+              "compiler_combined_named_edges": false,
+              "splay_anchors_complete": true,
+              "complete": true
+            },
+            "complete": true
+          },
+          "complete": true
+        }
+      },
+      "comparison": {
+        "complete": true,
+        "status": "equivalent",
+        "tolerance_m": 0.010001,
+        "origin_raw": -2147483647,
+        "max_station_delta_m": 0.0,
+        "mismatched_station_raw": [],
+        "leg_geometry_matches": true
+      },
+      "scope": "Exported active geometry only; dates, CRS and historical corrections remain unverified."
+    }
+  },
+  "package": {
+    "collision_policy": "error",
+    "publication": "atomic_directory_rename_without_replacement",
+    "drawing_notices": [],
+    "report_manifest_excludes_itself": true,
+    "artifacts": {
+      "survey.SRV": {
+        "bytes": 2369,
+        "sha256": "14e570c1d25042286e5bdfd195b99e7bdba89feaf73882e753349afb8fc93941"
+      },
+      "survey.svx": {
+        "bytes": 2544,
+        "sha256": "cc31e975cded3fb2d3931795e121cc29a3ba875119e4823276d5898aea5db299"
+      },
+      "plan-sketch.svg": {
+        "bytes": 3111,
+        "sha256": "8e773916182cd8fcd442aa34d272337ccbc5ab57f7864c413b55cbf27802d17d"
+      },
+      "plan-measurements.svg": {
+        "bytes": 5060,
+        "sha256": "45d0f7eb1fa13de696b21bcb582e774c4198e425b4087807ff6a497a9651b588"
+      },
+      "side-sketch.svg": {
+        "bytes": 3088,
+        "sha256": "362ea77b39c9e7b6b924dfcd71517652cb281a19965057b2332fef53bcc6f63d"
+      },
+      "side-measurements.svg": {
+        "bytes": 4934,
+        "sha256": "08f6440c28cb755aa9dcc4b61c03db26ba765079c1efa66c3a6d0a58872ada79"
+      },
+      "plan-sketch.png": {
+        "bytes": 2986,
+        "sha256": "5ea832bde4ff7eb1f7743a7bcbcc4bc7bc76d35e5f1c55cbe1db0ad385996f9d"
+      },
+      "plan-measurements.png": {
+        "bytes": 7939,
+        "sha256": "d4746303326e06c615f07b54a41f23207b18fc346b339c1fae509ca364f5be98"
+      },
+      "side-sketch.png": {
+        "bytes": 3116,
+        "sha256": "1656a523422a9af01555f723f3806ffe46628edade1a1efb73df98654e981a00"
+      },
+      "side-measurements.png": {
+        "bytes": 10482,
+        "sha256": "d7df79703d9316e0d9c9f93e2d61442f766a2d876cc74128f2299513d1224fdd"
+      },
+      "source.json": {
+        "bytes": 7735,
+        "sha256": "91f4bdc7027543abcbd258101000cd345d1c378c25bbfc0fa9fb4be7a7851ac0"
+      }
+    }
+  }
+}

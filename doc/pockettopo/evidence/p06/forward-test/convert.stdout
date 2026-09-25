@@ -1,0 +1,23 @@
+{
+  "output": "/private/tmp/p06-forward-5pvz9E/package",
+  "completeness": {
+    "source_decode": "complete",
+    "source_shots": 14,
+    "traced_shots": 14,
+    "ready_measurements": 13,
+    "held_shots": 1,
+    "exports_created": true,
+    "conversion_complete": false,
+    "exported_measurements": 13,
+    "exported_source_shots": 13,
+    "measurement_export_complete": false,
+    "survey_texts_created": true,
+    "svg_drawings_created": 4,
+    "png_drawings_created": 4,
+    "atomic_package_created": true,
+    "package_artifacts_complete": true,
+    "compilation_complete": true,
+    "drawing_overlay_complete": false
+  },
+  "report": "/private/tmp/p06-forward-5pvz9E/package/conversion-report.json"
+}

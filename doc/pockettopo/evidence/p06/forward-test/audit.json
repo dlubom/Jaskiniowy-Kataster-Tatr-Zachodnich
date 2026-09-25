@@ -1,0 +1,363 @@
+{
+  "cwd": "/Users/dariuszlubomski/proj/Jaskiniowy-Kataster-Tatr-Zachodnich",
+  "workspace": "/private/tmp/p06-forward-5pvz9E",
+  "source": "/Users/dariuszlubomski/proj/Jaskiniowy-Kataster-Tatr-Zachodnich/doc/pockettopo/evidence/repeat-candidates/okna/okna.top",
+  "source_sha256_before": "52e16f9561f2fbf3b66e595c29fce113c9ed1cc44fc5865897cb5f06b1aaba94",
+  "renderer_sha256": "50e57a945189f74ee89766a2d5b8e1a8e5254416880f9e57b36d1307e71e94ce",
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "UV_CACHE_DIR": "/private/tmp/p06-forward-5pvz9E/uv-cache"
+  },
+  "commands": [
+    {
+      "label": "resvg-version",
+      "argv": [
+        "/private/tmp/p01-resvg/macos/resvg",
+        "--version"
+      ],
+      "command": "/private/tmp/p01-resvg/macos/resvg --version",
+      "returncode": 0,
+      "stdout_file": "resvg-version.stdout",
+      "stderr_file": "resvg-version.stderr"
+    },
+    {
+      "label": "cavern-version",
+      "argv": [
+        "cavern",
+        "--version"
+      ],
+      "command": "cavern --version",
+      "returncode": 0,
+      "stdout_file": "cavern-version.stdout",
+      "stderr_file": "cavern-version.stderr"
+    },
+    {
+      "label": "dump3d-version",
+      "argv": [
+        "dump3d",
+        "--version"
+      ],
+      "command": "dump3d --version",
+      "returncode": 0,
+      "stdout_file": "dump3d-version.stdout",
+      "stderr_file": "dump3d-version.stderr"
+    },
+    {
+      "label": "inspect",
+      "argv": [
+        "uv",
+        "run",
+        "--no-sync",
+        "jktz-pockettopo",
+        "inspect",
+        "/Users/dariuszlubomski/proj/Jaskiniowy-Kataster-Tatr-Zachodnich/doc/pockettopo/evidence/repeat-candidates/okna/okna.top"
+      ],
+      "command": "uv run --no-sync jktz-pockettopo inspect /Users/dariuszlubomski/proj/Jaskiniowy-Kataster-Tatr-Zachodnich/doc/pockettopo/evidence/repeat-candidates/okna/okna.top",
+      "returncode": 0,
+      "stdout_file": "inspect.stdout",
+      "stderr_file": "inspect.stderr"
+    },
+    {
+      "label": "convert",
+      "argv": [
+        "uv",
+        "run",
+        "--no-sync",
+        "jktz-pockettopo",
+        "convert",
+        "/Users/dariuszlubomski/proj/Jaskiniowy-Kataster-Tatr-Zachodnich/doc/pockettopo/evidence/repeat-candidates/okna/okna.top",
+        "--output",
+        "/private/tmp/p06-forward-5pvz9E/package",
+        "--resvg",
+        "/private/tmp/p01-resvg/macos/resvg"
+      ],
+      "command": "uv run --no-sync jktz-pockettopo convert /Users/dariuszlubomski/proj/Jaskiniowy-Kataster-Tatr-Zachodnich/doc/pockettopo/evidence/repeat-candidates/okna/okna.top --output /private/tmp/p06-forward-5pvz9E/package --resvg /private/tmp/p01-resvg/macos/resvg",
+      "returncode": 2,
+      "stdout_file": "convert.stdout",
+      "stderr_file": "convert.stderr"
+    },
+    {
+      "label": "reuse-existing-output",
+      "argv": [
+        "uv",
+        "run",
+        "--no-sync",
+        "jktz-pockettopo",
+        "convert",
+        "/Users/dariuszlubomski/proj/Jaskiniowy-Kataster-Tatr-Zachodnich/doc/pockettopo/evidence/repeat-candidates/okna/okna.top",
+        "--output",
+        "/private/tmp/p06-forward-5pvz9E/package",
+        "--resvg",
+        "/private/tmp/p01-resvg/macos/resvg"
+      ],
+      "command": "uv run --no-sync jktz-pockettopo convert /Users/dariuszlubomski/proj/Jaskiniowy-Kataster-Tatr-Zachodnich/doc/pockettopo/evidence/repeat-candidates/okna/okna.top --output /private/tmp/p06-forward-5pvz9E/package --resvg /private/tmp/p01-resvg/macos/resvg",
+      "returncode": 1,
+      "stdout_file": "reuse.stdout",
+      "stderr_file": "reuse.stderr"
+    },
+    {
+      "label": "inspect-after-parent-wording-fix",
+      "argv": [
+        "uv",
+        "run",
+        "--no-sync",
+        "jktz-pockettopo",
+        "inspect",
+        "/Users/dariuszlubomski/proj/Jaskiniowy-Kataster-Tatr-Zachodnich/doc/pockettopo/evidence/repeat-candidates/okna/okna.top"
+      ],
+      "command": "uv run --no-sync jktz-pockettopo inspect /Users/dariuszlubomski/proj/Jaskiniowy-Kataster-Tatr-Zachodnich/doc/pockettopo/evidence/repeat-candidates/okna/okna.top",
+      "returncode": 0,
+      "stdout_file": "inspect-after-fix.stdout",
+      "stderr_file": "inspect-after-fix.stderr"
+    }
+  ],
+  "checks": {
+    "exact_twelve_files": true,
+    "manifest_matches_all_eleven_other_files": true,
+    "renderer_binary_matches_documented_macos_sha256": true,
+    "record_trace_covers_every_source_shot_once": true,
+    "no_unconfirmed_group_averaged": true,
+    "no_inferred_date_or_fix": true,
+    "stored_explicit_zero_reproduced": true,
+    "source_checksum_unchanged": true,
+    "existing_output_rejected_with_code_1": true,
+    "all_existing_output_hashes_and_sizes_unchanged": true,
+    "source_checksum_unchanged_after_inspect_recheck": true,
+    "existing_package_unchanged_after_inspect_recheck": true
+  },
+  "package_snapshot_before_reuse": {
+    "conversion-report.json": {
+      "bytes": 62325,
+      "sha256": "ba80cd20a95df5902ea30b1b593231eca25a66e0fa515f179b2be4f24ba6819b"
+    },
+    "plan-measurements.png": {
+      "bytes": 23418,
+      "sha256": "9d20e2dc2c4a1b0562bf441d56e49cc08d448c55f7307e2cac8066d4b3225077"
+    },
+    "plan-measurements.svg": {
+      "bytes": 17391,
+      "sha256": "3f73e958b22b07b328ca4451a873c7c32dfc8128bdfad5ea523c2b53a5e174ab"
+    },
+    "plan-sketch.png": {
+      "bytes": 9084,
+      "sha256": "e3e1f5b6c944e9d871d67b664edf57e4e09ecff1bf74c2132a85624e4dc53e3a"
+    },
+    "plan-sketch.svg": {
+      "bytes": 6544,
+      "sha256": "0ba72327b00eb26b1760c6675e7fcb59d538b8cab3ab9aad588392811fb1442f"
+    },
+    "side-measurements.png": {
+      "bytes": 19006,
+      "sha256": "3e03ae63d4f724b4a56882022efda5f9d553e18e2dee08fd8f1518b3282137da"
+    },
+    "side-measurements.svg": {
+      "bytes": 13777,
+      "sha256": "dccf5dfaab77541041ca2cf3a1caaad405609f7c86382db7b08717bc09e4762f"
+    },
+    "side-sketch.png": {
+      "bytes": 9818,
+      "sha256": "981e69e8966eac4f10824fd14d89666f8d9272952adc169db0e7290e196f91ef"
+    },
+    "side-sketch.svg": {
+      "bytes": 4141,
+      "sha256": "9bd835bd5c15a1c941845df4f87194873d7eb3d3543d4d1fcec727f44242a612"
+    },
+    "source.json": {
+      "bytes": 37110,
+      "sha256": "fa7c910fb62f28a7ae5773cfffb62a2b62318b66b567fafadfda644c72235e5c"
+    },
+    "survey.SRV": {
+      "bytes": 8832,
+      "sha256": "608fbc1005860391fd8f8dc12167644b2bbb19ca5dfc60f7bb44d55fc58bbcd5"
+    },
+    "survey.svx": {
+      "bytes": 9107,
+      "sha256": "7d35cec5230360f9e94b970c70de784844026d04cb71f7aef87b4caf6f56d16c"
+    }
+  },
+  "package_snapshot_after_reuse": {
+    "conversion-report.json": {
+      "bytes": 62325,
+      "sha256": "ba80cd20a95df5902ea30b1b593231eca25a66e0fa515f179b2be4f24ba6819b"
+    },
+    "plan-measurements.png": {
+      "bytes": 23418,
+      "sha256": "9d20e2dc2c4a1b0562bf441d56e49cc08d448c55f7307e2cac8066d4b3225077"
+    },
+    "plan-measurements.svg": {
+      "bytes": 17391,
+      "sha256": "3f73e958b22b07b328ca4451a873c7c32dfc8128bdfad5ea523c2b53a5e174ab"
+    },
+    "plan-sketch.png": {
+      "bytes": 9084,
+      "sha256": "e3e1f5b6c944e9d871d67b664edf57e4e09ecff1bf74c2132a85624e4dc53e3a"
+    },
+    "plan-sketch.svg": {
+      "bytes": 6544,
+      "sha256": "0ba72327b00eb26b1760c6675e7fcb59d538b8cab3ab9aad588392811fb1442f"
+    },
+    "side-measurements.png": {
+      "bytes": 19006,
+      "sha256": "3e03ae63d4f724b4a56882022efda5f9d553e18e2dee08fd8f1518b3282137da"
+    },
+    "side-measurements.svg": {
+      "bytes": 13777,
+      "sha256": "dccf5dfaab77541041ca2cf3a1caaad405609f7c86382db7b08717bc09e4762f"
+    },
+    "side-sketch.png": {
+      "bytes": 9818,
+      "sha256": "981e69e8966eac4f10824fd14d89666f8d9272952adc169db0e7290e196f91ef"
+    },
+    "side-sketch.svg": {
+      "bytes": 4141,
+      "sha256": "9bd835bd5c15a1c941845df4f87194873d7eb3d3543d4d1fcec727f44242a612"
+    },
+    "source.json": {
+      "bytes": 37110,
+      "sha256": "fa7c910fb62f28a7ae5773cfffb62a2b62318b66b567fafadfda644c72235e5c"
+    },
+    "survey.SRV": {
+      "bytes": 8832,
+      "sha256": "608fbc1005860391fd8f8dc12167644b2bbb19ca5dfc60f7bb44d55fc58bbcd5"
+    },
+    "survey.svx": {
+      "bytes": 9107,
+      "sha256": "7d35cec5230360f9e94b970c70de784844026d04cb71f7aef87b4caf6f56d16c"
+    }
+  },
+  "source_sha256_after": "52e16f9561f2fbf3b66e595c29fce113c9ed1cc44fc5865897cb5f06b1aaba94",
+  "observed_completeness": {
+    "source_decode": "complete",
+    "source_shots": 14,
+    "traced_shots": 14,
+    "ready_measurements": 13,
+    "held_shots": 1,
+    "exports_created": true,
+    "conversion_complete": false,
+    "exported_measurements": 13,
+    "exported_source_shots": 13,
+    "measurement_export_complete": false,
+    "survey_texts_created": true,
+    "svg_drawings_created": 4,
+    "png_drawings_created": 4,
+    "atomic_package_created": true,
+    "package_artifacts_complete": true,
+    "compilation_complete": true,
+    "drawing_overlay_complete": false
+  },
+  "drawing_notices": [
+    "held_source_shots_not_projected",
+    "unadjusted_closure"
+  ],
+  "visual_inspection": {
+    "tool": "view_image",
+    "images": {
+      "plan-sketch.png": "Nonempty black sketch on white background; no visible clipping. Irregular plan passage and details remain legible.",
+      "plan-measurements.png": "Nonempty black source sketch with magenta named survey vectors/stations and cyan splay. Red CHECK OVERLAY visible. Station 2.1 lies far NE outside sketch; retained rather than relocated. Labels legible and unclipped.",
+      "side-sketch.png": "Nonempty black extended-section source sketch on white background; walls and disjoint source strokes remain visible without clipping.",
+      "side-measurements.png": "Black sketch with magenta survey/stations and cyan splay; red CHECK OVERLAY visible. Extended axis runs right for source unflipped legs. Labels legible and unclipped."
+    },
+    "axes_and_scale": "No axes, north arrow or scale bar are printed in the PNG; orientation and effective scale require the report. Report axes x_right_y_down and about 40 px/m; independent sampled geometry agrees with horizontal azimuth and upward-positive inclination after y inversion.",
+    "empty_views": "None of the four views is empty.",
+    "limits": "Visual inspection checks exported PNG readability and consistency with reported geometry; no native PocketTopo screenshot/measurement-date authority was supplied."
+  },
+  "usability_findings": [
+    {
+      "severity": "minor",
+      "where": "inspect.stdout: report.limitations[-1]",
+      "observation": "Stale development-stage language: Sketches, CLI and atomic package output remain P05/P06; conversion is incomplete.",
+      "impact": "Can suggest CLI/packaging are still unavailable even though convert works; conversion-report.json replaces this correctly. Skill/CLI routing still sufficient.",
+      "status": "resolved_by_parent_and_independently_rechecked"
+    },
+    {
+      "severity": "note",
+      "where": "all four PNG",
+      "observation": "No printed axes or scale bar.",
+      "impact": "Units/orientation must be recovered from report; no missing artifact or failed workflow."
+    }
+  ],
+  "scope": {
+    "production_edits": false,
+    "decision_file_created": false,
+    "implementation_source_read": false,
+    "prd_or_prior_discussion_read": false,
+    "docs_read": [
+      ".agents/skills/pockettopo-convert/SKILL.md",
+      "doc/pockettopo/CLI.md",
+      "doc/pockettopo/evidence/p01/renderer/manifest.json",
+      "doc/pockettopo/evidence/p05/projection.md"
+    ]
+  },
+  "sampled_axes_validation": {
+    "plan": {
+      "source_index": 1,
+      "expected_end_mm": [
+        7642.865658601395,
+        -8308.505181027975
+      ],
+      "reported_end_mm": [
+        7642.865658601395,
+        -8308.505181027975
+      ],
+      "max_abs_delta_mm": 0.0,
+      "passed": true
+    },
+    "side": {
+      "source_index": 1,
+      "expected_end_mm": [
+        11289.138754510781,
+        -3967.4301734753676
+      ],
+      "reported_end_mm": [
+        11289.138754510781,
+        -3967.4301734753676
+      ],
+      "max_abs_delta_mm": 0.0,
+      "passed": true
+    }
+  },
+  "png_dimensions": {
+    "plan-sketch": {
+      "width_px": 374,
+      "height_px": 411,
+      "effective_pixels_per_metre": 39.91462113127001,
+      "matches_report": true
+    },
+    "plan-measurements": {
+      "width_px": 668,
+      "height_px": 726,
+      "effective_pixels_per_metre": 39.945784444467904,
+      "matches_report": true
+    },
+    "side-sketch": {
+      "width_px": 606,
+      "height_px": 520,
+      "effective_pixels_per_metre": 40.0,
+      "matches_report": true
+    },
+    "side-measurements": {
+      "width_px": 630,
+      "height_px": 536,
+      "effective_pixels_per_metre": 39.97680392398813,
+      "matches_report": true
+    }
+  },
+  "inspect_recheck": {
+    "returncode": 0,
+    "old_limitation": "Sketches, CLI and atomic package output remain P05/P06; conversion is incomplete.",
+    "new_limitations": [
+      "Device dates remain unverified; no date or IGRF directive was emitted.",
+      "Stored explicit corrections are reproduced, not historically verified.",
+      "Auto and missing-trip corrections require independently evidenced overrides.",
+      "Reference CRS is unknown; source coordinates produce no active fixes.",
+      "Unconfirmed readings remain separate, including duplicate named vectors.",
+      "Compiler loop adjustment is not an oracle for the source readings.",
+      "Inspection only: drawings, compilation and package publication have not run."
+    ],
+    "same_source_decoding": true,
+    "same_groups": true,
+    "same_record_trace": true,
+    "same_trips": true
+  },
+  "source_sha256_final": "52e16f9561f2fbf3b66e595c29fce113c9ed1cc44fc5865897cb5f06b1aaba94"
+}

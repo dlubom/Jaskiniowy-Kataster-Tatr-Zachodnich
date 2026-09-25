@@ -149,10 +149,14 @@ jobs:
           Write-Host "GDAL bin dir: $gdalBin"
           echo "$gdalBin" >> $env:GITHUB_PATH
 
-      - name: Check PocketTopo SRV and SVX compilation
+      - name: Install resvg for PocketTopo package integration (Linux)
+        if: runner.os == 'Linux'
+        uses: ./.github/actions/install-resvg
+
+      - name: Check PocketTopo compilation and package integration
         env:
           JKTZ_REQUIRE_CAVERN: "1"
-        run: uv run pytest -q tests/test_pockettopo_compilation.py
+        run: uv run pytest -q tests/test_pockettopo_compilation.py tests/test_pockettopo_validation.py tests/test_pockettopo_package.py tests/test_pockettopo_cli.py
 
       - name: Run full validation
         env:

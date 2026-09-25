@@ -1,34 +1,20 @@
 # PocketTopo: konwersja pomiarów i ekstrakcja szkiców
 
-Stan: **2026-09-25 — P05 zakończone, następny etap P06 (CLI i skill)**.
+Stan: **2026-09-25 — P00–P06 zakończone; CLI i skill gotowe**.
 Branch roboczy: `codex/pockettopo-convert`, początek: `a6c235c898eed57902a2d6ba18db60917e01faee`.
 
 ## Wznowienie po wyczyszczeniu kontekstu
 
 1. Przeczytaj `AGENTS.md`, ten PRD i sprawdź `git status` oraz bieżący branch.
-2. **Następne zadanie: P06 — CLI i skill.** Nie powtarzaj researchu,
-   wzorców P01, parsera P02, średnich P03, eksportów P04 ani rysunków P05.
-3. Przeczytaj [API i wyniki P05](evidence/p05/README.md),
-   [projekcję i ograniczenia](evidence/p05/projection.md),
-   [format v3](FORMAT_V3.md), [API i wyniki P04](evidence/p04/README.md),
-   [ograniczenia kompilacji](evidence/p04/COMPILER_LIMITS.md),
-   [API i wyniki P03](evidence/p03/README.md),
-   [parser P02](evidence/p02/README.md)
-   oraz [oczekiwania dla każdego rekordu](evidence/p01/EXPECTATIONS.md).
-   Wzorce `cases/*/expected.json` są niezależne od przyszłego parsera.
-   Dostęp do aplikacji opisuje [instrukcja macOS](POCKETTOPO_MACOS.md).
-4. Po etapie aktualizuj tabelę postępu i dowody walidacji w repozytorium,
-   aby kolejna sesja nie zależała od historii rozmowy ani plików w `/tmp`.
-
-Polecenie do wznowienia:
-
-> Kontynuuj na `codex/pockettopo-convert` według `doc/pockettopo/PRD.md`.
-> Wykonaj P06: CLI inspect/convert, atomowy katalog wynikowy z jawną polityką
-> kolizji i skill pockettopo-convert. Użyj bibliotek P02–P05 oraz raportów;
-> zachowaj 4 SVG/PNG i źródłowy JSON, sprawdź ostrzeżenia i kompletność
-> kompilacji. Nie uznawaj dat urządzenia, powtórzeń ani położenia rozłącznych
-> części za potwierdzone. Wykonaj niezależną próbę użycia, testy błędów zapisu
-> i pełne bramki, zapisz wyniki oraz postęp. Zakończ po P06.
+2. **P06 zakończone.** Użycie opisuje [instrukcja CLI](CLI.md) i
+   [skill pockettopo-convert](../../.agents/skills/pockettopo-convert/SKILL.md).
+   Nie powtarzaj researchu i implementacji P00–P05.
+3. Wyniki końcowe, ograniczenia i odtworzenie: [dowody P06](evidence/p06/README.md).
+   Historia wcześniejszych decyzji pozostaje w dowodach P01–P05 poniżej.
+4. Zakończono zakres tego PRD. Włączenie konkretnego pakietu do aktywnego
+   katastru, niezależne ustalenie dat/CRS i dalsze rozszerzenia wymagają
+   odrębnego zadania. Nie traktuj ukończenia narzędzia jako potwierdzenia
+   kompletności wszystkich konwersji źródeł.
 
 ## Cel i ustalone wybory
 
@@ -134,8 +120,10 @@ P04 udostępnia `export_surveys`, `SurveyExport`, `CorrectionPolicy` i
 `CorrectionOverride`: teksty SRV/SVX, mapa nazw i raport decyzji w pamięci.
 P05 dodaje `export_drawings`, `DrawingExport`, `DrawingSettings` i
 `RenderingError`: cztery SVG i opcjonalnie cztery PNG przez resvg 0.48.1.
-Proponowane komendy `uv run jktz-pockettopo inspect ...` i `convert ...`
-**jeszcze nie istnieją**. Nie budujemy łańcucha `.top → zaokrąglony SRV → średnie`.
+P06 udostępnia `uv run jktz-pockettopo inspect ...` i `convert ...`,
+`load_decisions`, `validate_surveys` oraz `convert_package`. Pakiet jest
+publikowany atomowo bez zastępowania istniejącego celu. Nie budujemy łańcucha
+`.top → zaokrąglony SRV → średnie`.
 
 | Etap | Wynik i warunek zakończenia | Stan |
 | --- | --- | --- |
@@ -145,7 +133,7 @@ Proponowane komendy `uv run jktz-pockettopo inspect ...` i `convert ...`
 | P03 Średnie i raport | Grupy potwierdzonych powtórzeń, matematyka, ślad każdego rekordu i testy graniczne | Gotowe — [dowody](evidence/p03/README.md) |
 | P04 SRV/SVX | Zachowanie semantyki, kompilacja obu formatów i porównanie geometrii; sprawdzenie w Walls | Gotowe — [dowody](evidence/p04/README.md) |
 | P05 SVG/PNG | Oba widoki i warianty, XSection, warstwy, renderer bez GUI; kontrola punktów i obrazów | Gotowe — [dowody](evidence/p05/README.md) |
-| P06 CLI i skill | Atomowy pakiet wynikowy, instrukcje skilla, niezależna próba użycia i pełna walidacja | Następny |
+| P06 CLI i skill | Atomowy pakiet wynikowy, instrukcje skilla, niezależna próba użycia i pełna walidacja | Gotowe — [dowody](evidence/p06/README.md) |
 
 P01 obejmuje kierunki kardynalne i granicę północy, pomiary przód/tył, kilka tripów,
 różne deklinacje, plain ID i major.minor, komentarze UTF-8, wszystkie kolory,
@@ -284,5 +272,24 @@ powtórzeń i dat. Podkład nie wyrównuje pętli ani nie ustala wzajemnego poł
 rozłącznych części; takie ograniczenia są raportowane i widocznie oznaczone.
 [Wyniki, obrazy, reprodukcja i bramki P05](evidence/p05/README.md).
 
-Następny etap: **P06**. CLI, skill i atomowy pakiet wynikowy pozostają
-niewdrożone; `conversion_complete` pozostaje `false`.
+P06 (2026-09-25): CLI `inspect`/`convert`, ścisłe decyzje JSON związane
+z SHA-256 wejścia i skill `pockettopo-convert`. Każdy wynik ma 12 plików,
+manifest hashy, raport procesów oraz osobne stany kompletności. Zapis odbywa
+się przez atomowe przeniesienie z zakazem zastępowania celu, również przy
+równoległym utworzeniu pustego katalogu. Błąd odczytu/renderera/zapisu nie
+publikuje częściowego pakietu. Niepełne dane lub kontrole dają pełny pakiet
+audytowy i kod 2, bez przedstawiania go jako kompletnej konwersji.
+
+Pełny przebieg CLI: 258 źródeł / 262 zweryfikowane ścieżki Git, 258 pakietów,
+3096 artefaktów (1032 SVG i 1032 PNG). Wszystkie 37 801 rekordów rozliczone;
+439 nadal zatrzymanych. 249 wyników ma kompletną kompilację, ale tylko 12
+spełnia wszystkie warunki `conversion_complete`; pozostałe 246 zachowuje
+jawne ograniczenia pomiarów, osnowy lub kompilacji. Cztery SVG/PNG każdego
+z 13 wzorców są identyczne bajtowo z P05. Niezależna próba skilla na `okna.top`
+potwierdziła użycie, odczyt ograniczeń, obrazy i odmowę kolizji.
+
+Bramki: 1248 testów, linie ≥95%, gałęzie ≥90%, CRAP ≤25; mutacje
+2483/2748 (90,36%), każdy z dziesięciu modułów ≥81%; pełna walidacja
+Survex/GDAL. Dokładne wartości, hashe kodu, próby awarii, przegląd i odtworzenie
+są w [dowodach P06](evidence/p06/README.md). Etap zakończony; brak kolejnego
+etapu implementacyjnego w tym PRD.

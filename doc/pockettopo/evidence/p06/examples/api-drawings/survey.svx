@@ -1,0 +1,34 @@
+; PocketTopo P04 survey export. See source document and conversion report.
+; Device dates are unverified. No dates, CRS or reference fixes are inferred.
+; provenance 1/2 {"sha256":"4a494ead03cade750f670d50aa38661abda9b3e1f131d67f27a252982752c2a5","bytes":680,"input_format":"PocketTopo v3","tool":"jktz-release-tools","tool_versio
+; provenance 2/2 n":"0.1.0","algorithm_version":"p04-1"}
+; station 1/1 {"raw":-2147483647,"kind":"plain","source_text":"0","walls_name":"0","survex_name":"0","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; station 1/1 {"raw":-2147483646,"kind":"plain","source_text":"1","walls_name":"1","survex_name":"1","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; station 1/1 {"raw":-2147483645,"kind":"plain","source_text":"2","walls_name":"2","survex_name":"2","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; trip 1/3 {"index":0,"source_ticks":632401344000000000,"comment":"P01 synthetic drawing vertices","date_reliability":"unverified_device_clock","established_date":null,"da
+; trip 2/3 te_evidence":null,"used_date":null,"declination":{"source_raw":0,"mode":"explicit","stored_degrees":0.0,"applied_degrees":0.0,"status":"applied","selected_degre
+; trip 3/3 es":0.0,"provenance":"stored_explicit","evidence":null,"unresolved_reason":null}}
+*begin
+*case preserve
+*truncate off
+*set separator :
+*set names ._-
+*units tape metres
+*units compass clino degrees
+*calibrate tape 0
+*calibrate compass clino 0
+*data normal from to tape compass clino
+
+; group 1/2 {"id":0,"source_indices":[0],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":0,"from_id":{"raw":-2147483647},"to_id":{"raw":-2147483646},"distance_mm":10000,"azimuth_raw":0,"inclination_raw":0,"flags":0,"roll_raw":0,"trip_index"
+; source_shot 2/2 :0,"comment":null}
+*declination 0 degrees
+0	1	10	0	0
+; group 1/2 {"id":1,"source_indices":[1],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":1,"from_id":{"raw":-2147483646},"to_id":{"raw":-2147483645},"distance_mm":10000,"azimuth_raw":16384,"inclination_raw":0,"flags":3,"roll_raw":0,"trip_in
+; source_shot 2/2 dex":0,"comment":"flipped extended segment"}
+*declination 0 degrees
+1	2	10	90	0
+*end

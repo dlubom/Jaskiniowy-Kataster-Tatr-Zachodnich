@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-25T14:50:08.590066+00:00",
+  "python": "3.12.13",
+  "scope": "P06 CLI, strict source-pinned decisions, atomic no-replace package, compilation validation and skill",
+  "code_sha256": {
+    "src/jktz/pockettopo/__init__.py": "1c8ccc32bc4c074e051c951cd0e8c8b4b70901d1114ea9447e3abae19006d2ed",
+    "src/jktz/pockettopo/averaging.py": "dcfdf09864069a1be8a4d783acec2bb52321b61c7e653716574cc5ad021b0f2a",
+    "src/jktz/pockettopo/compilation.py": "819e68ebfd12c80702e57f7f72c4922d99cd38f315bf024b8dfc7ee7a090888b",
+    "src/jktz/pockettopo/config.py": "48435b99367b8d0f4b01b63654c726afa4eccc38c015de0ddb0dd743c9285cdf",
+    "src/jktz/pockettopo/drawing_svg.py": "8456259f2ac7f55778aa3db50035906db862f96873ff8780a9181ab977d90c71",
+    "src/jktz/pockettopo/drawings.py": "50321152410f94d12106771236efe5ef48633043c398cd8f5b6706326d75e864",
+    "src/jktz/pockettopo/export.py": "c60ad6238ef81fad92fd51184c9bac3a1b6986f8600e6278846857bd3c206a02",
+    "src/jktz/pockettopo/export_policy.py": "0602a7d41098e477b929cac8fa5f4c76ea9fee76eded7f93014f45d8dcfc5bf9",
+    "src/jktz/pockettopo/grouping.py": "08426ddf033fdfbc3323f85b2f446f461219f7fb1dc11d995a88c42df615f2f6",
+    "src/jktz/pockettopo/model.py": "35d85dc4655cf55d48f35d593a43486b01fea4117e09bc31f4d391a00d71be02",
+    "src/jktz/pockettopo/package.py": "f2b83db312d4ca06908e752f1e8b224e7e1622baa5435ea283ccf739aa944a0c",
+    "src/jktz/pockettopo/parser.py": "57eed978b45f4aefe75536435d521cc5a656d8ccb54108b6d5de739d6496f783",
+    "src/jktz/pockettopo/projection.py": "35a97a834956c0119395a835d83e4fd28ac6da9928dd69b7f74ada75be83c3db",
+    "src/jktz/pockettopo/report.py": "1291fc40d238e519fa3d87fdb2ee8c666d5c13737c791e1e5ffc87d4e90dba5a",
+    "src/jktz/cli/pockettopo.py": "2d4e45fcd6065cdb92babcb9ef73315c1d66dbeabe2fdf6f0bed92cd5677958d",
+    "tests/test_pockettopo_averaging.py": "2dea39aff9d787fe90590f5529253859d9c6de8b395aa7bf85aa65cb5019c14b",
+    "tests/test_pockettopo_cli.py": "eceb2635286bd245a618dab2d2cefef8240e0cfa187a9536cc2bf63458cb9861",
+    "tests/test_pockettopo_compilation.py": "98da2600a81f64c0ff007ed2f9e93af50ee680d2a8ed40da3cfeaf1254a4f5f5",
+    "tests/test_pockettopo_config.py": "6c32d6b0f287944ff4a2fef875ba49feb92fe694147bdac5cc3ae61e12695220",
+    "tests/test_pockettopo_drawings.py": "3c46b0ad012304631144738f6d086b981db6f6dc8d79a06ec2a333e527aa5257",
+    "tests/test_pockettopo_dxf.py": "971c255cdff69338eb89e7cc44b2855f2fe64ff8db621d750dbcbf9ee27869cd",
+    "tests/test_pockettopo_export.py": "8453977617bef767d1843cf0b078cfc43c40b2926f5557526329e6aece9c1a97",
+    "tests/test_pockettopo_fixtures.py": "385d688096a78225d6cd0cfc6d529b26371796fb4036e53b1ba130a65aec0100",
+    "tests/test_pockettopo_grouping.py": "987c51c75204c71cf73a7c63bd20d041088f8768e6d24d928c234cf1eebba981",
+    "tests/test_pockettopo_package.py": "c7ab3cb41e149ca3e568cbdadfaf8c79a9494f60e989b90f37968de555087b70",
+    "tests/test_pockettopo_parser.py": "fd33cf663c58c9dd0f3719ce647f6bb4e0083057566a58740fcdc832458e1b90",
+    "tests/test_pockettopo_projection.py": "18e90454adb2934cae411002e02c97ec4c8a48a2d90270f421a93710d31b98f8",
+    "tests/test_pockettopo_report.py": "4c6a4120ac6b05ef60d25ca90e5fdff74ffae40ff913fccff8ff20e6a932129f",
+    "tests/test_pockettopo_validation.py": "3dd1fabd43a035895fbdd32f81d04939fd812ffa107da1df18fe54b4f1e96f86",
+    "pyproject.toml": "62cc25dab5b581fdafd2a279206cfa1192ee031ad5ce957cc78f83d436699efd",
+    ".github/workflows/validate.yml": "a441b902e30d1bf849e4ecc037aafba16d21a041025cf7e08c5298777a40e59d",
+    ".agents/skills/pockettopo-convert/SKILL.md": "984cbb4b11b47b58af9288c3a0ab5a5314a6f51e03c2e34137f1db6aa25d0eca"
+  },
+  "quality": {
+    "command": "RESVG=/path/to/resvg JKTZ_REQUIRE_RESVG=1 JKTZ_REQUIRE_CAVERN=1 uv run --python 3.12 jktz-quality",
+    "exit_code": 0,
+    "tests_passed": 1248,
+    "line_percent": 97.78425655976677,
+    "branch_percent": 96.22144112478031,
+    "max_crap": 25.0,
+    "failures": [],
+    "new_module_coverage": {
+      "src/jktz/cli/pockettopo.py": {
+        "covered_lines": 50,
+        "num_statements": 50,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100.00",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100.00",
+        "num_branches": 10,
+        "num_partial_branches": 0,
+        "covered_branches": 10,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100.00"
+      },
+      "src/jktz/pockettopo/compilation.py": {
+        "covered_lines": 169,
+        "num_statements": 169,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100.00",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100.00",
+        "num_branches": 46,
+        "num_partial_branches": 0,
+        "covered_branches": 46,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100.00"
+      },
+      "src/jktz/pockettopo/config.py": {
+        "covered_lines": 82,
+        "num_statements": 82,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100.00",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100.00",
+        "num_branches": 30,
+        "num_partial_branches": 0,
+        "covered_branches": 30,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100.00"
+      },
+      "src/jktz/pockettopo/package.py": {
+        "covered_lines": 88,
+        "num_statements": 88,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100.00",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100.00",
+        "num_branches": 20,
+        "num_partial_branches": 0,
+        "covered_branches": 20,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100.00"
+      }
+    }
+  },
+  "mutation": {
+    "command": "uv run --python 3.12 jktz-mutation",
+    "exit_code": 0,
+    "killed": 2483,
+    "total": 2748,
+    "score": 90.3566229985444,
+    "modules": [
+      {
+        "file": "src/jktz/metadata/io.py",
+        "killed": 33,
+        "total": 39,
+        "score": 84.61538461538461
+      },
+      {
+        "file": "src/jktz/metadata/raw.py",
+        "killed": 104,
+        "total": 114,
+        "score": 91.2280701754386
+      },
+      {
+        "file": "src/jktz/metadata/srv.py",
+        "killed": 303,
+        "total": 368,
+        "score": 82.33695652173913
+      },
+      {
+        "file": "src/jktz/entrances/render.py",
+        "killed": 284,
+        "total": 350,
+        "score": 81.14285714285714
+      },
+      {
+        "file": "src/jktz/validation/measurements.py",
+        "killed": 108,
+        "total": 114,
+        "score": 94.73684210526316
+      },
+      {
+        "file": "src/jktz/pockettopo/model.py",
+        "killed": 37,
+        "total": 37,
+        "score": 100.0
+      },
+      {
+        "file": "src/jktz/pockettopo/parser.py",
+        "killed": 635,
+        "total": 703,
+        "score": 90.3271692745377
+      },
+      {
+        "file": "src/jktz/pockettopo/averaging.py",
+        "killed": 173,
+        "total": 182,
+        "score": 95.05494505494505
+      },
+      {
+        "file": "src/jktz/pockettopo/grouping.py",
+        "killed": 183,
+        "total": 183,
+        "score": 100.0
+      },
+      {
+        "file": "src/jktz/pockettopo/projection.py",
+        "killed": 623,
+        "total": 658,
+        "score": 94.68085106382979
+      }
+    ],
+    "failures": [],
+    "scope": "Existing ten core modules including parser, model, math, grouping and projection. P06 adapters covered by behavior and fault-injection tests; no mutation scope or threshold reduced."
+  },
+  "project_validation": {
+    "command": "uv run --python 3.12 jktz-validate",
+    "exit_code": 0,
+    "result": "Validation Passed; fresh entrance snapshot check, metadata/measurement checks, warning-free cavern compile and GDAL exports"
+  },
+  "skill": {
+    "structural_validation": "quick_validate.py: Skill is valid!",
+    "independent_forward_test": "forward-test/audit.json",
+    "input": "doc/pockettopo/evidence/repeat-candidates/okna/okna.top"
+  },
+  "review": {
+    "independent_review_completed": true,
+    "fixed_findings": [
+      "Explicit relative compiler paths now resolve against caller cwd, tested with real tools.",
+      "Inspect report now describes inspection limits instead of stale P06 pending wording."
+    ],
+    "platform_regression": "Relative compiler symlinks retain executable suffix for Windows."
+  },
+  "failure_tests": [
+    "File, empty/nonempty directory, symlink and dangling symlink collisions preserve the target.",
+    "Concurrent target creation, including empty directory, never replaced.",
+    "Injected write, fsync and rename failure leaves no output or staging.",
+    "Missing atomic primitive fails closed.",
+    "Parser, renderer and decision failures return 1 before publication.",
+    "Missing compiler, timeout, signal, warning, invalid dump, missing station/leg/splay and differing geometry prevent a complete claim."
+  ],
+  "corpus_summary": {
+    "unique_sources": 258,
+    "git_paths_verified": 262,
+    "packages": 258,
+    "svg_artifacts": 1032,
+    "png_artifacts": 1032,
+    "artifacts": 3096,
+    "source_shots": 37801,
+    "held_shots": 439,
+    "compilation_complete": 249,
+    "conversion_complete": 12,
+    "exit_codes": {
+      "2": 246,
+      "0": 12
+    },
+    "drawing_notices": {
+      "held_source_shots_not_projected": 218,
+      "unadjusted_closure": 226,
+      "disconnected_components_local_origins": 7
+    }
+  },
+  "remote_ci": {
+    "status_at_commit": "To be checked after push for the exact new head; no earlier CI is treated as evidence for P06.",
+    "pull_request": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/pull/129"
+  }
+}

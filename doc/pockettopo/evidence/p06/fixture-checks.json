@@ -1,0 +1,2155 @@
+{
+  "code_sha256": {
+    "src/jktz/pockettopo/__init__.py": "1c8ccc32bc4c074e051c951cd0e8c8b4b70901d1114ea9447e3abae19006d2ed",
+    "src/jktz/pockettopo/averaging.py": "dcfdf09864069a1be8a4d783acec2bb52321b61c7e653716574cc5ad021b0f2a",
+    "src/jktz/pockettopo/compilation.py": "819e68ebfd12c80702e57f7f72c4922d99cd38f315bf024b8dfc7ee7a090888b",
+    "src/jktz/pockettopo/config.py": "48435b99367b8d0f4b01b63654c726afa4eccc38c015de0ddb0dd743c9285cdf",
+    "src/jktz/pockettopo/drawing_svg.py": "8456259f2ac7f55778aa3db50035906db862f96873ff8780a9181ab977d90c71",
+    "src/jktz/pockettopo/drawings.py": "50321152410f94d12106771236efe5ef48633043c398cd8f5b6706326d75e864",
+    "src/jktz/pockettopo/export.py": "c60ad6238ef81fad92fd51184c9bac3a1b6986f8600e6278846857bd3c206a02",
+    "src/jktz/pockettopo/export_policy.py": "0602a7d41098e477b929cac8fa5f4c76ea9fee76eded7f93014f45d8dcfc5bf9",
+    "src/jktz/pockettopo/grouping.py": "08426ddf033fdfbc3323f85b2f446f461219f7fb1dc11d995a88c42df615f2f6",
+    "src/jktz/pockettopo/model.py": "35d85dc4655cf55d48f35d593a43486b01fea4117e09bc31f4d391a00d71be02",
+    "src/jktz/pockettopo/package.py": "f2b83db312d4ca06908e752f1e8b224e7e1622baa5435ea283ccf739aa944a0c",
+    "src/jktz/pockettopo/parser.py": "57eed978b45f4aefe75536435d521cc5a656d8ccb54108b6d5de739d6496f783",
+    "src/jktz/pockettopo/projection.py": "35a97a834956c0119395a835d83e4fd28ac6da9928dd69b7f74ada75be83c3db",
+    "src/jktz/pockettopo/report.py": "1291fc40d238e519fa3d87fdb2ee8c666d5c13737c791e1e5ffc87d4e90dba5a",
+    "src/jktz/cli/pockettopo.py": "2d4e45fcd6065cdb92babcb9ef73315c1d66dbeabe2fdf6f0bed92cd5677958d"
+  },
+  "fixtures": [
+    {
+      "source_sha256": "64ac69ee1746272a503895256523f386765847c01da81009292fdf29225a9c8e",
+      "source_bytes": 465,
+      "exit_code": 2,
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 11,
+        "traced_shots": 11,
+        "ready_measurements": 11,
+        "held_shots": 0,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 11,
+        "exported_source_shots": 11,
+        "measurement_export_complete": true,
+        "survey_texts_created": true,
+        "svg_drawings_created": 4,
+        "png_drawings_created": 4,
+        "atomic_package_created": true,
+        "package_artifacts_complete": true,
+        "compilation_complete": true,
+        "drawing_overlay_complete": false
+      },
+      "drawing_notices": [
+        "unadjusted_closure"
+      ],
+      "compilation": {
+        "complete": true,
+        "geometry_status": "nonempty",
+        "comparison": {
+          "complete": true,
+          "status": "equivalent",
+          "tolerance_m": 0.010001,
+          "origin_raw": -2147483647,
+          "max_station_delta_m": 0.0,
+          "mismatched_station_raw": [],
+          "leg_geometry_matches": true
+        },
+        "formats": {
+          "srv": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "compiled_named_stations": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 9,
+                "source_splay_groups": 1,
+                "compiled_named_legs": 8,
+                "compiled_splays": 1,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": true,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          },
+          "svx": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "compiled_named_stations": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 9,
+                "source_splay_groups": 1,
+                "compiled_named_legs": 8,
+                "compiled_splays": 1,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": true,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          }
+        }
+      },
+      "artifact_manifest": {
+        "survey.SRV": {
+          "bytes": 7875,
+          "sha256": "3307d163e8d29ebeeb16fd76c64b256391bd6b73131f1315d172fa915d68c99d"
+        },
+        "survey.svx": {
+          "bytes": 8125,
+          "sha256": "fc22f90c133c23328a936f46187af5f44c744ec33682dae8452a936f7bddeda4"
+        },
+        "plan-sketch.svg": {
+          "bytes": 4108,
+          "sha256": "a59cba0dfec2b7a35358bef40db9f84f7e150b3483be9e3aa6508a7b240ce803"
+        },
+        "plan-measurements.svg": {
+          "bytes": 16066,
+          "sha256": "5ae21581c18e1c5a27e51a1ed7a1bb48314e078f5a024439335db20f9abbe8f5"
+        },
+        "side-sketch.svg": {
+          "bytes": 4108,
+          "sha256": "552e5e9a509efe3c9423af3d8bf7bdad579904b3f652babaaac356de3d983d86"
+        },
+        "side-measurements.svg": {
+          "bytes": 14400,
+          "sha256": "180386aea5b6cf86da05cee7482087b70e363bfe39970cc0a28cf547b1e7b59b"
+        },
+        "plan-sketch.png": {
+          "bytes": 577,
+          "sha256": "e2f61a18559ac20c2aacde0b66b16555a3347499a0343d40b3df9b2424b458aa"
+        },
+        "plan-measurements.png": {
+          "bytes": 4989,
+          "sha256": "4e8fea731bdde2150f8aeec8a0798b4b02ba524ce6e866e6e0b50230e928e356"
+        },
+        "side-sketch.png": {
+          "bytes": 577,
+          "sha256": "e2f61a18559ac20c2aacde0b66b16555a3347499a0343d40b3df9b2424b458aa"
+        },
+        "side-measurements.png": {
+          "bytes": 4371,
+          "sha256": "f5012eea74e114d55d79c7aeebb3188a2ac5f5b267e3cb26347413171353925e"
+        },
+        "source.json": {
+          "bytes": 4615,
+          "sha256": "a1c40d35994a8efb3edf65c43ea34ea06e3c6587c03c31c3258e316e068b7d01"
+        }
+      },
+      "report_sha256": "0785072d2cad8b054a9c478288d7ebe0c5e1c4c0726a8252d460ee32496bbc8c",
+      "source_unchanged": true,
+      "artifact_manifest_verified": true,
+      "source": "doc/pockettopo/evidence/p01/cases/api-cardinal/api-cardinal.top",
+      "drawings_byte_identical_to_p05": true
+    },
+    {
+      "source_sha256": "4a494ead03cade750f670d50aa38661abda9b3e1f131d67f27a252982752c2a5",
+      "source_bytes": 680,
+      "exit_code": 0,
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 2,
+        "traced_shots": 2,
+        "ready_measurements": 2,
+        "held_shots": 0,
+        "exports_created": true,
+        "conversion_complete": true,
+        "exported_measurements": 2,
+        "exported_source_shots": 2,
+        "measurement_export_complete": true,
+        "survey_texts_created": true,
+        "svg_drawings_created": 4,
+        "png_drawings_created": 4,
+        "atomic_package_created": true,
+        "package_artifacts_complete": true,
+        "compilation_complete": true,
+        "drawing_overlay_complete": true
+      },
+      "drawing_notices": [],
+      "compilation": {
+        "complete": true,
+        "geometry_status": "nonempty",
+        "comparison": {
+          "complete": true,
+          "status": "equivalent",
+          "tolerance_m": 0.010001,
+          "origin_raw": -2147483647,
+          "max_station_delta_m": 0.0,
+          "mismatched_station_raw": [],
+          "leg_geometry_matches": true
+        },
+        "formats": {
+          "srv": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "0",
+                "1",
+                "2"
+              ],
+              "compiled_named_stations": [
+                "0",
+                "1",
+                "2"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 2,
+                "source_splay_groups": 0,
+                "compiled_named_legs": 2,
+                "compiled_splays": 0,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": false,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          },
+          "svx": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "0",
+                "1",
+                "2"
+              ],
+              "compiled_named_stations": [
+                "0",
+                "1",
+                "2"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 2,
+                "source_splay_groups": 0,
+                "compiled_named_legs": 2,
+                "compiled_splays": 0,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": false,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          }
+        }
+      },
+      "artifact_manifest": {
+        "survey.SRV": {
+          "bytes": 2369,
+          "sha256": "14e570c1d25042286e5bdfd195b99e7bdba89feaf73882e753349afb8fc93941"
+        },
+        "survey.svx": {
+          "bytes": 2544,
+          "sha256": "cc31e975cded3fb2d3931795e121cc29a3ba875119e4823276d5898aea5db299"
+        },
+        "plan-sketch.svg": {
+          "bytes": 3111,
+          "sha256": "8e773916182cd8fcd442aa34d272337ccbc5ab57f7864c413b55cbf27802d17d"
+        },
+        "plan-measurements.svg": {
+          "bytes": 5060,
+          "sha256": "45d0f7eb1fa13de696b21bcb582e774c4198e425b4087807ff6a497a9651b588"
+        },
+        "side-sketch.svg": {
+          "bytes": 3088,
+          "sha256": "362ea77b39c9e7b6b924dfcd71517652cb281a19965057b2332fef53bcc6f63d"
+        },
+        "side-measurements.svg": {
+          "bytes": 4934,
+          "sha256": "08f6440c28cb755aa9dcc4b61c03db26ba765079c1efa66c3a6d0a58872ada79"
+        },
+        "plan-sketch.png": {
+          "bytes": 2986,
+          "sha256": "5ea832bde4ff7eb1f7743a7bcbcc4bc7bc76d35e5f1c55cbe1db0ad385996f9d"
+        },
+        "plan-measurements.png": {
+          "bytes": 7939,
+          "sha256": "d4746303326e06c615f07b54a41f23207b18fc346b339c1fae509ca364f5be98"
+        },
+        "side-sketch.png": {
+          "bytes": 3116,
+          "sha256": "1656a523422a9af01555f723f3806ffe46628edade1a1efb73df98654e981a00"
+        },
+        "side-measurements.png": {
+          "bytes": 10482,
+          "sha256": "d7df79703d9316e0d9c9f93e2d61442f766a2d876cc74128f2299513d1224fdd"
+        },
+        "source.json": {
+          "bytes": 7735,
+          "sha256": "91f4bdc7027543abcbd258101000cd345d1c378c25bbfc0fa9fb4be7a7851ac0"
+        }
+      },
+      "report_sha256": "d0484da8485021517779dc28e2e3e8b13f74291a3448c83ae1b2db7c913e6e4e",
+      "source_unchanged": true,
+      "artifact_manifest_verified": true,
+      "source": "doc/pockettopo/evidence/p01/cases/api-drawings/api-drawings.top",
+      "drawings_byte_identical_to_p05": true
+    },
+    {
+      "source_sha256": "9034cf5e52f92a8713c7823bd9be52bdb50b294966a9e9713c538b937b7feb5f",
+      "source_bytes": 248,
+      "exit_code": 0,
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 1,
+        "traced_shots": 1,
+        "ready_measurements": 1,
+        "held_shots": 0,
+        "exports_created": true,
+        "conversion_complete": true,
+        "exported_measurements": 1,
+        "exported_source_shots": 1,
+        "measurement_export_complete": true,
+        "survey_texts_created": true,
+        "svg_drawings_created": 4,
+        "png_drawings_created": 4,
+        "atomic_package_created": true,
+        "package_artifacts_complete": true,
+        "compilation_complete": true,
+        "drawing_overlay_complete": true
+      },
+      "drawing_notices": [],
+      "compilation": {
+        "complete": true,
+        "geometry_status": "nonempty",
+        "comparison": {
+          "complete": true,
+          "status": "equivalent",
+          "tolerance_m": 0.010001,
+          "origin_raw": -2147483647,
+          "max_station_delta_m": 0.0,
+          "mismatched_station_raw": [],
+          "leg_geometry_matches": true
+        },
+        "formats": {
+          "srv": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "0",
+                "1"
+              ],
+              "compiled_named_stations": [
+                "0",
+                "1"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 1,
+                "source_splay_groups": 0,
+                "compiled_named_legs": 1,
+                "compiled_splays": 0,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": false,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          },
+          "svx": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "0",
+                "1"
+              ],
+              "compiled_named_stations": [
+                "0",
+                "1"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 1,
+                "source_splay_groups": 0,
+                "compiled_named_legs": 1,
+                "compiled_splays": 0,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": false,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          }
+        }
+      },
+      "artifact_manifest": {
+        "survey.SRV": {
+          "bytes": 2160,
+          "sha256": "91ae39fef3a5be5c57594d4bfcefd61a3634db5ea12de5218e76be707500cbdc"
+        },
+        "survey.svx": {
+          "bytes": 2326,
+          "sha256": "569db738f6222ccd4128240ba9298f3b52a8409527a418735791c300493c2e48"
+        },
+        "plan-sketch.svg": {
+          "bytes": 4108,
+          "sha256": "a59cba0dfec2b7a35358bef40db9f84f7e150b3483be9e3aa6508a7b240ce803"
+        },
+        "plan-measurements.svg": {
+          "bytes": 5264,
+          "sha256": "187972cef4ea90b9859d8f316497bd4d8b928840c218c61bee31758f3e794335"
+        },
+        "side-sketch.svg": {
+          "bytes": 4108,
+          "sha256": "552e5e9a509efe3c9423af3d8bf7bdad579904b3f652babaaac356de3d983d86"
+        },
+        "side-measurements.svg": {
+          "bytes": 5020,
+          "sha256": "d30c991b3dbbfb6f3fb9a3e9bc3222a25fe779af04241b9c7e2130b4d8205c7c"
+        },
+        "plan-sketch.png": {
+          "bytes": 577,
+          "sha256": "e2f61a18559ac20c2aacde0b66b16555a3347499a0343d40b3df9b2424b458aa"
+        },
+        "plan-measurements.png": {
+          "bytes": 1146,
+          "sha256": "256d253e3f75226f3ef692b2f9e3fa2a7b3bfde00ef8b2ca9e32beb48fe9286e"
+        },
+        "side-sketch.png": {
+          "bytes": 577,
+          "sha256": "e2f61a18559ac20c2aacde0b66b16555a3347499a0343d40b3df9b2424b458aa"
+        },
+        "side-measurements.png": {
+          "bytes": 996,
+          "sha256": "4af4ad91396afb2d6f0e35474ccf95f6822f5800ebbaf215116d05d64c62cbed"
+        },
+        "source.json": {
+          "bytes": 1789,
+          "sha256": "784c3efe82cca532b3d163eb5a8e7ad96ba486b906216aa0bf611d6f4c98d966"
+        }
+      },
+      "report_sha256": "23764c10605765c1679bb661572b05a938831ac6c50fb08378ab37144ab0a9ef",
+      "source_unchanged": true,
+      "artifact_manifest_verified": true,
+      "source": "doc/pockettopo/evidence/p01/cases/api-references/api-references.top",
+      "drawings_byte_identical_to_p05": true
+    },
+    {
+      "source_sha256": "adb83280b6d5a70f383b5542727f675b3ff8a5740058b601d3d49ed27b14895b",
+      "source_bytes": 542,
+      "exit_code": 2,
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 4,
+        "traced_shots": 4,
+        "ready_measurements": 4,
+        "held_shots": 2,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 2,
+        "exported_source_shots": 2,
+        "measurement_export_complete": false,
+        "survey_texts_created": true,
+        "svg_drawings_created": 4,
+        "png_drawings_created": 4,
+        "atomic_package_created": true,
+        "package_artifacts_complete": true,
+        "compilation_complete": true,
+        "drawing_overlay_complete": false
+      },
+      "drawing_notices": [
+        "held_source_shots_not_projected"
+      ],
+      "compilation": {
+        "complete": true,
+        "geometry_status": "nonempty",
+        "comparison": {
+          "complete": true,
+          "status": "equivalent",
+          "tolerance_m": 0.010001,
+          "origin_raw": -2147483647,
+          "max_station_delta_m": 0.0,
+          "mismatched_station_raw": [],
+          "leg_geometry_matches": true
+        },
+        "formats": {
+          "srv": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "0",
+                "0.0",
+                "12.65535"
+              ],
+              "compiled_named_stations": [
+                "0",
+                "0.0",
+                "12.65535"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 2,
+                "source_splay_groups": 0,
+                "compiled_named_legs": 2,
+                "compiled_splays": 0,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": false,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          },
+          "svx": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "0",
+                "0.0",
+                "12.65535"
+              ],
+              "compiled_named_stations": [
+                "0",
+                "0.0",
+                "12.65535"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 2,
+                "source_splay_groups": 0,
+                "compiled_named_legs": 2,
+                "compiled_splays": 0,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": false,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          }
+        }
+      },
+      "artifact_manifest": {
+        "survey.SRV": {
+          "bytes": 5147,
+          "sha256": "c1840d927fb844cddf589e2db93213bcbafe31113d98c3681977e89f3ebafe10"
+        },
+        "survey.svx": {
+          "bytes": 5322,
+          "sha256": "a15944748efeb956a9018857b045d83bc0b868032ec66eec62a2790c4b54a65b"
+        },
+        "plan-sketch.svg": {
+          "bytes": 4108,
+          "sha256": "a59cba0dfec2b7a35358bef40db9f84f7e150b3483be9e3aa6508a7b240ce803"
+        },
+        "plan-measurements.svg": {
+          "bytes": 13606,
+          "sha256": "7c4bc8852c5d7966a9c0c421b20c08a2c8576f72801574c840192c1580f9006d"
+        },
+        "side-sketch.svg": {
+          "bytes": 4108,
+          "sha256": "552e5e9a509efe3c9423af3d8bf7bdad579904b3f652babaaac356de3d983d86"
+        },
+        "side-measurements.svg": {
+          "bytes": 13990,
+          "sha256": "9790ee62e67a263dc9285b89ebd11bd51865b987b6c02d9298fe365926c325ed"
+        },
+        "plan-sketch.png": {
+          "bytes": 577,
+          "sha256": "e2f61a18559ac20c2aacde0b66b16555a3347499a0343d40b3df9b2424b458aa"
+        },
+        "plan-measurements.png": {
+          "bytes": 2459,
+          "sha256": "36a38659246d8af15b22c5c2e88cec58f1d0c474f9b481885ddf890571a1d13a"
+        },
+        "side-sketch.png": {
+          "bytes": 577,
+          "sha256": "e2f61a18559ac20c2aacde0b66b16555a3347499a0343d40b3df9b2424b458aa"
+        },
+        "side-measurements.png": {
+          "bytes": 2553,
+          "sha256": "935bf734c94b398ad0041395eb4b72a6fea35837c79e489d3d10dbd704d38cb1"
+        },
+        "source.json": {
+          "bytes": 2782,
+          "sha256": "bdcfd54e505ee9dce6a397a877648c189a0dabe848e4a0751454d5a6774f70d6"
+        }
+      },
+      "report_sha256": "4924e725afde69d7bdc464c001f2faa0972caa8d9c5b2f82ae629ac39c896c86",
+      "source_unchanged": true,
+      "artifact_manifest_verified": true,
+      "source": "doc/pockettopo/evidence/p01/cases/api-trips-ids/api-trips-ids.top",
+      "drawings_byte_identical_to_p05": true
+    },
+    {
+      "source_sha256": "27b93102584d76840192d97e242cc30df38edbc551da244a033773095ae87bfb",
+      "source_bytes": 78,
+      "exit_code": 2,
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 1,
+        "traced_shots": 1,
+        "ready_measurements": 1,
+        "held_shots": 1,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 0,
+        "exported_source_shots": 0,
+        "measurement_export_complete": false,
+        "survey_texts_created": true,
+        "svg_drawings_created": 4,
+        "png_drawings_created": 4,
+        "atomic_package_created": true,
+        "package_artifacts_complete": true,
+        "compilation_complete": false,
+        "drawing_overlay_complete": false
+      },
+      "drawing_notices": [
+        "held_source_shots_not_projected"
+      ],
+      "compilation": {
+        "complete": false,
+        "geometry_status": "empty",
+        "comparison": {
+          "complete": false,
+          "status": "unavailable",
+          "tolerance_m": 0.010001
+        },
+        "formats": {
+          "srv": {
+            "complete": false,
+            "compile_status": "failed",
+            "returncode": 1,
+            "warnings": [],
+            "checks": null
+          },
+          "svx": {
+            "complete": false,
+            "compile_status": "failed",
+            "returncode": 1,
+            "warnings": [],
+            "checks": null
+          }
+        }
+      },
+      "artifact_manifest": {
+        "survey.SRV": {
+          "bytes": 1221,
+          "sha256": "9f1ec61a25f2b6609fcf1d53b2913d98bd19f2ccff4bfb1acb59959cda99f101"
+        },
+        "survey.svx": {
+          "bytes": 1378,
+          "sha256": "1ce0f38ce7c41291750b8f30bb48d2d2df14c442bb380f34c9c7dba5416f3e3e"
+        },
+        "plan-sketch.svg": {
+          "bytes": 4108,
+          "sha256": "a59cba0dfec2b7a35358bef40db9f84f7e150b3483be9e3aa6508a7b240ce803"
+        },
+        "plan-measurements.svg": {
+          "bytes": 6824,
+          "sha256": "1d060fd6c431a27c8f63e7e447efc9abce4c8eaa140e5b066612973c4b349771"
+        },
+        "side-sketch.svg": {
+          "bytes": 4108,
+          "sha256": "552e5e9a509efe3c9423af3d8bf7bdad579904b3f652babaaac356de3d983d86"
+        },
+        "side-measurements.svg": {
+          "bytes": 6824,
+          "sha256": "f90e9a0f5164ce02ec5ea313d238037d1e8416070e9f8bc9df5744facc0e72e0"
+        },
+        "plan-sketch.png": {
+          "bytes": 577,
+          "sha256": "e2f61a18559ac20c2aacde0b66b16555a3347499a0343d40b3df9b2424b458aa"
+        },
+        "plan-measurements.png": {
+          "bytes": 1053,
+          "sha256": "531e294c04051ad270ce63a45063b3517ceb92fb51dd4d0ba17ee3662b17bc14"
+        },
+        "side-sketch.png": {
+          "bytes": 577,
+          "sha256": "e2f61a18559ac20c2aacde0b66b16555a3347499a0343d40b3df9b2424b458aa"
+        },
+        "side-measurements.png": {
+          "bytes": 1053,
+          "sha256": "531e294c04051ad270ce63a45063b3517ceb92fb51dd4d0ba17ee3662b17bc14"
+        },
+        "source.json": {
+          "bytes": 1162,
+          "sha256": "8b0c2aa8d93d1ddc71d3c7b726f388315e4c41422656f3846a583f8f77aee847"
+        }
+      },
+      "report_sha256": "e9c658940cbb0d8156b2ae89da1dd3e2fcc38f5489ace29c8e1f76e62e2d7b43",
+      "source_unchanged": true,
+      "artifact_manifest_verified": true,
+      "source": "doc/pockettopo/evidence/p01/cases/gui-cardinal/source.top",
+      "drawings_byte_identical_to_p05": true
+    },
+    {
+      "source_sha256": "5c7355c7212f99ba11fe76d0d6739c3e3a34c7c060909b3efd41aea5c1f3b362",
+      "source_bytes": 204,
+      "exit_code": 2,
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 1,
+        "traced_shots": 1,
+        "ready_measurements": 1,
+        "held_shots": 1,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 0,
+        "exported_source_shots": 0,
+        "measurement_export_complete": false,
+        "survey_texts_created": true,
+        "svg_drawings_created": 4,
+        "png_drawings_created": 4,
+        "atomic_package_created": true,
+        "package_artifacts_complete": true,
+        "compilation_complete": false,
+        "drawing_overlay_complete": false
+      },
+      "drawing_notices": [
+        "held_source_shots_not_projected"
+      ],
+      "compilation": {
+        "complete": false,
+        "geometry_status": "empty",
+        "comparison": {
+          "complete": false,
+          "status": "unavailable",
+          "tolerance_m": 0.010001
+        },
+        "formats": {
+          "srv": {
+            "complete": false,
+            "compile_status": "failed",
+            "returncode": 1,
+            "warnings": [],
+            "checks": null
+          },
+          "svx": {
+            "complete": false,
+            "compile_status": "failed",
+            "returncode": 1,
+            "warnings": [],
+            "checks": null
+          }
+        }
+      },
+      "artifact_manifest": {
+        "survey.SRV": {
+          "bytes": 1222,
+          "sha256": "9919cefb90a0782b3d2eb11dc9dde4d6e8ac05324c0f90d5a65545b5f3ee7554"
+        },
+        "survey.svx": {
+          "bytes": 1379,
+          "sha256": "98301587b929009683eeff596a69ddd8fbe2e898bb053cdfcd1ebf79cb7ef427"
+        },
+        "plan-sketch.svg": {
+          "bytes": 2968,
+          "sha256": "edb4143afde1f22956c7871a99763382183c869c776a2fff8af5561cd4a27ab3"
+        },
+        "plan-measurements.svg": {
+          "bytes": 5980,
+          "sha256": "40c09e6484a3df5a0e88007a1a1964d9ac00bb8398ed31948c2af053f3b2b802"
+        },
+        "side-sketch.svg": {
+          "bytes": 4108,
+          "sha256": "552e5e9a509efe3c9423af3d8bf7bdad579904b3f652babaaac356de3d983d86"
+        },
+        "side-measurements.svg": {
+          "bytes": 6824,
+          "sha256": "f90e9a0f5164ce02ec5ea313d238037d1e8416070e9f8bc9df5744facc0e72e0"
+        },
+        "plan-sketch.png": {
+          "bytes": 1337,
+          "sha256": "927a3d9849f6ef82980112d5babf975761b10fc62a9cb378510340da106db85a"
+        },
+        "plan-measurements.png": {
+          "bytes": 1900,
+          "sha256": "22de2e65d94442a43e96f3d50e39f43063f290290e3273947438a2156efba3bd"
+        },
+        "side-sketch.png": {
+          "bytes": 577,
+          "sha256": "e2f61a18559ac20c2aacde0b66b16555a3347499a0343d40b3df9b2424b458aa"
+        },
+        "side-measurements.png": {
+          "bytes": 1053,
+          "sha256": "531e294c04051ad270ce63a45063b3517ceb92fb51dd4d0ba17ee3662b17bc14"
+        },
+        "source.json": {
+          "bytes": 2829,
+          "sha256": "af883ddd1a8fb3e2d9121257dd45b6c0f359b6c5fb405dc1217674f594e039b2"
+        }
+      },
+      "report_sha256": "4e24665abf319695dd015d11d447bf2a9d1bee73e0cf1be0fe198caf27737897",
+      "source_unchanged": true,
+      "artifact_manifest_verified": true,
+      "source": "doc/pockettopo/evidence/p01/cases/gui-colors/source.top",
+      "drawings_byte_identical_to_p05": true
+    },
+    {
+      "source_sha256": "edf6da168275bf334f413557e402ad14a03191141779a1466d71d230702da870",
+      "source_bytes": 11157,
+      "exit_code": 2,
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 25,
+        "traced_shots": 25,
+        "ready_measurements": 24,
+        "held_shots": 1,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 24,
+        "exported_source_shots": 24,
+        "measurement_export_complete": false,
+        "survey_texts_created": true,
+        "svg_drawings_created": 4,
+        "png_drawings_created": 4,
+        "atomic_package_created": true,
+        "package_artifacts_complete": true,
+        "compilation_complete": true,
+        "drawing_overlay_complete": false
+      },
+      "drawing_notices": [
+        "held_source_shots_not_projected",
+        "unadjusted_closure"
+      ],
+      "compilation": {
+        "complete": true,
+        "geometry_status": "nonempty",
+        "comparison": {
+          "complete": true,
+          "status": "equivalent",
+          "tolerance_m": 0.010001,
+          "origin_raw": 65536,
+          "max_station_delta_m": 0.0,
+          "mismatched_station_raw": [],
+          "leg_geometry_matches": true
+        },
+        "formats": {
+          "srv": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "1.0",
+                "1.1",
+                "1.2",
+                "1.3",
+                "1.4",
+                "1.5",
+                "1.6",
+                "1.7",
+                "1.8"
+              ],
+              "compiled_named_stations": [
+                "1.0",
+                "1.1",
+                "1.2",
+                "1.3",
+                "1.4",
+                "1.5",
+                "1.6",
+                "1.7",
+                "1.8"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 24,
+                "source_splay_groups": 0,
+                "compiled_named_legs": 8,
+                "compiled_splays": 0,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": true,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          },
+          "svx": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "1.0",
+                "1.1",
+                "1.2",
+                "1.3",
+                "1.4",
+                "1.5",
+                "1.6",
+                "1.7",
+                "1.8"
+              ],
+              "compiled_named_stations": [
+                "1.0",
+                "1.1",
+                "1.2",
+                "1.3",
+                "1.4",
+                "1.5",
+                "1.6",
+                "1.7",
+                "1.8"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 24,
+                "source_splay_groups": 0,
+                "compiled_named_legs": 8,
+                "compiled_splays": 0,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": true,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          }
+        }
+      },
+      "artifact_manifest": {
+        "survey.SRV": {
+          "bytes": 15201,
+          "sha256": "9434433828cf82d473b18f66ffcfd7ae174f5fd0d3c5cce9ed8f3fcf196a4c17"
+        },
+        "survey.svx": {
+          "bytes": 15574,
+          "sha256": "fec92f250a41be2acd85050772b93ca7f9f50117f5ad0261431589b84c2649cb"
+        },
+        "plan-sketch.svg": {
+          "bytes": 10500,
+          "sha256": "84bdce7e217de340b0163685f3356372835f0f662e67e6334656639db8ca844c"
+        },
+        "plan-measurements.svg": {
+          "bytes": 26015,
+          "sha256": "c6cf40ae9bc5d2e29913eb5ce8c9b2cc752c4e0788ce0811ba1dc2581349e315"
+        },
+        "side-sketch.svg": {
+          "bytes": 13445,
+          "sha256": "f6969d012aab13266a1d7e85a2cb225eff05c9d2459af2534bc1402966fdf881"
+        },
+        "side-measurements.svg": {
+          "bytes": 28791,
+          "sha256": "94a5dde92dcd8b2e3d0b0bc08de0912ea20bc6e2e0bd96346fcb50c5461149af"
+        },
+        "plan-sketch.png": {
+          "bytes": 21320,
+          "sha256": "fc8db683337bd1728d83b021f404add511ee4ba7c4ea1e6b8b3f8e85a5a1ab2a"
+        },
+        "plan-measurements.png": {
+          "bytes": 33211,
+          "sha256": "a7b9ddc912fb05ccaf871d44d02eaa69d102fc3ac60282cc12d08ec2d96b348f"
+        },
+        "side-sketch.png": {
+          "bytes": 33260,
+          "sha256": "2747fcd0afa516c47088990c7f8c1e979d0537ac3c9329f48f1cf2224691ca6a"
+        },
+        "side-measurements.png": {
+          "bytes": 56241,
+          "sha256": "32f1e3298ae5ca327da9629ca253741b8e78e4c7660a7327c3a7881a1ca8c30f"
+        },
+        "source.json": {
+          "bytes": 116677,
+          "sha256": "612a52e337b51316420102b4c3e7edf8c1ffdd6e6d40a32a784f5dc4fa55cd74"
+        }
+      },
+      "report_sha256": "73519fd4a3a117c28f5c0f5af6d38b2cfdad8e5a582cd41e7ce113c4cd9c5f80",
+      "source_unchanged": true,
+      "artifact_manifest_verified": true,
+      "source": "doc/pockettopo/evidence/repeat-candidates/DS201208/DS201208.top",
+      "drawings_byte_identical_to_p05": true
+    },
+    {
+      "source_sha256": "52e16f9561f2fbf3b66e595c29fce113c9ed1cc44fc5865897cb5f06b1aaba94",
+      "source_bytes": 3421,
+      "exit_code": 2,
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 14,
+        "traced_shots": 14,
+        "ready_measurements": 13,
+        "held_shots": 1,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 13,
+        "exported_source_shots": 13,
+        "measurement_export_complete": false,
+        "survey_texts_created": true,
+        "svg_drawings_created": 4,
+        "png_drawings_created": 4,
+        "atomic_package_created": true,
+        "package_artifacts_complete": true,
+        "compilation_complete": true,
+        "drawing_overlay_complete": false
+      },
+      "drawing_notices": [
+        "held_source_shots_not_projected",
+        "unadjusted_closure"
+      ],
+      "compilation": {
+        "complete": true,
+        "geometry_status": "nonempty",
+        "comparison": {
+          "complete": true,
+          "status": "equivalent",
+          "tolerance_m": 0.010001,
+          "origin_raw": 65536,
+          "max_station_delta_m": 0.0,
+          "mismatched_station_raw": [],
+          "leg_geometry_matches": true
+        },
+        "formats": {
+          "srv": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "1.0",
+                "1.1",
+                "1.2",
+                "1.3",
+                "2.1"
+              ],
+              "compiled_named_stations": [
+                "1.0",
+                "1.1",
+                "1.2",
+                "1.3",
+                "2.1"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 12,
+                "source_splay_groups": 1,
+                "compiled_named_legs": 4,
+                "compiled_splays": 1,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": true,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          },
+          "svx": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "1.0",
+                "1.1",
+                "1.2",
+                "1.3",
+                "2.1"
+              ],
+              "compiled_named_stations": [
+                "1.0",
+                "1.1",
+                "1.2",
+                "1.3",
+                "2.1"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 12,
+                "source_splay_groups": 1,
+                "compiled_named_legs": 4,
+                "compiled_splays": 1,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": true,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          }
+        }
+      },
+      "artifact_manifest": {
+        "survey.SRV": {
+          "bytes": 8832,
+          "sha256": "608fbc1005860391fd8f8dc12167644b2bbb19ca5dfc60f7bb44d55fc58bbcd5"
+        },
+        "survey.svx": {
+          "bytes": 9107,
+          "sha256": "7d35cec5230360f9e94b970c70de784844026d04cb71f7aef87b4caf6f56d16c"
+        },
+        "plan-sketch.svg": {
+          "bytes": 6544,
+          "sha256": "0ba72327b00eb26b1760c6675e7fcb59d538b8cab3ab9aad588392811fb1442f"
+        },
+        "plan-measurements.svg": {
+          "bytes": 17391,
+          "sha256": "3f73e958b22b07b328ca4451a873c7c32dfc8128bdfad5ea523c2b53a5e174ab"
+        },
+        "side-sketch.svg": {
+          "bytes": 4141,
+          "sha256": "9bd835bd5c15a1c941845df4f87194873d7eb3d3543d4d1fcec727f44242a612"
+        },
+        "side-measurements.svg": {
+          "bytes": 13777,
+          "sha256": "dccf5dfaab77541041ca2cf3a1caaad405609f7c86382db7b08717bc09e4762f"
+        },
+        "plan-sketch.png": {
+          "bytes": 9084,
+          "sha256": "e3e1f5b6c944e9d871d67b664edf57e4e09ecff1bf74c2132a85624e4dc53e3a"
+        },
+        "plan-measurements.png": {
+          "bytes": 23418,
+          "sha256": "9d20e2dc2c4a1b0562bf441d56e49cc08d448c55f7307e2cac8066d4b3225077"
+        },
+        "side-sketch.png": {
+          "bytes": 9818,
+          "sha256": "981e69e8966eac4f10824fd14d89666f8d9272952adc169db0e7290e196f91ef"
+        },
+        "side-measurements.png": {
+          "bytes": 19006,
+          "sha256": "3e03ae63d4f724b4a56882022efda5f9d553e18e2dee08fd8f1518b3282137da"
+        },
+        "source.json": {
+          "bytes": 37110,
+          "sha256": "fa7c910fb62f28a7ae5773cfffb62a2b62318b66b567fafadfda644c72235e5c"
+        }
+      },
+      "report_sha256": "2d95c070ae9505f92a3d90fd14c8b36e985b90bf0d4a8e247bcc59a30a3ac08d",
+      "source_unchanged": true,
+      "artifact_manifest_verified": true,
+      "source": "doc/pockettopo/evidence/repeat-candidates/okna/okna.top",
+      "drawings_byte_identical_to_p05": true
+    },
+    {
+      "source_sha256": "a7a165750b0a3b03b19f72050219ffd28b22defa7fc68163a383b98236e994e4",
+      "source_bytes": 8067,
+      "exit_code": 2,
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 11,
+        "traced_shots": 11,
+        "ready_measurements": 10,
+        "held_shots": 1,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 10,
+        "exported_source_shots": 10,
+        "measurement_export_complete": false,
+        "survey_texts_created": true,
+        "svg_drawings_created": 4,
+        "png_drawings_created": 4,
+        "atomic_package_created": true,
+        "package_artifacts_complete": true,
+        "compilation_complete": true,
+        "drawing_overlay_complete": false
+      },
+      "drawing_notices": [
+        "held_source_shots_not_projected",
+        "unadjusted_closure"
+      ],
+      "compilation": {
+        "complete": true,
+        "geometry_status": "nonempty",
+        "comparison": {
+          "complete": true,
+          "status": "equivalent",
+          "tolerance_m": 0.010001,
+          "origin_raw": 65536,
+          "max_station_delta_m": 0.0,
+          "mismatched_station_raw": [],
+          "leg_geometry_matches": true
+        },
+        "formats": {
+          "srv": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "1.0",
+                "1.1",
+                "1.2",
+                "1.3"
+              ],
+              "compiled_named_stations": [
+                "1.0",
+                "1.1",
+                "1.2",
+                "1.3"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 9,
+                "source_splay_groups": 1,
+                "compiled_named_legs": 3,
+                "compiled_splays": 1,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": true,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          },
+          "svx": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "1.0",
+                "1.1",
+                "1.2",
+                "1.3"
+              ],
+              "compiled_named_stations": [
+                "1.0",
+                "1.1",
+                "1.2",
+                "1.3"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 9,
+                "source_splay_groups": 1,
+                "compiled_named_legs": 3,
+                "compiled_splays": 1,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": true,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          }
+        }
+      },
+      "artifact_manifest": {
+        "survey.SRV": {
+          "bytes": 7168,
+          "sha256": "4271ba82315544822ce355124e4f21183710fcaaed145f09aab38e66495ff432"
+        },
+        "survey.svx": {
+          "bytes": 7416,
+          "sha256": "ab964af3938c37f859a71f46b8731513e970e97aa815427a7316a9d868a68afe"
+        },
+        "plan-sketch.svg": {
+          "bytes": 14642,
+          "sha256": "f7c18e06cc0c70dab850261674689c94daae9abad24d02131430ba5c283758c6"
+        },
+        "plan-measurements.svg": {
+          "bytes": 22849,
+          "sha256": "0a6315369e8d7c67e245b3b9de1fb51dfa8e6091f78d4a84385b6c9ab810f9eb"
+        },
+        "side-sketch.svg": {
+          "bytes": 5262,
+          "sha256": "84f071b6f52250113b0b9a6e6609061486b00eccb70f5f21ed1306c2c3c2778e"
+        },
+        "side-measurements.svg": {
+          "bytes": 13036,
+          "sha256": "8342e007200c5a8165f09cd233733cc1d103c993a5576cae52bd49656af93689"
+        },
+        "plan-sketch.png": {
+          "bytes": 12360,
+          "sha256": "02e29dd22aad20ce73235723faf683225005c4718b412c19ca25c85cdc560d7f"
+        },
+        "plan-measurements.png": {
+          "bytes": 16653,
+          "sha256": "7075697b27a554f24e17ec147507e6b8eb9e312d46bf9c108f522aef152cec99"
+        },
+        "side-sketch.png": {
+          "bytes": 8482,
+          "sha256": "8baa344f33f58b8f4bd45b0ef4b2d46876980d3be839ac571f77314db323381b"
+        },
+        "side-measurements.png": {
+          "bytes": 12401,
+          "sha256": "86f14cf16c362677aa9c37aa0e536224c403d43814381e55fdddb5c6870e6b70"
+        },
+        "source.json": {
+          "bytes": 83983,
+          "sha256": "e0b9520d972752b388af866a17f86d57d65a41d4d65caf65f4f74b89734bf989"
+        }
+      },
+      "report_sha256": "6fbf01eb90512e3174c141ce9eb30bfbe3e8c2dd312f8a5065d20e69c7a22dbf",
+      "source_unchanged": true,
+      "artifact_manifest_verified": true,
+      "source": "doc/pockettopo/evidence/repeat-candidates/zach0dni2/zach0dni2.top",
+      "drawings_byte_identical_to_p05": true
+    },
+    {
+      "source_sha256": "a6554019285dcc50feadb672867c40e5bef0686551060da1670b49cde0bcfb4c",
+      "source_bytes": 45983,
+      "exit_code": 2,
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 32,
+        "traced_shots": 32,
+        "ready_measurements": 31,
+        "held_shots": 1,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 31,
+        "exported_source_shots": 31,
+        "measurement_export_complete": false,
+        "survey_texts_created": true,
+        "svg_drawings_created": 4,
+        "png_drawings_created": 4,
+        "atomic_package_created": true,
+        "package_artifacts_complete": true,
+        "compilation_complete": true,
+        "drawing_overlay_complete": false
+      },
+      "drawing_notices": [
+        "held_source_shots_not_projected"
+      ],
+      "compilation": {
+        "complete": true,
+        "geometry_status": "nonempty",
+        "comparison": {
+          "complete": true,
+          "status": "equivalent",
+          "tolerance_m": 0.010001,
+          "origin_raw": 0,
+          "max_station_delta_m": 0.0,
+          "mismatched_station_raw": [],
+          "leg_geometry_matches": true
+        },
+        "formats": {
+          "srv": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "0.0",
+                "1.0",
+                "10.0",
+                "11.0",
+                "12.0",
+                "12.1",
+                "13.0",
+                "14.0",
+                "15.0",
+                "16.0",
+                "17.0",
+                "18.0",
+                "19.0",
+                "2.0",
+                "20.0",
+                "21.0",
+                "22.0",
+                "23.0",
+                "24.0",
+                "25.0",
+                "26.0",
+                "27.0",
+                "28.0",
+                "3.0",
+                "4.0",
+                "5.0",
+                "6.0",
+                "7.0",
+                "8.0",
+                "9.0",
+                "9.1"
+              ],
+              "compiled_named_stations": [
+                "0.0",
+                "1.0",
+                "10.0",
+                "11.0",
+                "12.0",
+                "12.1",
+                "13.0",
+                "14.0",
+                "15.0",
+                "16.0",
+                "17.0",
+                "18.0",
+                "19.0",
+                "2.0",
+                "20.0",
+                "21.0",
+                "22.0",
+                "23.0",
+                "24.0",
+                "25.0",
+                "26.0",
+                "27.0",
+                "28.0",
+                "3.0",
+                "4.0",
+                "5.0",
+                "6.0",
+                "7.0",
+                "8.0",
+                "9.0",
+                "9.1"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 30,
+                "source_splay_groups": 1,
+                "compiled_named_legs": 30,
+                "compiled_splays": 1,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": false,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          },
+          "svx": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "0.0",
+                "1.0",
+                "10.0",
+                "11.0",
+                "12.0",
+                "12.1",
+                "13.0",
+                "14.0",
+                "15.0",
+                "16.0",
+                "17.0",
+                "18.0",
+                "19.0",
+                "2.0",
+                "20.0",
+                "21.0",
+                "22.0",
+                "23.0",
+                "24.0",
+                "25.0",
+                "26.0",
+                "27.0",
+                "28.0",
+                "3.0",
+                "4.0",
+                "5.0",
+                "6.0",
+                "7.0",
+                "8.0",
+                "9.0",
+                "9.1"
+              ],
+              "compiled_named_stations": [
+                "0.0",
+                "1.0",
+                "10.0",
+                "11.0",
+                "12.0",
+                "12.1",
+                "13.0",
+                "14.0",
+                "15.0",
+                "16.0",
+                "17.0",
+                "18.0",
+                "19.0",
+                "2.0",
+                "20.0",
+                "21.0",
+                "22.0",
+                "23.0",
+                "24.0",
+                "25.0",
+                "26.0",
+                "27.0",
+                "28.0",
+                "3.0",
+                "4.0",
+                "5.0",
+                "6.0",
+                "7.0",
+                "8.0",
+                "9.0",
+                "9.1"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 30,
+                "source_splay_groups": 1,
+                "compiled_named_legs": 30,
+                "compiled_splays": 1,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": false,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          }
+        }
+      },
+      "artifact_manifest": {
+        "survey.SRV": {
+          "bytes": 23220,
+          "sha256": "27745ede2e4d36081f18afad30561dc1ce37cbbc5dc30af16582279cf57193d9"
+        },
+        "survey.svx": {
+          "bytes": 23657,
+          "sha256": "c9272c9a8a5438a56392cf7b3c784f3167a674d6381926710db471978d52e34b"
+        },
+        "plan-sketch.svg": {
+          "bytes": 67264,
+          "sha256": "18abb72e2969f311f077802cc93fc4640a12f35dc61501cfe8d33d8236ddce0d"
+        },
+        "plan-measurements.svg": {
+          "bytes": 121282,
+          "sha256": "3972f561193747c6724a90e920152d6816424a8d702f58748feb7521dffb11fa"
+        },
+        "side-sketch.svg": {
+          "bytes": 21292,
+          "sha256": "daeb68a227d920f837cbd07168465ce248af2d0327ee0384202743a215ab84bd"
+        },
+        "side-measurements.svg": {
+          "bytes": 75009,
+          "sha256": "59d0c70c03d87a9059bb3350537839e180c5461a24e05403560e9d94e89da1fa"
+        },
+        "plan-sketch.png": {
+          "bytes": 61112,
+          "sha256": "59b7e50b0a2df22b950c6e3af0b89e1abe394651e16796d82e82b71543273bf5"
+        },
+        "plan-measurements.png": {
+          "bytes": 93882,
+          "sha256": "8f4b613b99b849d7c1efe92a8e6ce6eb6b2622b36c20cd1e6fbe1fac98b4b180"
+        },
+        "side-sketch.png": {
+          "bytes": 104306,
+          "sha256": "5448781ffb134f120e1ba8a3f9729661e2bbbbb6a86aed3fc04ebe09636acdc1"
+        },
+        "side-measurements.png": {
+          "bytes": 156141,
+          "sha256": "a298270cfd8df991c698198355db525605e75bdf7929cee017990a844a594499"
+        },
+        "source.json": {
+          "bytes": 473390,
+          "sha256": "7a8a630e3fa92393213d34715e299548397ffb1dd854a22c5785b5152ce7bd53"
+        }
+      },
+      "report_sha256": "ee0e4eb2119db068c943fa23359613ccd8d3f262de4eeb85e19e8f0db1f11f84",
+      "source_unchanged": true,
+      "artifact_manifest_verified": true,
+      "source": "doc/pockettopo/evidence/shadow/shadow.top",
+      "drawings_byte_identical_to_p05": true
+    },
+    {
+      "source_sha256": "d115145aa81c91b0038bc57f8157bf4e6e8b3702c264a526b2d125f1c5f52eef",
+      "source_bytes": 399,
+      "exit_code": 0,
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 7,
+        "traced_shots": 7,
+        "ready_measurements": 7,
+        "held_shots": 0,
+        "exports_created": true,
+        "conversion_complete": true,
+        "exported_measurements": 7,
+        "exported_source_shots": 7,
+        "measurement_export_complete": true,
+        "survey_texts_created": true,
+        "svg_drawings_created": 4,
+        "png_drawings_created": 4,
+        "atomic_package_created": true,
+        "package_artifacts_complete": true,
+        "compilation_complete": true,
+        "drawing_overlay_complete": true
+      },
+      "drawing_notices": [],
+      "compilation": {
+        "complete": true,
+        "geometry_status": "nonempty",
+        "comparison": {
+          "complete": true,
+          "status": "equivalent",
+          "tolerance_m": 0.010001,
+          "origin_raw": -2147483647,
+          "max_station_delta_m": 0.0,
+          "mismatched_station_raw": [],
+          "leg_geometry_matches": true
+        },
+        "formats": {
+          "srv": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "compiled_named_stations": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 5,
+                "source_splay_groups": 2,
+                "compiled_named_legs": 5,
+                "compiled_splays": 2,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": false,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          },
+          "svx": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "compiled_named_stations": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 5,
+                "source_splay_groups": 2,
+                "compiled_named_legs": 5,
+                "compiled_splays": 2,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": false,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          }
+        }
+      },
+      "artifact_manifest": {
+        "survey.SRV": {
+          "bytes": 5467,
+          "sha256": "0d9395f1a937c6269e90423a0f825318c4f2aac582651b53c0326d3949b2e965"
+        },
+        "survey.svx": {
+          "bytes": 5689,
+          "sha256": "0794c3ebab4fdf763a9927e367343dee0d1bf1e6f93a7d95c38757a64e9582f9"
+        },
+        "plan-sketch.svg": {
+          "bytes": 4108,
+          "sha256": "a59cba0dfec2b7a35358bef40db9f84f7e150b3483be9e3aa6508a7b240ce803"
+        },
+        "plan-measurements.svg": {
+          "bytes": 7885,
+          "sha256": "f39adfe6038ce9e3f2ac389cb931578186c9eeff8c78f9a5716a5c6480b5d573"
+        },
+        "side-sketch.svg": {
+          "bytes": 4108,
+          "sha256": "552e5e9a509efe3c9423af3d8bf7bdad579904b3f652babaaac356de3d983d86"
+        },
+        "side-measurements.svg": {
+          "bytes": 7957,
+          "sha256": "c2856710db556070558c4e71a26c418236d2374d101efb00be61ef80af7d7f7c"
+        },
+        "plan-sketch.png": {
+          "bytes": 577,
+          "sha256": "e2f61a18559ac20c2aacde0b66b16555a3347499a0343d40b3df9b2424b458aa"
+        },
+        "plan-measurements.png": {
+          "bytes": 3782,
+          "sha256": "b6149d59dc962e4aa75cd381c39a47ae864d85a44d8ec5553ecf19cc74cd538f"
+        },
+        "side-sketch.png": {
+          "bytes": 577,
+          "sha256": "e2f61a18559ac20c2aacde0b66b16555a3347499a0343d40b3df9b2424b458aa"
+        },
+        "side-measurements.png": {
+          "bytes": 4168,
+          "sha256": "a852f6ee3a557b63fb0792be0ef6d4aa7e76bed8aa5ffe760d1fb2d4a1f81b04"
+        },
+        "source.json": {
+          "bytes": 3366,
+          "sha256": "993ad300eae6ff6b1ca6b3fac736b14ea056ac5eee568731977a5d698db7c667"
+        }
+      },
+      "report_sha256": "dcc4f551352b45aae65fc1997c08790ad76c7a5590b28f36290493f4c1fb1efe",
+      "source_unchanged": true,
+      "artifact_manifest_verified": true,
+      "source": "doc/pockettopo/evidence/p05/native/branch/branch.top",
+      "drawings_byte_identical_to_p05": true
+    },
+    {
+      "source_sha256": "377e54a92f4e1c74fa6930c3ddff792e96989936914df920b4134cb290210f15",
+      "source_bytes": 238,
+      "exit_code": 2,
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 4,
+        "traced_shots": 4,
+        "ready_measurements": 4,
+        "held_shots": 0,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 4,
+        "exported_source_shots": 4,
+        "measurement_export_complete": true,
+        "survey_texts_created": true,
+        "svg_drawings_created": 4,
+        "png_drawings_created": 4,
+        "atomic_package_created": true,
+        "package_artifacts_complete": true,
+        "compilation_complete": true,
+        "drawing_overlay_complete": false
+      },
+      "drawing_notices": [
+        "unadjusted_closure"
+      ],
+      "compilation": {
+        "complete": true,
+        "geometry_status": "nonempty",
+        "comparison": {
+          "complete": true,
+          "status": "equivalent",
+          "tolerance_m": 0.010001,
+          "origin_raw": -2147483647,
+          "max_station_delta_m": 0.0,
+          "mismatched_station_raw": [],
+          "leg_geometry_matches": true
+        },
+        "formats": {
+          "srv": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "compiled_named_stations": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 4,
+                "source_splay_groups": 0,
+                "compiled_named_legs": 4,
+                "compiled_splays": 0,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": false,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          },
+          "svx": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "compiled_named_stations": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 4,
+                "source_splay_groups": 0,
+                "compiled_named_legs": 4,
+                "compiled_splays": 0,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": false,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          }
+        }
+      },
+      "artifact_manifest": {
+        "survey.SRV": {
+          "bytes": 3555,
+          "sha256": "3d6713aa6d87eec1fbd0ac4b2f9826d05423675bef6f720db4348b53f298f466"
+        },
+        "survey.svx": {
+          "bytes": 3748,
+          "sha256": "a62e0e14f39d5a3602b7f21d934e72c7ac0e2a3eab27000560f9ca49f7a2d961"
+        },
+        "plan-sketch.svg": {
+          "bytes": 4108,
+          "sha256": "a59cba0dfec2b7a35358bef40db9f84f7e150b3483be9e3aa6508a7b240ce803"
+        },
+        "plan-measurements.svg": {
+          "bytes": 9337,
+          "sha256": "1d8051571279edabeaf34d7d37be0d9869cf388f09c760030e6f897fb50faf4d"
+        },
+        "side-sketch.svg": {
+          "bytes": 4108,
+          "sha256": "552e5e9a509efe3c9423af3d8bf7bdad579904b3f652babaaac356de3d983d86"
+        },
+        "side-measurements.svg": {
+          "bytes": 10523,
+          "sha256": "475cf2f54c047657ed8fef2609c8d3b45160e4ec769793084c258f5f5cdaa844"
+        },
+        "plan-sketch.png": {
+          "bytes": 577,
+          "sha256": "e2f61a18559ac20c2aacde0b66b16555a3347499a0343d40b3df9b2424b458aa"
+        },
+        "plan-measurements.png": {
+          "bytes": 5438,
+          "sha256": "96037d48158ca4c2509b1b601b84731bbe1301ff45f82cd463fe7052b8f2bfb3"
+        },
+        "side-sketch.png": {
+          "bytes": 577,
+          "sha256": "e2f61a18559ac20c2aacde0b66b16555a3347499a0343d40b3df9b2424b458aa"
+        },
+        "side-measurements.png": {
+          "bytes": 3672,
+          "sha256": "5e8f1b7fd248b1f8396de26d3b4aa64406765dbeeac0788fe56046416aaab0b0"
+        },
+        "source.json": {
+          "bytes": 2307,
+          "sha256": "56f3c239c41e27acd596d38238b66a57c9be4dd3cc0828566061ec3e772fd8f7"
+        }
+      },
+      "report_sha256": "389317aeb7220dc550861bf014bf33cb6de7eed3683f2b7dc8deed4889ead2b1",
+      "source_unchanged": true,
+      "artifact_manifest_verified": true,
+      "source": "doc/pockettopo/evidence/p05/native/loop/loop.top",
+      "drawings_byte_identical_to_p05": true
+    },
+    {
+      "source_sha256": "4a591d3f42676d03e9578e016010991843c758c6462f7a22802bef10789c924f",
+      "source_bytes": 581,
+      "exit_code": 0,
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 9,
+        "traced_shots": 9,
+        "ready_measurements": 9,
+        "held_shots": 0,
+        "exports_created": true,
+        "conversion_complete": true,
+        "exported_measurements": 9,
+        "exported_source_shots": 9,
+        "measurement_export_complete": true,
+        "survey_texts_created": true,
+        "svg_drawings_created": 4,
+        "png_drawings_created": 4,
+        "atomic_package_created": true,
+        "package_artifacts_complete": true,
+        "compilation_complete": true,
+        "drawing_overlay_complete": true
+      },
+      "drawing_notices": [],
+      "compilation": {
+        "complete": true,
+        "geometry_status": "nonempty",
+        "comparison": {
+          "complete": true,
+          "status": "equivalent",
+          "tolerance_m": 0.010001,
+          "origin_raw": -2147483647,
+          "max_station_delta_m": 0.0,
+          "mismatched_station_raw": [],
+          "leg_geometry_matches": true
+        },
+        "formats": {
+          "srv": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "0",
+                "1",
+                "2"
+              ],
+              "compiled_named_stations": [
+                "0",
+                "1",
+                "2"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 2,
+                "source_splay_groups": 7,
+                "compiled_named_legs": 2,
+                "compiled_splays": 7,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": false,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          },
+          "svx": {
+            "complete": true,
+            "compile_status": "ok",
+            "returncode": 0,
+            "warnings": [],
+            "checks": {
+              "expected_named_stations": [
+                "0",
+                "1",
+                "2"
+              ],
+              "compiled_named_stations": [
+                "0",
+                "1",
+                "2"
+              ],
+              "missing_named_stations": [],
+              "unexpected_named_stations": [],
+              "broken_zero_link_group_ids": [],
+              "legs": {
+                "source_named_leg_groups": 2,
+                "source_splay_groups": 7,
+                "compiled_named_legs": 2,
+                "compiled_splays": 7,
+                "missing_named_edge_group_ids": [],
+                "unexpected_named_leg_indices": [],
+                "compiler_combined_named_edges": false,
+                "splay_anchors_complete": true,
+                "complete": true
+              },
+              "complete": true
+            }
+          }
+        }
+      },
+      "artifact_manifest": {
+        "survey.SRV": {
+          "bytes": 6076,
+          "sha256": "cd6ffb52a5651fb2153dfb56557b25444af73424ffeb77fb804686127809d358"
+        },
+        "survey.svx": {
+          "bytes": 6321,
+          "sha256": "b55faa300f4dcf608562cba357a6b30d1de0dfdc756ed47fe9c2e3bbe30e11ca"
+        },
+        "plan-sketch.svg": {
+          "bytes": 4663,
+          "sha256": "b16a2fe8ad96786fc42b4c5075faba9ecf2402627cb12eedbee71ca7558fb70f"
+        },
+        "plan-measurements.svg": {
+          "bytes": 12378,
+          "sha256": "8c2ab873df882a66559c231579a48662b43c6b142f8e0a78d3a0dc82b0afda6a"
+        },
+        "side-sketch.svg": {
+          "bytes": 4663,
+          "sha256": "8ff4040151392647b98e98c5ca08784b97c7a66bcbbb180f2938017b5fe27a0e"
+        },
+        "side-measurements.svg": {
+          "bytes": 11477,
+          "sha256": "a8aa39dc27a0cbea96606b9fa5c73da4d777a3cce719619f545ca78b85a7c024"
+        },
+        "plan-sketch.png": {
+          "bytes": 577,
+          "sha256": "e2f61a18559ac20c2aacde0b66b16555a3347499a0343d40b3df9b2424b458aa"
+        },
+        "plan-measurements.png": {
+          "bytes": 83760,
+          "sha256": "a269b8084296c8e6c6b16755d6bc373b25d2572183feebd6aa77cb840b4aedf4"
+        },
+        "side-sketch.png": {
+          "bytes": 577,
+          "sha256": "e2f61a18559ac20c2aacde0b66b16555a3347499a0343d40b3df9b2424b458aa"
+        },
+        "side-measurements.png": {
+          "bytes": 59763,
+          "sha256": "9b220a1959d48dad76d5ddd49fca7f67760158d92b82d7d9508ddeb86876562d"
+        },
+        "source.json": {
+          "bytes": 6266,
+          "sha256": "97f5e450711cd58d448b8f4f1ec21df5e1c6e2e12f086a92253481d4f11e9eb9"
+        }
+      },
+      "report_sha256": "e52c07ccde5ac5a37d7c87083ccc27e2115926166e8f47697eeee9ff6edca328",
+      "source_unchanged": true,
+      "artifact_manifest_verified": true,
+      "source": "doc/pockettopo/evidence/p05/native/xsection/xsection.top",
+      "drawings_byte_identical_to_p05": true
+    }
+  ]
+}
