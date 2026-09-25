@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "recorded_at": "2026-09-25T14:50:08.590066+00:00",
+  "recorded_at": "2026-09-25T14:58:43.000346+00:00",
   "python": "3.12.13",
   "scope": "P06 CLI, strict source-pinned decisions, atomic no-replace package, compilation validation and skill",
   "code_sha256": {
@@ -32,7 +32,7 @@
     "tests/test_pockettopo_parser.py": "fd33cf663c58c9dd0f3719ce647f6bb4e0083057566a58740fcdc832458e1b90",
     "tests/test_pockettopo_projection.py": "18e90454adb2934cae411002e02c97ec4c8a48a2d90270f421a93710d31b98f8",
     "tests/test_pockettopo_report.py": "4c6a4120ac6b05ef60d25ca90e5fdff74ffae40ff913fccff8ff20e6a932129f",
-    "tests/test_pockettopo_validation.py": "3dd1fabd43a035895fbdd32f81d04939fd812ffa107da1df18fe54b4f1e96f86",
+    "tests/test_pockettopo_validation.py": "59a33388cf6293b233fa50c09bab371b226725012bda1982d64676f2aa9b68f4",
     "pyproject.toml": "62cc25dab5b581fdafd2a279206cfa1192ee031ad5ce957cc78f83d436699efd",
     ".github/workflows/validate.yml": "a441b902e30d1bf849e4ecc037aafba16d21a041025cf7e08c5298777a40e59d",
     ".agents/skills/pockettopo-convert/SKILL.md": "984cbb4b11b47b58af9288c3a0ab5a5314a6f51e03c2e34137f1db6aa25d0eca"
@@ -199,7 +199,7 @@
       "Explicit relative compiler paths now resolve against caller cwd, tested with real tools.",
       "Inspect report now describes inspection limits instead of stale P06 pending wording."
     ],
-    "platform_regression": "Relative compiler symlinks retain executable suffix for Windows."
+    "platform_regression": "Relative compiler paths use original installed tools, without relocation by symlinks; full validation report printed on assertion failure."
   },
   "failure_tests": [
     "File, empty/nonempty directory, symlink and dangling symlink collisions preserve the target.",
@@ -231,7 +231,9 @@
     }
   },
   "remote_ci": {
-    "status_at_commit": "To be checked after push for the exact new head; no earlier CI is treated as evidence for P06.",
+    "initial_run": "ci-first-run.json",
+    "correction": "WINDOWS.md",
+    "status_at_commit": "First CI had one Windows harness failure. Test-only correction passed local 1248-test quality gate; corrected head requires a new CI run after push.",
     "pull_request": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/pull/129"
   }
 }

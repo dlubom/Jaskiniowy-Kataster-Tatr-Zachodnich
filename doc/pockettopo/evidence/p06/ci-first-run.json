@@ -1,0 +1,49 @@
+{
+  "databaseId": 36150420010,
+  "headSha": "11f6f3aaf0e6744565d9655ffee3f8a9e4679a17",
+  "status": "completed",
+  "conclusion": "failure",
+  "url": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/actions/runs/36150420010",
+  "jobs": [
+    {
+      "name": "python-tools",
+      "databaseId": 108121977060,
+      "conclusion": "success",
+      "url": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/actions/runs/36150420010/job/108121977060"
+    },
+    {
+      "name": "validate (ubuntu-latest)",
+      "databaseId": 108121977275,
+      "conclusion": "success",
+      "url": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/actions/runs/36150420010/job/108121977275"
+    },
+    {
+      "name": "validate (windows-latest)",
+      "databaseId": 108121977332,
+      "conclusion": "failure",
+      "url": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/actions/runs/36150420010/job/108121977332"
+    },
+    {
+      "name": "mutation-tests",
+      "databaseId": 108121977351,
+      "conclusion": "success",
+      "url": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/actions/runs/36150420010/job/108121977351"
+    },
+    {
+      "name": "pr-release-package",
+      "databaseId": 108123341497,
+      "conclusion": "skipped",
+      "url": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/actions/runs/36150420010/job/108123341497"
+    }
+  ],
+  "finding": {
+    "test": "test_real_relative_tool_symlinks_compile_from_temporary_working_directory",
+    "windows_package_tests": {
+      "failed": 1,
+      "passed": 94,
+      "skipped": 1
+    },
+    "actual_process_failure": "Not established: assertion did not print validation report. Ordinary real compiler tests passed.",
+    "correction": "Test uses relative paths to original installed tools and includes the full result on failure; no production changes."
+  }
+}

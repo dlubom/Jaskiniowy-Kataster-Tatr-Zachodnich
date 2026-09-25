@@ -90,6 +90,10 @@ jest wymagane na Linux. Zdalny wynik należy wiązać z konkretnym SHA brancha
 [PR #129](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/pull/129);
 lokalny zapis bramek nie zastępuje CI po pushu.
 
+Pierwszy przebieg CI wykrył problem próby narzędzi przez dowiązania na
+Windows. [Opis i poprawka testu](WINDOWS.md) zachowują wynik oraz jego
+ograniczenia; kod produkcyjny i wyniki korpusu nie zostały zmienione.
+
 Daty urządzenia pozostają niepotwierdzone, a jawne korekty odtworzone bez
 historycznego potwierdzenia. Nie potwierdzono automatycznie żadnej serii,
 CRS ani położenia rozłącznych części. Pakiety są wynikami roboczymi;

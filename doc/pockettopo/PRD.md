@@ -293,3 +293,9 @@ Bramki: 1248 testów, linie ≥95%, gałęzie ≥90%, CRAP ≤25; mutacje
 Survex/GDAL. Dokładne wartości, hashe kodu, próby awarii, przegląd i odtworzenie
 są w [dowodach P06](evidence/p06/README.md). Etap zakończony; brak kolejnego
 etapu implementacyjnego w tym PRD.
+
+Kontrola CI P06: pierwszy przebieg przeszedł jakość, mutacje i Linux,
+ale wykrył problem testu uruchomienia kompilatorów przez dowiązania na
+Windows. Próba używa teraz względnych ścieżek do oryginalnej instalacji,
+z pełną diagnostyką błędów. Produkcja i korpus bez zmian;
+[dowody i zakres poprawki](evidence/p06/WINDOWS.md).

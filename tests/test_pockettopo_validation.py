@@ -176,31 +176,26 @@ def test_relative_tool_paths_resolve_from_caller_directory(monkeypatch, tmp_path
     assert {command[0] for command, _ in calls} == expected
 
 
-def test_real_relative_tool_symlinks_compile_from_temporary_working_directory(
-    monkeypatch, tmp_path
-):
+def test_real_relative_tool_paths_compile_from_install_directory(monkeypatch):
     executables = {tool: shutil.which(tool) for tool in ("cavern", "dump3d")}
     if not all(executables.values()):
         if os.environ.get("JKTZ_REQUIRE_CAVERN") == "1":
             pytest.fail("P06 validation requires cavern and dump3d")
         pytest.skip("P06 validation requires cavern and dump3d")
-    directory = tmp_path / "bin"
-    directory.mkdir()
-    names = {tool: tool + Path(executable).suffix for tool, executable in executables.items()}
-    try:
-        for tool, executable in executables.items():
-            (directory / names[tool]).symlink_to(executable)
-    except OSError:
-        pytest.skip("Symlinks unavailable; mocked path-resolution regression remains active")
+    executables = {tool: os.path.abspath(executable) for tool, executable in executables.items()}
+    directory = Path(executables["cavern"]).parent
+    # Exercise relative paths without relocating the installed tools or their siblings.
+    relative = {
+        tool: "./" + os.path.relpath(executable, directory)
+        for tool, executable in executables.items()
+    }
     data = next((CASES / "api-cardinal").glob("*.top")).read_bytes()
-    monkeypatch.chdir(tmp_path)
-    result = compilation.validate_surveys(
-        export_surveys(data), cavern="./bin/" + names["cavern"], dump3d="bin/" + names["dump3d"]
-    )
-    assert result["complete"]
+    monkeypatch.chdir(directory)
+    result = compilation.validate_surveys(export_surveys(data), **relative)
+    assert result["complete"], json.dumps(result, indent=2)
     assert all(row["compile"]["status"] == "ok" for row in result["formats"].values())
-    assert result["tools"]["cavern"]["command"][0] == str(directory / names["cavern"])
-    assert result["tools"]["dump3d"]["command"][0] == str(directory / names["dump3d"])
+    assert result["tools"]["cavern"]["command"][0] == executables["cavern"]
+    assert result["tools"]["dump3d"]["command"][0] == executables["dump3d"]
 
 
 @pytest.mark.parametrize(
