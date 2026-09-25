@@ -30,10 +30,10 @@
 #flag	Czarna:Kujat:0	/ENTRANCE
 #note	Czarna:Kujat:0	/Jaskinia Czarna III
 
-#fix	Czarna:M:otwor1	E19.8705053667	N49.2444121431	1323.42m
-#flag	Czarna:M:otwor1	/Jaskinia Czarna
-#flag	Czarna:M:otwor1	/ENTRANCE
-#note	Czarna:M:otwor1	/Jaskinia Czarna
+#fix	Czarna:KujatGlowny:0	E19.8705053667	N49.2444121431	1323.42m
+#flag	Czarna:KujatGlowny:0	/Jaskinia Czarna
+#flag	Czarna:KujatGlowny:0	/ENTRANCE
+#note	Czarna:KujatGlowny:0	/Jaskinia Czarna
 
 #fix	CzerwonaStudzienka:0	E19.9138972724	N49.244777783	1811.963374m
 #flag	CzerwonaStudzienka:0	/Czerwona Studzienka

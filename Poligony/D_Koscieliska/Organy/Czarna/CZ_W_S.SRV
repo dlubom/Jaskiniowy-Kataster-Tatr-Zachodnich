@@ -3,7 +3,7 @@ CAVE_ID         "T.E-09.12"
 CAVE_NAME       "Jaskinia Czarna"
 SURVEY_ID       "W1"
 SURVEY_NAME     "Partie Wawelskie"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-09-25"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -14,7 +14,7 @@ TEAM            "Stanislaw Kotarba i odkrywcy Partii Wawelskich"
 INSTRUMENT      "busola, tasma"
 SURVEY_DATE     "1981-01-01"
 SURVEY_GRADE    "nieznane"
-PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "Bezposrednie nawiazanie do KujatGlowny:55; pomiary bez zmian."
 #]
 
 #prefix2 Czarna
@@ -31,8 +31,8 @@ PROCESSING      "zachowano istniejacy aktywny plik SRV"
 #units A=D V=D
 
 ;--- Ciag 42-s08 (od p. 42 Borowca przez Komin Zlobisty do Klasycznego Komina) ---
-;Nawiazanie: punkt 42 ciagu glownego Borowca
-Borowiec:42	4201	7.50	229.5	48
+;Nawiazanie: KujatGlowny:55 (zrodlowy punkt Borowca 42)
+KujatGlowny:55	4201	7.50	229.5	48
 4201	4202	6.83	200.7	2
 4202	4203	11.34	233.1	25
 4203	4204	5.18	189.0	-8

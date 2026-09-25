@@ -3,7 +3,7 @@ CAVE_ID         "T.E-09.12"
 CAVE_NAME       "Jaskinia Czarna"
 SURVEY_ID       "K1"
 SURVEY_NAME     "Pomiary Kujata - partie koncowe"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-09-25"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -14,7 +14,7 @@ TEAM            "nieznane"
 INSTRUMENT      "nieznane"
 SURVEY_DATE     "1975-08-20"
 SURVEY_GRADE    "nieznane"
-PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "Nawiazania do KujatGlowny:74 i BorowiecGorna:65; pomiary bez zmian."
 #]
 
 #prefix2 Czarna
@@ -63,9 +63,9 @@ PROCESSING      "zachowano istniejacy aktywny plik SRV"
 1212	1213	257	-48.6	8.58
 
 ;Sala Bernarda -> Korytarz Mamuci -> koncowe zawalisko
-;Nawiazanie: punkt 13 Kujata = punkt 70 ciagu glownego Borowca
-12	Borowiec:70	211	11	14.4
-Borowiec:70	14	222	5.2	17.7	;Korytarz Mamuci
+;Nawiazanie: KujatGlowny:74 (punkt 13 tego pomiaru)
+12	KujatGlowny:74	211	11	14.4
+KujatGlowny:74	14	222	5.2	17.7	;Korytarz Mamuci
 14	15	218	-1.6	17.43
 15	16	240	5.5	19.1
 16	17	242	-5.6	18.32
@@ -88,13 +88,13 @@ Borowiec:70	14	222	5.2	17.7	;Korytarz Mamuci
 2505	2506	245	3.6	5.8
 2506	2507	191	0	2.3
 
-;--- Boczny korytarz od p. 65 ciagu glownego (grady) ---
-;Nawiazanie: punkt 65 ciagu glownego Borowca
+;--- Boczny korytarz od p. 65 gornej drogi (grady) ---
+;Nawiazanie: BorowiecGorna:65
 ;W Korytarzu Triumfalnym nad Brazowym Progiem
 ;Laczy sie z ciagiem glownym w okolicy Mostu Trwogi (pomiar nie zamkniety)
 #units A=G V=G
 
-Borowiec:65	6501	56.7	-2.7	14.6
+BorowiecGorna:65	6501	56.7	-2.7	14.6
 6501	6502	56.7	29.7	11.9
 6502	6503	53.1	26.1	5.4
 6503	6504	158.4	50.4	8.05
