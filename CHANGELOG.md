@@ -8,6 +8,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Dodano
 
+- Skill `validate-cave` do audytu źródeł i zgodności pomiarów z `_RAW`,
+  z obsługą materiałów wskazanych przez kontrybutora.
 - Konwerter PocketTopo v3: `jktz-pockettopo inspect`/`convert`, pomiary SRV/SVX,
   warstwowe szkice SVG/PNG oraz atomowe pakiety z raportem i jawnymi decyzjami
   związanymi z SHA-256 źródła; skill prowadzący przez konwersję.

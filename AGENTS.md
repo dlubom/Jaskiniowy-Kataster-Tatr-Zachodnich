@@ -451,6 +451,7 @@ Run shell commands from the repository root; use `uv run` for Python tooling.
 | `$average-shots` | Average confirmed repeat instrument readings in a working SRV |
 | `$survex-stats` | Compile a source and inspect statistics |
 | `$verify-cave-refactor` | Compare source data and compiled output before/after a refactor |
+| `$validate-cave` | Audit source provenance and every survey record; recover originals and repair confirmed errors |
 | `$gnss-to-wgs84` | Convert PUWG 1992 (X northing, Y easting) to WGS84 |
 | `$utm34n-wgs84` | Convert WGS84 UTM 34N and geographic coordinates |
 | `$docker-validate` | Run full data validation using Docker |
