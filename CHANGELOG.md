@@ -8,6 +8,9 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Dodano
 
+- Audyt Novej Kresanicy: odzyskano skompilowany model z 2009 r., porównano
+  155 odcinków z aktywnymi pomiarami i udokumentowano szkice z 1990 i 2002 r.
+  oraz luki w źródłach.
 - Skill `validate-cave` do audytu źródeł i zgodności pomiarów z `_RAW`,
   z obsługą materiałów wskazanych przez kontrybutora.
 - Konwerter PocketTopo v3: `jktz-pockettopo inspect`/`convert`, pomiary SRV/SVX,
@@ -16,6 +19,11 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 - Niezależne wzorce i testy parsera, pomiarów, projekcji, kompilacji oraz renderera;
   rozszerzone bramki jakości i mutacji. Archiwum badań pozostaje w PR #129,
   a w bieżącym drzewie są dokumentacja użytkowa i wzorce wymagane przez testy.
+
+### Zmieniono
+
+- Nova Kresanica: datę pomiarów w metadanych oznaczono jako nieustaloną;
+  historyczne `#date` pozostawiono jako jawne założenie obliczeniowe.
 
 ## [v1.4.7] - 2026-09-25
 

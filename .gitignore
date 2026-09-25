@@ -10,6 +10,7 @@
 
 #Survex
 *.3d
+!Poligony/**/_RAW/**/*.3d
 *.err
 cavern_output.txt
 
