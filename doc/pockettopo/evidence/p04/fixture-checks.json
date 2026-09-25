@@ -1,0 +1,555 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-25",
+  "compiler": "/opt/homebrew/bin/cavern - Survex 1.4.22",
+  "code_sha256": {
+    "src/jktz/pockettopo/__init__.py": "fbe172af4d94d18f214cf505533e1b29eeb0e5f5f0b90b477a9d3ade15ecfa8c",
+    "src/jktz/pockettopo/averaging.py": "dcfdf09864069a1be8a4d783acec2bb52321b61c7e653716574cc5ad021b0f2a",
+    "src/jktz/pockettopo/export.py": "c60ad6238ef81fad92fd51184c9bac3a1b6986f8600e6278846857bd3c206a02",
+    "src/jktz/pockettopo/export_policy.py": "0602a7d41098e477b929cac8fa5f4c76ea9fee76eded7f93014f45d8dcfc5bf9",
+    "src/jktz/pockettopo/grouping.py": "08426ddf033fdfbc3323f85b2f446f461219f7fb1dc11d995a88c42df615f2f6",
+    "src/jktz/pockettopo/model.py": "35d85dc4655cf55d48f35d593a43486b01fea4117e09bc31f4d391a00d71be02",
+    "src/jktz/pockettopo/parser.py": "57eed978b45f4aefe75536435d521cc5a656d8ccb54108b6d5de739d6496f783",
+    "src/jktz/pockettopo/report.py": "1291fc40d238e519fa3d87fdb2ee8c666d5c13737c791e1e5ffc87d4e90dba5a",
+    "tests/test_pockettopo_compilation.py": "98da2600a81f64c0ff007ed2f9e93af50ee680d2a8ed40da3cfeaf1254a4f5f5"
+  },
+  "fixtures": [
+    {
+      "name": "cardinal-unconfirmed",
+      "input_basis": "doc/pockettopo/evidence/p01/cases/api-cardinal/api-cardinal.top",
+      "source_sha256": "64ac69ee1746272a503895256523f386765847c01da81009292fdf29225a9c8e",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 11,
+        "traced_shots": 11,
+        "ready_measurements": 11,
+        "held_shots": 0,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 11,
+        "exported_source_shots": 11,
+        "measurement_export_complete": true,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "3307d163e8d29ebeeb16fd76c64b256391bd6b73131f1315d172fa915d68c99d",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 9
+        },
+        "svx": {
+          "text_sha256": "fc22f90c133c23328a936f46187af5f44c744ec33682dae8452a936f7bddeda4",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 9
+        }
+      },
+      "cross_format_geometry": {
+        "status": "consistent",
+        "named_stations": 9,
+        "expected_exported_named_stations": 9,
+        "missing_exported_station_raw_ids": [],
+        "relative_origin_raw": -2147483647,
+        "max_absolute_coordinate_difference_m": 0.0,
+        "tolerance_m": 0.010001
+      }
+    },
+    {
+      "name": "api-drawings",
+      "input_basis": "doc/pockettopo/evidence/p01/cases/api-drawings/api-drawings.top",
+      "source_sha256": "4a494ead03cade750f670d50aa38661abda9b3e1f131d67f27a252982752c2a5",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 2,
+        "traced_shots": 2,
+        "ready_measurements": 2,
+        "held_shots": 0,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 2,
+        "exported_source_shots": 2,
+        "measurement_export_complete": true,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "14e570c1d25042286e5bdfd195b99e7bdba89feaf73882e753349afb8fc93941",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 3
+        },
+        "svx": {
+          "text_sha256": "cc31e975cded3fb2d3931795e121cc29a3ba875119e4823276d5898aea5db299",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 3
+        }
+      },
+      "cross_format_geometry": {
+        "status": "consistent",
+        "named_stations": 3,
+        "expected_exported_named_stations": 3,
+        "missing_exported_station_raw_ids": [],
+        "relative_origin_raw": -2147483647,
+        "max_absolute_coordinate_difference_m": 0.0,
+        "tolerance_m": 0.010001
+      }
+    },
+    {
+      "name": "api-references",
+      "input_basis": "doc/pockettopo/evidence/p01/cases/api-references/api-references.top",
+      "source_sha256": "9034cf5e52f92a8713c7823bd9be52bdb50b294966a9e9713c538b937b7feb5f",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 1,
+        "traced_shots": 1,
+        "ready_measurements": 1,
+        "held_shots": 0,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 1,
+        "exported_source_shots": 1,
+        "measurement_export_complete": true,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "91ae39fef3a5be5c57594d4bfcefd61a3634db5ea12de5218e76be707500cbdc",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 2
+        },
+        "svx": {
+          "text_sha256": "569db738f6222ccd4128240ba9298f3b52a8409527a418735791c300493c2e48",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 2
+        }
+      },
+      "cross_format_geometry": {
+        "status": "consistent",
+        "named_stations": 2,
+        "expected_exported_named_stations": 2,
+        "missing_exported_station_raw_ids": [],
+        "relative_origin_raw": -2147483647,
+        "max_absolute_coordinate_difference_m": 0.0,
+        "tolerance_m": 0.010001
+      }
+    },
+    {
+      "name": "api-trips-ids",
+      "input_basis": "doc/pockettopo/evidence/p01/cases/api-trips-ids/api-trips-ids.top",
+      "source_sha256": "adb83280b6d5a70f383b5542727f675b3ff8a5740058b601d3d49ed27b14895b",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 4,
+        "traced_shots": 4,
+        "ready_measurements": 4,
+        "held_shots": 2,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 2,
+        "exported_source_shots": 2,
+        "measurement_export_complete": false,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "c1840d927fb844cddf589e2db93213bcbafe31113d98c3681977e89f3ebafe10",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 3
+        },
+        "svx": {
+          "text_sha256": "a15944748efeb956a9018857b045d83bc0b868032ec66eec62a2790c4b54a65b",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 3
+        }
+      },
+      "cross_format_geometry": {
+        "status": "consistent",
+        "named_stations": 3,
+        "expected_exported_named_stations": 3,
+        "missing_exported_station_raw_ids": [],
+        "relative_origin_raw": -2147483647,
+        "max_absolute_coordinate_difference_m": 0.0,
+        "tolerance_m": 0.010001
+      }
+    },
+    {
+      "name": "gui-cardinal",
+      "input_basis": "doc/pockettopo/evidence/p01/cases/gui-cardinal/source.top",
+      "source_sha256": "27b93102584d76840192d97e242cc30df38edbc551da244a033773095ae87bfb",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 1,
+        "traced_shots": 1,
+        "ready_measurements": 1,
+        "held_shots": 1,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 0,
+        "exported_source_shots": 0,
+        "measurement_export_complete": false,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "9f1ec61a25f2b6609fcf1d53b2913d98bd19f2ccff4bfb1acb59959cda99f101",
+          "status": "no_active_measurements"
+        },
+        "svx": {
+          "text_sha256": "1ce0f38ce7c41291750b8f30bb48d2d2df14c442bb380f34c9c7dba5416f3e3e",
+          "status": "no_active_measurements"
+        }
+      },
+      "cross_format_geometry": {
+        "status": "unavailable",
+        "reason": "one_or_both_compilers_have_no_named_geometry"
+      }
+    },
+    {
+      "name": "gui-colors",
+      "input_basis": "doc/pockettopo/evidence/p01/cases/gui-colors/source.top",
+      "source_sha256": "5c7355c7212f99ba11fe76d0d6739c3e3a34c7c060909b3efd41aea5c1f3b362",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 1,
+        "traced_shots": 1,
+        "ready_measurements": 1,
+        "held_shots": 1,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 0,
+        "exported_source_shots": 0,
+        "measurement_export_complete": false,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "9919cefb90a0782b3d2eb11dc9dde4d6e8ac05324c0f90d5a65545b5f3ee7554",
+          "status": "no_active_measurements"
+        },
+        "svx": {
+          "text_sha256": "98301587b929009683eeff596a69ddd8fbe2e898bb053cdfcd1ebf79cb7ef427",
+          "status": "no_active_measurements"
+        }
+      },
+      "cross_format_geometry": {
+        "status": "unavailable",
+        "reason": "one_or_both_compilers_have_no_named_geometry"
+      }
+    },
+    {
+      "name": "DS201208",
+      "input_basis": "doc/pockettopo/evidence/repeat-candidates/DS201208/DS201208.top",
+      "source_sha256": "edf6da168275bf334f413557e402ad14a03191141779a1466d71d230702da870",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 25,
+        "traced_shots": 25,
+        "ready_measurements": 24,
+        "held_shots": 1,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 24,
+        "exported_source_shots": 24,
+        "measurement_export_complete": false,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "9434433828cf82d473b18f66ffcfd7ae174f5fd0d3c5cce9ed8f3fcf196a4c17",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 9
+        },
+        "svx": {
+          "text_sha256": "fec92f250a41be2acd85050772b93ca7f9f50117f5ad0261431589b84c2649cb",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 9
+        }
+      },
+      "cross_format_geometry": {
+        "status": "consistent",
+        "named_stations": 9,
+        "expected_exported_named_stations": 9,
+        "missing_exported_station_raw_ids": [],
+        "relative_origin_raw": 65536,
+        "max_absolute_coordinate_difference_m": 0.0,
+        "tolerance_m": 0.010001
+      }
+    },
+    {
+      "name": "okna",
+      "input_basis": "doc/pockettopo/evidence/repeat-candidates/okna/okna.top",
+      "source_sha256": "52e16f9561f2fbf3b66e595c29fce113c9ed1cc44fc5865897cb5f06b1aaba94",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 14,
+        "traced_shots": 14,
+        "ready_measurements": 13,
+        "held_shots": 1,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 13,
+        "exported_source_shots": 13,
+        "measurement_export_complete": false,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "608fbc1005860391fd8f8dc12167644b2bbb19ca5dfc60f7bb44d55fc58bbcd5",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 5
+        },
+        "svx": {
+          "text_sha256": "7d35cec5230360f9e94b970c70de784844026d04cb71f7aef87b4caf6f56d16c",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 5
+        }
+      },
+      "cross_format_geometry": {
+        "status": "consistent",
+        "named_stations": 5,
+        "expected_exported_named_stations": 5,
+        "missing_exported_station_raw_ids": [],
+        "relative_origin_raw": 65536,
+        "max_absolute_coordinate_difference_m": 0.0,
+        "tolerance_m": 0.010001
+      }
+    },
+    {
+      "name": "zach0dni2",
+      "input_basis": "doc/pockettopo/evidence/repeat-candidates/zach0dni2/zach0dni2.top",
+      "source_sha256": "a7a165750b0a3b03b19f72050219ffd28b22defa7fc68163a383b98236e994e4",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 11,
+        "traced_shots": 11,
+        "ready_measurements": 10,
+        "held_shots": 1,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 10,
+        "exported_source_shots": 10,
+        "measurement_export_complete": false,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "4271ba82315544822ce355124e4f21183710fcaaed145f09aab38e66495ff432",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 4
+        },
+        "svx": {
+          "text_sha256": "ab964af3938c37f859a71f46b8731513e970e97aa815427a7316a9d868a68afe",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 4
+        }
+      },
+      "cross_format_geometry": {
+        "status": "consistent",
+        "named_stations": 4,
+        "expected_exported_named_stations": 4,
+        "missing_exported_station_raw_ids": [],
+        "relative_origin_raw": 65536,
+        "max_absolute_coordinate_difference_m": 0.0,
+        "tolerance_m": 0.010001
+      }
+    },
+    {
+      "name": "cardinal-confirmed",
+      "input_basis": "P01 api-cardinal plus source-pinned confirmation of records 4/5/6",
+      "source_sha256": "64ac69ee1746272a503895256523f386765847c01da81009292fdf29225a9c8e",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 11,
+        "traced_shots": 11,
+        "ready_measurements": 9,
+        "held_shots": 0,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 9,
+        "exported_source_shots": 11,
+        "measurement_export_complete": true,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "c1f1e7c344661ddc229ac7122b302a2ab12ec81d42eb2fa190ae2adacc112a1b",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 9
+        },
+        "svx": {
+          "text_sha256": "9347fa19bb204ccdaed600af152c7f3edfa05a001ebb6054e024b88728540dba",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 9
+        }
+      },
+      "cross_format_geometry": {
+        "status": "consistent",
+        "named_stations": 9,
+        "expected_exported_named_stations": 9,
+        "missing_exported_station_raw_ids": [],
+        "relative_origin_raw": -2147483647,
+        "max_absolute_coordinate_difference_m": 0.0,
+        "tolerance_m": 0.010001
+      }
+    },
+    {
+      "name": "trips-overrides",
+      "input_basis": "P01 api-trips-ids plus documented synthetic correction choices",
+      "source_sha256": "adb83280b6d5a70f383b5542727f675b3ff8a5740058b601d3d49ed27b14895b",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 4,
+        "traced_shots": 4,
+        "ready_measurements": 4,
+        "held_shots": 0,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 4,
+        "exported_source_shots": 4,
+        "measurement_export_complete": true,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "a50a02143e808de46c7bd0e9807169079416ba6952bae48968aefa2fce87c845",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 4
+        },
+        "svx": {
+          "text_sha256": "3c362b2b0754ef7cfe04209a3f48bd876adde262d3432832cb1e49843887c73c",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 4
+        }
+      },
+      "cross_format_geometry": {
+        "status": "consistent",
+        "named_stations": 4,
+        "expected_exported_named_stations": 4,
+        "missing_exported_station_raw_ids": [],
+        "relative_origin_raw": -2147483647,
+        "max_absolute_coordinate_difference_m": 0.0,
+        "tolerance_m": 0.010001
+      }
+    },
+    {
+      "name": "long-identifiers",
+      "input_basis": "P01 api-trips-ids with only two station IDs replaced; see test helper",
+      "source_sha256": "030229e21c829712168b94bd0d73f514de2ccfbe29b7cc16e678ef291675ccef",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 4,
+        "traced_shots": 4,
+        "ready_measurements": 4,
+        "held_shots": 0,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 4,
+        "exported_source_shots": 4,
+        "measurement_export_complete": true,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "c3bd5a46f1e79e7b36789da3d18280ac648c7dc04a7a8ca31ecae26ddf3cb27b",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 4
+        },
+        "svx": {
+          "text_sha256": "11c712edb916aa5dd26f358e5b9b754dfaef1c1e4f3f32ac4b92c90eaa95f1de",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 4
+        }
+      },
+      "cross_format_geometry": {
+        "status": "consistent",
+        "named_stations": 4,
+        "expected_exported_named_stations": 4,
+        "missing_exported_station_raw_ids": [],
+        "relative_origin_raw": -2147483647,
+        "max_absolute_coordinate_difference_m": 0.0,
+        "tolerance_m": 0.010001
+      }
+    },
+    {
+      "name": "reversed-splay",
+      "input_basis": "P01 api-cardinal with only the splay endpoints swapped; see test helper",
+      "source_sha256": "66ba360381aa7c4edb5e9d70b68528ae6e04c976274c33d16efcdd4bb6093ed0",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 11,
+        "traced_shots": 11,
+        "ready_measurements": 9,
+        "held_shots": 0,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 9,
+        "exported_source_shots": 11,
+        "measurement_export_complete": true,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "fec0f8cc0f1615333b94b6e7354c684f8d819bffd5c03f679bf3a416ef867f9b",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 9
+        },
+        "svx": {
+          "text_sha256": "764107b31e1a3ed053656710b610bcfa6939dd3170aa4711f0de39d9a50495c9",
+          "returncode": 0,
+          "diagnostics": [],
+          "status": "compiled_without_warnings",
+          "named_nodes": 9
+        }
+      },
+      "cross_format_geometry": {
+        "status": "consistent",
+        "named_stations": 9,
+        "expected_exported_named_stations": 9,
+        "missing_exported_station_raw_ids": [],
+        "relative_origin_raw": -2147483647,
+        "max_absolute_coordinate_difference_m": 0.0,
+        "tolerance_m": 0.010001
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+; PocketTopo P04 survey export. See source document and conversion report.
+; Device dates are unverified. No dates, CRS or reference fixes are inferred.
+; provenance 1/2 {"sha256":"030229e21c829712168b94bd0d73f514de2ccfbe29b7cc16e678ef291675ccef","bytes":542,"input_format":"PocketTopo v3","tool":"jktz-release-tools","tool_versio
+; provenance 2/2 n":"0.1.0","algorithm_version":"p04-1"}
+; station 1/1 {"raw":-2147483647,"kind":"plain","source_text":"0","walls_name":"0","survex_name":"0","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; station 1/1 {"raw":0,"kind":"major.minor","source_text":"0.0","walls_name":"0.0","survex_name":"0.0","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; station 1/2 {"raw":2147483647,"kind":"major.minor","source_text":"32767.65535","walls_name":"pzik0zj","survex_name":"32767.65535","status":"mapped","walls_mapping":"unsigne
+; station 2/2 d_raw_base36","survex_mapping":"literal"}
+; station 1/2 {"raw":-1,"kind":"plain","source_text":"2147483646","walls_name":"p1z141z3","survex_name":"2147483646","status":"mapped","walls_mapping":"unsigned_raw_base36","
+; station 2/2 survex_mapping":"literal"}
+; trip 1/3 {"index":0,"source_ticks":630822816000000007,"comment":"Synthetic reset-looking date, not field evidence","date_reliability":"unverified_device_clock","establis
+; trip 2/3 hed_date":null,"date_evidence":null,"used_date":null,"declination":{"source_raw":910,"mode":"explicit","stored_degrees":4.998779296875,"applied_degrees":4.99877
+; trip 3/3 9296875,"status":"applied","selected_degrees":4.998779296875,"provenance":"stored_explicit","evidence":null,"unresolved_reason":null}}
+; trip 1/4 {"index":1,"source_ticks":639259776000000009,"comment":"Unicode trip: Za\u017c\u00f3\u0142\u0107 g\u0119\u015bl\u0105 ja\u017a\u0144","date_reliability":"unveri
+; trip 2/4 fied_device_clock","established_date":null,"date_evidence":null,"used_date":null,"declination":{"source_raw":-637,"mode":"explicit","stored_degrees":-3.49914550
+; trip 3/4 78125,"applied_degrees":-3.4991455078125,"status":"applied","selected_degrees":-3.4991455078125,"provenance":"stored_explicit","evidence":null,"unresolved_reaso
+; trip 4/4 n":null}}
+; trip 1/3 {"index":2,"source_ticks":639260640000000001,"comment":"Auto declination sentinel; no CRS asserted","date_reliability":"unverified_device_clock","established_da
+; trip 2/3 te":null,"date_evidence":null,"used_date":null,"declination":{"source_raw":-32768,"mode":"auto","stored_degrees":null,"applied_degrees":8.0,"status":"applied","
+; trip 3/3 selected_degrees":8.0,"provenance":"source_pinned_override","evidence":"Synthetic P04 test explicitly chooses +8 degrees","unresolved_reason":null}}
+#units reset meters order=DAV A=D V=D case=mixed
+
+; group 1/2 {"id":0,"source_indices":[0],"status":"exported","reason":"explicit_correction","declination_degrees":4.998779296875,"correction_provenance":"stored_explicit","
+; group 2/2 correction_evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":0,"from_id":{"raw":-2147483647},"to_id":{"raw":0},"distance_mm":1000,"azimuth_raw":0,"inclination_raw":0,"flags":2,"roll_raw":0,"trip_index":0,"comment
+; source_shot 2/2 ":"plain zero to major.minor zero"}
+#units DECL=4.998779296875
+0	0.0	1	0	0
+; group 1/2 {"id":1,"source_indices":[1],"status":"exported","reason":"explicit_correction","declination_degrees":-3.4991455078125,"correction_provenance":"stored_explicit"
+; group 2/2 ,"correction_evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/5 {"index":1,"from_id":{"raw":0},"to_id":{"raw":2147483647},"distance_mm":2000,"azimuth_raw":16384,"inclination_raw":1820,"flags":3,"roll_raw":0,"trip_index":1,"c
+; source_shot 2/5 omment":"Za\u017c\u00f3\u0142\u0107 g\u0119\u015bl\u0105 ja\u017a\u0144 \u2014 \u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0
+; source_shot 3/5 105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\
+; source_shot 4/5 u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u010
+; source_shot 5/5 5\u0105\u0105\u0105"}
+#units DECL=-3.499145507812
+0.0	pzik0zj	2	90	9.99755859375
+; group 1/2 {"id":2,"source_indices":[2],"status":"exported","reason":"explicit_correction","declination_degrees":8.0,"correction_provenance":"source_pinned_override","corr
+; group 2/2 ection_evidence":"Synthetic P04 test explicitly chooses +8 degrees","srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":2,"from_id":{"raw":2147483647},"to_id":{"raw":-2147483648},"distance_mm":3000,"azimuth_raw":-32768,"inclination_raw":-1820,"flags":2,"roll_raw":0,"trip
+; source_shot 2/2 _index":2,"comment":"automatic trip splay"}
+#units DECL=8
+pzik0zj	-	3	180	-9.99755859375
+; group 1/2 {"id":3,"source_indices":[3],"status":"exported","reason":"explicit_correction","declination_degrees":-12.0,"correction_provenance":"source_pinned_override","co
+; group 2/2 rrection_evidence":"Synthetic P04 test explicitly chooses -12 degrees","srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":3,"from_id":{"raw":2147483647},"to_id":{"raw":-1},"distance_mm":4000,"azimuth_raw":-16384,"inclination_raw":0,"flags":2,"roll_raw":0,"trip_index":-1,"c
+; source_shot 2/2 omment":"unassigned trip"}
+#units DECL=-12
+pzik0zj	p1z141z3	4	270	0

@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "sha256": "ecbae9747551579260fa7e7d1ee6700734caac8b4085d086b090f3b35b6d67a9",
+    "bytes": 125,
+    "input_format": "PocketTopo v3",
+    "tool": "jktz-release-tools",
+    "tool_version": "0.1.0",
+    "algorithm_version": "p04-1"
+  },
+  "records": {
+    "trips": [
+      {
+        "ticks": 635573952000000000,
+        "comment": "",
+        "declination_raw": 0
+      }
+    ],
+    "shots": [
+      {
+        "from_id": {
+          "raw": -2147483647
+        },
+        "to_id": {
+          "raw": -2147483646
+        },
+        "distance_mm": 1234,
+        "azimuth_raw": 0,
+        "inclination_raw": 0,
+        "flags": 0,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": null
+      },
+      {
+        "from_id": {
+          "raw": -2147483647
+        },
+        "to_id": {
+          "raw": -2147483645
+        },
+        "distance_mm": 0,
+        "azimuth_raw": 0,
+        "inclination_raw": 0,
+        "flags": 0,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": null
+      },
+      {
+        "from_id": {
+          "raw": -2147483645
+        },
+        "to_id": {
+          "raw": -2147483646
+        },
+        "distance_mm": 0,
+        "azimuth_raw": 0,
+        "inclination_raw": 0,
+        "flags": 0,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": null
+      }
+    ],
+    "references": [],
+    "overview": {
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": 500
+    },
+    "outline": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": []
+    },
+    "sideview": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": []
+    },
+    "ending": "eof"
+  }
+}

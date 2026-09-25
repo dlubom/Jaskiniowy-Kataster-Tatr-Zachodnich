@@ -1,14 +1,16 @@
 # PocketTopo: konwersja pomiarów i ekstrakcja szkiców
 
-Stan: **2026-09-25 — P03 zakończone, następny etap P04 (eksport SRV/SVX)**.
+Stan: **2026-09-25 — P04 zakończone, następny etap P05 (SVG/PNG)**.
 Branch roboczy: `codex/pockettopo-convert`, początek: `a6c235c898eed57902a2d6ba18db60917e01faee`.
 
 ## Wznowienie po wyczyszczeniu kontekstu
 
 1. Przeczytaj `AGENTS.md`, ten PRD i sprawdź `git status` oraz bieżący branch.
-2. **Następne zadanie: P04 — eksport SRV/SVX.** Nie powtarzaj researchu,
-   wzorców P01, parsera P02 ani średnich i raportu P03.
-3. Przeczytaj [format v3](FORMAT_V3.md), [API i wyniki P03](evidence/p03/README.md),
+2. **Następne zadanie: P05 — SVG/PNG.** Nie powtarzaj researchu,
+   wzorców P01, parsera P02, średnich P03 ani eksportów pomiarów P04.
+3. Przeczytaj [format v3](FORMAT_V3.md), [API i wyniki P04](evidence/p04/README.md),
+   [ograniczenia kompilacji](evidence/p04/COMPILER_LIMITS.md),
+   [API i wyniki P03](evidence/p03/README.md),
    [parser P02](evidence/p02/README.md)
    oraz [oczekiwania dla każdego rekordu](evidence/p01/EXPECTATIONS.md).
    Wzorce `cases/*/expected.json` są niezależne od przyszłego parsera.
@@ -19,12 +21,13 @@ Branch roboczy: `codex/pockettopo-convert`, początek: `a6c235c898eed57902a2d6ba
 Polecenie do wznowienia:
 
 > Kontynuuj na `codex/pockettopo-convert` według `doc/pockettopo/PRD.md`.
-> Wykonaj P04: eksport SRV/SVX z modelu i raportu P02/P03, z zachowaniem
-> semantyki, jawną polityką korekt i odwracalnym mapowaniem nazw bez kolizji.
-> Sprawdź kompilację obu formatów, zgodność geometrii i rzeczywisty Walls.
-> Zachowaj osobno niepotwierdzone powtórzenia; dat tripów nie uznawaj za
-> potwierdzone daty terenowe. Zapisz wyniki walidacji oraz postęp w PRD.
-> Zakończ po P04.
+> Wykonaj P05: plan i przekrój rozwinięty, każdy jako SVG i PNG w wariantach
+> same kreski oraz kreski z pomiarami, z osobnymi warstwami. Zachowaj geometrię
+> szkicu, kolejność, kolory, singletony, Flip i XSection. Porównaj współrzędne
+> z natywnymi DXF oraz obrazy; rozstrzygnij pętle, rozgałęzienia i projekcję
+> XSection z domiarami. Użyj modelu i raportu P02–P04, sprawdzonego resvg;
+> nie uznawaj dat tripów ani niepotwierdzonych serii za potwierdzone.
+> Zapisz wyniki oraz postęp w repozytorium. Zakończ po P05.
 
 ## Cel i ustalone wybory
 
@@ -126,6 +129,8 @@ Docelowo: `src/jktz/pockettopo/` (model, parser, matematyka, eksport, raport),
 P02 udostępnia już bibliotekę `parse_bytes` / `read_top` oraz niezmienny model.
 P03 dodaje `prepare_conversion`, `ProcessingPlan`, `RepeatConfirmation` i
 `Exclusion`: dokument źródłowy JSON i raport w pamięci, bez zapisu pakietu.
+P04 udostępnia `export_surveys`, `SurveyExport`, `CorrectionPolicy` i
+`CorrectionOverride`: teksty SRV/SVX, mapa nazw i raport decyzji w pamięci.
 Proponowane komendy `uv run jktz-pockettopo inspect ...` i `convert ...`
 **jeszcze nie istnieją**. Nie budujemy łańcucha `.top → zaokrąglony SRV → średnie`.
 
@@ -135,8 +140,8 @@ Proponowane komendy `uv run jktz-pockettopo inspect ...` i `convert ...`
 | P01 Wzorce aplikacji | 6 małych `.top` (2 GUI, 4 natywny model/API), TXT/DXF, oczekiwania każdego pola, końcowe 4 zera i Auto; resvg sprawdzony na macOS/Linux | Gotowe — [dowody](evidence/p01/README.md) |
 | P02 Parser i model | Ścisły odczyt wszystkich struktur; 211 testów P02, pełny korpus 258/258, jakość i mutacje | Gotowe — [dowody](evidence/p02/README.md) |
 | P03 Średnie i raport | Grupy potwierdzonych powtórzeń, matematyka, ślad każdego rekordu i testy graniczne | Gotowe — [dowody](evidence/p03/README.md) |
-| P04 SRV/SVX | Zachowanie semantyki, kompilacja obu formatów i porównanie geometrii; sprawdzenie w Walls | Następny |
-| P05 SVG/PNG | Oba widoki i warianty, XSection, warstwy, renderer bez GUI; kontrola punktów i obrazów | Do zrobienia |
+| P04 SRV/SVX | Zachowanie semantyki, kompilacja obu formatów i porównanie geometrii; sprawdzenie w Walls | Gotowe — [dowody](evidence/p04/README.md) |
+| P05 SVG/PNG | Oba widoki i warianty, XSection, warstwy, renderer bez GUI; kontrola punktów i obrazów | Następny |
 | P06 CLI i skill | Atomowy pakiet wynikowy, instrukcje skilla, niezależna próba użycia i pełna walidacja | Do zrobienia |
 
 P01 obejmuje kierunki kardynalne i granicę północy, pomiary przód/tył, kilka tripów,
@@ -183,8 +188,8 @@ Do rozstrzygnięcia w etapach: podkład w pętlach/rozgałęzieniach, ogólna pr
 XSection z domiarami, fonty/paleta rysunków
 oraz format profilu metadanych dla aktywnego JKTZ. Natywny DXF uśrednia własnym
 algorytmem i nie zastępuje kontraktu średnich P03. Odczyt pełnego korpusu 258 plików
-sprawdzono w P02; porównanie przyszłych eksportów korpusu oraz audyt współrzędnych
-Shadow pozostają do wykonania w dalszych etapach.
+sprawdzono w P02, a porównanie eksportów pomiarowych korpusu wykonano w P04.
+Porównanie eksportów szkiców oraz audyt współrzędnych Shadow pozostają P05.
 Nie deklarować pełnej zgodności przed spełnieniem kryteriów odbioru.
 
 Uzupełnienie P01 (2026-09-25): trzy rzeczywiste źródła z test2 zawierają 15 serii
@@ -237,3 +242,30 @@ Dodano krótkie identyfikatory, jawne UTF-8 i regresję cp1252; aktualnie
 jakość Pythona, mutacje, walidacja Linux i Windows oraz pakiet PR — pięć zadań.
 [Zapis weryfikacji CI](evidence/p03/ci-validation.json) zamyka kontrolę po
 poprawkach Windows. Następny etap nadal P04.
+
+
+P04 (2026-09-25): eksporty SRV/SVX zachowują niepotwierdzone odczyty osobno,
+średnie z jawnych potwierdzeń P03, splays, zerowe powiązania i odwracalne nazwy.
+Jawne zapisane deklinacje są odtwarzane; Auto i brak sesji wymagają niezależnie
+uzasadnionej korekty związanej z SHA źródła. Daty/CRS pozostają nieustalone,
+referencje nie tworzą aktywnych fixów. Raport wskazuje decyzję i linię eksportu
+każdego rekordu; kompletność tekstu nie oznacza kompletności kompilacji.
+
+Korpus: 258 źródeł / 262 zgodne obiekty Git, 37 801 rekordów rozliczonych,
+37 362 aktywne i 439 zatrzymanych z przyczyną. 249 źródeł kompiluje się w obu
+formatach bez ostrzeżeń, 7 ma niepołączone części (częściowa geometria), 2 nie
+mają aktywnych pomiarów. Geometria stacji obecnych w 256 parach wyników jest
+identyczna po normalizacji początku; nie jest to dowód obecności pominiętych
+części ani potwierdzenie powtórzeń. Zachowano wyniki każdego źródła.
+
+Próby analityczne sprawdzają poprawki, stacje, piony, zera i splays; rzeczywisty
+Walls 2.3.0-beta.1 potwierdza kompilację i współrzędne nazwanych stacji w trzech
+izolowanych przypadkach. Testy kompilacji są wymagane w CI Linux/Windows.
+Bramki, tolerancje, hashe i ograniczenia: [dowody P04](evidence/p04/README.md).
+[Próby graniczne kompilatora](evidence/p04/COMPILER_LIMITS.md) dokumentują
+pomijanie rozłącznych części mimo exit 0 oraz crash cavern 1.4.22 przy dodatnim
+odcinku sprzecznym z zerowym powiązaniem. P06 musi kontrolować ostrzeżenia,
+kompletność geometrii i błędy procesu; nie tworzyć sztucznych fixów.
+
+Następny etap: **P05**. Nie wdrożono jeszcze szkiców SVG/PNG, CLI, skilla
+ani atomowego pakietu wynikowego; `conversion_complete` pozostaje `false`.

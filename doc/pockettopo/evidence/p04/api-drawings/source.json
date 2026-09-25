@@ -1,0 +1,399 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "sha256": "4a494ead03cade750f670d50aa38661abda9b3e1f131d67f27a252982752c2a5",
+    "bytes": 680,
+    "input_format": "PocketTopo v3",
+    "tool": "jktz-release-tools",
+    "tool_version": "0.1.0",
+    "algorithm_version": "p04-1"
+  },
+  "records": {
+    "trips": [
+      {
+        "ticks": 632401344000000000,
+        "comment": "P01 synthetic drawing vertices",
+        "declination_raw": 0
+      }
+    ],
+    "shots": [
+      {
+        "from_id": {
+          "raw": -2147483647
+        },
+        "to_id": {
+          "raw": -2147483646
+        },
+        "distance_mm": 10000,
+        "azimuth_raw": 0,
+        "inclination_raw": 0,
+        "flags": 0,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": null
+      },
+      {
+        "from_id": {
+          "raw": -2147483646
+        },
+        "to_id": {
+          "raw": -2147483645
+        },
+        "distance_mm": 10000,
+        "azimuth_raw": 16384,
+        "inclination_raw": 0,
+        "flags": 3,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "flipped extended segment"
+      }
+    ],
+    "references": [],
+    "overview": {
+      "origin": {
+        "x": -1234,
+        "y": 5678
+      },
+      "scale": 500
+    },
+    "outline": {
+      "mapping": {
+        "origin": {
+          "x": -100,
+          "y": 200
+        },
+        "scale": 500
+      },
+      "elements": [
+        {
+          "points": [
+            {
+              "x": -6000,
+              "y": -2000
+            },
+            {
+              "x": -5500,
+              "y": -1000
+            },
+            {
+              "x": -4500,
+              "y": -1500
+            }
+          ],
+          "color": 1,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": -4000,
+              "y": -2000
+            },
+            {
+              "x": -3500,
+              "y": -1000
+            },
+            {
+              "x": -2500,
+              "y": -1500
+            }
+          ],
+          "color": 2,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": -2000,
+              "y": -2000
+            },
+            {
+              "x": -1500,
+              "y": -1000
+            },
+            {
+              "x": -500,
+              "y": -1500
+            }
+          ],
+          "color": 3,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": 0,
+              "y": -2000
+            },
+            {
+              "x": 500,
+              "y": -1000
+            },
+            {
+              "x": 1500,
+              "y": -1500
+            }
+          ],
+          "color": 4,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": 2000,
+              "y": -2000
+            },
+            {
+              "x": 2500,
+              "y": -1000
+            },
+            {
+              "x": 3500,
+              "y": -1500
+            }
+          ],
+          "color": 5,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": 4000,
+              "y": -2000
+            },
+            {
+              "x": 4500,
+              "y": -1000
+            },
+            {
+              "x": 5500,
+              "y": -1500
+            }
+          ],
+          "color": 6,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": 6000,
+              "y": -2000
+            },
+            {
+              "x": 6500,
+              "y": -1000
+            },
+            {
+              "x": 7500,
+              "y": -1500
+            }
+          ],
+          "color": 7,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": -7500,
+              "y": 3500
+            }
+          ],
+          "color": 1,
+          "kind": "polygon"
+        },
+        {
+          "position": {
+            "x": -5000,
+            "y": -6000
+          },
+          "station": {
+            "raw": -2147483646
+          },
+          "direction": -1,
+          "kind": "xsection"
+        },
+        {
+          "position": {
+            "x": 5000,
+            "y": -6000
+          },
+          "station": {
+            "raw": -2147483645
+          },
+          "direction": 16384,
+          "kind": "xsection"
+        }
+      ]
+    },
+    "sideview": {
+      "mapping": {
+        "origin": {
+          "x": 300,
+          "y": -400
+        },
+        "scale": 500
+      },
+      "elements": [
+        {
+          "points": [
+            {
+              "x": -6000,
+              "y": 2000
+            },
+            {
+              "x": -5500,
+              "y": 1000
+            },
+            {
+              "x": -4500,
+              "y": 1500
+            }
+          ],
+          "color": 1,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": -4000,
+              "y": 2000
+            },
+            {
+              "x": -3500,
+              "y": 1000
+            },
+            {
+              "x": -2500,
+              "y": 1500
+            }
+          ],
+          "color": 2,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": -2000,
+              "y": 2000
+            },
+            {
+              "x": -1500,
+              "y": 1000
+            },
+            {
+              "x": -500,
+              "y": 1500
+            }
+          ],
+          "color": 3,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": 0,
+              "y": 2000
+            },
+            {
+              "x": 500,
+              "y": 1000
+            },
+            {
+              "x": 1500,
+              "y": 1500
+            }
+          ],
+          "color": 4,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": 2000,
+              "y": 2000
+            },
+            {
+              "x": 2500,
+              "y": 1000
+            },
+            {
+              "x": 3500,
+              "y": 1500
+            }
+          ],
+          "color": 5,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": 4000,
+              "y": 2000
+            },
+            {
+              "x": 4500,
+              "y": 1000
+            },
+            {
+              "x": 5500,
+              "y": 1500
+            }
+          ],
+          "color": 6,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": 6000,
+              "y": 2000
+            },
+            {
+              "x": 6500,
+              "y": 1000
+            },
+            {
+              "x": 7500,
+              "y": 1500
+            }
+          ],
+          "color": 7,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": 7500,
+              "y": -3500
+            }
+          ],
+          "color": 7,
+          "kind": "polygon"
+        },
+        {
+          "position": {
+            "x": -5000,
+            "y": 6000
+          },
+          "station": {
+            "raw": -2147483646
+          },
+          "direction": -1,
+          "kind": "xsection"
+        },
+        {
+          "position": {
+            "x": 5000,
+            "y": 6000
+          },
+          "station": {
+            "raw": -2147483645
+          },
+          "direction": 16384,
+          "kind": "xsection"
+        }
+      ]
+    },
+    "ending": "zero_trailer"
+  }
+}

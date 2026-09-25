@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "sha256": "030229e21c829712168b94bd0d73f514de2ccfbe29b7cc16e678ef291675ccef",
+    "bytes": 542,
+    "input_format": "PocketTopo v3",
+    "tool": "jktz-release-tools",
+    "tool_version": "0.1.0",
+    "algorithm_version": "p04-1"
+  },
+  "records": {
+    "trips": [
+      {
+        "ticks": 630822816000000007,
+        "comment": "Synthetic reset-looking date, not field evidence",
+        "declination_raw": 910
+      },
+      {
+        "ticks": 639259776000000009,
+        "comment": "Unicode trip: Zażółć gęślą jaźń",
+        "declination_raw": -637
+      },
+      {
+        "ticks": 639260640000000001,
+        "comment": "Auto declination sentinel; no CRS asserted",
+        "declination_raw": -32768
+      }
+    ],
+    "shots": [
+      {
+        "from_id": {
+          "raw": -2147483647
+        },
+        "to_id": {
+          "raw": 0
+        },
+        "distance_mm": 1000,
+        "azimuth_raw": 0,
+        "inclination_raw": 0,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "plain zero to major.minor zero"
+      },
+      {
+        "from_id": {
+          "raw": 0
+        },
+        "to_id": {
+          "raw": 2147483647
+        },
+        "distance_mm": 2000,
+        "azimuth_raw": 16384,
+        "inclination_raw": 1820,
+        "flags": 3,
+        "roll_raw": 0,
+        "trip_index": 1,
+        "comment": "Zażółć gęślą jaźń — ąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąą"
+      },
+      {
+        "from_id": {
+          "raw": 2147483647
+        },
+        "to_id": {
+          "raw": -2147483648
+        },
+        "distance_mm": 3000,
+        "azimuth_raw": -32768,
+        "inclination_raw": -1820,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 2,
+        "comment": "automatic trip splay"
+      },
+      {
+        "from_id": {
+          "raw": 2147483647
+        },
+        "to_id": {
+          "raw": -1
+        },
+        "distance_mm": 4000,
+        "azimuth_raw": -16384,
+        "inclination_raw": 0,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": -1,
+        "comment": "unassigned trip"
+      }
+    ],
+    "references": [],
+    "overview": {
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": 500
+    },
+    "outline": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": []
+    },
+    "sideview": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": []
+    },
+    "ending": "zero_trailer"
+  }
+}

@@ -1,0 +1,47 @@
+Survex 1.4.22
+Copyright (C) 1990-2026 Olly Betts
+<scratch>/survey.svx:37:1: info: Survey has no fixed points. Therefore I've fixed 0 at (0,0,0)
+
+Removing trailing traverses...
+
+Concatenating traverses...
+
+Simplifying network...
+
+Calculating network...
+
+Calculating traverses...
+
+Calculating trailing traverses...
+
+Calculating statistics...
+
+Survey contains 5 survey stations, joined by 4 legs.
+There are 0 loops.
+Total length of survey legs =    7.00m (   7.00m adjusted)
+Total plan length of survey legs =    6.97m
+Total vertical length of survey legs =    0.35m
+Vertical range = 0.52m (from 13.0 at 0.35m to anonymous station at -0.17m)
+Vertical range = 0.35m (from 13.0 at 0.35m to 0.0 at 0.00m)
+North-South range = 2.93m (from 12.65535 at 1.12m to anonymous station at -1.81m)
+North-South range = 1.12m (from 12.65535 at 1.12m to 0 at 0.00m)
+East-West range = 3.91m (from 12.65535 at 2.05m to 13.0 at -1.86m)
+CPU time used  0.00s
+
+--- dump3d --legs ---
+TITLE "survey"
+DATE "@1790344325"
+DATE_NUMERIC 1790344325
+VERSION 8
+SEPARATOR ':'
+--
+LEG 0.00 0.00 0.00 0.09 1.00 0.00 [] STYLE=NORMAL
+LEG 0.09 1.00 0.00 2.05 1.12 0.35 [] STYLE=NORMAL
+LEG 2.05 1.12 0.35 1.64 -1.81 -0.17 [] STYLE=NORMAL SPLAY
+LEG 2.05 1.12 0.35 -1.86 0.28 0.35 [] STYLE=NORMAL
+NODE -1.86 0.28 0.35 [13.0] UNDERGROUND
+NODE 1.64 -1.81 -0.17 [] UNDERGROUND ANON WALL
+NODE 2.05 1.12 0.35 [12.65535] UNDERGROUND
+NODE 0.09 1.00 0.00 [0.0] UNDERGROUND
+NODE 0.00 0.00 0.00 [0] UNDERGROUND
+STOP

@@ -1,0 +1,15 @@
+P04 long-identifiers
+Segment: /...
+Vector total: 3  Report Date: 09/25/26 15:52
+Component 1 of 1 - Reference Station:  0
+Length: 7.000000 Meters
+High Pt: 0.347212 (pzik0zj),  Low Pt: 0.000000 (0)
+
+PREFIX	NAME	EAST	NORTH	UP	FILE:LINE
+
+	0	0.000000	0.000000	0.000000
+	0.0	0.087135	0.996197	0.000000	LONG:28-
+	pzik0zj	2.053093	1.116410	0.347212	LONG:37-
+	p1z141z3	-1.859498	0.284764	0.347212	LONG:49-
+
+Vectors Listed: 3  Length: 7.00 Meters

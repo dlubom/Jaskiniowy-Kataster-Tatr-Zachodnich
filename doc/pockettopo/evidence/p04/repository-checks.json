@@ -1,0 +1,191 @@
+{
+  "date": "2026-09-25",
+  "baseline_commit": "123ec9d8234f76c527397787bc00bbf24e9e9c4e",
+  "scope": "P04 in-memory SRV/SVX exports, corrections, names, independent geometry and native Walls verification; P05/P06 not implemented",
+  "python": "Python 3.12.13",
+  "input_sha256": {
+    "src/jktz/pockettopo/__init__.py": "fbe172af4d94d18f214cf505533e1b29eeb0e5f5f0b90b477a9d3ade15ecfa8c",
+    "src/jktz/pockettopo/averaging.py": "dcfdf09864069a1be8a4d783acec2bb52321b61c7e653716574cc5ad021b0f2a",
+    "src/jktz/pockettopo/export.py": "c60ad6238ef81fad92fd51184c9bac3a1b6986f8600e6278846857bd3c206a02",
+    "src/jktz/pockettopo/export_policy.py": "0602a7d41098e477b929cac8fa5f4c76ea9fee76eded7f93014f45d8dcfc5bf9",
+    "src/jktz/pockettopo/grouping.py": "08426ddf033fdfbc3323f85b2f446f461219f7fb1dc11d995a88c42df615f2f6",
+    "src/jktz/pockettopo/model.py": "35d85dc4655cf55d48f35d593a43486b01fea4117e09bc31f4d391a00d71be02",
+    "src/jktz/pockettopo/parser.py": "57eed978b45f4aefe75536435d521cc5a656d8ccb54108b6d5de739d6496f783",
+    "src/jktz/pockettopo/report.py": "1291fc40d238e519fa3d87fdb2ee8c666d5c13737c791e1e5ffc87d4e90dba5a",
+    "tests/test_pockettopo_averaging.py": "2dea39aff9d787fe90590f5529253859d9c6de8b395aa7bf85aa65cb5019c14b",
+    "tests/test_pockettopo_compilation.py": "98da2600a81f64c0ff007ed2f9e93af50ee680d2a8ed40da3cfeaf1254a4f5f5",
+    "tests/test_pockettopo_export.py": "8453977617bef767d1843cf0b078cfc43c40b2926f5557526329e6aece9c1a97",
+    "tests/test_pockettopo_fixtures.py": "385d688096a78225d6cd0cfc6d529b26371796fb4036e53b1ba130a65aec0100",
+    "tests/test_pockettopo_grouping.py": "987c51c75204c71cf73a7c63bd20d041088f8768e6d24d928c234cf1eebba981",
+    "tests/test_pockettopo_parser.py": "fd33cf663c58c9dd0f3719ce647f6bb4e0083057566a58740fcdc832458e1b90",
+    "tests/test_pockettopo_report.py": "4c6a4120ac6b05ef60d25ca90e5fdff74ffae40ff913fccff8ff20e6a932129f",
+    "pyproject.toml": "766e76e762b49985b64ace26340284c085965d6d766b4f32cd02a7bf946e4db4",
+    "uv.lock": "e36e639704be80ca0f6af1b3b74e0b1e6839a52e0b9719cb7b52d988b61a614d",
+    ".github/workflows/validate.yml": "a44a5689fdd4ad24c4b1c78d21b98b8184be7775d76377a16ffa48a94ad19a45"
+  },
+  "quality": {
+    "command": "uv run --python 3.12 jktz-quality",
+    "exit_code": 0,
+    "tests_passed": 851,
+    "new_p04_tests": 65,
+    "line_percent": 97.07016191210485,
+    "branch_percent": 94.92924528301887,
+    "max_crap": 21.542410714285715,
+    "failures": [],
+    "export_coverage": {
+      "src/jktz/pockettopo/export.py": {
+        "covered_lines": 107,
+        "num_statements": 107,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100.00",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100.00",
+        "num_branches": 32,
+        "num_partial_branches": 0,
+        "covered_branches": 32,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100.00"
+      },
+      "src/jktz/pockettopo/export_policy.py": {
+        "covered_lines": 44,
+        "num_statements": 44,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100.00",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100.00",
+        "num_branches": 20,
+        "num_partial_branches": 0,
+        "covered_branches": 20,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100.00"
+      }
+    }
+  },
+  "mutation": {
+    "command": "uv run --python 3.12 jktz-mutation",
+    "exit_code": 0,
+    "killed": 1860,
+    "total": 2090,
+    "score": 88.99521531100478,
+    "failures": [],
+    "scope": "Existing nine core modules including PocketTopo model/parser/math/grouping; export modules covered by behavioral+compiler tests, not added to mutation scope",
+    "modules": [
+      {
+        "file": "src/jktz/metadata/io.py",
+        "killed": 33,
+        "total": 39,
+        "score": 84.61538461538461
+      },
+      {
+        "file": "src/jktz/metadata/raw.py",
+        "killed": 104,
+        "total": 114,
+        "score": 91.2280701754386
+      },
+      {
+        "file": "src/jktz/metadata/srv.py",
+        "killed": 303,
+        "total": 368,
+        "score": 82.33695652173913
+      },
+      {
+        "file": "src/jktz/entrances/render.py",
+        "killed": 284,
+        "total": 350,
+        "score": 81.14285714285714
+      },
+      {
+        "file": "src/jktz/validation/measurements.py",
+        "killed": 108,
+        "total": 114,
+        "score": 94.73684210526316
+      },
+      {
+        "file": "src/jktz/pockettopo/model.py",
+        "killed": 37,
+        "total": 37,
+        "score": 100.0
+      },
+      {
+        "file": "src/jktz/pockettopo/parser.py",
+        "killed": 635,
+        "total": 703,
+        "score": 90.3271692745377
+      },
+      {
+        "file": "src/jktz/pockettopo/averaging.py",
+        "killed": 173,
+        "total": 182,
+        "score": 95.05494505494505
+      },
+      {
+        "file": "src/jktz/pockettopo/grouping.py",
+        "killed": 183,
+        "total": 183,
+        "score": 100.0
+      }
+    ]
+  },
+  "full_validation": {
+    "command": "uv run --python 3.12 jktz-validate",
+    "exit_code": 0,
+    "result": "Validation Passed, including metadata, GPS snapshot, warning-free cavern and GDAL exports",
+    "output": "validation-output.txt",
+    "output_normalization": "Trailing whitespace removed from captured terminal output; native Walls listing bytes preserved separately."
+  },
+  "originals": {
+    "p01_verified_sha256": 55,
+    "repeat_candidates_verified_sha256": 21,
+    "failures": 0
+  },
+  "geometry": {
+    "compiler": "Survex 1.4.22",
+    "integration_tests_passed": 6,
+    "corpus_sources": 258,
+    "warning_free_pairs": 249,
+    "partial_pairs": 7,
+    "missing_named_stations_in_partial_results": 90,
+    "no_active_measurements": 2,
+    "max_named_coordinate_pair_difference_m": 0.0,
+    "independent_analytical_cases": 4
+  },
+  "native_walls": {
+    "build": "2.3.0-beta.1 2025-09-13",
+    "projects_compiled": 3,
+    "named_stations_checked": 17,
+    "result": "All named coordinates within 1.1e-6 m analytical tolerance",
+    "evidence": "walls/validation.json",
+    "limits": "Anonymous splay coordinates not in native listings; no native loop-adjustment equivalence claim"
+  },
+  "independent_review": {
+    "open_critical": 0,
+    "open_important": 0,
+    "open_minor": 0,
+    "code_verdict": "No confirmed production defects;64 focused tests passed by reviewer",
+    "final_evidence_verdict": "P04 ready;17native namedcoords and explicit249complete/7partial/90omitted checked",
+    "resolved": [
+      "Mixed-unit SVX calibration syntax split into tape and compass/clino directives",
+      "Long comments chunked under Walls255-character line limit",
+      "Partial compiler geometries disclose90omittednamedstations",
+      "Compiler exit0 pluswarning and contradictoryzero crashes documented",
+      "Stale PRD future-corpus-export wording updated"
+    ]
+  },
+  "delivery": {
+    "branch": "codex/pockettopo-convert",
+    "pull_request": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/pull/129",
+    "remote_ci": "Check attached PR for results associated with the delivered commit; local results above do not assert remote CI success"
+  },
+  "limits": [
+    "Dates remain unverified; explicit stored corrections reproduced rather than historically validated",
+    "No active reference fixes or inferred CRS",
+    "measurement_export_complete refers to active text representation, not compilation completeness",
+    "Sketch exports, CLI, skill and atomic package remain P05/P06"
+  ]
+}

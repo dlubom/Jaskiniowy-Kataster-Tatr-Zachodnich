@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "sha256": "64ac69ee1746272a503895256523f386765847c01da81009292fdf29225a9c8e",
+    "bytes": 465,
+    "input_format": "PocketTopo v3",
+    "tool": "jktz-release-tools",
+    "tool_version": "0.1.0",
+    "algorithm_version": "p04-1"
+  },
+  "records": {
+    "trips": [
+      {
+        "ticks": 632401344000000000,
+        "comment": "P01 synthetic cardinal and repeat readings",
+        "declination_raw": 0
+      }
+    ],
+    "shots": [
+      {
+        "from_id": {
+          "raw": -2147483647
+        },
+        "to_id": {
+          "raw": -2147483646
+        },
+        "distance_mm": 10000,
+        "azimuth_raw": 0,
+        "inclination_raw": 0,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "north"
+      },
+      {
+        "from_id": {
+          "raw": -2147483646
+        },
+        "to_id": {
+          "raw": -2147483645
+        },
+        "distance_mm": 2000,
+        "azimuth_raw": 16384,
+        "inclination_raw": 0,
+        "flags": 2,
+        "roll_raw": 64,
+        "trip_index": 0,
+        "comment": "east"
+      },
+      {
+        "from_id": {
+          "raw": -2147483645
+        },
+        "to_id": {
+          "raw": -2147483644
+        },
+        "distance_mm": 3000,
+        "azimuth_raw": -32768,
+        "inclination_raw": 0,
+        "flags": 2,
+        "roll_raw": 128,
+        "trip_index": 0,
+        "comment": "south"
+      },
+      {
+        "from_id": {
+          "raw": -2147483644
+        },
+        "to_id": {
+          "raw": -2147483643
+        },
+        "distance_mm": 4000,
+        "azimuth_raw": -16384,
+        "inclination_raw": 0,
+        "flags": 2,
+        "roll_raw": 192,
+        "trip_index": 0,
+        "comment": "west"
+      },
+      {
+        "from_id": {
+          "raw": -2147483643
+        },
+        "to_id": {
+          "raw": -2147483642
+        },
+        "distance_mm": 5000,
+        "azimuth_raw": -364,
+        "inclination_raw": 1820,
+        "flags": 2,
+        "roll_raw": 255,
+        "trip_index": 0,
+        "comment": "confirmed repeat A1"
+      },
+      {
+        "from_id": {
+          "raw": -2147483643
+        },
+        "to_id": {
+          "raw": -2147483642
+        },
+        "distance_mm": 5000,
+        "azimuth_raw": 364,
+        "inclination_raw": 1820,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "confirmed repeat A2"
+      },
+      {
+        "from_id": {
+          "raw": -2147483642
+        },
+        "to_id": {
+          "raw": -2147483643
+        },
+        "distance_mm": 5000,
+        "azimuth_raw": -32768,
+        "inclination_raw": -1820,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "confirmed repeat A3 backwards"
+      },
+      {
+        "from_id": {
+          "raw": -2147483642
+        },
+        "to_id": {
+          "raw": -2147483641
+        },
+        "distance_mm": 1000,
+        "azimuth_raw": 0,
+        "inclination_raw": 16384,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "vertical up"
+      },
+      {
+        "from_id": {
+          "raw": -2147483641
+        },
+        "to_id": {
+          "raw": -2147483640
+        },
+        "distance_mm": 1000,
+        "azimuth_raw": 0,
+        "inclination_raw": -16384,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "vertical down"
+      },
+      {
+        "from_id": {
+          "raw": -2147483640
+        },
+        "to_id": {
+          "raw": -2147483648
+        },
+        "distance_mm": 1234,
+        "azimuth_raw": 8192,
+        "inclination_raw": -3641,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "splay"
+      },
+      {
+        "from_id": {
+          "raw": -2147483640
+        },
+        "to_id": {
+          "raw": -2147483639
+        },
+        "distance_mm": 0,
+        "azimuth_raw": 0,
+        "inclination_raw": 0,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "zero link"
+      }
+    ],
+    "references": [],
+    "overview": {
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": 500
+    },
+    "outline": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": []
+    },
+    "sideview": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": []
+    },
+    "ending": "zero_trailer"
+  }
+}

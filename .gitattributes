@@ -12,3 +12,5 @@ doc/pockettopo/evidence/p01/**/*.dxf binary
 doc/pockettopo/evidence/repeat-candidates/**/*.top binary
 doc/pockettopo/evidence/repeat-candidates/**/*.txt binary
 doc/pockettopo/evidence/repeat-candidates/**/*.dxf binary
+doc/pockettopo/evidence/p04/compiler-limits/**/*.top binary
+doc/pockettopo/evidence/p04/walls/*-listing.txt binary

@@ -1,0 +1,111 @@
+; PocketTopo P04 survey export. See source document and conversion report.
+; Device dates are unverified. No dates, CRS or reference fixes are inferred.
+; provenance 1/2 {"sha256":"52e16f9561f2fbf3b66e595c29fce113c9ed1cc44fc5865897cb5f06b1aaba94","bytes":3421,"input_format":"PocketTopo v3","tool":"jktz-release-tools","tool_versi
+; provenance 2/2 on":"0.1.0","algorithm_version":"p04-1"}
+; station 1/2 {"raw":65536,"kind":"major.minor","source_text":"1.0","walls_name":"1.0","survex_name":"1.0","status":"mapped","walls_mapping":"literal","survex_mapping":"liter
+; station 2/2 al"}
+; station 1/2 {"raw":131073,"kind":"major.minor","source_text":"2.1","walls_name":"2.1","survex_name":"2.1","status":"mapped","walls_mapping":"literal","survex_mapping":"lite
+; station 2/2 ral"}
+; station 1/2 {"raw":65537,"kind":"major.minor","source_text":"1.1","walls_name":"1.1","survex_name":"1.1","status":"mapped","walls_mapping":"literal","survex_mapping":"liter
+; station 2/2 al"}
+; station 1/2 {"raw":65538,"kind":"major.minor","source_text":"1.2","walls_name":"1.2","survex_name":"1.2","status":"mapped","walls_mapping":"literal","survex_mapping":"liter
+; station 2/2 al"}
+; station 1/2 {"raw":65539,"kind":"major.minor","source_text":"1.3","walls_name":"1.3","survex_name":"1.3","status":"mapped","walls_mapping":"literal","survex_mapping":"liter
+; station 2/2 al"}
+; trip 1/3 {"index":0,"source_ticks":632744352000000000,"comment":"","date_reliability":"unverified_device_clock","established_date":null,"date_evidence":null,"used_date":
+; trip 2/3 null,"declination":{"source_raw":0,"mode":"explicit","stored_degrees":0.0,"applied_degrees":0.0,"status":"applied","selected_degrees":0.0,"provenance":"stored_e
+; trip 3/3 xplicit","evidence":null,"unresolved_reason":null}}
+*begin
+*case preserve
+*truncate off
+*set separator :
+*set names ._-
+*units tape metres
+*units compass clino degrees
+*calibrate tape 0
+*calibrate compass clino 0
+*data normal from to tape compass clino
+
+; group 1/2 {"id":0,"source_indices":[0],"status":"held","reason":"zero_unnamed_shot","declination_degrees":null,"correction_provenance":null,"correction_evidence":null,"sr
+; group 2/2 v_line":null,"svx_line":null}
+; source_shot 1/2 {"index":0,"from_id":{"raw":65536},"to_id":{"raw":-2147483648},"distance_mm":0,"azimuth_raw":0,"inclination_raw":0,"flags":0,"roll_raw":0,"trip_index":-1,"comme
+; source_shot 2/2 nt":null}
+; group 1/2 {"id":1,"source_indices":[1],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":1,"from_id":{"raw":65536},"to_id":{"raw":131073},"distance_mm":11966,"azimuth_raw":7757,"inclination_raw":3525,"flags":0,"roll_raw":2,"trip_index":0,"c
+; source_shot 2/2 omment":null}
+*declination 0 degrees
+1.0	2.1	11.966	42.610473632812	19.363403320312
+; group 1/2 {"id":2,"source_indices":[2],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":2,"from_id":{"raw":65536},"to_id":{"raw":131073},"distance_mm":11983,"azimuth_raw":7761,"inclination_raw":3499,"flags":0,"roll_raw":2,"trip_index":0,"c
+; source_shot 2/2 omment":null}
+*declination 0 degrees
+1.0	2.1	11.983	42.632446289062	19.220581054688
+; group 1/2 {"id":3,"source_indices":[3],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":3,"from_id":{"raw":65536},"to_id":{"raw":131073},"distance_mm":11983,"azimuth_raw":7785,"inclination_raw":3519,"flags":0,"roll_raw":1,"trip_index":0,"c
+; source_shot 2/2 omment":null}
+*declination 0 degrees
+1.0	2.1	11.983	42.764282226562	19.330444335938
+; group 1/2 {"id":4,"source_indices":[4],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":4,"from_id":{"raw":65536},"to_id":{"raw":65537},"distance_mm":2162,"azimuth_raw":-26515,"inclination_raw":4309,"flags":0,"roll_raw":5,"trip_index":0,"c
+; source_shot 2/2 omment":null}
+*declination 0 degrees
+1.0	1.1	2.162	214.348754882812	23.670043945312
+; group 1/2 {"id":5,"source_indices":[5],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":5,"from_id":{"raw":65536},"to_id":{"raw":65537},"distance_mm":2163,"azimuth_raw":-26541,"inclination_raw":4341,"flags":0,"roll_raw":5,"trip_index":0,"c
+; source_shot 2/2 omment":null}
+*declination 0 degrees
+1.0	1.1	2.163	214.205932617188	23.845825195312
+; group 1/2 {"id":6,"source_indices":[6],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":6,"from_id":{"raw":65536},"to_id":{"raw":65537},"distance_mm":2159,"azimuth_raw":-26523,"inclination_raw":4341,"flags":0,"roll_raw":6,"trip_index":0,"c
+; source_shot 2/2 omment":null}
+*declination 0 degrees
+1.0	1.1	2.159	214.304809570312	23.845825195312
+; group 1/2 {"id":7,"source_indices":[7],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":7,"from_id":{"raw":65537},"to_id":{"raw":65538},"distance_mm":3844,"azimuth_raw":-24977,"inclination_raw":863,"flags":0,"roll_raw":255,"trip_index":0,"
+; source_shot 2/2 comment":null}
+*declination 0 degrees
+1.1	1.2	3.844	222.797241210938	4.740600585938
+; group 1/2 {"id":8,"source_indices":[8],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":8,"from_id":{"raw":65537},"to_id":{"raw":65538},"distance_mm":3830,"azimuth_raw":-25007,"inclination_raw":833,"flags":0,"roll_raw":255,"trip_index":0,"
+; source_shot 2/2 comment":null}
+*declination 0 degrees
+1.1	1.2	3.83	222.632446289062	4.575805664062
+; group 1/2 {"id":9,"source_indices":[9],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":9,"from_id":{"raw":65537},"to_id":{"raw":65538},"distance_mm":3844,"azimuth_raw":-24981,"inclination_raw":871,"flags":0,"roll_raw":255,"trip_index":0,"
+; source_shot 2/2 comment":null}
+*declination 0 degrees
+1.1	1.2	3.844	222.775268554688	4.784545898438
+; group 1/2 {"id":10,"source_indices":[10],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correctio
+; group 2/2 n_evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":10,"from_id":{"raw":65538},"to_id":{"raw":65539},"distance_mm":2604,"azimuth_raw":-17281,"inclination_raw":-1889,"flags":0,"roll_raw":210,"trip_index":
+; source_shot 2/2 0,"comment":null}
+*declination 0 degrees
+1.2	1.3	2.604	265.072631835938	-10.376586914062
+; group 1/2 {"id":11,"source_indices":[11],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correctio
+; group 2/2 n_evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":11,"from_id":{"raw":65538},"to_id":{"raw":65539},"distance_mm":2602,"azimuth_raw":-17279,"inclination_raw":-1893,"flags":0,"roll_raw":210,"trip_index":
+; source_shot 2/2 0,"comment":null}
+*declination 0 degrees
+1.2	1.3	2.602	265.083618164062	-10.398559570312
+; group 1/2 {"id":12,"source_indices":[12],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correctio
+; group 2/2 n_evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":12,"from_id":{"raw":65538},"to_id":{"raw":65539},"distance_mm":2602,"azimuth_raw":-17217,"inclination_raw":-1875,"flags":0,"roll_raw":210,"trip_index":
+; source_shot 2/2 0,"comment":null}
+*declination 0 degrees
+1.2	1.3	2.602	265.424194335938	-10.299682617188
+; group 1/2 {"id":13,"source_indices":[13],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correctio
+; group 2/2 n_evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":13,"from_id":{"raw":65539},"to_id":{"raw":-2147483648},"distance_mm":6748,"azimuth_raw":24449,"inclination_raw":6283,"flags":0,"roll_raw":215,"trip_ind
+; source_shot 2/2 ex":0,"comment":null}
+*declination 0 degrees
+1.3	::	6.748	134.302368164062	34.513549804688
+*end

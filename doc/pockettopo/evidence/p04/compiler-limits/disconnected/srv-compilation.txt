@@ -1,0 +1,45 @@
+Survex 1.4.22
+Copyright (C) 1990-2026 Olly Betts
+<scratch>/survey.SRV:19:1: info: Survey has no fixed points. Therefore I've fixed 0 at (0,0,0)
+
+Removing trailing traverses...
+
+Concatenating traverses...
+
+Simplifying network...
+cavern: warning: Survey not all connected to fixed stations
+The following survey stations are not attached to a fixed point:
+<scratch>/survey.SRV:25: info: 2
+
+Calculating network...
+
+Calculating traverses...
+
+Calculating trailing traverses...
+
+Calculating statistics...
+
+Survey contains 4 survey stations, joined by 2 legs.
+There are 0 loops.
+Survey has 2 connected components.
+Total length of survey legs =    1.23m (   1.23m adjusted)
+Total plan length of survey legs =    1.23m
+Total vertical length of survey legs =    0.00m
+Vertical range = 0.00m (from 1 at 0.00m to 1 at 0.00m)
+North-South range = 1.23m (from 1 at 1.23m to 0 at 0.00m)
+East-West range = 0.00m (from 1 at 0.00m to 1 at 0.00m)
+CPU time used  0.00s
+
+There were 1 warning(s).
+
+--- dump3d --legs ---
+TITLE "survey"
+DATE "@1790344332"
+DATE_NUMERIC 1790344332
+VERSION 8
+SEPARATOR ':'
+--
+LEG 0.00 0.00 0.00 0.00 1.23 0.00 [] STYLE=NORMAL
+NODE 0.00 1.23 0.00 [1] UNDERGROUND
+NODE 0.00 0.00 0.00 [0] UNDERGROUND
+STOP

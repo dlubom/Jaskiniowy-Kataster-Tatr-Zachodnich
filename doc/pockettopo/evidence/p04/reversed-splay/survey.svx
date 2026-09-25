@@ -1,0 +1,85 @@
+; PocketTopo P04 survey export. See source document and conversion report.
+; Device dates are unverified. No dates, CRS or reference fixes are inferred.
+; provenance 1/2 {"sha256":"66ba360381aa7c4edb5e9d70b68528ae6e04c976274c33d16efcdd4bb6093ed0","bytes":465,"input_format":"PocketTopo v3","tool":"jktz-release-tools","tool_versio
+; provenance 2/2 n":"0.1.0","algorithm_version":"p04-1"}
+; station 1/1 {"raw":-2147483647,"kind":"plain","source_text":"0","walls_name":"0","survex_name":"0","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; station 1/1 {"raw":-2147483646,"kind":"plain","source_text":"1","walls_name":"1","survex_name":"1","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; station 1/1 {"raw":-2147483645,"kind":"plain","source_text":"2","walls_name":"2","survex_name":"2","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; station 1/1 {"raw":-2147483644,"kind":"plain","source_text":"3","walls_name":"3","survex_name":"3","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; station 1/1 {"raw":-2147483643,"kind":"plain","source_text":"4","walls_name":"4","survex_name":"4","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; station 1/1 {"raw":-2147483642,"kind":"plain","source_text":"5","walls_name":"5","survex_name":"5","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; station 1/1 {"raw":-2147483641,"kind":"plain","source_text":"6","walls_name":"6","survex_name":"6","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; station 1/1 {"raw":-2147483640,"kind":"plain","source_text":"7","walls_name":"7","survex_name":"7","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; station 1/1 {"raw":-2147483639,"kind":"plain","source_text":"8","walls_name":"8","survex_name":"8","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; trip 1/3 {"index":0,"source_ticks":632401344000000000,"comment":"P01 synthetic cardinal and repeat readings","date_reliability":"unverified_device_clock","established_da
+; trip 2/3 te":null,"date_evidence":null,"used_date":null,"declination":{"source_raw":0,"mode":"explicit","stored_degrees":0.0,"applied_degrees":0.0,"status":"applied","se
+; trip 3/3 lected_degrees":0.0,"provenance":"stored_explicit","evidence":null,"unresolved_reason":null}}
+*begin
+*case preserve
+*truncate off
+*set separator :
+*set names ._-
+*units tape metres
+*units compass clino degrees
+*calibrate tape 0
+*calibrate compass clino 0
+*data normal from to tape compass clino
+
+; group 1/2 {"id":0,"source_indices":[0],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":0,"from_id":{"raw":-2147483647},"to_id":{"raw":-2147483646},"distance_mm":10000,"azimuth_raw":0,"inclination_raw":0,"flags":2,"roll_raw":0,"trip_index"
+; source_shot 2/2 :0,"comment":"north"}
+*declination 0 degrees
+0	1	10	0	0
+; group 1/2 {"id":1,"source_indices":[1],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":1,"from_id":{"raw":-2147483646},"to_id":{"raw":-2147483645},"distance_mm":2000,"azimuth_raw":16384,"inclination_raw":0,"flags":2,"roll_raw":64,"trip_in
+; source_shot 2/2 dex":0,"comment":"east"}
+*declination 0 degrees
+1	2	2	90	0
+; group 1/2 {"id":2,"source_indices":[2],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":2,"from_id":{"raw":-2147483645},"to_id":{"raw":-2147483644},"distance_mm":3000,"azimuth_raw":-32768,"inclination_raw":0,"flags":2,"roll_raw":128,"trip_
+; source_shot 2/2 index":0,"comment":"south"}
+*declination 0 degrees
+2	3	3	180	0
+; group 1/2 {"id":3,"source_indices":[3],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":3,"from_id":{"raw":-2147483644},"to_id":{"raw":-2147483643},"distance_mm":4000,"azimuth_raw":-16384,"inclination_raw":0,"flags":2,"roll_raw":192,"trip_
+; source_shot 2/2 index":0,"comment":"west"}
+*declination 0 degrees
+3	4	4	270	0
+; group 1/2 {"id":4,"source_indices":[4,5,6],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correct
+; group 2/2 ion_evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":4,"from_id":{"raw":-2147483643},"to_id":{"raw":-2147483642},"distance_mm":5000,"azimuth_raw":-364,"inclination_raw":1820,"flags":2,"roll_raw":255,"trip
+; source_shot 2/2 _index":0,"comment":"confirmed repeat A1"}
+; source_shot 1/2 {"index":5,"from_id":{"raw":-2147483643},"to_id":{"raw":-2147483642},"distance_mm":5000,"azimuth_raw":364,"inclination_raw":1820,"flags":2,"roll_raw":0,"trip_in
+; source_shot 2/2 dex":0,"comment":"confirmed repeat A2"}
+; source_shot 1/2 {"index":6,"from_id":{"raw":-2147483642},"to_id":{"raw":-2147483643},"distance_mm":5000,"azimuth_raw":-32768,"inclination_raw":-1820,"flags":2,"roll_raw":0,"tri
+; source_shot 2/2 p_index":0,"comment":"confirmed repeat A3 backwards"}
+*declination 0 degrees
+4	5	5	0	9.99755859375
+; group 1/2 {"id":5,"source_indices":[7],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":7,"from_id":{"raw":-2147483642},"to_id":{"raw":-2147483641},"distance_mm":1000,"azimuth_raw":0,"inclination_raw":16384,"flags":2,"roll_raw":0,"trip_ind
+; source_shot 2/2 ex":0,"comment":"vertical up"}
+*declination 0 degrees
+5	6	1	0	90
+; group 1/2 {"id":6,"source_indices":[8],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":8,"from_id":{"raw":-2147483641},"to_id":{"raw":-2147483640},"distance_mm":1000,"azimuth_raw":0,"inclination_raw":-16384,"flags":2,"roll_raw":0,"trip_in
+; source_shot 2/2 dex":0,"comment":"vertical down"}
+*declination 0 degrees
+6	7	1	0	-90
+; group 1/2 {"id":7,"source_indices":[9],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":9,"from_id":{"raw":-2147483648},"to_id":{"raw":-2147483640},"distance_mm":1234,"azimuth_raw":8192,"inclination_raw":-3641,"flags":2,"roll_raw":0,"trip_
+; source_shot 2/2 index":0,"comment":"splay"}
+*declination 0 degrees
+7	::	1.234	225	20.000610351562
+; group 1/2 {"id":8,"source_indices":[10],"status":"exported","reason":"zero_link_no_angular_correction","declination_degrees":null,"correction_provenance":null,"correction
+; group 2/2 _evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":10,"from_id":{"raw":-2147483640},"to_id":{"raw":-2147483639},"distance_mm":0,"azimuth_raw":0,"inclination_raw":0,"flags":2,"roll_raw":0,"trip_index":0,
+; source_shot 2/2 "comment":"zero link"}
+*equate 7 8
+*end

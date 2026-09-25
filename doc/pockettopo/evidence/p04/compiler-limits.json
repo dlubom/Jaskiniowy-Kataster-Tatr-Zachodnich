@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-25",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "compiler": "cavern - Survex 1.4.22",
+  "input_basis": "Synthetic P04 test helper; exact bytes stored with each case",
+  "code_sha256": {
+    "src/jktz/pockettopo/__init__.py": "fbe172af4d94d18f214cf505533e1b29eeb0e5f5f0b90b477a9d3ade15ecfa8c",
+    "src/jktz/pockettopo/averaging.py": "dcfdf09864069a1be8a4d783acec2bb52321b61c7e653716574cc5ad021b0f2a",
+    "src/jktz/pockettopo/export.py": "c60ad6238ef81fad92fd51184c9bac3a1b6986f8600e6278846857bd3c206a02",
+    "src/jktz/pockettopo/export_policy.py": "0602a7d41098e477b929cac8fa5f4c76ea9fee76eded7f93014f45d8dcfc5bf9",
+    "src/jktz/pockettopo/grouping.py": "08426ddf033fdfbc3323f85b2f446f461219f7fb1dc11d995a88c42df615f2f6",
+    "src/jktz/pockettopo/model.py": "35d85dc4655cf55d48f35d593a43486b01fea4117e09bc31f4d391a00d71be02",
+    "src/jktz/pockettopo/parser.py": "57eed978b45f4aefe75536435d521cc5a656d8ccb54108b6d5de739d6496f783",
+    "src/jktz/pockettopo/report.py": "1291fc40d238e519fa3d87fdb2ee8c666d5c13737c791e1e5ffc87d4e90dba5a"
+  },
+  "cases": [
+    {
+      "case": "disconnected",
+      "source_sha256": "4b5d830ca2937329a81324079bfca16187215659fe75dd748995a25d5d90edf5",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 2,
+        "traced_shots": 2,
+        "ready_measurements": 2,
+        "held_shots": 0,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 2,
+        "exported_source_shots": 2,
+        "measurement_export_complete": true,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "c007f08ab03563c2b237892c2045d80b3d74070adffd7f2afd7af1617e3e371d",
+          "returncode": 0,
+          "signal": null,
+          "compiled_named_stations": [
+            "1",
+            "0"
+          ]
+        },
+        "svx": {
+          "text_sha256": "b1b28942b2cdd855c704c753678cff99c5591913489839d35fdb148d59a66b17",
+          "returncode": 0,
+          "signal": null,
+          "compiled_named_stations": [
+            "1",
+            "0"
+          ]
+        }
+      }
+    },
+    {
+      "case": "held-auto-bridge",
+      "source_sha256": "e041f28302478adfb694a5f28811222f688440286cd89897189925d5985fd0f3",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 3,
+        "traced_shots": 3,
+        "ready_measurements": 3,
+        "held_shots": 1,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 2,
+        "exported_source_shots": 2,
+        "measurement_export_complete": false,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "c86d9f31eb7df21952e8807b597994671c1ba442a1c5599087e1f1fd9b964b30",
+          "returncode": 0,
+          "signal": null,
+          "compiled_named_stations": [
+            "1",
+            "0"
+          ]
+        },
+        "svx": {
+          "text_sha256": "da875ca71d7372f394cfaca750754f3738500a81d0467fc2449ed63eeff97c77",
+          "returncode": 0,
+          "signal": null,
+          "compiled_named_stations": [
+            "1",
+            "0"
+          ]
+        }
+      }
+    },
+    {
+      "case": "independent-splays",
+      "source_sha256": "e84bd5711c3d9250830be69458a710ef0938d319e856f9b091515a893dbf28e4",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 2,
+        "traced_shots": 2,
+        "ready_measurements": 2,
+        "held_shots": 0,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 2,
+        "exported_source_shots": 2,
+        "measurement_export_complete": true,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "36132de9b80ba6d148e5fe813af520ff8fe29641b53511d8b18f51d606262eb4",
+          "returncode": 0,
+          "signal": null,
+          "compiled_named_stations": [
+            "0"
+          ]
+        },
+        "svx": {
+          "text_sha256": "d871c3a2eeea36620727edbaea0e16a59089624eab7fa273cbbbd5652087d90f",
+          "returncode": 0,
+          "signal": null,
+          "compiled_named_stations": [
+            "0"
+          ]
+        }
+      }
+    },
+    {
+      "case": "direct-contradiction",
+      "source_sha256": "5e4d2d269875449d71b0f0fc56b275831736e78c79827872737f13f50da55cf6",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 2,
+        "traced_shots": 2,
+        "ready_measurements": 2,
+        "held_shots": 0,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 2,
+        "exported_source_shots": 2,
+        "measurement_export_complete": true,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "06ac4cef9d3dbb02ac9d41397d313337a247b6d6d6cc3d0c74e07585c2ee1236",
+          "returncode": -11,
+          "signal": 11,
+          "compiled_named_stations": []
+        },
+        "svx": {
+          "text_sha256": "4237e8bc8f08efb907f238164e29d0db33dee193c680f87d13c34194a9851dda",
+          "returncode": -11,
+          "signal": 11,
+          "compiled_named_stations": []
+        }
+      }
+    },
+    {
+      "case": "transitive-contradiction",
+      "source_sha256": "ecbae9747551579260fa7e7d1ee6700734caac8b4085d086b090f3b35b6d67a9",
+      "completeness": {
+        "source_decode": "complete",
+        "source_shots": 3,
+        "traced_shots": 3,
+        "ready_measurements": 3,
+        "held_shots": 0,
+        "exports_created": true,
+        "conversion_complete": false,
+        "exported_measurements": 3,
+        "exported_source_shots": 3,
+        "measurement_export_complete": true,
+        "survey_texts_created": true
+      },
+      "compilation": {
+        "srv": {
+          "text_sha256": "d944d286195e7391a35bc682eb426dcdb711171084e56ffe459cc95eb623f9a4",
+          "returncode": -11,
+          "signal": 11,
+          "compiled_named_stations": []
+        },
+        "svx": {
+          "text_sha256": "927388b90a539074b36719c19c8eff034a4d6a85ac9eccf936e3087cf74bae59",
+          "returncode": -11,
+          "signal": 11,
+          "compiled_named_stations": []
+        }
+      }
+    }
+  ]
+}

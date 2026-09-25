@@ -1,0 +1,55 @@
+; PocketTopo P04 survey export. See source document and conversion report.
+; Device dates are unverified. No dates, CRS or reference fixes are inferred.
+; provenance 1/2 {"sha256":"adb83280b6d5a70f383b5542727f675b3ff8a5740058b601d3d49ed27b14895b","bytes":542,"input_format":"PocketTopo v3","tool":"jktz-release-tools","tool_versio
+; provenance 2/2 n":"0.1.0","algorithm_version":"p04-1"}
+; station 1/1 {"raw":-2147483647,"kind":"plain","source_text":"0","walls_name":"0","survex_name":"0","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; station 1/1 {"raw":0,"kind":"major.minor","source_text":"0.0","walls_name":"0.0","survex_name":"0.0","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; station 1/2 {"raw":851967,"kind":"major.minor","source_text":"12.65535","walls_name":"12.65535","survex_name":"12.65535","status":"mapped","walls_mapping":"literal","survex
+; station 2/2 _mapping":"literal"}
+; station 1/2 {"raw":851968,"kind":"major.minor","source_text":"13.0","walls_name":"13.0","survex_name":"13.0","status":"mapped","walls_mapping":"literal","survex_mapping":"l
+; station 2/2 iteral"}
+; trip 1/3 {"index":0,"source_ticks":630822816000000007,"comment":"Synthetic reset-looking date, not field evidence","date_reliability":"unverified_device_clock","establis
+; trip 2/3 hed_date":null,"date_evidence":null,"used_date":null,"declination":{"source_raw":910,"mode":"explicit","stored_degrees":4.998779296875,"applied_degrees":4.99877
+; trip 3/3 9296875,"status":"applied","selected_degrees":4.998779296875,"provenance":"stored_explicit","evidence":null,"unresolved_reason":null}}
+; trip 1/4 {"index":1,"source_ticks":639259776000000009,"comment":"Unicode trip: Za\u017c\u00f3\u0142\u0107 g\u0119\u015bl\u0105 ja\u017a\u0144","date_reliability":"unveri
+; trip 2/4 fied_device_clock","established_date":null,"date_evidence":null,"used_date":null,"declination":{"source_raw":-637,"mode":"explicit","stored_degrees":-3.49914550
+; trip 3/4 78125,"applied_degrees":-3.4991455078125,"status":"applied","selected_degrees":-3.4991455078125,"provenance":"stored_explicit","evidence":null,"unresolved_reaso
+; trip 4/4 n":null}}
+; trip 1/3 {"index":2,"source_ticks":639260640000000001,"comment":"Auto declination sentinel; no CRS asserted","date_reliability":"unverified_device_clock","established_da
+; trip 2/3 te":null,"date_evidence":null,"used_date":null,"declination":{"source_raw":-32768,"mode":"auto","stored_degrees":null,"applied_degrees":null,"status":"not_appli
+; trip 3/3 ed","selected_degrees":null,"provenance":null,"evidence":null,"unresolved_reason":"unresolved_auto"}}
+*begin
+*case preserve
+*truncate off
+*set separator :
+*set names ._-
+*units tape metres
+*units compass clino degrees
+*calibrate tape 0
+*calibrate compass clino 0
+*data normal from to tape compass clino
+
+; group 1/2 {"id":0,"source_indices":[0],"status":"exported","reason":"explicit_correction","declination_degrees":4.998779296875,"correction_provenance":"stored_explicit","
+; group 2/2 correction_evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":0,"from_id":{"raw":-2147483647},"to_id":{"raw":0},"distance_mm":1000,"azimuth_raw":0,"inclination_raw":0,"flags":2,"roll_raw":0,"trip_index":0,"comment
+; source_shot 2/2 ":"plain zero to major.minor zero"}
+*declination 4.998779296875 degrees
+0	0.0	1	0	0
+; group 1/2 {"id":1,"source_indices":[1],"status":"exported","reason":"explicit_correction","declination_degrees":-3.4991455078125,"correction_provenance":"stored_explicit"
+; group 2/2 ,"correction_evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/5 {"index":1,"from_id":{"raw":0},"to_id":{"raw":851967},"distance_mm":2000,"azimuth_raw":16384,"inclination_raw":1820,"flags":3,"roll_raw":0,"trip_index":1,"comme
+; source_shot 2/5 nt":"Za\u017c\u00f3\u0142\u0107 g\u0119\u015bl\u0105 ja\u017a\u0144 \u2014 \u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\
+; source_shot 3/5 u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u010
+; source_shot 4/5 5\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0105\u0
+; source_shot 5/5 105\u0105\u0105"}
+*declination -3.499145507812 degrees
+0.0	12.65535	2	90	9.99755859375
+; group 1/2 {"id":2,"source_indices":[2],"status":"held","reason":"unresolved_auto","declination_degrees":null,"correction_provenance":null,"correction_evidence":null,"srv_
+; group 2/2 line":null,"svx_line":null}
+; source_shot 1/2 {"index":2,"from_id":{"raw":851967},"to_id":{"raw":-2147483648},"distance_mm":3000,"azimuth_raw":-32768,"inclination_raw":-1820,"flags":2,"roll_raw":0,"trip_ind
+; source_shot 2/2 ex":2,"comment":"automatic trip splay"}
+; group 1/2 {"id":3,"source_indices":[3],"status":"held","reason":"missing_trip_correction","declination_degrees":null,"correction_provenance":null,"correction_evidence":nu
+; group 2/2 ll,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":3,"from_id":{"raw":851967},"to_id":{"raw":851968},"distance_mm":4000,"azimuth_raw":-16384,"inclination_raw":0,"flags":2,"roll_raw":0,"trip_index":-1,"c
+; source_shot 2/2 omment":"unassigned trip"}
+*end

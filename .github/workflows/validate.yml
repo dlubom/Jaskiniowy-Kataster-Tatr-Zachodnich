@@ -146,6 +146,11 @@ jobs:
           Write-Host "GDAL bin dir: $gdalBin"
           echo "$gdalBin" >> $env:GITHUB_PATH
 
+      - name: Check PocketTopo SRV and SVX compilation
+        env:
+          JKTZ_REQUIRE_CAVERN: "1"
+        run: uv run pytest -q tests/test_pockettopo_compilation.py
+
       - name: Run full validation
         env:
           GITHUB_TOKEN: ${{ github.token }}

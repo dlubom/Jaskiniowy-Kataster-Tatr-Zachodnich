@@ -1,0 +1,3 @@
+Survex 1.4.22
+Copyright (C) 1990-2026 Olly Betts
+<scratch>/survey.SRV:17:1: info: Survey has no fixed points. Therefore I've fixed 0 at (0,0,0)

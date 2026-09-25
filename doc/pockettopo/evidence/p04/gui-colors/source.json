@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "sha256": "5c7355c7212f99ba11fe76d0d6739c3e3a34c7c060909b3efd41aea5c1f3b362",
+    "bytes": 204,
+    "input_format": "PocketTopo v3",
+    "tool": "jktz-release-tools",
+    "tool_version": "0.1.0",
+    "algorithm_version": "p04-1"
+  },
+  "records": {
+    "trips": [],
+    "shots": [
+      {
+        "from_id": {
+          "raw": -2147483647
+        },
+        "to_id": {
+          "raw": -2147483646
+        },
+        "distance_mm": 10000,
+        "azimuth_raw": 0,
+        "inclination_raw": 0,
+        "flags": 0,
+        "roll_raw": 0,
+        "trip_index": -1,
+        "comment": null
+      }
+    ],
+    "references": [],
+    "overview": {
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": 500
+    },
+    "outline": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": [
+        {
+          "points": [
+            {
+              "x": -5900,
+              "y": 1600
+            }
+          ],
+          "color": 3,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": 6100,
+              "y": -1400
+            }
+          ],
+          "color": 7,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": 6100,
+              "y": -1400
+            }
+          ],
+          "color": 6,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": 4100,
+              "y": -1900
+            }
+          ],
+          "color": 6,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": 2100,
+              "y": -2400
+            }
+          ],
+          "color": 5,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": -1900,
+              "y": -2900
+            }
+          ],
+          "color": 4,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": -3900,
+              "y": -3400
+            }
+          ],
+          "color": 2,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": -5900,
+              "y": -3900
+            }
+          ],
+          "color": 2,
+          "kind": "polygon"
+        },
+        {
+          "points": [
+            {
+              "x": -7900,
+              "y": -4400
+            }
+          ],
+          "color": 1,
+          "kind": "polygon"
+        }
+      ]
+    },
+    "sideview": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": []
+    },
+    "ending": "zero_trailer"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "sha256": "9034cf5e52f92a8713c7823bd9be52bdb50b294966a9e9713c538b937b7feb5f",
+    "bytes": 248,
+    "input_format": "PocketTopo v3",
+    "tool": "jktz-release-tools",
+    "tool_version": "0.1.0",
+    "algorithm_version": "p04-1"
+  },
+  "records": {
+    "trips": [
+      {
+        "ticks": 632401344000000000,
+        "comment": "Synthetic coordinates in unspecified CRS",
+        "declination_raw": -364
+      }
+    ],
+    "shots": [
+      {
+        "from_id": {
+          "raw": -2147483647
+        },
+        "to_id": {
+          "raw": -2147483646
+        },
+        "distance_mm": 1000,
+        "azimuth_raw": 16384,
+        "inclination_raw": 0,
+        "flags": 0,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": null
+      }
+    ],
+    "references": [
+      {
+        "station": {
+          "raw": -2147483647
+        },
+        "east_mm": -4000000001,
+        "north_mm": -5000000002,
+        "altitude_mm": -1250,
+        "comment": "ujemne E/N/Z; żadnego przypisania CRS"
+      },
+      {
+        "station": {
+          "raw": -2147483647
+        },
+        "east_mm": 6000000003,
+        "north_mm": 7000000004,
+        "altitude_mm": 1500250,
+        "comment": "positive int64 E/N beyond int32"
+      }
+    ],
+    "overview": {
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": 500
+    },
+    "outline": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": []
+    },
+    "sideview": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": []
+    },
+    "ending": "zero_trailer"
+  }
+}

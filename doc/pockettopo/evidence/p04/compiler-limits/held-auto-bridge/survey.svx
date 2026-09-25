@@ -1,0 +1,42 @@
+; PocketTopo P04 survey export. See source document and conversion report.
+; Device dates are unverified. No dates, CRS or reference fixes are inferred.
+; provenance 1/2 {"sha256":"e041f28302478adfb694a5f28811222f688440286cd89897189925d5985fd0f3","bytes":136,"input_format":"PocketTopo v3","tool":"jktz-release-tools","tool_versio
+; provenance 2/2 n":"0.1.0","algorithm_version":"p04-1"}
+; station 1/1 {"raw":-2147483647,"kind":"plain","source_text":"0","walls_name":"0","survex_name":"0","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; station 1/1 {"raw":-2147483646,"kind":"plain","source_text":"1","walls_name":"1","survex_name":"1","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; station 1/1 {"raw":-2147483645,"kind":"plain","source_text":"2","walls_name":"2","survex_name":"2","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; station 1/1 {"raw":-2147483644,"kind":"plain","source_text":"3","walls_name":"3","survex_name":"3","status":"mapped","walls_mapping":"literal","survex_mapping":"literal"}
+; trip 1/3 {"index":0,"source_ticks":635573952000000000,"comment":"","date_reliability":"unverified_device_clock","established_date":null,"date_evidence":null,"used_date":
+; trip 2/3 null,"declination":{"source_raw":0,"mode":"explicit","stored_degrees":0.0,"applied_degrees":0.0,"status":"applied","selected_degrees":0.0,"provenance":"stored_e
+; trip 3/3 xplicit","evidence":null,"unresolved_reason":null}}
+; trip 1/3 {"index":1,"source_ticks":635573952000000000,"comment":"","date_reliability":"unverified_device_clock","established_date":null,"date_evidence":null,"used_date":
+; trip 2/3 null,"declination":{"source_raw":-32768,"mode":"auto","stored_degrees":null,"applied_degrees":null,"status":"not_applied","selected_degrees":null,"provenance":n
+; trip 3/3 ull,"evidence":null,"unresolved_reason":"unresolved_auto"}}
+*begin
+*case preserve
+*truncate off
+*set separator :
+*set names ._-
+*units tape metres
+*units compass clino degrees
+*calibrate tape 0
+*calibrate compass clino 0
+*data normal from to tape compass clino
+
+; group 1/2 {"id":0,"source_indices":[0],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":0,"from_id":{"raw":-2147483647},"to_id":{"raw":-2147483646},"distance_mm":1234,"azimuth_raw":0,"inclination_raw":0,"flags":0,"roll_raw":0,"trip_index":
+; source_shot 2/2 0,"comment":null}
+*declination 0 degrees
+0	1	1.234	0	0
+; group 1/2 {"id":1,"source_indices":[1],"status":"held","reason":"unresolved_auto","declination_degrees":null,"correction_provenance":null,"correction_evidence":null,"srv_
+; group 2/2 line":null,"svx_line":null}
+; source_shot 1/2 {"index":1,"from_id":{"raw":-2147483646},"to_id":{"raw":-2147483645},"distance_mm":1234,"azimuth_raw":0,"inclination_raw":0,"flags":0,"roll_raw":0,"trip_index":
+; source_shot 2/2 1,"comment":null}
+; group 1/2 {"id":2,"source_indices":[2],"status":"exported","reason":"explicit_correction","declination_degrees":0.0,"correction_provenance":"stored_explicit","correction_
+; group 2/2 evidence":null,"srv_line":null,"svx_line":null}
+; source_shot 1/2 {"index":2,"from_id":{"raw":-2147483645},"to_id":{"raw":-2147483644},"distance_mm":1234,"azimuth_raw":0,"inclination_raw":0,"flags":0,"roll_raw":0,"trip_index":
+; source_shot 2/2 0,"comment":null}
+*declination 0 degrees
+2	3	1.234	0	0
+*end
