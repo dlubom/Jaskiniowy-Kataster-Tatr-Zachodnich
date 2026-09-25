@@ -4,14 +4,13 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [v1.4.7] - 2026-09-25
 
 ### Zmienione
-- Przyjęto ciąg Kujata jako główny pomiar Czarnej, zachowując górną drogę Borowca i wszystkie dotychczasowe ciągi boczne. Pełny ciąg Borowca pozostaje w Walls jako historyczny, odłączony od kompilacji.
-- Uzupełniono konwersję manuala Walls z PDF, uporządkowano przykłady i tabele oraz zaktualizowano dokumentację Survexa do 1.4.22 z informacją o źródłach. AGENTS.md i istniejące skille wskazują manuale przy problemach ze składnią i opisują precyzyjne wyszukiwanie w JSONL PIG.
-- Dodano twarde bramki jakości narzędzi Pythona (95% linii, 90% gałęzi, CRAP ≤25, mutacje ≥81% na moduł rdzenia), kontrolę kompletności zakresu i testowane przygotowanie metadanych wydań zamiast `sed`/`awk`. Poprawiono odrzucanie wadliwego CSV GPS, śledzenie stanu jednostek Walls i pomijanie własnego pliku ZIP podczas pakowania; testy porównawcze migracji chronią także formatowanie Markdown release notes.
-- Przejście na Codex jako domyślnego agenta projektu oraz uporządkowanie instrukcji, skilli i hooków.
-- Zweryfikowano datowanie i autorstwo pomiarów Jaskini Psiej oraz uporządkowano odnośniki do źródeł. W komentarzach SRV opisano niepewne odczyty; wartości pomiarów i oryginalne materiały `_RAW` pozostają bez zmian.
+
+- Czarna: przyjęto ciąg Kujata jako główny, zachowując górną drogę Borowca i ciągi boczne, w tym osobny pomiar Szymona Kostki. Uzyskano znacznie mniejszy błąd niedomknięcia między otworami I i III. Pełny ciąg Borowca zachowano jako historyczny, wyłączony z kompilacji.
+- Psia: zweryfikowano datowanie, autorstwo i źródła pomiarów oraz opisano niepewne odczyty, bez zmiany wartości pomiarowych.
+- Usprawniono walidację danych i przygotowanie wydań oraz zaktualizowano dokumentację i narzędzia projektu.
 
 ## [v1.4.6] - 2026-06-21
 
