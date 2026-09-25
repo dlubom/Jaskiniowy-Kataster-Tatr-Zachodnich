@@ -12,6 +12,7 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 - P01 PocketTopo: sześć niezależnych wzorców aplikacji z natywnymi TXT/DXF, oczekiwaniami i audytem każdego pola oraz wierzchołka; rozpoznanie zakończenia pliku i automatycznej deklinacji, próba resvg na macOS/Linux.
 
 - Trzy rzeczywiste wzorce PocketTopo z test2: 15 serii potrójnych, szkice planu i przekroju oraz natywne TXT/DXF; zgodność 50 rekordów i 2540 wierzchołków.
+- P02 PocketTopo: ścisły parser `.top` v3 i niezmienny model surowych danych, niezależne testy rekordów i uszkodzeń oraz rozszerzenie bramki mutacyjnej o parser i model.
 
 ## [v1.4.7] - 2026-09-25
 

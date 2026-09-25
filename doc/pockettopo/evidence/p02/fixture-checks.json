@@ -1,0 +1,154 @@
+{
+  "date": "2026-09-25",
+  "baseline_commit": "ad7d7fa8681c6432e17bee8308c6a29c94214d21",
+  "method": "Invoke the committed fixture tests against frozen pre-P02 expectations; no writer or native application rerun.",
+  "test_file": "tests/test_pockettopo_fixtures.py",
+  "test_sha256": "385d688096a78225d6cd0cfc6d529b26371796fb4036e53b1ba130a65aec0100",
+  "p01_cases": [
+    {
+      "case": "api-cardinal",
+      "source": "doc/pockettopo/evidence/p01/cases/api-cardinal/api-cardinal.top",
+      "source_sha256": "64ac69ee1746272a503895256523f386765847c01da81009292fdf29225a9c8e",
+      "oracle_sha256": "a32eb6b22ab9fe4d3728c93a1597d8a19b14c307de09f8449507641d222c20ed",
+      "all_raw_fields_and_vertices_match": true,
+      "trips": 1,
+      "shots": 11,
+      "references": 0,
+      "vertices": 0,
+      "xsections": 0,
+      "truncated_prefixes_rejected": 464,
+      "schema_eof_accepted": true,
+      "native_zero_trailer_accepted": true
+    },
+    {
+      "case": "api-drawings",
+      "source": "doc/pockettopo/evidence/p01/cases/api-drawings/api-drawings.top",
+      "source_sha256": "4a494ead03cade750f670d50aa38661abda9b3e1f131d67f27a252982752c2a5",
+      "oracle_sha256": "93e3c3de6f8c899d76e9e0f284df5ae3e0a2b51995ecfbc9619cafe4f5c968d3",
+      "all_raw_fields_and_vertices_match": true,
+      "trips": 1,
+      "shots": 2,
+      "references": 0,
+      "vertices": 44,
+      "xsections": 4,
+      "truncated_prefixes_rejected": 679,
+      "schema_eof_accepted": true,
+      "native_zero_trailer_accepted": true
+    },
+    {
+      "case": "api-references",
+      "source": "doc/pockettopo/evidence/p01/cases/api-references/api-references.top",
+      "source_sha256": "9034cf5e52f92a8713c7823bd9be52bdb50b294966a9e9713c538b937b7feb5f",
+      "oracle_sha256": "93d8bb70baf630b2be35d6ec0268435c999cc4882b8ea1f143b228b2cc0c7d9f",
+      "all_raw_fields_and_vertices_match": true,
+      "trips": 1,
+      "shots": 1,
+      "references": 2,
+      "vertices": 0,
+      "xsections": 0,
+      "truncated_prefixes_rejected": 247,
+      "schema_eof_accepted": true,
+      "native_zero_trailer_accepted": true
+    },
+    {
+      "case": "api-trips-ids",
+      "source": "doc/pockettopo/evidence/p01/cases/api-trips-ids/api-trips-ids.top",
+      "source_sha256": "adb83280b6d5a70f383b5542727f675b3ff8a5740058b601d3d49ed27b14895b",
+      "oracle_sha256": "df6e0ca6ba56ca426e7ef44a62802f4af899b5b8fad97c7b9ab10253446cc2a6",
+      "all_raw_fields_and_vertices_match": true,
+      "trips": 3,
+      "shots": 4,
+      "references": 0,
+      "vertices": 0,
+      "xsections": 0,
+      "truncated_prefixes_rejected": 541,
+      "schema_eof_accepted": true,
+      "native_zero_trailer_accepted": true
+    },
+    {
+      "case": "gui-cardinal",
+      "source": "doc/pockettopo/evidence/p01/cases/gui-cardinal/source.top",
+      "source_sha256": "27b93102584d76840192d97e242cc30df38edbc551da244a033773095ae87bfb",
+      "oracle_sha256": "ab384d96f717ba447e1f49d44e0ad04267ddda642710f9e17962b9b8d93c2a2b",
+      "all_raw_fields_and_vertices_match": true,
+      "trips": 0,
+      "shots": 1,
+      "references": 0,
+      "vertices": 0,
+      "xsections": 0,
+      "truncated_prefixes_rejected": 77,
+      "schema_eof_accepted": true,
+      "native_zero_trailer_accepted": true
+    },
+    {
+      "case": "gui-colors",
+      "source": "doc/pockettopo/evidence/p01/cases/gui-colors/source.top",
+      "source_sha256": "5c7355c7212f99ba11fe76d0d6739c3e3a34c7c060909b3efd41aea5c1f3b362",
+      "oracle_sha256": "e7bda1959b211e230c31af4bdbdabb9fa6e729cc0c6a0c9fd769e7b244728da3",
+      "all_raw_fields_and_vertices_match": true,
+      "trips": 0,
+      "shots": 1,
+      "references": 0,
+      "vertices": 9,
+      "xsections": 0,
+      "truncated_prefixes_rejected": 203,
+      "schema_eof_accepted": true,
+      "native_zero_trailer_accepted": true
+    }
+  ],
+  "real_cases": [
+    {
+      "source": "doc/pockettopo/evidence/repeat-candidates/DS201208/DS201208.top",
+      "source_sha256": "edf6da168275bf334f413557e402ad14a03191141779a1466d71d230702da870",
+      "oracle_sha256": "c531553d0639084a4da4a48948134bee08b8256cd19bffe0b5108a822b504238",
+      "all_raw_fields_and_vertices_match": true,
+      "trips": 1,
+      "shots": 25,
+      "references": 0,
+      "vertices": 1271,
+      "xsections": 0
+    },
+    {
+      "source": "doc/pockettopo/evidence/repeat-candidates/okna/okna.top",
+      "source_sha256": "52e16f9561f2fbf3b66e595c29fce113c9ed1cc44fc5865897cb5f06b1aaba94",
+      "oracle_sha256": "bcf071947393046276495961496c475e3045cbc82a110bb84418078c0d377e7b",
+      "all_raw_fields_and_vertices_match": true,
+      "trips": 1,
+      "shots": 14,
+      "references": 0,
+      "vertices": 357,
+      "xsections": 0
+    },
+    {
+      "source": "doc/pockettopo/evidence/repeat-candidates/zach0dni2/zach0dni2.top",
+      "source_sha256": "a7a165750b0a3b03b19f72050219ffd28b22defa7fc68163a383b98236e994e4",
+      "oracle_sha256": "a723a36e7b4c2ea847d1259b6f5c961aa132121f70bea339a53a7bcb82ffac7b",
+      "all_raw_fields_and_vertices_match": true,
+      "trips": 1,
+      "shots": 11,
+      "references": 0,
+      "vertices": 912,
+      "xsections": 0
+    }
+  ],
+  "p01_totals": {
+    "trips": 6,
+    "shots": 20,
+    "references": 2,
+    "vertices": 53,
+    "xsections": 4,
+    "truncated_prefixes_rejected": 2211
+  },
+  "real_totals": {
+    "trips": 3,
+    "shots": 50,
+    "references": 0,
+    "vertices": 2540,
+    "xsections": 0
+  },
+  "source_preservation": "all bytes unchanged, including separate SHA256SUMS verification of 55 P01 and 21 repeat-candidate artifacts",
+  "limitations": [
+    "Real source-records.json originated with a separate inspector and P01 native TXT/DXF audit, not hand-entered source expectations.",
+    "No repeated averaging, export geometry, DXF audit or source.json output is implemented in P02."
+  ]
+}

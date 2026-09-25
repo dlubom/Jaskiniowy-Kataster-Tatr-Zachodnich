@@ -63,13 +63,15 @@ mutation_min = 81
 
 [tool.mutmut]
 source_paths = ["src/"]
-also_copy = ["Poligony/OTWORY.SRV.j2"]
+also_copy = ["Poligony/OTWORY.SRV.j2", "doc/pockettopo/evidence"]
 only_mutate = [
   "src/jktz/metadata/io.py",
   "src/jktz/metadata/raw.py",
   "src/jktz/metadata/srv.py",
   "src/jktz/entrances/render.py",
   "src/jktz/validation/measurements.py",
+  "src/jktz/pockettopo/model.py",
+  "src/jktz/pockettopo/parser.py",
 ]
 pytest_add_cli_args = ["-q", "-x"]
 pytest_add_cli_args_test_selection = [
@@ -79,6 +81,8 @@ pytest_add_cli_args_test_selection = [
   "tests/test_srv_metadata_cli.py",
   "tests/test_render_otwory.py",
   "tests/test_validation_measurements.py",
+  "tests/test_pockettopo_parser.py",
+  "tests/test_pockettopo_fixtures.py",
 ]
 mutate_only_covered_lines = false
 use_setproctitle = false

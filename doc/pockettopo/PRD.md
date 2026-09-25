@@ -1,15 +1,15 @@
 # PocketTopo: konwersja pomiarów i ekstrakcja szkiców
 
-Stan: **2026-09-25 — P01 zakończone, następny etap P02 (parser i model)**.
+Stan: **2026-09-25 — P02 zakończone, następny etap P03 (średnie i raport)**.
 Branch roboczy: `codex/pockettopo-convert`, początek: `a6c235c898eed57902a2d6ba18db60917e01faee`.
 
 ## Wznowienie po wyczyszczeniu kontekstu
 
 1. Przeczytaj `AGENTS.md`, ten PRD i sprawdź `git status` oraz bieżący branch.
-2. **Następne zadanie: P02 — ścisły parser i model.** Nie powtarzaj researchu
-   narzędzi ani tworzenia wzorców P01.
-3. Przeczytaj [format v3](FORMAT_V3.md), [wyniki P01](evidence/p01/README.md)
-   i [oczekiwania dla każdego rekordu](evidence/p01/EXPECTATIONS.md).
+2. **Następne zadanie: P03 — średnie i raport.** Nie powtarzaj researchu,
+   tworzenia wzorców P01 ani implementacji parsera P02.
+3. Przeczytaj [format v3](FORMAT_V3.md), [API i wyniki P02](evidence/p02/README.md)
+   oraz [oczekiwania dla każdego rekordu](evidence/p01/EXPECTATIONS.md).
    Wzorce `cases/*/expected.json` są niezależne od przyszłego parsera.
    Dostęp do aplikacji opisuje [instrukcja macOS](POCKETTOPO_MACOS.md).
 4. Po etapie aktualizuj tabelę postępu i dowody walidacji w repozytorium,
@@ -18,9 +18,11 @@ Branch roboczy: `codex/pockettopo-convert`, początek: `a6c235c898eed57902a2d6ba
 Polecenie do wznowienia:
 
 > Kontynuuj na `codex/pockettopo-convert` według `doc/pockettopo/PRD.md`.
-> Wykonaj P02: ścisły parser i model na podstawie FORMAT_V3.md oraz wzorców P01.
-> Zachowaj surowe wartości i niezależne oryginały, sprawdź błędy wejścia,
-> zapisz wyniki walidacji oraz postęp w PRD. Zakończ po P02.
+> Wykonaj P03: grupy potwierdzonych powtórzeń, matematykę średnich i raport
+> ze śladem każdego rekordu, korzystając z modelu i parsera P02.
+> Nie uznawaj samych nazw stacji i podobnej geometrii za potwierdzenie powtórzeń.
+> Zachowaj surowe wartości i niezależne oryginały; sprawdź przypadki graniczne,
+> zapisz wyniki walidacji oraz postęp w PRD. Zakończ po P03.
 
 ## Cel i ustalone wybory
 
@@ -119,6 +121,7 @@ upoważnia do przyjęcia jawnego zera ani automatycznego wyliczenia IGRF.
 
 Docelowo: `src/jktz/pockettopo/` (model, parser, matematyka, eksport, raport),
 `src/jktz/cli/pockettopo.py` oraz `.agents/skills/pockettopo-convert/SKILL.md`.
+P02 udostępnia już bibliotekę `parse_bytes` / `read_top` oraz niezmienny model.
 Proponowane komendy `uv run jktz-pockettopo inspect ...` i `convert ...`
 **jeszcze nie istnieją**. Nie budujemy łańcucha `.top → zaokrąglony SRV → średnie`.
 
@@ -126,8 +129,8 @@ Proponowane komendy `uv run jktz-pockettopo inspect ...` i `convert ...`
 | --- | --- | --- |
 | P00 Research i dostęp | Źródła, decyzje, natywny eksport Shadow i instrukcja wznowienia zapisane w repo | Gotowe |
 | P01 Wzorce aplikacji | 6 małych `.top` (2 GUI, 4 natywny model/API), TXT/DXF, oczekiwania każdego pola, końcowe 4 zera i Auto; resvg sprawdzony na macOS/Linux | Gotowe — [dowody](evidence/p01/README.md) |
-| P02 Parser i model | Ścisły odczyt wszystkich struktur; testy błędów, zakresów i niezależnych wzorców | Następny |
-| P03 Średnie i raport | Grupy potwierdzonych powtórzeń, matematyka, ślad każdego rekordu i testy graniczne | Do zrobienia |
+| P02 Parser i model | Ścisły odczyt wszystkich struktur; 211 testów P02, pełny korpus 258/258, jakość i mutacje | Gotowe — [dowody](evidence/p02/README.md) |
+| P03 Średnie i raport | Grupy potwierdzonych powtórzeń, matematyka, ślad każdego rekordu i testy graniczne | Następny |
 | P04 SRV/SVX | Zachowanie semantyki, kompilacja obu formatów i porównanie geometrii; sprawdzenie w Walls | Do zrobienia |
 | P05 SVG/PNG | Oba widoki i warianty, XSection, warstwy, renderer bez GUI; kontrola punktów i obrazów | Do zrobienia |
 | P06 CLI i skill | Atomowy pakiet wynikowy, instrukcje skilla, niezależna próba użycia i pełna walidacja | Do zrobienia |
@@ -175,12 +178,25 @@ macOS i Linux; integracja w konwerterze/CI pozostaje P05/P06.
 Do rozstrzygnięcia w etapach: podkład w pętlach/rozgałęzieniach, ogólna projekcja
 XSection z domiarami, progi niejednoznaczności średniej, fonty/paleta rysunków
 oraz format profilu metadanych dla aktywnego JKTZ. Natywny DXF uśrednia własnym
-algorytmem i nie zastępuje kontraktu średnich P03. Pełny korpus 258 plików
-oraz audyt współrzędnych Shadow pozostają do wykonania w dalszych etapach.
+algorytmem i nie zastępuje kontraktu średnich P03. Odczyt pełnego korpusu 258 plików
+sprawdzono w P02; porównanie przyszłych eksportów korpusu oraz audyt współrzędnych
+Shadow pozostają do wykonania w dalszych etapach.
 Nie deklarować pełnej zgodności przed spełnieniem kryteriów odbioru.
 
 Uzupełnienie P01 (2026-09-25): trzy rzeczywiste źródła z test2 zawierają 15 serii
 potrójnych i oba szkice. Natywne TXT: 50 rekordów zgodnych; DXF: 2540
 wierzchołków zgodnych wraz z kolorami i kolejnością.
 [Dobór](REPEAT_CANDIDATES.md), [dowody i ograniczenia](evidence/repeat-candidates/README.md).
-Następny etap pozostaje P02.
+Wzorce wykorzystano w P02.
+
+P02 (2026-09-25): niezmienny model i ścisły parser zachowują surowe wartości,
+rozpoznają Auto i oba zakończenia, odrzucają błędne struktury i przekroczenia
+limitów z kodem/offsetem/kontekstem. Porównano każde pole i wierzchołek dziewięciu
+wzorców; 2211 ucięć sześciu P01 odrzucono. Pełny korpus: 258/258 źródeł,
+262/262 zgodne obiekty Git, zero błędów; 256 zakończeń z zerami i dwa EOF.
+Bramki: 596 testów, 96,52% linii / 93,82% gałęzi, maksymalny CRAP 21,54;
+mutacje modelu 37/37, parsera 635/703, każdy z siedmiu modułów ≥81%.
+[Dowody i instrukcja biblioteki](evidence/p02/README.md),
+[korpus i reprodukcja](evidence/p02/CORPUS.md),
+[wyniki bramek](evidence/p02/repository-checks.json).
+Następny etap: **P03**. CLI, eksporty i raport konwersji jeszcze nie istnieją.

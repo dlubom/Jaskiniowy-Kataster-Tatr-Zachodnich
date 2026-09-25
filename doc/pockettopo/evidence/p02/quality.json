@@ -1,0 +1,1269 @@
+{
+  "files": [
+    ".agents/skills/average-shots/average_shots.py",
+    ".agents/skills/gnss-to-wgs84/gnss_to_wgs84.py",
+    ".agents/skills/utm34n-wgs84/utm34n_wgs84.py",
+    "scripts/initial-setup.py",
+    "src/jktz/__init__.py",
+    "src/jktz/cli/__init__.py",
+    "src/jktz/cli/build_zip.py",
+    "src/jktz/cli/exports.py",
+    "src/jktz/cli/mutation.py",
+    "src/jktz/cli/quality.py",
+    "src/jktz/cli/release_metadata.py",
+    "src/jktz/cli/render_otwory.py",
+    "src/jktz/cli/srv_metadata.py",
+    "src/jktz/cli/survex_stats.py",
+    "src/jktz/cli/validate.py",
+    "src/jktz/entrances/__init__.py",
+    "src/jktz/entrances/render.py",
+    "src/jktz/exports/__init__.py",
+    "src/jktz/exports/pipeline.py",
+    "src/jktz/exports/tools.py",
+    "src/jktz/metadata/__init__.py",
+    "src/jktz/metadata/errors.py",
+    "src/jktz/metadata/io.py",
+    "src/jktz/metadata/raw.py",
+    "src/jktz/metadata/srv.py",
+    "src/jktz/packaging.py",
+    "src/jktz/pockettopo/__init__.py",
+    "src/jktz/pockettopo/model.py",
+    "src/jktz/pockettopo/parser.py",
+    "src/jktz/quality.py",
+    "src/jktz/reporting.py",
+    "src/jktz/validation/__init__.py",
+    "src/jktz/validation/_utils.py",
+    "src/jktz/validation/cavern_warnings.py",
+    "src/jktz/validation/constants.py",
+    "src/jktz/validation/coordinates.py",
+    "src/jktz/validation/decimal_format.py",
+    "src/jktz/validation/directives.py",
+    "src/jktz/validation/empty_shapefiles.py",
+    "src/jktz/validation/filenames.py",
+    "src/jktz/validation/measurements.py",
+    "src/jktz/validation/metadata.py",
+    "src/jktz/validation/non_ascii.py",
+    "src/jktz/validation/prefixes.py",
+    "src/jktz/validation/shapefiles_count.py",
+    "src/jktz/validation/shapefiles_extent.py",
+    "src/jktz/validation/suite.py",
+    "src/jktz/validation/unattached.py",
+    "web/patch-caveview.py"
+  ],
+  "line_percent": 96.51855245075585,
+  "branch_percent": 93.82183908045977,
+  "functions": [
+    {
+      "file": "src/jktz/validation/coordinates.py",
+      "function": "check",
+      "complexity": 21,
+      "coverage": 0.8928571428571429,
+      "crap": 21.542410714285715
+    },
+    {
+      "file": ".agents/skills/average-shots/average_shots.py",
+      "function": "average_shots",
+      "complexity": 19,
+      "coverage": 1.0,
+      "crap": 19.0
+    },
+    {
+      "file": "src/jktz/metadata/raw.py",
+      "function": "parse_raw_metadata",
+      "complexity": 18,
+      "coverage": 1.0,
+      "crap": 18.0
+    },
+    {
+      "file": "src/jktz/metadata/srv.py",
+      "function": "parse_srv_metadata",
+      "complexity": 15,
+      "coverage": 0.8888888888888888,
+      "crap": 15.308641975308642
+    },
+    {
+      "file": "src/jktz/quality.py",
+      "function": "coverage_result",
+      "complexity": 15,
+      "coverage": 1.0,
+      "crap": 15.0
+    },
+    {
+      "file": "src/jktz/validation/metadata.py",
+      "function": "_git_ignored_untracked",
+      "complexity": 14,
+      "coverage": 0.8823529411764706,
+      "crap": 14.31915326684307
+    },
+    {
+      "file": ".agents/skills/utm34n-wgs84/utm34n_wgs84.py",
+      "function": "main",
+      "complexity": 14,
+      "coverage": 1.0,
+      "crap": 14.0
+    },
+    {
+      "file": "src/jktz/validation/measurements.py",
+      "function": "has_dated_or_declared_active_shots",
+      "complexity": 14,
+      "coverage": 1.0,
+      "crap": 14.0
+    },
+    {
+      "file": "src/jktz/entrances/render.py",
+      "function": "_parse_gps_fix_args",
+      "complexity": 7,
+      "coverage": 0.5,
+      "crap": 13.125
+    },
+    {
+      "file": "src/jktz/validation/metadata.py",
+      "function": "check",
+      "complexity": 13,
+      "coverage": 1.0,
+      "crap": 13.0
+    },
+    {
+      "file": "src/jktz/validation/metadata.py",
+      "function": "_check_raw_package",
+      "complexity": 10,
+      "coverage": 0.75,
+      "crap": 11.5625
+    },
+    {
+      "file": "src/jktz/cli/srv_metadata.py",
+      "function": "_run_srv_update",
+      "complexity": 8,
+      "coverage": 0.625,
+      "crap": 11.375
+    },
+    {
+      "file": ".agents/skills/average-shots/average_shots.py",
+      "function": "is_shot_line",
+      "complexity": 11,
+      "coverage": 1.0,
+      "crap": 11.0
+    },
+    {
+      "file": "src/jktz/metadata/srv.py",
+      "function": "_validate_field",
+      "complexity": 11,
+      "coverage": 1.0,
+      "crap": 11.0
+    },
+    {
+      "file": "src/jktz/validation/measurements.py",
+      "function": "_apply_units",
+      "complexity": 11,
+      "coverage": 1.0,
+      "crap": 11.0
+    },
+    {
+      "file": "src/jktz/validation/non_ascii.py",
+      "function": "check",
+      "complexity": 10,
+      "coverage": 0.9130434782608695,
+      "crap": 10.065751623243198
+    },
+    {
+      "file": "src/jktz/validation/filenames.py",
+      "function": "check",
+      "complexity": 9,
+      "coverage": 0.9166666666666666,
+      "crap": 9.046875
+    },
+    {
+      "file": "src/jktz/validation/shapefiles_extent.py",
+      "function": "check",
+      "complexity": 9,
+      "coverage": 0.9166666666666666,
+      "crap": 9.046875
+    },
+    {
+      "file": ".agents/skills/gnss-to-wgs84/gnss_to_wgs84.py",
+      "function": "main",
+      "complexity": 9,
+      "coverage": 1.0,
+      "crap": 9.0
+    },
+    {
+      "file": "src/jktz/quality.py",
+      "function": "mutation_result",
+      "complexity": 9,
+      "coverage": 1.0,
+      "crap": 9.0
+    },
+    {
+      "file": "src/jktz/entrances/render.py",
+      "function": "_load_best_measurements",
+      "complexity": 8,
+      "coverage": 1.0,
+      "crap": 8.0
+    },
+    {
+      "file": "src/jktz/exports/tools.py",
+      "function": "_stream_subprocess",
+      "complexity": 8,
+      "coverage": 1.0,
+      "crap": 8.0
+    },
+    {
+      "file": "src/jktz/metadata/srv.py",
+      "function": "format_srv_metadata",
+      "complexity": 8,
+      "coverage": 1.0,
+      "crap": 8.0
+    },
+    {
+      "file": "src/jktz/validation/metadata.py",
+      "function": "_check_raw_inventory",
+      "complexity": 8,
+      "coverage": 1.0,
+      "crap": 8.0
+    },
+    {
+      "file": "src/jktz/validation/metadata.py",
+      "function": "_check_source_ref_package",
+      "complexity": 4,
+      "coverage": 0.375,
+      "crap": 7.90625
+    },
+    {
+      "file": "src/jktz/exports/pipeline.py",
+      "function": "_wait_for_readable",
+      "complexity": 7,
+      "coverage": 0.7619047619047619,
+      "crap": 7.661375661375661
+    },
+    {
+      "file": "src/jktz/metadata/srv.py",
+      "function": "_validate_date",
+      "complexity": 7,
+      "coverage": 0.875,
+      "crap": 7.095703125
+    },
+    {
+      "file": "src/jktz/cli/srv_metadata.py",
+      "function": "main",
+      "complexity": 7,
+      "coverage": 0.9,
+      "crap": 7.049
+    },
+    {
+      "file": ".agents/skills/gnss-to-wgs84/gnss_to_wgs84.py",
+      "function": "validate_input",
+      "complexity": 7,
+      "coverage": 1.0,
+      "crap": 7.0
+    },
+    {
+      "file": "scripts/initial-setup.py",
+      "function": "main",
+      "complexity": 7,
+      "coverage": 1.0,
+      "crap": 7.0
+    },
+    {
+      "file": "src/jktz/entrances/render.py",
+      "function": "_download_latest_best_measurements",
+      "complexity": 7,
+      "coverage": 1.0,
+      "crap": 7.0
+    },
+    {
+      "file": "src/jktz/packaging.py",
+      "function": "build_release_zip",
+      "complexity": 7,
+      "coverage": 1.0,
+      "crap": 7.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "parse_bytes",
+      "complexity": 7,
+      "coverage": 1.0,
+      "crap": 7.0
+    },
+    {
+      "file": "web/patch-caveview.py",
+      "function": "patch_tree_traversal",
+      "complexity": 7,
+      "coverage": 1.0,
+      "crap": 7.0
+    },
+    {
+      "file": "src/jktz/validation/metadata.py",
+      "function": "_check_srv",
+      "complexity": 6,
+      "coverage": 0.8333333333333334,
+      "crap": 6.166666666666667
+    },
+    {
+      "file": "src/jktz/cli/mutation.py",
+      "function": "main",
+      "complexity": 6,
+      "coverage": 1.0,
+      "crap": 6.0
+    },
+    {
+      "file": "src/jktz/cli/release_metadata.py",
+      "function": "extract_release_notes",
+      "complexity": 6,
+      "coverage": 1.0,
+      "crap": 6.0
+    },
+    {
+      "file": "src/jktz/cli/release_metadata.py",
+      "function": "prepare_release_metadata",
+      "complexity": 6,
+      "coverage": 1.0,
+      "crap": 6.0
+    },
+    {
+      "file": "src/jktz/entrances/render.py",
+      "function": "_gps_fix",
+      "complexity": 6,
+      "coverage": 1.0,
+      "crap": 6.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "_Reader.drawing",
+      "complexity": 6,
+      "coverage": 1.0,
+      "crap": 6.0
+    },
+    {
+      "file": "src/jktz/validation/metadata.py",
+      "function": "_check_raw_root",
+      "complexity": 6,
+      "coverage": 1.0,
+      "crap": 6.0
+    },
+    {
+      "file": "src/jktz/validation/metadata.py",
+      "function": "_inventory_path",
+      "complexity": 6,
+      "coverage": 1.0,
+      "crap": 6.0
+    },
+    {
+      "file": "src/jktz/validation/unattached.py",
+      "function": "check",
+      "complexity": 6,
+      "coverage": 1.0,
+      "crap": 6.0
+    },
+    {
+      "file": "src/jktz/metadata/srv.py",
+      "function": "_is_valid_contract_date",
+      "complexity": 5,
+      "coverage": 0.75,
+      "crap": 5.390625
+    },
+    {
+      "file": "src/jktz/metadata/srv.py",
+      "function": "validate_source_ref",
+      "complexity": 5,
+      "coverage": 0.75,
+      "crap": 5.390625
+    },
+    {
+      "file": "src/jktz/validation/shapefiles_extent.py",
+      "function": "_wgs84_bbox_of_shapefile",
+      "complexity": 5,
+      "coverage": 0.75,
+      "crap": 5.390625
+    },
+    {
+      "file": "src/jktz/metadata/srv.py",
+      "function": "is_active_srv_path",
+      "complexity": 5,
+      "coverage": 0.8,
+      "crap": 5.2
+    },
+    {
+      "file": "src/jktz/cli/quality.py",
+      "function": "main",
+      "complexity": 5,
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "file": "src/jktz/metadata/raw.py",
+      "function": "material_hashes",
+      "complexity": 5,
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "file": "src/jktz/metadata/srv.py",
+      "function": "default_metadata",
+      "complexity": 5,
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "file": "src/jktz/metadata/srv.py",
+      "function": "append_processing",
+      "complexity": 5,
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "_Reader.string_length",
+      "complexity": 5,
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "file": "src/jktz/quality.py",
+      "function": "_functions",
+      "complexity": 5,
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "file": "src/jktz/validation/decimal_format.py",
+      "function": "check",
+      "complexity": 5,
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "file": "src/jktz/validation/directives.py",
+      "function": "check",
+      "complexity": 5,
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "file": "src/jktz/validation/empty_shapefiles.py",
+      "function": "check",
+      "complexity": 5,
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "file": "src/jktz/validation/metadata.py",
+      "function": "_raw_package_material",
+      "complexity": 5,
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "file": "src/jktz/validation/prefixes.py",
+      "function": "check",
+      "complexity": 5,
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "file": "web/patch-caveview.py",
+      "function": "patch_crs_regex",
+      "complexity": 5,
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "file": "src/jktz/exports/pipeline.py",
+      "function": "_cave_names_from_entrances_csv",
+      "complexity": 4,
+      "coverage": 0.6666666666666666,
+      "crap": 4.592592592592593
+    },
+    {
+      "file": ".agents/skills/average-shots/average_shots.py",
+      "function": "circular_mean_degrees",
+      "complexity": 4,
+      "coverage": 1.0,
+      "crap": 4.0
+    },
+    {
+      "file": "src/jktz/entrances/render.py",
+      "function": "_read_json",
+      "complexity": 4,
+      "coverage": 1.0,
+      "crap": 4.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "ParseLimits.__post_init__",
+      "complexity": 4,
+      "coverage": 1.0,
+      "crap": 4.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "_Reader.count",
+      "complexity": 4,
+      "coverage": 1.0,
+      "crap": 4.0
+    },
+    {
+      "file": "src/jktz/validation/cavern_warnings.py",
+      "function": "_warning_lines",
+      "complexity": 4,
+      "coverage": 1.0,
+      "crap": 4.0
+    },
+    {
+      "file": "src/jktz/validation/metadata.py",
+      "function": "_raw_root_material",
+      "complexity": 4,
+      "coverage": 1.0,
+      "crap": 4.0
+    },
+    {
+      "file": "src/jktz/validation/suite.py",
+      "function": "_IndentingStream.write",
+      "complexity": 4,
+      "coverage": 1.0,
+      "crap": 4.0
+    },
+    {
+      "file": "web/patch-caveview.py",
+      "function": "patch_station_position_tree_fields",
+      "complexity": 4,
+      "coverage": 1.0,
+      "crap": 4.0
+    },
+    {
+      "file": "src/jktz/validation/metadata.py",
+      "function": "_repo_relative",
+      "complexity": 3,
+      "coverage": 0.6,
+      "crap": 3.576
+    },
+    {
+      "file": "src/jktz/validation/metadata.py",
+      "function": "_poligony_root",
+      "complexity": 3,
+      "coverage": 0.75,
+      "crap": 3.140625
+    },
+    {
+      "file": ".agents/skills/gnss-to-wgs84/gnss_to_wgs84.py",
+      "function": "validate_output",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": ".agents/skills/utm34n-wgs84/utm34n_wgs84.py",
+      "function": "_warn_utm",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": ".agents/skills/utm34n-wgs84/utm34n_wgs84.py",
+      "function": "_warn_wgs84",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/cli/render_otwory.py",
+      "function": "main",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/cli/srv_metadata.py",
+      "function": "_poligony_root_for",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/cli/srv_metadata.py",
+      "function": "_run_srv_set",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/cli/survex_stats.py",
+      "function": "main",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/cli/validate.py",
+      "function": "_reconfigure_streams_utf8",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/cli/validate.py",
+      "function": "main",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/entrances/render.py",
+      "function": "render_entrances",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/entrances/render.py",
+      "function": "_check_rendered_output",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/entrances/render.py",
+      "function": "_request",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/entrances/render.py",
+      "function": "_required_measurement_value",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/entrances/render.py",
+      "function": "_required_str",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/exports/pipeline.py",
+      "function": "run_exports",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/metadata/io.py",
+      "function": "atomic_write",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/pockettopo/model.py",
+      "function": "_station_kind",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/pockettopo/model.py",
+      "function": "_station_text",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "_Reader.string",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "_Reader.shot",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "_Reader.ending",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/validation/_utils.py",
+      "function": "non_raw_paths",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/validation/cavern_warnings.py",
+      "function": "check",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/validation/metadata.py",
+      "function": "_is_numbered_package_dir",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/validation/metadata.py",
+      "function": "_is_covered_by_inventory",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/validation/non_ascii.py",
+      "function": "_is_allowed",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/validation/shapefiles_count.py",
+      "function": "check",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/validation/suite.py",
+      "function": "run_steps",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/validation/suite.py",
+      "function": "run_validation",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "web/patch-caveview.py",
+      "function": "patch_web_mesh_worker",
+      "complexity": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "src/jktz/cli/srv_metadata.py",
+      "function": "_encode_metadata_block",
+      "complexity": 2,
+      "coverage": 0.5,
+      "crap": 2.5
+    },
+    {
+      "file": "src/jktz/validation/coordinates.py",
+      "function": "_parse_float",
+      "complexity": 2,
+      "coverage": 0.5,
+      "crap": 2.5
+    },
+    {
+      "file": ".agents/skills/average-shots/average_shots.py",
+      "function": "get_indent",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "scripts/initial-setup.py",
+      "function": "_c",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/cli/build_zip.py",
+      "function": "main",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/cli/exports.py",
+      "function": "main",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/cli/release_metadata.py",
+      "function": "main",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/cli/srv_metadata.py",
+      "function": "_write_or_print",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/entrances/render.py",
+      "function": "_render_template.replace",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/entrances/render.py",
+      "function": "_literal",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/entrances/render.py",
+      "function": "_decimal_text",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/exports/tools.py",
+      "function": "_resolve",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/metadata/raw.py",
+      "function": "format_raw_metadata",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/metadata/srv.py",
+      "function": "replace_or_insert_metadata",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/metadata/srv.py",
+      "function": "resolve_source_ref",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/packaging.py",
+      "function": "is_excluded",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/pockettopo/model.py",
+      "function": "_declination_mode",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "_Reader.take",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "_Reader.bounded",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "_Reader.polygon",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/quality.py",
+      "function": "fraction",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/quality.py",
+      "function": "write_result",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/validation/measurements.py",
+      "function": "_as_float",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "src/jktz/validation/suite.py",
+      "function": "_check_rendered_entrances",
+      "complexity": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": ".agents/skills/average-shots/average_shots.py",
+      "function": "parse_shot",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": ".agents/skills/average-shots/average_shots.py",
+      "function": "format_shot",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": ".agents/skills/gnss-to-wgs84/gnss_to_wgs84.py",
+      "function": "convert",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": ".agents/skills/utm34n-wgs84/utm34n_wgs84.py",
+      "function": "utm34n_to_wgs84",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": ".agents/skills/utm34n-wgs84/utm34n_wgs84.py",
+      "function": "wgs84_to_utm34n",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": ".agents/skills/utm34n-wgs84/utm34n_wgs84.py",
+      "function": "_usage_and_exit",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "scripts/initial-setup.py",
+      "function": "_red",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "scripts/initial-setup.py",
+      "function": "_green",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "scripts/initial-setup.py",
+      "function": "_yellow",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "scripts/initial-setup.py",
+      "function": "_has",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "scripts/initial-setup.py",
+      "function": "_run",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/cli/srv_metadata.py",
+      "function": "_add_dry_run",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/cli/srv_metadata.py",
+      "function": "_build_parser",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/cli/srv_metadata.py",
+      "function": "_run_raw_set",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/entrances/render.py",
+      "function": "_render_template",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/entrances/render.py",
+      "function": "_format_fix",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/exports/tools.py",
+      "function": "_missing_tool_msg",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/exports/tools.py",
+      "function": "cavern",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/exports/tools.py",
+      "function": "survexport",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/exports/tools.py",
+      "function": "ogr2ogr",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/metadata/io.py",
+      "function": "read_srv",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/metadata/io.py",
+      "function": "encode_srv",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/metadata/srv.py",
+      "function": "_format_field",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/pockettopo/model.py",
+      "function": "_is_flipped",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/pockettopo/model.py",
+      "function": "StationId.kind",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/pockettopo/model.py",
+      "function": "StationId.text",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/pockettopo/model.py",
+      "function": "Trip.declination_mode",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/pockettopo/model.py",
+      "function": "Shot.flipped",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "read_top",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "ParseError.__init__",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "_Reader.__init__",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "_Reader.number",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "_Reader.station",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "_Reader.point",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "_Reader.mapping",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "_Reader.trip",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "_Reader.reference",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/pockettopo/parser.py",
+      "function": "_Reader.xsection",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/quality.py",
+      "function": "configuration",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/quality.py",
+      "function": "crap",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/validation/_utils.py",
+      "function": "is_raw_path",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/validation/_utils.py",
+      "function": "srv_files",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/validation/metadata.py",
+      "function": "_lexical_absolute",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/validation/suite.py",
+      "function": "_indent_stdout",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/validation/suite.py",
+      "function": "_check_exports",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/validation/suite.py",
+      "function": "validation_steps",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/validation/suite.py",
+      "function": "_IndentingStream.__init__",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/validation/suite.py",
+      "function": "_IndentingStream.flush",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "src/jktz/validation/suite.py",
+      "function": "_IndentingStream.__getattr__",
+      "complexity": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    }
+  ],
+  "failures": []
+}

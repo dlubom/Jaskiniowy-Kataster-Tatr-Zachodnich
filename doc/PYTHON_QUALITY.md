@@ -8,7 +8,7 @@ Progi w `pyproject.toml` są wspólne dla lokalnych poleceń i CI.
 | Pokrycie linii | co najmniej 95% | cały powyższy kod, także nieimportowane pliki |
 | Pokrycie gałęzi | co najmniej 90% | decyzje i alternatywne ścieżki wykonania |
 | CRAP | najwyżej 25 na funkcję | funkcje, metody i funkcje zagnieżdżone |
-| Testy mutacyjne | co najmniej 81% w **każdym** wybranym module | SRV, RAW, zapis atomowy, wejścia GPS i stan jednostek Walls |
+| Testy mutacyjne | co najmniej 81% w **każdym** wybranym module | SRV, RAW, zapis atomowy, wejścia GPS, stan jednostek Walls oraz model i parser PocketTopo |
 | Kompletność zakresu | bez pominiętych plików i całkowicie nieprzetestowanych funkcji | żywy kod Pythona w repo; archiwalne `_RAW` nie są narzędziami |
 
 Test inventory porównuje śledzone i nowe nieignorowane pliki `.py` z zakresem
@@ -60,9 +60,12 @@ ani zmiany danych pomiarowych.
 
 ## Mutacje: zakres i interpretacja
 
-Zakres `tool.mutmut.only_mutate` obejmuje pięć modułów chroniących dane:
+Zakres `tool.mutmut.only_mutate` obejmuje siedem modułów chroniących dane:
 `metadata/io.py`, `metadata/raw.py`, `metadata/srv.py`, `entrances/render.py`
-i `validation/measurements.py`. To regularna bramka rdzenia;
+i `validation/measurements.py` oraz dodane w P02 `pockettopo/model.py`
+i `pockettopo/parser.py`. Niezależne lokalne wzorce PocketTopo kopiujemy do
+środowiska mutacji przez `also_copy`; testy nie pobierają ich z sieci.
+To regularna bramka rdzenia;
 **nie jest** wynikiem mutacyjnym całego repo. Skille, procesy eksportu i CLI
 mają testy zachowania, pokrycie oraz CRAP; rozszerzenie mutacji o skille jest
 kolejnym możliwym etapem po ocenie kosztu i ocalałych mutacji.
