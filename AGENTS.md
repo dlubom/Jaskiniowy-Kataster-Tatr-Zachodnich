@@ -362,33 +362,63 @@ These PR packages are not GitHub Releases and do not affect `/releases/latest`.
 
 ## Documentation Resources (`doc/`)
 
-When working with this project, Codex can use the following reference materials:
+For uncertain syntax, command options or compiler warnings, search the relevant
+local reference below and read the surrounding section before changing data.
+Read only what the task needs. Quote the file/section and the program version
+when explaining a compatibility issue. [doc/README.md](doc/README.md) records
+source versions, conversion limits and lookup examples.
 
 ### Walls Software Documentation
 - **`doc/Walls_manual.md`** — Markdown version of the Walls cave survey software manual. Use this for details on `.SRV` file syntax, directives (`#fix`, `#units`, `#date`, etc.), project file structure, and compilation options.
-- **`doc/Walls_manual.pdf`** — Original PDF manual (same content as the markdown version).
+- **`doc/Walls_manual.pdf`** — Original historical manual, Version 2.0 Build 2016-11-18. Use it to verify ambiguous syntax, tables and illustrations; the Markdown transcription can contain conversion errors.
 - **Walls source code** — For advanced or edge-case questions about Walls behavior, the source code is available at https://github.com/wallscavesurvey/walls
 
+### Survex Documentation
+
+- **`doc/Survex_manual/datafile.rst`** — `.svx` syntax, units, calibration, flags, dates and station names.
+- **`doc/Survex_manual/walls.rst`** — Survex's interpretation of `.SRV`/`.WPJ`, supported directives and differences from Walls. Consult this when comparing the two programs.
+- **`doc/Survex_manual/cavern.rst`**, **`survexport.rst`**, **`dump3d.rst`**, **`aven.rst`** in the same directory — command options, compilation, exports and viewing.
+- **`doc/Survex_manual/README.md`** — pinned upstream release, source commit and checksums. RST is searchable text; it does not need conversion to Markdown.
+
+```bash
+rg -n -i -F '#units' doc/Walls_manual.md
+rg -n -i -F -e '*calibrate' -e '*declination' doc/Survex_manual/datafile.rst
+rg -n -i -F 'warning' doc/Survex_manual/walls.rst
+```
+
+Check `cavern --version` and the actual Walls build when behavior differs from
+the manual. Date-derived declination also depends on the IGRF model: the 2016
+Walls build and newer builds can differ. For unresolved behavior, consult the
+official documentation/source for that version and test a minimal example in
+a temporary directory. A successful Survex compile does not prove identical
+Walls behavior. Preserve source measurements while investigating.
+
 ### Polish Cave Registry Data (PIG)
-- **`doc/jaskinie_polski_pig_dump.jsonl`** — Full JSONL dump from the Polish Geological Institute cave registry (https://jaskiniepolski.pgi.gov.pl/). Each line is a JSON object with comprehensive cave data.
+- **`doc/jaskinie_polski_pig_dump.jsonl`** — Archival JSONL extract from the Polish Geological Institute cave registry (https://jaskiniepolski.pgi.gov.pl/). Each line is a separate JSON object; the file is not one JSON array or a guarantee of current registry completeness.
 
 **Use this file when:**
 - Adding new caves — search for existing official data (coordinates, dimensions, description)
-- Verifying or correcting entrance coordinates (`latitude`, `longitude`, `absolute_height_masl`)
+- Comparing archival location context (`latitude`, `longitude`, `absolute_height_masl`); active entrance fixes come from the GPS project
 - Finding cave metadata (inventory number, region, length, depth, denivelation)
 - Researching documentation history (who surveyed, when, survey dates)
 - Finding alternative cave names (`other_names` field)
 - Checking geographic location and access descriptions
 
-Prefer the inventory ID for an unambiguous lookup, using `rg -F`:
+Prefer the inventory number (`inventory_number`, e.g. `T.B-14.01`), using `rg -F`.
+It differs from PIG's internal string `cave_id` (e.g. `001018`, retain leading
+zeros). Parse matching lines and check the intended field: full-text hits may
+also refer to another cave inside a description.
 
 ```bash
 rg -F '"T.B-14.01"' doc/jaskinie_polski_pig_dump.jsonl
 ```
 
-Name searches also work with matching Unicode spelling; aliases and diacritics
-can make them incomplete. The dump is an archival reference, not a current
-measurement source. Do not infer survey authors from inventory editors, or
+For names, search `name` and `other_names` using the original Polish spelling
+or an unambiguous fragment. ASCII transliteration does not match diacritics
+(e.g. `Sniezna` does not match `Śnieżna`); a failed name search is not proof
+that the cave is absent. See `doc/README.md` for an exact-field JSONL lookup.
+
+The dump is an archival reference, not a current measurement source. Do not infer survey authors from inventory editors, or
 choose ambiguous scan digits by agreement with compiled length/closure.
 
 Returns data including:

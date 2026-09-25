@@ -23,6 +23,17 @@ $survex-stats Poligony/D_Mietusia/M_Swistowka/Mietusia_Wyznia/_RAW/01/<source>.s
 $survex-stats KATASTER.wpj
 ```
 
+## Resolving options and diagnostics
+
+Use [cavern.rst](../../../doc/Survex_manual/cavern.rst) for command options,
+[datafile.rst](../../../doc/Survex_manual/datafile.rst) for Survex syntax, and
+[walls.rst](../../../doc/Survex_manual/walls.rst) for warnings and limitations
+when compiling `.SRV`/`.WPJ`. For native Walls semantics consult
+[Walls_manual.md](../../../doc/Walls_manual.md), with the PDF as the reference
+for ambiguous conversion. Check `cavern --version` against the
+[documented release](../../../doc/Survex_manual/README.md) before explaining
+version-dependent behavior.
+
 ## Steps
 
 1. Run the Python CLI on the provided `.svx` or `.wpj` file:

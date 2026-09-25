@@ -11,8 +11,8 @@ each line is fully specifiable.  So you can enter your data much as it appears
 on the survey notes, which is important in reducing the opportunities for
 transcription errors.
 
-Also all the special characters are user-definable - for example, the
-separators can be spaces and tabs, or commas (e.g. when exporting from a
+Also all the special characters are user-definable - for example, data items
+can be separated by spaces and tabs, or commas (e.g. when exporting from a
 spreadsheet), etc; the decimal point can changed to be a comma (as used in
 continental Europe), or a slash (sometimes used for clarity in written survey
 notes), or anything else you care to choose.  This flexibility means that it
@@ -635,7 +635,7 @@ Example
 
    ::
 
-       *data normal station ignoreall newline compass tape clino
+       *data normal station noteall newline compass tape clino
 
 Description
    ``<style>``
@@ -878,9 +878,9 @@ Description
          new ``*data`` command with no arguments.
 
          Simple example of how to use this data style (note the use of
-         ignoreall to allow a free-form text description to be given)::
+         ``noteall`` to allow a free-form text description to be given)::
 
-             *data passage station left right up down ignoreall
+             *data passage station left right up down noteall
              1  0.1 2.3 8.0 1.4  Sticking out point on left wall
              2  0.0 1.9 9.0 0.5  Point on left wall
              3  1.0 0.7 9.0 0.8  Highest point of boulder
@@ -893,7 +893,7 @@ Description
 
          For example here the main passage is 1-2-3 and a side passage is 2-4::
 
-             *data passage station left right up down ignoreall
+             *data passage station left right up down noteall
              1  0.1 2.3 8.0 1.4  Sticking out point on left wall
              2  0.0 1.9 9.0 0.5  Point on left wall opposite side passage
              3  1.0 0.7 9.0 0.8  Highest point of boulder
@@ -904,13 +904,54 @@ Description
              2  0.3 0.2 9.0 0.5
              4  0.0 0.5 6.5 1.5  Fossil on left wall
 
-   ``IGNORE`` skips a field (it may be used any number of times), and
-   ``IGNOREALL`` may be used last to ignore the rest of the data line.
+         Survex 1.4.22 and later allow any (or even all) of the dimensions to
+         be omitted from the passage data style, which is equivalent to
+         omitting that dimension from each station.  For example, in a maze
+         cave you might use splays to locate the walls and only record up and
+         down dimensions at each station::
+
+             *data passage station up down
+             a 0.7 1.4
+             b 1.2 1.0
+
+         Omitting all dimensions allows using this style to record a
+         description of each survey station::
+
+             *data passage station noteall
+             1  Sticking out point on left wall
+             2  Point on left wall opposite side passage
+             3  Highest point of boulder
 
    ``LENGTH`` is a synonym for ``TAPE``; ``BEARING`` for ``COMPASS``;
    ``GRADIENT`` for ``CLINO``; ``COUNT`` for ``COUNTER``.
 
    The units of each quantity may be set with the ``*units`` command.
+
+   ``IGNORE`` skips a field (it may be used any number of times), and
+   ``IGNOREALL`` may be used last to ignore the rest of the data line.
+
+   Survex 1.4.22 added support for ``NOTE`` and ``NOTEALL`` readings.
+
+   ``NOTE`` accepts a double-quoted string which describes the station
+   (the value doesn't need to be quoted if it is a single word).  An omit
+   character (``-`` by default) can be use to indicate there's no note, which
+   has the same effect as an empty string (``""``); if you actually want to
+   specify a note that's exactly ``-`` then use quotes, i.e. ``"-"``).
+
+   ``NOTEALL`` is an alternative to ``NOTE``, which instead takes the rest of
+   the line as the text describing the station.  Leading and trailing blanks
+   are not included in the note text.  At most one ``NOTE`` or ``NOTEALL``
+   can be used in a specified style.
+
+   Since the note describes a station, it can be use when ``STATION`` can be
+   (so you can't put station notes in non-interleaved data, because it's not
+   clear whether the note is for ``FROM`` or ``TO``).
+
+   Current the notes in ``NOTE`` and ``NOTEALL`` aren't processed further, but
+   the intention is a future version will carry them through so they can be
+   seen in Aven, etc.  So currently ``NOTEALL`` and ``IGNOREALL`` both actually
+   ignore the rest of the line - use ``NOTEALL`` when the text describes the
+   station and ``IGNOREALL`` in other situations.
 
 See Also
    ``*units``
@@ -1413,19 +1454,28 @@ Syntax
 
 Description
    ``*infer plumbs on`` tells cavern to interpret gradients of ±90 degrees
-   as UP/DOWN (so it will not apply the clino correction to them).  This is
-   useful when you have data which uses this convention for plumbed legs.
+   (or ±100 grads, etc) as UP/DOWN, so it will not apply the clino correction
+   to them.  This is useful when you have data which uses this convention for
+   plumbed legs.
 
    ``*infer equates on`` tells cavern to interpret a leg with a tape reading of
    zero as a ``*equate`` which this prevents tape corrections being applied to
    them.  This is useful when you have data which uses this convention for
    equating stations.
 
-   ``*infer exports on`` is necessary when you have a dataset which is partly
-   annotated with ``*export``.  It tells cavern not to complain about missing
-   ``*export`` commands in the parts of the dataset it is enabled for.  Also
-   stations which were used to join surveys are marked as exported in the 3d
-   file.
+   ``*infer exports on`` relaxes the requirement that a station must be
+   ``*export``-ed to be able to refer to it from outside the survey it is in.
+   When active, such stations are treated as if they were marked with ``*export``
+   (including being flagged as "exported" in the .3d file).  For compatibility
+   with datasets from before ``*export`` was added, a dataset which never uses
+   ``*export`` is processed as if it used ``*infer exports on``.  It can be
+   useful to be able to turn it on explicitly for part of a dataset, for
+   example it allows combining a dataset which doesn't used ``*export`` with
+   one which does, and it supports a phased conversion of a dataset to using
+   ``*export``.  You might also decide to use it if having to mark survey
+   stations as exported doesn't seem worth the benefit of catching mis-ties -
+   for example, if you're surveying a maze cave where a lot of stations are
+   junctions.
 
 INSTRUMENT
 ----------

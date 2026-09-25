@@ -66,6 +66,29 @@ features are likely to be handled while more obscure features may not be.
   filenames in lower case and then ``cavern`` should successfully process it
   thanks to the "try lowercase" part of the workaround.
 
+- Both Walls and Survex support calculating magnetic declinations based on
+  location and survey date.  However David's last Walls release was "Version
+  2, Build 2016-11-18" in 2016 which uses IGRF 12 (released in late 2015 and
+  the current model at the time).  This model is only intended to support dates
+  up to the end of 2019, and is only definitive up to the end of 2009 - for
+  dates in 2010-2019 it is predictive based on observations before this period.
+
+  A new version of the IGRF model is released every 5 years, and Survex has
+  been updated each time so is using a model multiple versions newer than
+  Walls.  For dates up to the end of 2009 any differences in calculated
+  declinations should be tiny, but for 2010-2019 Survex is using a definitive
+  model, while for dates after 2020 Survex is (at the time of writing in 2026)
+  using a predictive model while Walls is using a model outside of its interval
+  of validity.  For any dates after 2009 you'll likely see Walls and Survex
+  calculate different declinations - Survex's should be more reliable.
+
+  If you have survey data from 2010 or later you may need to take this into
+  account if you are comparing the processed output from Walls with that from
+  Survex to check that Survex is interpreting the data in the same way as
+  Walls.  Andy Edwards has made `a build of Walls updated to use IGRF14
+  <https://github.com/wallscavesurvey/walls/releases/tag/v2.2>`_ which may
+  be of interest if you are in this situation.
+
 - If an isolated LRUD (LRUD not on a leg, e.g. specified for the start or end
   station of a traverse) is missing its closing delimiter, Walls will parse
   the line as a data leg where the "to" station starts with ``*`` or ``<``,
@@ -142,6 +165,13 @@ features are likely to be handled while more obscure features may not be.
 - ``#NOTE`` is parsed and the station name is marked as "used" (which
   suppresses the unused fixed point warning) but the note text is
   currently ignored.
+
+- ``#SYMBOL`` directives are quietly ignored.  In Walls they specify a symbol
+  shape and colour to use for a named flag, which doesn't usefully map into
+  Survex.  The Walls manual notes *Since it's now easy to accomplished [sic]
+  this interactively via the Flag and Marker Symbols dialog, you may choose not
+  to use #Symbol directives at all* and they don't seem to be used much in
+  Walls datasets we've seen.
 
 - We don't currently support all the datum names which Walls does
   because we haven't managed to find an EPSG code for any UTM zones
@@ -223,6 +253,17 @@ features are likely to be handled while more obscure features may not be.
   it actually allows ``#`` in station names (though it can't be used as the
   first character of the from station name as that will be interpreted as a
   directive.  Since Survex 1.4.10.
+
+- Walls uses ``:`` as a separator between prefixes and between any prefix and
+  the station name.  Since Survex 1.4.21, cavern takes into account which
+  characters are allowed in Walls station names when picking the separator to
+  use in the ``.3d`` file - for a pure Walls dataset, it will pick ``:``, so
+  Walls station names shown by ``aven`` and other tools should match the names
+  as shown in Walls.  If you have a dataset which mixes data in Walls format
+  with Survex and/or Compass data, then it's possible ``:`` is used in a Survex
+  or Compass station name - if so a different separator will be chosen.  Before
+  Survex 1.4.21, ``.`` would be used as the ``.3d`` file separator for a pure
+  Walls dataset, even though if it was used in station names.
 
 - Walls ignores junk after the numeric argument in ``TYPEAB=``, ``TYPEVB=``,
   ``UV=``, ``UVH=``, and ``UVV=``.  Survex warns and skips the junk.  Since

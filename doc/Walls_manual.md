@@ -1,3 +1,9 @@
+> Local transcription of the historical manual, Version 2.0 Build 2016-11-18.
+> Use [the original PDF](Walls_manual.pdf) to check ambiguous syntax, tables or
+> illustrations. See [source and conversion notes](README.md#walls) for the
+> scope of corrections; this transcription is not a description of every later
+> Walls build or of Survex's Walls reader.
+
 ![](Walls_manual_images/Walls_manual.pdf-0-0.png)
 ### _Tools for Cave Survey Data_ _Management_
 
@@ -1289,6 +1295,14 @@ _Copyright © 2013 by David McKenzie_
 **Launch Options**
 
 
+![](Walls_manual_images/Walls_manual.pdf-19-0.png)
+
+For items of type Other there is no Review Units setting. You instead specify what happens
+when their tree icons are double-clicked. Selecting Properties will simply cause the Properties
+dialog to open. Selecting Open will cause the represented file to be opened in whichever application
+is associated with the file's extension. (File associations are a system setting that you
+can change.) Selecting Edit will cause the file to be opened in a Walls edit window.
+
 Make sure you use the Edit option only for ordinary text files. For example, an SVG file with extension ".svg" is
 ordinary text, while a compressed SVG with extension ".svgz" is a binary file. Attempting to open a binary file in
 the Walls editor will most likely produce a warning, "Line 1 will be truncated due to having more than 255 characters", at which time you should cancel the open operation.
@@ -1349,7 +1363,6 @@ _Copyright © 2013 by David McKenzie_
 
 
 
-![](Walls_manual_images/Walls_manual.pdf-19-0.png)
 **Program Operation** **17**
 
 
@@ -3062,6 +3075,19 @@ some feature-specific coloring options. For example, the drop-down window for as
 appear as follows:
 
 
+![](Walls_manual_images/Walls_manual.pdf-50-0.png)
+
+One of the choices will have a sunken appearance to indicate the selection
+currently in effect. In this example, "Color by depth" is currently
+selected and will remain so if this dialog is cancelled. (Clicking anywhere
+outside the dialog will cancel it.) Although the image at left
+doesn't show the mouse cursor, the raised appearance of the "Color by
+stats" button is due to the cursor being positioned above it. Clicking
+that button will open a dialog for editing a color range, or gradient. If
+the colored rectangle to the right of it is clicked instead, the gradient
+already defined for statistics coloring is directly selected and the dialog
+closes.
+
 All three of the "Color by" options beneath the 40-color palette behave similarly. Clicking the right side chooses
 the gradient currently defined for that type of coloring. Clicking the left side opens the Color Gradient Dialog
 which allows you to edit the gradient prior to selecting it. The "More colors" button also behaves this way, but instead of opening the gradient dialog, it opens the standard color picking dialog that's common to many Windows
@@ -3110,7 +3136,6 @@ _Copyright © 2013 by David McKenzie_
 
 
 
-![](Walls_manual_images/Walls_manual.pdf-50-0.png)
 **48** **Walls Project Editor**
 
 
@@ -3547,6 +3572,16 @@ As illustrated below, a different context menu can appear when you click near a 
 statistics on the Traverse page, or to display a Vector Properties window.
 
 
+![](Walls_manual_images/Walls_manual.pdf-58-0.png)
+
+Whenever the scale is such that a screen pixel represents two
+meters or less, survey vectors are automatically highlighted as
+you move the mouse pointer over them. If an enclosing rectangle
+is present, right-clicking displays a menu like the one at
+left. If the pointer is not near a vector when you click, a different
+menu appears -- one that supports zooming, layer toggling, and
+other operations.
+
 If highlighting is enabled and there are features to highlight, the mouse pointer will appear as a cross with an "i"
 subscript. Otherwise it will be a plain cross, the measure-distance icon, or the default mouse pointer (typically an
 arrowhead). The default pointer is present when the data currently displayed in the map window is no longer being reviewed.
@@ -3577,7 +3612,6 @@ _Copyright © 2013 by David McKenzie_
 
 
 
-![](Walls_manual_images/Walls_manual.pdf-58-0.png)
 **56** **Walls Project Editor**
 
 
@@ -4015,6 +4049,10 @@ longitude.
 
 #### **4 Survey Data Format**
 
+> Editorial note: code blocks preserve the manual's illustrative notation,
+> including `...`, `--- etc.` and placeholders. They are not all complete,
+> directly compilable SRV files.
+
 
 The following topics cover the Walls data file format. (For a description of the text editor you'll normally use to
 enter data, see Survey Text Editor.) The project script files, which connect data files in a hierarchical relationship,
@@ -4207,7 +4245,9 @@ To allow for the possibility that the associated vector definition can't provide
 LRUD, an azimuth value, can be included as a fifth number in any LRUD expression:
 
 
+```text
 NAM1 NAM2 15 -- -90 <5,10,10,0,325>
+```
 
 
 _Copyright © 2013 by David McKenzie_
@@ -4253,22 +4293,29 @@ With either of the two basic LRUD methods, TO-station or FROM-station, you'll so
 _ing station_ LRUDs or _ending station_ LRUDs. Depending on the method, you'll need sequences like the following:
 
 
+```text
 #Units LRUD=T
 A0 <2.5,5,3,0> ;Starting station LRUD
 A0 A1 30 275 -5 <0,7,4,0>
 --- etc.
+```
 
 
+```text
 #Units LRUD=F
---A0 A1 30 275 -5 <0,7,4,0>
+---
+A0 A1 30 275 -5 <0,7,4,0>
 A1 <2.5,5,3,0> ;Ending station LRUD
 --- etc.
+```
 
 
 Finally, at any point in your data files you can associate a station with LRUD dimensions and a facing azimuth:
 
 
+```text
 A1 <2,3,5,0,275>
+```
 
 
 LRUDs are included as shapefile attributes and optionally as part of exported SVG files. They can also be displayed on printed and screen maps. For more information, see Passage Display Options.
@@ -4354,13 +4401,17 @@ _Copyright © 2013 by David McKenzie_
 **70** **Walls Project Editor**
 
 
-**#Units Meters Order=DAV Decl=6.5**
+```text
+#Units Meters Order=DAV Decl=6.5
+```
 
 
 or, alternatively, like this:
 
 
-**#Units Decl=6.5**
+```text
+#Units Decl=6.5
+```
 
 
 since meters is the default length unit and DAV (Distance, Azimuth, Vertical) is the default column order for the
@@ -4795,13 +4846,17 @@ into a tree-like hierarchy, much the same way that files are grouped into folder
 The directive form is
 
 
-**#Segment <absolute or relative "pathname">**
+```text
+#Segment <absolute or relative "pathname">
+```
 
 
 The abbreviations #S and #Seg are accepted. An example is
 
 
-**#S /Bat room/Lower level/March95**
+```text
+#S /Bat room/Lower level/March95
+```
 
 
 When the directive appears on a line by itself, it defines the segment for vectors that follow, up until the next
@@ -4906,7 +4961,9 @@ While most survey vectors are established with compass and tape (CT) or RECT dat
 TO stations are both specified, the SRV format also supports the defining of a special kind of vector via a directive line:
 
 
-**#Fix <name> <East> <North> <Up> [<variance override>] [/<note>] [<seg override>]**
+```text
+#Fix <name> <East> <North> <Up> [<variance override>] [/<note>] [<seg override>]
+```
 
 
 This establishes (or estimates) the location of a named station with respect to an implied _zero reference_ **.** The
@@ -4922,12 +4979,14 @@ Also, #FIX directives are unlike ordinary two-station data lines in that a defau
 example:
 
 
-**#units** **meters order=EN**
-**#flag** **/GPS Fixes (No elevations)**
-**#fix** **GPS9** **620765** **3461243 (R5,?)** **/Bat Cave Entrance**
-**#fix** **GPS10** **620550** **3461133 (R5,?)** **/Filled Sink #10**
-**.....**
-**#flag**
+```text
+#units meters order=EN
+#flag /GPS Fixes (No elevations)
+#fix GPS9 620765 3461243 (R5,?) /Bat Cave Entrance
+#fix GPS10 620550 3461133 (R5,?) /Filled Sink #10
+.....
+#flag
+```
 
 
 The last #Flag directive removes the default flag assignment for fixed stations. Alternatively, we could have replaced the default with a new one. Although a #Fix station can have many flags assigned to it in the usual way,
@@ -4967,15 +5026,17 @@ To illustrate possible formats, here is a data file containing some equivalent s
 the same place:
 
 
-**; NOTE: The geographical reference assigned or inherited by this data file must have**
-**; datum WGS84 and UTM zone 14 for the following fixes to be correctly interpreted.**
-**#Units meters order=ENU**
-**#FIX  A1  W97:43:52.5  N31:16:45     323f   /Entrance ;dms with ft elevations**
-**#FIX  A2  W97:43.875   N31:16.75     323f   ;dm**
-**#FIX  A3  W97.73125   N31.2791667  323f   ;d**
-**#FIX  A4  620775.38    3461050.67   98.45  ;UTM zone 14**
-**#Units feet order=NE**
-**#FIX  A5  3461050.67m 620775.38m  323   ;m suffix overrides ft units.**
+```text
+; NOTE: The geographical reference assigned or inherited by this data file must have
+; datum WGS84 and UTM zone 14 for the following fixes to be correctly interpreted.
+#Units meters order=ENU
+#FIX  A1  W97:43:52.5  N31:16:45     323f   /Entrance ;dms with ft elevations
+#FIX  A2  W97:43.875   N31:16.75     323f   ;dm
+#FIX  A3  W97.73125   N31.2791667  323f   ;d
+#FIX  A4  620775.38    3461050.67   98.45  ;UTM zone 14
+#Units feet order=NE
+#FIX  A5  3461050.67m 620775.38m  323   ;m suffix overrides ft units.
+```
 
 
 Note that latitudes and longitudes are specified with a letter prefix: N or S for latitudes and E or W for longitudes.
@@ -5037,9 +5098,11 @@ be nice if we could compile the complete data set without having to revise the o
 make them globally unique. Also, if we wanted to insure that some arbitrary collection of SRV files is truly selfcontained, we would need some way to say whether or not station S1 in file A and station S1 in file B, for example, are physically the same station. To satisfy such requirements, the SRV format provides the following directive for creating qualifying name prefixes:
 
 
-**#Prefix <name>**
+```text
+#Prefix <name>
 or
-**#Prefix**
+#Prefix
+```
 
 
 The first form assigns an _implied name prefix_ to all stations following it in the file whose prefix is not explicitly
@@ -5054,16 +5117,20 @@ surface tie-in, **SUR:S1.**
 Here is another example. Note that the following two sequences of data lines are equivalent:
 
 
-**#Prefix**
-**A:1** **A:2** **. . .**
-**A:2** **PEP:A123** **. . .**
-**A:2** **ENT** **. . .**
+```text
+#Prefix
+A:1 A:2 . . .
+A:2 PEP:A123 . . .
+A:2 ENT . . .
+```
 
 
-**#Prefix** **A**
-**1** **2** **. . .**
-**2** **PEP:A123** **. . .**
-**2** **:ENT** **. . .**
+```text
+#Prefix A
+1 2 . . .
+2 PEP:A123 . . .
+2 :ENT . . .
+```
 
 
 So that a default prefix can be assigned to an entire project tree branch, the #Units directive supports a
@@ -5084,12 +5151,14 @@ with special attention given to colon separators. Within data files the prefixes
 individually when necessary. For example,
 
 
-**#UNITS** **PREFIX3=P3 PREFIX2=P2 PREFIX=P1 ;any order**
-**#FIX** **NAM1** **. . .**
-**#FIX** **P1A:NAM2** **. . .**
-**#FIX** **P2A:P1:NAM3** **. . .**
-**#FIX** **:P2B::NAM4** **. . .**
-**#FIX** **:::DATUM** **. . .**
+```text
+#UNITS PREFIX3=P3 PREFIX2=P2 PREFIX=P1 ;any order
+#FIX NAM1 . . .
+#FIX P1A:NAM2 . . .
+#FIX P2A:P1:NAM3 . . .
+#FIX :P2B::NAM4 . . .
+#FIX :::DATUM . . .
+```
 
 
 will produce the following fully-qualified station names: **P3:P2:P1:NAM1**, **P3:P2:P1A:NAM2**,
@@ -5120,7 +5189,9 @@ Long strings of text can be attached to specific stations so they can optionally
 station labels. For example, the directive
 
 
-**#Note  A312  Filled Sink**
+```text
+#Note  A312  Filled Sink
+```
 
 
 allows you to create a map in which the text, "Filled Sink", appears in the same location with respect to station
@@ -5131,7 +5202,9 @@ A312 as would the name "A312" if only station labeling were in effect. The print
 Since it's almost never the case that a #FIXed station would not need a note, you're allowed to include a slashprefixed note on a #FIX directive. For example, entering a single directive, like
 
 
-**#Fix  A0 0 0 0 /Main Entrance**
+```text
+#Fix  A0 0 0 0 /Main Entrance
+```
 
 
 _Copyright © 2013 by David McKenzie_
@@ -5149,7 +5222,9 @@ You can define a multi-line note by including line break specifiers within the t
 backslash (\) followed by a lower case N, as is shown in this example:
 
 
-**#Note  B95  B95: Cairn\nDigging Lead**
+```text
+#Note  B95  B95: Cairn\nDigging Lead
+```
 
 
 The total length of a note, including one character for each line break, is currently limited to **252** characters.
@@ -5165,11 +5240,13 @@ containing only notes (and/or flags) and no vectors. For example, if you need to
 specific set of notes, you can create a special segment for them like this:
 
 
-**#Seg /Entrance Notes**
-**#Note E0 Pit Entrance**
-**#Note SPR:0 Spring Entrance**
-**#Flag E0 SPR:0 /Entrances**
-**#Seg /**
+```text
+#Seg /Entrance Notes
+#Note E0 Pit Entrance
+#Note SPR:0 Spring Entrance
+#Flag E0 SPR:0 /Entrances
+#Seg /
+```
 
 
 Another approach is to group #Note and #Flag directives together in their own SRV files.
@@ -5232,7 +5309,9 @@ The #Flag directive identifies the stations that may need to be highlighted with
 example, the directive
 
 
-**#Flag  ENT0 A0 SUR:31  /Pit Entrances**
+```text
+#Flag  ENT0 A0 SUR:31  /Pit Entrances
+```
 
 
 allows us to optionally display a special marker symbol at the locations of stations ENT0, A0, and SUR:31. One
@@ -5302,7 +5381,9 @@ exported SVGs. While the background color is selectable for a screen map, the sy
 The directive format, which is likely to undergo future expansion to support TrueType font symbols, is currently
 
 
-**#SYMbol  <style><size>  <color>  /<flag name>**
+```text
+#SYMbol  <style><size>  <color>  /<flag name>
+```
 
 
 where <style> is a concatenation of the first letters of the following two groups of words:
@@ -5318,10 +5399,11 @@ An integer point size immediately follows (with no separator) the two style lett
 "RGB color" specification in parentheses. Here are some examples:
 
 
-#symbol  CS8  (0,255,0) /GPS position ; **C** lear **S** quares of size **8** and color bright green: an RGBvalue of **(0,255,0)**
-#symbol  SC12           /Unexplored pits ; **S** olid **C** ircles of size **12** and with default or pre-assigned
-color
-#symbol  SP-             /Sink ; **S** olid **P** lus signs of pre-assigned size and color
+```text
+#symbol  CS8  (0,255,0) /GPS position ; Clear Squares of size 8 and color bright green: an RGB-value of (0,255,0)
+#symbol  SC12           /Unexplored pits ; Solid Circles of size 12 and with default or pre-assigned color
+#symbol  SP-            /Sink ; Solid Plus signs of pre-assigned size and color
+```
 
 
 These directives will cause all stations that were flagged "GPS position" to be marked with clear green squares
@@ -5387,14 +5469,18 @@ like ArcView, for example, to color surveys by date range.
 The directive's format is
 
 
-**#DATE** **yyyy-mm-dd**
+```text
+#DATE yyyy-mm-dd
+```
 
 
 where yyyy is the year in the usual Gregorian calendar, mm is the month of the year between 01 (January) and
 12 (December), and dd is the day of the month between 01 and 31. Example:
 
 
-**#Date** **1997-01-30**
+```text
+#Date 1997-01-30
+```
 
 
 While some date formats common in the U.S. (mm/dd/yy, mm-dd-yyyy, etc.) are accepted by the program, it is
@@ -5410,7 +5496,9 @@ on or off via the Geographical Reference page of a project item's Properties dia
 on, a #DATE directive is effectively equivalent to
 
 
-**#Units DECL=n**
+```text
+#Units DECL=n
+```
 
 
 _Copyright © 2013 by David McKenzie_
@@ -5433,10 +5521,12 @@ example, in data imported from an SEF, type "X" vectors that are meant to be exc
 bracketed as follows:
 
 
-**#[ Excluded shots --**
-**...**
-**...**
-**#]**
+```text
+#[ Excluded shots --
+...
+...
+#]
+```
 
 
 Like most other directives, the two comment directives must each start a line, but text can appear on the remaining portion of the line. Although block comments can be nested, each begin/close comment directive must have
@@ -5448,7 +5538,9 @@ a matching close/begin comment directive; otherwise, compilation aborts with an 
 To control how raw survey data is interpreted during compilation, you normally assign values to named parameters on #Units directive lines. For example,
 
 
-**#units IncV=-0.15** ... etc.
+```text
+#units IncV=-0.15 ... etc.
+```
 
 
 will cause a correction of -0.15 degrees to be applied to inclination measurements. Such parameter settings will
@@ -5468,7 +5560,9 @@ properties, you can instead take advantage of defined variables, or _macros_ . H
 two macro definitions:
 
 
-**#units $sunto112_IncA=0.25 $sunto112_typeAB="N,2"** ...etc.
+```text
+#units $sunto112_IncA=0.25 $sunto112_typeAB="N,2" ...etc.
+```
 
 
 A macro definition resembles an ordinary parameter assignment, except that the parameter name is prefixed with
@@ -5498,41 +5592,53 @@ files are where you'll normally _reference_ the macros that have been defined at
 might look like this:
 
 
-**#units IncA=$(sunto112_IncA) typeAB=$(sunto112_typeAB)** ...etc.
+```text
+#units IncA=$(sunto112_IncA) typeAB=$(sunto112_typeAB) ...etc.
+```
 
 
 Note that when macros are being referenced, their names are delimited by "$(" and ")". No spaces are allowed
 inside the parentheses. During compilation, Walls will perform macro _replacement_ before the directive line is processed in the usual fashion. The above would be equivalent to
 
 
-**#units IncA=0.25 typeAB=N,2** ...etc.
+```text
+#units IncA=0.25 typeAB=N,2 ...etc.
+```
 
 
 A macro's defined value, or replacement string, can be used to construct _any portion_ of a directive line apart from
 the directive's name. For example, to simplify the above case we can define a single macro to assign two different parameters:
 
 
-**#units $sunto112="IncA=0.25 typeAB=N,2"** ...etc.
+```text
+#units $sunto112="IncA=0.25 typeAB=N,2" ...etc.
+```
 
 
 The quotes are obviously necessary in this case. In the data files we could then produce the same result as
 above with this line:
 
 
-**#units $(sunto112)** ...etc.
+```text
+#units $(sunto112) ...etc.
+```
 
 
 Likewise, you may want to control only a portion of a parameter setting:
 
 
-**#units $suunto112_tolerance=",2"** ...etc.
-**#units typeAB=N$(suunto112_tolerance)** ...etc.
+```text
+#units $suunto112_tolerance=",2" ...etc.
+#units typeAB=N$(suunto112_tolerance) ...etc.
+```
 
 
 Then you could restore the default FS/BS tolerance by simply redefining the macro to the empty string by dropping the equals sign:
 
 
-**#units $suunto112_tolerance** ...etc.
+```text
+#units $suunto112_tolerance ...etc.
+```
 
 
 Macro replacement can occur in Compile Options strings and in most hash-prefixed directive lines in data files.
@@ -7672,7 +7778,20 @@ separate set for each of the five types of shapefiles that can be exported. Note
 
 |Name|Type|Description|
 |---|---|---|
-|FR_PREFIX<br>FR_NAME<br>TO_PREFIX<br>TO_NAME<br>CTR_X<br>CTR_Y<br>CTR_Z<br>LENGTH<br>AZIMUTH<br>INCLINE<br>LINETYPE<br>DATE<br>SRV_NAME<br>SRV_TITLE|C8<br>C8<br>C8<br>C8<br>N12.2<br>N12.2<br>N10.2<br>N10.2<br>N5.1<br>N6.1<br>C8<br>N8.0<br>C8<br>C48|From station prefix<br>From station name<br>To station prefix<br>To station name<br>Vector center's east coordinate<br>Vector center's north coordinate<br>Vector center's up coordinate<br>Vector length<br>Vector azimuth (deg)<br>Vector inclination (deg)<br>RRGGBBxx (RGB color/style)<br>Date surveyed: yyyymmdd<br>Unique SRV file base name<br>Survey title|
+| FR_PREFIX | C8 | From station prefix |
+| FR_NAME | C8 | From station name |
+| TO_PREFIX | C8 | To station prefix |
+| TO_NAME | C8 | To station name |
+| CTR_X | N12.2 | Vector center's east coordinate |
+| CTR_Y | N12.2 | Vector center's north coordinate |
+| CTR_Z | N10.2 | Vector center's up coordinate |
+| LENGTH | N10.2 | Vector length |
+| AZIMUTH | N5.1 | Vector azimuth (deg) |
+| INCLINE | N6.1 | Vector inclination (deg) |
+| LINETYPE | C8 | RRGGBBxx (RGB color/style) |
+| DATE | N8.0 | Date surveyed: yyyymmdd |
+| SRV_NAME | C8 | Unique SRV file base name |
+| SRV_TITLE | C48 | Survey title |
 
 
 
@@ -7687,7 +7806,16 @@ separate set for each of the five types of shapefiles that can be exported. Note
 
 |Name|Type|Description|
 |---|---|---|
-|PREFIX<br>NAME<br>X<br>Y<br>Z<br>LEFT<br>RIGHT<br>UP<br>DOWN<br>LRUD_AZ|C8<br>C8<br>N12.2<br>N12.2<br>N10.2<br>N8.1<br>N8.1<br>N8.1<br>N8.1<br>N8.1|Station prefix<br>Station name<br>Station's east coordinate<br>Station's north coordinate<br>Station's up coordinate<br>Dist to left wall<br>Dist to right wall<br>Dist to ceiling<br>Dist to floor<br>LRUD's facing azimuth|
+| PREFIX | C8 | Station prefix |
+| NAME | C8 | Station name |
+| X | N12.2 | Station's east coordinate |
+| Y | N12.2 | Station's north coordinate |
+| Z | N10.2 | Station's up coordinate |
+| LEFT | N8.1 | Dist to left wall |
+| RIGHT | N8.1 | Dist to right wall |
+| UP | N8.1 | Dist to ceiling |
+| DOWN | N8.1 | Dist to floor |
+| LRUD_AZ | N8.1 | LRUD's facing azimuth |
 
 
 
@@ -7702,37 +7830,21 @@ separate set for each of the five types of shapefiles that can be exported. Note
 
 |Name|Type|Description|
 |---|---|---|
-|(5 station fields)<br>NOTE|...<br>C64|(Same as Name_S.DBF)<br>Station's assignednote|
+| (5 station fields) | ... | (Same as Name_S.DBF) |
+| NOTE | C64 | Station's assigned note |
 
 
 
 **Name_F.DBF (Flags):**
 
-
-**Name** **Type** **Description**
-
-
 _Copyright © 2013 by David McKenzie_
-
 
 **126** **Walls Project Editor**
 
-
-
-(5 station fields)
-FLAGNAME
-
-
-
-...
-C64
-
-
-
-(Same as Name_S.DBF)
-Station's assigned flag
-
-
+| Name | Type | Description |
+| --- | --- | --- |
+| (5 station fields) | ... | (Same as Name_S.DBF) |
+| FLAGNAME | C64 | Station's assigned flag |
 
 **Name_W.DBF (Wall outlines):**
 
@@ -7745,7 +7857,11 @@ Station's assigned flag
 
 |Name|Type|Description|
 |---|---|---|
-|SVGNAME<br>GROUPNAME<br>FILLCOLOR<br>POLYGONS<br>SQMETERS|C30<br>C40<br>C6<br>N6.0<br>N8.1|Name of SVG source file<br>Name of the enclosing SVG group<br>Fill color (RRGGBB) of the outer polygon or "NOFILL" Poly-<br>gon count (one outer plus 0 or more inner polygons) Area<br>in square meters of the outer polygon less the areas of the<br>inner polygons (i.e., floor area)|
+| SVGNAME | C30 | Name of SVG source file |
+| GROUPNAME | C40 | Name of the enclosing SVG group |
+| FILLCOLOR | C6 | Fill color (RRGGBB) of the outer polygon or "NOFILL" |
+| POLYGONS | N6.0 | Polygon count (one outer plus 0 or more inner polygons) |
+| SQMETERS | N8.1 | Area in square meters of the outer polygon less the areas of the inner polygons (i.e., floor area) |
 
 
 
@@ -8207,6 +8323,16 @@ blunders can be localized due to bad loop closures. (Here we're assuming nothing
 definition, dead-end traverses, bridges between loop systems, and articulation points, are excluded from consideration. (Note: Traverse chains were called "links" in earlier versions of Walls.)
 
 
+![](Walls_manual_images/Walls_manual.pdf-136-0.png)
+
+While most traverse chains are single traverses, it's not unusual for a loop
+system to have chains consisting of two or more non-contiguous traverses. In
+fact, when we say "traverse chain" instead of "traverse" we'll normally mean
+a multi-traverse chain. The diagram at left illustrates a connected component
+with three loop systems -- two 1-traverse systems (black) and one 6-traverse
+system (blue and red). The 6-traverse system has a traverse chain consisting
+of two traverses -- an upper traverse and a lower traverse (both red).
+
 If some vector's measurement were grossly in error, we might narrow its location to a traverse chain, but not to a
 specific member of the chain without making further assumptions about the error. The members of a multi-traverse chain, which we'll call **chained traverses**, all have the same F-ratio and the same best correction. On the
 Geometry page in Walls, a loop system's traverses are initially sorted by their decreasing F-ratios (horizontal and
@@ -8218,7 +8344,6 @@ _Copyright © 2013 by David McKenzie_
 
 
 
-![](Walls_manual_images/Walls_manual.pdf-136-0.png)
 **134** **Walls Project Editor**
 
 
