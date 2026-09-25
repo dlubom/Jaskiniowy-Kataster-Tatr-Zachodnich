@@ -4,6 +4,17 @@ Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowan
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Dodano
+
+- Konwerter PocketTopo v3: `jktz-pockettopo inspect`/`convert`, pomiary SRV/SVX,
+  warstwowe szkice SVG/PNG oraz atomowe pakiety z raportem i jawnymi decyzjami
+  związanymi z SHA-256 źródła; skill prowadzący przez konwersję.
+- Niezależne wzorce i testy parsera, pomiarów, projekcji, kompilacji oraz renderera;
+  rozszerzone bramki jakości i mutacji. Archiwum badań pozostaje w PR #129,
+  a w bieżącym drzewie są dokumentacja użytkowa i wzorce wymagane przez testy.
+
 ## [v1.4.7] - 2026-09-25
 
 ### Zmienione

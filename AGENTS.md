@@ -447,6 +447,7 @@ Run shell commands from the repository root; use `uv run` for Python tooling.
 | --- | --- |
 | `$add-cave` | Add source material, survey metadata, GPS mapping, and project entries |
 | `$svx-to-srv` | Convert Survex source measurements to Walls |
+| `$pockettopo-convert` | Inspect PocketTopo v3 and publish audited SRV/SVX, SVG/PNG and JSON packages |
 | `$average-shots` | Average confirmed repeat instrument readings in a working SRV |
 | `$survex-stats` | Compile a source and inspect statistics |
 | `$verify-cave-refactor` | Compare source data and compiled output before/after a refactor |

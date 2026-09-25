@@ -36,6 +36,9 @@ jobs:
       - name: Sync Python tooling
         run: uv sync --locked
 
+      - name: Install resvg
+        uses: ./.github/actions/install-resvg
+
       - name: Validate Python tooling
         run: uv run jktz-quality
 

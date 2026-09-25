@@ -1,0 +1,415 @@
+{
+  "case": "api-cardinal",
+  "expectation_basis": "Literal native-API helper inputs plus documented quantization",
+  "source_SHA256": "64ac69ee1746272a503895256523f386765847c01da81009292fdf29225a9c8e",
+  "source": {
+    "header_hex": "546f7003",
+    "trips": [
+      {
+        "ticks": 632401344000000000,
+        "declination_raw": 0,
+        "comment": "P01 synthetic cardinal and repeat readings"
+      }
+    ],
+    "shots": [
+      {
+        "from_id": {
+          "raw": -2147483647,
+          "kind": "plain",
+          "text": "0"
+        },
+        "to_id": {
+          "raw": -2147483646,
+          "kind": "plain",
+          "text": "1"
+        },
+        "distance_mm": 10000,
+        "azimuth_raw": 0,
+        "inclination_raw": 0,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "north"
+      },
+      {
+        "from_id": {
+          "raw": -2147483646,
+          "kind": "plain",
+          "text": "1"
+        },
+        "to_id": {
+          "raw": -2147483645,
+          "kind": "plain",
+          "text": "2"
+        },
+        "distance_mm": 2000,
+        "azimuth_raw": 16384,
+        "inclination_raw": 0,
+        "flags": 2,
+        "roll_raw": 64,
+        "trip_index": 0,
+        "comment": "east"
+      },
+      {
+        "from_id": {
+          "raw": -2147483645,
+          "kind": "plain",
+          "text": "2"
+        },
+        "to_id": {
+          "raw": -2147483644,
+          "kind": "plain",
+          "text": "3"
+        },
+        "distance_mm": 3000,
+        "azimuth_raw": -32768,
+        "inclination_raw": 0,
+        "flags": 2,
+        "roll_raw": 128,
+        "trip_index": 0,
+        "comment": "south"
+      },
+      {
+        "from_id": {
+          "raw": -2147483644,
+          "kind": "plain",
+          "text": "3"
+        },
+        "to_id": {
+          "raw": -2147483643,
+          "kind": "plain",
+          "text": "4"
+        },
+        "distance_mm": 4000,
+        "azimuth_raw": -16384,
+        "inclination_raw": 0,
+        "flags": 2,
+        "roll_raw": 192,
+        "trip_index": 0,
+        "comment": "west"
+      },
+      {
+        "from_id": {
+          "raw": -2147483643,
+          "kind": "plain",
+          "text": "4"
+        },
+        "to_id": {
+          "raw": -2147483642,
+          "kind": "plain",
+          "text": "5"
+        },
+        "distance_mm": 5000,
+        "azimuth_raw": -364,
+        "inclination_raw": 1820,
+        "flags": 2,
+        "roll_raw": 255,
+        "trip_index": 0,
+        "comment": "confirmed repeat A1"
+      },
+      {
+        "from_id": {
+          "raw": -2147483643,
+          "kind": "plain",
+          "text": "4"
+        },
+        "to_id": {
+          "raw": -2147483642,
+          "kind": "plain",
+          "text": "5"
+        },
+        "distance_mm": 5000,
+        "azimuth_raw": 364,
+        "inclination_raw": 1820,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "confirmed repeat A2"
+      },
+      {
+        "from_id": {
+          "raw": -2147483642,
+          "kind": "plain",
+          "text": "5"
+        },
+        "to_id": {
+          "raw": -2147483643,
+          "kind": "plain",
+          "text": "4"
+        },
+        "distance_mm": 5000,
+        "azimuth_raw": -32768,
+        "inclination_raw": -1820,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "confirmed repeat A3 backwards"
+      },
+      {
+        "from_id": {
+          "raw": -2147483642,
+          "kind": "plain",
+          "text": "5"
+        },
+        "to_id": {
+          "raw": -2147483641,
+          "kind": "plain",
+          "text": "6"
+        },
+        "distance_mm": 1000,
+        "azimuth_raw": 0,
+        "inclination_raw": 16384,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "vertical up"
+      },
+      {
+        "from_id": {
+          "raw": -2147483641,
+          "kind": "plain",
+          "text": "6"
+        },
+        "to_id": {
+          "raw": -2147483640,
+          "kind": "plain",
+          "text": "7"
+        },
+        "distance_mm": 1000,
+        "azimuth_raw": 0,
+        "inclination_raw": -16384,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "vertical down"
+      },
+      {
+        "from_id": {
+          "raw": -2147483640,
+          "kind": "plain",
+          "text": "7"
+        },
+        "to_id": {
+          "raw": -2147483648,
+          "kind": "undefined",
+          "text": null
+        },
+        "distance_mm": 1234,
+        "azimuth_raw": 8192,
+        "inclination_raw": -3641,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "splay"
+      },
+      {
+        "from_id": {
+          "raw": -2147483640,
+          "kind": "plain",
+          "text": "7"
+        },
+        "to_id": {
+          "raw": -2147483639,
+          "kind": "plain",
+          "text": "8"
+        },
+        "distance_mm": 0,
+        "azimuth_raw": 0,
+        "inclination_raw": 0,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "zero link"
+      }
+    ],
+    "references": [],
+    "overview": {
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": 500
+    },
+    "outline": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": []
+    },
+    "sideview": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": []
+    },
+    "trailing_hex": "00000000"
+  },
+  "string_encodings": [
+    {
+      "field": "trips[0].comment",
+      "UTF8_byte_count": 42,
+      "length_prefix_hex": "2a"
+    },
+    {
+      "field": "shots[0].comment",
+      "UTF8_byte_count": 5,
+      "length_prefix_hex": "05"
+    },
+    {
+      "field": "shots[1].comment",
+      "UTF8_byte_count": 4,
+      "length_prefix_hex": "04"
+    },
+    {
+      "field": "shots[2].comment",
+      "UTF8_byte_count": 5,
+      "length_prefix_hex": "05"
+    },
+    {
+      "field": "shots[3].comment",
+      "UTF8_byte_count": 4,
+      "length_prefix_hex": "04"
+    },
+    {
+      "field": "shots[4].comment",
+      "UTF8_byte_count": 19,
+      "length_prefix_hex": "13"
+    },
+    {
+      "field": "shots[5].comment",
+      "UTF8_byte_count": 19,
+      "length_prefix_hex": "13"
+    },
+    {
+      "field": "shots[6].comment",
+      "UTF8_byte_count": 29,
+      "length_prefix_hex": "1d"
+    },
+    {
+      "field": "shots[7].comment",
+      "UTF8_byte_count": 11,
+      "length_prefix_hex": "0b"
+    },
+    {
+      "field": "shots[8].comment",
+      "UTF8_byte_count": 13,
+      "length_prefix_hex": "0d"
+    },
+    {
+      "field": "shots[9].comment",
+      "UTF8_byte_count": 5,
+      "length_prefix_hex": "05"
+    },
+    {
+      "field": "shots[10].comment",
+      "UTF8_byte_count": 9,
+      "length_prefix_hex": "09"
+    }
+  ],
+  "native_DXF": {
+    "scale": 500,
+    "sketch_transform": "x/500,-y/500",
+    "color_index_mapping": {
+      "1": 0,
+      "2": 9,
+      "3": 32,
+      "4": 5,
+      "5": 1,
+      "6": 3,
+      "7": 30
+    },
+    "station_coordinates_mm": {
+      "outline": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          10000
+        ],
+        [
+          2000,
+          10000
+        ],
+        [
+          2000,
+          7000
+        ],
+        [
+          -2000,
+          7000
+        ],
+        [
+          -2000,
+          11922
+        ],
+        [
+          -2000,
+          11922
+        ],
+        [
+          -2000,
+          11922
+        ],
+        [
+          -2000,
+          11922
+        ]
+      ],
+      "sideview": [
+        [
+          0,
+          0
+        ],
+        [
+          10000,
+          0
+        ],
+        [
+          12000,
+          0
+        ],
+        [
+          15000,
+          0
+        ],
+        [
+          19000,
+          0
+        ],
+        [
+          23924,
+          868
+        ],
+        [
+          23924,
+          1868
+        ],
+        [
+          23924,
+          868
+        ],
+        [
+          23924,
+          868
+        ]
+      ]
+    }
+  },
+  "limitations": [
+    "Native TXT rounds angles, references and dates; it omits roll, tick fractions, mapping and sketch records.",
+    "Native DXF folds repeated shot readings into its own model; it is not the PRD arithmetic/circular averaging oracle.",
+    "XSection has no splays at selected stations; this verifies source fields and connector anchors, not general projected cross-section geometry.",
+    "No loop or branching geometry is covered by these minimal fixtures.",
+    "Automatic-declination sentinel -32768 is a mode, never a literal -180-degree correction."
+  ]
+}

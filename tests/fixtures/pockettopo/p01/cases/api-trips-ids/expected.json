@@ -1,0 +1,227 @@
+{
+  "case": "api-trips-ids",
+  "expectation_basis": "Literal native-API helper inputs plus documented quantization",
+  "source_SHA256": "adb83280b6d5a70f383b5542727f675b3ff8a5740058b601d3d49ed27b14895b",
+  "source": {
+    "header_hex": "546f7003",
+    "trips": [
+      {
+        "ticks": 630822816000000007,
+        "declination_raw": 910,
+        "comment": "Synthetic reset-looking date, not field evidence"
+      },
+      {
+        "ticks": 639259776000000009,
+        "declination_raw": -637,
+        "comment": "Unicode trip: Zażółć gęślą jaźń"
+      },
+      {
+        "ticks": 639260640000000001,
+        "declination_raw": -32768,
+        "comment": "Auto declination sentinel; no CRS asserted"
+      }
+    ],
+    "shots": [
+      {
+        "from_id": {
+          "raw": -2147483647,
+          "kind": "plain",
+          "text": "0"
+        },
+        "to_id": {
+          "raw": 0,
+          "kind": "major.minor",
+          "text": "0.0"
+        },
+        "distance_mm": 1000,
+        "azimuth_raw": 0,
+        "inclination_raw": 0,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 0,
+        "comment": "plain zero to major.minor zero"
+      },
+      {
+        "from_id": {
+          "raw": 0,
+          "kind": "major.minor",
+          "text": "0.0"
+        },
+        "to_id": {
+          "raw": 851967,
+          "kind": "major.minor",
+          "text": "12.65535"
+        },
+        "distance_mm": 2000,
+        "azimuth_raw": 16384,
+        "inclination_raw": 1820,
+        "flags": 3,
+        "roll_raw": 0,
+        "trip_index": 1,
+        "comment": "Zażółć gęślą jaźń — ąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąąą"
+      },
+      {
+        "from_id": {
+          "raw": 851967,
+          "kind": "major.minor",
+          "text": "12.65535"
+        },
+        "to_id": {
+          "raw": -2147483648,
+          "kind": "undefined",
+          "text": null
+        },
+        "distance_mm": 3000,
+        "azimuth_raw": -32768,
+        "inclination_raw": -1820,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": 2,
+        "comment": "automatic trip splay"
+      },
+      {
+        "from_id": {
+          "raw": 851967,
+          "kind": "major.minor",
+          "text": "12.65535"
+        },
+        "to_id": {
+          "raw": 851968,
+          "kind": "major.minor",
+          "text": "13.0"
+        },
+        "distance_mm": 4000,
+        "azimuth_raw": -16384,
+        "inclination_raw": 0,
+        "flags": 2,
+        "roll_raw": 0,
+        "trip_index": -1,
+        "comment": "unassigned trip"
+      }
+    ],
+    "references": [],
+    "overview": {
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": 500
+    },
+    "outline": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": []
+    },
+    "sideview": {
+      "mapping": {
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 500
+      },
+      "elements": []
+    },
+    "trailing_hex": "00000000"
+  },
+  "string_encodings": [
+    {
+      "field": "trips[0].comment",
+      "UTF8_byte_count": 48,
+      "length_prefix_hex": "30"
+    },
+    {
+      "field": "trips[1].comment",
+      "UTF8_byte_count": 40,
+      "length_prefix_hex": "28"
+    },
+    {
+      "field": "trips[2].comment",
+      "UTF8_byte_count": 42,
+      "length_prefix_hex": "2a"
+    },
+    {
+      "field": "shots[0].comment",
+      "UTF8_byte_count": 30,
+      "length_prefix_hex": "1e"
+    },
+    {
+      "field": "shots[1].comment",
+      "UTF8_byte_count": 171,
+      "length_prefix_hex": "ab01"
+    },
+    {
+      "field": "shots[2].comment",
+      "UTF8_byte_count": 20,
+      "length_prefix_hex": "14"
+    },
+    {
+      "field": "shots[3].comment",
+      "UTF8_byte_count": 15,
+      "length_prefix_hex": "0f"
+    }
+  ],
+  "native_DXF": {
+    "scale": 500,
+    "sketch_transform": "x/500,-y/500",
+    "color_index_mapping": {
+      "1": 0,
+      "2": 9,
+      "3": 32,
+      "4": 5,
+      "5": 1,
+      "6": 3,
+      "7": 30
+    },
+    "station_coordinates_mm": {
+      "outline": [
+        [
+          0,
+          0
+        ],
+        [
+          87,
+          996
+        ],
+        [
+          2053,
+          1116
+        ],
+        [
+          -1947,
+          1116
+        ]
+      ],
+      "sideview": [
+        [
+          0,
+          0
+        ],
+        [
+          1000,
+          0
+        ],
+        [
+          -970,
+          347
+        ],
+        [
+          3030,
+          347
+        ]
+      ]
+    }
+  },
+  "limitations": [
+    "Native TXT rounds angles, references and dates; it omits roll, tick fractions, mapping and sketch records.",
+    "Native DXF folds repeated shot readings into its own model; it is not the PRD arithmetic/circular averaging oracle.",
+    "XSection has no splays at selected stations; this verifies source fields and connector anchors, not general projected cross-section geometry.",
+    "No loop or branching geometry is covered by these minimal fixtures.",
+    "Automatic-declination sentinel -32768 is a mode, never a literal -180-degree correction."
+  ]
+}
