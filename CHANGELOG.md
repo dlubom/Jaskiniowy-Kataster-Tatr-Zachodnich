@@ -20,6 +20,7 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Poprawiono
 
+- PocketTopo: walidacja kompilacji wykrywa niedobór linii dla różnych par stacji o zbieżnej geometrii, dopasowuje bliskie odcinki niezależnie od kolejności `dump3d`, a CLI ogranicza odczyt źródła do limitu parsera.
 - PocketTopo: walidacja domiarów uwzględnia wszystkie możliwe przypisania do stacji, aby zbieżne końce odcinków nie oznaczały poprawnej konwersji jako niekompletnej; regresja obejmuje pełne CLI z rzeczywistą kompilacją i renderowaniem.
 - Testy PocketTopo na Windows: krótkie nazwy przypadków z dużymi tekstami oraz jawny odczyt wzorców JSON jako UTF-8, z regresją dla domyślnego cp1252; zakończenie P03 potwierdzone pełnym CI na Linux i Windows.
 

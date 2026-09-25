@@ -167,11 +167,19 @@ lub niezgodna geometria nie są sukcesem kompilacji, nawet gdy zapisano
 wszystkie pliki. Brak lub niewłaściwa wersja resvg uniemożliwia pełny pakiet
 i kończy się kodem `1`.
 
+Walidator kompiluje SRV i SVX **osobno w Survexie**. W każdym wyniku sprawdza
+obecność nazwanych stacji, liczbę linii dla odrębnych par stacji, domiary i powiązania zerowe;
+potem porównuje położenia stacji oraz linie obu wyników w tolerancji zapisu 3D.
+Powtórzenia tej samej pary mogą zostać scalone przez kompilator. Zbieżne
+współrzędne dwóch różnych par same nie dowodzą takiego scalenia.
+
 Polityka kolizji jest stała: **odmowa nadpisania**. Dotyczy pliku, pustego
 katalogu, dowiązania symbolicznego (także zerwanego) i celu utworzonego przez
 inny proces podczas konwersji. Rodzic katalogu wynikowego musi istnieć.
 Wyjście w `_RAW` jest zabronione, również przez dowiązanie; odczyt źródła
 z `_RAW` jest dozwolony. Aby powtórzyć próbę, wybierz nową nazwę wyjścia.
+Odczyt źródła jest ograniczony do 64 MiB plus bajt rozpoznający przekroczenie
+limitu; większy plik jest odrzucany przed dekodowaniem.
 
 Wszystkie pliki są przygotowywane w katalogu tymczasowym na tym samym
 systemie plików, a następnie publikowane jednym atomowym przeniesieniem

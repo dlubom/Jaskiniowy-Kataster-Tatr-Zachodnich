@@ -15,6 +15,7 @@ from jktz.pockettopo.compilation import validate_surveys
 from jktz.pockettopo.drawings import DEFAULT_DRAWING_SETTINGS, DrawingSettings, export_drawings
 from jktz.pockettopo.export import export_surveys
 from jktz.pockettopo.export_policy import CorrectionPolicy
+from jktz.pockettopo.parser import read_top_bytes
 from jktz.pockettopo.report import ProcessingPlan
 
 VARIANTS = {"plan-sketch", "plan-measurements", "side-sketch", "side-measurements"}
@@ -148,7 +149,7 @@ def convert_package(
     before publication. Existing outputs have one policy: refuse, never replace.
     """
     target = _destination(destination)
-    data = source.read_bytes()
+    data = read_top_bytes(source)
     options = {"plan": plan, "correction_policy": correction_policy, "min_resultant": min_resultant}
     surveys = export_surveys(data, **options)
     drawings = export_drawings(data, **options, settings=settings, resvg_path=resvg_path)

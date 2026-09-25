@@ -5,6 +5,7 @@ from __future__ import annotations
 import ctypes
 import errno
 import hashlib
+import io
 import json
 import os
 import shutil
@@ -15,6 +16,7 @@ import pytest
 
 from jktz.pockettopo import package
 from jktz.pockettopo.drawings import export_drawings
+from jktz.pockettopo.parser import DEFAULT_LIMITS
 
 EVIDENCE = Path(__file__).resolve().parents[1] / "doc/pockettopo/evidence"
 SOURCE = next((EVIDENCE / "p01/cases/api-drawings").glob("*.top"))
@@ -56,6 +58,28 @@ def test_atomic_package_manifest_source_and_all_artifacts(tmp_path, fast_tools):
         data = (destination / name).read_bytes()
         assert metadata == {"bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}
     assert list(tmp_path.iterdir()) == [destination]
+
+
+def test_conversion_bounds_input_read_before_parsing(tmp_path, monkeypatch, fast_tools):
+    data = SOURCE.read_bytes()
+    original_open = Path.open
+    read_sizes = []
+
+    class ObservedSource(io.BytesIO):
+        def read(self, size=-1):
+            read_sizes.append(size)
+            assert size == DEFAULT_LIMITS.max_bytes + 1
+            return super().read(size)
+
+    def observed_open(path, mode="r", *args, **kwargs):
+        if path == SOURCE and mode == "rb":
+            return ObservedSource(data)
+        return original_open(path, mode, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "open", observed_open)
+    report = package.convert_package(SOURCE, tmp_path / "new")
+    assert report["provenance"]["bytes"] == len(data)
+    assert read_sizes == [DEFAULT_LIMITS.max_bytes + 1]
 
 
 @pytest.mark.parametrize("kind", ["directory", "file", "empty", "symlink", "dangling"])

@@ -360,6 +360,90 @@ def test_text_timeout_output_and_unmatched_extra_geometry():
     assert not compilation._match_legs([], [{"from": (0, 0, 0), "to": (1, 1, 1), "splay": True}])
 
 
+def test_distinct_named_pairs_cannot_be_hidden_by_coincident_coordinates():
+    positions = {"a": (0, 0, 0), "b": (1, 0, 0), "c": (0, 0, 0), "d": (1, 0, 0)}
+    named_leg = {"from": (0, 0, 0), "to": (1, 0, 0), "splay": False}
+    groups = [
+        {"id": 0, "kind": "leg", "from_raw": 1, "to_raw": 2},
+        {"id": 1, "kind": "leg", "from_raw": 3, "to_raw": 4},
+    ]
+    expected = {"names": {1: "a", 2: "b", 3: "c", 4: "d"}, "groups": groups}
+    checks = compilation._inspect_geometry(expected, {"nodes": positions, "legs": [named_leg]})
+    assert checks["legs"]["minimum_distinct_named_legs"] == 2
+    assert checks["legs"]["underrepresented_named_edge_group_ids"] == [0, 1]
+    assert not checks["complete"]
+    checks = compilation._inspect_geometry(expected, {"nodes": positions, "legs": [named_leg] * 2})
+    assert checks["legs"]["underrepresented_named_edge_group_ids"] == []
+    assert checks["complete"]
+
+    # Extra repetitions elsewhere cannot compensate for one missing edge here.
+    expected["names"].update({5: "e", 6: "f"})
+    expected["groups"] = groups + [
+        {"id": 2, "kind": "leg", "from_raw": 5, "to_raw": 6},
+        {"id": 3, "kind": "leg", "from_raw": 5, "to_raw": 6},
+    ]
+    second_leg = {"from": (0, 2, 0), "to": (1, 2, 0), "splay": False}
+    with_extra = {
+        "nodes": {**positions, "e": (0, 2, 0), "f": (1, 2, 0)},
+        "legs": [named_leg, second_leg, second_leg],
+    }
+    checks = compilation._inspect_geometry(expected, with_extra)
+    assert checks["legs"]["compiled_named_legs"] == 3
+    assert checks["legs"]["minimum_distinct_named_legs"] == 3
+    assert checks["legs"]["underrepresented_named_edge_group_ids"] == [0, 1]
+    assert not checks["complete"]
+
+    # Explicit zero links identify the pairs as one survey edge; combining it is valid.
+    expected["names"] = {1: "a", 2: "b", 3: "c", 4: "d"}
+    expected["groups"] = groups + [
+        {"id": 2, "kind": "zero_link", "from_raw": 1, "to_raw": 3},
+        {"id": 3, "kind": "zero_link", "from_raw": 2, "to_raw": 4},
+    ]
+    checks = compilation._inspect_geometry(expected, {"nodes": positions, "legs": [named_leg]})
+    assert checks["legs"]["minimum_distinct_named_legs"] == 1
+    assert checks["legs"]["underrepresented_named_edge_group_ids"] == []
+    assert checks["complete"]
+
+
+def test_nearby_legs_match_independently_of_dump_order():
+    def splay(y):
+        return {"from": (0.0, 0.0, 0.0), "to": (1.0, y, 0.0), "splay": True}
+
+    first = [splay(0.0), splay(0.02)]
+    second = [splay(0.01), splay(-0.01)]
+    assert compilation._match_legs(first, second)
+    assert compilation._match_legs(first, second[::-1])
+    expected = {kind: {"names": {1: "anchor"}} for kind in ("srv", "svx")}
+    compiled = {
+        "srv": {"nodes": {"anchor": (0.0, 0.0, 0.0)}, "legs": first},
+        "svx": {"nodes": {"anchor": (0.0, 0.0, 0.0)}, "legs": second},
+    }
+    assert compilation._compare(expected, compiled)["status"] == "equivalent"
+
+
+def test_many_distinct_nearby_legs_do_not_compare_every_pair(monkeypatch):
+    def splay(index, offset):
+        return {
+            "from": (0.0, 0.0, 0.0),
+            "to": (float(index) + offset, 0.0, 0.0),
+            "splay": True,
+        }
+
+    first = [splay(index, 0.0) for index in range(1, 1001)]
+    second = [splay(index, 0.005) for index in range(1000, 0, -1)]
+    original = compilation._same_edge
+    comparisons = 0
+
+    def counted(first_leg, second_leg):
+        nonlocal comparisons
+        comparisons += 1
+        return original(first_leg, second_leg)
+
+    monkeypatch.setattr(compilation, "_same_edge", counted)
+    assert compilation._match_legs(first, second)
+    assert comparisons < 8 * len(first)
+
+
 @pytest.mark.parametrize("disconnect", [False, True])
 def test_native_fixture_real_compiler_checks_disconnected_geometry(disconnect):
     if not shutil.which("cavern") or not shutil.which("dump3d"):

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import json
 import os
 import runpy
@@ -18,6 +19,7 @@ from jktz.cli import pockettopo
 from jktz.pockettopo import CorrectionOverride, CorrectionPolicy, ProcessingPlan, RepeatConfirmation
 from jktz.pockettopo.drawings import DrawingSettings, RenderingError
 from jktz.pockettopo.export import export_surveys
+from jktz.pockettopo.parser import DEFAULT_LIMITS
 
 ROOT = Path(__file__).resolve().parents[1]
 CASES = ROOT / "doc/pockettopo/evidence/p01/cases"
@@ -54,6 +56,28 @@ def test_inspect_prints_complete_source_and_report_json(case, capsys):
     assert document["source"]["provenance"]["sha256"] == hashlib.sha256(before).hexdigest()
     assert all(trip["used_date"] is None for trip in document["report"]["trips"])
     assert source.read_bytes() == before
+
+
+def test_inspect_bounds_input_read_before_parsing(monkeypatch, capsys):
+    data = CARDINAL.read_bytes()
+    original_open = Path.open
+    read_sizes = []
+
+    class ObservedSource(io.BytesIO):
+        def read(self, size=-1):
+            read_sizes.append(size)
+            assert size == DEFAULT_LIMITS.max_bytes + 1
+            return super().read(size)
+
+    def observed_open(path, mode="r", *args, **kwargs):
+        if path == CARDINAL and mode == "rb":
+            return ObservedSource(data)
+        return original_open(path, mode, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "open", observed_open)
+    assert pockettopo.main(["inspect", str(CARDINAL)]) == 0
+    assert json.loads(capsys.readouterr().out)["source"]["provenance"]["bytes"] == len(data)
+    assert read_sizes == [DEFAULT_LIMITS.max_bytes + 1]
 
 
 def test_inspect_uses_pinned_decisions_and_explicit_resultant_threshold(tmp_path, capsys):

@@ -7,7 +7,8 @@ import os
 import re
 import subprocess
 import tempfile
-from collections import Counter
+from collections import Counter, defaultdict
+from itertools import product
 from pathlib import Path
 
 from jktz.pockettopo.export import SurveyExport
@@ -15,6 +16,7 @@ from jktz.pockettopo.export import SurveyExport
 # P04: .3d stores centimetres; subtracting an origin combines two rounded values.
 COORDINATE_TOLERANCE_M = 0.010001
 PROCESS_TIMEOUT_SECONDS = 30
+_NEIGHBOR_OFFSETS = tuple(product((-1, 0, 1), repeat=3))
 
 
 def _text(value: str | bytes | None) -> str:
@@ -119,6 +121,36 @@ def _edge_key(edge: dict) -> tuple:
     return tuple(sorted((edge["from"], edge["to"])))
 
 
+def _station_root(parents: dict[int, int], station: int) -> int:
+    parents.setdefault(station, station)
+    while parents[station] != station:
+        parents[station] = parents[parents[station]]
+        station = parents[station]
+    return station
+
+
+def _named_pair_ids(groups: list[dict]) -> dict[int, tuple[int, int]]:
+    """Keep named pair identity after only explicit zero links are equated."""
+    parents: dict[int, int] = {}
+    for group in groups:
+        if group["kind"] == "zero_link":
+            start = _station_root(parents, group["from_raw"])
+            end = _station_root(parents, group["to_raw"])
+            parents[start] = end
+    return {
+        group["id"]: tuple(
+            sorted(
+                (
+                    _station_root(parents, group["from_raw"]),
+                    _station_root(parents, group["to_raw"]),
+                )
+            )
+        )
+        for group in groups
+        if group["kind"] == "leg"
+    }
+
+
 def _named_edges(expected: dict, nodes: dict) -> list[dict]:
     return [
         {
@@ -188,31 +220,62 @@ def _splay_anchors(expected: dict, compiled: dict) -> bool:
     )
 
 
+def _underrepresented_named_edges(
+    edges: list[dict], pair_ids: dict, named: list[dict]
+) -> list[int]:
+    pairs_by_edge = defaultdict(set)
+    ids_by_edge = defaultdict(list)
+    for edge in edges:
+        key = _edge_key(edge)
+        pairs_by_edge[key].add(pair_ids[edge["group_id"]])
+        ids_by_edge[key].append(edge["group_id"])
+    compiled_keys = Counter(_edge_key(leg) for leg in named)
+    return sorted(
+        group_id
+        for key, pairs in pairs_by_edge.items()
+        if compiled_keys[key] < len(pairs)
+        for group_id in ids_by_edge[key]
+    )
+
+
 def _leg_checks(expected: dict, compiled: dict) -> dict:
     groups = expected["groups"]
     named = [leg for leg in compiled["legs"] if not leg["splay"]]
     splays = [leg for leg in compiled["legs"] if leg["splay"]]
     edges = _named_edges(expected, compiled["nodes"])
+    pair_ids = _named_pair_ids(groups)
+    underrepresented = _underrepresented_named_edges(edges, pair_ids, named)
     compiled_keys = {_edge_key(leg) for leg in named}
     expected_keys = {_edge_key(edge) for edge in edges}
     missing = [edge["group_id"] for edge in edges if _edge_key(edge) not in compiled_keys]
     unexpected = [index for index, leg in enumerate(named) if _edge_key(leg) not in expected_keys]
     named_count = sum(group["kind"] == "leg" for group in groups)
+    minimum_named = len(set(pair_ids.values()))
     splay_count = sum(group["kind"] == "splay" for group in groups)
-    counts_valid = len(named) <= named_count and len(splays) == splay_count
+    counts_valid = minimum_named <= len(named) <= named_count and len(splays) == splay_count
     anchors_valid = _splay_anchors(expected, compiled)
     return {
         "source_named_leg_groups": named_count,
+        "minimum_distinct_named_legs": minimum_named,
         "source_splay_groups": splay_count,
         "compiled_named_legs": len(named),
         "compiled_splays": len(splays),
         "missing_named_edge_group_ids": missing,
+        "underrepresented_named_edge_group_ids": underrepresented,
         "unexpected_named_leg_indices": unexpected,
         "compiler_combined_named_edges": (
-            len(named) < named_count and len(edges) == named_count and not missing
+            counts_valid
+            and len(named) < named_count
+            and len(edges) == named_count
+            and not missing
+            and not underrepresented
         ),
         "splay_anchors_complete": anchors_valid,
-        "complete": counts_valid and anchors_valid and not missing and not unexpected,
+        "complete": counts_valid
+        and anchors_valid
+        and not missing
+        and not unexpected
+        and not underrepresented,
     }
 
 
@@ -288,21 +351,76 @@ def _relative_legs(compiled: dict, origin: tuple) -> list[dict]:
     ]
 
 
+def _coordinate_cell(position: tuple) -> tuple[int, int, int]:
+    width = 2 * COORDINATE_TOLERANCE_M
+    return tuple(math.floor(value / width) for value in position)
+
+
+def _leg_candidate_index(legs: list[dict]) -> dict:
+    cells = defaultdict(list)
+    for index, leg in enumerate(legs):
+        for cell in {_coordinate_cell(leg["from"]), _coordinate_cell(leg["to"])}:
+            cells[(leg["splay"], *cell)].append(index)
+    return cells
+
+
+def _nearby_leg_candidates(leg: dict, other: list[dict], cells: dict) -> list[int]:
+    def nearby(position: tuple) -> set[int]:
+        x, y, z = _coordinate_cell(position)
+        return {
+            index
+            for dx, dy, dz in _NEIGHBOR_OFFSETS
+            for index in cells.get((leg["splay"], x + dx, y + dy, z + dz), ())
+        }
+
+    # Both endpoints must be near an endpoint of the same compiled line.
+    positions = nearby(leg["from"]) & nearby(leg["to"])
+    return [index for index in sorted(positions) if _same_edge(leg, other[index])]
+
+
 def _match_legs(first: list[dict], second: list[dict]) -> bool:
-    remaining = list(second)
-    for leg in first:
-        match = next(
-            (
-                index
-                for index, other in enumerate(remaining)
-                if leg["splay"] == other["splay"] and _same_edge(leg, other)
-            ),
-            None,
-        )
-        if match is None:
+    """Find a one-to-one match within tolerance, regardless of dump order."""
+    if len(first) != len(second):
+        return False
+    if Counter((leg["splay"], _edge_key(leg)) for leg in first) == Counter(
+        (leg["splay"], _edge_key(leg)) for leg in second
+    ):
+        return True
+    cells = _leg_candidate_index(second)
+    candidates: dict[int, list[int]] = {}
+    owners: dict[int, int] = {}
+    assigned: dict[int, int] = {}
+    for index in range(len(first)):
+        pending = [index]
+        seen = {index}
+        predecessors: dict[int, int] = {}
+        for current in pending:
+            if current not in candidates:
+                candidates[current] = _nearby_leg_candidates(first[current], second, cells)
+            for position in candidates[current]:
+                if position in predecessors:
+                    continue
+                predecessors[position] = current
+                previous = owners.get(position)
+                if previous is None:
+                    while True:
+                        previous_position = assigned.get(current)
+                        owners[position] = current
+                        assigned[current] = position
+                        if previous_position is None:
+                            break
+                        position = previous_position
+                        current = predecessors[position]
+                    break
+                if previous not in seen:
+                    seen.add(previous)
+                    pending.append(previous)
+            else:
+                continue
+            break
+        else:
             return False
-        remaining.pop(match)
-    return not remaining
+    return True
 
 
 def _compare(expected: dict, compiled: dict) -> dict:

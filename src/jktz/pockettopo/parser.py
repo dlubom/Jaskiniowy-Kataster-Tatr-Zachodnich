@@ -226,8 +226,15 @@ def parse_bytes(data: bytes, *, limits: ParseLimits = DEFAULT_LIMITS) -> TopFile
     )
 
 
-def read_top(path: str | Path, *, limits: ParseLimits = DEFAULT_LIMITS) -> TopFile:
-    """Read at most the byte budget plus one; propagate filesystem failures."""
+def read_top_bytes(path: str | Path, *, limits: ParseLimits = DEFAULT_LIMITS) -> bytes:
+    """Keep source bytes for hashing without reading past the parser's byte budget."""
     with Path(path).open("rb") as source:
         data = source.read(limits.max_bytes + 1)
-    return parse_bytes(data, limits=limits)
+    if len(data) > limits.max_bytes:
+        raise ParseError("resource_limit", 0, "file")
+    return data
+
+
+def read_top(path: str | Path, *, limits: ParseLimits = DEFAULT_LIMITS) -> TopFile:
+    """Read at most the byte budget plus one; propagate filesystem failures."""
+    return parse_bytes(read_top_bytes(path, limits=limits), limits=limits)

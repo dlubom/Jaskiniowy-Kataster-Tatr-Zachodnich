@@ -12,6 +12,7 @@ from jktz.pockettopo.config import load_decisions
 from jktz.pockettopo.drawings import DrawingSettings, RenderingError
 from jktz.pockettopo.export import export_surveys
 from jktz.pockettopo.package import convert_package
+from jktz.pockettopo.parser import read_top_bytes
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -45,7 +46,7 @@ def _execute(args: argparse.Namespace) -> int:
     plan, corrections = load_decisions(args.decisions) if args.decisions else (None, None)
     options = {"plan": plan, "correction_policy": corrections, "min_resultant": args.min_resultant}
     if args.command == "inspect":
-        result = export_surveys(args.source.read_bytes(), **options)
+        result = export_surveys(read_top_bytes(args.source), **options)
         result.report["limitations"] = [
             item for item in result.report["limitations"] if not item.startswith("Sketches, CLI")
         ] + ["Inspection only: drawings, compilation and package publication have not run."]
