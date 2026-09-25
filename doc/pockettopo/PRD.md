@@ -178,3 +178,9 @@ oraz format profilu metadanych dla aktywnego JKTZ. Natywny DXF uśrednia własny
 algorytmem i nie zastępuje kontraktu średnich P03. Pełny korpus 258 plików
 oraz audyt współrzędnych Shadow pozostają do wykonania w dalszych etapach.
 Nie deklarować pełnej zgodności przed spełnieniem kryteriów odbioru.
+
+Uzupełnienie P01 (2026-09-25): trzy rzeczywiste źródła z test2 zawierają 15 serii
+potrójnych i oba szkice. Natywne TXT: 50 rekordów zgodnych; DXF: 2540
+wierzchołków zgodnych wraz z kolorami i kolejnością.
+[Dobór](REPEAT_CANDIDATES.md), [dowody i ograniczenia](evidence/repeat-candidates/README.md).
+Następny etap pozostaje P02.

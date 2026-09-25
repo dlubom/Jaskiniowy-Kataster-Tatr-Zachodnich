@@ -9,3 +9,6 @@ doc/pockettopo/evidence/shadow/*.dxf binary
 doc/pockettopo/evidence/p01/**/*.top binary
 doc/pockettopo/evidence/p01/**/*.txt binary
 doc/pockettopo/evidence/p01/**/*.dxf binary
+doc/pockettopo/evidence/repeat-candidates/**/*.top binary
+doc/pockettopo/evidence/repeat-candidates/**/*.txt binary
+doc/pockettopo/evidence/repeat-candidates/**/*.dxf binary

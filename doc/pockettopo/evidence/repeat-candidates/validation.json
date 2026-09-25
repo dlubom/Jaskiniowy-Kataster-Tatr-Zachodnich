@@ -1,0 +1,99 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "case": "zach0dni2",
+      "source_sha256": "a7a165750b0a3b03b19f72050219ffd28b22defa7fc68163a383b98236e994e4",
+      "native_txt": {
+        "file": "native.txt",
+        "SHA256": "cec4d749bf02da66e1ccec7103443bb5b8616b50037c131b826a9b3ee516704a",
+        "trips_checked": 1,
+        "shots_checked": 11,
+        "references_checked": 0,
+        "all_fields_exposed_by_TXT_match": true
+      },
+      "drawings": [
+        {
+          "view": "outline",
+          "strokes": 56,
+          "vertices": 692,
+          "max_coordinate_error_dxf_mm": 0,
+          "colors_and_order_match": true,
+          "other_entities_not_geometry_validated": 7
+        },
+        {
+          "view": "sideview",
+          "strokes": 14,
+          "vertices": 220,
+          "max_coordinate_error_dxf_mm": 0,
+          "colors_and_order_match": true,
+          "other_entities_not_geometry_validated": 7
+        }
+      ]
+    },
+    {
+      "case": "okna",
+      "source_sha256": "52e16f9561f2fbf3b66e595c29fce113c9ed1cc44fc5865897cb5f06b1aaba94",
+      "native_txt": {
+        "file": "native.txt",
+        "SHA256": "39f06baa59c3aaffee0f0b72cc97894d8a805e28f3472d2a4e1968e8a674bf2a",
+        "trips_checked": 1,
+        "shots_checked": 14,
+        "references_checked": 0,
+        "all_fields_exposed_by_TXT_match": true
+      },
+      "drawings": [
+        {
+          "view": "outline",
+          "strokes": 26,
+          "vertices": 226,
+          "max_coordinate_error_dxf_mm": 0,
+          "colors_and_order_match": true,
+          "other_entities_not_geometry_validated": 9
+        },
+        {
+          "view": "sideview",
+          "strokes": 10,
+          "vertices": 131,
+          "max_coordinate_error_dxf_mm": 0,
+          "colors_and_order_match": true,
+          "other_entities_not_geometry_validated": 9
+        }
+      ]
+    },
+    {
+      "case": "DS201208",
+      "source_sha256": "edf6da168275bf334f413557e402ad14a03191141779a1466d71d230702da870",
+      "native_txt": {
+        "file": "native.txt",
+        "SHA256": "3e24b2a8a1af5227bc918559bbac514900eb045ca9784f1dbb559648063ff0c7",
+        "trips_checked": 1,
+        "shots_checked": 25,
+        "references_checked": 0,
+        "all_fields_exposed_by_TXT_match": true
+      },
+      "drawings": [
+        {
+          "view": "outline",
+          "strokes": 41,
+          "vertices": 459,
+          "max_coordinate_error_dxf_mm": 0,
+          "colors_and_order_match": true,
+          "other_entities_not_geometry_validated": 16
+        },
+        {
+          "view": "sideview",
+          "strokes": 29,
+          "vertices": 812,
+          "max_coordinate_error_dxf_mm": 0,
+          "colors_and_order_match": true,
+          "other_entities_not_geometry_validated": 16
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Native traverse geometry is not a reference for PRD averaging.",
+    "Repeated endpoints do not independently confirm survey intent."
+  ]
+}
