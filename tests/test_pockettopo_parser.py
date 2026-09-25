@@ -278,7 +278,12 @@ def test_unknown_drawing_element_is_never_skipped(kind: int) -> None:
     _error(_file(outline=bytes([kind])), "unknown_element", 40, "outline.elements[0].kind")
 
 
-@pytest.mark.parametrize("text", ["", "x" * 127, "ą" * 64, "x" * 16383, "ą" * 8192, "x" * 2097152])
+@pytest.mark.parametrize(
+    "text",
+    ["", "x" * 127, "ą" * 64, "x" * 16383, "ą" * 8192, "x" * 2097152],
+    # Pytest puts node IDs in PYTEST_CURRENT_TEST; Windows limits its length.
+    ids=["empty", "ascii-127", "utf8-128", "ascii-16383", "utf8-16384", "ascii-2097152"],
+)
 def test_string_length_counts_utf8_bytes_across_varint_boundaries(text: str) -> None:
     parsed = parse_bytes(
         _file(trips=(_trip(comment=text),)), limits=ParseLimits(max_string_bytes=len(text.encode()))

@@ -4,6 +4,8 @@
 
 [Ponowna weryfikacja i publikacja](REVALIDATION.md) dokumentuje świeże bramki,
 odtworzenie dowodów oraz push istniejących commitów P02/P03 podczas wznowienia.
+[Poprawki testów Windows](WINDOWS.md) opisują późniejszy błąd długich nazw
+pytest, jawne UTF-8 oraz aktualny zestaw 786 testów (190 P03).
 
 Biblioteka przygotowuje w pamięci dwa dokumenty zgodne z JSON: pełne dane
 źródłowe oraz raport przetwarzania. Nie zapisuje plików. Zapis atomowego pakietu

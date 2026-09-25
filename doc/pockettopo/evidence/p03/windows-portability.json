@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-09-25T13:13:48.289199+00:00",
+  "base_commit": "3a81b1910ae1e281a35e815979a8e181250c51c8",
+  "scope": "Test-only Windows portability fixes; no production or fixture changes",
+  "ci_failure": {
+    "run": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/actions/runs/36138766046/job/108083140878",
+    "step": "Run Pytest (Windows)",
+    "error": "ValueError: the environment variable is longer than 32767 characters",
+    "variable": "PYTEST_CURRENT_TEST",
+    "test": "test_string_length_counts_utf8_bytes_across_varint_boundaries"
+  },
+  "nodeids": {
+    "before": {
+      "exit_code": 0,
+      "count": 6,
+      "nodeid_lengths": [
+        96,
+        223,
+        480,
+        16479,
+        49248,
+        2097248
+      ],
+      "max_nodeid_length": 2097248
+    },
+    "after": {
+      "exit_code": 0,
+      "count": 6,
+      "nodeid_lengths": [
+        101,
+        105,
+        104,
+        107,
+        106,
+        109
+      ],
+      "max_nodeid_length": 109
+    },
+    "whole_suite_after": {
+      "exit_code": 0,
+      "count": 786,
+      "max_nodeid_length": 230,
+      "over_windows_limit": 0
+    },
+    "method": "pytest --collect-only with pytest_collection_finish reading len(item.nodeid); payloads unchanged"
+  },
+  "encoding_regression": {
+    "test": "tests/test_pockettopo_report.py::test_native_oracle_keeps_unicode_with_a_cp1252_default",
+    "before": "failed on Unicode fixture comment",
+    "after": "passed",
+    "method": "Path.read_text wrapper uses cp1252 only when encoding is omitted; explicit UTF-8 remains effective",
+    "p03_tests_passed": 190
+  },
+  "input_sha256": {
+    "src/jktz/pockettopo/__init__.py": "f6255c1d6f17bad1d8c3016cc9a0950538332bb01fb90ef82d51d35b2a91956f",
+    "src/jktz/pockettopo/averaging.py": "dcfdf09864069a1be8a4d783acec2bb52321b61c7e653716574cc5ad021b0f2a",
+    "src/jktz/pockettopo/grouping.py": "08426ddf033fdfbc3323f85b2f446f461219f7fb1dc11d995a88c42df615f2f6",
+    "src/jktz/pockettopo/model.py": "35d85dc4655cf55d48f35d593a43486b01fea4117e09bc31f4d391a00d71be02",
+    "src/jktz/pockettopo/parser.py": "57eed978b45f4aefe75536435d521cc5a656d8ccb54108b6d5de739d6496f783",
+    "src/jktz/pockettopo/report.py": "1291fc40d238e519fa3d87fdb2ee8c666d5c13737c791e1e5ffc87d4e90dba5a",
+    "tests/test_pockettopo_parser.py": "fd33cf663c58c9dd0f3719ce647f6bb4e0083057566a58740fcdc832458e1b90",
+    "tests/test_pockettopo_report.py": "4c6a4120ac6b05ef60d25ca90e5fdff74ffae40ff913fccff8ff20e6a932129f",
+    "pyproject.toml": "766e76e762b49985b64ace26340284c085965d6d766b4f32cd02a7bf946e4db4",
+    "uv.lock": "e36e639704be80ca0f6af1b3b74e0b1e6839a52e0b9719cb7b52d988b61a614d"
+  },
+  "quality": {
+    "command": "uv run --python 3.12 jktz-quality",
+    "exit_code": 0,
+    "tests_passed": 786,
+    "line_percent": 96.88652191724702,
+    "branch_percent": 94.59798994974874,
+    "max_crap": 21.542410714285715,
+    "report": "quality.json",
+    "equals_committed_report": true
+  },
+  "mutation": {
+    "command": "uv run --python 3.12 jktz-mutation",
+    "exit_code": 0,
+    "killed": 1860,
+    "total": 2090,
+    "score": 88.99521531100478,
+    "minimum_module_score": 81.14285714285714,
+    "failures": [],
+    "report": "mutation.json",
+    "equals_committed_report": true
+  },
+  "production_matches_original_p03": true,
+  "corpus_reproduction": "revalidation.json; identical production and original inputs, no changed math/report output",
+  "delivery": "Final corrected-commit CI must be checked after push; cancelled previous runs do not certify Windows.",
+  "next_stage": "P04"
+}

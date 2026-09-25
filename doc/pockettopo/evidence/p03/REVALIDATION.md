@@ -1,5 +1,9 @@
 # Ponowna weryfikacja i publikacja P03 — 2026-09-25
 
+Poniższy zapis dotyczy kodu `f86a9e3`. Późniejsza kontrola CI wykryła
+[problemy przenośności testów Windows](WINDOWS.md), poprawione z regresją;
+aktualny zestaw liczy 786 testów. Wcześniejszych dowodów nie nadpisano.
+
 Przy wznowieniu `codex/pockettopo-convert` drzewo robocze było czyste.
 P02 (`62047ee3e53a6fbca6ebce488c5d4e446059b0da`) oraz P03
 (`f86a9e3e2563efe794fa99a2a1086b2dd1872e9e`) były już zatwierdzone lokalnie,

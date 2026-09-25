@@ -17,13 +17,33 @@ from jktz.pockettopo.report import ProcessingPlan, prepare_conversion
 
 EVIDENCE = Path(__file__).resolve().parents[1] / "doc/pockettopo/evidence"
 CASES = sorted((EVIDENCE / "p01/cases").iterdir())
-REPEAT_MANIFEST = json.loads((EVIDENCE / "repeat-candidates/manifest.json").read_text())
+REPEAT_MANIFEST = json.loads(
+    (EVIDENCE / "repeat-candidates/manifest.json").read_text(encoding="utf-8")
+)
 CONFIRMATION = "Native P01 pockettopo_fixtures.cs:167-169 explicitly defines repeat A1/A2/A3"
 
 
 def _native(name: str) -> tuple[bytes, dict]:
     case = EVIDENCE / "p01/cases" / name
-    return next(case.glob("*.top")).read_bytes(), json.loads((case / "expected.json").read_text())
+    return next(case.glob("*.top")).read_bytes(), json.loads(
+        (case / "expected.json").read_text(encoding="utf-8")
+    )
+
+
+def test_native_oracle_keeps_unicode_with_a_cp1252_default(monkeypatch) -> None:
+    read_text = Path.read_text
+
+    def cp1252_read_text(path, encoding=None, errors=None):
+        # Simulate Windows text defaults even when this interpreter uses UTF-8 mode.
+        return read_text(path, encoding="cp1252" if encoding is None else encoding, errors=errors)
+
+    monkeypatch.setattr(Path, "read_text", cp1252_read_text)
+    data, oracle = _native("api-trips-ids")
+    source, report = prepare_conversion(data)
+    comment = "Unicode trip: Zażółć gęślą jaźń"
+    assert oracle["source"]["trips"][1]["comment"] == comment
+    assert source["records"]["trips"][1]["comment"] == comment
+    assert report["trips"][1]["comment"] == comment
 
 
 def _raw_oracle(value):
@@ -75,7 +95,7 @@ def _replace_shot(data: bytes, oracle: dict, index: int, **changes) -> bytes:
 @pytest.mark.parametrize("case", CASES, ids=lambda path: path.name)
 def test_source_document_preserves_every_native_raw_field_and_drawing_kind(case: Path) -> None:
     data = next(case.glob("*.top")).read_bytes()
-    expected = json.loads((case / "expected.json").read_text())
+    expected = json.loads((case / "expected.json").read_text(encoding="utf-8"))
     source, report = prepare_conversion(data)
     # Round-trip through strict JSON: tuples may become lists, integers must not
     # become floats, and neither NaN nor Infinity may enter a durable report.

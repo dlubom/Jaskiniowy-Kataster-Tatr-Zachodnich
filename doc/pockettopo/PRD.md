@@ -227,3 +227,9 @@ Wznowienie P03 (2026-09-25): istniejące commity P02/P03 wypchnięto na `origin`
 po pełnej walidacji cavern/GDAL. Powtórzono bramki jakości i mutacji oraz
 odtworzono dowody na źródłach; [zapis weryfikacji](evidence/p03/REVALIDATION.md)
 uzupełnia wcześniejsze wyniki. Zakres następnej pracy pozostaje P04.
+
+Kontrola CI ujawniła problemy testów na Windows: zbyt długie identyfikatory
+parametrów pytest i zależność od domyślnego kodowania przy odczycie JSON.
+Dodano krótkie identyfikatory, jawne UTF-8 i regresję cp1252; aktualnie
+786 testów (190 P03). Kod produkcyjny i wejścia są niezmienione.
+[Dowody i wyniki](evidence/p03/WINDOWS.md). Następny etap nadal P04.

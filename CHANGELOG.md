@@ -15,6 +15,10 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 - P02 PocketTopo: ścisły parser `.top` v3 i niezmienny model surowych danych, niezależne testy rekordów i uszkodzeń oraz rozszerzenie bramki mutacyjnej o parser i model.
 - P03 PocketTopo: średnie wyłącznie dla jawnie potwierdzonych serii powiązanych z SHA-256 źródła, normalizacja kierunków, raport każdego rekordu i surowe dane JSON; testy graniczne oraz mutacje matematyki i grupowania.
 
+### Poprawiono
+
+- Testy PocketTopo na Windows: krótkie nazwy przypadków z dużymi tekstami oraz jawny odczyt wzorców JSON jako UTF-8, z regresją dla domyślnego cp1252.
+
 ## [v1.4.7] - 2026-09-25
 
 ### Zmienione
