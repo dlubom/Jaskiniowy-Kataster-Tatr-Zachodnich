@@ -2,6 +2,9 @@
 
 **Zakończone 2026-09-25 na `codex/pockettopo-convert`. Następny etap: P04.**
 
+[Ponowna weryfikacja i publikacja](REVALIDATION.md) dokumentuje świeże bramki,
+odtworzenie dowodów oraz push istniejących commitów P02/P03 podczas wznowienia.
+
 Biblioteka przygotowuje w pamięci dwa dokumenty zgodne z JSON: pełne dane
 źródłowe oraz raport przetwarzania. Nie zapisuje plików. Zapis atomowego pakietu
 oraz CLI należą do P06; SRV/SVX, mapowanie nazw i polityka użytych korekt do P04;

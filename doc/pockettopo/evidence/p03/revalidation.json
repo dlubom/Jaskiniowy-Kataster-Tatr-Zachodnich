@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-09-25T13:03:17.803080+00:00",
+  "verified_commit": "f86a9e3e2563efe794fa99a2a1086b2dd1872e9e",
+  "python": "3.12.13",
+  "scope": "P03 revalidation and publication; implementation already committed before this continuation",
+  "first_push": {
+    "before": "ad7d7fa8681c6432e17bee8308c6a29c94214d21",
+    "after": "f86a9e3e2563efe794fa99a2a1086b2dd1872e9e",
+    "command": "git push origin codex/pockettopo-convert",
+    "exit_code": 0,
+    "pre_push_jktz_validate": "passed; full cavern compilation and GDAL exports"
+  },
+  "input_hashes": {
+    "reference": "repository-checks.json#/input_sha256",
+    "matched": 13,
+    "mismatches": []
+  },
+  "quality": {
+    "command": "uv run --python 3.12 jktz-quality",
+    "exit_code": 0,
+    "tests_passed": 785,
+    "line_percent": 96.88652191724702,
+    "branch_percent": 94.59798994974874,
+    "max_crap": 21.542410714285715,
+    "equals_committed_report": true,
+    "report": "quality.json"
+  },
+  "mutation": {
+    "command": "uv run --python 3.12 jktz-mutation",
+    "exit_code": 0,
+    "killed": 1860,
+    "total": 2090,
+    "score": 88.99521531100478,
+    "modules": [
+      {
+        "file": "src/jktz/metadata/io.py",
+        "killed": 33,
+        "total": 39,
+        "score": 84.61538461538461
+      },
+      {
+        "file": "src/jktz/metadata/raw.py",
+        "killed": 104,
+        "total": 114,
+        "score": 91.2280701754386
+      },
+      {
+        "file": "src/jktz/metadata/srv.py",
+        "killed": 303,
+        "total": 368,
+        "score": 82.33695652173913
+      },
+      {
+        "file": "src/jktz/entrances/render.py",
+        "killed": 284,
+        "total": 350,
+        "score": 81.14285714285714
+      },
+      {
+        "file": "src/jktz/validation/measurements.py",
+        "killed": 108,
+        "total": 114,
+        "score": 94.73684210526316
+      },
+      {
+        "file": "src/jktz/pockettopo/model.py",
+        "killed": 37,
+        "total": 37,
+        "score": 100.0
+      },
+      {
+        "file": "src/jktz/pockettopo/parser.py",
+        "killed": 635,
+        "total": 703,
+        "score": 90.3271692745377
+      },
+      {
+        "file": "src/jktz/pockettopo/averaging.py",
+        "killed": 173,
+        "total": 182,
+        "score": 95.05494505494505
+      },
+      {
+        "file": "src/jktz/pockettopo/grouping.py",
+        "killed": 183,
+        "total": 183,
+        "score": 100.0
+      }
+    ],
+    "failures": [],
+    "equals_committed_report": true,
+    "report": "mutation.json"
+  },
+  "gps_snapshot": {
+    "command": "uv run --python 3.12 jktz-render-otwory --check",
+    "exit_code": 0,
+    "release": "v1.0.2",
+    "gps_fixes": 87
+  },
+  "reproduction": {
+    "documents_compared": 12,
+    "byte_identical_documents": 11,
+    "semantic_identical_documents_after_only_head_exclusion": 12,
+    "mismatches": [],
+    "comparisons": [
+      {
+        "path": "doc/pockettopo/evidence/p03/DS201208/conversion-report.json",
+        "byte_equal": true,
+        "equal_after_exclusions": true,
+        "excluded_fields": []
+      },
+      {
+        "path": "doc/pockettopo/evidence/p03/api-cardinal/conversion-report.json",
+        "byte_equal": true,
+        "equal_after_exclusions": true,
+        "excluded_fields": []
+      },
+      {
+        "path": "doc/pockettopo/evidence/p03/api-cardinal/source.json",
+        "byte_equal": true,
+        "equal_after_exclusions": true,
+        "excluded_fields": []
+      },
+      {
+        "path": "doc/pockettopo/evidence/p03/api-drawings/conversion-report.json",
+        "byte_equal": true,
+        "equal_after_exclusions": true,
+        "excluded_fields": []
+      },
+      {
+        "path": "doc/pockettopo/evidence/p03/api-references/conversion-report.json",
+        "byte_equal": true,
+        "equal_after_exclusions": true,
+        "excluded_fields": []
+      },
+      {
+        "path": "doc/pockettopo/evidence/p03/api-trips-ids/conversion-report.json",
+        "byte_equal": true,
+        "equal_after_exclusions": true,
+        "excluded_fields": []
+      },
+      {
+        "path": "doc/pockettopo/evidence/p03/corpus.json",
+        "byte_equal": false,
+        "committed_jktz_base_commit": "62047ee3e53a6fbca6ebce488c5d4e446059b0da",
+        "regenerated_jktz_base_commit": "f86a9e3e2563efe794fa99a2a1086b2dd1872e9e",
+        "equal_after_exclusions": true,
+        "excluded_fields": [
+          "jktz_base_commit"
+        ]
+      },
+      {
+        "path": "doc/pockettopo/evidence/p03/fixture-checks.json",
+        "byte_equal": true,
+        "equal_after_exclusions": true,
+        "excluded_fields": []
+      },
+      {
+        "path": "doc/pockettopo/evidence/p03/gui-cardinal/conversion-report.json",
+        "byte_equal": true,
+        "equal_after_exclusions": true,
+        "excluded_fields": []
+      },
+      {
+        "path": "doc/pockettopo/evidence/p03/gui-colors/conversion-report.json",
+        "byte_equal": true,
+        "equal_after_exclusions": true,
+        "excluded_fields": []
+      },
+      {
+        "path": "doc/pockettopo/evidence/p03/okna/conversion-report.json",
+        "byte_equal": true,
+        "equal_after_exclusions": true,
+        "excluded_fields": []
+      },
+      {
+        "path": "doc/pockettopo/evidence/p03/zach0dni2/conversion-report.json",
+        "byte_equal": true,
+        "equal_after_exclusions": true,
+        "excluded_fields": []
+      }
+    ],
+    "corpus": {
+      "unique_sources": 258,
+      "verified_paths": 262,
+      "source_shots": 37801,
+      "traced_shots": 37801,
+      "ready_measurements": 37426,
+      "held_shots": 375,
+      "confirmed_groups": 0,
+      "held_reasons": {
+        "zero_unnamed_shot": 358,
+        "self_shot": 5,
+        "both_stations_undefined": 11,
+        "inclination_out_of_range": 1
+      }
+    },
+    "corpus_source_revision": "4c00c008a8dd441d70f9c62aa376c20b5914c7e0",
+    "corpus_tree_sha256": "c9c3a67a2bfdbce368836f355c7f4d4aea1504aace8c1d724646c73628e96e6e",
+    "checksum_verification": [
+      {
+        "manifest": "doc/pockettopo/evidence/p01/SHA256SUMS",
+        "files_verified": 55,
+        "mismatches": 0,
+        "command": "(cd doc/pockettopo/evidence/p01 && shasum -a 256 -c SHA256SUMS)",
+        "command_exit_code": 0
+      },
+      {
+        "manifest": "doc/pockettopo/evidence/repeat-candidates/SHA256SUMS",
+        "files_verified": 21,
+        "mismatches": 0,
+        "command": "(cd doc/pockettopo/evidence/repeat-candidates && shasum -a 256 -c SHA256SUMS)",
+        "command_exit_code": 0
+      }
+    ],
+    "procedure": "REPRODUCE.md Python block; redirect only save() output into a temporary directory; compare to git show verified_commit:path; ignore only corpus.jktz_base_commit.",
+    "fixtures": {
+      "files": 9,
+      "source_shots": 70,
+      "traced_shots": 70,
+      "ready_measurements": 65,
+      "held_shots": 3,
+      "confirmed_groups": 1
+    }
+  },
+  "independent_review": {
+    "range": "62047ee3e53a6fbca6ebce488c5d4e446059b0da..f86a9e3e2563efe794fa99a2a1086b2dd1872e9e",
+    "open_findings": [],
+    "p03_tests_passed": 189,
+    "angle_values_checked": 65536,
+    "random_groups_checked": 5000,
+    "checks": [
+      "Single azimuth preservation and antipodal ambiguity for every raw angle",
+      "Deterministic random groups: exact-rational D/V reference and reversal invariance; maximum D deviation 1 ULP",
+      "Grouping, provenance and record trace against PRD"
+    ],
+    "deferred_by_prd": [
+      "P04 target names, corrections and SRV/SVX/real Walls validation",
+      "P05 drawing projection, XSection, Flip resolution and SVG/PNG",
+      "P06 CLI, skill and atomic output package"
+    ],
+    "limits": "Repeat evidence supplied by caller remains a claim, not automatically verified field evidence."
+  },
+  "delivery": {
+    "pull_request": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/pull/129",
+    "initial_ci_run": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/actions/runs/36138146777",
+    "final_commit_ci": "To be checked after committing and pushing this evidence; not asserted by this pre-commit record."
+  },
+  "next_stage": "P04"
+}

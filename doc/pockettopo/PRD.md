@@ -222,3 +222,8 @@ brak niepełnych wyników. Przegląd poprawił skrajny próg R dla identycznych
 kierunków oraz kolizję nazw dwóch raportów dowodowych.
 [API i dowody](evidence/p03/README.md), [wyniki bramek](evidence/p03/repository-checks.json).
 Następny etap: **P04**. Eksporty, CLI i atomowy pakiet wynikowy pozostają do wykonania.
+
+Wznowienie P03 (2026-09-25): istniejące commity P02/P03 wypchnięto na `origin`
+po pełnej walidacji cavern/GDAL. Powtórzono bramki jakości i mutacji oraz
+odtworzono dowody na źródłach; [zapis weryfikacji](evidence/p03/REVALIDATION.md)
+uzupełnia wcześniejsze wyniki. Zakres następnej pracy pozostaje P04.
