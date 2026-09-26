@@ -8,6 +8,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Dodano
 
+- Harda: uzupełniono historyczne źródła o przekrój i zrzut Walls z 2013 r.,
+  skorygowano autorstwo sesji oraz opis wcześniejszych wersji pomiarów.
 - Skill `validate-cave` do audytu źródeł i zgodności pomiarów z `_RAW`,
   z obsługą materiałów wskazanych przez kontrybutora.
 - Konwerter PocketTopo v3: `jktz-pockettopo inspect`/`convert`, pomiary SRV/SVX,
