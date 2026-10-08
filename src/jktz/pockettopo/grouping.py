@@ -43,7 +43,7 @@ def shot_problem(shot: Shot) -> str | None:
     undefined = (shot.from_id.kind == "undefined", shot.to_id.kind == "undefined")
     if all(undefined):
         return "both_stations_undefined"
-    if shot.from_id == shot.to_id:
+    if shot.from_id.identity_raw == shot.to_id.identity_raw:
         return "self_link" if shot.distance_mm == 0 else "self_shot"
     if shot.distance_mm == 0 and any(undefined):
         return "zero_unnamed_shot"
@@ -94,14 +94,14 @@ def _validate_confirmation(source: TopFile, confirmation: RepeatConfirmation) ->
     first = source.shots[indices[0]]
     if not 0 <= first.trip_index < len(source.trips):
         raise ValueError("repeat_requires_known_session")
-    pair = {first.from_id.raw, first.to_id.raw}
+    pair = {first.from_id.identity_raw, first.to_id.identity_raw}
     for index in indices:
         shot = source.shots[index]
         if shot_kind(shot) != "leg":
             raise ValueError("repeat_requires_valid_nonzero_named_legs")
         if shot.trip_index != first.trip_index:
             raise ValueError("repeat_session_changed")
-        if {shot.from_id.raw, shot.to_id.raw} != pair:
+        if {shot.from_id.identity_raw, shot.to_id.identity_raw} != pair:
             raise ValueError("repeat_station_pair_changed")
 
 

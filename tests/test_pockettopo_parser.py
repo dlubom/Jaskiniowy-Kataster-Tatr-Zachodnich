@@ -128,7 +128,7 @@ def test_empty_file_and_immutable_model() -> None:
         (-2147483648, "undefined", None),
         (-2147483647, "plain", "0"),
         (-2147483646, "plain", "1"),
-        (-1, "plain", "2147483646"),
+        (-1, "major.minor", "32751.65534"),
         (0, "major.minor", "0.0"),
         (1, "major.minor", "0.1"),
         (65535, "major.minor", "0.65535"),
@@ -136,12 +136,67 @@ def test_empty_file_and_immutable_model() -> None:
         (2147483647, "major.minor", "32767.65535"),
     ],
 )
-def test_station_id_preserves_kind_and_full_integer_range(raw: int, kind: str, text: str) -> None:
+def test_station_id_preserves_kind_and_full_integer_range(
+    raw: int, kind: str, text: str | None
+) -> None:
     station = parse_bytes(_file(shots=(_shot(from_id=raw, to_id=raw),))).shots[0].from_id
     assert station == StationId(raw)
     assert (station.raw, station.kind, station.text) == (raw, kind, text)
     with pytest.raises(FrozenInstanceError):
         station.raw = 0
+
+
+@pytest.mark.parametrize(
+    ("raw", "kind", "text", "identity"),
+    [
+        # Boundary results read by PocketTopo 1.372's ID.Read and ID.ToString.
+        (-2147483648, "undefined", None, None),
+        (-2147483647, "plain", "0", -2147483647),
+        (-2146435328, "plain", "1048319", -2146435328),
+        (-2146435327, "undefined", None, None),
+        (-2146435073, "undefined", None, None),
+        (-2146435072, "undefined", None, None),
+        (-2146435071, "major.minor", "0.0", 0),
+        (-2146435070, "major.minor", "0.1", 1),
+        (-1, "major.minor", "32751.65534", 2146435070),
+        (0, "major.minor", "0.0", 0),
+        (1, "major.minor", "0.1", 1),
+        (2146435070, "major.minor", "32751.65534", 2146435070),
+        (2147483647, "major.minor", "32767.65535", 2147483647),
+    ],
+)
+def test_station_ids_match_native_pockettopo_boundaries(
+    raw: int, kind: str, text: str | None, identity: int | None
+) -> None:
+    parsed = parse_bytes(
+        _file(
+            shots=(_shot(from_id=raw, to_id=raw),),
+            references=(_reference(station=raw),),
+            outline=b"\x03" + _int("iiii", 0, 0, raw, -1),
+            sideview=b"\x03" + _int("iiii", 0, 0, raw, -1),
+        )
+    )
+    for station in (
+        parsed.shots[0].from_id,
+        parsed.shots[0].to_id,
+        parsed.references[0].station,
+        parsed.outline.elements[0].station,
+        parsed.sideview.elements[0].station,
+    ):
+        assert station.raw == raw
+        assert (station.kind, station.text) == (kind, text)
+        assert station.identity_raw == identity
+
+
+def test_entire_reserved_station_id_range_is_unnamed() -> None:
+    for raw in range(-2146435327, -2146435071):
+        station = StationId(raw)
+        assert (station.raw, station.kind, station.text, station.identity_raw) == (
+            raw,
+            "undefined",
+            None,
+            None,
+        )
 
 
 @pytest.mark.parametrize(

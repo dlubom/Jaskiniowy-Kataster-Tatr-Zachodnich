@@ -8,18 +8,35 @@ from typing import ClassVar, Union
 
 # Keep raw-value interpretation in ordinary functions: mutmut 3.8 does not
 # instrument @property methods. Properties expose these tested transformations.
-def _station_kind(raw: int) -> str:
+def _station_value(raw: int) -> int:
+    """Decode PocketTopo 1.372's internal ID without altering the source Int32."""
     if raw == -2147483648:
+        return -1
+    return raw + 2146435071 if raw < 0 else raw
+
+
+def _station_kind(raw: int) -> str:
+    value = _station_value(raw)
+    if -256 <= value < 0:
         return "undefined"
-    return "plain" if raw < 0 else "major.minor"
+    return "plain" if value < 0 else "major.minor"
 
 
 def _station_text(raw: int) -> str | None:
-    if raw == -2147483648:
+    value = _station_value(raw)
+    if -256 <= value < 0:
         return None
-    if raw < 0:
-        return str(raw + 2147483647)
-    return f"{raw >> 16}.{raw & 65535}"
+    if value < 0:
+        return str(value + 1048576)
+    return f"{value >> 16}.{value & 65535}"
+
+
+def _station_identity_raw(raw: int) -> int | None:
+    """Return the canonical named ID key; unnamed endpoints have no identity."""
+    value = _station_value(raw)
+    if -256 <= value < 0:
+        return None
+    return raw if value < 0 else value
 
 
 def _declination_mode(raw: int) -> str:
@@ -41,6 +58,10 @@ class StationId:
     @property
     def text(self) -> str | None:
         return _station_text(self.raw)
+
+    @property
+    def identity_raw(self) -> int | None:
+        return _station_identity_raw(self.raw)
 
 
 @dataclass(frozen=True)

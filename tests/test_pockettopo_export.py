@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import struct
+import zipfile
 from dataclasses import FrozenInstanceError
 from pathlib import Path
 
@@ -316,8 +317,9 @@ def test_zero_link_exports_constraint_even_with_unresolved_or_missing_correction
 
 
 @pytest.mark.parametrize("reverse", [False, True])
-def test_splays_are_anonymous_and_reverse_only_when_known_station_was_to(reverse):
-    start, end = (UNDEFINED, PLAIN_ZERO) if reverse else (PLAIN_ZERO, UNDEFINED)
+@pytest.mark.parametrize("unnamed", [UNDEFINED, -2146435327, -2146435073, -2146435072])
+def test_splays_are_anonymous_and_reverse_only_when_known_station_was_to(reverse, unnamed):
+    start, end = (unnamed, PLAIN_ZERO) if reverse else (PLAIN_ZERO, unnamed)
     result = export_surveys(
         _file((_shot(start, end, azimuth=8192, inclination=8192, flipped=True),))
     )
@@ -358,9 +360,9 @@ def test_long_walls_names_are_reversible_unique_and_survex_preserves_literal(raw
     alias = row["walls_name"]
     assert alias.startswith("p")
     assert len(alias) <= 8
-    assert int(alias[1:], 36) == raw & 0xFFFFFFFF
+    assert int(alias[1:], 36) == row["identity_raw"] & 0xFFFFFFFF
     assert row["survex_name"] == row["source_text"]
-    assert row["walls_mapping"] == "unsigned_raw_base36"
+    assert row["walls_mapping"] == "unsigned_identity_base36"
     assert _active(result.srv)[0].split()[1] == alias
     assert _active(result.svx)[0].split()[1] == row["source_text"]
 
@@ -385,6 +387,51 @@ def test_mapping_never_collides_at_eight_character_boundary_or_signed_domain():
         if len(row["source_text"]) <= 8:
             assert row["walls_name"] == row["source_text"]
             assert row["walls_mapping"] == "literal"
+
+
+@pytest.mark.parametrize(
+    ("canonical", "alias", "literal", "walls"),
+    [(1, -2146435070, "0.1", "0.1"), (2146435070, -1, "32751.65534", "pzhxjwe")],
+)
+def test_native_named_aliases_share_both_export_names_without_rewriting_source(
+    canonical, alias, literal, walls
+):
+    data = _file((_shot(0, canonical, distance=1000), _shot(alias, 2, distance=1000)))
+    exported = export_surveys(data)
+    assert _active(exported.srv) == [f"0.0\t{walls}\t1\t0\t0", f"{walls}\t0.2\t1\t0\t0"]
+    assert _active(exported.svx) == [f"0.0\t{literal}\t1\t0\t0", f"{literal}\t0.2\t1\t0\t0"]
+    rows = {row["raw"]: row for row in exported.report["station_map"]}
+    for raw in (canonical, alias):
+        assert rows[raw]["identity_raw"] == canonical
+        assert rows[raw]["walls_name"] == walls
+        assert rows[raw]["survex_name"] == literal
+    records = exported.source_document["records"]["shots"]
+    assert records[0]["to_id"] == {"raw": canonical}
+    assert records[1]["from_id"] == {"raw": alias}
+    assert exported.report["groups"][0]["to_raw"] == canonical
+    assert exported.report["groups"][1]["from_raw"] == alias
+
+
+def test_confirmed_alias_readings_preserve_direction_and_mean():
+    data = _file(
+        (
+            _shot(0, 1, distance=1000, azimuth=16384),
+            _shot(-2146435071, -2146435070, distance=2000, azimuth=16384),
+            _shot(-2146435070, -2146435071, distance=3000, azimuth=-16384),
+        )
+    )
+    plan = _plan(data, (RepeatConfirmation((0, 1, 2), "Native ID.Read aliases; explicit repeat"),))
+    exported = export_surveys(data, plan=plan)
+    assert _active(exported.srv) == _active(exported.svx) == ["0.0\t0.1\t2\t90\t0"]
+    group = exported.report["groups"][0]
+    assert [row["reversed"] for row in group["normalized_readings"]] == [False, False, True]
+    assert [row["source_index"] for row in exported.report["record_trace"]] == [0, 1, 2]
+
+
+def test_self_shot_using_native_alias_is_held_without_exporting_a_fictitious_link():
+    exported = export_surveys(_file((_shot(0, -2146435071),)))
+    assert _active(exported.srv) == _active(exported.svx) == []
+    assert exported.report["groups"][0]["reason"] == "self_shot"
 
 
 def test_unconfirmed_native_repeats_keep_every_reading_and_p03_confirmed_mean_is_exported():
@@ -494,3 +541,37 @@ def test_configured_ambiguity_threshold_and_raw_precision_survive_export():
     assert mean["azimuth_deg"] == 360 / 65536
     assert mean["inclination_deg"] == -360 / 65536
     assert result.report["settings"]["decimal_places"] == 12
+
+
+def test_issue_135_real_przemko2_shot_exports_as_splay_and_keeps_raw_source():
+    archive = (
+        Path(__file__).resolve().parents[1]
+        / "Poligony/D_Malej_Laki/Przechod-Kotliny/Syst_W_Snieznej/sniezna"
+        / "_RAW/03/W.Sniezna-partie_przemkowe.zip"
+    )
+    before = archive.read_bytes()
+    with zipfile.ZipFile(archive) as sources:
+        member = next(name for name in sources.namelist() if name.endswith("Przemko2/przemko2.top"))
+        data = sources.read(member)
+    assert hashlib.sha256(data).hexdigest() == (
+        "bbfe2b74f891a1d94772f659bc5b554f68a4f3ea75359fc5938379f68cba2c7f"
+    )
+    result = export_surveys(data)
+    shot = result.source_document["records"]["shots"][112]
+    assert (shot["from_id"], shot["to_id"]) == ({"raw": 65545}, {"raw": -2146435073})
+    assert (
+        shot["distance_mm"],
+        shot["azimuth_raw"],
+        shot["inclination_raw"],
+        shot["trip_index"],
+    ) == (989, 24107, -5721, 1)
+    group = result.report["groups"][112]
+    assert (group["kind"], group["export"]["status"]) == ("splay", "exported")
+    assert not any(row["raw"] == -2146435073 for row in result.report["station_map"])
+    for text, line_key, anonymous in (
+        (result.srv, "srv_line", "-"),
+        (result.svx, "svx_line", "::"),
+    ):
+        fields = text.splitlines()[group["export"][line_key] - 1].split()
+        assert fields[:3] == ["1.9", anonymous, "0.989"]
+    assert archive.read_bytes() == before

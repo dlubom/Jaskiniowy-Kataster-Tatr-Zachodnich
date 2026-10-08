@@ -55,10 +55,19 @@ przeliczenia i normalizacje wykonywać w osobnej warstwie.
 
 ## ID i ciągi znaków
 
-`0x80000000` oznacza niezdefiniowane ID. Dla pozostałych ujemnych Int32 zwykły
-numer wynosi `value - (-2147483647)`. Dla nieujemnych wartości identyfikator to
-`major.minor`, gdzie `major=value >> 16`, `minor=value & 0xffff`.
-Nie utożsamiać zwykłego `0` z `0.0`; zachować rodzaj ID i wartość binarną.
+PocketTopo 1.372 interpretuje ID przez wewnętrzne `v`: `-1` dla
+`raw=-2147483648`, `raw + 2146435071` dla pozostałych ujemnych Int32,
+`raw` dla nieujemnych. Dla `v < -256` zwykły numer wynosi `v + 1048576`;
+`-256 <= v < 0` oznacza puste ID; `v >= 0` oznacza `major.minor`,
+gdzie `major=v >> 16`, `minor=v & 0xffff`.
+
+Puste ID obejmują `0x80000000` i zakres `0x800fff01..0x80100000`,
+w tym `0x800fffff` z issue #135. Pusty koniec pomiaru nie tworzy stacji.
+Nazwane aliasy, np. `0x00000001` i `0x80100002` (oba `0.1`), mają wspólną
+tożsamość w eksportach, grupowaniu i rysunkach. Klucz `identity_raw` to `v`
+dla `major.minor`, oryginalny ujemny `raw` dla zwykłych numerów, a `None`
+dla pustych ID. Model zachowuje oryginalny `raw`.
+Nie utożsamiać zwykłego `0` z `0.0`.
 
 Długość String jest liczbą **bajtów**, nie znaków Unicode. Kolejne bajty długości
 wnoszą po 7 bitów od najmniej znaczącej grupy; ustawiony bit 7 zapowiada następną

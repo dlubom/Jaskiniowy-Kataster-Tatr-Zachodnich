@@ -76,19 +76,22 @@ def _base36(value: int) -> str:
 def map_station_names(stations: list[dict]) -> dict[int, dict]:
     """Preserve numeric/dotted names; encode >8-char Walls names without truncation.
 
-    PocketTopo names never start with p, so p + unsigned-raw base36 is disjoint
-    from every literal source name. The full int32 domain fits in eight chars.
+    PocketTopo names never start with p, so p + unsigned-identity base36 is disjoint
+    from every literal source name. Encode the canonical named identity so
+    multiple binary encodings get one Walls name. Int32 fits in eight chars.
     Survex preserves dots by using ':' as its survey separator.
     """
     for station in stations:
         source_name = station["source_text"]
         station.update(
             walls_name=(
-                source_name if len(source_name) <= 8 else "p" + _base36(station["raw"] & 0xFFFFFFFF)
+                source_name
+                if len(source_name) <= 8
+                else "p" + _base36(station.get("identity_raw", station["raw"]) & 0xFFFFFFFF)
             ),
             survex_name=source_name,
             status="mapped",
-            walls_mapping="literal" if len(source_name) <= 8 else "unsigned_raw_base36",
+            walls_mapping="literal" if len(source_name) <= 8 else "unsigned_identity_base36",
             survex_mapping="literal",
         )
     return {station["raw"]: station for station in stations}
