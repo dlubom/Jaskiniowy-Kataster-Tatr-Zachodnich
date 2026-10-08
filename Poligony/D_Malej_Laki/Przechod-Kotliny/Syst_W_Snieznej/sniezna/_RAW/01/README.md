@@ -3,11 +3,11 @@
 - **Status materiału:** niedostępny
 - **Pochodzenie danych:** nieznane
 - **Autorzy pomiarów:** nieznane
-- **Daty pomiarów:** 2013-07-13, 2015-01-04, 2015-01-05
+- **Daty pomiarów:** nieznane
 - **Data pozyskania:** nieznane
 - **Dodał do _RAW:** nieznane
 - **Licencja źródłowa:** nieznane
-- **Kompletność:** brak materialow zrodlowych w repozytorium
+- **Kompletność:** Brak materiałów źródłowych dla pozostałych historycznych SRV.
 
 ## Zawartość
 

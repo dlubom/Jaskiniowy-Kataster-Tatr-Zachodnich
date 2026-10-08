@@ -8,6 +8,7 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Dodano
 
+- Dodano oryginalne źródła Przemkowych Partii do `_RAW/02` i `_RAW/03` oraz uzupełniono metadane pomiarów i źródeł (CC BY-SA 4.0).
 - Harda: uzupełniono historyczne źródła o przekrój i zrzut Walls z 2013 r.,
   skorygowano autorstwo sesji oraz opis wcześniejszych wersji pomiarów.
 - Skill `validate-cave` do audytu źródeł i zgodności pomiarów z `_RAW`,
