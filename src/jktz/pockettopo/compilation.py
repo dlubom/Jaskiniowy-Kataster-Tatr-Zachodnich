@@ -12,6 +12,7 @@ from itertools import product
 from pathlib import Path
 
 from jktz.pockettopo.export import SurveyExport
+from jktz.pockettopo.report import active_identity_groups
 
 # P04: .3d stores centimetres; subtracting an origin combines two rounded values.
 COORDINATE_TOLERANCE_M = 0.010001
@@ -96,12 +97,12 @@ def _parse_dump(text: str) -> dict:
 
 
 def _expected(export: SurveyExport, target: str) -> dict:
-    groups = [group for group in export.report["groups"] if group["export"]["status"] == "exported"]
+    groups = active_identity_groups(export.report)
     active_ids = {group[key] for group in groups for key in ("from_raw", "to_raw")}
     names = {
-        row["raw"]: row[target + "_name"]
+        row.get("identity_raw", row["raw"]): row[target + "_name"]
         for row in export.report["station_map"]
-        if row["raw"] in active_ids
+        if row.get("identity_raw", row["raw"]) in active_ids
     }
     return {"names": names, "groups": groups}
 

@@ -11,6 +11,7 @@ from heapq import heappop, heappush
 from math import cos, hypot, radians, sin
 
 from jktz.pockettopo.model import TopFile, XSection
+from jktz.pockettopo.report import active_identity_groups
 
 MAX_SECTION_SPLAY_LINES = 100_000
 
@@ -210,7 +211,7 @@ def _section_index(source: TopFile, groups: list[dict]) -> dict:
         if group["kind"] == "splay":
             splays[group["from_raw"]].append(group)
     count = sum(
-        len(splays.get(element.station.raw, ()))
+        len(splays.get(element.station.identity_raw, ()))
         for drawing in (source.outline, source.sideview)
         for element in drawing.elements
         if isinstance(element, XSection)
@@ -229,7 +230,8 @@ def _sections(
         if not isinstance(element, XSection):
             continue
         position = [element.position.x, element.position.y]
-        known = element.station.raw in positions
+        identity = element.station.identity_raw
+        known = identity in positions
         section = {
             "element_index": index,
             "position": position,
@@ -238,18 +240,18 @@ def _sections(
             "status": "projected" if known else "station_not_in_active_overlay",
             "connector": {
                 "start": position,
-                "end": _coordinates(positions[element.station.raw], view),
+                "end": _coordinates(positions[identity], view),
             }
             if known
             else None,
             "splays": [],
         }
-        for group in splays.get(element.station.raw, ()):
+        for group in splays.get(identity, ()):
             delta = _section_delta(
                 vectors[group["id"]], element.direction, group["export"]["declination_degrees"]
             )
             end = [value + step for value, step in zip(position, delta)]
-            section["splays"].append(_line(group, position, end, components[element.station.raw]))
+            section["splays"].append(_line(group, position, end, components[identity]))
         sections.append(section)
     return sections
 
@@ -262,11 +264,17 @@ def project_geometry(source: TopFile, report: dict) -> dict:
     residuals to an already located station remain explicit. Each disconnected
     component has its own local zero and no inferred relationship to the sketch.
     """
-    groups = [group for group in report["groups"] if group["export"]["status"] == "exported"]
+    groups = active_identity_groups(report)
     section_splays = _section_index(source, groups)
     vectors = {group["id"]: _vector(group, source) for group in groups}
     positions, components, attachments, defining, count = _locate(groups, vectors)
-    labels = {station["raw"]: station["source_text"] for station in report["station_map"]}
+    labels = {
+        station.get("identity_raw", station["raw"]): station["source_text"]
+        for station in report["station_map"]
+    }
+    source_ids = defaultdict(list)
+    for station in report["station_map"]:
+        source_ids[station.get("identity_raw", station["raw"])].append(station["raw"])
     result = {
         "views": {},
         "diagnostics": [],
@@ -311,6 +319,7 @@ def project_geometry(source: TopFile, report: dict) -> dict:
                     "label": labels[raw],
                     "position": _coordinates(position, view),
                     "component": components[raw],
+                    **({"source_raw_ids": source_ids[raw]} if source_ids[raw] != [raw] else {}),
                 }
                 for raw, position in positions.items()
             ],

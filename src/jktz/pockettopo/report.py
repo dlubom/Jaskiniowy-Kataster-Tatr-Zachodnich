@@ -51,6 +51,7 @@ def _station_map(source: TopFile) -> list[dict]:
     return [
         {
             "raw": station.raw,
+            "identity_raw": station.identity_raw,
             "kind": station.kind,
             "source_text": station.text,
             "walls_name": None,
@@ -138,7 +139,10 @@ def _measurement_group(
     # A splay stored with undefined FROM is oriented from its known station.
     reverse_splay = first.from_id.text is None
     readings = tuple(
-        normalize_reading(shot, reverse=reverse_splay or shot.from_id != first.from_id)
+        normalize_reading(
+            shot,
+            reverse=reverse_splay or shot.from_id.identity_raw != first.from_id.identity_raw,
+        )
         for shot in shots
     )
     if reverse_splay:
@@ -268,3 +272,17 @@ def prepare_conversion(
         ],
     }
     return _source_document(source, provenance), report
+
+
+def active_identity_groups(report: dict) -> list[dict]:
+    """Derive geometry keys from native ID identity, preserving audited raw groups."""
+    identities = {row["raw"]: row.get("identity_raw", row["raw"]) for row in report["station_map"]}
+    return [
+        {
+            **group,
+            "from_raw": identities[group["from_raw"]],
+            "to_raw": identities.get(group["to_raw"], group["to_raw"]),
+        }
+        for group in report["groups"]
+        if group["export"]["status"] == "exported"
+    ]

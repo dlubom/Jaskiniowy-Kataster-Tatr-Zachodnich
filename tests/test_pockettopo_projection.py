@@ -68,6 +68,68 @@ def _positions(geometry, view="plan"):
     return {row["label"]: row["position"] for row in geometry["views"][view]["stations"]}
 
 
+@pytest.mark.parametrize(
+    ("canonical", "alias", "label"),
+    [(1, -2146435070, "0.1"), (2146435070, -1, "32751.65534")],
+)
+def test_native_aliases_join_the_same_station_in_geometry_and_sections(canonical, alias, label):
+    data = _input(
+        (
+            (0, canonical, 1000, 16384, 0, 0),
+            (alias, 2, 1000, 0, 0, 0),
+            (canonical, UNDEFINED, 500, 16384, 0, 0),
+        )
+    )
+    exported = export_surveys(data)
+    original_report = copy.deepcopy(exported.report)
+    source = parse_bytes(data)
+    section = XSection(Point(5000, 5000), StationId(alias), -1)
+    source = replace(source, outline=replace(source.outline, elements=(section,)))
+    geometry = project_geometry(source, exported.report)
+    assert geometry["components"] == 1
+    assert len(geometry["views"]["plan"]["stations"]) == 3
+    assert _positions(geometry)["0.2"] == pytest.approx([1000, -1000])
+    assert _positions(geometry)[label] == pytest.approx([1000, 0], abs=1e-9)
+    station = next(row for row in geometry["views"]["plan"]["stations"] if row["label"] == label)
+    assert station["raw"] == canonical
+    assert station["source_raw_ids"] == [canonical, alias]
+    section = geometry["views"]["plan"]["xsections"][0]
+    assert section["station_raw"] == alias
+    assert section["status"] == "projected"
+    assert section["connector"]["end"] == pytest.approx([1000, 0], abs=1e-9)
+    assert section["splays"][0]["end"] == pytest.approx([5500, 5000], abs=1e-9)
+    assert exported.report == original_report
+
+
+@pytest.mark.parametrize("unnamed", [-2146435327, -2146435073, -2146435072])
+@pytest.mark.parametrize("reverse", [False, True])
+def test_reserved_endpoint_stays_a_splay_without_named_geometry_or_xsection(unnamed, reverse):
+    splay = (
+        (unnamed, ZERO + 1, 1000, -16384, 0, 0)
+        if reverse
+        else (ZERO + 1, unnamed, 1000, 16384, 0, 0)
+    )
+    data = _input((_shot(), splay))
+    exported = export_surveys(data)
+    parsed = parse_bytes(data)
+    section = XSection(Point(500, 500), StationId(unnamed), -1)
+    parsed = replace(parsed, outline=replace(parsed.outline, elements=(section,)))
+    geometry = project_geometry(parsed, exported.report)
+    assert _positions(geometry) == {"0": [0, 0], "1": [0, -1000]}
+    for view in ("plan", "side"):
+        drawing = geometry["views"][view]
+        assert len(drawing["survey"]) == len(drawing["splays"]) == 1
+        assert [row["raw"] for row in drawing["stations"]] == [ZERO, ZERO + 1]
+    splay_line = geometry["views"]["plan"]["splays"][0]
+    assert splay_line["start"] == [0, -1000]
+    assert splay_line["end"] == pytest.approx([1000, -1000])
+    section = geometry["views"]["plan"]["xsections"][0]
+    assert section["station_raw"] == unnamed
+    assert section["status"] == "station_not_in_active_overlay"
+    assert section["connector"] is None
+    assert section["splays"] == []
+
+
 def _dxf_entities(path):
     lines = path.read_text(encoding="utf-8").splitlines()
     pairs = list(zip(map(int, lines[::2]), lines[1::2]))

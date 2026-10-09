@@ -65,6 +65,31 @@ def source(*shots: Shot) -> TopFile:
     )
 
 
+@pytest.mark.parametrize("raw", [-2147483648, -2146435327, -2146435073, -2146435072])
+@pytest.mark.parametrize("endpoint", ["from", "to", "both"])
+@pytest.mark.parametrize("distance", [0, 1000])
+def test_reserved_ids_are_unnamed_and_never_confirmed_named_repeats(raw, endpoint, distance):
+    unnamed = StationId(raw)
+    shot = replace(
+        BASE,
+        from_id=unnamed if endpoint in {"from", "both"} else A,
+        to_id=unnamed if endpoint in {"to", "both"} else B,
+        distance_mm=distance,
+    )
+    if endpoint == "both":
+        expected = ("invalid", "both_stations_undefined")
+    elif distance == 0:
+        expected = ("invalid", "zero_unnamed_shot")
+    else:
+        expected = ("splay", None)
+    assert (shot_kind(shot), shot_problem(shot)) == expected
+    records = source(shot, shot)
+    assert [group.indices for group in make_groups(records)] == [(0,), (1,)]
+    with pytest.raises(ValueError, match="^repeat_requires_valid_nonzero_named_legs$"):
+        make_groups(records, (RepeatConfirmation((0, 1), "Native ID.Read + ToString"),))
+    assert records.shots == (shot, shot)
+
+
 def test_no_implicit_grouping_and_no_records_disappear() -> None:
     shots = (
         BASE,
@@ -81,6 +106,27 @@ def test_no_implicit_grouping_and_no_records_disappear() -> None:
     assert make_groups(original, exclusions=(Exclusion(1, "separate survey"),)) == expected
     assert original == source(*shots)
     assert make_groups(source()) == ()
+
+
+@pytest.mark.parametrize("distance", [0, 1000])
+def test_native_aliases_of_the_same_station_are_self_records(distance):
+    # Native ID.Read maps both encodings to internal ID 0 / named station 0.0.
+    shot = replace(BASE, to_id=StationId(-2146435071), distance_mm=distance)
+    assert shot_kind(shot) == "invalid"
+    assert shot_problem(shot) == ("self_link" if distance == 0 else "self_shot")
+    assert shot.from_id.raw == 0
+    assert shot.to_id.raw == -2146435071
+
+
+def test_native_station_aliases_can_form_an_explicit_confirmed_repeat():
+    aliased = replace(BASE, from_id=StationId(-2146435071), to_id=StationId(-2146435070))
+    reversed_shot = replace(aliased, from_id=aliased.to_id, to_id=aliased.from_id)
+    records = source(BASE, aliased, reversed_shot)
+    assert make_groups(records) == tuple(RecordGroup((i,)) for i in range(3))
+    assert make_groups(records, (RepeatConfirmation((0, 1, 2), "Native ID.Read identity"),)) == (
+        RecordGroup((0, 1, 2), "Native ID.Read identity"),
+    )
+    assert records.shots == (BASE, aliased, reversed_shot)
 
 
 def test_explicit_groups_follow_source_order_and_keep_evidence_verbatim() -> None:

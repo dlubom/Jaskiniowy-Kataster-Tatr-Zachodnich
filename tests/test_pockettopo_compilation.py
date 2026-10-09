@@ -26,6 +26,7 @@ from jktz.pockettopo import (
     RepeatConfirmation,
     export_surveys,
 )
+from jktz.pockettopo.compilation import validate_surveys
 
 EVIDENCE = Path(__file__).resolve().parent / "fixtures/pockettopo"
 # .3d stores centimetres, and subtracting the chosen origin can combine two
@@ -59,17 +60,18 @@ def explicit_test_policy(data: bytes) -> CorrectionPolicy:
     )
 
 
-def reverse_splay_source() -> bytes:
+def splay_source(unnamed: int, reverse: bool) -> bytes:
     data, _ = native_source("api-cardinal")
     before = struct.pack("<iii", -2147483640, -2147483648, 1234)
-    after = struct.pack("<iii", -2147483648, -2147483640, 1234)
+    start, end = (unnamed, -2147483640) if reverse else (-2147483640, unnamed)
+    after = struct.pack("<iii", start, end, 1234)
     assert data.count(before) == 1
     return data.replace(before, after, 1)
 
 
 def long_id_source() -> bytes:
     data, oracle = native_source("api-trips-ids")
-    # Boundary IDs render as 32767.65535 and 2147483646, exceeding Walls' eight
+    # Native boundary IDs render as 32767.65535 and 32751.65534, exceeding Walls' eight
     # characters. Plain 0 and major.minor 0.0 stay in the same connected source.
     replacements = {851967: 2147483647, 851968: -1}
     for shot in oracle["source"]["shots"]:
@@ -194,7 +196,8 @@ def trips_expected(*, long_names: bool) -> dict:
         "0": (0, 0, 0),
         "0.0": first,
         "32767.65535" if long_names else "12.65535": second,
-        "2147483646" if long_names else "13.0": last,
+        # PocketTopo 1.372 reads raw -1 as internal ID 2146435070.
+        "32751.65534" if long_names else "13.0": last,
     }
 
 
@@ -215,10 +218,11 @@ def assert_splay(compiled: dict, direction: tuple) -> None:
 
 
 @pytest.mark.parametrize("reverse_splay", [False, True], ids=["forward", "reversed"])
+@pytest.mark.parametrize("unnamed", [-2147483648, -2146435327, -2146435073, -2146435072])
 def test_confirmed_native_repeats_zero_link_and_splay_have_analytical_geometry(
-    tmp_path: Path, reverse_splay: bool
+    tmp_path: Path, reverse_splay: bool, unnamed: int
 ) -> None:
-    data = reverse_splay_source() if reverse_splay else native_source("api-cardinal")[0]
+    data = splay_source(unnamed, reverse_splay)
     export = export_surveys(data, plan=confirmed_plan(data))
     expected = cardinal_expected()
     inclination = -3641 * 360 / 65536
@@ -251,6 +255,44 @@ def test_trip_corrections_and_distinct_zero_identifiers_compile_without_collisio
         assert_geometry(actual, trips_expected(long_names=long_names))
         assert actual["0"] != actual["0.0"]
         assert_splay(compiled, vector(3, 180 + 8, -1820 * 360 / 65536))
+        geometries.append(actual)
+    assert geometries[0] == geometries[1]
+
+
+@pytest.mark.parametrize(
+    ("canonical", "alias", "label"),
+    [(1, -2146435070, "0.1"), (2146435070, -1, "32751.65534")],
+)
+def test_native_station_aliases_compile_as_one_connected_station_in_both_formats(
+    tmp_path: Path, canonical: int, alias: int, label: str
+) -> None:
+    mapping = struct.pack("<iii", 0, 0, 500)
+    data = (
+        b"Top\x03"
+        + struct.pack("<i", 1)
+        + struct.pack("<qBh", 632401344000000000, 0, 0)
+        + struct.pack("<i", 2)
+        + struct.pack("<iiihhBBh", 0, canonical, 1000, 16384, 0, 0, 0, 0)
+        + struct.pack("<iiihhBBh", alias, 2, 1000, 0, 0, 0, 0, 0)
+        + struct.pack("<i", 0)
+        + mapping
+        + mapping
+        + b"\0"
+        + mapping
+        + b"\0"
+    )
+    export = export_surveys(data)
+    compiler_tools()
+    assert validate_surveys(export)["complete"] is True
+    geometries = []
+    for suffix, target in (("SRV", "walls"), ("svx", "survex")):
+        compiled = compile_export(getattr(export, suffix.lower()), suffix, tmp_path / suffix)
+        actual = mapped_nodes(export, compiled, target)
+        assert set(actual) == {"0.0", label, "0.2"}
+        assert len(compiled["legs"]) == 2
+        origin = actual["0.0"]
+        assert subtract(actual[label], origin) == pytest.approx((1, 0, 0), abs=0.010001)
+        assert subtract(actual["0.2"], origin) == pytest.approx((1, 1, 0), abs=0.010001)
         geometries.append(actual)
     assert geometries[0] == geometries[1]
 

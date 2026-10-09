@@ -20,6 +20,10 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
   rozszerzone bramki jakości i mutacji. Archiwum badań pozostaje w PR #129,
   a w bieżącym drzewie są dokumentacja użytkowa i wzorce wymagane przez testy.
 
+### Naprawione
+
+- PocketTopo: poprawiono zarezerwowane ID domiarów i tożsamość aliasów stacji (#135).
+
 ## [v1.4.7] - 2026-09-25
 
 ### Zmienione
