@@ -79,8 +79,10 @@ lub stanu wiadomości.
    nie dodawaj automatycznie do repozytorium. Gdy pomiary są wyłącznie w treści
    maila, zachowaj dostępną oryginalną część MIME lub wierny eksport
    źródłowej treści, w zakresie potrzebnym do audytu. Umieść go w `_RAW` tylko
-   przy zleceniu obejmującym uzupełnienie źródeł w repo; przy review lub
-   zewnętrznym pakiecie zachowaj go poza checkoutem. Opisz sposób i zakres
+   przy zleceniu obejmującym uzupełnienie źródeł w repo; przy review zachowaj
+   go w pakiecie audytu według `SKILL.md`, domyślnie w projektowym
+   `.verification/`. Wskazane przez użytkownika miejsce, także fizycznie
+   poza checkoutem, ma pierwszeństwo. Opisz sposób i zakres
    ekstrakcji, kodowanie i hash; odróżnij bajty MIME, zdekodowaną treść
    i wyciąg tekstowy pluginu. Wyciągu nie nazywaj kopią bajtową wiadomości.
    Roboczą transkrypcję tabeli zapisuj osobno poza `_RAW`.

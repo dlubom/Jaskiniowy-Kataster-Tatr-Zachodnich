@@ -10,17 +10,25 @@ nie oznacza zgody na zmianę pomiarów ani publikację.
 
 ## Wynik i miejsce zapisu
 
-Domyślnie zapisuj pełne dowody **poza checkoutem**: w folderze wskazanym
-przez użytkownika, a przy braku wskazania w trwałym katalogu audytów, np.
-`~/Documents/Codex/audyty/<data>-<jaskinia>`. Logi, CSV/JSON, eksporty,
-obrazy i jednorazowe skrypty należą do tego folderu. W czacie podaj wynik,
-pokrycie, zmiany, istotne luki i link do dowodów.
+Ustal katalog główny badanego projektu (`<root>`, zawierający `KATASTER.wpj`),
+niezależnie od bieżącego katalogu terminala. Domyślnie zapisuj pełne dowody
+w `<root>/.verification/<YYYY-MM-DD>-<jaskinia>/`. Wskazane przez użytkownika
+miejsce ma pierwszeństwo; żądanie dowodów fizycznie poza checkoutem oznacza
+zewnętrzny katalog. Logi, CSV/JSON, eksporty, obrazy i jednorazowe skrypty
+należą do pakietu audytu. Utwórz jego katalog przed eksportem; każdy eksport
+zapisuj w nowym, nieistniejącym podkatalogu, także przy ponowieniu próby.
+W czacie podaj wynik, pokrycie, zmiany, istotne luki i link do dowodów.
+
+`.verification/` jest lokalne, ignorowane przez Git i pomijane w ZIP wydania;
+nowy klon nie zawiera tych dowodów. Przed usunięciem checkoutu lub worktree
+zachowaj potrzebny pakiet w trwałej lokalizacji.
 
 Po naprawie danych repozytorium dostaje krótkie uzasadnienie ze źródłem
 obok jaskini oraz wpis `Unreleased`. Uzupełnij istniejącą notatkę; nie
-twórz równoległych raportów. Jeśli użytkownik chce wszystkie dowody poza
-repo, uzasadnienie także zostaje w pakiecie audytu. Sam review może zakończyć się raportem poza
-repo. Rozbudowany raport w repo zapisuj, gdy użytkownik go tam zamówi.
+twórz równoległych raportów. Jeśli zlecenie wymaga wszystkich dowodów wyłącznie
+w pakiecie audytu, umieść tam także uzasadnienie. Sam review może zakończyć
+się raportem w tym pakiecie. Rozbudowany raport w repo zapisuj, gdy użytkownik
+go tam zamówi.
 Format szczegółowego rejestru opisuje
 [audit-evidence.md](references/audit-evidence.md).
 
@@ -69,7 +77,7 @@ nie służą do samodzielnego ustalania IGRF. Nie podnoś precyzji daty.
   [verify-cave-refactor](../verify-cave-refactor/SKILL.md), uruchom
   `uv run jktz-validate` i `git diff --check`. Walidator może tworzyć ignorowane
   pliki robocze; log przechwyć do pakietu audytu. Gdy wszystkie wyniki mają
-  powstać poza repo, uruchom go na kopii kandydata w katalogu audytu.
+  powstać fizycznie poza checkoutem, uruchom go na kopii kandydata w katalogu audytu.
   Przy brakujących zależnościach
   użyj [docker-validate](../docker-validate/SKILL.md). Zmieniany kod podlega
   bramkom `AGENTS.md`; nie obniżaj ich dla uzyskania wyniku.

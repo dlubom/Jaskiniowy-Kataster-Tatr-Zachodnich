@@ -1,9 +1,16 @@
 # Dowody i pokrycie audytu
 
-Pełny pakiet audytu zapisuj poza checkoutem zgodnie z `SKILL.md`.
+Pełny pakiet audytu zapisuj domyślnie w
+`<root>/.verification/<YYYY-MM-DD>-<jaskinia>/` zgodnie z `SKILL.md`;
+`<root>` to katalog badanego projektu z `KATASTER.wpj`, nie dowolny bieżący
+katalog terminala. Wskazane przez użytkownika miejsce ma pierwszeństwo,
+także fizycznie poza checkoutem. Utwórz katalog pakietu przed eksportem
+i używaj nowych podkatalogów eksportów. Dowody w `.verification/` są lokalne,
+pomijane przez Git i ZIP; przed usunięciem checkoutu/worktree zachowaj
+potrzebny pakiet w trwałej lokalizacji.
 Po naprawie danych zapisz krótkie uzasadnienie w miejscu zgodnym ze zleceniem:
 co zmieniono, z którego źródła i z jakim wynikiem walidacji.
-Jeśli wszystkie dowody mają być poza repo, także uzasadnienie zostaje tam.
+Jeśli wszystkie dowody mają być wyłącznie w pakiecie audytu, także uzasadnienie zostaje tam.
 Gdy użytkownik zamówi rozbudowany raport w repo, rozwijaj istniejący
 `WERYFIKACJA_ZRODEL.md`. Liczbę plików dobieraj do rzeczywistych dowodów.
 

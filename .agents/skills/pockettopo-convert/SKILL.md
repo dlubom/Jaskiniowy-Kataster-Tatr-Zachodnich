@@ -6,18 +6,27 @@ description: Use when inspecting or exporting PocketTopo TOP v3 sources for a ca
 Używaj gotowego binarium
 [`pockettopo-exporter`](https://github.com/dlubom/pockettopo-exporter).
 [Pobranie i testy](../../../doc/pockettopo/README.md). Oryginały pozostaw
-bez zmian; wyniki domyślnie zapisuj poza checkoutem, w nowych katalogach
-pakietu audytu wskazanego przez `validate-cave`.
+bez zmian. Ustal katalog główny badanego projektu z `KATASTER.wpj`, niezależnie
+od bieżącego katalogu terminala. Domyślny pakiet audytu to
+`<root>/.verification/<YYYY-MM-DD>-<jaskinia>/`; wskazane przez użytkownika
+miejsce ma pierwszeństwo, także fizycznie poza checkoutem. Zasady przechowania
+dowodów opisuje [validate-cave](../validate-cave/SKILL.md).
 
 ## Odczyt i eksport
 
+Przykłady wykonuj z ustalonego katalogu głównego projektu. Utwórz katalog
+audytu, a każdy eksport kieruj do nowego, nieistniejącego podkatalogu.
+Przy ponowieniu wybierz nową nazwę zamiast nadpisywania wcześniejszych wyników.
+Datę i nazwę jaskini w przykładach zastąp właściwymi dla zlecenia.
+
 ```sh
+mkdir -p .verification/2026-10-15-kalacka
 pockettopo-exporter --version
 pockettopo-exporter inspect /path/source.top --json
 pockettopo-exporter process /path/source.top --json
-pockettopo-exporter export /path/source.top --format text --output /tmp/source-text
-pockettopo-exporter export /path/source.top --format srv --output /tmp/source-walls
-pockettopo-exporter export /path/source.top --format svx --output /tmp/source-survex
+pockettopo-exporter export /path/source.top --format text --output .verification/2026-10-15-kalacka/text
+pockettopo-exporter export /path/source.top --format srv --output .verification/2026-10-15-kalacka/srv
+pockettopo-exporter export /path/source.top --format svx --output .verification/2026-10-15-kalacka/svx
 ```
 
 Zapisz wersję/binarium, SHA wejścia, komendy i kody zakończenia.
@@ -39,9 +48,9 @@ tripy/korekty przeliczaj z odczytów źródłowych przy zmianie deklinacji.
 ## Rysunki i przekazanie
 
 ```sh
-pockettopo-exporter export /path/source.top --format therion --output /tmp/source-therion
-pockettopo-exporter export /path/source.top --format dxf --output /tmp/source-plan --view plan
-pockettopo-exporter export /path/source.top --format dxf --output /tmp/source-side --view side
+pockettopo-exporter export /path/source.top --format therion --output .verification/2026-10-15-kalacka/therion
+pockettopo-exporter export /path/source.top --format dxf --output .verification/2026-10-15-kalacka/plan --view plan
+pockettopo-exporter export /path/source.top --format dxf --output .verification/2026-10-15-kalacka/side --view side
 ```
 
 Therion daje PocketTopo interchange, a `side` przekrój rozwinięty. Obejrzyj

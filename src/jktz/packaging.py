@@ -16,6 +16,7 @@ EXCLUDE_PATTERNS: tuple[str, ...] = (
     ".claude/*",
     ".agents/*",
     ".codex/*",
+    ".verification/*",
     ".venv/*",
     ".pytest_cache/*",
     ".coverage*",
