@@ -3,7 +3,7 @@ CAVE_ID         "T.E-11.05"
 CAVE_NAME       "Jaskinia Marmurowa"
 SURVEY_ID       "OT"
 SURVEY_NAME     "Otwor - Piaskownice II (ciag glowny)"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-09-24"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -12,14 +12,15 @@ LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "Tomasz Pryjma, M. Adamski"
 INSTRUMENT      "nieznane"
-SURVEY_DATE     "1986-05-01"
+SURVEY_DATE     "1986-05"
 SURVEY_GRADE    "nieznane"
-PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "azymut 57-58 ze skanu img188; obliczone dY/dX odpowiadaja 210 stopniom"
 #]
 
 #prefix Marmurowa
 #units meters order=DAV
 #units A=D V=D
+;Skan: V/86; dzien 01 w #date jest techniczny, nie wynika ze zrodla.
 #date 1986-05-01
 
 ;Ciag glowny: otwor - I Studnia - Sala Deszczu - Studnia Kandydata - Marzenie Prezesa - Piaskownice II
@@ -88,7 +89,7 @@ PROCESSING      "zachowano istniejacy aktywny plik SRV"
 52	55	11.5	185	-35
 55	56	5.0	0	90
 56	57	3.0	182	-12
-57	58	2.4	210	-28
+57	58	2.4	216	-28	;img188: AZYM 216; obliczone dY/dX odpowiadaja 210 - do weryfikacji
 58	59	1.5	190	-32
 59	60	1.5	0	-90
 60	61	5.0	20	-38

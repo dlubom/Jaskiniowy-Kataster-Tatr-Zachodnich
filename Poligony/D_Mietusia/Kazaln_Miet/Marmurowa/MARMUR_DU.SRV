@@ -3,7 +3,7 @@ CAVE_ID         "T.E-11.05"
 CAVE_NAME       "Jaskinia Marmurowa"
 SURVEY_ID       "DU"
 SURVEY_NAME     "Meander Dudzinskiego"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-09-24"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -12,20 +12,22 @@ LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "Tomasz Pryjma, K. Wardakowski"
 INSTRUMENT      "nieznane"
-SURVEY_DATE     "1987-04-01"
+SURVEY_DATE     "1987-04"
 SURVEY_GRADE    "nieznane"
-PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "wspolny poczatek 8-kk_2 z KK; kopie dwoch strzalow zachowano jako komentarze"
 #]
 
 #prefix Marmurowa
 #units meters order=DAV
 #units A=D V=D
+;Skan: IV/87; dzien 01 w #date jest techniczny, nie wynika ze zrodla.
 #date 1987-04-01
 
 ;Meander Dudzinskiego - dowiazany do stacji Marmurowa:8 (ciag glowny)
-8	du_1	3.0	31	58
-du_1	du_2	4.95	345	24
-du_2	du_3	4.95	328	18
+;img183: ten sam poczatek co img182 i img184; aktywny odcinek jest w MARMUR_KK.SRV
+;8	du_1	3.0	31	58
+;du_1	du_2	4.95	345	24
+kk_2	du_3	4.95	328	18
 du_3	du_4	3.05	248	-28
 du_4	du_5	3.3	277	-35
 du_5	du_6	2.5	308	-42

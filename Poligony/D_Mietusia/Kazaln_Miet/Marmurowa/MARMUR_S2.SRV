@@ -3,7 +3,7 @@ CAVE_ID         "T.E-11.05"
 CAVE_NAME       "Jaskinia Marmurowa"
 SURVEY_ID       "S2"
 SURVEY_NAME     "Partie II-giej Sali"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-09-24"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -12,14 +12,15 @@ LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "Tomasz Pryjma, K. Wardakowski"
 INSTRUMENT      "nieznane"
-SURVEY_DATE     "1987-04-01"
+SURVEY_DATE     "1987-04"
 SURVEY_GRADE    "nieznane"
-PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "data pomiaru znana tylko do miesiaca; #date uzywa dnia technicznego"
 #]
 
 #prefix Marmurowa
 #units meters order=AVD
 #units A=D V=D
+;Skan: IV/87; dzien 01 w #date jest techniczny, nie wynika ze zrodla.
 #date 1987-04-01
 
 ;Partie II-giej Sali - dowiazane do stacji Marmurowa:10 (ciag glowny)

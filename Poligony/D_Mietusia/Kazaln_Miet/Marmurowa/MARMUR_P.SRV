@@ -3,32 +3,32 @@ CAVE_ID         "T.E-11.05"
 CAVE_NAME       "Jaskinia Marmurowa"
 SURVEY_ID       "P"
 SURVEY_NAME     "Piaskownica II - petla"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-09-24"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
 SOURCE_REF      "_RAW/01"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM            "Tomasz Pryjma, K. Wardakowski"
+TEAM            "nieznane"
 INSTRUMENT      "nieznane"
-SURVEY_DATE     "1987-04-01"
+SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
-PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "nieaktywny wariant img193; osiem strzalow powtarza OT 23-31 z inna numeracja"
 #]
 
 #prefix Marmurowa
 #units meters order=AVD
 #units A=D V=D
-#date 1987-04-01
 
-;Piaskownica II - petla zaczynajaca i konczaca sie na stacji Marmurowa:18 (ciag glowny)
-;oryginalne nazwy stacji 19S..25S zachowane jako p_19s..p_25s
-18	p_19s	59	-8	7
-p_19s	p_20s	98	12	4
-p_20s	p_21s	161	-1	3.6
-p_21s	p_22s	100	0	3
-p_22s	p_23s	190	-8	2.3
-p_23s	p_24s	280	-5	3
-p_24s	p_25s	305	-22	3.4
-p_25s	18	290	30	7.6
+;Nieaktywny wariant przeliczenia z img193 (bez daty); oryginalne stacje 18,19S..25S.
+;Te same D/A/V co w OT 23-31 (img190). H bazy img193 odpowiada OT:23,
+;a nie OT:18; numeracji nie przepisano jako potwierdzonego polaczenia.
+;18	p_19s	59	-8	7
+;p_19s	p_20s	98	12	4
+;p_20s	p_21s	161	-1	3.6
+;p_21s	p_22s	100	0	3
+;p_22s	p_23s	190	-8	2.3
+;p_23s	p_24s	280	-5	3
+;p_24s	p_25s	305	-22	3.4
+;p_25s	18	290	30	7.6
