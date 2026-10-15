@@ -8,7 +8,7 @@ Progi w `pyproject.toml` są wspólne dla lokalnych poleceń i CI.
 | Pokrycie linii | co najmniej 95% | cały powyższy kod, także nieimportowane pliki |
 | Pokrycie gałęzi | co najmniej 90% | decyzje i alternatywne ścieżki wykonania |
 | CRAP | najwyżej 25 na funkcję | funkcje, metody i funkcje zagnieżdżone |
-| Testy mutacyjne | co najmniej 81% w **każdym** wybranym module | SRV, RAW, zapis atomowy, wejścia GPS, stan jednostek Walls oraz model, parser, średnie, grupowanie i projekcja PocketTopo |
+| Testy mutacyjne | co najmniej 81% w **każdym** wybranym module | SRV, RAW, zapis atomowy, wejścia GPS i stan jednostek Walls |
 | Kompletność zakresu | bez pominiętych plików i całkowicie nieprzetestowanych funkcji | żywy kod Pythona w repo; archiwalne `_RAW` nie są narzędziami |
 
 Test inventory porównuje śledzone i nowe nieignorowane pliki `.py` z zakresem
@@ -60,12 +60,9 @@ ani zmiany danych pomiarowych.
 
 ## Mutacje: zakres i interpretacja
 
-Zakres `tool.mutmut.only_mutate` obejmuje dziesięć modułów chroniących dane:
-`metadata/io.py`, `metadata/raw.py`, `metadata/srv.py`, `entrances/render.py`,
-`validation/measurements.py` oraz `pockettopo/model.py`, `pockettopo/parser.py`,
-`pockettopo/averaging.py`, `pockettopo/grouping.py` i `pockettopo/projection.py`.
-Niezależne wzorce `tests/fixtures/pockettopo` kopiujemy do środowiska mutacji
-przez `also_copy`; testy nie pobierają ich z sieci.
+Zakres `tool.mutmut.only_mutate` obejmuje pięć modułów chroniących dane:
+`metadata/io.py`, `metadata/raw.py`, `metadata/srv.py`, `entrances/render.py`
+i `validation/measurements.py`.
 To regularna bramka rdzenia;
 **nie jest** wynikiem mutacyjnym całego repo. Skille, procesy eksportu i CLI
 mają testy zachowania, pokrycie oraz CRAP; rozszerzenie mutacji o skille jest
@@ -171,11 +168,17 @@ Te sprawdzenia potwierdzają kompletny zakres narzędzi i zbadane kontrakty.
 Nie są dowodem równoważności dla wszystkich możliwych wejść; pokrycie nie
 wynosi 100%, a wynik mutacyjny dotyczy wymienionych pięciu modułów.
 
-## Konwerter PocketTopo
+## Binarny PocketTopo Exporter
 
-`pockettopo/projection.py` należy do obowiązkowego zakresu mutacji. Testy
-sprawdzają niezależne wektory oraz każdy odcinek małych natywnych DXF,
-Flip, rozgałęzienia, pętle i XSection. Szkice i renderer mają testy zachowania,
-pikseli, pokrycie i CRAP. Wymagany job `python-tools` oraz workflow wydania
-instalują resvg 0.48.1 po sprawdzeniu przypiętych SHA-256;
-`JKTZ_REQUIRE_RESVG=1` zmienia brak renderera w błąd.
+Odczyt i eksport TOP wykonuje gotowe binarium
+[`dlubom/pockettopo-exporter`](https://github.com/dlubom/pockettopo-exporter).
+Testy `tests/test_pockettopo_binary.py` uruchamiają rzeczywiste binarium i
+porównują jego surowe rekordy z zachowanymi niezależnymi wzorcami. Sprawdzają
+również ślad powtórzeń/odwrotnych pomiarów/splajów, raporty SRV/SVX, rysunki
+DXF, błędne wejście, odmowę nadpisania i integralność źródeł.
+
+Workflow walidacji i wydania pobiera binarium v1.0.1 po sprawdzeniu
+przypiętego SHA-256 ZIP-a. `POCKETTOPO_EXPORTER` wskazuje plik wykonywalny;
+`JKTZ_REQUIRE_POCKETTOPO_EXPORTER=1` powoduje błąd zamiast pominięcia testów,
+gdy go brak. Lokalnie można użyć programu z PATH. Mutacje kodu eksportera
+należą do jego repozytorium; JKTZ testuje kontrakt zewnętrznego programu.

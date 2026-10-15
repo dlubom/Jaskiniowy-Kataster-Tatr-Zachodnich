@@ -3,16 +3,20 @@
 Wybrany zestaw z [PR #129](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/pull/129),
 zamrożony w rewizji `3e3daa4156c6e6e79dce5203d8bb8e36122d571f`.
 Wszystkie 112 plików wymienionych w `SHA256SUMS` zachowuje oryginalne bajty.
-104 pliki są wejściami testów, osiem dokumentuje pochodzenie oczekiwań.
-Zwykłe testy nie wymagają sieci ani checkoutu archiwalnego brancha.
+`tests/test_pockettopo_binary.py` sprawdza pełny inwentarz i hashe, a surowe
+odczyty sześciu przypadków P01 porównuje z gotowym binarium eksportera.
+Pozostałe DXF/TSV/PNG i helpery są archiwalnym odniesieniem, bez deklaracji
+bieżącego pokrycia ich wszystkich wierzchołków czy pikseli.
+Testy nie pobierają źródeł z sieci ani nie wymagają archiwalnego checkoutu;
+binarium przygotowuje się według [instrukcji](../../../doc/pockettopo/README.md).
 
 | Katalog | Pochodzenie i zastosowanie |
 | --- | --- |
 | `p01/cases` | Sześć niezależnych wzorców utworzonych w PocketTopo 1.372: cztery przez API aplikacji i dwa przez GUI. `.top`, natywne DXF i zamrożone `expected.json` sprawdzają surowe pola i każdy wierzchołek. |
-| `repeat-candidates` | Trzy rzeczywiste źródła, ich natywne DXF i `source-records.json` z inspekcji wykonanej przed parserem konwertera. `manifest.json` przypina źródłowe ścieżki i obiekty Git. |
+| `repeat-candidates` | Trzy rzeczywiste źródła, ich natywne DXF i `source-records.json` z niezależnej inspekcji źródeł. `manifest.json` przypina źródłowe ścieżki i obiekty Git. |
 | `shadow` | Źródło Shadow i dwa natywne DXF do sprawdzania każdego wierzchołka, osnowy i domiarów. |
 | `p05/native` | Syntetyczne pętle, odnogi, Flip i XSection zapisane przez API PocketTopo; DXF, współrzędne TSV oraz paleta aplikacji stanowią niezależne odniesienie. |
-| `p05/examples` | 52 PNG wygenerowane przez konwerter w P05 dla 13 źródeł. To wzorce regresji renderowania, nie niezależne eksporty PocketTopo. |
+| `p05/examples` | 52 referencyjne PNG dla 13 źródeł. To obrazy pochodne, nie niezależne eksporty PocketTopo. |
 | `p01/renderer` | SVG próby resvg 0.48.1 i dwa PNG dla różnych rozdzielczości. Archiwalne odpowiedniki Linux były identyczne bajtowo z zachowanymi plikami macOS. |
 | `helpers` | Niezmienione źródła dwóch eksperymentów C# z literalnymi wejściami API PocketTopo; nie są silnikiem konwersji ani częścią zwykłego pytest. |
 
@@ -40,8 +44,8 @@ Pełne opisy źródeł, eksperymentów, interfejsu aplikacji i eksportów:
 
 W archiwum pliki mają ten sam przyrostek ścieżki pod
 `doc/pockettopo/evidence/`; jedynie `helpers/` pochodzi z
-`doc/pockettopo/helpers/`. [Instrukcja odtworzenia archiwum](../../../doc/pockettopo/README.md)
-nie wymaga przełączania bieżącego brancha.
+`doc/pockettopo/helpers/`. Pliki archiwum można odczytać z podanej rewizji
+Git bez przełączania bieżącego brancha.
 
 ## Integralność i utrzymanie
 

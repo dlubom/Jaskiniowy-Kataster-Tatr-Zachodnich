@@ -1,0 +1,43 @@
+name: Install PocketTopo Exporter binary
+description: Download the v1.0.1 executable distribution and verify its pinned SHA-256.
+
+runs:
+  using: composite
+  steps:
+    - name: Download and verify binary distribution
+      shell: python
+      run: |
+        import hashlib
+        import os
+        import pathlib
+        import urllib.request
+        import zipfile
+
+        distributions = {
+            ("Linux", "X64"): ("linux-amd64", "0bcf802c60be1994cd7aaab906ed4d6b24b3a358f9f79d4e5828ec3b94a10755"),
+            ("Linux", "ARM64"): ("linux-arm64", "7903a34e289d3b4ea3d976f824db0df12b6604468b9864a60de085e0bfd2049f"),
+            ("Windows", "X64"): ("windows-amd64", "c67031c1e5c153dbf14997b5cabeb53841536393356b60941f287d0dffcf5e75"),
+            ("Windows", "ARM64"): ("windows-arm64", "4a64400588ba60cbdab6cddb5bb4e5548015bba66bbe79e9962cf6a5cd2bf9ce"),
+            ("macOS", "X64"): ("darwin-amd64", "173235fb01179c5d040702c8a6168d78998d77c90d1f6bf3bd0a156d35264c81"),
+            ("macOS", "ARM64"): ("darwin-arm64", "66ab9e0a8826fc86da8706372e528899e40ab9c661bca24fb1292963b1317639"),
+        }
+        target, expected = distributions[(os.environ["RUNNER_OS"], os.environ["RUNNER_ARCH"])]
+        directory = pathlib.Path(os.environ["RUNNER_TEMP"]) / "jktz-pockettopo-exporter-1.0.1"
+        directory.mkdir()
+        name = f"pockettopo-exporter-1.0.1-{target}.zip"
+        url = f"https://github.com/dlubom/pockettopo-exporter/releases/download/v1.0.1/{name}"
+        archive = directory / name
+        with urllib.request.urlopen(url, timeout=60) as response:
+            archive.write_bytes(response.read())
+        actual = hashlib.sha256(archive.read_bytes()).hexdigest()
+        if actual != expected:
+            raise RuntimeError(f"SHA-256 mismatch for {name}: {actual}")
+        with zipfile.ZipFile(archive) as package:
+            package.extractall(directory)
+        executable = directory / ("pockettopo-exporter.exe" if target.startswith("windows") else "pockettopo-exporter")
+        executable.chmod(0o755)
+        with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as environment:
+            environment.write(f"POCKETTOPO_EXPORTER={executable}\nJKTZ_REQUIRE_POCKETTOPO_EXPORTER=1\n")
+    - name: Check executable version
+      shell: bash
+      run: '"$POCKETTOPO_EXPORTER" --version'

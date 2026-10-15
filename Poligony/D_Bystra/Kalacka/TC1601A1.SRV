@@ -3,7 +3,7 @@ CAVE_ID         "T.C-16.01"
 CAVE_NAME       "Jaskinia Kalacka"
 SURVEY_ID       "A1"
 SURVEY_NAME     "Ciag glowny"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-14"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -16,6 +16,7 @@ INSTRUMENT      "DistoX + PocketTopo"
 SURVEY_DATE     "2013-11-09"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "uzupelniono dwa splaje z _RAW/01/kalacka.srv (rekordy TOP 69 i 82)"
 #]
 
 #date 2013-11-09
@@ -109,6 +110,8 @@ PROCESSING      "zachowano istniejacy aktywny plik SRV"
 1.14	-	216.31	30.11	5.514
 1.14	-	194.22	-11.55	6.132
 1.14	-	245.77	18.03	4.136
+1.18	-	253.14	1.39	2.552
+1.22	-	320.1	42.92	5.103
 1.29	-	302.81	75.03	3.279
 1.29	-	331.9	-1.58	1.234
 1.31	-	43.56	32.13	6.162

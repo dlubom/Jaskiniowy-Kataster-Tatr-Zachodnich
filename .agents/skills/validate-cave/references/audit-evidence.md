@@ -1,78 +1,47 @@
-# Dowody, pokrycie i raport audytu
+# Dowody i pokrycie audytu
 
-Rozwijaj istniejący raport jaskini zamiast tworzyć konkurencyjne podsumowania.
-Gdy go brak, użyj `WERYFIKACJA_ZRODEL.md` obok plików jaskini. Duże porównanie
-wierszy zapisz w osobnym CSV/JSON obok raportu; małe może być tabelą Markdown.
-Nie traktuj poniższych tabel jako nakazu zakładania pustych plików.
+Pełny pakiet audytu zapisuj poza checkoutem zgodnie z `SKILL.md`.
+Po naprawie danych zapisz krótkie uzasadnienie w miejscu zgodnym ze zleceniem:
+co zmieniono, z którego źródła i z jakim wynikiem walidacji.
+Jeśli wszystkie dowody mają być poza repo, także uzasadnienie zostaje tam.
+Gdy użytkownik zamówi rozbudowany raport w repo, rozwijaj istniejący
+`WERYFIKACJA_ZRODEL.md`. Liczbę plików dobieraj do rzeczywistych dowodów.
 
-## Stan audytu i łańcuch pochodzenia
+## Źródła
 
-Zapisz obiekt, zakres źródeł wskazanych przez kontrybutora i ograniczenia dostępu, datę audytu,
-bazowy commit i stan zmian lokalnych. Dla każdego źródła określ:
+Zapisz obiekt, zakres, datę audytu, bazowy commit i stan lokalnych zmian.
+Każde źródło identyfikuj ścieżką/ID/rewizją, rolą, rozmiarem i SHA-256.
+Opisz relację do `_RAW` i ograniczenia pochodzenia. Odróżniaj oryginał,
+kopię, konwersję, OCR, opracowanie oraz niezależny pomiar.
 
-| Pole | Zawartość |
-| --- | --- |
-| Identyfikator | Trwały identyfikator w raporcie, np. S01 |
-| Miejsce pozyskania | Usługa lub ścieżka lokalna, plik/rewizja/PR/mail/URL i dokładna strona, członek archiwum lub załącznik |
-| Integralność | Oryginalna nazwa, rozmiar i SHA-256 pobranych bajtów |
-| Relacja do _RAW | Paczka i plik; identyczny / różny / brak / niezweryfikowany oraz metoda porównania |
-| Rola | Pierwotny pomiar, kopia, transkrypcja, konwersja, obliczenia, opis historyczny |
-| Kompletność | Strony, pliki i rekordy dostępne/brakujące; granice potwierdzonego pochodzenia |
+## Rekordy
 
-Najwcześniejszy odnaleziony plik nie musi być pierwotnym pomiarem. Jeśli
-łańcuch urywa się na cudzej transkrypcji, powiedz to wprost. Oddziel datę
-pomiaru z jej precyzją od daty pliku, publikacji, przekazania i pozyskania.
+Duży rejestr może być CSV/JSON; małe porównanie zmieści się w raporcie.
+Każdy rekord zachowuje:
 
-## Rejestr porównania rekordów
+- plik i miejsce źródłowe: wiersz, komórkę, indeks/offset oraz kontekst dyrektyw;
+- dosłowne stacje i wartości, jednostki, raw ID i niepewne odczyty;
+- odpowiednik w aktywnym pliku dla wskazanego commita/hashu;
+- przeliczenie/mapowanie z podstawą oraz los: użyty, przekształcony,
+  wyłączony z uzasadnieniem, wariant, rozbieżny, nieczytelny lub bez odpowiednika.
 
-Każdy rekord ma własny wiersz lub element JSON. Zachowaj:
+Uśrednienie ma wszystkich członków i odwrócenia oraz dowód powtórzenia.
+Dla TOP zachowaj raporty binarium, wersję, SHA wejścia, linie eksportów
+i `losses`; rozlicz też tripy, referencje i rysunki. Nie powielaj kompletnych
+surowych pól w kilku rejestrach, jeśli jeden zapis i odnośniki dają pełny ślad.
 
-- źródło + strona/wiersz/komórka lub indeks rekordu oraz kontekst dyrektyw;
-- dosłowny FROM/TO i D/A/V lub inną treść źródłową, jednostki i niepewne znaki;
-- docelowy plik, stabilny identyfikator rekordu i numer linii dla wskazanego
-  commita/hasza (linia może się zmienić po dodaniu metadanych);
-- wartości aktywne, mapowanie stacji, wykonane przekształcenie i jego podstawę;
-- wynik: zgodny, uzasadnione przekształcenie, rozbieżny, nieczytelny,
-  brak źródła albo brak odpowiednika; osobno los w projekcie, np. wariant
-  historyczny lub wyłączenie z podaniem dowodu i przyczyny.
+Podaj mianowniki w obie strony, według rodzajów rekordów. Nie utożsamiaj
+zgodności dostępnych rekordów z kompletnością brakującej części źródła.
 
-Uśrednienie wielu odczytów wymaga relacji wiele → jeden z listą wejść
-i potwierdzeniem powtórzenia. Pominięty rekord nadal występuje w rejestrze.
-Nie zakładaj stałej pozycji pól ani tego, że każdy niekomentarz jest strzałem.
-Zachowaj odrębnie rekordy bez liczb, jeśli niosą istotną informację.
+## Wnioski
 
-Podsumuj obie strony: ile aktywnych rekordów ma źródło i ile źródłowych
-rekordów rozliczono. Podaj mianowniki, rozbieżności, nieczytelne miejsca
-i braki, z rozdziałem typów pomiarów. Zgodność 100% dostępnych rekordów
-nie oznacza kompletności, jeżeli brakuje stron lub całego pomiaru.
+Oddziel obserwację, hipotezę, potwierdzoną decyzję i ograniczenie.
+Dla korekty podaj starą i nową wartość oraz dokładny dowód.
+Zapisz wykonane polecenia, wersje, kody zakończenia i istotne wyniki;
+logi pozostają w pakiecie audytu. Rozróżnij pochodzenie, pomiary,
+metadane, kompilację i faktycznie sprawdzone GUI.
 
-## Ustalenia i decyzje
-
-Dla każdej korekty/spornej informacji zapisuj: **źródło → obserwacja →
-hipoteza → sprawdzenie → decyzja → ograniczenie**. Podaj wcześniejszą
-i przyjętą wartość, jej status oraz dokładną podstawę. „Preferowany odczyt”
-nie oznacza „potwierdzony odczyt”. Nierozstrzygnięty znak ma warianty,
-a nie wymuszoną jedną liczbę. Tak samo dokumentuj autorstwo, daty,
-deklinację, identyfikację stacji i wyłączenia z aktywnego pomiaru.
-
-## Wyniki walidacji
-
-Raportuj odrębnie, ze statusem i dowodem:
-
-| Obszar | Co wynik może potwierdzić |
-| --- | --- |
-| Pochodzenie i integralność | Zgodność pobranych bajtów z _RAW oraz zakres odzyskanej historii |
-| Pomiary | Zgodność rekordów i uzasadnienie przekształceń w zbadanym zakresie |
-| Metadane | Zgodność informacji z przypisanymi źródłami oraz kontraktem repozytorium |
-| Kompilacja/eksporty | Poprawność przetwarzania konkretnych wejść przez wskazane wersje programów |
-| Kontrola GUI | Faktycznie obejrzany model, oryginał lub eksport i zakres tej kontroli |
-
-Używaj stanów `potwierdzone w podanym zakresie`, `rozbieżność`, `częściowe`,
-`niesprawdzone` lub `nie dotyczy`, zamiast jednego zbiorczego „OK”. Przy
-narzędziach zapisz polecenie/wersję, wejście, ustawienia, kod zakończenia,
-ostrzeżenia, istotne statystyki przed/po i lokalizację dowodów.
-
-Podsumowanie zawiera listę zmian, nierozstrzygnięte pytania i konkretny
-brakujący dowód, a także ostatni ukończony zakres i następny krok, jeśli
-audyt trzeba wznowić. Wynik kompilacji nie potwierdza pochodzenia danych,
-tożsamości stacji, odczytu skanu ani historycznej daty.
+Zgłoszony przez autora reset zegara opisz raz. Nie traktuj daty pliku,
+publikacji ani urządzenia jako nowego potwierdzenia daty pomiaru.
+W końcowej odpowiedzi wystarczą wynik, pokrycie, zmiany, istotne luki
+i ścieżka do pakietu. Pytaj tylko o brakujący dowód potrzebny do decyzji.

@@ -29,8 +29,8 @@ jobs:
       - name: Sync Python tooling
         run: uv sync --locked
 
-      - name: Install resvg
-        uses: ./.github/actions/install-resvg
+      - name: Install PocketTopo Exporter binary
+        uses: ./.github/actions/install-pockettopo-exporter
 
       - name: Run Python quality gate
         run: uv run jktz-quality
@@ -149,14 +149,11 @@ jobs:
           Write-Host "GDAL bin dir: $gdalBin"
           echo "$gdalBin" >> $env:GITHUB_PATH
 
-      - name: Install resvg for PocketTopo package integration (Linux)
-        if: runner.os == 'Linux'
-        uses: ./.github/actions/install-resvg
+      - name: Install PocketTopo Exporter binary
+        uses: ./.github/actions/install-pockettopo-exporter
 
-      - name: Check PocketTopo compilation and package integration
-        env:
-          JKTZ_REQUIRE_CAVERN: "1"
-        run: uv run pytest -q tests/test_pockettopo_compilation.py tests/test_pockettopo_validation.py tests/test_pockettopo_package.py tests/test_pockettopo_cli.py
+      - name: Check PocketTopo binary integration
+        run: uv run pytest -q tests/test_pockettopo_binary.py
 
       - name: Run full validation
         env:
