@@ -4,6 +4,9 @@ Dwa warianty — oba tworzą obraz pod tagiem `jktz-survex`:
 
 **`Dockerfile.survexImage-release`** — buduje Survex z oficjalnego archiwum wydania (tarball z `survex.com`). Wariant **stabilny**, zalecany do generowania oficjalnych eksportów.
 
+Wersję określa `.github/survex-version` (obecnie **1.4.23**), wspólnie z CI.
+Po zmianie tego pliku przebuduj obraz przed walidacją lub eksportem.
+
 ```bash
 docker build -f docker/Dockerfile.survexImage-release -t jktz-survex .
 ```

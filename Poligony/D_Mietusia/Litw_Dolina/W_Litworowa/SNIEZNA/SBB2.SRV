@@ -3,7 +3,7 @@ CAVE_ID         "WPJ:SNIEZNA"
 CAVE_NAME       "SNIEZNA"
 SURVEY_ID       "SBB2"
 SURVEY_NAME     "SBB2"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-15"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -15,6 +15,7 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+PROCESSING      "zakomentowano osierocone dyrektywy stacji LTsbb0 i LTsbb26; brak potwierdzonych powiazan z siecia; pomiary bez zmian"
 #]
 
 #prefix2 WielkaSniezna
@@ -23,8 +24,10 @@ PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 #Units DECL=3.5
 #u meters
 #units order=dva
-#note LTsbb0   -113.0m
-#note LTsbb26  Kolektor
+; Survex 1.4.23: nieuzywane stacje; powiazania z siecia niepotwierdzone.
+; Zachowano oryginalne opisy jako komentarze do weryfikacji ze zrodlem.
+; #note LTsbb0   -113.0m
+; #note LTsbb26  Kolektor
 sbb0	sbb0a	7.34	-25	153	#s domiar
 sbb0a	sbb1	7.59	26	212
 sbb1	sbb2	12.51	-42	170	#s domiar

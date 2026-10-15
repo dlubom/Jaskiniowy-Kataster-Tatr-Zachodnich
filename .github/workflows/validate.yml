@@ -149,6 +149,23 @@ jobs:
           Write-Host "GDAL bin dir: $gdalBin"
           echo "$gdalBin" >> $env:GITHUB_PATH
 
+      - name: Verify Survex version (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        env:
+          EXPECTED_SURVEX_VERSION: ${{ steps.survex.outputs.version }}
+        run: |
+          $expected = [regex]::Escape($env:EXPECTED_SURVEX_VERSION)
+          foreach ($tool in @('cavern', 'survexport')) {
+            $toolPath = (Get-Command $tool -ErrorAction Stop).Source
+            $banner = & $toolPath --version
+            if ($LASTEXITCODE -ne 0) { throw "$tool --version failed" }
+            Write-Host $banner
+            if (($banner -join "`n").Trim() -notmatch " - Survex $expected$") {
+              throw "Unexpected $tool version (expected $env:EXPECTED_SURVEX_VERSION)"
+            }
+          }
+
       - name: Install PocketTopo Exporter binary
         uses: ./.github/actions/install-pockettopo-exporter
 

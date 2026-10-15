@@ -37,3 +37,17 @@ runs:
           make install
         fi
         echo "$HOME/survex/bin" >> "$GITHUB_PATH"
+
+    - name: Verify Survex version
+      shell: bash
+      env:
+        EXPECTED_SURVEX_VERSION: ${{ inputs.version }}
+      run: |
+        for tool in cavern survexport; do
+          banner="$("$HOME/survex/bin/$tool" --version)"
+          echo "$banner"
+          if [[ "$banner" != *" - Survex $EXPECTED_SURVEX_VERSION" ]]; then
+            echo "Unexpected $tool version (expected $EXPECTED_SURVEX_VERSION)" >&2
+            exit 1
+          fi
+        done

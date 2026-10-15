@@ -26,6 +26,15 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
   Pomocnik testów Git izoluje odziedziczone zmienne hooków, aby repozytoria
   testowe nie zmieniały konfiguracji repozytorium wywołującego hook.
 
+### Zmienione
+
+- Survex 1.4.23 w CI i stabilnym obrazie Docker; odświeżono lokalne manuale
+  oraz dodano kontrolę wersji `cavern` i `survexport` po instalacji w CI.
+- Zachowano jako komentarze osierocone notatki stacji w Bandziochu Kominiarskim
+  i Litworowej, ujawnione przez nową kontrolę Survexa; wartości pomiarów bez zmian.
+- Udokumentowano różnicę wyrównania geometrii między Survex 1.4.22 i 1.4.23
+  wraz z minimalną reprodukcją i wskazaniem zmiany domyślnych wariancji upstream.
+
 ## [v1.4.7] - 2026-09-25
 
 ### Zmienione
