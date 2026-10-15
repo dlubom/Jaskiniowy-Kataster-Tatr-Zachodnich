@@ -3,12 +3,14 @@ Larry Fish's Compass
 ====================
 
 Survex can read Compass survey data - it supports survey data files
-and project files (``.DAT`` and ``.MAK files``), closed data files (``.CLP``),
+and project files (``.DAT`` and ``.MAK`` files), closed data files (``.CLP``),
 and processed survey data (``.PLT`` and ``.PLF`` files).  Survex 1.0.19 was
-the first to support this but we currently recommend using 1.4.6 or newer if
+the first to support this but we currently recommend using 1.4.18 or newer if
 you're working with Compass data as this version made significant improvements
-to this support.  If you're using Compass ``.MAK`` files, then Survex 1.4.18
-further improved parsing these.
+to this support.  1.4.23 notably improved support for passage dimensions
+(fixing a bug in interpreting them in ``.PLT`` files and adding support for
+them when processing ``.DAT`` files) and improved handling of ``.MAK`` files
+(probably most notably fixing the interpretation of folders).
 
 --------------------
 Compass .MAK support
@@ -103,10 +105,25 @@ limitations and assumptions:
   It can also help detect typos in data entry.
 
 - ``.MAK`` files can contain comments, which last from a ``/`` to the
-  next ``/`` or end of the line.  Survex 1.4.18 added support for these
-  (older Survex versions quietly ignored the ``/`` characters as unknown, but
+  next ``/`` or end of the line.  Survex 1.4.18 added support for these,
+  but currently they aren't handled inside a station name, so Survex won't
+  handle this artificial example like Compass does::
+
+    #TEST1.DAT,A/this is a comment/1[F,10.1,20.2,30.3];
+
+  It seems highly unlikely people would put comments in the middle of their
+  station names in real-world data, but it could be supported if necessary.
+
+  (Older Survex versions quietly ignored the ``/`` characters as unknown, but
   that meant they would still interpret any commented out ``.MAK`` file
-  commands).
+  commands.)
+
+- ``.MAK`` files can contain a hierarchical folder structure, which Survex
+  correctly handles since 1.4.23.  Compass documents that "every left angle
+  bracket must eventually be matched with a right angle bracket" (by angle
+  brackets it means ``[`` and ``]``) but it quietly allows unclosed folders and
+  doesn't complain if you close a folder when one is not open.  Survex warns
+  for both of these situations.
 
 --------------------
 Compass .DAT support
@@ -172,7 +189,9 @@ assumptions:
 - Survey date January 1st 1901 is treated as "no date specified",
   since this is the date Compass stores in this situation, and it
   seems very unlikely to occur in real data.
-- Passage dimensions are currently ignored.
+- Passage dimensions are turned into Survex ``*data passage`` tubes.
+  Currently each tube continues while the "to" station of one leg matches the
+  "from" station of the next.  (Since 1.4.23.)
 - Shot flag ``C`` in Compass causes flagged legs to not be subject to
   loop closure.  Survex currently sets the SDs of such legs to 1mm,
   so flagged legs can still move slightly during loop closure.
@@ -249,7 +268,9 @@ limitations and assumptions:
   seems very unlikely to occur in real data.
 
 - Passage dimensions are translated to passage tubes, but Survex
-  may interpret them differently from Compass.
+  may interpret them differently from Compass.  The order of the
+  dimensions was fixed in 1.4.23 to be (left,up,down,right) - before
+  that they were mishandled as (left,right,up,down).
 
 - Shot flag ``C`` is ignored.  It only seems to be useful in unprocessed survey
   data.

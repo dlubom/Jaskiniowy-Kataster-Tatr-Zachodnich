@@ -28,6 +28,11 @@ instalacji do katalogu `scripts/`.
 - GDAL (`ogr2ogr`) — budowanie i sprawdzanie shapefile;
 - Docker — opcjonalny zamiennik lokalnej instalacji Survex/GDAL.
 
+CI i stabilny obraz Docker korzystają z Survexa **1.4.23**, przypiętego w
+`.github/survex-version`. Do odtworzenia wyników lokalnie użyj tej samej wersji;
+sprawdź zarówno `cavern --version`, jak i `survexport --version`. CI sprawdza
+obie wersje po instalacji, także po odtworzeniu cache.
+
 Bez Survex i GDAL szybkie testy Pythona działają, ale pełna walidacja pre-push
 nie przejdzie.
 
@@ -82,6 +87,11 @@ added to `scripts/`.
 - Survex (`cavern`) — compiles the survey network;
 - GDAL (`ogr2ogr`) — builds and validates shapefiles;
 - Docker — optional alternative to installing Survex/GDAL locally.
+
+CI and the stable Docker image use Survex **1.4.23**, pinned in
+`.github/survex-version`. Use the same version to reproduce results locally;
+check both `cavern --version` and `survexport --version`. CI verifies both
+versions after installation, including cache restores.
 
 Python tests can run without Survex and GDAL, but the full pre-push validation
 will not pass without them.

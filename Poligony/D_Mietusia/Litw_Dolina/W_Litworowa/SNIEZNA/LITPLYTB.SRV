@@ -3,7 +3,7 @@ CAVE_ID         "WPJ:SNIEZNA"
 CAVE_NAME       "SNIEZNA"
 SURVEY_ID       "LITPLYTB"
 SURVEY_NAME     "LITPLYTB"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-15"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -15,6 +15,7 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+PROCESSING      "zakomentowano osierocone dyrektywy stacji LTII20; brak potwierdzonych powiazan z siecia; pomiary bez zmian"
 #]
 
 #prefix2 WielkaSniezna
@@ -23,7 +24,9 @@ PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 #Units Meters Order=avd
 ; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
 #Units DECL=0.819D
-#note  LTII20 /  punkt -160
+; Survex 1.4.23: nieuzywane stacje; powiazania z siecia niepotwierdzone.
+; Zachowano oryginalne opisy jako komentarze do weryfikacji ze zrodlem.
+; #note  LTII20 /  punkt -160
 #note  LTsb0 /  punkt -102
 LTll20	LTbie1	110	18	5.60
 LTbie1	LTbie2	148	-7	3.83

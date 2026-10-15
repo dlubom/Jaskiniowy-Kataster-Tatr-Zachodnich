@@ -51,10 +51,31 @@ różnych programów ani wersji.
 
 ## Survex
 
-Lokalny zestaw odpowiada wydaniu **1.4.22**. Wersja, commit źródłowy, licencja,
-sumy kontrolne i procedura odświeżenia są w
+Lokalny zestaw odpowiada wydaniu **1.4.23 z 2026-10-13**. Wersja, commit
+źródłowy, licencja, sumy kontrolne i procedura odświeżenia są w
 [Survex_manual/README.md](Survex_manual/README.md).
 Pliki RST są źródłem tekstowym dokumentacji i można je przeszukiwać przez `rg`.
+
+[Weryfikacja przejścia na 1.4.23](SURVEX_1_4_23.md) opisuje nowe ostrzeżenia,
+zachowane komentarze źródłowe i odtworzoną różnicę wyrównania geometrii.
+
+Przebudowany rozdział [walls.rst](Survex_manual/walls.rst) zakłada użycie
+Survexa co najmniej 1.4.23 i wymienia Kataster jako przykład obsługiwanego
+zestawu danych. Istotne zmiany tego wydania:
+
+- Dodano ostrzeżenia o podejrzanych przecinkach w danych, nieużytych stacjach
+  z `#FLAG`/`#NOTE` i nieprawidłowych wartościach opcji. Zmieniono też próg
+  wykrywania rozbieżności odczytów wstecznych według `TYPEAB=`/`TYPEVB=`;
+  porównując logi między wersjami, trzeba uwzględnić te zmiany diagnostyki.
+- Poprawiono współdziałanie `TYPEAB=` z `INCAB=`, obsługę wysokości instrumentu
+  i celu (`TAPE=IT` oraz części przypadków `TAPE=SS`) i wariancji pomiarów
+  pływających; dodano obsługę `INCH=`, `UV=`, `UVH=` i `UVV=`.
+- Dodano odczyt raportów Walls `.LST` i porównanie ich z `.3d` przez `diffpos`.
+  Rozdział opisuje ograniczenia tej metody i porównanie wizualne przez Shapefile.
+  Opcja `LRUD=` jest sprawdzana, ale same odczyty LRUD Wallsa nadal są pomijane.
+
+Szczegóły i pozostałe zmiany zawiera oficjalna
+[lista zmian 1.4.23](https://github.com/ojwb/survex/blob/3e23b190bc151592e1b65044871f1b1dec31dc79/NEWS).
 
 ## PIG
 

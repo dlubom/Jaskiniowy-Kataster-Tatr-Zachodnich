@@ -1,11 +1,11 @@
 # Lokalna dokumentacja Survexa
 
-- Wydanie: **Survex 1.4.22**, opublikowane 2026-06-23.
-- Tag: [`v1.4.22`](https://github.com/ojwb/survex/tree/v1.4.22/doc).
-- Commit: `5b233b9255ef7e7c6de9400136d508db76e61e78`.
+- Wydanie: **Survex 1.4.23**, opublikowane 2026-10-13.
+- Tag: [`v1.4.23`](https://github.com/ojwb/survex/tree/v1.4.23/doc).
+- Commit: `3e23b190bc151592e1b65044871f1b1dec31dc79`.
 - Źródło: [oficjalne lustro ojwb/survex](https://github.com/ojwb/survex),
   wskazane na [stronie projektu](https://survex.com/cvs.html).
-- Data pobrania i porównania: **2026-09-24**.
+- Data pobrania i porównania: **2026-10-15**.
 - Zakres: 21 plików `doc/*.rst`, pięć plików `doc/*.htm` wymienionych
   w [SHA256SUMS](SHA256SUMS) oraz plik `COPYING` z głównego katalogu upstream.
 - Licencja upstream: [COPYING](COPYING); zachowano oznaczenia autorów.
@@ -14,7 +14,7 @@ Pliki objęte manifestem są kopiami bajt w bajt z tego commitu. Dla manuali
 adres źródłowy ma postać:
 
 ```text
-https://raw.githubusercontent.com/ojwb/survex/5b233b9255ef7e7c6de9400136d508db76e61e78/doc/<nazwa-pliku>
+https://raw.githubusercontent.com/ojwb/survex/3e23b190bc151592e1b65044871f1b1dec31dc79/doc/<nazwa-pliku>
 ```
 
 Dla `COPYING` pomiń `doc/`. README i SHA256SUMS są lokalnymi metadanymi.
@@ -57,7 +57,13 @@ ograniczenia czytnika Walls, a nie wszystkie cechy natywnego Wallsa.
 3. Zaktualizuj ten opis i SHA256SUMS, zachowując pliki upstream bez lokalnych
    poprawek. Projektowe uwagi zapisz w [../README.md](../README.md) lub skillach.
 
-Aktualizacja 2026-09-24 zmieniła względem poprzedniej kopii pięć plików RST
-(`walls`, `datafile`, `intro`, `getstart`, `compass`) i `HACKING.htm`.
-Najważniejsze uzupełnienia dotyczą modeli IGRF, `#SYMBOL`, separatora prefiksów,
-`NOTE`/`NOTEALL`, częściowych wymiarów `passage` i `*infer`.
+Aktualizacja 2026-10-15 do 1.4.23 zmieniła względem 1.4.22 siedem plików RST
+(`aven`, `cavern`, `compass`, `datafile`, `diffpos`, `dump3d`, `walls`)
+i dwa pliki HTM (`3dformat`, `3dformat-old`). Sprawdzono pełny zakres
+`doc/*.rst`, `doc/*.htm` i `COPYING` w obu commitach: upstream nie dodał ani
+nie usunął plików z tego zestawu. Wszystkie 27 plików porównano bajt w bajt
+z przypiętym commitem i objęto manifestem.
+
+Istotne zmiany obsługi Wallsa opisano w [../README.md](../README.md).
+Pełna [lista zmian 1.4.23](https://github.com/ojwb/survex/blob/3e23b190bc151592e1b65044871f1b1dec31dc79/NEWS)
+pozostaje źródłem historii obsługi poszczególnych funkcji.
