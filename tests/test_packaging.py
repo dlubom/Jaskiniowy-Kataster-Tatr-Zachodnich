@@ -182,3 +182,20 @@ def test_quality_artifacts_are_not_release_data(tmp_path, artifact):
 
     with zipfile.ZipFile(output) as archive:
         assert archive.namelist() == ["KATASTER.wpj"]
+
+
+def test_local_verification_evidence_stays_out_of_release_zip(tmp_path):
+    evidence = tmp_path / ".verification" / "2026-10-15-Kalacka"
+    evidence.mkdir(parents=True)
+    (evidence / "README.md").write_text("local audit report")
+    exports = evidence / "exports"
+    exports.mkdir()
+    (exports / "survey.SRV").write_text("local comparison export")
+    (tmp_path / "KATASTER.wpj").write_text("project")
+
+    output = build_release_zip("test", root=tmp_path)
+
+    with zipfile.ZipFile(output) as archive:
+        assert archive.namelist() == ["KATASTER.wpj"]
+    assert (evidence / "README.md").read_text() == "local audit report"
+    assert (exports / "survey.SRV").read_text() == "local comparison export"

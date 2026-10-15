@@ -1,161 +1,89 @@
 ---
 name: validate-cave
-description: Audit a cave's source provenance and every survey record against _RAW, recover missing originals from Git/PR archives and contributor-provided local, cloud or email sources, and repair confirmed source or metadata errors. Use for a cave source audit, not compilation alone or conversion alone.
+description: Use when auditing a cave's source provenance and survey records against archival originals, or recovering sources and repairing confirmed survey errors. Not for compilation alone.
 ---
 
-Przeprowadź audyt jaskini od najwcześniejszego dostępnego materiału do aktywnych
-pomiarów i modelu. Wynik ma wyjaśniać, co potwierdzono, co poprawiono i czego
-nadal nie można rozstrzygnąć. Pracuj według [AGENTS.md](../../../AGENTS.md).
+Sprawdź pochodzenie i każdy rekord jaskini zgodnie z
+[AGENTS.md](../../../AGENTS.md). Wynik ma rozliczać źródła, przekształcenia,
+poprawki i konkretne luki. Zakres wyznacza zlecenie; review lub „bez zmian”
+nie oznacza zgody na zmianę pomiarów ani publikację.
 
-## Zakres zlecenia
+## Wynik i miejsce zapisu
 
-Przykłady:
+Ustal katalog główny badanego projektu (`<root>`, zawierający `KATASTER.wpj`),
+niezależnie od bieżącego katalogu terminala. Domyślnie zapisuj pełne dowody
+w `<root>/.verification/<YYYY-MM-DD>-<jaskinia>/`. Wskazane przez użytkownika
+miejsce ma pierwszeństwo; żądanie dowodów fizycznie poza checkoutem oznacza
+zewnętrzny katalog. Logi, CSV/JSON, eksporty, obrazy i jednorazowe skrypty
+należą do pakietu audytu. Utwórz jego katalog przed eksportem; każdy eksport
+zapisuj w nowym, nieistniejącym podkatalogu, także przy ponowieniu próby.
+W czacie podaj wynik, pokrycie, zmiany, istotne luki i link do dowodów.
 
-- „Zwaliduj Kalacką, używając mojego Gmaila” — szukaj źródeł także przez
-  plugin Gmail w trybie odczytu; pobierz potrzebne materiały.
-- „Zwaliduj Śpiących Rycerzy z dostępnych materiałów w _RAW” — ogranicz
-  dowody do wskazanych materiałów; luki wypisz bez rozszerzania poszukiwań.
-- „Zwaliduj Hardą” — rozpoznaj obiekt, sprawdź repozytorium, jego historię,
-  PIG i publiczne źródła oraz inne materiały wskazane do tego audytu.
+`.verification/` jest lokalne, ignorowane przez Git i pomijane w ZIP wydania;
+nowy klon nie zawiera tych dowodów. Przed usunięciem checkoutu lub worktree
+zachowaj potrzebny pakiet w trwałej lokalizacji.
 
-Źródła zależą od kontrybutora: może wskazać własny katalog, ZIP, pocztę,
-folder na OneDrive, Google Drive lub inną usługę. Gmail jest jednym
-z przykładów, nie wymaganiem skilla. Korzystaj z narzędzi dostępnych dla
-wybranej usługi; nie zakładaj dostępu do konta autora skilla ani dostępności
-konkretnego pluginu u innych osób.
+Po naprawie danych repozytorium dostaje krótkie uzasadnienie ze źródłem
+obok jaskini oraz wpis `Unreleased`. Uzupełnij istniejącą notatkę; nie
+twórz równoległych raportów. Jeśli zlecenie wymaga wszystkich dowodów wyłącznie
+w pakiecie audytu, umieść tam także uzasadnienie. Sam review może zakończyć
+się raportem w tym pakiecie. Rozbudowany raport w repo zapisuj, gdy użytkownik
+go tam zamówi.
+Format szczegółowego rejestru opisuje
+[audit-evidence.md](references/audit-evidence.md).
 
-Zwykły audyt obejmuje uzupełnienie odzyskanych źródeł, metadanych oraz
-poprawki jednoznacznie potwierdzonych błędów. „Tylko analiza”, „bez zmian”
-lub „tylko tutaj” ogranicza wynik do raportu w zamówionym miejscu. Nie
-uruchamiaj audytu konkretnej jaskini na podstawie samego przykładu użycia.
-Wskazany do audytu folder, plik, link lub konto określa zakres odczytu.
-Respektuj zgodę już udzieloną w rozmowie; nie pytaj ponownie. Jeśli do dalszego
-szukania potrzebne jest prywatne źródło poza tym zakresem, zapytaj o dostęp
-do konkretnego źródła i w tym czasie kontynuuj niezależną część audytu.
+## Audyt
 
-## Rozpoznanie i odzyskanie źródeł
+1. Ustal obiekt, numer inwentarzowy, katalog, commit i lokalne zmiany.
+   Sprawdź `KATASTER.wpj`, aktywne SRV, `SOURCE_REF`, `_RAW` i historię Git.
+   W PIG wyszukuj dokładne pole; lokalny JSONL jest źródłem archiwalnym.
+   Zapisz hashe oryginałów, także źródłowych README.
+2. Powiąż każdy aktywny rekord ze źródłem i rozlicz każdy rekord źródłowy,
+   również splaje, LRUD, dowiązania, wyłączenia i szkice. Zachowaj dosłowne
+   wartości, identyfikatory, lokalizację źródła i transformacje. Sprawdź
+   kolejność pól, jednostki, prefiksy, odwrócenia, korekty i aktywność.
+   Podobna geometria ani długość nie dowodzą tożsamości stacji lub powtórzeń.
+3. Przy odzyskiwaniu plików i wcześniejszej historii przeczytaj
+   [source-recovery.md](references/source-recovery.md). Usługi dobieraj do
+   wskazanego źródła; nie zakładaj Gmaila ani dodatkowego prywatnego dostępu.
+   Oryginały zachowuj bez zmiany bajtów, nazw i struktury; umieszczaj je
+   w `_RAW/NN`, gdy zakres obejmuje uzupełnienie źródeł w repo.
+   Konwersja, OCR i transkrypcja pozostają poza `_RAW`.
+4. Skany weryfikuj wzrokowo; przy nieczytelności zachowaj warianty odczytu.
+   Rozróżniaj pomiar, kopię, opracowanie, nadawcę i redaktora. Zgodne
+   pochodne tego samego źródła nie są niezależnym potwierdzeniem terenowym.
+5. Naprawiaj tylko błędy potwierdzone źródłem i objęte zleceniem. Przy braku
+   rekordu sprawdź historię i uzasadnienia wyłączenia. Nie usuwaj odczytów
+   ani nie łącz stacji dla poprawy domknięcia. Zachowaj kodowanie i końce linii.
 
-1. Ustal jednoznacznie nazwę/aliasy, numer inwentarzowy i katalog jaskini.
-   Korzystaj z dokładnych pól JSONL PIG według `AGENTS.md`. Gdy nazwa wskazuje
-   kilka obiektów, wyjaśnij to przed zmianą ich danych.
-2. Sprawdź stan Git, bazowy commit, drzewo `KATASTER.wpj`, wszystkie pomiary
-   jaskini, `SOURCE_REF`, paczki `_RAW` i istniejące raporty. Rozróżnij
-   aktywne pomiary, historyczne warianty i pliki niepodłączone do projektu.
-   Zapisz stan wejściowy oraz hashe materiałów przed zmianami.
-3. Odtwórz łańcuch: oryginalny plik/załącznik/archiwum → `_RAW` →
-   transkrypcja lub konwersja → aktywny SRV. README, PR i dawna rozmowa są
-   tropami oraz zapisami wcześniejszych decyzji, a ich twierdzenia sprawdza się
-   w materiałach. Brak pliku na bieżącej gałęzi nie dowodzi braku w historii.
-4. Przy poszukiwaniu poprzedników `_RAW`, dyskach, mailach, ZIP-ach i literaturze
-   przeczytaj [pozyskiwanie źródeł](references/source-recovery.md).
-   Porównuj bajty i zawartość; jednakowe nazwy nie potwierdzają identyczności.
-5. Odzyskane oryginały umieść w odpowiedniej paczce `_RAW/NN` bez zmiany
-   nazw, struktury i bajtów. Nowy niezależny przekaz lub inna wersja zasługuje
-   na osobną paczkę; nie nadpisuj istniejącego materiału. OCR, kadry, poprawione
-   obrazy i wyniki konwersji trzymaj poza `_RAW`. Brakujące źródło opisuj jako
-   `częściowy` lub `niedostępny`, zgodnie z kontraktem metadanych; kopia
-   aktywnego SRV nie staje się przez to odnalezionym oryginałem.
+Daty zegara PocketTopo nie zastępują dat pomiaru. Jeśli autor potwierdził
+nieustawiony lub zresetowany zegar, zanotuj tę przyczynę raz dla danego
+zbioru i kontynuuj bez ponawiania pytania dla każdego pliku. Zachowaj
+potwierdzoną datę z autora lub metadanych; daty urządzenia i nazwy plików
+nie służą do samodzielnego ustalania IGRF. Nie podnoś precyzji daty.
 
-## Weryfikacja pomiarów i informacji
+## Narzędzia i zakończenie
 
-Utrzymuj odrębne dowody: bezpośredni odczyt źródła, jego pochodzenie,
-obliczenia autora, konwersję, informacje z publikacji/PIG i wynik modelowania.
-Zgodność źródeł pochodnych od tej samej transkrypcji nie jest niezależnym
-potwierdzeniem. Użyj [schematu raportu](references/audit-evidence.md) do
-zapisywania postępu i pokrycia bez ponownego czytania sprawdzonych materiałów.
+- TOP: gotowe binarium według [pockettopo-convert](../pockettopo-convert/SKILL.md).
+  Zachowaj SHA źródła, wersję/binarium, `inspect`, `process` i raporty
+  użytych eksportów. Rozlicz offsety, grupy, pominięcia i `losses`.
+- Konwersja SVX: [svx-to-srv](../svx-to-srv/SKILL.md). Potwierdzone powtórzenia:
+  [average-shots](../average-shots/SKILL.md). Nowe włączenie jaskini:
+  [add-cave](../add-cave/SKILL.md), tylko w zamówionym zakresie.
+- Metadane: `uv run jktz-srv-metadata`; parsuj SRV i README istniejącymi API.
+  `raw-set` zastępuje README, więc zachowaj dodatkowe sekcje przez `--dry-run`
+  i atomowy zapis. `hash-raw` pomija README: sprawdź je osobno.
+- Po zmianie danych porównaj wejścia i model przed/po według
+  [verify-cave-refactor](../verify-cave-refactor/SKILL.md), uruchom
+  `uv run jktz-validate` i `git diff --check`. Walidator może tworzyć ignorowane
+  pliki robocze; log przechwyć do pakietu audytu. Gdy wszystkie wyniki mają
+  powstać fizycznie poza checkoutem, uruchom go na kopii kandydata w katalogu audytu.
+  Przy brakujących zależnościach
+  użyj [docker-validate](../docker-validate/SKILL.md). Zmieniany kod podlega
+  bramkom `AGENTS.md`; nie obniżaj ich dla uzyskania wyniku.
 
-- **Sprawdź każdy rekord w obie strony.** Powiąż każdy aktywny wiersz z
-  plikiem i miejscem źródłowym; każdemu rekordowi źródła przypisz los: użyty,
-  przekształcony, niezależny wariant, świadomie wyłączony, nierozstrzygnięty
-  lub bez odpowiednika. Rozlicz także splaje, LRUD, domiary, dowiązania,
-  komentarze wpływające na interpretację i szkice bez liczb. Sama zgodność
-  sumy długości lub liczby wierszy nie wystarcza.
-- **Odczytuj semantykę.** Sprawdź FROM/TO, prefiksy, kolejność D/A/V,
-  jednostki, stopnie/grady, zenit/inklinację, znaki, pomiary wsteczne,
-  kalibracje, deklinację, daty i aktywność segmentów. Zachowaj dosłowne
-  wartości źródła obok jawnych przeliczeń, precyzji i mapowania stacji.
-  Dla niepewnej składni czytaj lokalne manuale podlinkowane w `AGENTS.md`.
-- **Skany oglądaj.** OCR służy do wyszukiwania i roboczej transkrypcji;
-  zweryfikuj wzrokowo każdy wiersz, nagłówki, daty, podpisy i numerację stron.
-  Przy niepewności obejrzyj pełną stronę oraz powiększenia/obrót kopii.
-  Jeśli dostępny jest niezależny agent, zleć mu odczyt trudnych miejsc bez
-  sugerowania oczekiwanej cyfry. Zachowaj oba odczyty, jeżeli nadal są możliwe.
-  Nie wybieraj cyfry dlatego, że lepiej zamyka pętlę albo pasuje do PIG.
-- **Nie utożsamiaj podobieństwa z tożsamością.** Ta sama numeracja, równe
-  wektory i podobny przebieg nie uprawniają do łączenia stacji, uśredniania
-  ani usuwania niezależnego pomiaru. Potwierdzenie powtórzenia wymaga dowodu
-  źródłowego; udokumentuj osobno każdą zmianę aktywności/statystyki.
-- **Metadane wiąż z konkretnym pomiarem.** Rozróżniaj mierniczych, autora
-  opracowania, nadawcę i redaktora inwentarza. Zachowuj precyzję daty
-  źródłowej; data maila, skanu, modyfikacji czy publikacji nie jest datą
-  pomiaru. Zegar PocketTopo mógł się wyzerować: data tripu i nazwa pliku
-  wymagają niezależnego potwierdzenia przed użyciem do deklinacji. Opisz
-  osobno ewentualną datę obliczeniową i jej podstawę, bez dorabiania dnia.
-- **PIG i literatura uzupełniają kontekst.** Przypisuj twierdzenie do
-  konkretnego fragmentu publikacji i odróżniaj datę eksploracji od pomiaru.
-  Rozbieżności długości, autorstwa i położenia odnotuj. Aktywne współrzędne
-  pochodzą z projektu GPS; audyt PIG sam nie uzasadnia zmiany otworu.
-
-## Uzupełnienia i istniejące narzędzia
-
-Poprawiaj potwierdzone błędy z zachowaniem źródła, wcześniejszej wartości
-i uzasadnienia w raporcie. Sprzeczność pozostaw jawną; kontynuuj pozostałe
-rekordy. Nie rozwiązuj jej arbitralną zmianą danych tylko po to, by walidator
-przeszedł. Zachowuj kodowanie i zakończenia linii istniejących SRV.
-
-| Potrzeba | Narzędzie i zakres |
-| --- | --- |
-| PocketTopo `.top` | [pockettopo-convert](../pockettopo-convert/SKILL.md): istniejący CLI, ślad każdego rekordu, decyzje powiązane z SHA i jawna niekompletność |
-| Survex → Walls | [svx-to-srv](../svx-to-srv/SKILL.md): konwersja z kontrolą semantyki dyrektyw |
-| Potwierdzone odczyty powtórne | [average-shots](../average-shots/SKILL.md), wyłącznie na kopii roboczej po potwierdzeniu konkretnej grupy |
-| Statystyki i wpływ korekty | [survex-stats](../survex-stats/SKILL.md), [verify-cave-refactor](../verify-cave-refactor/SKILL.md) dla porównania przed/po |
-| Nowe włączenie do projektu | Odpowiednie kroki [add-cave](../add-cave/SKILL.md), tylko jeśli obejmuje je zlecenie |
-
-Inne formaty (np. Therion, arkusz, tabela w mailu) rozpoznaj przed konwersją;
-użyj dostępnego parsera/eksportera lub jawnej transkrypcji. Nie zakładaj
-obsługi formatu przez konwerter tylko dlatego, że da się otworzyć plik.
-
-Metadane zapisuj przez `uv run jktz-srv-metadata`:
-
-- `raw-set` tworzy/zastępuje README paczki. Dla rozbudowanego README zapisz
-  wynik `--dry-run` do pliku tymczasowego, połącz z zachowanymi dodatkowymi
-  sekcjami i sprawdź komplet. Do walidacji i atomowego zapisu użyj istniejących
-  API `parse_raw_metadata` z `jktz.metadata.raw` i `atomic_write` z
-  `jktz.metadata.io`. Sam późniejszy `raw-set` usunąłby dodatkowe sekcje.
-- `srv-update` obsługuje datę aktualizacji i dopisanie `PROCESSING`.
-  Zmiana autorów, daty pomiaru czy `SOURCE_REF` wymaga `srv-set` z pełnymi
-  zachowanymi metadanymi; wartości domyślne nie mogą wymazać znanej informacji.
-- `hash-raw` pomaga sprawdzić integralność, ale pomija pliki o nazwie
-  `README.md`. Jeśli oryginalna paczka zawiera taki plik, uwzględnij go osobno.
-
-Sprawdź również składnię metadanych przez `parse_raw_metadata` oraz
-`parse_srv_metadata` z `jktz.metadata.srv`. To odczyt możliwy także w audycie
-bez zmian i bez kompilacji. Sama obecność nazw pól w tekście nie potwierdza,
-że parser je rozpoznaje; rozróżnij brak informacji od błędnego formatu zapisu.
-
-## Walidacja i zakończenie
-
-Po zmianach danych porównaj pomiary i model przed/po na jawnych wejściach
-i tych samych ustawieniach. Uruchom `uv run jktz-validate` oraz
-`git diff --check`; wymagane bramki dla zmienianego kodu opisuje `AGENTS.md`.
-Przy braku lokalnych zależności użyj [docker-validate](../docker-validate/SKILL.md).
-Błąd środowiska zgłoś oddzielnie od błędu danych; nie obchodź hooków.
-
-Gdy GUI pomaga ocenić zgodność lub użytkownik tego oczekuje, użyj dostępnych
-narzędzi obsługi komputera: Walls (także pod Wine) do natywnej kompilacji,
-PocketTopo do oryginału, Aven do modelu, QGIS do eksportów/CRS. Pracuj na
-kopiach w katalogu tymczasowym i zapisz program, wersję, wejście, ustawienia
-oraz faktycznie obejrzany wynik. Sam start procesu nie jest testem.
-Nie nazywaj kompilacji SRV przez Survex walidacją w Walls. Brak GUI pozostawia
-ten etap niesprawdzony, ale nie zatrzymuje pozostałej weryfikacji.
-
-Zaktualizuj istniejący raport lub zapisz `WERYFIKACJA_ZRODEL.md` obok jaskini
-zgodnie z zakresem zapisu; dowody i transkrypcje umieszczaj poza `_RAW`.
-Sprawdź końcowe hashe oryginałów i przeglądnij diff. Zmiany do repozytorium
-opisz zwięźle w `Unreleased`. Commit/push/PR wykonuj w uzgodnionym zakresie;
-sam audyt nie oznacza publikacji ani wydania. Przy PR raportuj CI dla jego
-dokładnego commita. Nie zmieniaj rozstrzygniętego zakresu na audyt innych jaskiń.
-
-W podsumowaniu podaj pokrycie, poprawki, nierozstrzygnięte miejsca, wykonane
-testy i ścieżki dowodów. „Brak znalezionych błędów” dotyczy tylko sprawdzonych
-rekordów; brak źródeł nie pozwala uznać pomiarów za potwierdzone.
+Sprawdź końcowe hashe i diff. Kompilacja Survex nie jest testem Walls;
+GUI oceniaj, gdy pomaga rozstrzygnąć problem lub zostało zamówione.
+Oddziel problemy środowiska od danych. Raportuj mianowniki pokrycia,
+poprawki i niesprawdzone obszary, bez powtarzania pełnego dziennika w czacie.
+Commit/push/PR wykonuj w uzgodnionym zakresie; audyt nie oznacza wydania.

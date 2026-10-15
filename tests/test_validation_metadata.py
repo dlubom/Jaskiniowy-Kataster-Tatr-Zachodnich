@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import subprocess
 from pathlib import Path
 
@@ -15,7 +16,24 @@ def _git(root: Path, *args: str) -> subprocess.CompletedProcess[str]:
         check=True,
         capture_output=True,
         text=True,
+        env={key: value for key, value in os.environ.items() if not key.upper().startswith("GIT_")},
     )
+
+
+def test_git_fixture_does_not_reconfigure_repository_inherited_from_hook(tmp_path, monkeypatch):
+    foreign = tmp_path / "foreign"
+    foreign.mkdir()
+    _git(foreign, "init")
+    original_config = (foreign / ".git/config").read_bytes()
+    fixture = tmp_path / "fixture"
+    fixture.mkdir()
+    monkeypatch.setenv("GIT_DIR", str(foreign / ".git"))
+    monkeypatch.setenv("GIT_INDEX_FILE", str(foreign / ".git/index"))
+
+    _git(fixture, "init", "--bare")
+
+    assert (foreign / ".git/config").read_bytes() == original_config
+    assert (fixture / "HEAD").is_file()
 
 
 def _raw_readme(status: str = "dostępny", contents: list[str] | None = None) -> str:

@@ -8,17 +8,23 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Dodano
 
+- Kalacka: przywrócono dwa brakujące splaje ze źródłowego SRV, potwierdzone w TOP i Therionie; pełne dowody audytu zachowano poza repo.
+- Skille audytu domyślnie zapisują pełne dowody w projektowym
+  `.verification/<YYYY-MM-DD>-<jaskinia>/`, ignorowanym przez Git i pomijanym
+  w ZIP; wskazane przez użytkownika miejsce ma pierwszeństwo. Zachowują krótkie
+  uzasadnienia napraw w repo i uwzględniają potwierdzony reset zegara PocketTopo
+  bez ponawiania pytań.
 - Dodano oryginalne źródła Przemkowych Partii do `_RAW/02` i `_RAW/03` oraz uzupełniono metadane pomiarów i źródeł (CC BY-SA 4.0).
 - Harda: uzupełniono historyczne źródła o przekrój i zrzut Walls z 2013 r.,
   skorygowano autorstwo sesji oraz opis wcześniejszych wersji pomiarów.
 - Skill `validate-cave` do audytu źródeł i zgodności pomiarów z `_RAW`,
   z obsługą materiałów wskazanych przez kontrybutora.
-- Konwerter PocketTopo v3: `jktz-pockettopo inspect`/`convert`, pomiary SRV/SVX,
-  warstwowe szkice SVG/PNG oraz atomowe pakiety z raportem i jawnymi decyzjami
-  związanymi z SHA-256 źródła; skill prowadzący przez konwersję.
-- Niezależne wzorce i testy parsera, pomiarów, projekcji, kompilacji oraz renderera;
-  rozszerzone bramki jakości i mutacji. Archiwum badań pozostaje w PR #129,
-  a w bieżącym drzewie są dokumentacja użytkowa i wzorce wymagane przez testy.
+- `validate-cave` i `pockettopo-convert` używają gotowego binarium
+  `dlubom/pockettopo-exporter` v1.0.1 oraz jego raportów pochodzenia i strat.
+  CI pobiera pakiety z przypiętymi sumami SHA-256, a testy integracji
+  porównują wyniki binarium z niezależnymi wzorcami.
+  Pomocnik testów Git izoluje odziedziczone zmienne hooków, aby repozytoria
+  testowe nie zmieniały konfiguracji repozytorium wywołującego hook.
 
 ## [v1.4.7] - 2026-09-25
 

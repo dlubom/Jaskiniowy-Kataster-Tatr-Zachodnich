@@ -329,6 +329,12 @@ The `_RAW/` contents are not processed by Walls but are tracked in git for refer
 ## .gitignore
 
 Compiled Walls outputs are git-ignored: `*.nta`, `*.ntn`, `*.ntv`, `*.nts`, `*.ntp`, `*.wrl`, `*.log`, `*.lst`. The `logs/` directory is also ignored. Source archives, documentation, templates, and tooling are also tracked.
+Audit evidence defaults to `<project-root>/.verification/<YYYY-MM-DD>-<cave>/`,
+resolved from the audited project containing `KATASTER.wpj`, regardless of
+the terminal's working directory. An explicit user destination takes precedence,
+including a physical location outside the checkout. `.verification/` is ignored
+by Git and excluded from release ZIPs, so a fresh clone does not contain it.
+Preserve needed evidence elsewhere before deleting a checkout or worktree.
 `Poligony/OTWORY.SRV` is versioned intentionally: it is generated from
 `Poligony/OTWORY.SRV.j2`, but kept in Git so coordinate changes have normal
 review diffs. CI verifies that the snapshot matches the latest GPS release.
@@ -351,7 +357,7 @@ Only release when explicitly requested. A draft PR request does not authorize me
 
 The version in `INFO.txt` is set automatically — the `__VERSION__` placeholder is replaced with the tag name during the release build.
 
-The release ZIP excludes: `.git/`, `.github/`, legacy `.claude/`, `.agents/`, `.codex/`, `.venv/`, Python/tool caches, Python tooling files (`pyproject.toml`, `uv.lock`, `tests/`), `.gitignore`, `AGENTS.md`, `CONTRIBUTING.md`, `doc/`, `scripts/`, `Poligony/OTWORY.SRV.j2`, `logs/`, `*/_RAW/*`, `.DS_Store`, local Survex build directories, validation scratch outputs, previous `JKTZ-*.zip` files, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
+The release ZIP excludes: `.git/`, `.github/`, legacy `.claude/`, `.agents/`, `.codex/`, `.venv/`, `.verification/`, Python/tool caches, Python tooling files (`pyproject.toml`, `uv.lock`, `tests/`), `.gitignore`, `AGENTS.md`, `CONTRIBUTING.md`, `doc/`, `scripts/`, `Poligony/OTWORY.SRV.j2`, `logs/`, `*/_RAW/*`, `.DS_Store`, local Survex build directories, validation scratch outputs, previous `JKTZ-*.zip` files, and compiled Walls outputs. Users who need `_RAW/` or `doc/` should clone the repository.
 
 Pull requests build a temporary test release package after validation succeeds.
 The package is uploaded as a GitHub Actions artifact with short retention and
@@ -447,7 +453,7 @@ Run shell commands from the repository root; use `uv run` for Python tooling.
 | --- | --- |
 | `$add-cave` | Add source material, survey metadata, GPS mapping, and project entries |
 | `$svx-to-srv` | Convert Survex source measurements to Walls |
-| `$pockettopo-convert` | Inspect PocketTopo v3 and publish audited SRV/SVX, SVG/PNG and JSON packages |
+| `$pockettopo-convert` | Inspect/export TOP through the published pockettopo-exporter executable and audit its provenance/loss reports |
 | `$average-shots` | Average confirmed repeat instrument readings in a working SRV |
 | `$survex-stats` | Compile a source and inspect statistics |
 | `$verify-cave-refactor` | Compare source data and compiled output before/after a refactor |

@@ -77,8 +77,12 @@ lub stanu wiadomości.
    nadawca w roli źródła, nazwa pliku, hash i odnośnik/identyfikator wiadomości.
    Pełnych prywatnych wątków, nagłówków dostępowych i niezwiązanej korespondencji
    nie dodawaj automatycznie do repozytorium. Gdy pomiary są wyłącznie w treści
-   maila, zachowaj w `_RAW` dostępną oryginalną część MIME lub wierny eksport
-   źródłowej treści, w zakresie potrzebnym do audytu. Opisz sposób i zakres
+   maila, zachowaj dostępną oryginalną część MIME lub wierny eksport
+   źródłowej treści, w zakresie potrzebnym do audytu. Umieść go w `_RAW` tylko
+   przy zleceniu obejmującym uzupełnienie źródeł w repo; przy review zachowaj
+   go w pakiecie audytu według `SKILL.md`, domyślnie w projektowym
+   `.verification/`. Wskazane przez użytkownika miejsce, także fizycznie
+   poza checkoutem, ma pierwszeństwo. Opisz sposób i zakres
    ekstrakcji, kodowanie i hash; odróżnij bajty MIME, zdekodowaną treść
    i wyciąg tekstowy pluginu. Wyciągu nie nazywaj kopią bajtową wiadomości.
    Roboczą transkrypcję tabeli zapisuj osobno poza `_RAW`.
@@ -111,8 +115,7 @@ twierdzenia jest przeczytany fragment, podpis planu lub skan strony.
 Zapisuj pełny opis bibliograficzny, URL, stronę, twierdzenie i jego zakres.
 Zespół eksploracyjny nie musi być zespołem pomiarowym; wymienienie nazwiska
 w historii jaskini nie przypisuje mu wszystkich pomiarów. Nie podnoś
-precyzji daty ponad to, co zapisano w źródle. Nie przyjmuj licencji projektu
-za licencję odnalezionej publikacji lub załącznika.
+precyzji daty ponad to, co zapisano w źródle.
 
 Nie kopiuj całej publikacji do repozytorium tylko po to, żeby poprzeć jedno
 twierdzenie; wystarczy sprawdzalny odnośnik i zwięzłe przytoczenie/parafraza.
