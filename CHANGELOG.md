@@ -6,43 +6,34 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v1.4.8] - 2026-10-16
+
+### Naprawione
+
+- Kalacka: przywrócono dwa brakujące splaje, potwierdzone
+  w źródłach SRV, TOP i Therion.
+
 ### Dodano
 
-- Skill `walls-validate` i blokująca walidacja Windows w natywnym Walls:
-  izolowana rekompilacja, kontrola świeżych wyników i diagnostyki oraz testy
-  poprawnego i błędnych projektów. Audyt duplikatów jest osobną opcją.
-
-- Kalacka: przywrócono dwa brakujące splaje ze źródłowego SRV, potwierdzone w TOP i Therionie; pełne dowody audytu zachowano poza repo.
-- Skille audytu domyślnie zapisują pełne dowody w projektowym
-  `.verification/<YYYY-MM-DD>-<jaskinia>/`, ignorowanym przez Git i pomijanym
-  w ZIP; wskazane przez użytkownika miejsce ma pierwszeństwo. Zachowują krótkie
-  uzasadnienia napraw w repo i uwzględniają potwierdzony reset zegara PocketTopo
-  bez ponawiania pytań.
-- Dodano oryginalne źródła Przemkowych Partii do `_RAW/02` i `_RAW/03` oraz uzupełniono metadane pomiarów i źródeł (CC BY-SA 4.0).
-- Harda: uzupełniono historyczne źródła o przekrój i zrzut Walls z 2013 r.,
-  skorygowano autorstwo sesji oraz opis wcześniejszych wersji pomiarów.
-- Skill `validate-cave` do audytu źródeł i zgodności pomiarów z `_RAW`,
-  z obsługą materiałów wskazanych przez kontrybutora.
-- `validate-cave` i `pockettopo-convert` używają gotowego binarium
-  `dlubom/pockettopo-exporter` v1.0.1 oraz jego raportów pochodzenia i strat.
-  CI pobiera pakiety z przypiętymi sumami SHA-256, a testy integracji
-  porównują wyniki binarium z niezależnymi wzorcami.
-  Pomocnik testów Git izoluje odziedziczone zmienne hooków, aby repozytoria
-  testowe nie zmieniały konfiguracji repozytorium wywołującego hook.
+- Oryginalne źródła Przemkowych Partii Wielkiej Śnieżnej
+  oraz metadane autorstwa i pomiarów.
+- Archiwalny przekrój i zrzut Walls Hardej; uzupełniono
+  identyfikator jaskini, autorstwo sesji i pochodzenie danych.
 
 ### Zmienione
 
-- Survex 1.4.24 w CI i stabilnym obrazie Docker; odświeżono manuale
-  oraz opisano naprawę wag pionów i korektę zbieżności siatki przy `DECL=`.
-- W 48 plikach SRV zastąpiono historyczną kompensację `DECL=0.819D`
-  jawnym, tymczasowym `DECL=0` dla bloków bez daty. Daty trzeba potwierdzić
-  u autorów pomiarów; istniejące daty, odczyty i `_RAW` zachowano bez zmian.
-- Survex 1.4.23 w CI i stabilnym obrazie Docker; odświeżono lokalne manuale
-  oraz dodano kontrolę wersji `cavern` i `survexport` po instalacji w CI.
-- Zachowano jako komentarze osierocone notatki stacji w Bandziochu Kominiarskim
-  i Litworowej, ujawnione przez nową kontrolę Survexa; wartości pomiarów bez zmian.
-- Udokumentowano różnicę wyrównania geometrii między Survex 1.4.22 i 1.4.23
-  wraz z minimalną reprodukcją i wskazaniem zmiany domyślnych wariancji upstream.
+- Kompilacja i eksporty korzystają z Survexa 1.4.24,
+  uwzględniającego poprawki wag pionów i zbieżności siatki.
+- W 48 plikach SRV zastąpiono historyczne `DECL=0.819D`
+  tymczasowym `DECL=0` dla bloków bez daty. Daty pomiarów
+  nadal wymagają potwierdzenia u autorów.
+- Osierocone notatki stacji w Bandziochu Kominiarskim
+  i Litworowej zachowano jako komentarze.
+- Dodano obowiązkową natywną walidację projektu w Walls
+  na Windows w CI.
+- Usprawniono audyty źródeł oraz odczyt i eksport TOP
+  przez PocketTopo Exporter 1.0.1. Lokalne dowody audytów
+  są pomijane w paczkach wydania.
 
 ## [v1.4.7] - 2026-09-25
 
