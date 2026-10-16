@@ -62,8 +62,9 @@ korektę zbieżności siatki przy jawnym `DECL=` i obsługę elementów `.wpj`
 bez `.STATUS`. Akceptowane są też powszechne skróty jednostek, np. `V=DEG`.
 
 [Weryfikacja przejścia na 1.4.24](SURVEX_1_4_24.md) opisuje wynik testu
-pionu i wpływ poprawki `DECL=` na geometrię JKTZ. Historyczne badanie
-1.4.23 zachowano w [osobnym raporcie](SURVEX_1_4_23.md).
+pionu, wpływ poprawki `DECL=` i tymczasowe założenie `DECL=0` w 48
+plikach z blokami bez daty. Daty wymagają potwierdzenia u autorów pomiarów.
+Historyczne badanie 1.4.23 zachowano w [osobnym raporcie](SURVEX_1_4_23.md).
 
 Brak pliku `.srv` jest teraz ostrzeżeniem Survexa. Pełna walidacja JKTZ
 nadal odrzuca każde ostrzeżenie kompilacji, więc brak danych blokuje CI.

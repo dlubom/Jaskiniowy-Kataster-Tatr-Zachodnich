@@ -16,14 +16,16 @@ SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "zakomentowano osierocone dyrektywy stacji LTII20; brak potwierdzonych powiazan z siecia; pomiary bez zmian"
+PROCESSING      "Survex 1.4.24: historyczne DECL=0.819D zastapiono tymczasowym zalozeniem DECL=0; daty i pomiary bez zmian"
 #]
 
 #prefix2 WielkaSniezna
 #prefix Litworowa
 ;Bielskie stare-nowe pomiary
 #Units Meters Order=avd
-; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
-#Units DECL=0.819D
+; Brak daty tego bloku; przyjeto DECL=0 do czasu ustalenia dat pomiarow.
+; To zalozenie zastepcze, nie potwierdzona deklinacja magnetyczna.
+#Units DECL=0
 ; Survex 1.4.23: nieuzywane stacje; powiazania z siecia niepotwierdzone.
 ; Zachowano oryginalne opisy jako komentarze do weryfikacji ze zrodlem.
 ; #note  LTII20 /  punkt -160
