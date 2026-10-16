@@ -201,7 +201,10 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'Walls driver build failed' }
           "WALLS_DRIVER=$env:RUNNER_TEMP/walls-build/Release/walls-driver.exe" >> $env:GITHUB_ENV
       - name: Test native success, errors and warnings
-        run: uv run pytest -q tests/test_walls_native.py --basetemp=logs/walls/fixtures
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force logs/walls | Out-Null
+          uv run pytest -q tests/test_walls_native.py --basetemp=logs/walls/fixtures
       - name: Recompile Kataster in Walls
         shell: pwsh
         run: |
