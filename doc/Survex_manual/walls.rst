@@ -4,8 +4,8 @@ David McKenzie's Walls
 
 Survex can read Walls unprocessed survey data files and project files (``.SRV``
 and ``.WPJ`` files).  The first release with any support was Survex 1.4.9, but
-the support has evolved and improved since then.  Survex 1.4.23 improved
-support significantly so we strongly advise using 1.4.23 or newer, and this
+the support has evolved and improved since then.  Survex 1.4.24 improved
+support significantly so we strongly advise using 1.4.24 or newer, and this
 chapter will assume you are.  If you really want to know when support for
 something was added, see the NEWS file.
 
@@ -42,7 +42,7 @@ sometimes incorrect, while the WPJ format seems to be largely undocumented.
 Sadly David is no longer around to ask, but we can at least test actual
 behaviour of ``Walls32.exe`` on example data.
 
-As of 1.4.23, some large Walls datasets can be successfully processed:
+As of 1.4.24, some large Walls datasets can be successfully processed:
 
 - Mammoth Cave
 - the Thailand dataset from https://www.cave-registry.org.uk/svn/Thailand/
@@ -52,11 +52,17 @@ As of 1.4.23, some large Walls datasets can be successfully processed:
 
 .. FIXME: Link Thailand to https://cave-registry.org.uk/ once that's updated.
 
-Behaviour is not 100% identical and station positions after loop closure will
-inevitably be slightly different, but we encourage processing your Walls
-dataset with both Walls and Survex and comparing the result.  Please report
-significant or apparently systematic errors, or anything that seems suspect.
-If you can provide some data demonstrating the problem, that's really helpful.
+We encourage processing your Walls dataset with both Walls and Survex and
+comparing the result.  If there are loop closures, station positions will
+inevitably not be identical as Walls and Survex model errors differently.
+Walls documents that the SDs are purely proportional to the leg length, and
+appears to solve in X, Y and Z independently.  Survex calculates a variance
+matrix for each leg based on its geometry and the instrument SDs (and this
+matrix includes covariances, so doesn't assume X, Y and Z are independent).
+The differences should small except in cases where there are large misclosures
+due to blunders.  Please report significant or apparently systematic errors, or
+anything that seems suspect.  If you can provide some data demonstrating the
+problem, that's really helpful.
 
 We suggest a couple of ways to compare the results:
 
@@ -457,6 +463,30 @@ warnings (which also work in Walls):
   processed (either in the project tree, or by commenting out part of a survey
   with ``#[`` and ``#]``), or just tolerating the warning for a short time.
 
+- Walls processes a missing ``.srv`` file without complaint (but does report an
+  error if it exists but isn't readable, for example due to file permissions).
+
+  There is an indication in the Walls UI (the icon is a blank page instead of a
+  page with writing), but we've seen surveys accidentally not included in a
+  real world dataset because the path wasn't set - this feature meant this was
+  missed until the dataset was processed with Survex.
+
+  Survex warns about missing files (and errors for unreadable files):
+
+  ::
+
+    wallsmissingsrv.wpj:7:7: warning: Couldn't open file "WX_MISS.srv"
+     .NAME WX_MISS
+           ^~~~~~~
+
+  If the file should exist, check that ``Name:`` is spelled correctly, and that
+  ``Path:`` is set suitably in the item's properties.
+
+  If the file is a place-holder to be filled in later, we suggest either
+  creating an empty file, or changing its ``Type`` to ``Other`` in the item's
+  properties (and then back to ``Survey file`` when you later actually create
+  it).
+
 - If an isolated LRUD (LRUD not on a leg, e.g. specified for the start or end
   station of a traverse) is missing its closing delimiter, Walls will parse
   the line as a data leg where the "to" station starts with ``*`` or ``<``,
@@ -532,8 +562,9 @@ warnings (which also work in Walls):
   values.  Walls documents that these values can be abbreviated to just their
   first letter, but in fact it only checks the first letter, so for example
   ``D=FEAT`` is quietly accepted.  Survex warns when the value isn't one of
-  those documented or a single letter abbreviation, then handles as Walls
-  does.  Fix this warning by correcting the value.
+  those documented or a single letter abbreviation or ``DEG`` for ``DEGREES``
+  (since that's commonly used), then handles as Walls does.  Fix this warning
+  by correcting the value.
 
 - The option ``CASE=`` is documented as `CASE = Upper / Lower /
   Mixed`.  Only the first character of the value is actually checked (as with
@@ -580,16 +611,16 @@ can usefully treat it as a processed survey data format.
 
 In detail:
 
+- Survey legs are handled (so for example, you can view a Walls-processed
+  centreline in ``aven`` by exporting it as a ``.LST`` file).  This requires
+  that *Connected vectors with file references* was selected in Walls when
+  creating the ``.LST`` file.
 - All stations are assumed to be underground and so flagged as ``UNDERGROUND``.
 - Fixed stations are flagged as ``FIXED``.
 - Georeferencing is handled for the same datum and UTM zone combinations that
   are handled in Walls ``.WPJ`` files.  Other combinations in a ``.LST`` file
   are quietly ignored, and the file loaded as if it wasn't georeferenced.
   Please report unsupported combinations you would find useful.
-- If *Connected vectors with file references* was selected when creating a
-  ``.LST`` file in Walls, the file includes links between stations which
-  is handled, so you can view a Walls-processed centre-line in ``aven`` by
-  exporting it as a ``.LST`` file.
 - If *Include only vectors or stations in current view frame* was selected
   legs which cross to outside the exported area are flagged as ``DUPLICATE``
   so they can be easily distinguished.

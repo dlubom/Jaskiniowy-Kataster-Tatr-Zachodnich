@@ -28,7 +28,7 @@ instalacji do katalogu `scripts/`.
 - GDAL (`ogr2ogr`) — budowanie i sprawdzanie shapefile;
 - Docker — opcjonalny zamiennik lokalnej instalacji Survex/GDAL.
 
-CI i stabilny obraz Docker korzystają z Survexa **1.4.23**, przypiętego w
+CI i stabilny obraz Docker korzystają z Survexa **1.4.24**, przypiętego w
 `.github/survex-version`. Do odtworzenia wyników lokalnie użyj tej samej wersji;
 sprawdź zarówno `cavern --version`, jak i `survexport --version`. CI sprawdza
 obie wersje po instalacji, także po odtworzeniu cache.
@@ -88,7 +88,7 @@ added to `scripts/`.
 - GDAL (`ogr2ogr`) — builds and validates shapefiles;
 - Docker — optional alternative to installing Survex/GDAL locally.
 
-CI and the stable Docker image use Survex **1.4.23**, pinned in
+CI and the stable Docker image use Survex **1.4.24**, pinned in
 `.github/survex-version`. Use the same version to reproduce results locally;
 check both `cavern --version` and `survexport --version`. CI verifies both
 versions after installation, including cache restores.

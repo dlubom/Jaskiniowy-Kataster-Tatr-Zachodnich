@@ -28,6 +28,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Zmienione
 
+- Survex 1.4.24 w CI i stabilnym obrazie Docker; odświeżono manuale
+  oraz opisano naprawę wag pionów i korektę zbieżności siatki przy `DECL=`.
 - Survex 1.4.23 w CI i stabilnym obrazie Docker; odświeżono lokalne manuale
   oraz dodano kontrolę wersji `cavern` i `survexport` po instalacji w CI.
 - Zachowano jako komentarze osierocone notatki stacji w Bandziochu Kominiarskim

@@ -24,7 +24,7 @@ Kataster obejmuje obiekty, dla których dostępne są dane pomiarowe. Uzupełnia
 
 Projekt oparty jest o oprogramowanie Walls – tutaj znajdziesz [najnowszą wersję programu](https://github.com/wallscavesurvey/walls/releases)  oraz [instrukcję obsługi](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
 
-Projekt działa również w [Survex](https://survex.com/) — wersja używana w CI to **1.4.23**. Po instalacji wczytaj plik `KATASTER.wpj` w programie Aven lub skompiluj z linii poleceń: `cavern KATASTER.wpj`. W Aven można też wczytać model terenu `Powierzchnia/Survex/N49E019_VF1.hgt`.
+Projekt działa również w [Survex](https://survex.com/) — wersja używana w CI to **1.4.24**. Po instalacji wczytaj plik `KATASTER.wpj` w programie Aven lub skompiluj z linii poleceń: `cavern KATASTER.wpj`. W Aven można też wczytać model terenu `Powierzchnia/Survex/N49E019_VF1.hgt`.
 
 ### Jak można pomóc?
 Zachęcamy do współpracy przy projekcie oraz do udostępniania własnych pomiarów. Kontakt: [darek.lubomski@gmail.com](mailto:darek.lubomski@gmail.com).
