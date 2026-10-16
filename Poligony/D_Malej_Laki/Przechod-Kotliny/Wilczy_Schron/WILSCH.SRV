@@ -15,13 +15,15 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+PROCESSING      "Survex 1.4.24: historyczne DECL=0.819D zastapiono tymczasowym zalozeniem DECL=0; daty i pomiary bez zmian"
 #]
 
 #prefix WilczySchron
 ;Wilczy Schron
 #Units Meters Order=dav
-; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
-#Units DECL=0.819D
+; Brak daty tego bloku; przyjeto DECL=0 do czasu ustalenia dat pomiarow.
+; To zalozenie zastepcze, nie potwierdzona deklinacja magnetyczna.
+#Units DECL=0
 ; Otwor w tym pliku: WilczySchron:wsn0 - fix/flag/note w Poligony/OTWORY.SRV
 wsn0 	wsn1 	2.66 	169.33	 6.26
 wsn1 	wsn2 	3.35 	84.81 	-8.41

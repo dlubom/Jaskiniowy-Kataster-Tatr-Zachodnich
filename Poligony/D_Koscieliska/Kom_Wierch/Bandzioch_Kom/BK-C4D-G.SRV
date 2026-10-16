@@ -15,14 +15,16 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+PROCESSING      "Survex 1.4.24: historyczne DECL=0.819D zastapiono tymczasowym zalozeniem DECL=0; daty i pomiary bez zmian"
 #]
 
 #prefix BandziochKom
 #Units Order=DAV
 #Units meters
 #Units A=G V=G
-; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
-#Units DECL=0.819D
+; Brak daty tego bloku; przyjeto DECL=0 do czasu ustalenia dat pomiarow.
+; To zalozenie zastepcze, nie potwierdzona deklinacja magnetyczna.
+#Units DECL=0
 M	M001	9.53	130	-39
 M001	M002	6.21	129	-55
 M002	M003	16.07	157	-59

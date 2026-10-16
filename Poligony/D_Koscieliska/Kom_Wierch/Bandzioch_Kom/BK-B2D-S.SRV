@@ -16,14 +16,16 @@ SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "zakomentowano osierocone dyrektywy stacji L019014; brak potwierdzonych powiazan z siecia; pomiary bez zmian"
+PROCESSING      "Survex 1.4.24: historyczne DECL=0.819D zastapiono tymczasowym zalozeniem DECL=0; daty i pomiary bez zmian"
 #]
 
 #prefix BandziochKom
 #Units Order=DAV
 #Units meters
 #Units A=D V=D
-; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
-#Units DECL=0.819D
+; Brak daty tego bloku; przyjeto DECL=0 do czasu ustalenia dat pomiarow.
+; To zalozenie zastepcze, nie potwierdzona deklinacja magnetyczna.
+#Units DECL=0
 ;Boki za szalonym meandrem
 L122       	L122001	4.7	340	59
 L122001	L122002	3.5	35	6

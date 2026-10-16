@@ -51,31 +51,29 @@ różnych programów ani wersji.
 
 ## Survex
 
-Lokalny zestaw odpowiada wydaniu **1.4.23 z 2026-10-13**. Wersja, commit
+Lokalny zestaw odpowiada wydaniu **1.4.24 z 2026-10-16**. Wersja, commit
 źródłowy, licencja, sumy kontrolne i procedura odświeżenia są w
 [Survex_manual/README.md](Survex_manual/README.md).
-Pliki RST są źródłem tekstowym dokumentacji i można je przeszukiwać przez `rg`.
+Pliki RST można przeszukiwać przez `rg`.
 
-[Weryfikacja przejścia na 1.4.23](SURVEX_1_4_23.md) opisuje nowe ostrzeżenia,
-zachowane komentarze źródłowe i odtworzoną różnicę wyrównania geometrii.
+Rozdział [walls.rst](Survex_manual/walls.rst) zaleca Survex co najmniej
+1.4.24 do przetwarzania danych Walls. W tej wersji poprawiono wagi pionów,
+korektę zbieżności siatki przy jawnym `DECL=` i obsługę elementów `.wpj`
+bez `.STATUS`. Akceptowane są też powszechne skróty jednostek, np. `V=DEG`.
 
-Przebudowany rozdział [walls.rst](Survex_manual/walls.rst) zakłada użycie
-Survexa co najmniej 1.4.23 i wymienia Kataster jako przykład obsługiwanego
-zestawu danych. Istotne zmiany tego wydania:
+[Weryfikacja przejścia na 1.4.24](SURVEX_1_4_24.md) opisuje wynik testu
+pionu, wpływ poprawki `DECL=` i tymczasowe założenie `DECL=0` w 48
+plikach z blokami bez daty. Daty wymagają potwierdzenia u autorów pomiarów.
+Historyczne badanie 1.4.23 zachowano w [osobnym raporcie](SURVEX_1_4_23.md).
 
-- Dodano ostrzeżenia o podejrzanych przecinkach w danych, nieużytych stacjach
-  z `#FLAG`/`#NOTE` i nieprawidłowych wartościach opcji. Zmieniono też próg
-  wykrywania rozbieżności odczytów wstecznych według `TYPEAB=`/`TYPEVB=`;
-  porównując logi między wersjami, trzeba uwzględnić te zmiany diagnostyki.
-- Poprawiono współdziałanie `TYPEAB=` z `INCAB=`, obsługę wysokości instrumentu
-  i celu (`TAPE=IT` oraz części przypadków `TAPE=SS`) i wariancji pomiarów
-  pływających; dodano obsługę `INCH=`, `UV=`, `UVH=` i `UVV=`.
-- Dodano odczyt raportów Walls `.LST` i porównanie ich z `.3d` przez `diffpos`.
-  Rozdział opisuje ograniczenia tej metody i porównanie wizualne przez Shapefile.
-  Opcja `LRUD=` jest sprawdzana, ale same odczyty LRUD Wallsa nadal są pomijane.
+Brak pliku `.srv` jest teraz ostrzeżeniem Survexa. Pełna walidacja JKTZ
+nadal odrzuca każde ostrzeżenie kompilacji, więc brak danych blokuje CI.
+Obsługa `TYPEAB=`/`TYPEVB=` i skala domyślnych wariancji z 1.4.23 pozostają;
+naprawa pionów nie oznacza cofnięcia wszystkich zmian modelu niepewności.
+Odczyty LRUD Wallsa nadal są pomijane przez Survex.
 
-Szczegóły i pozostałe zmiany zawiera oficjalna
-[lista zmian 1.4.23](https://github.com/ojwb/survex/blob/3e23b190bc151592e1b65044871f1b1dec31dc79/NEWS).
+Szczegóły zawiera oficjalna
+[lista zmian 1.4.24](https://github.com/ojwb/survex/blob/878202413cac5cbf41b88ee82c0cab72b97725ce/NEWS).
 
 ## PIG
 

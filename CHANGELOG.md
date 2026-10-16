@@ -8,6 +8,10 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Dodano
 
+- Skill `walls-validate` i blokująca walidacja Windows w natywnym Walls:
+  izolowana rekompilacja, kontrola świeżych wyników i diagnostyki oraz testy
+  poprawnego i błędnych projektów. Audyt duplikatów jest osobną opcją.
+
 - Kalacka: przywrócono dwa brakujące splaje ze źródłowego SRV, potwierdzone w TOP i Therionie; pełne dowody audytu zachowano poza repo.
 - Skille audytu domyślnie zapisują pełne dowody w projektowym
   `.verification/<YYYY-MM-DD>-<jaskinia>/`, ignorowanym przez Git i pomijanym
@@ -28,6 +32,11 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Zmienione
 
+- Survex 1.4.24 w CI i stabilnym obrazie Docker; odświeżono manuale
+  oraz opisano naprawę wag pionów i korektę zbieżności siatki przy `DECL=`.
+- W 48 plikach SRV zastąpiono historyczną kompensację `DECL=0.819D`
+  jawnym, tymczasowym `DECL=0` dla bloków bez daty. Daty trzeba potwierdzić
+  u autorów pomiarów; istniejące daty, odczyty i `_RAW` zachowano bez zmian.
 - Survex 1.4.23 w CI i stabilnym obrazie Docker; odświeżono lokalne manuale
   oraz dodano kontrolę wersji `cavern` i `survexport` po instalacji w CI.
 - Zachowano jako komentarze osierocone notatki stacji w Bandziochu Kominiarskim

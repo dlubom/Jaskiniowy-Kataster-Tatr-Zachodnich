@@ -1,0 +1,23 @@
+name: Install pinned Walls
+description: Install the native Windows compiler, checking the release asset and executable hashes.
+runs:
+  using: composite
+  steps:
+    - shell: pwsh
+      run: |
+        $ErrorActionPreference = 'Stop'
+        $installer = Join-Path $env:RUNNER_TEMP 'walls.msi'
+        $url = 'https://github.com/wallscavesurvey/walls/releases/download/v2.3.0-beta.1/WallsInstaller-2.3.0-beta.1.2025-09-13.msi'
+        Invoke-WebRequest -Uri $url -OutFile $installer
+        if ((Get-FileHash $installer -Algorithm SHA256).Hash -ne '11445a522760ef98876c3d025e90b734c2073d8a033717c7313a8da130168ce0') {
+          throw 'Walls installer SHA-256 mismatch'
+        }
+        $installLog = Join-Path $env:RUNNER_TEMP 'walls-install.log'
+        $process = Start-Process msiexec.exe -Wait -PassThru -ArgumentList @('/i', "`"$installer`"", '/qn', '/norestart', '/L*v', "`"$installLog`"")
+        if ($process.ExitCode -notin @(0, 3010)) { throw "Walls installation failed: $($process.ExitCode); $installLog" }
+        $exe = 'C:\Program Files (x86)\Walls Cave Survey\Walls v2.3.0-beta.1\Walls32.exe'
+        if ((Get-FileHash $exe -Algorithm SHA256).Hash -ne 'ee11c4cf908d200176c96528e702846ef3e2caba7e356fc0e4c03bde17ae782f') {
+          throw 'Walls executable SHA-256 mismatch'
+        }
+        "WALLS_EXE=$exe" >> $env:GITHUB_ENV
+        'WALLS_SCRATCH_ROOT=C:\' >> $env:GITHUB_ENV

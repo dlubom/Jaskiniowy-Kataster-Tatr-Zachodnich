@@ -15,12 +15,14 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+PROCESSING      "Survex 1.4.24: historyczne DECL=0.819D zastapiono tymczasowym zalozeniem DECL=0; daty i pomiary bez zmian"
 #]
 
 #prefix PrzyJedrusiowej
 #Units Meters Order=dav
-; Brak daty w aktywnych i _RAW; DECL zachowuje dotychczasowa orientacje Cavern.
-#Units DECL=0.819D
+; Brak daty tego bloku; przyjeto DECL=0 do czasu ustalenia dat pomiarow.
+; To zalozenie zastepcze, nie potwierdzona deklinacja magnetyczna.
+#Units DECL=0
 ; Otwor w tym pliku: PrzyJedrusiowej:pj0 - fix/flag/note w Poligony/OTWORY.SRV
 pj0	pj1	7.82	198.43	-36.03
 pj1	pj20	2.05	308.66	51.33

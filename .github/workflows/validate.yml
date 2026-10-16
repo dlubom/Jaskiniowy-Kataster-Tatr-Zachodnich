@@ -1,4 +1,4 @@
-name: Validate (cavern)
+name: Validate (Survex and Walls)
 
 on:
   push:
@@ -177,9 +177,61 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: uv run jktz-validate
 
+  walls-windows:
+    name: walls-windows
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: astral-sh/setup-uv@v5
+      - name: Sync Python tooling
+        run: uv sync --locked
+      - uses: ./.github/actions/install-walls
+      - name: Build native Walls driver
+        shell: pwsh
+        run: |
+          cmake -S .agents/skills/walls-validate -B "$env:RUNNER_TEMP/walls-build" -A x64
+          if ($LASTEXITCODE -ne 0) { throw 'CMake configuration failed' }
+          cmake --build "$env:RUNNER_TEMP/walls-build" --config Release
+          if ($LASTEXITCODE -ne 0) { throw 'Walls driver build failed' }
+          "WALLS_DRIVER=$env:RUNNER_TEMP/walls-build/Release/walls-driver.exe" >> $env:GITHUB_ENV
+      - name: Test native success, errors and warnings
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force logs/walls | Out-Null
+          uv run pytest -q tests/test_walls_native.py --basetemp=logs/walls/fixtures
+      - name: Recompile Kataster in Walls
+        shell: pwsh
+        run: |
+          uv run jktz-walls-validate --walls "$env:WALLS_EXE" --driver "$env:WALLS_DRIVER" --scratch-root "$env:WALLS_SCRATCH_ROOT" --output logs/walls/kataster
+      - name: Record tested revision
+        if: always()
+        shell: pwsh
+        env:
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          New-Item -ItemType Directory -Force logs/walls | Out-Null
+          git rev-parse HEAD > logs/walls/checkout-sha.txt
+          $env:PR_HEAD_SHA > logs/walls/pr-head-sha.txt
+      - name: Upload native Walls evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: walls-windows
+          path: |
+            logs/walls/
+            ${{ runner.temp }}/walls-install.log
+          if-no-files-found: error
+          retention-days: 14
+
   pr-release-package:
     if: github.event_name == 'pull_request'
-    needs: [python-tools, mutation-tests, validate]
+    needs: [python-tools, mutation-tests, validate, walls-windows]
     runs-on: ubuntu-latest
     permissions:
       contents: read

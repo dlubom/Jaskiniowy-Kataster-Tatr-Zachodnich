@@ -1,8 +1,9 @@
 # Przejście na Survex 1.4.23
 
 Porównanie z 2026-10-15 obejmuje te same dane projektu i oficjalne wydania
-1.4.22 oraz 1.4.23. CI używa niezmodyfikowanego wydania 1.4.23. Zmiana
-wyrównania opisana poniżej wymaga wyjaśnienia przed scaleniem aktualizacji.
+1.4.22 oraz 1.4.23. Raport historyczny dotyczy niezmodyfikowanego wydania 1.4.23.
+Autor potwierdził błąd proporcji wariancji pionów; poprawka jest w 1.4.24.
+Aktualny wynik opisuje [weryfikacja 1.4.24](SURVEX_1_4_24.md).
 
 ## Nowe ostrzeżenia o notatkach
 
@@ -47,7 +48,8 @@ po wyrównaniu; pozostały różnice 1 cm dla 26 nazwanych stacji. Wyłączenie
 całego nowego bloku domyślnych wariancji odtworzyło wszystkie współrzędne
 stacji i odcinków z 1.4.22. To eksperyment diagnostyczny poza repozytorium;
 projekt nie dostarcza zmodyfikowanego Survexa. Przyczyna różnicy jest ustalona,
-ale jej zamierzony charakter i poprawność wymagają potwierdzenia upstream.
+a autor później potwierdził pomyłkę współczynnika 0.5 zamiast 0.25
+i naprawił ją w 1.4.24.
 
 ## Minimalna reprodukcja
 
@@ -61,7 +63,7 @@ Zapisz poza projektem jako `plumb.srv`:
 2 0 14 270 -45
 ```
 
-Skompiluj osobno każdą wersją, np. `cavern -o /tmp/plumb-1.4.23 plumb.srv`,
+Skompiluj osobno każdą wersją, np. `cavern -o /tmp/plumb-1.4.23.3d plumb.srv`,
 a następnie odczytaj wynik przez `dump3d /tmp/plumb-1.4.23.3d`.
 
 | Stacja | 1.4.22 (E, N, Z), m | 1.4.23 (E, N, Z), m |
