@@ -455,6 +455,7 @@ Run shell commands from the repository root; use `uv run` for Python tooling.
 | `$svx-to-srv` | Convert Survex source measurements to Walls |
 | `$pockettopo-convert` | Inspect/export TOP through the published pockettopo-exporter executable and audit its provenance/loss reports |
 | `$average-shots` | Average confirmed repeat instrument readings in a working SRV |
+| `$walls-validate` | Natywna rekompilacja Walls na Windows/Wine, diagnostyka i dowody review |
 | `$survex-stats` | Compile a source and inspect statistics |
 | `$verify-cave-refactor` | Compare source data and compiled output before/after a refactor |
 | `$validate-cave` | Audit source provenance and every survey record; recover originals and repair confirmed errors |

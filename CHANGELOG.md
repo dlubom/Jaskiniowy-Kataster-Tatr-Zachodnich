@@ -8,6 +8,10 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Dodano
 
+- Skill `walls-validate` i blokująca walidacja Windows w natywnym Walls:
+  izolowana rekompilacja, kontrola świeżych wyników i diagnostyki oraz testy
+  poprawnego i błędnych projektów. Audyt duplikatów jest osobną opcją.
+
 - Kalacka: przywrócono dwa brakujące splaje ze źródłowego SRV, potwierdzone w TOP i Therionie; pełne dowody audytu zachowano poza repo.
 - Skille audytu domyślnie zapisują pełne dowody w projektowym
   `.verification/<YYYY-MM-DD>-<jaskinia>/`, ignorowanym przez Git i pomijanym

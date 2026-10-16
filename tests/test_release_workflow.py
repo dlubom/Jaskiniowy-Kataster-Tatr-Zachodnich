@@ -61,7 +61,7 @@ def test_pr_package_keeps_version_render_upload_and_link_contract() -> None:
     workflow = (WORKFLOWS / "validate.yml").read_text(encoding="utf-8")
     job = workflow.split("\n  pr-release-package:\n", 1)[1]
     assert "if: github.event_name == 'pull_request'" in job
-    assert "needs: [python-tools, mutation-tests, validate]" in job
+    assert "needs: [python-tools, mutation-tests, validate, walls-windows]" in job
     ordered_steps = [
         "Compute package version",
         "Set version in INFO.txt",

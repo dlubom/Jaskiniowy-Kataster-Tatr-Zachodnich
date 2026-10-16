@@ -5,6 +5,8 @@ description: Compile a Survex or Walls source and inspect its compilation statis
 
 Compiles a Survex `.svx` file (or the main `KATASTER.wpj` project) using `cavern` and prints compilation output and statistics. Useful for cross-checking a raw Survex source against the Walls project data, or for validating the whole project.
 
+For native Walls compilation use `$walls-validate`; a successful `cavern` run does not validate Walls.
+
 ## When to use
 
 - When you want to compile and inspect a Survex `.svx` file — for example after `$svx-to-srv` conversion, to verify shot counts, warnings, or total length before comparing with the Walls result.
