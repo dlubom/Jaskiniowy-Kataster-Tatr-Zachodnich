@@ -6,6 +6,11 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+### Dodano
+
+- Miętusia: przywrócono 45 rekordów przekrojów LRUD z pomiarów
+  Rury i Sali Matki Boskiej, z odnośnikami do źródłowych wierszy SVX.
+
 ## [v1.4.8] - 2026-10-16
 
 ### Naprawione

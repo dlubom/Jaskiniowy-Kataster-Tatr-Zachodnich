@@ -3,7 +3,7 @@ CAVE_ID         "T.D-11.01"
 CAVE_NAME       "Jaskinia Mietusia"
 SURVEY_ID       "RU"
 SURVEY_NAME     "Rura"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-18"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Pawel Gogolak"
 COORDINATOR_EMAIL "pafffel@gmail.com"
@@ -15,6 +15,7 @@ INSTRUMENT      "DistoX"
 SURVEY_DATE     "2022-10-21"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "przywrocono 22 rekordy LRUD z _RAW/01/rura.svx z kierunkami przekrojow"
 #]
 
 #prefix Mietusia
@@ -780,3 +781,37 @@ ru_19	-	0.45	242.8	-11.3
 ru_19	-	0.62	58.7	35.5
 ru_19	-	1.36	61.9	41.8
 ru_19	-	0.70	141.7	-35.2
+
+; === Przekroje LRUD ze zrodla ===
+; L/R/U/D zachowane doslownie; piata wartosc = azymut siatkowy przekroju.
+; Kierunek: konce z osi bloku PASSAGE, srodek z dwusiecznej poziomej (Aven).
+; Azymuty obliczone z geometrii bazowego poligonu JKTZ; nie sa odczytami kompasu.
+#units LRUD=F:LRUD
+
+; _RAW/01/rura.svx, PASSAGE 1: 1 -> 0 -> 2
+ru_1	<0.51,0.41,0.45,2.26,65.61>	; _RAW/01/rura.svx:777
+ru_0	<0.67,0.56,0.50,1.81,153.77>	; _RAW/01/rura.svx:778
+ru_2	<0.00,2.26,1.42,2.26,241.92>	; _RAW/01/rura.svx:779
+
+; _RAW/01/rura.svx, PASSAGE 2: 2 -> 3
+ru_2	<0.45,1.58,1.42,2.26,273.33>	; _RAW/01/rura.svx:782
+ru_3	<0.00,0.00,0.00,0.00,273.33>	; _RAW/01/rura.svx:783
+
+; _RAW/01/rura.svx, PASSAGE 3: 2 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13 -> 14 -> 15 -> 16 -> 17 -> 18 -> 19
+ru_2	<0.37,1.55,1.42,2.26,272.21>	; _RAW/01/rura.svx:786
+ru_4	<1.18,0.31,0.99,0.89,255.91>	; _RAW/01/rura.svx:787
+ru_5	<0.47,1.00,1.27,0.90,257.94>	; _RAW/01/rura.svx:788
+ru_6	<0.46,0.00,0.39,0.00,268.78>	; _RAW/01/rura.svx:789
+ru_7	<0.46,0.40,0.58,0.47,267.37>	; _RAW/01/rura.svx:790
+ru_8	<0.49,0.35,0.13,0.93,266.49>	; _RAW/01/rura.svx:791
+ru_9	<2.03,0.30,3.32,0.97,264.10>	; _RAW/01/rura.svx:792
+ru_10	<1.04,0.33,1.04,1.61,256.46>	; _RAW/01/rura.svx:793
+ru_11	<0.66,0.72,3.57,2.01,252.40>	; _RAW/01/rura.svx:794
+ru_12	<0.91,0.24,1.09,1.28,259.15>	; _RAW/01/rura.svx:795
+ru_13	<0.53,0.70,0.45,2.74,256.03>	; _RAW/01/rura.svx:796
+ru_14	<0.57,0.34,3.21,1.78,253.16>	; _RAW/01/rura.svx:797
+ru_15	<0.53,0.76,4.66,3.81,254.53>	; _RAW/01/rura.svx:798
+ru_16	<0.30,0.60,3.77,3.96,261.75>	; _RAW/01/rura.svx:799
+ru_17	<0.19,0.48,3.66,2.43,274.79>	; _RAW/01/rura.svx:800
+ru_18	<2.06,0.69,1.05,2.73,260.11>	; _RAW/01/rura.svx:801
+ru_19	<0.57,0.66,2.37,0.85,237.08>	; _RAW/01/rura.svx:802
