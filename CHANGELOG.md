@@ -6,6 +6,19 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v1.4.9] - 2026-10-24
+
+### Zmienione
+
+- Zaktualizowano współrzędne i wysokości sześciu otworów według
+  [wydania GPS v1.3.1](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.1):
+  Koprowej Studni, Małej w Mułowej, Marmurowej, Świstaczej,
+  Szarej Studni i Zaspałkowej Szczeliny. Przesunięcia poziome wynoszą
+  od 0,60 do 2,21 m, a zmiany wysokości od -1,74 do +3,35 m.
+- Przyjęto nowszy stan tych samych rekordów TPN. Wysokości pochodzą
+  z NMT TPN i opisują grunt w położeniu punktu; nie potwierdzają
+  wysokości progu otworu. Datum pionowe i dokładność pozostają nieznane.
+
 ## [v1.4.8] - 2026-10-16
 
 ### Naprawione
