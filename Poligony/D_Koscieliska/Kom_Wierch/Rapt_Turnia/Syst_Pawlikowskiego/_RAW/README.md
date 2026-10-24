@@ -1,10 +1,10 @@
 # System Jaskiń Pawlikowskiego — surowe materiały źródłowe
 
 - **Źródło**: Filip Filar (F.F.) — pomiary DistoX
-- **Autorzy pomiarów**: F. Filar (F.F.), M.P., B.Ch., J.F.
-- **Data pomiarów**: 2013-11-30 – 2014-03-23
+- **Autorzy pomiarów**: F. Filar, M. Parczewski; B. Chlipała (Obłazkowa i powierzchnia); K. Zaczyński, M. Rajczak (wsparcie Mylnej wg PIG)
+- **Data pomiarów**: 2009 (Mylna), 2013-11-30 – 2014-01-19 (Obłazkowa i Raptawicka), 2015-06 (połączenia wg PIG)
 - **Dodał do Katastra**: P. Gogolak
-- **Kompletność**: pełny pomiar systemu w formacie Walls — pomiary jaskiń + pomiary powierzchniowe
+- **Kompletność**: opracowane SRV systemu i pomiar powierzchniowy Obłazkowa–Raptawicka; brak pomiaru powierzchniowego Mylna–Obłazkowa. Szczegóły w `01/README.md`.
 
 ## Uwagi
 

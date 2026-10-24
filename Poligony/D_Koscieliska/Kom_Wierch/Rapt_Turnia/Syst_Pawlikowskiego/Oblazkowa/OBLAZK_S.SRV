@@ -3,7 +3,7 @@ CAVE_ID         "T.E-08.05"
 CAVE_NAME       "Jaskinia Oblazkowa"
 SURVEY_ID       "OBLAZK"
 SURVEY_NAME     "Oblazkowa"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-24"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -12,13 +12,18 @@ LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "F. Filar, M. Parczewski, B. Chlipala"
 INSTRUMENT      "DistoX2"
+SURVEY_DATE     "2013-11-30"
 SURVEY_DATE     "2013-12-01"
+SURVEY_DATE     "2015-06"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "daty sesji wg tabeli F. Filara z 2015-07-20; polaczenie z Mylna wg PIG 010935: 2015-06; brak przypisania dat do odczytow"
 #]
 
 #prefix2 Pawlikowskiego
 #prefix Oblazkowa
+; TODO: sesje 2013-11-30 i 2013-12-01; brak przypisania dat do odczytow.
+; Polaczenie z Mylna pomierzono 2015-06; #date zachowano bez zmiany obliczen.
 #date 2013-12-01
 #UNITS meters order=dav
 #Units A=D V=D

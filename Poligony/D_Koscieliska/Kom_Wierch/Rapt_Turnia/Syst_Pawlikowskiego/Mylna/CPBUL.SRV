@@ -3,7 +3,7 @@ CAVE_ID         "T.E-08.04"
 CAVE_NAME       "Jaskinia Mylna"
 SURVEY_ID       "CPBUL"
 SURVEY_NAME     "Ciagi przy Bialej Ulicy"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-24"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -11,14 +11,17 @@ SOURCE_REF      "../_RAW/01"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "F. Filar"
-INSTRUMENT      "DistoX2"
-SURVEY_DATE     "2009-01-01"
+INSTRUMENT      "topofil Marbacha, Leica DistoX (wg PIG; przypisanie do odcinkow nieznane)"
+SURVEY_DATE     "2009"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "doprecyzowano rok i instrumenty wg historii dokumentacji PIG T.E-08.04; data #date pozostaje historycznym przyblizeniem z issue #10"
+PROCESSING      "przywrocono zrodlowe wylaczenie 638-639 wg CPBUL.SRV z SJP.zip przekazanego przez F. Filara 2017-04-04"
 #]
 
 #prefix2 Pawlikowskiego
 #prefix Mylna
+; TODO: #date 2009-01-01 to przyblizenie obliczeniowe z issue #10, nie data dzienna pomiaru.
 #date 2009-01-01
 #UNITS meters order=dav
 #Units A=D V=D
@@ -65,7 +68,9 @@ PROCESSING      "zachowano istniejacy aktywny plik SRV"
 634	636	1.14	275	0
 636	637	3.38	350	0
 606	638	4.20	189	2
-638	639	4.60	126	0
+; Wylaczenie zgodne z SJP.zip F. Filara z 2017-04-04, Dane/Mylna/CPBUL.SRV:45.
+; Starsza wersja z 2013 r. miala ten odcinek aktywny; powod wylaczenia nieznany.
+;638	639	4.60	126	0
 638	640	6.60	209	2
 638	641	3.22	247	-1
 641	642	9.95	213	2

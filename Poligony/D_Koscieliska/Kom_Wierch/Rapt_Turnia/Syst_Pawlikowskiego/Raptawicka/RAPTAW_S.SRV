@@ -3,7 +3,7 @@ CAVE_ID         "T.E-08.03"
 CAVE_NAME       "Jaskinia Raptawicka"
 SURVEY_ID       "RAPTAW"
 SURVEY_NAME     "Raptawicka"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-24"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -12,13 +12,17 @@ LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "F. Filar, M. Parczewski"
 INSTRUMENT      "DistoX2"
-SURVEY_DATE     "2014-01-01"
+SURVEY_DATE     "2013-12-22/2014-01-19"
+SURVEY_DATE     "2015-06"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "zakres pomiarow wg PIG T.E-08.03 i tabeli F. Filara z 2015-07-20; polaczenie z Mylna: 2015-06; #date pozostaje przyblizeniem z issue #10"
 #]
 
 #prefix2 Pawlikowskiego
 #prefix Raptawicka
+; TODO: #date to historyczne przyblizenie; pomiary 2013-12-22/2014-01-19.
+; Polaczenie z Mylna pomierzono 2015-06; brak dat dziennych odczytow.
 #date 2014-01-01
 #UNITS meters order=dav
 #Units A=D V=D

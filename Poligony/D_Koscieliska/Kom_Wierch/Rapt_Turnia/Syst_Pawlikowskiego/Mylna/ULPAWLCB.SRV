@@ -3,7 +3,7 @@ CAVE_ID         "T.E-08.04"
 CAVE_NAME       "Jaskinia Mylna"
 SURVEY_ID       "ULPAWLCB"
 SURVEY_NAME     "Ulica Pawlikowskiego-CB"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-24"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -11,14 +11,16 @@ SOURCE_REF      "../_RAW/01"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "F. Filar"
-INSTRUMENT      "DistoX2"
-SURVEY_DATE     "2009-01-01"
+INSTRUMENT      "topofil Marbacha, Leica DistoX (wg PIG; przypisanie do odcinkow nieznane)"
+SURVEY_DATE     "2009"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "doprecyzowano rok i instrumenty wg historii dokumentacji PIG T.E-08.04; data #date pozostaje historycznym przyblizeniem z issue #10"
 #]
 
 #prefix2 Pawlikowskiego
 #prefix Mylna
+; TODO: #date 2009-01-01 to przyblizenie obliczeniowe z issue #10, nie data dzienna pomiaru.
 #date 2009-01-01
 #UNITS meters order=dav
 #Units A=D V=D
