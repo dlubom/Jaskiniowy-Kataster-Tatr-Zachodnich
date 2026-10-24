@@ -12,15 +12,16 @@ LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "F. Filar i M. Parczewski"
 INSTRUMENT      "topofil Marbacha, Leica DistoX (wg PIG; przypisanie do odcinkow nieznane)"
-SURVEY_DATE     "2009"
+SURVEY_DATE     "2009-03/2009-06"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
-PROCESSING      "doprecyzowano rok i instrumenty wg historii dokumentacji PIG T.E-08.04; data #date pozostaje historycznym przyblizeniem z issue #10"
+PROCESSING      "zakres kampanii wg F. Filar, Jaskinie 3(56)/2009, s.22-23; instrumenty wg PIG T.E-08.04; brak dat poszczegolnych wektorow; #date pozostaje przyblizeniem z issue #10"
 #]
 
 #prefix2 Pawlikowskiego
 #prefix Mylna
-; TODO: #date 2009-01-01 to przyblizenie obliczeniowe z issue #10, nie data dzienna pomiaru.
+; TODO: #date 2009-01-01 to przyblizenie z issue #10, nie data dzienna pomiaru.
+; Znany zakres kampanii: 2009-03/2009-06; brak dat poszczegolnych odczytow.
 #date 2009-01-01
 #UNITS meters order=dav
 #Units A=D V=D

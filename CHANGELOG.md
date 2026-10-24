@@ -11,7 +11,10 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 - System Jaskiń Pawlikowskiego: przywrócono wyłączenie odcinka Mylnej
   `638–639` (4,60 m), zgodnie z plikiem przekazanym przez Filipa Filara
   w `SJP.zip` z 4 kwietnia 2017 r.
-- Doprecyzowano daty, instrumenty Mylnej i kompletność źródeł systemu.
+- Doprecyzowano daty, instrumenty i kompletność źródeł systemu: kampanię
+  Mylnej zawężono do marca–czerwca 2009 r., a Raptawickiej przypisano
+  cztery sesje podane przez autora. Daty przejść połączeń oddzielono od
+  pomiarów z czerwca 2015 r. i daty zestawienia planu. Dodano źródła publiczne.
   Historyczne daty przyjęte do obliczeń oznaczono jako przybliżenia;
   wartości `#date` i współrzędne otworów pozostały bez zmian.
 

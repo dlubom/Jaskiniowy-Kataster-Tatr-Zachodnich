@@ -11,13 +11,15 @@ SOURCE_REF      "../_RAW/01"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "F. Filar, M. Parczewski, B. Chlipala"
-INSTRUMENT      "DistoX2"
+INSTRUMENT      "DistoX (kampania 2013-2014; model niepotwierdzony)"
+INSTRUMENT      "DistoX2 (polaczenie z Mylna, 2015-06 wg PIG 010935)"
 SURVEY_DATE     "2013-11-30"
 SURVEY_DATE     "2013-12-01"
 SURVEY_DATE     "2015-06"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
 PROCESSING      "daty sesji wg tabeli F. Filara z 2015-07-20; polaczenie z Mylna wg PIG 010935: 2015-06; brak przypisania dat do odczytow"
+PROCESSING      "rozdzielono daty przejscia i pomiaru polaczenia oraz instrumenty kampanii wg publikacji F. Filara i PIG; bibliografia w ../_RAW/01/README.md"
 #]
 
 #prefix2 Pawlikowskiego
@@ -113,6 +115,8 @@ a2.2	a2.2.1	2.40	343	-4
 a2.2.1	a2.2.2	3.69	33	0
 
 ;Polaczenie Oblazkowej z Mylna
+; Pierwsze przejscie: 2014-06-15 (F. Filar, Jaskinie 3(76)/2014, s.35).
+; Pomiar polaczenia: 2015-06 (PIG 010935); dzien odczytow nieustalony.
 
 0.13.2.4	pmo0.1	3.138	288.113333333333	-59.9466666666667
 pmo0.1	pmo0.2	2.584	307.586666666667	-38.6733333333333

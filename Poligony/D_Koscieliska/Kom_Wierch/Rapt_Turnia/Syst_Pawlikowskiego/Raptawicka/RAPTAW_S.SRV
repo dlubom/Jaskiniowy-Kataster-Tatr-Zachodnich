@@ -11,12 +11,17 @@ SOURCE_REF      "../_RAW/01"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "F. Filar, M. Parczewski"
-INSTRUMENT      "DistoX2"
-SURVEY_DATE     "2013-12-22/2014-01-19"
+INSTRUMENT      "DistoX (kampania 2013-2014; model niepotwierdzony)"
+INSTRUMENT      "DistoX2 (polaczenie z Mylna, 2015-06 wg PIG 010935)"
+SURVEY_DATE     "2013-12-22"
+SURVEY_DATE     "2014-01-04"
+SURVEY_DATE     "2014-01-18"
+SURVEY_DATE     "2014-01-19"
 SURVEY_DATE     "2015-06"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
-PROCESSING      "zakres pomiarow wg PIG T.E-08.03 i tabeli F. Filara z 2015-07-20; polaczenie z Mylna: 2015-06; #date pozostaje przyblizeniem z issue #10"
+PROCESSING      "daty sesji wg tabeli F. Filara z 2015-07-20; PIG T.E-08.03 potwierdza zakres 2013-12-22/2014-01-19; polaczenie pomierzono 2015-06; brak dat wektorow; #date pozostaje przyblizeniem z issue #10"
+PROCESSING      "rozdzielono daty przejscia i pomiaru polaczenia oraz instrumenty kampanii wg publikacji F. Filara i PIG; bibliografia w ../_RAW/01/README.md"
 #]
 
 #prefix2 Pawlikowskiego
@@ -168,6 +173,8 @@ PROCESSING      "zakres pomiarow wg PIG T.E-08.03 i tabeli F. Filara z 2015-07-2
 1.132	1.133	7.3	36.0066666666667	3.38
 
 ;Polaczenie z Mylna
+; Pierwsze przejscie: 2015-02-07 (F. Filar, Jaskinie 2-3(79-80)/2015, s.44).
+; Pomiar polaczenia: 2015-06 (PIG 010935); dzien odczytow nieustalony.
 
 1.4	prm0.1	2.28133333333333	123.163333333333	5.19333333333333
 prm0.1	prm0.2	1.31333333333333	244.75	-86.0633333333333

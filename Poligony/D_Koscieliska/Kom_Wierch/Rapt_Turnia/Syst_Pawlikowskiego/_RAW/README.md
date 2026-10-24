@@ -1,8 +1,8 @@
 # System Jaskiń Pawlikowskiego — surowe materiały źródłowe
 
-- **Źródło**: Filip Filar (F.F.) — pomiary DistoX
+- **Źródło**: Filip Filar (F.F.); instrumenty i datowanie poszczególnych kampanii opisano w `01/README.md`.
 - **Autorzy pomiarów**: F. Filar, M. Parczewski; B. Chlipała (Obłazkowa i powierzchnia); K. Zaczyński, M. Rajczak (wsparcie Mylnej wg PIG)
-- **Data pomiarów**: 2009 (Mylna), 2013-11-30 – 2014-01-19 (Obłazkowa i Raptawicka), 2015-06 (połączenia wg PIG)
+- **Data pomiarów**: 2009-03/2009-06 (kampania Mylnej), 2013-11-30 i 2013-12-01 (Obłazkowa), 2013-12-22, 2014-01-04, 2014-01-18 i 2014-01-19 (Raptawicka), 2015-06 (pomiary połączeń wg PIG). Brak przypisania dat do wektorów.
 - **Dodał do Katastra**: P. Gogolak
 - **Kompletność**: opracowane SRV systemu i pomiar powierzchniowy Obłazkowa–Raptawicka; brak pomiaru powierzchniowego Mylna–Obłazkowa. Szczegóły w `01/README.md`.
 
@@ -22,7 +22,9 @@ Całość opiera się na współrzędnych otworu Jaskini Mylnej, gdyż cała res
 
 ## Daty pomiarów
 
-Ustalone na podstawie danych z Państwowego Instytutu Geologicznego oraz tabeli dat podanych przez F. Filar:
+Zakres kampanii Mylnej (marzec–czerwiec 2009) podaje F. Filar w „Jaskiniach” 3(56)/2009. Źródła publiczne i rozróżnienie dat przejść, pomiarów oraz opracowania planów opisano w `01/README.md`.
+
+Poniżej zachowano tabelę sesji z wiadomości F. Filara z 20 lipca 2015 r.; obejmuje ona także inne jaskinie. Nie przypisuje dat do poszczególnych wektorów:
 
 | Data | Jaskinia | Uczestnicy |
 |------|----------|------------|
