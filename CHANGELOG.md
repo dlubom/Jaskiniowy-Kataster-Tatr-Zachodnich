@@ -8,21 +8,14 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Naprawione
 
-- System Jaskiń Pawlikowskiego: przywrócono wyłączenie odcinka Mylnej
-  `638–639` (4,60 m), zgodnie z plikiem przekazanym przez Filipa Filara
-  w `SJP.zip` z 4 kwietnia 2017 r.
-- Doprecyzowano daty, instrumenty i kompletność źródeł systemu: kampanię
-  Mylnej zawężono do marca–czerwca 2009 r., a Raptawickiej przypisano
-  cztery sesje podane przez autora. Daty przejść połączeń oddzielono od
-  pomiarów z czerwca 2015 r. i daty zestawienia planu. Dodano źródła publiczne.
-  Historyczne daty przyjęte do obliczeń oznaczono jako przybliżenia;
-  wartości `#date` głównych kampanii i współrzędne otworów pozostały bez zmian.
-- Wydzielono 13 wektorów połączeń Mylna–Obłazkowa i Mylna–Raptawicka,
-  aby pomiary z czerwca 2015 nie dziedziczyły dat z lat 2013–2014.
-  Zachowano miesięczną datę źródłową; bez fikcyjnego dnia zastosowano jawną
-  średnią deklinację IGRF14 dla miesiąca (`DECL=4.83`). Nie zmieniono odczytów,
-  stacji, dowiązań ani trzech fixów. Dwa końcowe odcinki Raptawickiej mają
-  nadal nieustalone datowanie.
+- System Pawlikowskiego: przywrócono źródłowe wyłączenie Mylnej `638–639`
+  (4,60 m), doprecyzowano daty i instrumenty. Trzynaście pomiarów połączeń
+  z czerwca 2015 wydzielono bez zmiany odczytów i bez wymyślonego dnia.
+- Przywrócono 66 odczytów powierzchniowych Obłazkowa–Raptawicka.
+  Jedynym fixem systemu jest Raptawicka z GPS Katastra; oznaczono osiem
+  otworów, pozostałe współrzędne wynikają z wyrównania sieci.
+  `DECL=4.83` odpowiada czerwcu 2015; dla powierzchni jest założeniem,
+  ponieważ data pomiaru pozostaje nieznana. Dokładność wyników jest nieznana.
 
 ## [v1.4.9] - 2026-10-24
 

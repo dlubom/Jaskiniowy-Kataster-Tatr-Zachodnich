@@ -494,6 +494,14 @@
 .NAME	RAPT_MYL
 .STATUS	8
 .ENDBOOK
+.BOOK	Powierzchnia Oblazkowa-Raptawicka
+.NAME	PAWPOW
+.PATH	Powierzchnia
+.STATUS	8
+.SURVEY	Ciag powierzchniowy Oblazkowa-Raptawicka
+.NAME	POW_ORM
+.STATUS	8
+.ENDBOOK
 .ENDBOOK
 .ENDBOOK
 .ENDBOOK

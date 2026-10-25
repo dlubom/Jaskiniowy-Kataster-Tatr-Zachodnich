@@ -1,72 +1,10 @@
-# System Jaskiń Pawlikowskiego — surowe materiały źródłowe
+# System Jaskiń Pawlikowskiego — materiały źródłowe
 
-- **Źródło**: Filip Filar (F.F.); instrumenty i datowanie poszczególnych kampanii opisano w `01/README.md`.
-- **Autorzy pomiarów**: F. Filar, M. Parczewski; B. Chlipała (Obłazkowa i powierzchnia); K. Zaczyński, M. Rajczak (wsparcie Mylnej wg PIG)
-- **Data pomiarów**: 2009-03/2009-06 (kampania Mylnej), 2013-11-30 i 2013-12-01 (Obłazkowa), 2013-12-22, 2014-01-04, 2014-01-18 i 2014-01-19 (Raptawicka), 2015-06 (pomiary połączeń wg PIG). Brak przypisania dat do wektorów.
-- **Dodał do Katastra**: P. Gogolak
-- **Kompletność**: opracowane SRV systemu i pomiar powierzchniowy Obłazkowa–Raptawicka; brak pomiaru powierzchniowego Mylna–Obłazkowa. Szczegóły w `01/README.md`.
+[Paczka 01](01/README.md) zawiera archiwa Filipa Filara: pomiary Mylnej,
+Obłazkowej i Raptawickiej oraz ciąg powierzchniowy Obłazkowa–Raptawicka.
+Opisuje autorstwo, daty, źródła i ograniczenia. Dane do Katastra dodał P. Gogolak.
 
-## Uwagi
-
-Pliki źródłowe podzielone są na:
-- **SJP** — pliki pomiarowe Systemu Jaskiń Pawlikowskiego
-- **SJP_P** — pomiary powierzchniowe od Obłazkowej-Raptawickiej
-
-Filar pisał: "Całość jest sklejona w oparciu o dość pewny ciąg pomiarowy na powierzchni
-(po 3 pomiary w obie strony). Zafiksowane współrzędne otworów są określone
-względem wejścia do Mylnej i jeśli będziesz to przetwarzał na jakieś
-»normalne« współrzędne to musisz zachować oryginalne wzajemne położenie
-otworów."
-
-Historyczne opracowanie Filara opierało się na względnych współrzędnych
-otworów odniesionych do wejścia Mylnej i dowiązaniach pomiarowych. Aktualny
-model Katastra korzysta z trzech punktów `#fix` w `Poligony/OTWORY.SRV`:
-wejść Mylnej, Obłazkowej i Raptawickiej.
-
-Pomiary połączeń z czerwca 2015 r. wydzielono do `OBL_MYL.SRV` i
-`RAPT_MYL.SRV`, zachowując źródłową precyzję miesiąca bez przypisywania
-dnia. Sposób obliczenia deklinacji i ograniczenia opisano w `01/README.md`.
-
-## Daty pomiarów
-
-Zakres kampanii Mylnej (marzec–czerwiec 2009) podaje F. Filar w „Jaskiniach” 3(56)/2009. Źródła publiczne i rozróżnienie dat przejść, pomiarów oraz opracowania planów opisano w `01/README.md`.
-
-Poniżej zachowano tabelę sesji z wiadomości F. Filara z 20 lipca 2015 r.; obejmuje ona także inne jaskinie. Nie przypisuje dat do poszczególnych wektorów:
-
-| Data | Jaskinia | Uczestnicy |
-|------|----------|------------|
-| 30.11.2013 | Obłazkowa | M.P., F.F. |
-| 01.12.2013 | Obłazkowa | B.Ch., F.F. |
-| 22.12.2013 | Raptawicka | M.P., F.F. |
-| 28.12.2013 | E+H | B.Ch., F.F. |
-| 31.12.2013 | Smocza Jama | B.Ch., F.F. |
-| 04.01.2014 | Raptawicka | M.P., F.F. |
-| 05.01.2014 | Dziura | M.P., F.F. |
-| 06.01.2014 | Dziura | M.P., F.F. |
-| 18.01.2014 | Raptawicka | M.P., F.F. |
-| 19.01.2014 | Raptawicka | M.P., F.F. |
-| 01.02.2014 | Sztolnia Biały | B.Ch., F.F. |
-| 02.02.2014 | Schr.w S.Km. | B.Ch., F.F. |
-| 05.02.2014 | Mroźna | B.Ch., F.F. |
-| 06.02.2014 | Szt.Kosc+DpSJ | B.Ch., F.F. |
-| 09.02.2014 | Niedźw.Sztoln. | B.Ch., F.F. |
-| 15.02.2014 | Mroźna | M.P., F.F. |
-| 16.02.2014 | Mroźna | M.P., F.F. |
-| 22.02.2014 | Mroźna | F.F. |
-| 23.02.2014 | Mroźna | M.P., F.F. |
-| 01.03.2014 | Mroźna | M.P., F.F. |
-| 08.03.2014 | Mroźna | M.P., F.F. |
-| 15.03.2014 | Mroźna | J.F., F.F. |
-| 21.03.2014 | Dziura | B.Ch., F.F. |
-| 23.03.2014 | Mroźna | F.F. |
-
-## Pliki
-
-- `SJP.zip` — archiwum ZIP z pomiarami jaskiń
-- `SJP/` — rozpakowana zawartość:
-  - `SJ PAWLIKOWSKIEGO.wpj` — plik projektu Walls
-  - `Dane/OBLAZK.SRV`, `Dane/RAPTAW.SRV` — pomiary Obłazkowej i Raptawickiej
-  - `Dane/Mylna/` — 11 plików .SRV z pomiarami Mylnej i okolic
-- `SJP_P.zip` — archiwum ZIP z pomiarami powierzchniowymi
-- `SJP_P/` — rozpakowana zawartość:
-  - `POW ORM.SRV` — pomiary powierzchniowe
+Aktywny model łączy podziemia z 66 odczytami powierzchniowymi i ma jeden
+zewnętrzny fix Raptawickiej. Nie odnaleziono powierzchni Mylna–Obłazkowa.
+Daty pomiaru zachowanej powierzchni nie znamy; deklinacja dla czerwca 2015
+jest jawnym założeniem obliczeniowym.

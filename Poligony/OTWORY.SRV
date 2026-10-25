@@ -195,12 +195,30 @@
 #flag	ObcasnaVyv:A1:o1	/ENTRANCE
 #note	ObcasnaVyv:A1:o1	/Obcasna Vyvieracka
 
-#fix	Pawlikowskiego:Mylna:0	E19.8622047217	N49.2393861277	1098m
+; System Pawlikowskiego: jedyny #fix to Raptawicka. Pozostale otwory wyznacza siec.
+; Stacje otworow wg _RAW/01/SJP/Dane/Mylna/CG.SRV:43-50.
+; To polozenia stacji; znaki wzgledem progow otworow nie sa ustalone.
 #flag	Pawlikowskiego:Mylna:0	/Mylna
 #flag	Pawlikowskiego:Mylna:0	/ENTRANCE
 #note	Pawlikowskiego:Mylna:0	/Mylna
 
-#fix	Pawlikowskiego:Oblazkowa:0.0	E19.8625797302	N49.239561635	1096.62m
+#flag	Pawlikowskiego:Mylna:39	/Mylna - otwor polnocny
+#flag	Pawlikowskiego:Mylna:39	/ENTRANCE
+#note	Pawlikowskiego:Mylna:39	/Mylna - otwor polnocny
+
+; Nazwy okien: zrodlowe BOKI_CG.SRV:27-31 i BCDCHCG.SRV:27-32.
+#flag	Pawlikowskiego:Mylna:52	/Mylna - I Okno Pawlikowskiego
+#flag	Pawlikowskiego:Mylna:52	/ENTRANCE
+#note	Pawlikowskiego:Mylna:52	/Mylna - I Okno Pawlikowskiego
+
+#flag	Pawlikowskiego:Mylna:53	/Mylna - II Okno Pawlikowskiego
+#flag	Pawlikowskiego:Mylna:53	/ENTRANCE
+#note	Pawlikowskiego:Mylna:53	/Mylna - II Okno Pawlikowskiego
+
+#flag	Pawlikowskiego:Mylna:333	/Mylna - III Okno Pawlikowskiego
+#flag	Pawlikowskiego:Mylna:333	/ENTRANCE
+#note	Pawlikowskiego:Mylna:333	/Mylna - III Okno Pawlikowskiego
+
 #flag	Pawlikowskiego:Oblazkowa:0.0	/Oblazkowa
 #flag	Pawlikowskiego:Oblazkowa:0.0	/ENTRANCE
 #note	Pawlikowskiego:Oblazkowa:0.0	/Oblazkowa
@@ -209,6 +227,10 @@
 #flag	Pawlikowskiego:Raptawicka:1.0	/Raptawicka
 #flag	Pawlikowskiego:Raptawicka:1.0	/ENTRANCE
 #note	Pawlikowskiego:Raptawicka:1.0	/Raptawicka
+
+#flag	Pawlikowskiego:Raptawicka:5.1	/Raptawicka - otwor gorny
+#flag	Pawlikowskiego:Raptawicka:5.1	/ENTRANCE
+#note	Pawlikowskiego:Raptawicka:5.1	/Raptawicka - otwor gorny
 
 #fix	PodProgiem:0	E19.9158398884	N49.2451308705	1760.029097m
 #flag	PodProgiem:0	/Jaskinia pod Progiem
