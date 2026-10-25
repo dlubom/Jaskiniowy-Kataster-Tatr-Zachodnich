@@ -6,6 +6,14 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v1.4.10] - 2026-10-25
+
+### Zmienione
+
+- Kotwicę Raptawickiej zaktualizowano z opublikowanego GPS v1.3.2
+  (H1140,8 m PL-KRON86-NH). Pozostałe siedem otworów jest wynikiem sieci.
+  Dokładność kotwicy i sieci pozostaje nieznana.
+
 ### Naprawione
 
 - System Pawlikowskiego: przywrócono źródłowe wyłączenie Mylnej `638–639`

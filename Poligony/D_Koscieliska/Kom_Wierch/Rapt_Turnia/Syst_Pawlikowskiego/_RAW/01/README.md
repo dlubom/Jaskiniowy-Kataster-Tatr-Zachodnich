@@ -63,7 +63,9 @@ kolejne trójki tego samego kierunku; kierunki przeciwne pozostają osobno
 `#segment P` oznacza powierzchnię w Survex i grupę w Walls.
 Niezależne rozwiązania powierzchnią i podziemiami różnią się przy Obłazkowej
 o około 4,20 m (4,13 m poziomo, 0,77 m pionowo). Wyrównanie rozdziela tę
-rozbieżność; dokładność bezwzględna i pionowy układ odniesienia są nieznane.
+rozbieżność; dokładność bezwzględna pozostaje nieznana. Historyczne lokalne
+wysokości miały nieznany datum; po dowiązaniu do GPS v1.3.2 wysokości sieci
+odnoszą się do kotwicy ALS w PL-KRON86-NH.
 Brakującego pomiaru powierzchniowego Mylna–Obłazkowa autor nie odnalazł w 2020 r.
 
 Dla tego systemu referencją współrzędnych Best w GPS Katastrze i eksportów

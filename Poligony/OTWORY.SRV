@@ -2,7 +2,7 @@
 #units meters order=ENU
 
 ; Wspolrzedne #fix sa automatycznie wstrzykiwane z release'ow:
-; https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.1
+; https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.2
 ; Szczegoly pomiarow i wyboru najlepszych wartosci sa w tamtym projekcie.
 
 #fix	BandziochKom:000	E19.8495785	N49.24258746	1451.06m (R0.01,R0.01)
@@ -223,7 +223,7 @@
 #flag	Pawlikowskiego:Oblazkowa:0.0	/ENTRANCE
 #note	Pawlikowskiego:Oblazkowa:0.0	/Oblazkowa
 
-#fix	Pawlikowskiego:Raptawicka:1.0	E19.8622197642	N49.2398675351	1141.31m
+#fix	Pawlikowskiego:Raptawicka:1.0	E19.8620426566	N49.2398375402	1140.8m
 #flag	Pawlikowskiego:Raptawicka:1.0	/Raptawicka
 #flag	Pawlikowskiego:Raptawicka:1.0	/ENTRANCE
 #note	Pawlikowskiego:Raptawicka:1.0	/Raptawicka
