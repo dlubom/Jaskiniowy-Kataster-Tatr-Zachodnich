@@ -3,7 +3,7 @@ CAVE_ID         "T.E-08.03"
 CAVE_NAME       "Jaskinia Raptawicka"
 SURVEY_ID       "RAPTAW"
 SURVEY_NAME     "Raptawicka"
-UPDATE_DATE     "2026-10-24"
+UPDATE_DATE     "2026-10-25"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -12,22 +12,22 @@ LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "F. Filar, M. Parczewski"
 INSTRUMENT      "DistoX (kampania 2013-2014; model niepotwierdzony)"
-INSTRUMENT      "DistoX2 (polaczenie z Mylna, 2015-06 wg PIG 010935)"
 SURVEY_DATE     "2013-12-22"
 SURVEY_DATE     "2014-01-04"
 SURVEY_DATE     "2014-01-18"
 SURVEY_DATE     "2014-01-19"
-SURVEY_DATE     "2015-06"
+SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
-PROCESSING      "daty sesji wg tabeli F. Filara z 2015-07-20; PIG T.E-08.03 potwierdza zakres 2013-12-22/2014-01-19; polaczenie pomierzono 2015-06; brak dat wektorow; #date pozostaje przyblizeniem z issue #10"
-PROCESSING      "rozdzielono daty przejscia i pomiaru polaczenia oraz instrumenty kampanii wg publikacji F. Filara i PIG; bibliografia w ../_RAW/01/README.md"
+PROCESSING      "daty sesji wg tabeli F. Filara z 2015-07-20; brak przypisania dat do wektorow; pomiar polaczenia 2015-06 wydzielono do RAPT_MYL.SRV"
+PROCESSING      "zachowano historyczne przyblizenie #date dla pozostalych odczytow; nie przypisano niepotwierdzonych dni pomiaru"
+PROCESSING      "odcinki 1.48-1.150 i 1.150-1.151 maja nieustalone datowanie; SURVEY_DATE nieznane dotyczy tych dwoch rekordow"
 #]
 
 #prefix2 Pawlikowskiego
 #prefix Raptawicka
 ; TODO: #date to historyczne przyblizenie; pomiary 2013-12-22/2014-01-19.
-; Polaczenie z Mylna pomierzono 2015-06; brak dat dziennych odczytow.
+; #date dotyczy przyblizenia starszej kampanii; polaczenie jest w RAPT_MYL.SRV.
 #date 2014-01-01
 #UNITS meters order=dav
 #Units A=D V=D
@@ -172,15 +172,10 @@ PROCESSING      "rozdzielono daty przejscia i pomiaru polaczenia oraz instrument
 1.131	1.132	4.14	40.2533333333333	2.96666666666667
 1.132	1.133	7.3	36.0066666666667	3.38
 
-;Polaczenie z Mylna
-; Pierwsze przejscie: 2015-02-07 (F. Filar, Jaskinie 2-3(79-80)/2015, s.44).
-; Pomiar polaczenia: 2015-06 (PIG 010935); dzien odczytow nieustalony.
+; Polaczenie z Mylna wydzielono do RAPT_MYL.SRV (pomiar 2015-06).
 
-1.4	prm0.1	2.28133333333333	123.163333333333	5.19333333333333
-prm0.1	prm0.2	1.31333333333333	244.75	-86.0633333333333
-prm0.2	prm0.3	1.294	191.27	-52.4966666666667
-prm0.3	prm0.4	2.711	153.4	-65.82
-prm0.4	Mylna:411	3.412	131.44	-45.75
 
+; Datowanie dwoch ponizszych odcinkow nieustalone; zachowano historyczne
+; przyblizenie obliczeniowe #date 2014-01-01, nie przypisano ich do 2015-06.
 1.48	1.150	7.882	107.7	77.7
 1.150	1.151	4.791	21.3	-2.4

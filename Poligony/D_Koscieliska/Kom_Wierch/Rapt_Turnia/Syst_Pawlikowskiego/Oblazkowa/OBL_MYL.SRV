@@ -1,0 +1,44 @@
+#[
+CAVE_ID         "T.E-08.05"
+CAVE_NAME       "Jaskinia Oblazkowa"
+SURVEY_ID       "OBL_MYL"
+SURVEY_NAME     "Polaczenie Oblazkowa-Mylna"
+UPDATE_DATE     "2026-10-25"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "Dariusz Lubomski"
+COORDINATOR_EMAIL "darek.lubomski@gmail.com"
+SOURCE_REF      "../_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "F. Filar (wg PIG 010935)"
+INSTRUMENT      "DistoX2 (wg PIG 010935)"
+SURVEY_DATE     "2015-06"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "wydzielono bez zmiany odczytow z OBLAZK_S.SRV; zrodlo ../_RAW/01/SJP/Dane/OBLAZK.SRV:91-98; zachowano kwalifikacje stacji Mylnej"
+PROCESSING      "miesiac pomiaru wg PIG 010935, Historia dokumentacji; 15.06.2015 to data zestawienia planu, nie potwierdzony dzien pomiaru"
+PROCESSING      "bez #date; DECL=4.83 to modelowa srednia IGRF14 dla 30 dni 2015-06 na pozycji .REF KATASTER.wpj, zaokraglona do 0.01 stopnia; jednakowa waga dni jest zalozeniem obliczeniowym"
+PROCESSING      "metoda, parametry i ograniczenia opisane w ../_RAW/01/README.md"
+#]
+
+#prefix2 Pawlikowskiego
+#prefix Oblazkowa
+#units meters order=DAV
+#units A=D V=D
+; Okres pomiaru: 2015-06, PIG 010935, Historia dokumentacji.
+; Dzien nieustalony: bez #date, aby nie eksportowac fikcyjnej daty dziennej.
+; DECL to modelowa srednia 30 dni czerwca 2015, nie pomiar terenowy.
+; IGRF14 / Survex 1.4.24, pozycja .REF KATASTER.wpj (WGS84):
+; UTM34N E420990.593 N5444258.858 H=1800m; srednia +4.827861deg,
+; zakres +4.822168..+4.833555deg; zaokraglenie do 0.01deg.
+; Zbieznosc siatki jest stosowana osobno przez kompilator.
+#units DECL=4.83
+
+; Polaczenie Oblazkowa-Mylna
+0.13.2.4	pmo0.1	3.138	288.113333333333	-59.9466666666667
+pmo0.1	pmo0.2	2.584	307.586666666667	-38.6733333333333
+pmo0.2	pmo0.3	0.774	338.79	-14.9766666666667
+pmo0.3	pmo0.4	2.16066666666667	330.313333333333	-8.77666666666667
+pmo0.4	pmo0.5	2.15566666666667	278.583333333333	-0.443333333333333
+pmo0.5	pmo0.6	1.351	59.09	-6.68666666666667
+pmo0.6	pmo0.7	3.63466666666667	104.4	4.11666666666667
+pmo0.5	Mylna:638	1.78566666666667	303.16	0.116666666666667

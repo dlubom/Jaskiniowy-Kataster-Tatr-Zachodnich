@@ -1,0 +1,41 @@
+#[
+CAVE_ID         "T.E-08.03"
+CAVE_NAME       "Jaskinia Raptawicka"
+SURVEY_ID       "RAPT_MYL"
+SURVEY_NAME     "Polaczenie Raptawicka-Mylna"
+UPDATE_DATE     "2026-10-25"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "Dariusz Lubomski"
+COORDINATOR_EMAIL "darek.lubomski@gmail.com"
+SOURCE_REF      "../_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "F. Filar (wg PIG 010935)"
+INSTRUMENT      "DistoX2 (wg PIG 010935)"
+SURVEY_DATE     "2015-06"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "wydzielono bez zmiany odczytow z RAPTAW_S.SRV; zrodlo ../_RAW/01/SJP/Dane/RAPTAW.SRV:147-151; zachowano kwalifikacje stacji Mylnej"
+PROCESSING      "miesiac pomiaru wg PIG 010935, Historia dokumentacji; 15.06.2015 to data zestawienia planu, nie potwierdzony dzien pomiaru"
+PROCESSING      "bez #date; DECL=4.83 to modelowa srednia IGRF14 dla 30 dni 2015-06 na pozycji .REF KATASTER.wpj, zaokraglona do 0.01 stopnia; jednakowa waga dni jest zalozeniem obliczeniowym"
+PROCESSING      "metoda, parametry i ograniczenia opisane w ../_RAW/01/README.md"
+#]
+
+#prefix2 Pawlikowskiego
+#prefix Raptawicka
+#units meters order=DAV
+#units A=D V=D
+; Okres pomiaru: 2015-06, PIG 010935, Historia dokumentacji.
+; Dzien nieustalony: bez #date, aby nie eksportowac fikcyjnej daty dziennej.
+; DECL to modelowa srednia 30 dni czerwca 2015, nie pomiar terenowy.
+; IGRF14 / Survex 1.4.24, pozycja .REF KATASTER.wpj (WGS84):
+; UTM34N E420990.593 N5444258.858 H=1800m; srednia +4.827861deg,
+; zakres +4.822168..+4.833555deg; zaokraglenie do 0.01deg.
+; Zbieznosc siatki jest stosowana osobno przez kompilator.
+#units DECL=4.83
+
+; Polaczenie Raptawicka-Mylna
+1.4	prm0.1	2.28133333333333	123.163333333333	5.19333333333333
+prm0.1	prm0.2	1.31333333333333	244.75	-86.0633333333333
+prm0.2	prm0.3	1.294	191.27	-52.4966666666667
+prm0.3	prm0.4	2.711	153.4	-65.82
+prm0.4	Mylna:411	3.412	131.44	-45.75

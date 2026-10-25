@@ -18,7 +18,14 @@ względem wejścia do Mylnej i jeśli będziesz to przetwarzał na jakieś
 »normalne« współrzędne to musisz zachować oryginalne wzajemne położenie
 otworów."
 
-Całość opiera się na współrzędnych otworu Jaskini Mylnej, gdyż cała reszta jest połączona pomiarami w jaskini oraz na powierzchni.
+Historyczne opracowanie Filara opierało się na względnych współrzędnych
+otworów odniesionych do wejścia Mylnej i dowiązaniach pomiarowych. Aktualny
+model Katastra korzysta z trzech punktów `#fix` w `Poligony/OTWORY.SRV`:
+wejść Mylnej, Obłazkowej i Raptawickiej.
+
+Pomiary połączeń z czerwca 2015 r. wydzielono do `OBL_MYL.SRV` i
+`RAPT_MYL.SRV`, zachowując źródłową precyzję miesiąca bez przypisywania
+dnia. Sposób obliczenia deklinacji i ograniczenia opisano w `01/README.md`.
 
 ## Daty pomiarów
 

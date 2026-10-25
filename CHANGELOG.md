@@ -16,7 +16,13 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
   cztery sesje podane przez autora. Daty przejść połączeń oddzielono od
   pomiarów z czerwca 2015 r. i daty zestawienia planu. Dodano źródła publiczne.
   Historyczne daty przyjęte do obliczeń oznaczono jako przybliżenia;
-  wartości `#date` i współrzędne otworów pozostały bez zmian.
+  wartości `#date` głównych kampanii i współrzędne otworów pozostały bez zmian.
+- Wydzielono 13 wektorów połączeń Mylna–Obłazkowa i Mylna–Raptawicka,
+  aby pomiary z czerwca 2015 nie dziedziczyły dat z lat 2013–2014.
+  Zachowano miesięczną datę źródłową; bez fikcyjnego dnia zastosowano jawną
+  średnią deklinację IGRF14 dla miesiąca (`DECL=4.83`). Nie zmieniono odczytów,
+  stacji, dowiązań ani trzech fixów. Dwa końcowe odcinki Raptawickiej mają
+  nadal nieustalone datowanie.
 
 ## [v1.4.9] - 2026-10-24
 

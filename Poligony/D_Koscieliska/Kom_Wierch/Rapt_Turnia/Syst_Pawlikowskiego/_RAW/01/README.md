@@ -35,7 +35,9 @@ Pierwsze przejście Mylna–Obłazkowa nastąpiło 15.06.2014, a Mylna–Raptawi
 podaje czerwiec 2015 jako miesiąc pomiarów obu połączeń i dowiązania otworów,
 a 15.06.2015 jako datę zestawienia planu i przekroju systemu. Dat przejść
 i opracowania planu nie wpisano jako dat pomiarów w `SURVEY_DATE` ani `#date`.
-Historyczne `#date` pozostają przybliżeniami, bez zmiany obliczeń.
+Historyczne `#date` głównych kampanii pozostają przybliżeniami. Pomiary
+połączeń z `2015-06` wydzielono do `Oblazkowa/OBL_MYL.SRV` i
+`Raptawicka/RAPT_MYL.SRV`, bez fikcyjnej daty dziennej; metoda poniżej.
 
 W relacji o kampanii 2013–2014 Filar podaje zestaw DistoX i palmtop, bez
 oznaczenia modelu X2. DistoX2 jest potwierdzony przez PIG dla połączeń
@@ -45,6 +47,37 @@ i Leica DistoX, bez przypisania instrumentu do odcinków.
 W dostarczonym `Dane/Mylna/CPBUL.SRV` odcinek `638–639` jest komentarzem.
 Aktywny plik przywraca to wyłączenie; nie znamy jego terenowego powodu.
 Autor w 2020 r. nie odnalazł pomiaru powierzchniowego Mylna–Obłazkowa.
+
+## Datowanie wydzielonych połączeń i deklinacja
+
+PIG, karta systemu 010935, „Historia dokumentacji”, przypisuje pomiary obu
+połączeń F. Filarowi w czerwcu 2015 r. Osobno podaje 15.06.2015 jako datę
+zestawienia planu i przekroju. Nie jest to potwierdzony dzień pomiaru.
+W nowych plikach zachowano `SURVEY_DATE "2015-06"`, bez `#date`, ponieważ
+Walls wymaga pełnej daty dziennej i zapisuje ją także w eksportach.
+Odpowiednie źródła to `SJP/Dane/OBLAZK.SRV:91–98` (8 rekordów) i
+`SJP/Dane/RAPTAW.SRV:147–151` (5 rekordów). Wartości i stacje zachowano
+z dotychczasowymi kwalifikacjami dowiązań do Mylnej.
+
+`#units DECL=4.83` jest jawnym założeniem obliczeniowym: średnią arytmetyczną
+30 dziennych wartości IGRF14 dla czerwca 2015, wyznaczonych osobno przez
+Survex 1.4.24 na pozycji oryginalnej `.REF` projektu: WGS84 / UTM 34N,
+E=420990,593 m, N=5444258,858 m, H=1800 m. Średnia wynosi +4,827861°,
+zakres +4,822168° do +4,833555°; wynik zaokrąglono do 0,01°.
+Każdy dzień ma jednakową wagę, ponieważ nie znamy dni rzeczywistych odczytów.
+Nie jest to terenowy pomiar deklinacji. Zbieżność siatki kompilator stosuje
+osobno; nie jest dodana do zapisanej wartości `DECL`.
+
+Model i zasady: [Survex 1.4.24, IGRF14](https://github.com/ojwb/survex/blob/878202413cac5cbf41b88ee82c0cab72b97725ce/doc/datafile.rst),
+opis `*declination`; [Walls v2.3.0-beta.1, parser dat](https://github.com/wallscavesurvey/walls/blob/v2.3.0-beta.1/Walls32/wall-srv.cpp#L1492),
+oraz lokalny manual Walls §4.9. Wyznaczenie kąta polegało na odjęciu
+azymutu kontrolnego wektora z `DECL=0` od azymutu tego samego wektora
+z dzienną `#date`; różnica usuwa korektę siatki.
+
+Nie zmieniono przybliżeń `#date` głównych kampanii, ponieważ tabela sesji
+nie przypisuje dat do konkretnych wektorów. Dwa końcowe odcinki Raptawickiej
+`1.48–1.150–1.151` mają nieustalone datowanie; nie objęto ich czerwcem 2015.
+103 splaje Obłazkowej pozostały w podstawowym pliku, poza połączeniem.
 
 ## Źródła datowania i instrumentów
 
