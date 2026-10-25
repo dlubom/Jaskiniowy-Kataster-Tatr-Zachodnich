@@ -66,6 +66,12 @@ o około 4,20 m (4,13 m poziomo, 0,77 m pionowo). Wyrównanie rozdziela tę
 rozbieżność; dokładność bezwzględna i pionowy układ odniesienia są nieznane.
 Brakującego pomiaru powierzchniowego Mylna–Obłazkowa autor nie odnalazł w 2020 r.
 
+Dla tego systemu referencją współrzędnych Best w GPS Katastrze i eksportów
+JKTZ jest Survex 1.4.24. Natywny Walls daje różnice do około 0,70 m,
+wynikające z innych wag i obsługi powtórzeń. Kontrolna emulacja modelu
+Walls w Survex odtworzyła jego wynik z maksymalną różnicą 3D poniżej 8 mm;
+był to test diagnostyczny, bez przyjmowania tych wag w danych produkcyjnych.
+
 ## Stacje otworów
 
 Źródłowy `SJP/Dane/Mylna/CG.SRV:43–50` oznacza osiem stacji flagami.
