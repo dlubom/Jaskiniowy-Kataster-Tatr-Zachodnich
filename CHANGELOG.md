@@ -6,6 +6,17 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+### Naprawione
+
+- System Pawlikowskiego: przywrócono źródłowe wyłączenie Mylnej `638–639`
+  (4,60 m), doprecyzowano daty i instrumenty. Trzynaście pomiarów połączeń
+  z czerwca 2015 wydzielono bez zmiany odczytów i bez wymyślonego dnia.
+- Przywrócono 66 odczytów powierzchniowych Obłazkowa–Raptawicka.
+  Jedynym fixem systemu jest Raptawicka z GPS Katastra; oznaczono osiem
+  otworów, pozostałe współrzędne wynikają z wyrównania sieci.
+  `DECL=4.83` odpowiada czerwcu 2015; dla powierzchni jest założeniem,
+  ponieważ data pomiaru pozostaje nieznana. Dokładność wyników jest nieznana.
+
 ## [v1.4.9] - 2026-10-24
 
 ### Zmienione

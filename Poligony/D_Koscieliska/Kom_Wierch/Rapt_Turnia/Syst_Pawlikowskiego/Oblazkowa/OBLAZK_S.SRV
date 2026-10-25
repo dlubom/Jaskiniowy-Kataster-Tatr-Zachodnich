@@ -3,7 +3,7 @@ CAVE_ID         "T.E-08.05"
 CAVE_NAME       "Jaskinia Oblazkowa"
 SURVEY_ID       "OBLAZK"
 SURVEY_NAME     "Oblazkowa"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-25"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -11,14 +11,19 @@ SOURCE_REF      "../_RAW/01"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "F. Filar, M. Parczewski, B. Chlipala"
-INSTRUMENT      "DistoX2"
+INSTRUMENT      "DistoX (kampania 2013-2014; model niepotwierdzony)"
+SURVEY_DATE     "2013-11-30"
 SURVEY_DATE     "2013-12-01"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "daty sesji wg tabeli F. Filara z 2015-07-20; brak przypisania dat do wektorow; pomiar polaczenia 2015-06 wydzielono do OBL_MYL.SRV"
+PROCESSING      "zachowano historyczne przyblizenie #date dla pozostalych odczytow; nie przypisano niepotwierdzonych dni pomiaru"
 #]
 
 #prefix2 Pawlikowskiego
 #prefix Oblazkowa
+; TODO: sesje 2013-11-30 i 2013-12-01; brak przypisania dat do odczytow.
+; #date dotyczy przyblizenia starszej kampanii; polaczenie jest w OBL_MYL.SRV.
 #date 2013-12-01
 #UNITS meters order=dav
 #Units A=D V=D
@@ -107,16 +112,8 @@ a2.3	a2.3.2	2.93	25	31
 a2.2	a2.2.1	2.40	343	-4
 a2.2.1	a2.2.2	3.69	33	0
 
-;Polaczenie Oblazkowej z Mylna
+; Polaczenie z Mylna wydzielono do OBL_MYL.SRV (pomiar 2015-06).
 
-0.13.2.4	pmo0.1	3.138	288.113333333333	-59.9466666666667
-pmo0.1	pmo0.2	2.584	307.586666666667	-38.6733333333333
-pmo0.2	pmo0.3	0.774	338.79	-14.9766666666667
-pmo0.3	pmo0.4	2.16066666666667	330.313333333333	-8.77666666666667
-pmo0.4	pmo0.5	2.15566666666667	278.583333333333	-0.443333333333333
-pmo0.5	pmo0.6	1.351	59.09	-6.68666666666667
-pmo0.6	pmo0.7	3.63466666666667	104.4	4.11666666666667
-pmo0.5	Mylna:638	1.78566666666667	303.16	0.116666666666667
 
 ;DOMIARY
 
