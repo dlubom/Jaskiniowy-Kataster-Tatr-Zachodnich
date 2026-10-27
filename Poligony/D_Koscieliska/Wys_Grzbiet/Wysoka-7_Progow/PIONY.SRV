@@ -16,7 +16,7 @@ SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "Survex 1.4.24: historyczne DECL=0.819D zastapiono tymczasowym zalozeniem DECL=0; daty i pomiary bez zmian"
-PROCESSING      "Rozdzielono numeracje Posredniej W7-P500..501 w 1 rekordzie; rekonstrukcja bez protokolu, DAV bez zmian; doc/WYSOKA_POSREDNIA_NUMERACJA.md"
+PROCESSING      "Rozdzielono numeracje Posredniej W7-P500..501 w 1 rekordzie; rekonstrukcja bez protokolu, DAV bez zmian; _RAW/01/README.md"
 #]
 
 #prefix Wysoka7Progow
@@ -533,6 +533,6 @@ W7-515	W7-516	6.6	73	-31
 W7-516	W7-505	7	122	-44
 
 ; Posrednia: srodkowy otwor Wysoka7Progow:W7-P500 (rekonstrukcja; bez nowego fixu).
-W7-P500	W7-P501	7.2	72	-13 ; srodkowy otwor; bylo W7-500->W7-501; Posrednia, rekonstrukcja bez protokolu; DAV bez zmian
+W7-P500	W7-P501	7.2	72	-13 ; srodkowy otwor; bylo W7-500->W7-501
 
 ;W7-4	W7-5	2.8	0	90 ;pomiar powtorzony w IV.SRV:78

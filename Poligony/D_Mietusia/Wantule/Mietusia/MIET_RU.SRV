@@ -15,7 +15,7 @@ INSTRUMENT      "DistoX"
 SURVEY_DATE     "2022-10-21"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
-PROCESSING      "2026-10-27: tymczasowe #S L na decyzje koordynatora dla nierozstrzygnietych par; TODO przy rekordach; odczyty i stacje bez zmian; Survex pomija ich dlugosc"
+PROCESSING      "2026-10-27: #S L na ru_2-ru_3 wylacza powtorne liczenie dlugosci w Survex; szkic autora i trzy ponowne pomiary wspieraja decyzje; odczyty i stacje zachowano, tozsamosc ru_3/ru_4 niepotwierdzona"
 #]
 
 #prefix Mietusia
@@ -29,7 +29,10 @@ PROCESSING      "2026-10-27: tymczasowe #S L na decyzje koordynatora dla nierozs
 ; Otwor w tym pliku: Mietusia:ru_0 - fix/flag/note w Poligony/OTWORY.SRV
 ru_0	ru_1	2.68	238.9	-14.3
 ru_1	ru_2	3.61	232.4	-28.5
-ru_2	ru_3	4.44	266.6	-21.3	#S L	; odgalezienie slepe; TODO(PR146): tymczasowe L; szkic Rury 2022-10-21 ma rozstrzygnac ru_3/ru_4.
+; Szkic autora pokazuje 3/4 w jednym korytarzu; RAW rura_res_a/b/c.svx maja tu jedna noge ~4.45 m.
+; Szkic: https://github.com/RadostW/jaskinie/blob/1628dd63d6ad8ad12e51867684875d8ffd13bfdf/Drawings/Jaskinia_Mietusia/Scraps/PDFs/rura_top_plan.pdf
+; Dawny opis "odgalezienie slepe" nie ma potwierdzenia w szkicu; brak formalnego equate 3=4.
+ru_2	ru_3	4.44	266.6	-21.3	#S L	; Survex: dlugosc liczona w ru_2-ru_4; TODO(PR146): potwierdzic z autorami relacje ru_3/ru_4; stacji nie scalono.
 ru_2	ru_4	4.46	265.5	-21.4
 ru_4	ru_5	3.55	233.0	-22.3
 ru_5	ru_6	1.30	269.8	-39.1

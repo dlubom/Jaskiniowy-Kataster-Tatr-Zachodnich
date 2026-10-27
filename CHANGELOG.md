@@ -8,22 +8,15 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Zmienione
 
-- Na decyzję koordynatora tymczasowo oznaczono segmentem L 12 rekordów
-  obejmujących 13 nierozstrzygniętych par w Wysokiej, Bańdziochu, Koziej,
-  Miętusiej i Litworowej. Komentarze TODO wskazują brakujące dowody;
-  pomiary zachowano, a Survex pomija ich długość w statystyce.
-- Miętusia Wyżnia: usunięto drugi import MS/MRS wraz z wpisem WPJ;
-  Marmurowa: wspólny pień trzech odnóg zapisano raz, zgodnie ze skanami.
-- Miętusia Wyżnia i Goryczkowa: zachowano osiem ponownych pomiarów
-  potwierdzonych więzami RAW jako segment L (DUPLICATE w Survex),
-  aby nie liczyć ponownie długości tych samych odcinków w Survex.
-- CI: `survex-duplicates` blokuje PR na każdej parze geometrycznej przy progu 5%,
-  z pominięciem `SPLAY` i `DUPLICATE`; raport CSV jest zachowywany także po FAIL.
-- Windows CI: natywny Walls blokuje PR również na duplikatach par stacji.
-- POW_ORM: 66 odczytów → 11 DAV; RAW zachowano, rozbieżności przód–tył
-  zapisano przy pomiarach. Pośrednia: rozdzielono numerację w 9 rekordach
-  jako rekonstrukcję bez pierwotnego protokołu.
-
+- Usunięto wtórny import Miętusiej Wyżniej i powtórzony pień Marmurowej;
+  POW_ORM uśredniono z 66 do 11 DAV. Rozdzielono numerację Pośredniej
+  jako rekonstrukcję wspartą planem, bez pierwotnego protokołu.
+- Segmentem L wyłączono w Survex ponowne liczenie długości ośmiu pomiarów
+  Miętusiej Wyżniej/Goryczkowej oraz odcinka Rury; zachowano odczyty.
+  Dalsze 11 rekordów w Wysokiej, Bańdziochu, Koziej i Litworowej ma
+  tymczasowe L na decyzję koordynatora, z konkretnymi TODO przy danych.
+- CI blokuje duplikaty par stacji w natywnym Walls oraz pary geometryczne
+  Survex przy progu 5%, z pominięciem SPLAY i DUPLICATE; zachowuje raport CSV.
 
 ## [v1.4.10] - 2026-10-25
 
