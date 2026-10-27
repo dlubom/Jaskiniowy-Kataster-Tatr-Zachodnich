@@ -39,11 +39,13 @@ Odcinek Mylnej `638–639` pozostaje wyłączony jak w źródle; przyczyna niezn
 
 ## Powierzchnia, dowiązanie i deklinacja
 
-`POW_ORM.SRV` przywraca wszystkie 66 odczytów (po trzy w obie strony)
-i historyczne dowiązania `p1.0 = Oblazkowa:0.0`, `p1.11 = Raptawicka:1.0`,
-obecne przed usunięciem aktywnego pliku w `5021fd9`. Lokalnego źródłowego
-`#fix` nie przeniesiono. Jedynym zewnętrznym fixem systemu jest Raptawicka
-z GPS Katastra; pozostałe otwory są wynikami tej samej sieci.
+2026-10-25 przywrócono do `POW_ORM.SRV` wszystkie 66 odczytów (po trzy
+w obie strony) i historyczne dowiązania `p1.0 = Oblazkowa:0.0`,
+`p1.11 = Raptawicka:1.0`, obecne przed usunięciem aktywnego pliku w `5021fd9`.
+2026-10-27 aktywne grupy sześciu odczytów uśredniono do 11 DAV; metoda
+oraz rozbieżności są opisane niżej. Oba dowiązania zachowano. Lokalnego
+źródłowego `#fix` nie przeniesiono. Jedynym zewnętrznym fixem systemu jest
+Raptawicka z GPS Katastra; pozostałe otwory są wynikami tej samej sieci.
 
 Data pomiaru powierzchniowego nie jest potwierdzona. Czerwiec 2015 jest
 **założeniem obliczeniowym**, opartym na wzmiance PIG o dowiązaniu otworów,
@@ -57,22 +59,77 @@ wartości IGRF14 z czerwca 2015, z jednakową wagą dni. Survex 1.4.24,
 Różnica azymutów wektora kontrolnego dla dziennej daty i `DECL=0` usuwa
 zbieżność siatki; kompilator stosuje ją osobno.
 
-Nie uśredniano odczytów powierzchniowych w pliku. Survex 1.4.24 uśrednia
-kolejne trójki tego samego kierunku; kierunki przeciwne pozostają osobno
+W stanie z 2026-10-25 nie uśredniano odczytów powierzchniowych w pliku.
+Survex 1.4.24 uśredniał kolejne trójki tego samego kierunku; kierunki przeciwne
+pozostawały osobno
 ([`netbits.c:341–365`](https://github.com/ojwb/survex/blob/878202413cac5cbf41b88ee82c0cab72b97725ce/src/netbits.c#L341-L365)).
 `#segment P` oznacza powierzchnię w Survex i grupę w Walls.
-Niezależne rozwiązania powierzchnią i podziemiami różnią się przy Obłazkowej
-o około 4,20 m (4,13 m poziomo, 0,77 m pionowo). Wyrównanie rozdziela tę
-rozbieżność; dokładność bezwzględna pozostaje nieznana. Historyczne lokalne
+Kontrola stanu z 2026-10-25 wykazała różnicę niezależnych rozwiązań
+powierzchnią i podziemiami przy Obłazkowej około 4,20 m (4,13 m poziomo,
+0,77 m pionowo). Wyrównanie rozdzielało tę rozbieżność; dokładność
+bezwzględna pozostaje nieznana. Historyczne lokalne
 wysokości miały nieznany datum; po dowiązaniu do GPS v1.3.2 wysokości sieci
 odnoszą się do kotwicy ALS w PL-KRON86-NH.
 Brakującego pomiaru powierzchniowego Mylna–Obłazkowa autor nie odnalazł w 2020 r.
 
 Dla tego systemu referencją współrzędnych Best w GPS Katastrze i eksportów
-JKTZ jest Survex 1.4.24. Natywny Walls daje różnice do około 0,70 m,
-wynikające z innych wag i obsługi powtórzeń. Kontrolna emulacja modelu
+JKTZ jest Survex 1.4.24. W stanie sprzed uśrednienia natywny Walls dawał
+różnice do około 0,70 m, wynikające z innych wag i obsługi powtórzeń. Kontrolna emulacja modelu
 Walls w Survex odtworzyła jego wynik z maksymalną różnicą 3D poniżej 8 mm;
 był to test diagnostyczny, bez przyjmowania tych wag w danych produkcyjnych.
+
+## Uśrednienie POW_ORM — 2026-10-27
+
+Na polecenie koordynatora każdą kolejną źródłową grupę trzech odczytów
+przód i trzech tył opracowano jako jedną celową. Nie jest to usuwanie
+niezależnych pomiarów ani rozstrzygnięcie konfliktów nazw Wysokiej.
+Nie zmieniono oryginalnych plików ani archiwów w tej paczce; edytowano
+wyłącznie niniejszą dokumentację. `SJP_P/POW ORM.SRV` nadal zawiera wszystkie
+66 odczytów. SHA-256 tego pliku:
+`31ec63a60dedb6245df108ee82eff085c7d70a4743f98430936a39e17beb9f88`.
+
+Aktywne dane opracowano istniejącym helperem `average-shots`: odczyty tył
+odwrócono do kierunku pierwszego odczytu (`A = (A + 180) mod 360`, `V = -V`),
+a następnie z sześciu odczytów obliczono średnią arytmetyczną odległości,
+średnią kołową azymutu i średnią arytmetyczną inklinacji. Wszystkie odczyty
+miały równą wagę na etapie uśredniania. Wynik zapisano jako jeden DAV
+z dokładnością zapisu 0,001 m oraz 0,01°. To format liczb, nie deklaracja
+dokładności pomiaru. Nie zmieniono nazw stacji, prefiksów, `DECL=4.83`,
+nieznanej daty/instrumentu ani dwóch zerowych dowiązań końców.
+
+Rozbieżności poniżej są różnicą średniej trzech odczytów tył, po odwróceniu
+do kierunku przód, minus średnia trzech odczytów przód. Różnica azymutów
+jest zawinięta do przedziału −180…180°. Wiersze odnoszą się do niezmienionego
+`SJP_P/POW ORM.SRV`; obejmują wszystkie 66 odczytów. Podane cyfry służą
+odtwarzalności obliczeń, nie ocenie dokładności terenowej.
+
+| Odcinek | Wiersze RAW | ΔD [mm] | ΔA [°] | ΔV [°] |
+| --- | ---: | ---: | ---: | ---: |
+| `p1.0–p1.1` | 6–11 | +7.333 | +0.260 | -0.003 |
+| `p1.1–p1.2` | 12–17 | +8.667 | +0.543 | -0.050 |
+| `p1.2–p1.3` | 18–23 | -24.667 | -0.337 | -0.107 |
+| `p1.3–p1.4` | 24–29 | -6.333 | -0.337 | -0.167 |
+| `p1.4–p1.5` | 30–35 | +12.667 | -0.430 | -0.020 |
+| `p1.5–p1.6` | 36–41 | +8.333 | -0.793 | -0.067 |
+| `p1.6–p1.7` | 42–47 | -2.000 | +0.140 | +0.010 |
+| `p1.7–p1.8` | 48–53 | -10.667 | -0.420 | +0.103 |
+| `p1.8–p1.9` | 54–59 | -19.333 | -0.493 | -0.150 |
+| `p1.9–p1.10` | 60–65 | -3.667 | +0.450 | +0.963 |
+| `p1.10–p1.11` | 66–71 | +17.333 | +0.717 | +3.187 |
+
+Największa różnica inklinacji dotyczy `p1.10–p1.11`: średnia przód
+−48,816667°, średnia odwróconego tyłu −45,630000°, różnica +3,186667°.
+Pojedynczy wynik DAV ma inklinację −47,22°. Uśrednienie nie wyjaśnia
+rozbieżności, nie wskazuje błędnej trójki i nie potwierdza prawidłowej
+kalibracji. Przyczyna pozostaje nieustalona; odczyty źródłowe i obie
+średnie kierunkowe pozostają rozliczone. Nie wprowadzono korekty ani
+wyłączenia odczytów na podstawie samego domknięcia.
+
+Redukcja liczby obserwacji zmienia wagi sieci względem wcześniejszego
+modelu. Nie przypisano średniej automatycznie sześciokrotnej wagi ani
+wyższej klasy dokładności. `#segment P` wyłącza długość powierzchniową
+ze statystyki jaskiń w Survex, ale sam nie wyłącza jej w Geometry Review
+Walls; wybór segmentów dla Adjusted Totals jest osobną czynnością.
 
 ## Stacje otworów
 

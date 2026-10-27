@@ -6,6 +6,13 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+### Zmienione
+
+- POW_ORM: uśredniono 66 odczytów powierzchniowych Obłazkowa–Raptawicka
+  (po trzy przód i tył) do 11 DAV. Zachowano oryginalne materiały RAW
+  i dowiązania końców; w dokumentacji paczki zapisano różnice przód–tył,
+  w tym niewyjaśnioną rozbieżność inklinacji 3,19° ostatniego odcinka.
+
 ## [v1.4.10] - 2026-10-25
 
 ### Zmienione
