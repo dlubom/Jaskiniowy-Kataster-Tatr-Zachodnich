@@ -3,7 +3,7 @@ CAVE_ID         "WPJ:KOZIAA"
 CAVE_NAME       "Kozia"
 SURVEY_ID       "KOZIA"
 SURVEY_NAME     "Kozia"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-27"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -16,6 +16,7 @@ SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "Survex 1.4.24: historyczne DECL=0.819D zastapiono tymczasowym zalozeniem DECL=0; daty i pomiary bez zmian"
+PROCESSING      "2026-10-27: tymczasowe #S L na decyzje koordynatora dla nierozstrzygnietych par; TODO przy rekordach; odczyty i stacje bez zmian; Survex pomija ich dlugosc"
 #]
 
 #prefix Kozia
@@ -99,7 +100,7 @@ k074	k075	1.49	59.93	27.99
 k075	k076	1.62	125.05	-20.95
 k076	k077	2.19	74.05	-40.10
 k077	k078	1.66	266.86	-9.00
-k078	k079	1.66	86.86	9.00
+k078	k079	1.66	86.86	9.00	#S L	; TODO(PR146): tymczasowe L; brak dziennika k077-k079 wyjasniajacego powrot po korekcie 2914996.
 k079	k080	1.17	165.20	-20.04
 k080	k081	2.73	90.69	-24.02
 k081	k082	1.49	65.01	-10.05
@@ -166,7 +167,7 @@ k141	k142	11.00	220.11	-80.00
 k142	k143	6.50	242.97	46.84
 k143	k144	4.30	252.06	-39.61
 k144	k145	5.99	260.94	59.43
-k145	k146	5.99	80.94	-59.43
+k145	k146	5.99	80.94	-59.43	#S L	; TODO(PR146): tymczasowe L; brak dziennika k144-k146 wyjasniajacego powrot po korekcie 2914996.
 k146	k147	4.90	279.02	-61.19
 k147	k148	2.70	287.84	-70.21
 k148	k149	1.00	233.93	0.00

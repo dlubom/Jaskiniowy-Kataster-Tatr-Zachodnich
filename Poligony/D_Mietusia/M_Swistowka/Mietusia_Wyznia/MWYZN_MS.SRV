@@ -3,7 +3,7 @@ CAVE_ID         "T.D-10.01"
 CAVE_NAME       "Jaskinia Mietusia Wyznia"
 SURVEY_ID       "MS"
 SURVEY_NAME     "MR Studnia"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-27"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Pawel Gogolak"
 COORDINATOR_EMAIL "pafffel@gmail.com"
@@ -15,6 +15,7 @@ INSTRUMENT      "DistoXBLE"
 SURVEY_DATE     "2024-07-06"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "usunieto powtorny import MRS; 3 ponowne pomiary OT zachowano jako segment L"
 #]
 
 #prefix MietusiaWyznia
@@ -28,16 +29,19 @@ ot_17	ms_2	0	0	0
 ot_18	ms_5	0	0	0
 ot_19	ms_6	0	0	0
 
+; Jeden import: _RAW/01/mr_studnia.svx:24-39 (11 nog, 5 splajow).
+; Usunieto kopie MWYZN_MRS: _RAW/01/mylna_rura_studnia.svx:25-40 ma ten sam blok mr_studnia.
+; _RAW/01/mietusia_wyznia.svx:36 wlacza tylko mr_studnia.
 ; === Pomiary ===
-ms_0	ms_2	4.33	18.0	27.2
+ms_0	ms_2	4.33	18.0	27.2	#S L	; Ponowny pomiar ot_16-ot_17; Survex: dlugosc w OT (2024-02-12); _RAW/01/mietusia_wyznia.svx:82-83.
 
 ms_2	ms_3	2.62	204.2	-62.2
 
 ms_3	ms_4	2.66	307.5	-69.1
 
-ms_2	ms_5	3.44	269.1	17.3	; ciag glowny
+ms_2	ms_5	3.44	269.1	17.3	#S L	; ciag glowny; ponowny pomiar ot_17-ot_18; Survex: dlugosc w OT (2024-02-12); _RAW/01/mietusia_wyznia.svx:81-82.
 
-ms_5	ms_6	5.6	52.9	25.3
+ms_5	ms_6	5.6	52.9	25.3	#S L	; Ponowny pomiar ot_18-ot_19; Survex: dlugosc w OT (2024-02-12); _RAW/01/mietusia_wyznia.svx:81,84.
 ms_5	ms_7	2.5	333.6	-41.4
 
 ms_7	ms_8	1.53	351.5	-47.3

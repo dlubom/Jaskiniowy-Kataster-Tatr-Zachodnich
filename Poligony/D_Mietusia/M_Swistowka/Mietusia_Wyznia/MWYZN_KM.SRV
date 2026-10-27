@@ -3,7 +3,7 @@ CAVE_ID         "T.D-10.01"
 CAVE_NAME       "Jaskinia Mietusia Wyznia"
 SURVEY_ID       "KM"
 SURVEY_NAME     "Komin"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-27"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Pawel Gogolak"
 COORDINATOR_EMAIL "pafffel@gmail.com"
@@ -15,6 +15,7 @@ INSTRUMENT      "DistoXBLE"
 SURVEY_DATE     "2024-07-06"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "ponowne pomiary nog z jawnymi wiezami RAW zachowano jako segment L; Survex: dlugosc liczona w starszej sesji"
 #]
 
 #prefix MietusiaWyznia
@@ -28,8 +29,8 @@ mr_27	km_1	0	0	0
 mr_b	km_2	0	0	0
 
 ; === Pomiary ===
-km_0	km_1	4.85	105.3	36.7	; obejscie rury ciag glowny
-km_0	km_2	4.16	112.7	9.2	; rura ciag glowny
+km_0	km_1	4.85	105.3	36.7	#S L	; obejscie rury ciag glowny; ponowny pomiar mr_28-mr_27; Survex: dlugosc w MR (2024-02-13); _RAW/01/mietusia_wyznia.svx:47,64,66.
+km_0	km_2	4.16	112.7	9.2	#S L	; rura ciag glowny; ponowny pomiar mr_28-mr_b; Survex: dlugosc w MR (2024-02-13); _RAW/01/mietusia_wyznia.svx:47,64-65.
 km_0	km_3	5.49	144.6	43.9	; komin
 
 km_3	km_4	11.81	139.4	59.8

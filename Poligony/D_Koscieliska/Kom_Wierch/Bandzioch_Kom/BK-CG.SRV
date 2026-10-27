@@ -3,7 +3,7 @@ CAVE_ID         "WPJ:BK-CGM"
 CAVE_NAME       "Ciag Glowny Miedzyotworowy"
 SURVEY_ID       "BK-CG"
 SURVEY_NAME     "Ciag Glowny - Dolny Otwor - Gorny Otwor"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-27"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -15,6 +15,7 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+PROCESSING      "2026-10-27: tymczasowe #S L na decyzje koordynatora dla nierozstrzygnietych par; TODO przy rekordach; odczyty i stacje bez zmian; Survex pomija ich dlugosc"
 #]
 
 #prefix BandziochKom
@@ -119,8 +120,8 @@ N	084	3.34	-6.57	4.61
 093	094	2.01	-4.58	6.85
 094	095	1.36	-3.72	1.92
 095	096	-0.67	-4.77	-4.69
-096	O	5.91	-3.16	5.61
-O	098	-5.91	3.16	-5.61
+096	O	5.91	-3.16	5.61	#S L	; TODO(PR146): tymczasowe L; brak klucza 096/097/098/O001; w Survex pozostawiono BK-C5D-S:O-O001.
+O	098	-5.91	3.16	-5.61	#S L	; TODO(PR146): tymczasowe L; brak klucza 096/097/098/O001; w Survex pozostawiono BK-C5D-S:O-O001.
 098	099	5.92	-1.71	4.14
 099	100	5.96	-5.4	8.82
 100	101	4.96	-1.33	5.22

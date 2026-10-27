@@ -99,17 +99,16 @@ Timeouts, errors, warnings and unrecognized states fail. Only the startup
 “Tip of the Day” is automatically dismissed. Default timeout is 180 seconds
 (`--timeout`, at most 1800). Never reuse old results as proof of a fresh run.
 
-**Duplicate-vector audit is separate**, as agreed for CI. Normal compilation
-uses Walls' startup default, `Look for Duplicates` off. Add `--duplicates` and
-use a new evidence directory for the stricter audit; a duplicate dialog fails
-that run and records both source locations. Do not average or discard independent
-surveys merely to make this check pass.
+**Windows CI requires `--duplicates`**: a duplicate dialog fails the job and
+records both source locations. Local calls without this flag use Walls' startup
+default, `Look for Duplicates` off. Use a new evidence directory for every run.
+Do not average or discard independent surveys merely to make this check pass.
 
 ## CI and maintenance
 
 `walls-windows` installs the pinned MSI, builds this driver, runs real consumer fixtures (success, syntax error, duplicate fix warning, duplicate leg,
 timeout and recovery),
-then recompiles Kataster. Failures block the PR package. Evidence is uploaded
+then recompiles Kataster with duplicate detection enabled. Failures block the PR package. Evidence is uploaded
 on success and failure, including checkout and PR-head SHAs. This job explicitly checks out PR head;
 verify both recorded SHAs equal the final pushed SHA on PR runs; the existing Windows Survex job is a separate check.
 

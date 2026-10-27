@@ -41,14 +41,14 @@ def runner(monkeypatch, action="ok"):
     monkeypatch.setattr("jktz.walls.subprocess.run", run)
 
 
-def invoke(tmp_path, monkeypatch, action="ok"):
+def invoke(tmp_path, monkeypatch, action="ok", *, duplicates=False):
     source = project(tmp_path / "source")
     exe = tmp_path / "Walls32.exe"
     exe.write_bytes(b"compiler")
     driver = tmp_path / "driver.exe"
     driver.write_bytes(b"driver")
     runner(monkeypatch, action)
-    report = validate(source, exe, driver, tmp_path / "evidence")
+    report = validate(source, exe, driver, tmp_path / "evidence", duplicates=duplicates)
     return report
 
 
@@ -72,8 +72,11 @@ def test_success_keeps_fresh_evidence_and_preserves_sources(tmp_path, monkeypatc
 @pytest.mark.parametrize(
     "action", ["missing", "warning", "changed", "error", "false-success", "timeout"]
 )
-def test_never_passes_incomplete_warning_changed_or_failed_run(tmp_path, monkeypatch, action):
-    report = invoke(tmp_path, monkeypatch, action)
+@pytest.mark.parametrize("duplicates", [False, True])
+def test_never_passes_incomplete_warning_changed_or_failed_run(
+    tmp_path, monkeypatch, action, duplicates
+):
+    report = invoke(tmp_path, monkeypatch, action, duplicates=duplicates)
     assert report["status"] == "FAIL"
     assert report["reason"]
     assert (tmp_path / "evidence" / "result.json").is_file()

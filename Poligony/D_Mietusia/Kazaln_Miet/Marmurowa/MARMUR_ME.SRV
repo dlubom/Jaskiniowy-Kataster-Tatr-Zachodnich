@@ -3,7 +3,7 @@ CAVE_ID         "T.E-11.05"
 CAVE_NAME       "Jaskinia Marmurowa"
 SURVEY_ID       "ME"
 SURVEY_NAME     "Meander KKTJ"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-27"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -15,6 +15,7 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "1987-04-01"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "wspolne dojscie 0-1-2 zapisano raz w MARMUR_KK.SRV wedlug skanow img182-184"
 #]
 
 #prefix Marmurowa
@@ -22,10 +23,8 @@ PROCESSING      "zachowano istniejacy aktywny plik SRV"
 #units A=D V=D
 #date 1987-04-01
 
-;Meander KKTJ - dowiazany do stacji Marmurowa:8 (ciag glowny)
-8	me_1	3.0	31	58
-me_1	me_2	4.95	345	24
-me_2	me_3	6.4	278	-20
+;Meander KKTJ; wspolne dojscie zapisano raz w MARMUR_KK.SRV.
+kk_2	me_3	6.4	278	-20	; bylo me_2; zrodlowa 2 wspolna z kk_2 (_RAW/01/img184.jpg).
 me_3	me_4	7.3	270	-42
 me_4	me_5	2.5	180	-52
 me_5	me_6	3.05	265	35

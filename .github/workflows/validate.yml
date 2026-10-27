@@ -156,7 +156,7 @@ jobs:
           EXPECTED_SURVEX_VERSION: ${{ steps.survex.outputs.version }}
         run: |
           $expected = [regex]::Escape($env:EXPECTED_SURVEX_VERSION)
-          foreach ($tool in @('cavern', 'survexport')) {
+          foreach ($tool in @('cavern', 'survexport', 'dump3d')) {
             $toolPath = (Get-Command $tool -ErrorAction Stop).Source
             $banner = & $toolPath --version
             if ($LASTEXITCODE -ne 0) { throw "$tool --version failed" }
@@ -176,6 +176,26 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: uv run jktz-validate
+
+      - name: Install Survex Duplicates binary
+        uses: ./.github/actions/install-survex-duplicates
+
+      - name: Test Survex duplicate gate with published binary
+        env:
+          JKTZ_REQUIRE_SURVEX_DUPLICATES: "1"
+        run: uv run pytest -q tests/test_survex_duplicates.py
+
+      - name: Reject Survex geometric duplicates
+        run: uv run jktz-survex-duplicates --output logs/survex-duplicates/pairs.csv
+
+      - name: Upload Survex duplicate report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: survex-duplicates-${{ matrix.os }}
+          path: logs/survex-duplicates/
+          if-no-files-found: error
+          retention-days: 14
 
   walls-windows:
     name: walls-windows
@@ -205,10 +225,10 @@ jobs:
         run: |
           New-Item -ItemType Directory -Force logs/walls | Out-Null
           uv run pytest -q tests/test_walls_native.py --basetemp=logs/walls/fixtures
-      - name: Recompile Kataster in Walls
+      - name: Recompile Kataster in Walls and reject duplicates
         shell: pwsh
         run: |
-          uv run jktz-walls-validate --walls "$env:WALLS_EXE" --driver "$env:WALLS_DRIVER" --scratch-root "$env:WALLS_SCRATCH_ROOT" --output logs/walls/kataster
+          uv run jktz-walls-validate --duplicates --walls "$env:WALLS_EXE" --driver "$env:WALLS_DRIVER" --scratch-root "$env:WALLS_SCRATCH_ROOT" --output logs/walls/kataster
       - name: Record tested revision
         if: always()
         shell: pwsh

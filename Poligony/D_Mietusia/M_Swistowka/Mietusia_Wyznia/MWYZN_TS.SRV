@@ -3,7 +3,7 @@ CAVE_ID         "T.D-10.01"
 CAVE_NAME       "Jaskinia Mietusia Wyznia"
 SURVEY_ID       "TS"
 SURVEY_NAME     "Trzy Syfony"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-27"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Pawel Gogolak"
 COORDINATOR_EMAIL "pafffel@gmail.com"
@@ -15,6 +15,7 @@ INSTRUMENT      "DistoX2"
 SURVEY_DATE     "2024-02-16"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "ponowne pomiary nog z jawnymi wiezami RAW zachowano jako segment L; Survex: dlugosc liczona w starszej sesji"
 #]
 
 #prefix MietusiaWyznia
@@ -27,7 +28,7 @@ sd_30	ts_0	0	0	0
 sd_29	ts_1	0	0	0
 
 ; === Pomiary ===
-ts_0	ts_1	4.11	97.0	11.0
+ts_0	ts_1	4.11	97.0	11.0	#S L	; Ponowny pomiar sd_30-sd_29; Survex: dlugosc w SD (2024-02-12); _RAW/01/mietusia_wyznia.svx:57-58.
 
 ts_1	ts_2	2.9	193.4	26.4
 ts_1	-	2.04	216.7	9.5

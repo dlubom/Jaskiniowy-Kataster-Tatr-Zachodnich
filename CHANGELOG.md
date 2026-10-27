@@ -6,6 +6,23 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v1.4.11] - 2026-10-27
+
+### Zmienione
+
+- Usunięto wtórny import Miętusiej Wyżniej i powtórzony pień Marmurowej;
+  POW_ORM uśredniono z 66 do 11 DAV. Rozdzielono numerację Pośredniej
+  jako rekonstrukcję wspartą planem, bez pierwotnego protokołu.
+- Oznaczono trzy otwory Pośredniej flagą `ENTRANCE` i nazwami, bez
+  dodawania `#fix`; położenie pozostaje wyliczane z poligonu.
+  Dolny otwór ma alias `W7-PD = W7-505/1` dla zgodności flag z Survex.
+- Segmentem L wyłączono w Survex ponowne liczenie długości ośmiu pomiarów
+  Miętusiej Wyżniej/Goryczkowej oraz odcinka Rury; zachowano odczyty.
+  Dalsze 11 rekordów w Wysokiej, Bańdziochu, Koziej i Litworowej ma
+  tymczasowe L na decyzję koordynatora, z konkretnymi TODO przy danych.
+- CI blokuje duplikaty par stacji w natywnym Walls oraz pary geometryczne
+  Survex przy progu 5%, z pominięciem SPLAY i DUPLICATE; zachowuje raport CSV.
+
 ## [v1.4.10] - 2026-10-25
 
 ### Zmienione
