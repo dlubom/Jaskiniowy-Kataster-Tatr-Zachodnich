@@ -18,6 +18,7 @@ pytestmark = pytest.mark.skipif(
     ("body", "duplicates", "expected", "message"),
     [
         ("a b 1 0 0\n", False, "PASS", "COMPILE_COMPLETE"),
+        ("a b 1 0 0\n", True, "PASS", "COMPILE_COMPLETE"),
         ("a b invalid 0 0\n", False, "FAIL", "Compile aborted:  DATA"),
         ("#fix a 0 0 0\n#fix a 0 0 0\na b 1 0 0\n", False, "FAIL", "non-fatal errors"),
         ("a b 1 0 0\na b 1 0 0\n", True, "FAIL", "Duplicate Name Pair"),

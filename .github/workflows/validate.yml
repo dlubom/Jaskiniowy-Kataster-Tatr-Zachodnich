@@ -205,10 +205,10 @@ jobs:
         run: |
           New-Item -ItemType Directory -Force logs/walls | Out-Null
           uv run pytest -q tests/test_walls_native.py --basetemp=logs/walls/fixtures
-      - name: Recompile Kataster in Walls
+      - name: Recompile Kataster in Walls and reject duplicates
         shell: pwsh
         run: |
-          uv run jktz-walls-validate --walls "$env:WALLS_EXE" --driver "$env:WALLS_DRIVER" --scratch-root "$env:WALLS_SCRATCH_ROOT" --output logs/walls/kataster
+          uv run jktz-walls-validate --duplicates --walls "$env:WALLS_EXE" --driver "$env:WALLS_DRIVER" --scratch-root "$env:WALLS_SCRATCH_ROOT" --output logs/walls/kataster
       - name: Record tested revision
         if: always()
         shell: pwsh

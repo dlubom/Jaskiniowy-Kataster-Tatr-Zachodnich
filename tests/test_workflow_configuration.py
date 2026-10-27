@@ -1,3 +1,4 @@
+import shlex
 from pathlib import Path
 
 
@@ -42,7 +43,9 @@ def test_native_walls_is_a_package_gate_with_persistent_failure_evidence() -> No
     assert "walls-windows" in workflow["jobs"]["pr-release-package"]["needs"]
     steps = job["steps"]
     assert any("tests/test_walls_native.py" in s.get("run", "") for s in steps)
-    assert any("jktz-walls-validate" in s.get("run", "") for s in steps)
+    compile_step = next(s for s in steps if "jktz-walls-validate" in s.get("run", ""))
+    assert "--duplicates" in shlex.split(compile_step["run"])
+    assert not compile_step.get("continue-on-error")
     upload = next(s for s in steps if s.get("uses", "").startswith("actions/upload-artifact"))
     assert upload["if"] == "always()"
     assert upload["with"]["if-no-files-found"] == "error"

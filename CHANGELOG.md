@@ -8,6 +8,7 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Zmienione
 
+- Windows CI: natywny Walls blokuje PR również na duplikatach par stacji.
 - POW_ORM: 66 odczytów → 11 DAV; RAW zachowano, rozbieżności przód–tył
   zapisano przy pomiarach. Pośrednia: rozdzielono numerację w 9 rekordach
   jako rekonstrukcję bez pierwotnego protokołu.
