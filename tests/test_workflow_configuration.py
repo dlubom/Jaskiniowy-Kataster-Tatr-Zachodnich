@@ -49,3 +49,30 @@ def test_native_walls_is_a_package_gate_with_persistent_failure_evidence() -> No
     upload = next(s for s in steps if s.get("uses", "").startswith("actions/upload-artifact"))
     assert upload["if"] == "always()"
     assert upload["with"]["if-no-files-found"] == "error"
+
+
+def test_survex_duplicates_blocks_validation_and_preserves_failed_report() -> None:
+    import yaml
+
+    root = Path(__file__).parents[1]
+    workflow = yaml.safe_load((root / ".github/workflows/validate.yml").read_text())
+    job = workflow["jobs"]["validate"]
+    assert set(job["strategy"]["matrix"]["os"]) == {"ubuntu-latest", "windows-latest"}
+    assert not job.get("continue-on-error")
+    steps = job["steps"]
+    install = next(
+        s for s in steps if s.get("uses") == "./.github/actions/install-survex-duplicates"
+    )
+    gate = next(s for s in steps if "jktz-survex-duplicates" in s.get("run", ""))
+    full = next(s for s in steps if s.get("run") == "uv run jktz-validate")
+    assert steps.index(install) < steps.index(gate)
+    assert steps.index(full) < steps.index(gate)
+    assert not gate.get("continue-on-error")
+    smoke = next(s for s in steps if "tests/test_survex_duplicates.py" in s.get("run", ""))
+    assert smoke["env"]["JKTZ_REQUIRE_SURVEX_DUPLICATES"] == "1"
+    assert steps.index(install) < steps.index(smoke) < steps.index(gate)
+    upload = next(s for s in steps if s.get("name") == "Upload Survex duplicate report")
+    assert upload["if"] == "always()"
+    assert upload["with"]["path"] == "logs/survex-duplicates/"
+    assert "matrix.os" in upload["with"]["name"]
+    assert upload["with"]["if-no-files-found"] == "error"

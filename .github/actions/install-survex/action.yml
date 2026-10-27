@@ -43,7 +43,7 @@ runs:
       env:
         EXPECTED_SURVEX_VERSION: ${{ inputs.version }}
       run: |
-        for tool in cavern survexport; do
+        for tool in cavern survexport dump3d; do
           banner="$("$HOME/survex/bin/$tool" --version)"
           echo "$banner"
           if [[ "$banner" != *" - Survex $EXPECTED_SURVEX_VERSION" ]]; then

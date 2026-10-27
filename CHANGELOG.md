@@ -8,6 +8,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Zmienione
 
+- CI: `survex-duplicates` blokuje PR na każdej parze geometrycznej przy progu 5%,
+  z pominięciem `SPLAY` i `DUPLICATE`; raport CSV jest zachowywany także po FAIL.
 - Windows CI: natywny Walls blokuje PR również na duplikatach par stacji.
 - POW_ORM: 66 odczytów → 11 DAV; RAW zachowano, rozbieżności przód–tył
   zapisano przy pomiarach. Pośrednia: rozdzielono numerację w 9 rekordach
