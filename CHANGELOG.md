@@ -6,6 +6,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v1.4.11] - 2026-10-27
+
 ### Zmienione
 
 - Usunięto wtórny import Miętusiej Wyżniej i powtórzony pień Marmurowej;
