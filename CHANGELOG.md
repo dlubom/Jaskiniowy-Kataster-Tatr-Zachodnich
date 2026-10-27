@@ -8,6 +8,11 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Zmienione
 
+- Miętusia Wyżnia: usunięto drugi import MS/MRS wraz z wpisem WPJ;
+  Marmurowa: wspólny pień trzech odnóg zapisano raz, zgodnie ze skanami.
+- Miętusia Wyżnia i Goryczkowa: zachowano osiem ponownych pomiarów
+  potwierdzonych więzami RAW jako segment L (DUPLICATE w Survex),
+  aby nie liczyć ponownie długości tych samych odcinków w Survex.
 - CI: `survex-duplicates` blokuje PR na każdej parze geometrycznej przy progu 5%,
   z pominięciem `SPLAY` i `DUPLICATE`; raport CSV jest zachowywany także po FAIL.
 - Windows CI: natywny Walls blokuje PR również na duplikatach par stacji.

@@ -3,7 +3,7 @@ CAVE_ID         "T.D-16.01"
 CAVE_NAME       "Jaskinia Goryczkowa"
 SURVEY_ID       "G5"
 SURVEY_NAME     "Sekcja G5"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-27"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Pawel Gogolak"
 COORDINATOR_EMAIL "pafffel@gmail.com"
@@ -15,6 +15,7 @@ INSTRUMENT      "DistoX"
 SURVEY_DATE     "2012-03-24"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "ponowny pomiar G5:43-8 zachowano z #S L; RAW g4/g5 i equates index.th potwierdzaja ten sam odcinek w dwoch sesjach; Survex: dlugosc liczona raz"
 #]
 
 #prefix2 Goryczkowa
@@ -38,5 +39,5 @@ PROCESSING      "zachowano istniejacy aktywny plik SRV"
 35g	35h	262.9	-43.8	2.61	<0.1,0.7,0.3,0.7>
 35h	35i	278.9	-64.4	3.56	<0.5,0.9,0.3,1>
 43	35i	342.3	72.8	4.42	<0.5,0.5,1,0.2>
-43	8	256.7	-59.4	11.02	<0.4,2,1,2>
+43	8	256.7	-59.4	11.02	<0.4,2,1,2>	#S L	; ponowny pomiar 2012-03-24 tego samego odcinka co G4 2012-03-11; Survex: dlugosc liczona raz, oba pomiary zachowane; _RAW/01/Goriczkova/data/g4.th:5-7,24; g5.th:5-8,34; index.th:25,27-28
 4	24	85.9	10.6	3.64	<0.8,0,0.4,0.4>
