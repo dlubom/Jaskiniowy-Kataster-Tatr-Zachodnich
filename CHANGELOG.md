@@ -11,6 +11,9 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 - Usunięto wtórny import Miętusiej Wyżniej i powtórzony pień Marmurowej;
   POW_ORM uśredniono z 66 do 11 DAV. Rozdzielono numerację Pośredniej
   jako rekonstrukcję wspartą planem, bez pierwotnego protokołu.
+- Oznaczono trzy otwory Pośredniej flagą `ENTRANCE` i nazwami, bez
+  dodawania `#fix`; położenie pozostaje wyliczane z poligonu.
+  Dolny otwór ma alias `W7-PD = W7-505/1` dla zgodności flag z Survex.
 - Segmentem L wyłączono w Survex ponowne liczenie długości ośmiu pomiarów
   Miętusiej Wyżniej/Goryczkowej oraz odcinka Rury; zachowano odczyty.
   Dalsze 11 rekordów w Wysokiej, Bańdziochu, Koziej i Litworowej ma
