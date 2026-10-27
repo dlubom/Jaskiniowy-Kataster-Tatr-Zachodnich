@@ -83,14 +83,14 @@ W-*/2/67	W-*/2/68	3.7	295	-22
 W-*/2/68	W-*/2/69	8.3	282	-48
 
 ; Posrednia: W7-P500..507 to rekonstrukcja bez oryginalnego protokolu.
-W7-P501	W7-P502	7.3	309	-18
-W7-P502	W7-P503	2.03	28	-45
-W7-P503	W7-P504	3.9	315	-3
-W7-P504	W7-P505	3.1	0	-90
-W7-P505	W7-P506	5.9	52	36
-W7-P506	W7-P507	8	245	55	; gorny otwor
+W7-P501	W7-P502	7.3	309	-18 ; bylo W7-501->W7-502; Posrednia, rekonstrukcja bez protokolu; DAV bez zmian
+W7-P502	W7-P503	2.03	28	-45 ; bylo W7-502->W7-503; Posrednia, rekonstrukcja bez protokolu; DAV bez zmian
+W7-P503	W7-P504	3.9	315	-3 ; bylo W7-503->W7-504; Posrednia, rekonstrukcja bez protokolu; DAV bez zmian
+W7-P504	W7-P505	3.1	0	-90 ; bylo W7-504->W7-505; Posrednia, rekonstrukcja bez protokolu; DAV bez zmian
+W7-P505	W7-P506	5.9	52	36 ; bylo W7-505->W7-506; Posrednia, rekonstrukcja bez protokolu; DAV bez zmian
+W7-P506	W7-P507	8	245	55 ; gorny otwor; bylo W7-506->W7-507; Posrednia, rekonstrukcja bez protokolu; DAV bez zmian
 
-W7-P501	W7-2	2.5	126	-14	;zac. agnieszki, pol. z wysoka
+W7-P501	W7-2	2.5	126	-14 ; zac. agnieszki, pol. z wysoka; bylo W7-501->W7-2; Posrednia, rekonstrukcja bez protokolu; DAV bez zmian
 
 ; source: unknown - GNSS
 W7-0	W7-1	2.2	30	-8	;otwor
@@ -98,4 +98,4 @@ W7-1	W7-2	4.7	65	-23
 W7-2	W7-3	4.75	51	0
 W7-3	W7-4	3.15	22	4	;Sala Gotycka
 
-W7-P505	W7-505/1	4	228	-13	;dolny otwor
+W7-P505	W7-505/1	4	228	-13 ; dolny otwor; bylo W7-505->W7-505/1; Posrednia, rekonstrukcja bez protokolu; DAV bez zmian

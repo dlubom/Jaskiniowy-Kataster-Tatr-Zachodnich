@@ -8,10 +8,10 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Zmienione
 
-- Wysoka–Za Siedmiu Progami: rozdzielono osiem kolidujących nazw stacji
-  Pośredniej w dziewięciu rekordach III/PIONY, zachowując wszystkie DAV.
-  Jest to rekonstrukcja bez pierwotnego protokołu; jej podstawy, ograniczenia
-  i wyniki kontroli opisano w `doc/WYSOKA_POSREDNIA_NUMERACJA.md`.
+- POW_ORM: 66 odczytów → 11 DAV; RAW zachowano, rozbieżności przód–tył
+  zapisano przy pomiarach. Pośrednia: rozdzielono numerację w 9 rekordach
+  jako rekonstrukcję bez pierwotnego protokołu.
+
 
 ## [v1.4.10] - 2026-10-25
 

@@ -39,11 +39,15 @@ Odcinek Mylnej `638–639` pozostaje wyłączony jak w źródle; przyczyna niezn
 
 ## Powierzchnia, dowiązanie i deklinacja
 
-`POW_ORM.SRV` przywraca wszystkie 66 odczytów (po trzy w obie strony)
-i historyczne dowiązania `p1.0 = Oblazkowa:0.0`, `p1.11 = Raptawicka:1.0`,
-obecne przed usunięciem aktywnego pliku w `5021fd9`. Lokalnego źródłowego
-`#fix` nie przeniesiono. Jedynym zewnętrznym fixem systemu jest Raptawicka
-z GPS Katastra; pozostałe otwory są wynikami tej samej sieci.
+2026-10-25 przywrócono do `POW_ORM.SRV` wszystkie 66 odczytów (po trzy
+w obie strony) i historyczne dowiązania `p1.0 = Oblazkowa:0.0`,
+`p1.11 = Raptawicka:1.0`, obecne przed usunięciem aktywnego pliku w `5021fd9`.
+2026-10-27 sześć odczytów każdej celowej uśredniono do jednego DAV
+(D/V arytmetycznie, A kołowo, po odwróceniu tyłu). Różnice przód–tył
+są w komentarzach przy 11 DAV; największa różnica V=3,19° jest niewyjaśniona.
+Oba dowiązania i 66 odczytów w RAW zachowano. Lokalnego
+źródłowego `#fix` nie przeniesiono. Jedynym zewnętrznym fixem systemu jest
+Raptawicka z GPS Katastra; pozostałe otwory są wynikami tej samej sieci.
 
 Data pomiaru powierzchniowego nie jest potwierdzona. Czerwiec 2015 jest
 **założeniem obliczeniowym**, opartym na wzmiance PIG o dowiązaniu otworów,
@@ -57,20 +61,22 @@ wartości IGRF14 z czerwca 2015, z jednakową wagą dni. Survex 1.4.24,
 Różnica azymutów wektora kontrolnego dla dziennej daty i `DECL=0` usuwa
 zbieżność siatki; kompilator stosuje ją osobno.
 
-Nie uśredniano odczytów powierzchniowych w pliku. Survex 1.4.24 uśrednia
-kolejne trójki tego samego kierunku; kierunki przeciwne pozostają osobno
+W stanie z 2026-10-25 nie uśredniano odczytów powierzchniowych w pliku.
+Survex 1.4.24 uśredniał kolejne trójki tego samego kierunku; kierunki przeciwne
+pozostawały osobno
 ([`netbits.c:341–365`](https://github.com/ojwb/survex/blob/878202413cac5cbf41b88ee82c0cab72b97725ce/src/netbits.c#L341-L365)).
 `#segment P` oznacza powierzchnię w Survex i grupę w Walls.
-Niezależne rozwiązania powierzchnią i podziemiami różnią się przy Obłazkowej
-o około 4,20 m (4,13 m poziomo, 0,77 m pionowo). Wyrównanie rozdziela tę
-rozbieżność; dokładność bezwzględna pozostaje nieznana. Historyczne lokalne
+Kontrola stanu z 2026-10-25 wykazała różnicę niezależnych rozwiązań
+powierzchnią i podziemiami przy Obłazkowej około 4,20 m (4,13 m poziomo,
+0,77 m pionowo). Wyrównanie rozdzielało tę rozbieżność; dokładność
+bezwzględna pozostaje nieznana. Historyczne lokalne
 wysokości miały nieznany datum; po dowiązaniu do GPS v1.3.2 wysokości sieci
 odnoszą się do kotwicy ALS w PL-KRON86-NH.
 Brakującego pomiaru powierzchniowego Mylna–Obłazkowa autor nie odnalazł w 2020 r.
 
 Dla tego systemu referencją współrzędnych Best w GPS Katastrze i eksportów
-JKTZ jest Survex 1.4.24. Natywny Walls daje różnice do około 0,70 m,
-wynikające z innych wag i obsługi powtórzeń. Kontrolna emulacja modelu
+JKTZ jest Survex 1.4.24. W stanie sprzed uśrednienia natywny Walls dawał
+różnice do około 0,70 m, wynikające z innych wag i obsługi powtórzeń. Kontrolna emulacja modelu
 Walls w Survex odtworzyła jego wynik z maksymalną różnicą 3D poniżej 8 mm;
 był to test diagnostyczny, bez przyjmowania tych wag w danych produkcyjnych.
 

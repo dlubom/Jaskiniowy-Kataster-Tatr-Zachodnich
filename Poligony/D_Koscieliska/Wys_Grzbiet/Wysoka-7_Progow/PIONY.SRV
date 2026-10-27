@@ -533,6 +533,6 @@ W7-515	W7-516	6.6	73	-31
 W7-516	W7-505	7	122	-44
 
 ; Posrednia: srodkowy otwor Wysoka7Progow:W7-P500 (rekonstrukcja; bez nowego fixu).
-W7-P500	W7-P501	7.2	72	-13	; srodkowy otwor Posredniej; odrebny od Za7 W7-500 (rekonstrukcja)
+W7-P500	W7-P501	7.2	72	-13 ; srodkowy otwor; bylo W7-500->W7-501; Posrednia, rekonstrukcja bez protokolu; DAV bez zmian
 
 ;W7-4	W7-5	2.8	0	90 ;pomiar powtorzony w IV.SRV:78
