@@ -3,7 +3,7 @@ CAVE_ID         "WPJ:SNIEZNA"
 CAVE_NAME       "SNIEZNA"
 SURVEY_ID       "LITSTARE"
 SURVEY_NAME     "LITSTARE"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-27"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -16,6 +16,7 @@ SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "Survex 1.4.24: historyczne DECL=0.819D zastapiono tymczasowym zalozeniem DECL=0; daty i pomiary bez zmian"
+PROCESSING      "2026-10-27: tymczasowe #S L na decyzje koordynatora dla nierozstrzygnietych par; TODO przy rekordach; odczyty i stacje bez zmian; Survex pomija ich dlugosc"
 #]
 
 #prefix2 WielkaSniezna
@@ -528,7 +529,7 @@ LTsa97	LTsa96	185	5	2.9
 LTsa96	LTsa95	187	14	3.7
 LTsa95	LTsa94	119	-5	2.8
 ;LT51 partie wielkanocne
-LT51	LTpw2p	33	40	8
+LT51	LTpw2p	33	40	8	#S L	; TODO(PR146): tymczasowe L; brak protokolow i mapowania LT52/LTpw2p przy LT51.
 LTpw2p	LTpw1p	320	9	2.4
 LTpw1p	LTpw0	357	22	5.3
 LTpw0	LTpw1	27	54	8.8

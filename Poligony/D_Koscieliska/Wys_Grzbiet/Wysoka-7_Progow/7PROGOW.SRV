@@ -3,7 +3,7 @@ CAVE_ID         "WPJ:AVENY"
 CAVE_NAME       "aveny"
 SURVEY_ID       "7PROGOW"
 SURVEY_NAME     "7PROGOW"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-27"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -16,6 +16,7 @@ SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "Survex 1.4.24: historyczne DECL=0.819D zastapiono tymczasowym zalozeniem DECL=0; daty i pomiary bez zmian"
+PROCESSING      "2026-10-27: tymczasowe #S L na decyzje koordynatora dla nierozstrzygnietych par; TODO przy rekordach; odczyty i stacje bez zmian; Survex pomija ich dlugosc"
 #]
 
 #prefix Wysoka7Progow
@@ -150,12 +151,12 @@ W-*/2/21	W-*/2/25	4.8	65	20
 W-*/2/25	W-*/2/26	5.2	0	-90
 W-*/2/25	W-*/2/27	4.4	0	90
 
-W-*/2/2	W-*/2/28	14.3	242	80
-W-*/2/28	W-*/2/29	9.1	246	62
-W-*/2/29	W-*/2/30	12.5	218	66
-W-*/2/30	W-*/2/31	14	228	82
-W-*/2/31	W-*/2/32	5.5	268	40
-W-*/2/32	W-*/2/33	5.2	0	90
+W-*/2/2	W-*/2/28	14.3	242	80	#S L	; TODO(PR146): tymczasowe L; sprawdz protokol: 2-28 wobec 2-3 (W-*/2).
+W-*/2/28	W-*/2/29	9.1	246	62	#S L	; TODO(PR146): tymczasowe L; sprawdz protokol: 28-29 wobec 3-4 (W-*/2).
+W-*/2/29	W-*/2/30	12.5	218	66	#S L	; TODO(PR146): tymczasowe L; sprawdz protokol: 29-30 wobec 4-41 (W-*/2).
+W-*/2/30	W-*/2/31	14	228	82	#S L	; TODO(PR146): tymczasowe L; sprawdz protokol: 30-31 wobec 41-42 (W-*/2).
+W-*/2/31	W-*/2/32	5.5	268	40	#S L	; TODO(PR146): tymczasowe L; sprawdz protokol: 31-32 wobec 42-43 (W-*/2).
+W-*/2/32	W-*/2/33	5.2	0	90	#S L	; TODO(PR146): tymczasowe L; sprawdz protokol: 32-33 wobec 43-44 (W-*/2).
 ; I PIETRO
 W-*/2/2	W-*/2/34	6.7	254	25
 W-*/2/34	W-*/2/35	6.6	212	41

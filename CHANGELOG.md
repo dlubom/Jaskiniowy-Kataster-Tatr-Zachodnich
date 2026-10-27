@@ -8,6 +8,10 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Zmienione
 
+- Na decyzję koordynatora tymczasowo oznaczono segmentem L 12 rekordów
+  obejmujących 13 nierozstrzygniętych par w Wysokiej, Bańdziochu, Koziej,
+  Miętusiej i Litworowej. Komentarze TODO wskazują brakujące dowody;
+  pomiary zachowano, a Survex pomija ich długość w statystyce.
 - Miętusia Wyżnia: usunięto drugi import MS/MRS wraz z wpisem WPJ;
   Marmurowa: wspólny pień trzech odnóg zapisano raz, zgodnie ze skanami.
 - Miętusia Wyżnia i Goryczkowa: zachowano osiem ponownych pomiarów

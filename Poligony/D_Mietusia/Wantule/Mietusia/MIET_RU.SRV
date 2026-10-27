@@ -3,7 +3,7 @@ CAVE_ID         "T.D-11.01"
 CAVE_NAME       "Jaskinia Mietusia"
 SURVEY_ID       "RU"
 SURVEY_NAME     "Rura"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-10-27"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Pawel Gogolak"
 COORDINATOR_EMAIL "pafffel@gmail.com"
@@ -15,6 +15,7 @@ INSTRUMENT      "DistoX"
 SURVEY_DATE     "2022-10-21"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "2026-10-27: tymczasowe #S L na decyzje koordynatora dla nierozstrzygnietych par; TODO przy rekordach; odczyty i stacje bez zmian; Survex pomija ich dlugosc"
 #]
 
 #prefix Mietusia
@@ -28,7 +29,7 @@ PROCESSING      "zachowano istniejacy aktywny plik SRV"
 ; Otwor w tym pliku: Mietusia:ru_0 - fix/flag/note w Poligony/OTWORY.SRV
 ru_0	ru_1	2.68	238.9	-14.3
 ru_1	ru_2	3.61	232.4	-28.5
-ru_2	ru_3	4.44	266.6	-21.3	; odgalezienie slepe
+ru_2	ru_3	4.44	266.6	-21.3	#S L	; odgalezienie slepe; TODO(PR146): tymczasowe L; szkic Rury 2022-10-21 ma rozstrzygnac ru_3/ru_4.
 ru_2	ru_4	4.46	265.5	-21.4
 ru_4	ru_5	3.55	233.0	-22.3
 ru_5	ru_6	1.30	269.8	-39.1
