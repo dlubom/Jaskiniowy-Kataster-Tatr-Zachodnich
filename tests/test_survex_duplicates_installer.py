@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import io
+import os
 import stat
 import subprocess
 import urllib.request
@@ -131,8 +132,16 @@ def installer(monkeypatch, tmp_path):
 
 @pytest.mark.parametrize("platform", PLATFORMS, ids=lambda value: str(value))
 def test_installs_the_pinned_platform_executable_only_and_exports_absolute_path(
-    installer, platform
+    installer, platform, monkeypatch
 ):
+    chmod_calls = []
+    real_chmod = Path.chmod
+
+    def record_chmod(path, mode):
+        chmod_calls.append((path, mode))
+        real_chmod(path, mode)
+
+    monkeypatch.setattr(Path, "chmod", record_chmod)
     run, environment, _ = installer
     temporary = run(platform)
     exported = environment.read_text(encoding="utf-8").splitlines()
@@ -147,7 +156,8 @@ def test_installs_the_pinned_platform_executable_only_and_exports_absolute_path(
         [executable.name, f"survex-duplicates_v1.0.0_{platform[2]}.zip"]
     )
     assert not (temporary / "unexpected.txt").exists()
-    if platform[0] != "Windows":
+    assert chmod_calls == ([] if platform[0] == "Windows" else [(executable, 0o755)])
+    if os.name != "nt" and platform[0] != "Windows":
         assert stat.S_IMODE(executable.stat().st_mode) == 0o755
 
 
