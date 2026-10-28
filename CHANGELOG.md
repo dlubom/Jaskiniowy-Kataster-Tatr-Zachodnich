@@ -6,6 +6,13 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v1.4.12] - 2026-10-28
+
+### Naprawione
+
+- Kamienne Mleko: przeniesiono fix i oznaczenia otworu ze stacji `0` na `0'`
+  po porównaniu z planem i pomiarami J. Nowaka; odczyty i orientacja bez zmian.
+
 ## [v1.4.11] - 2026-10-27
 
 ### Zmienione
