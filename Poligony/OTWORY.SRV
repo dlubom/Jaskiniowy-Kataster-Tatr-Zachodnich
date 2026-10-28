@@ -85,10 +85,10 @@
 #flag	Kalacka:0	/ENTRANCE
 #note	Kalacka:0	/Jaskinia Kalacka
 
-#fix	KamienneMleko:0	E19.8108454857	N49.2454016643	1103.902233m
-#flag	KamienneMleko:0	/Kamienne Mleko
-#flag	KamienneMleko:0	/ENTRANCE
-#note	KamienneMleko:0	/Kamienne Mleko
+#fix	KamienneMleko:0'	E19.8108454857	N49.2454016643	1103.902233m
+#flag	KamienneMleko:0'	/Kamienne Mleko
+#flag	KamienneMleko:0'	/ENTRANCE
+#note	KamienneMleko:0'	/Kamienne Mleko
 
 #fix	KasprowaNiznia:0	E19.9784804959	N49.2541341286	1216.555032m
 #flag	KasprowaNiznia:0	/Kasprowa Niznia
