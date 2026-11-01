@@ -23,6 +23,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
   dowiązanie obliczeniowe w segmencie L.
 - Uzupełniono potwierdzone metadane i opisy źródeł, w tym zakres partii
   Białej, zmiany wariantu Pod Progiem i historyczny zapis Wielkiej Turni.
+- Instalator CI Survex rozdziela cache według systemu, wersji i architektury
+  oraz dobiera zależności bez nazw ABI właściwych tylko dla Ubuntu 24.04.
 
 ## [v1.4.12] - 2026-10-28
 
