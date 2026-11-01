@@ -3,7 +3,7 @@ CAVE_ID         "WPJ:SNASZ"
 CAVE_NAME       "Studnia na Szlaku"
 SURVEY_ID       "STNASZ1"
 SURVEY_NAME     "Studnia na Szlaku"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-01"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -16,6 +16,7 @@ SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "Survex 1.4.24: historyczne DECL=0.819D zastapiono tymczasowym zalozeniem DECL=0; daty i pomiary bez zmian"
+PROCESSING      "potwierdzono bajtowa zgodnosc zrodlowego CSP z zalacznikiem 2014-04-17; autor, data i deklinacja pomiaru nieustalone; wektor i tymczasowe DECL=0 bez zmian"
 #]
 
 #units meters order=DAV

@@ -3,18 +3,22 @@ CAVE_ID         "WPJ:DWT"
 CAVE_NAME       "Dziurka w Trawce"
 SURVEY_ID       "DWT1"
 SURVEY_NAME     "DWT1"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-01"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
 SOURCE_REF      "_RAW/01"
+SOURCE_REF      "../../../_RAW/01"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM            "nieznane"
-INSTRUMENT      "nieznane"
+TEAM            "P. Orawiec"
+TEAM            "Z. Tabaczynski"
+INSTRUMENT      "Topo-Vulcan"
 SURVEY_DATE     "2000-06-06"
+SURVEY_DATE     "2000-06-30"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+PROCESSING      "przywrocono z CSP identyfikatory TO 5a i 12b zamiast nieudokumentowanych utozsamien 5 i 12; wartosci DAV bez zmian; przypisanie rekordow do dat akcji nieustalone"
 #]
 
 #units meters order=DAV
@@ -35,7 +39,7 @@ PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 7	8	4.1	282	42
 8	9	4.56	10	-84
 9	10	1.51	309	-33
-10	5	3.67	0	-90
+10	5a	3.67	0	-90
 
 4	11	5.12	90	-55
 11	12	4.81	307	-16
@@ -51,7 +55,7 @@ PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 20	21	3.49	102	-15
 
 19	22	3.33	89	-37
-22	12	0.77	220	-32
+22	12b	0.77	220	-32
 
 15	23	6.51	297	-12
 23	24	3.07	308	20

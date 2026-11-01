@@ -3,7 +3,7 @@ CAVE_ID         "T.E-12.59"
 CAVE_NAME       "Zawalony Schron"
 SURVEY_ID       "ZAWSCH"
 SURVEY_NAME     "Zawalony Schron"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-01"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -15,6 +15,7 @@ INSTRUMENT      "Topo-Vulcan"
 SURVEY_DATE     "1999-10-30"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "2026-11-01: uzupelniono proweniencje CSP; PIG potwierdza M. Parczewskiego i Z. Tabaczynskiego oraz date 1999-10-30"
 #]
 
 #prefix ZawalonySchron

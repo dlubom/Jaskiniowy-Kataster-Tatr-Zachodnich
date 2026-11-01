@@ -6,6 +6,24 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+### Dodane
+
+- Odzyskane oryginały SVX, PDF, XLS, DOC, SVG i zdjęcia z korespondencji
+  dotyczącej pomiarów Z. Tabaczyńskiego; uzupełniono paczki _RAW oraz
+  rozdzielono role autorów pomiarów i osób przekazujących materiały.
+
+### Naprawione
+
+- Meander w Małołąckim Siodle: przywrócono źródłową kalibrację kompasu
+  INCA=-2.37 bez zmiany odczytów DAV.
+- Dziurka w Trawce: przywrócono źródłowe stacje 5a i 12b zamiast
+  nieudokumentowanych utożsamień z 5 i 12.
+- Zośka: zastąpiono zerowe dowiązanie podstawy kominów przesunięciem
+  wyliczonym z nazwanych pozycji w źródłowym XLS; oznaczono je jako
+  dowiązanie obliczeniowe w segmencie L.
+- Uzupełniono potwierdzone metadane i opisy źródeł, w tym zakres partii
+  Białej, zmiany wariantu Pod Progiem i historyczny zapis Wielkiej Turni.
+
 ## [v1.4.12] - 2026-10-28
 
 ### Naprawione
