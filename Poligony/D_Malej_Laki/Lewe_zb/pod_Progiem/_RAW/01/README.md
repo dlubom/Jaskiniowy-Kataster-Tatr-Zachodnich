@@ -16,4 +16,4 @@
 
 ## Pochodzenie metadanych i rola materiału
 
-Zespół i datę potwierdza PDF, s. 3, w [paczce wspólnej](../../../../../_RAW/01/README.md). Nazwę przyrządu zapisano tam Topo-Vulcain, a w archiwalnym PIG Topo-Vulcan. Wariant `_v2` zachowuje bajty załącznika z 17.04.2014, pierwotnie nazwanego `E 12 54 J pod progiem.csp`; lokalny sufiks rozróżnia wersje.
+Zespół i datę potwierdza PDF, s. 3, w [lokalnej paczce dokumentacji](../02/README.md). Nazwę przyrządu zapisano tam Topo-Vulcain, a w archiwalnym PIG Topo-Vulcan. Wariant `_v2` zachowuje bajty załącznika z 17.04.2014, pierwotnie nazwanego `E 12 54 J pod progiem.csp`; lokalny sufiks rozróżnia wersje.

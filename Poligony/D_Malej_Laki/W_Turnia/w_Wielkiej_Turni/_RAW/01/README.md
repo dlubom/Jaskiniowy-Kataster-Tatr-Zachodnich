@@ -15,4 +15,4 @@
 
 ## Pochodzenie metadanych i rola materiału
 
-Zespół, datę i przyrząd Topo-Vulcan potwierdza PDF, s. 4, w [paczce wspólnej](../../../../../_RAW/01/README.md). Wcześniejszy DOC jest w [paczce 02](../02/README.md); mail z 14.04.2014 poleca zastąpić wcześniejsze pliki nowszymi transkrypcjami CSP.
+Zespół, datę i przyrząd Topo-Vulcan potwierdza PDF, s. 4, w [lokalnej paczce dokumentacji](../03/README.md). Wcześniejszy DOC jest w [paczce 02](../02/README.md); mail z 14.04.2014 poleca zastąpić wcześniejsze pliki nowszymi transkrypcjami CSP.

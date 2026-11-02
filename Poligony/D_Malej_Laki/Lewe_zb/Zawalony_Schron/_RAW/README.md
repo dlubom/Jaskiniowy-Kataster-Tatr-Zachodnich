@@ -8,3 +8,5 @@
 - **Współrzędne otworu (wg Z. Tabaczyńskiego)**: N 49°14'43.42", E 19°54'47.6"
 
 Szczegółowe pochodzenie, dokładność dat i ograniczenia: [paczka 01](01/README.md).
+
+- [02](02/README.md) — lokalna kopia dokumentacji i historycznych zestawień współrzędnych i wysokości.

@@ -7,5 +7,7 @@
 - **Kompletność**: pojedynczy plik .csp z 45 rekordami Białej / Partii nad Łukami, zmierzonymi ponownie 20.06.2003; nie obejmuje całej Jaskini Zimnej
 - **Współrzędne otworu (wg Z. Tabaczyńskiego)**: N 49°14'49.99", E 19°52'10.88", 1260 m n.p.m. — w XLS jako "Jaskinia Biała" (górny otwór Jaskini Zimnej)
 
-Dokumentacja opisowa potwierdzająca zespół i datę znajduje się w [paczce wspólnej](../../../../_RAW/01/README.md), PDF s. 17-18.
+Dokumentacja opisowa potwierdzająca zespół i datę znajduje się w [lokalnej paczce dokumentacji](03/README.md), PDF s. 17-18.
 Wcześniejszy załącznik zachowano oddzielnie w [paczce 02](02/README.md); jego rola i relacja do nowszego CSP są opisane w metadanych paczek.
+
+- [03](03/README.md) — lokalna kopia dokumentacji i historycznych zestawień współrzędnych i wysokości.

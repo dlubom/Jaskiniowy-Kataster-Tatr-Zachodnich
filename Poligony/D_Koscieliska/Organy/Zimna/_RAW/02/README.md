@@ -17,4 +17,4 @@
 
 Rysunek stanowi wcześniejszą reprezentację graficzną, nie niezależny pomiar. Nie ustalono na jego podstawie nowych stacji ani zmian DAV. Aktywny JBIALA.SRV zachowuje 45 rekordów późniejszej transkrypcji CSP z paczki 01.
 
-Dokumentacja opisowa jest zachowana raz w [wspólnej paczce](../../../../../_RAW/01/README.md). Oryginał załącznika pozostaje bez zmian.
+Dokumentacja opisowa jest zachowana w [lokalnej paczce dokumentacji](../03/README.md). Oryginał załącznika pozostaje bez zmian.

@@ -15,4 +15,4 @@
 
 ## Pochodzenie metadanych i rola materiału
 
-Autora i datę potwierdza `Jaskinie Tatrzańskie dokumentacja.pdf`, s. 5, w [paczce wspólnej](../../../../../_RAW/01/README.md). CSP jest transkrypcją zachowanych fragmentów notatek, przekazaną 14–17.04.2014, a nie oryginalną książeczką terenową.
+Autora i datę potwierdza `Jaskinie Tatrzańskie dokumentacja.pdf`, s. 5, w [lokalnej paczce dokumentacji](../02/README.md). CSP jest transkrypcją zachowanych fragmentów notatek, przekazaną 14–17.04.2014, a nie oryginalną książeczką terenową.

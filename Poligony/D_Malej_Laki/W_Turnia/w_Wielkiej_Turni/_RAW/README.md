@@ -9,5 +9,7 @@
 
 Korektę długości geograficznej 46.59″ → 13.5″ dokumentują źródłowy CSP i commit `d49b9cc` z 21.04.2014. Jest to opis historycznego źródła, bez zmiany bieżącego fixa projektu GPS.
 
-Dokumentacja opisowa potwierdzająca zespół i datę znajduje się w [paczce wspólnej](../../../../_RAW/01/README.md), PDF s. 4.
+Dokumentacja opisowa potwierdzająca zespół i datę znajduje się w [lokalnej paczce dokumentacji](03/README.md), PDF s. 4.
 Wcześniejszy załącznik zachowano oddzielnie w [paczce 02](02/README.md); jego rola i relacja do nowszego CSP są opisane w metadanych paczek.
+
+- [03](03/README.md) — lokalna kopia dokumentacji i historycznych zestawień współrzędnych i wysokości.

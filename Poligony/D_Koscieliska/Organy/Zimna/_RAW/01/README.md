@@ -15,4 +15,4 @@
 
 ## Pochodzenie metadanych i rola materiału
 
-Zespół, datę i zakres Białej / Partii nad Łukami potwierdza PDF, s. 17–18, w [paczce wspólnej](../../../../../_RAW/01/README.md). Wcześniejszy SVG z [paczki 02](../02/README.md) jest reprezentacją graficzną, nie niezależnym pomiarem.
+Zespół, datę i zakres Białej / Partii nad Łukami potwierdza PDF, s. 17–18, w [lokalnej paczce dokumentacji](../03/README.md). Wcześniejszy SVG z [paczki 02](../02/README.md) jest reprezentacją graficzną, nie niezależnym pomiarem.

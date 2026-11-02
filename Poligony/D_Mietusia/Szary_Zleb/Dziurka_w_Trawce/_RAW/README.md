@@ -6,3 +6,5 @@
 - **Dodał**: Dariusz Lubomski
 - **Kompletnosc**: zachowany plik .csp opracowany z fragmentow notatek; pierwotne notatki nieodzyskane
 - **Współrzędne otworu (wg Z. Tabaczyńskiego)**: N 49°14'33", E 19°54'34.66"
+
+- [02](02/README.md) — lokalna kopia dokumentacji i historycznych zestawień współrzędnych i wysokości.

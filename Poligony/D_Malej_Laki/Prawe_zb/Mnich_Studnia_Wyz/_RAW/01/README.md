@@ -15,4 +15,4 @@
 
 ## Pochodzenie metadanych i rola materiału
 
-Zespół i datę pomiarów od górnego otworu potwierdza PDF, s. 12–13, w [paczce wspólnej](../../../../../_RAW/01/README.md). Wcześniejszy XLS jest w [paczce 02](../02/README.md); zakres daty 12.06.2002 i klasyfikacja ciągu dolnego/powierzchniowego pozostają otwarte w #151. Daty operacyjnej SRV nie zmieniono.
+Zespół i datę pomiarów od górnego otworu potwierdza PDF, s. 12–13, w [lokalnej paczce dokumentacji](../03/README.md). Wcześniejszy XLS jest w [paczce 02](../02/README.md); zakres daty 12.06.2002 i klasyfikacja ciągu dolnego/powierzchniowego pozostają otwarte w #151. Daty operacyjnej SRV nie zmieniono.

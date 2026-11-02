@@ -31,3 +31,5 @@ Dariusz Lubomski, 2026-02-27
 Komplet materiałów przesłanych przez P. Ramatowskiego: pomiary + rysunki (szkic, plan, przekrój).
 
 Szczegółowe pochodzenie przekazu, daty i wyliczone dowiązanie podstawy kominów: [paczka 01](01/README.md). Paweł Ramatowski jest przekazującym, nie autorem wszystkich pomiarów.
+
+- [02](02/README.md) — lokalna kopia dokumentacji współrzędnych i wysokości.

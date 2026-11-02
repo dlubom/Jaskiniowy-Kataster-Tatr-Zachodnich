@@ -11,6 +11,10 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 - Odzyskane oryginały SVX, PDF, XLS, DOC, SVG i zdjęcia z korespondencji
   dotyczącej pomiarów Z. Tabaczyńskiego; uzupełniono paczki _RAW oraz
   rozdzielono role autorów pomiarów i osób przekazujących materiały.
+- Dokumentacja i zestawienia współrzędnych są przechowywane w _RAW
+  właściwych jaskiń, z pełnymi kopiami źródeł wieloobiektowych.
+  Materiały trzech niezidentyfikowanych obiektów Rzędów Tomanowych
+  zachowano przy nazwach roboczych, bez włączania pomiarów do projektu.
 
 ### Naprawione
 

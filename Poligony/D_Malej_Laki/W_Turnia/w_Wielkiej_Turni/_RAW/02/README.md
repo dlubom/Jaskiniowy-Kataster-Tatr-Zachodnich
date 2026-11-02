@@ -17,4 +17,4 @@
 
 W tabeli DOC, wiersz 1→2, inklinacja wynosi −90; w nowszym CSP i aktywnym SRV jest −87. Pozostałe 5 rekordów jest zgodne liczbowo. Mail z 14.04.2014 poleca zastąpić wcześniejsze pliki nowszymi transkrypcjami CSP; nie przywrócono −90 do aktywnego SRV.
 
-Dokumentacja opisowa jest zachowana raz w [wspólnej paczce](../../../../../_RAW/01/README.md). Oryginał załącznika pozostaje bez zmian.
+Dokumentacja opisowa jest zachowana w [lokalnej paczce dokumentacji](../03/README.md). Oryginał załącznika pozostaje bez zmian.

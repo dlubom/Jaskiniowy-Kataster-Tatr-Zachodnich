@@ -17,4 +17,4 @@
 
 Arkusz1!J1 zawiera 3.II.2002, a J3 — 12.VI.2002 przy nagłówku ciągu powierzchniowego i dolnego otworu. Nie przeniesiono tej drugiej daty do #date aktywnego SRV; zakres dat i powierzchni rozlicza #151. Wariant XLS ma m.in. 0→1 14.21/260/+63 bez odpowiednika w nowszym CSP oraz C8=12.67, podczas gdy późniejszy CSP ma B→11 13.32/272/−30. Te różnice pozostają zachowanymi wariantami źródłowymi, nie podstawą korekty SRV.
 
-Dokumentacja opisowa jest zachowana raz w [wspólnej paczce](../../../../../_RAW/01/README.md). Oryginał załącznika pozostaje bez zmian.
+Dokumentacja opisowa jest zachowana w [lokalnej paczce dokumentacji](../03/README.md). Oryginał załącznika pozostaje bez zmian.

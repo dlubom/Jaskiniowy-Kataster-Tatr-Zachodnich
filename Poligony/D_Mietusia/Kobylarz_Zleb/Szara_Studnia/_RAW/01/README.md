@@ -15,4 +15,4 @@
 
 ## Uwagi o źródle
 
-Data 1999-05-28 i zespół są podane w źródłowej kompilacji [Jaskinie Tatrzańskie dokumentacja.pdf](<../../../../../_RAW/01/2014-04-11/Jaskinie Tatrzańskie dokumentacja.pdf>), strona 27 PDF, w opisie pomiarów. Ta sama strona podaje instrument jako topowulkan; archiwalny PIG T.E-12.50 (cave_id 001591), pole documentation_history, zapisuje go jako Topo-Vulcan. Wszystkie 25 źródłowych krotek stacji i DAV jest zachowanych w SZARST1.SRV. Osobna paczka 02 zawiera historyczne zdjęcia lokalizacji GPS, nie pomiary podziemne.
+Data 1999-05-28 i zespół są podane w źródłowej kompilacji [Jaskinie Tatrzańskie dokumentacja.pdf](<../03/2014-04-11/Jaskinie Tatrzańskie dokumentacja.pdf>), strona 27 PDF, w opisie pomiarów. Ta sama strona podaje instrument jako topowulkan; archiwalny PIG T.E-12.50 (cave_id 001591), pole documentation_history, zapisuje go jako Topo-Vulcan. Wszystkie 25 źródłowych krotek stacji i DAV jest zachowanych w SZARST1.SRV. Osobna paczka 02 zawiera historyczne zdjęcia lokalizacji GPS, nie pomiary podziemne.
