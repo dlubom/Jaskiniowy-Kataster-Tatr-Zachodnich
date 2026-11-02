@@ -1,7 +1,7 @@
 # Zwolinskiego - paczka zrodlowa 01
 
 - **Status materiału:** dostępny
-- **Pochodzenie danych:** Oryginalny plik Speleoliti przekazany 2013-11-13 przez nadawcę air-sport, podpisanego „Krzysiek”; pełne nazwisko Krzysztof Dudziński występuje w podpisach wcześniejszych wiadomości tego samego nadawcy cytowanych w wątku. Odzyskany załącznik jest identyczny bajtowo z plikiem w tej paczce.
+- **Pochodzenie danych:** Krzysztof Dudziński
 - **Autorzy pomiarów:** K. Dudziński, Z. Tabaczyński (nagłówek CSP, wiersz 7).
 - **Daty pomiarów:** 2013-04-02
 - **Data pozyskania:** 2013-11-13

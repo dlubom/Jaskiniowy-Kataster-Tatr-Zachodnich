@@ -27,6 +27,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
   dowiązanie obliczeniowe w segmencie L.
 - Uzupełniono potwierdzone metadane i opisy źródeł, w tym zakres partii
   Białej, zmiany wariantu Pod Progiem i historyczny zapis Wielkiej Turni.
+- Zweryfikowano metadane z PIG; zastąpiono 10 identyfikatorów WPJ
+  numerami inwentarzowymi i skrócono zapis pochodzenia pliku Zwolińskiego.
 - Instalator CI Survex rozdziela cache według systemu, wersji i architektury
   oraz dobiera zależności bez nazw ABI właściwych tylko dla Ubuntu 24.04.
 
