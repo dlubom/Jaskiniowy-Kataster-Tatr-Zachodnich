@@ -1,0 +1,22 @@
+# Dziurka w Trawce — dokumentacja źródłowa 02
+
+- **Status materiału:** częściowy
+- **Pochodzenie danych:** Dokumentacja PDF przekazana przez Z. Tabaczyńskiego do D. Lubomskiego 11.04.2014. Historyczne zestawienia przekazane 17.04 i 12.05.2014; arkusze z 23.04 i 11.05 są opracowaniami D. Lubomskiego odesłanymi autorowi.
+- **Autorzy pomiarów:** Według podpisów części PDF, m.in. Z. Tabaczyński i I. Luty. Autorzy poszczególnych pomiarów współrzędnych nieustaleni; nadawca zestawień: Z. Tabaczyński, opracowanie arkuszy z 23.04 i 11.05: D. Lubomski.
+- **Daty pomiarów:** Według podpisów części dokumentacji PDF. Daty poszczególnych pomiarów i źródeł współrzędnych nieustalone.
+- **Data pozyskania:** 2014-04-11, 2014-04-17, 2014-04-23, 2014-05-11, 2014-05-12
+- **Dodał do _RAW:** Dariusz Lubomski, 2026-11-02
+- **Licencja źródłowa:** nieznane
+- **Kompletność:** Pełne kopie wieloobiektowych załączników dotyczących tej jaskini. PDF zawiera opisy bez przywoływanych wkładek planów. Zestawienia współrzędnych i wysokości są materiałem historycznym.
+
+## Zawartość
+
+- `2014-04-11/` — oryginalne załączniki z 2014-04-11.
+- `2014-04-17/` — oryginalne załączniki z 2014-04-17.
+- `2014-04-23/` — oryginalne załączniki z 2014-04-23.
+- `2014-05-11/` — oryginalne załączniki z 2014-05-11.
+- `2014-05-12/` — oryginalne załączniki z 2014-05-12.
+
+## Zakres i powielenie źródła
+
+Pakiet dotyczy: **Dziurka w Trawce**. W dokumencie `Jaskinie Tatrzańskie dokumentacja.pdf` właściwe są strony 6–8, 19–21 PDF. W arkuszach XLS właściwy jest wiersz 15 arkusza Arkusz1 (kolumna A); nazwy historyczne pozostawiono dosłownie. Każdy załącznik zachowano w całości, z oryginalną nazwą i bajtami. Kopie tego samego pliku w katalogach innych jaskiń są jednym źródłem, nie niezależnymi pomiarami. Datowane podkatalogi oznaczają przekazanie pliku, nie datę pomiaru. Zestawienia współrzędnych i wysokości zawierają także odczyty Geoportalu i opracowania modelu terenu; nie są kompletem pierwotnych obserwacji GPS i nie zastępują aktualnych fixów z projektu GPS.

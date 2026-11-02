@@ -6,6 +6,32 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+### Dodane
+
+- Odzyskane oryginały SVX, PDF, XLS, DOC, SVG i zdjęcia z korespondencji
+  dotyczącej pomiarów Z. Tabaczyńskiego; uzupełniono paczki _RAW oraz
+  rozdzielono role autorów pomiarów i osób przekazujących materiały.
+- Dokumentacja i zestawienia współrzędnych są przechowywane w _RAW
+  właściwych jaskiń, z pełnymi kopiami źródeł wieloobiektowych.
+  Materiały trzech niezidentyfikowanych obiektów Rzędów Tomanowych
+  zachowano przy nazwach roboczych, bez włączania pomiarów do projektu.
+
+### Naprawione
+
+- Meander w Małołąckim Siodle: przywrócono źródłową kalibrację kompasu
+  INCA=-2.37 bez zmiany odczytów DAV.
+- Dziurka w Trawce: przywrócono źródłowe stacje 5a i 12b zamiast
+  nieudokumentowanych utożsamień z 5 i 12.
+- Zośka: zastąpiono zerowe dowiązanie podstawy kominów przesunięciem
+  wyliczonym z nazwanych pozycji w źródłowym XLS; oznaczono je jako
+  dowiązanie obliczeniowe w segmencie L.
+- Uzupełniono potwierdzone metadane i opisy źródeł, w tym zakres partii
+  Białej, zmiany wariantu Pod Progiem i historyczny zapis Wielkiej Turni.
+- Zweryfikowano metadane z PIG; zastąpiono 10 identyfikatorów WPJ
+  numerami inwentarzowymi i skrócono zapis pochodzenia pliku Zwolińskiego.
+- Instalator CI Survex rozdziela cache według systemu, wersji i architektury
+  oraz dobiera zależności bez nazw ABI właściwych tylko dla Ubuntu 24.04.
+
 ## [v1.4.12] - 2026-10-28
 
 ### Naprawione
