@@ -13,21 +13,29 @@ inputs:
 runs:
   using: composite
   steps:
+    - name: Read Ubuntu version
+      id: ubuntu
+      shell: bash
+      run: |
+        source /etc/os-release
+        echo "version=$VERSION_ID" >> "$GITHUB_OUTPUT"
+
     - name: Cache Survex
       id: cache
       uses: actions/cache@v4
       with:
         path: ~/survex
-        key: survex-${{ inputs.version }}-ubuntu
+        key: survex-${{ inputs.version }}-ubuntu-${{ steps.ubuntu.outputs.version }}-${{ runner.arch }}
 
     - name: Install Survex
       shell: bash
       run: |
+        sudo apt-get update
+        sudo apt-get install -y libwxgtk3.2-dev libproj-dev libgdal-dev gdal-bin
         if [ "${{ steps.cache.outputs.cache-hit }}" = "true" ]; then
           echo "Using cached Survex"
-          sudo apt-get update && sudo apt-get install -y libproj25 libgdal34t64 gdal-bin libwxgtk3.2-1t64
         else
-          sudo apt-get update && sudo apt-get install -y build-essential libwxgtk3.2-dev libproj-dev libgdal-dev gdal-bin
+          sudo apt-get install -y build-essential
           cd "$RUNNER_TEMP"
           wget "https://survex.com/software/${{ inputs.version }}/survex-${{ inputs.version }}.tar.gz"
           tar xf "survex-${{ inputs.version }}.tar.gz"
