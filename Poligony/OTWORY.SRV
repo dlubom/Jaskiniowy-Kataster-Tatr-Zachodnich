@@ -105,12 +105,17 @@
 #flag	Koszowa:0	/ENTRANCE
 #note	Koszowa:0	/Jaskinia Koszowa
 
-#fix	Kozia:k001	E19.9080642201	N49.2388387835	1835.745891m
-#flag	Kozia:k001	/Kozia
+#fix	Kozia:k001	E19.9081552023	N49.2388021758	1836.99207226m
+#flag	Kozia:k001	/Kozia - otwor I
 #flag	Kozia:k001	/ENTRANCE
-#note	Kozia:k001	/Kozia
+#note	Kozia:k001	/Kozia - otwor I
 
-#fix	Lejbusiowa:A1	E19.9004138726	N49.2385606103	1838.365497m
+#fix	Kozia:k9619	E19.9094316705	N49.2388004782	1839.46868225m
+#flag	Kozia:k9619	/Kozia - otwor II
+#flag	Kozia:k9619	/ENTRANCE
+#note	Kozia:k9619	/Kozia - otwor II
+
+#fix	Lejbusiowa:A1	E19.9008028431	N49.2384874886	1834.98101805m
 #flag	Lejbusiowa:A1	/Jaskinia Lejbusiowa
 #flag	Lejbusiowa:A1	/ENTRANCE
 #note	Lejbusiowa:A1	/Jaskinia Lejbusiowa
@@ -135,7 +140,7 @@
 #flag	LustrzanyKorytarz:0	/ENTRANCE
 #note	LustrzanyKorytarz:0	/Lustrzany Korytarz
 
-#fix	MalaWMulowej:1	E19.902221547	N49.2382402987	1755.390015m
+#fix	MalaWMulowej:1	E19.9022256061	N49.2382580851	1752.74137589m
 #flag	MalaWMulowej:1	/Jaskinia Mala w Mulowej
 #flag	MalaWMulowej:1	/ENTRANCE
 #note	MalaWMulowej:1	/Jaskinia Mala w Mulowej
@@ -145,7 +150,7 @@
 #flag	Malolacka:ma0	/ENTRANCE
 #note	Malolacka:ma0	/Malolacka
 
-#fix	Marmurowa:0	E19.9008234686	N49.2393731235	1768.449951m
+#fix	Marmurowa:0	E19.9008192585	N49.2393777266	1767.35018365m
 #flag	Marmurowa:0	/Marmurowa
 #flag	Marmurowa:0	/ENTRANCE
 #note	Marmurowa:0	/Marmurowa
@@ -372,7 +377,7 @@
 #flag	WielkaSniezna:Jasna:j0	/ENTRANCE
 #note	WielkaSniezna:Jasna:j0	/Jasny Awen
 
-#fix	WielkaSniezna:Litworowa:LT58	E19.9147636451	N49.238511573	1905.290951m
+#fix	WielkaSniezna:Litworowa:LT58	E19.9147617762	N49.2385162553	1904.73177469m
 #flag	WielkaSniezna:Litworowa:LT58	/Wielka Litworowa
 #flag	WielkaSniezna:Litworowa:LT58	/ENTRANCE
 #note	WielkaSniezna:Litworowa:LT58	/Wielka Litworowa
