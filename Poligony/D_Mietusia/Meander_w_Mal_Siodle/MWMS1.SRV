@@ -1,24 +1,28 @@
 #[
-CAVE_ID         "WPJ:MWMS"
+CAVE_ID         "T.E-12.72"
 CAVE_NAME       "Meander w Malolackim Siodle"
 SURVEY_ID       "MWMS1"
 SURVEY_NAME     "Meander w Malolackim Siodle"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-02"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
 SOURCE_REF      "_RAW/01"
+SOURCE_REF      "_RAW/02"
+SOURCE_REF      "_RAW/03"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM            "nieznane"
-INSTRUMENT      "nieznane"
+TEAM            "Zbigniew Tabaczynski"
+INSTRUMENT      "Disto-X; zrodlo: DISTO X KALIBR 047"
 SURVEY_DATE     "2014-04-30"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+PROCESSING      "odzyskano zrodlo SVX i PDF; odwzorowano *calibrate compass 2.37 jako INCA=-2.37; stacje i wartosci DAV bez zmian; osobno zachowano historyczne zdjecia GPS"
 #]
 
 #units meters order=DAV
 #units A=D V=D
+#units INCA=-2.37
 #prefix MeanderWMalymSiodle
 ;Meander w Malolackim Siodle
 #date 2014-04-30

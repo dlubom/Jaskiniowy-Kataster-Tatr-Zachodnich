@@ -1,0 +1,45 @@
+#[
+CAVE_ID         "T.F-10.18"
+CAVE_NAME       "Dziura nad Zawaliskiem"
+SURVEY_ID       "DNZ_ROB"
+SURVEY_NAME     "Robocza transkrypcja DOC: Szczelina nad Zawaliskiem"
+UPDATE_DATE     "2026-11-09"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "nieznane"
+COORDINATOR_EMAIL "nieznane"
+SOURCE_REF      "_RAW/02"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "nieznane"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "nieznane"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "wylacznie komentarze; literalne DAV; przypisanie obiektu robocze; bez WPJ, fixa i deklinacji"
+#]
+
+; ROBOCZY POLIGON: WSZYSTKIE POMIARY I DYREKTYWY SA KOMENTARZAMI.
+; Hipoteza: Szczelina nad Zawaliskiem = Dziura nad Zawaliskiem, T.F-10.18.
+; Zgodne zalamania, studnia i rozwidlenie na planie autora; 22.98 m.
+; 3->5: DAV 7.73/343/+51 nie zgadza sie z przyrostami DOC.
+; Z DAV dN=4.6521 dE=-1.4223 dH=6.0073; DOC 4.26/-1.34/6.00.
+; Roznica koncowych wspolrzednych poziomych ok. 0.411 m; bez korekty DAV.
+; Glebokosc z DAV 10.8647 m, w DOC 10.84 m.
+; Opis wejscia ku S jest sprzeczny z planem i DAV ku N.
+; Kandydat GPS KSW-0063 ma te same wspolrzedne co KSW-0103.
+; Nazwa tabeli DOC: Szczelina nad Zawaliskiem.
+; Szczegoly i warunki wlaczenia: _RAW/02/README.md.
+; Brak potwierdzonej daty i odniesienia azymutow; bez #date i DECL.
+; Numeracja Otworow 1/2/3 jest hipoteza, bez powiazan ze stacjami 0.
+; Brak wpisu WPJ i fixa. Wszystkie wartosci DAV zachowane doslownie.
+;
+; #prefix DziuraNadZawaliskiem
+; #units meters order=DAV
+; #units A=D V=D
+;
+; FROM TO D[m] A[deg] V[deg]
+; 0	1	3.04	10	-34
+; 1	2	3.43	328	-54
+; 2	3	5.79	258	-74
+; 3	4	2.99	345	-16
+; 3	5	7.73	343	+51

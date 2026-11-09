@@ -6,6 +6,46 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v1.4.14] - 2026-11-09
+
+### Dodane
+
+- Trzy całkowicie wykomentowane SRV z Rzędów Tomanowych (12 odcinków):
+  roboczo Dziura pod Zawaliskiem, Dziura nad Zawaliskiem i nierozpoznana
+  Dziura X. Zachowano literalne odczyty oraz opis hipotez identyfikacji,
+  niezgodności obliczeń, numeracji otworów i ograniczeń GPS.
+- Odzyskane oryginały SVX, PDF, XLS, DOC, SVG i zdjęcia z korespondencji
+  dotyczącej pomiarów Z. Tabaczyńskiego; uzupełniono paczki _RAW oraz
+  rozdzielono role autorów pomiarów i osób przekazujących materiały.
+- Dokumentacja i zestawienia współrzędnych są przechowywane w _RAW
+  właściwych jaskiń, z pełnymi kopiami źródeł wieloobiektowych.
+  Materiały trzech obiektów Rzędów Tomanowych zachowano także przy nazwach
+  roboczych, bez włączania pomiarów do projektu.
+- Uzupełniono wcześniejszy CSP Białej oraz lokalne kopie dokumentacji
+  Dziury przy Piargu, Szczeliny w Kopie, Łamanej Dziury, Dziury nad
+  Zawaliskiem, Dziury pod Zawaliskiem i Lodowej Małołąckiej. Metadane
+  wskazują źródłowe daty, zespoły, numery PIG i obiekty katalogu GPS.
+
+### Naprawione
+
+- Meander w Małołąckim Siodle: przywrócono źródłową kalibrację kompasu
+  INCA=-2.37 bez zmiany odczytów DAV; znak potwierdzono izolowaną próbą
+  w natywnym Walls. Zapisano sumy SHA-256 trzech odzyskanych oryginałów.
+- Koszowa, Wyżnia Koszowa Dziura i Szczelina nad Lejem: oddzielono
+  autorstwo i datę dokumentacji od nieustalonych autorów i dat pomiarów.
+  Zachowano roboczą datę deklinacji i wszystkie odczyty.
+- Dziurka w Trawce: przywrócono źródłowe stacje 5a i 12b zamiast
+  nieudokumentowanych utożsamień z 5 i 12.
+- Zośka: zastąpiono zerowe dowiązanie podstawy kominów przesunięciem
+  wyliczonym z nazwanych pozycji w źródłowym XLS; oznaczono je jako
+  dowiązanie obliczeniowe w segmencie L.
+- Uzupełniono potwierdzone metadane i opisy źródeł, w tym zakres partii
+  Białej, zmiany wariantu Pod Progiem i historyczny zapis Wielkiej Turni.
+- Zweryfikowano metadane z PIG; zastąpiono 10 zastępczych identyfikatorów `WPJ:*`
+  numerami inwentarzowymi i skrócono zapis pochodzenia pliku Zwolińskiego.
+- Wyjaśniono pominięcie 2,30 m w formule podsumowania źródłowego XLS
+  Zośki; odcinek jest zachowany w SRV, a oryginalny arkusz pozostaje bez zmian.
+
 ## [v1.4.13] - 2026-11-04
 
 ### Dodano

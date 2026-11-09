@@ -1,0 +1,41 @@
+#[
+CAVE_ID         "T.F-10.19"
+CAVE_NAME       "Dziura pod Zawaliskiem"
+SURVEY_ID       "DPZ_ROB"
+SURVEY_NAME     "Robocza transkrypcja DOC: Dziura w Zawalisku"
+UPDATE_DATE     "2026-11-09"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "nieznane"
+COORDINATOR_EMAIL "nieznane"
+SOURCE_REF      "_RAW/02"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "nieznane"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "nieznane"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "wylacznie komentarze; literalne DAV; przypisanie obiektu robocze; bez WPJ, fixa i deklinacji"
+#]
+
+; ROBOCZY POLIGON: WSZYSTKIE POMIARY I DYREKTYWY SA KOMENTARZAMI.
+; Hipoteza: Dziura w Zawalisku = Dziura pod Zawaliskiem, T.F-10.19.
+; Zgodne wejscie ku W, rozwidlenie, plan i przekroj autora; 20.93 m.
+; Glebokosc z DAV 10.9053 m; w obliczeniach DOC 10.88 m.
+; Kandydat GPS KSW-0103 ma te same wspolrzedne co KSW-0063.
+; Nazwa tabeli DOC: Dziura w Zawalisku.
+; Szczegoly i warunki wlaczenia: _RAW/02/README.md.
+; Brak potwierdzonej daty i odniesienia azymutow; bez #date i DECL.
+; Numeracja Otworow 1/2/3 jest hipoteza, bez powiazan ze stacjami 0.
+; Brak wpisu WPJ i fixa. Wszystkie wartosci DAV zachowane doslownie.
+;
+; #prefix DziuraPodZawaliskiem
+; #units meters order=DAV
+; #units A=D V=D
+;
+; FROM TO D[m] A[deg] V[deg]
+; 0	1	3.16	270	-42
+; 1	2	5.09	10	-77
+; 2	3	4.32	300	-45
+; 3	4	3.21	14	-14
+; 3	5	5.15	350	+19
