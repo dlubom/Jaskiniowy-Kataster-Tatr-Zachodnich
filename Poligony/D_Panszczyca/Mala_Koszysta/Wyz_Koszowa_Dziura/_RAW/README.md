@@ -1,7 +1,9 @@
 # Wyżnia Koszowa Dziura — surowe materiały źródłowe
 
 - **Źródło**: plik pomiarowy w formacie Speleoliti (https://speleoliti.speleo.net/index-en.html), przesłany mailem przez Z. Tabaczyńskiego 17.04.2014
-- **Autor pomiaru**: Z. Tabaczyński
+- **Autorzy pomiarów**: nieustaleni
+- **Autor dokumentacji i planu**: Z. Tabaczyński (PIG)
+- **Data dokumentacji**: październik 2008 r. (PIG), niepotwierdzona jako data pomiarów
 - **Data pozyskania**: 2014-04-17 (potwierdzony przekaz zachowanego CSP)
 - **Dodał**: Dariusz Lubomski
 - **Kompletność**: pojedynczy CSP z 3 rekordami; brak pierwotnej książeczki terenowej

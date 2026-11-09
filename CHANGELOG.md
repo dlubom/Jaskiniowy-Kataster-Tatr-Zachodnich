@@ -6,6 +6,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v1.4.14] - 2026-11-09
+
 ### Dodane
 
 - Trzy całkowicie wykomentowane SRV z Rzędów Tomanowych (12 odcinków):
@@ -27,7 +29,11 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 ### Naprawione
 
 - Meander w Małołąckim Siodle: przywrócono źródłową kalibrację kompasu
-  INCA=-2.37 bez zmiany odczytów DAV.
+  INCA=-2.37 bez zmiany odczytów DAV; znak potwierdzono izolowaną próbą
+  w natywnym Walls. Zapisano sumy SHA-256 trzech odzyskanych oryginałów.
+- Koszowa, Wyżnia Koszowa Dziura i Szczelina nad Lejem: oddzielono
+  autorstwo i datę dokumentacji od nieustalonych autorów i dat pomiarów.
+  Zachowano roboczą datę deklinacji i wszystkie odczyty.
 - Dziurka w Trawce: przywrócono źródłowe stacje 5a i 12b zamiast
   nieudokumentowanych utożsamień z 5 i 12.
 - Zośka: zastąpiono zerowe dowiązanie podstawy kominów przesunięciem
@@ -35,7 +41,7 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
   dowiązanie obliczeniowe w segmencie L.
 - Uzupełniono potwierdzone metadane i opisy źródeł, w tym zakres partii
   Białej, zmiany wariantu Pod Progiem i historyczny zapis Wielkiej Turni.
-- Zweryfikowano metadane z PIG; zastąpiono 10 identyfikatorów WPJ
+- Zweryfikowano metadane z PIG; zastąpiono 10 zastępczych identyfikatorów `WPJ:*`
   numerami inwentarzowymi i skrócono zapis pochodzenia pliku Zwolińskiego.
 - Wyjaśniono pominięcie 2,30 m w formule podsumowania źródłowego XLS
   Zośki; odcinek jest zachowany w SRV, a oryginalny arkusz pozostaje bez zmian.
