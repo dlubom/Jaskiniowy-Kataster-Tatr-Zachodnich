@@ -93,18 +93,7 @@ def _cache_key(directory: Path, release: str, architecture: str) -> str:
     directory.mkdir()
     release_file = directory / "os-release"
     release_file.write_text(f'ID=ubuntu\nVERSION_ID="{release}"\n', encoding="utf-8")
-    commands = directory / "commands"
-    commands.mkdir()
-    _executable(
-        commands / "uname",
-        'test "$1" = -m || exit 99\nprintf "%s\\n" "$JKTZ_TEST_ARCH"\n',
-    )
-    environment = {
-        **os.environ,
-        "PATH": str(commands) + os.pathsep + os.environ["PATH"],
-        "JKTZ_TEST_ARCH": architecture,
-    }
-    context = {"inputs": {"version": VERSION}, "steps": {}}
+    context = {"inputs": {"version": VERSION}, "runner": {"arch": architecture}, "steps": {}}
     steps = yaml.safe_load(ACTION.read_text(encoding="utf-8"))["runs"]["steps"]
     for number, step in enumerate(steps):
         if step.get("uses", "").startswith("actions/cache@"):
@@ -115,7 +104,7 @@ def _cache_key(directory: Path, release: str, architecture: str) -> str:
         script = _expand(step["run"], context).replace(
             "/etc/os-release", shlex.quote(str(release_file))
         )
-        completed = _bash(script, {**environment, "GITHUB_OUTPUT": str(output)}, directory)
+        completed = _bash(script, {**os.environ, "GITHUB_OUTPUT": str(output)}, directory)
         assert completed.returncode == 0, completed.stdout + completed.stderr
         if "id" in step:
             values = dict(line.split("=", 1) for line in output.read_text().splitlines())
@@ -129,7 +118,7 @@ def test_cache_does_not_reuse_binaries_across_linux_release_or_architecture(tmp_
             tmp_path / f"{release}-{architecture}", release, architecture
         )
         for release in ("24.04", "26.04")
-        for architecture in ("x86_64", "aarch64")
+        for architecture in ("X64", "ARM64")
     }
 
     assert len(set(keys.values())) == 4, keys

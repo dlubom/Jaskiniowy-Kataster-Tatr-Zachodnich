@@ -29,8 +29,21 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
   Białej, zmiany wariantu Pod Progiem i historyczny zapis Wielkiej Turni.
 - Zweryfikowano metadane z PIG; zastąpiono 10 identyfikatorów WPJ
   numerami inwentarzowymi i skrócono zapis pochodzenia pliku Zwolińskiego.
-- Instalator CI Survex rozdziela cache według systemu, wersji i architektury
-  oraz dobiera zależności bez nazw ABI właściwych tylko dla Ubuntu 24.04.
+
+## [v1.4.13] - 2026-11-04
+
+### Dodano
+
+- Otwór II Jaskini Koziej (`Kozia:k9619`, `MTW-0076`), rozpoznany
+  na planie Stanisława Kotarby przy wylocie ciągu nad pięciometrową kaskadą.
+  Przed wyrównaniem różnica między poligonem a pomiarem otworów wynosi
+  15,46 m w 3D, w tym 15,45 m w pionie.
+  [Inwentarz PIG T.E-11.11](https://jaskiniepolski.pgi.gov.pl/Details/Information/1478)
+
+### Zmienione
+
+- Zaktualizowano współrzędne kotwic z pomiarów Marka Jędrzejczaka
+  opublikowanych w [GPS v1.3.3](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.3).
 
 ## [v1.4.12] - 2026-10-28
 

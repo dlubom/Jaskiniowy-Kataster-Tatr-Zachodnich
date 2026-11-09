@@ -24,7 +24,7 @@ PROCESSING      "2026-10-27: tymczasowe #S L na decyzje koordynatora dla nierozs
 ; Brak daty tego bloku; przyjeto DECL=0 do czasu ustalenia dat pomiarow.
 ; To zalozenie zastepcze, nie potwierdzona deklinacja magnetyczna.
 #Units DECL=0
-; Otwor w tym pliku: Kozia:k001 - fix/flag/note w Poligony/OTWORY.SRV
+; Otwory I (k001) i II (k9619): fix/flag/note w Poligony/OTWORY.SRV.
 k001	k002	0.90	0.00	-90.00
 k002	k003	3.21	174.97	-15.94
 k003	k004	0.20	0.00	90.00
@@ -488,6 +488,8 @@ k9614	k9615	1.00	305.31	54.01
 k9615	k9616	5.27	339.99	36.00
 k9616	k9617	5.98	44.00	-35.81
 k9617	k9618	4.93	0.00	90.00
+; k9619 wypada przy symbolu otworu II na planie S. Kotarby (PIG T.E-11.11,
+; grafika 983), za kaskada k9617-k9618 o wysokosci ok. 5 m opisana w PIG.
 k9618	k9619	5.26	0.00	27.00
 k9619	k9620	13.61	202.32	-7.81
 k9620	k9621	4.39	184.98	-44.89
