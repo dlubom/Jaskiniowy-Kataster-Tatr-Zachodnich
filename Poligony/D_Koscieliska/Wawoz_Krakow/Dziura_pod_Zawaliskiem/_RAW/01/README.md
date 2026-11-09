@@ -19,8 +19,6 @@ Nagłówek PDF i dokładny rekord archiwalnego PIG identyfikują **Dziura pod Za
 
 [Katalog GPS v2.0.2](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v2.0.2) przypisuje temu numerowi inwentarzowemu obiekt `KSW-0103` i jaskinię `C-0335`. To odnośnik katalogowy; wybrany rekord współrzędnych pochodzi z TPN i ma status „nieweryfikowany”.
 
-Katalog służy wyłącznie archiwizacji opisu. Brak surowej tabeli odczytów nie pozwala utworzyć poligonu; nie dodano aktywnego SRV, wpisu WPJ ani fixa.
-
-Tożsamość wynika z podpisu PDF. Nie utożsamiono tego obiektu z żadną roboczą nazwą z dokumentu „pomiary w Rzędach Tomanowych.doc”; przypisanie tamtych tabel i otworów pozostaje nierozstrzygnięte (#153).
+Najbardziej logiczne przypisanie tabeli „Dziura w Zawalisku” z DOC zapisano jako hipotezę w [paczce 02](../02/README.md). Obok powstał [całkowicie wykomentowany DPZ_ROB.SRV](../../DPZ_ROB.SRV). Dokumentacja PDF wspiera identyfikację, lecz nie rozstrzyga numeracji otworów powierzchniowych ani wiarygodnego zakotwiczenia GPS; nie dodano aktywnego poligonu.
 
 Pełny dokument zachowano z oryginalną nazwą i bajtami. Jego kopie przy innych jaskiniach są jednym źródłem, nie niezależnymi pomiarami. SHA-256: `a6c30093b23023f3312e099856910d04d13959456dd0b18c1197b9f2c90f2149`.

@@ -7,7 +7,7 @@
 - **Data pozyskania:** 2014-04-11
 - **Dodał do _RAW:** Dariusz Lubomski, 2026-11-02
 - **Licencja źródłowa:** nieznane
-- **Kompletność:** Pełny DOC obejmujący trzy obiekty o nazwach roboczych i cztery dowiązania powierzchniowe; brak identyfikacji katastrowej i oryginalnej książeczki terenowej.
+- **Kompletność:** Pełny DOC: 5 + 5 + 2 rekordy jaskiniowe i 4 powierzchniowe. Przypisanie tabeli do tej jaskini jest najsilniejszą hipotezą; brak jawnej legendy nazw i numerów otworów oraz oryginalnej książeczki.
 
 ## Zawartość
 
@@ -15,6 +15,14 @@
 
 ## Zakres i powielenie źródła
 
-**Dziura w Zawalisku — obiekt o nazwie roboczej ze źródła.** Identyfikacja katastrowa, autorzy i daty pomiarów nieustalone. Katalog służy wyłącznie archiwizacji; nie dodano aktywnego SRV, wpisu WPJ ani fixu GPS. Nie utożsamiono obiektu z inną jaskinią na podstawie podobnej nazwy lub wymiarów.
+**Dziura w Zawalisku** jest nazwą roboczą w DOC. Najbardziej logiczne
+przypisanie to **Dziura pod Zawaliskiem (T.F-10.19)**. Zachowano je jako
+hipotezę w [paczce przy nazwie inwentarzowej](../../../../../D_Koscieliska/Wawoz_Krakow/Dziura_pod_Zawaliskiem/_RAW/02/README.md), razem z uzasadnieniem,
+problemami i odnośnikiem do całkowicie wykomentowanego SRV.
+Nie ma aktywnego poligonu, wpisu WPJ ani fixa. Data i zespół tej tabeli
+pozostają niepotwierdzone; podobna geometria nie ustala tożsamości stacji.
 
-Pełny DOC obejmuje Dziurę w Zawalisku (5 rekordów), Szczelinę nad Zawaliskiem (5), Dziurę X. (2) oraz cztery dowiązania powierzchniowe. Jest zachowany w każdym z trzech katalogów, bez dzielenia dokumentu. Identyczne kopie to jeden przekaz, nie trzy niezależne pomiary. Przypisanie numerów otworów powierzchniowych i identyfikacja obiektów pozostają w #153.
+Pełny DOC obejmuje Dziurę w Zawalisku (5 rekordów), Szczelinę nad Zawaliskiem
+(5), Dziurę X. (2) i cztery dowiązania powierzchniowe. Zachowano cały
+dokument także przy nazwie roboczej. Identyczne kopie są jednym przekazem.
+Numeracja otworów i identyfikacja Dziury X pozostają nierozstrzygnięte (#153).

@@ -8,13 +8,17 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Dodane
 
+- Trzy całkowicie wykomentowane SRV z Rzędów Tomanowych (12 odcinków):
+  roboczo Dziura pod Zawaliskiem, Dziura nad Zawaliskiem i nierozpoznana
+  Dziura X. Zachowano literalne odczyty oraz opis hipotez identyfikacji,
+  niezgodności obliczeń, numeracji otworów i ograniczeń GPS.
 - Odzyskane oryginały SVX, PDF, XLS, DOC, SVG i zdjęcia z korespondencji
   dotyczącej pomiarów Z. Tabaczyńskiego; uzupełniono paczki _RAW oraz
   rozdzielono role autorów pomiarów i osób przekazujących materiały.
 - Dokumentacja i zestawienia współrzędnych są przechowywane w _RAW
   właściwych jaskiń, z pełnymi kopiami źródeł wieloobiektowych.
-  Materiały trzech niezidentyfikowanych obiektów Rzędów Tomanowych
-  zachowano przy nazwach roboczych, bez włączania pomiarów do projektu.
+  Materiały trzech obiektów Rzędów Tomanowych zachowano także przy nazwach
+  roboczych, bez włączania pomiarów do projektu.
 - Uzupełniono wcześniejszy CSP Białej oraz lokalne kopie dokumentacji
   Dziury przy Piargu, Szczeliny w Kopie, Łamanej Dziury, Dziury nad
   Zawaliskiem, Dziury pod Zawaliskiem i Lodowej Małołąckiej. Metadane

@@ -1,0 +1,39 @@
+#[
+CAVE_ID         "ROBOCZE-TOMANOWE-DZIURA-X"
+CAVE_NAME       "Dziura X"
+SURVEY_ID       "DZX_ROB"
+SURVEY_NAME     "Robocza transkrypcja DOC: Dziura X."
+UPDATE_DATE     "2026-11-09"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "nieznane"
+COORDINATOR_EMAIL "nieznane"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "nieznane"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "nieznane"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "wylacznie komentarze; literalne DAV; przypisanie obiektu robocze; bez WPJ, fixa i deklinacji"
+#]
+
+; ROBOCZY POLIGON: WSZYSTKIE POMIARY I DYREKTYWY SA KOMENTARZAMI.
+; Nazwa robocza Dziura X.; brak uzasadnionego numeru PIG i obiektu GPS.
+; CAVE_ID ROBOCZE-TOMANOWE-DZIURA-X jest lokalna etykieta, nie numerem PIG.
+; Dwa odcinki ku NNE, 4.23 m; glebokosc z DAV 2.4930 m, w DOC 2.48 m.
+; Najbardziej logicznie Otwor 3 z tabeli powierzchniowej, lecz bez legendy.
+; Warunkowo ok. 6.39 m na NW i 1.27 m wyzej od Dziury pod Zawaliskiem.
+; Nie utozsamiono z zadna sasiednia szczelina na podstawie wymiarow.
+; Nazwa tabeli DOC: Dziura X.
+; Szczegoly i warunki wlaczenia: _RAW/01/README.md.
+; Brak potwierdzonej daty i odniesienia azymutow; bez #date i DECL.
+; Numeracja Otworow 1/2/3 jest hipoteza, bez powiazan ze stacjami 0.
+; Brak wpisu WPJ i fixa. Wszystkie wartosci DAV zachowane doslownie.
+;
+; #prefix DziuraX
+; #units meters order=DAV
+; #units A=D V=D
+;
+; FROM TO D[m] A[deg] V[deg]
+; 0	1	1.93	19	-7
+; 1	2	2.30	7	-79
