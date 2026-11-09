@@ -7,7 +7,7 @@
 - **Data pozyskania:** 2014-04-14 / 2014-04-17
 - **Dodał do _RAW:** Dariusz Lubomski
 - **Licencja źródłowa:** nieznane
-- **Kompletność:** Jeden CSP z 45 rekordami Białej / Partii nad Łukami, mierzonych ponownie 20.06.2003. Paczka nie zawiera pełnego pomiaru Jaskini Zimnej. Wcześniejszy rysunek SVG zachowano w _RAW/02.
+- **Kompletność:** Jeden CSP z 45 rekordami Białej / Partii nad Łukami, mierzonych ponownie 20.06.2003. Paczka nie zawiera pełnego pomiaru Jaskini Zimnej. Wcześniejszy CSP i rysunek SVG zachowano w _RAW/02.
 
 ## Zawartość
 

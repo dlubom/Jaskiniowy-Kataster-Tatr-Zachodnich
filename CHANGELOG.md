@@ -15,6 +15,10 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
   właściwych jaskiń, z pełnymi kopiami źródeł wieloobiektowych.
   Materiały trzech niezidentyfikowanych obiektów Rzędów Tomanowych
   zachowano przy nazwach roboczych, bez włączania pomiarów do projektu.
+- Uzupełniono wcześniejszy CSP Białej oraz lokalne kopie dokumentacji
+  Dziury przy Piargu, Szczeliny w Kopie, Łamanej Dziury, Dziury nad
+  Zawaliskiem, Dziury pod Zawaliskiem i Lodowej Małołąckiej. Metadane
+  wskazują źródłowe daty, zespoły, numery PIG i obiekty katalogu GPS.
 
 ### Naprawione
 
@@ -29,6 +33,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
   Białej, zmiany wariantu Pod Progiem i historyczny zapis Wielkiej Turni.
 - Zweryfikowano metadane z PIG; zastąpiono 10 identyfikatorów WPJ
   numerami inwentarzowymi i skrócono zapis pochodzenia pliku Zwolińskiego.
+- Wyjaśniono pominięcie 2,30 m w formule podsumowania źródłowego XLS
+  Zośki; odcinek jest zachowany w SRV, a oryginalny arkusz pozostaje bez zmian.
 
 ## [v1.4.13] - 2026-11-04
 

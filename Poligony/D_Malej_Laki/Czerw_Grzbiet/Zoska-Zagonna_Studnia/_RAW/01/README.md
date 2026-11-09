@@ -43,3 +43,7 @@ Wiersze 174/175 zawierają pomocnicze 0/1 i zgodne obliczenia, ale nie mają for
 Trzy powierzchniowe rekordy XLS A92:E94 zostały usunięte z aktywnego SRV przy porządkowaniu fixów (`6561bab`, główna historia `5021fd9`); oryginał XLS je zachowuje. Szacunek 3 m z A141:E141 jest nadal jawnie opisany w SRV jako „bez pomiaru na oko”. Nazwa XLS „aktualne na 2004-11-11” jest oryginalna; plik zawiera także sekcję 24.03.2005.
 
 Wszystkie cztery pliki są bajtowo identyczne z oryginalnymi załącznikami przekazu 19.11.2013. Materiały CDR odczytywane przez importer mogą mieć brakujące obiekty i rozjechany tekst; nie są niezależnym pomiarem terenowym.
+
+## Suma długości w oryginalnym XLS
+
+Zapisany wynik `pomiary!L4` wynosi 634.26 m. Formuła `C133=SUM(C118:C131)` pomija odcinek `19G–20G` z wiersza 117 (2.30 m); wynik C133 jest składnikiem sumy przez M133. Suma 103 zachowanych rekordów podziemnych, w tym jawnego szacunku 3 m, wynosi 636.56 m. Różnica 2.30 m wynika z zakresu formuły, a nie z brakującego odcinka SRV. Nie obejmuje trzech odcinków powierzchniowych ani obliczeniowego dowiązania podstawy kominów. Oryginalny XLS i wszystkie odczyty pozostawiono bez zmian.
