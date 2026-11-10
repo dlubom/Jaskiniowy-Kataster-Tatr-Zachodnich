@@ -6,6 +6,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v1.4.15] - 2026-11-10
+
 ### Dodane
 
 - Odzyskano źródła Lodowej Małołąckiej, Dziury i Mroźnej oraz
@@ -19,7 +21,6 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
   dolnego otworu (MLW-0011). Górny otwór oznaczono na stacji 31.
 - Dziura i Mroźna: uzupełniono daty sesji z korespondencji w metadanych
   bez przypisywania ich poszczególnym odcinkom.
-
 - Smocza Jama: dowiązano punkt GPS dolnego otworu (`KSW-0065`) do stacji
   `1.0` i dołączono oryginalny `SMOCZAJA.SRV` Filipa Filara do `_RAW/01`.
 
