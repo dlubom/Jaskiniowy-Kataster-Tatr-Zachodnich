@@ -1,8 +1,8 @@
 # Studnia w Kazalnicy (T.E-11.12) — paczka źródłowa 02
 
 - **Status materiału:** częściowy
-- **Pochodzenie danych:** Dokumentacja przekazana w korespondencji przez Krzysztofa Dudzińskiego i Jacka Szczygła.
-- **Autorzy pomiarów:** Krzysztof Dudziński, Tomasz Zwijacz-Kozica (poligon); Jacek Szczygieł (wektoryzacja)
+- **Pochodzenie danych:** Dokumentacja przekazana w korespondencji przez Krzysztofa Dudzińskiego i Jacka Szczygła. Wektoryzację poligonu wykonał Jacek Szczygieł.
+- **Autorzy pomiarów:** Krzysztof Dudziński, Tomasz Zwijacz-Kozica (poligon)
 - **Daty pomiarów:** 1995–1996 (poligon); daty opracowania przekrojów nieustalone
 - **Data pozyskania:** 2013-11-05/2013-11-06
 - **Dodał do _RAW:** Dariusz Lubomski
