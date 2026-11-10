@@ -30,10 +30,10 @@ PROCESSING      "porownano z arkuszami z _RAW/01; przeliczono trzy katy zenitaln
 #DATE 2004-09-04
 ;ciag po pow.
 ; Otwory: 0 dolny (kotwica GPS), 31 gorny (pozycja z poligonu).
-0	1p	2.4	189	25
-1p	2p	13.32	299	-22
-2p	3p	20.8	67	60
-3p	31	1.68	97	-8
+0	1p	2.4	189	25	#S P
+1p	2p	13.32	299	-22	#S P
+2p	3p	20.8	67	60	#S P
+3p	31	1.68	97	-8	#S P
 ;
 0	1	3.24	60	-43
 1	2	5.33	99	2

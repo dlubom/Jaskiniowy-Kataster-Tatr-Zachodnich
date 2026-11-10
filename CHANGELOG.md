@@ -19,6 +19,7 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 - Lodowa Małołącka: przeliczono trzy kąty zenitalne w Janosikowych
   Partiach, skorygowano datę odcinka 29–59 i dowiązano stację 0 do
   dolnego otworu (MLW-0011). Górny otwór oznaczono na stacji 31.
+  Cztery odcinki między otworami oznaczono jako powierzchniowe.
 - Dziura i Mroźna: uzupełniono daty sesji z korespondencji w metadanych
   bez przypisywania ich poszczególnym odcinkom.
 - Smocza Jama: dowiązano punkt GPS dolnego otworu (`KSW-0065`) do stacji
