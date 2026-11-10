@@ -1,17 +1,17 @@
 #[
-CAVE_ID         "WPJ:LMALOL"
+CAVE_ID         "T.E-13.02"
 CAVE_NAME       "Lodowa Malolacka"
 SURVEY_ID       "LODMAL"
 SURVEY_NAME     "Lodowa Malolacka"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-10"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
 SOURCE_REF      "_RAW/01"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM            "nieznane"
-INSTRUMENT      "nieznane"
+TEAM            "F. Filar, M. Parczewski, K. Zaczynski, M. Kowalczyk, P. Koltas"
+INSTRUMENT      "topofil Marbach"
 SURVEY_DATE     "2004-09-04"
 SURVEY_DATE     "2004-10-23"
 SURVEY_DATE     "2004-09-25"
@@ -19,6 +19,7 @@ SURVEY_DATE     "2004-10-30"
 SURVEY_DATE     "2004-11-06"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+PROCESSING      "porownano z arkuszami z _RAW/01; przeliczono trzy katy zenitalne na inklinacje i przypisano 29-59 do sesji 2004-10-30"
 #]
 
 #units meters order=DAV
@@ -28,7 +29,7 @@ PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 ;
 #DATE 2004-09-04
 ;ciag po pow.
-; Otwor w tym pliku: LodowaMalolacka:0 - fix/flag/note w Poligony/OTWORY.SRV
+; Otwory: 0 dolny (kotwica GPS), 31 gorny (pozycja z poligonu).
 0	1p	2.4	189	25
 1p	2p	13.32	299	-22
 2p	3p	20.8	67	60
@@ -53,10 +54,10 @@ PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 39	40	5.49	112	41
 40	41	4.75	165	58
 41	46	8.35	132	60
-41	42	4.36	204	55
-42	43	1.75	260	71
+41	42	4.36	204	35
+42	43	1.75	260	19
 43	45	4.5	202	4
-43	44	6.94	152	23
+43	44	6.94	152	67
 37	47	3.56	122	16
 47	48	5.19	200	-59
 48	49	4.69	131	2
@@ -83,7 +84,6 @@ PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 26	27	3.55	265	1
 27	28	1.77	338	13
 28	29	1.11	70	-6
-29	59	3.8	55	32
 29	30	2.99	343	30
 30	31	6.8	284	32
 23	32	5.43	48	23
@@ -91,6 +91,7 @@ PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 33	34	2.36	159	51
 34	35	3.65	--	90
 #DATE 2004-10-30
+29	59	3.8	55	32
 20	53	3.84	218	4
 53	54	8.2	120	50
 54	55	6.32	112	60

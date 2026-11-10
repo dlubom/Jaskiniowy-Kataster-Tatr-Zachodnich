@@ -19,6 +19,6 @@ Nagłówek PDF i dokładny rekord archiwalnego PIG identyfikują **Jaskinia Lodo
 
 [Katalog GPS v2.0.2](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v2.0.2) przypisuje temu numerowi inwentarzowemu obiekt `MLW-0024` i jaskinię `C-0588`. To odnośnik katalogowy; wybrany rekord współrzędnych pochodzi z TPN i ma status „nieweryfikowany”.
 
-PDF opisuje starsze pomiary z 17.12.2000. PIG w historii dokumentacji odróżnia je od ponownego pomiaru całej jaskini w pięciu akcjach w 2004 r. Aktywny LODMAL.SRV dotyczy późniejszej serii; ta paczka nie odzyskuje jej tabel źródłowych, a [paczka 01](../01/README.md) nadal oznacza ich brak.
+PDF opisuje starsze pomiary z 17.12.2000. PIG w historii dokumentacji odróżnia je od ponownego pomiaru całej jaskini w pięciu akcjach w 2004 r. Aktywny LODMAL.SRV dotyczy późniejszej serii; arkusze tej serii zachowano oddzielnie w [paczce 01](../01/README.md).
 
 Pełny dokument zachowano z oryginalną nazwą i bajtami. Jego kopie przy innych jaskiniach są jednym źródłem, nie niezależnymi pomiarami. SHA-256: `a6c30093b23023f3312e099856910d04d13959456dd0b18c1197b9f2c90f2149`.

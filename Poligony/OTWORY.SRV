@@ -120,10 +120,15 @@
 #flag	Lejbusiowa:A1	/ENTRANCE
 #note	Lejbusiowa:A1	/Jaskinia Lejbusiowa
 
-#fix	LodowaMalolacka:0	E19.9285195	N49.2431332993	1637.100508m
-#flag	LodowaMalolacka:0	/Lodowa Malolacka
+; Lodowa Malolacka: 0 to otwor dolny, 31 to gorny (z poligonu).
+#fix	LodowaMalolacka:0	E19.9285111001	N49.2430444655	1634.403178m
+#flag	LodowaMalolacka:0	/Lodowa Malolacka - otwor dolny
 #flag	LodowaMalolacka:0	/ENTRANCE
-#note	LodowaMalolacka:0	/Lodowa Malolacka
+#note	LodowaMalolacka:0	/Lodowa Malolacka - otwor dolny
+
+#flag	LodowaMalolacka:31	/Lodowa Malolacka
+#flag	LodowaMalolacka:31	/ENTRANCE
+#note	LodowaMalolacka:31	/Lodowa Malolacka
 
 #fix	LodowaMietusia:0	E19.9017112761	N49.2399201817	1586.427564m
 #flag	LodowaMietusia:0	/Jaskinia Lodowa Mietusia

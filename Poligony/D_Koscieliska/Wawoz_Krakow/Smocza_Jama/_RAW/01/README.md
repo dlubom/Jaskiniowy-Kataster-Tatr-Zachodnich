@@ -1,10 +1,10 @@
 # Smocza Jama – paczka źródłowa 01
 
 - **Status materiału:** dostępny
-- **Pochodzenie danych:** Filip Filar, mail „Smocza Jama” z 2015-07-20, oryginalny załącznik wyodrębniony z MIME
+- **Pochodzenie danych:** Materiał Filipa Filara z korespondencji.
 - **Autorzy pomiarów:** Filip Filar, Bogusława Chlipała
-- **Daty pomiarów:** 2013-12-31 (mail „Daty” z 2015-07-20)
-- **Data pozyskania:** 2015-07-20 (przekazanie mailem), 2026-11-10 (odzyskanie do _RAW)
+- **Daty pomiarów:** 2013-12-31 (według korespondencji)
+- **Data pozyskania:** 2015-07-20; odzyskano 2026-11-10
 - **Dodał do _RAW:** Codex na zlecenie Dariusza Lubomskiego
 - **Licencja źródłowa:** nieznana
 - **Kompletność:** Oryginalny załącznik zawiera wszystkie 10 odcinków poligonu, bez współrzędnych otworów i dowiązań. Brak surowego zrzutu z DistoX w przekazanych materiałach. [Plan Filipa Filara opublikowano w PIG](https://jaskiniepolski.pgi.gov.pl/Details/Information/760).
