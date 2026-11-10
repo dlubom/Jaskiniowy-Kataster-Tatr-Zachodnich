@@ -6,6 +6,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v1.4.16] - 2026-11-10
+
 ### Dodane
 
 - Studnia w Kazalnicy: odzyskano wektoryzację poligonu, przekroje i
@@ -15,7 +17,7 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 ### Naprawione
 
 - Studnia w Kazalnicy: uzupełniono numer inwentarzowy, skład zespołu i
-  doprecyzowano pewność datowania sesji w metadanych.
+  doprecyzowano datowanie sesji. Oddzielono autorstwo pomiarów od wektoryzacji.
 - Goryczkowa: uzgodniono metadane zespołów G2 i G3 ze źródłem.
 
 ## [v1.4.15] - 2026-11-10
