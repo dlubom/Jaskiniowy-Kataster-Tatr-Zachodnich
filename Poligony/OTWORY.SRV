@@ -126,9 +126,11 @@
 #flag	LodowaMalolacka:0	/ENTRANCE
 #note	LodowaMalolacka:0	/Lodowa Malolacka - otwor dolny
 
-#flag	LodowaMalolacka:31	/Lodowa Malolacka
+; MLW-0024 do ponownej weryfikacji wysokosci. Polozenie stacji 31 wynika z poligonu.
+; #fix	LodowaMalolacka:31	E19.9285195	N49.2431332993	1637.100508m
+#flag	LodowaMalolacka:31	/Lodowa Malolacka - otwor gorny
 #flag	LodowaMalolacka:31	/ENTRANCE
-#note	LodowaMalolacka:31	/Lodowa Malolacka
+#note	LodowaMalolacka:31	/Lodowa Malolacka - otwor gorny
 
 #fix	LodowaMietusia:0	E19.9017112761	N49.2399201817	1586.427564m
 #flag	LodowaMietusia:0	/Jaskinia Lodowa Mietusia
