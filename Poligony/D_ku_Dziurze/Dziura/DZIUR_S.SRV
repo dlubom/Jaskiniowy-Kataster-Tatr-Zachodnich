@@ -3,18 +3,21 @@ CAVE_ID         "T.B-14.01"
 CAVE_NAME       "Jaskinia Dziura"
 SURVEY_ID       "A1"
 SURVEY_NAME     "Ciag glowny"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-10"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
 SOURCE_REF      "_RAW/01"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM            "F. Filar i M. Parczewski"
+TEAM            "F. Filar, M. Parczewski, B. Chlipala"
 INSTRUMENT      "nieznane"
+SURVEY_DATE     "2014-01-05"
 SURVEY_DATE     "2014-01-06"
+SURVEY_DATE     "2014-03-21"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "porownano 37 odcinkow z KUDZIURA.SRV; brak przypisania odcinkow do sesji"
 #]
 
 #date 2014-01-06

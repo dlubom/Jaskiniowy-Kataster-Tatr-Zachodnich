@@ -120,10 +120,17 @@
 #flag	Lejbusiowa:A1	/ENTRANCE
 #note	Lejbusiowa:A1	/Jaskinia Lejbusiowa
 
-{{ gps_fix('LodowaMalolacka:0', 'MLW-0024') }}
-#flag	LodowaMalolacka:0	/Lodowa Malolacka
+; Lodowa Malolacka: 0 to otwor dolny, 31 to gorny (z poligonu).
+{{ gps_fix('LodowaMalolacka:0', 'MLW-0011') }}
+#flag	LodowaMalolacka:0	/Lodowa Malolacka - otwor dolny
 #flag	LodowaMalolacka:0	/ENTRANCE
-#note	LodowaMalolacka:0	/Lodowa Malolacka
+#note	LodowaMalolacka:0	/Lodowa Malolacka - otwor dolny
+
+; MLW-0024 do ponownej weryfikacji wysokosci. Polozenie stacji 31 wynika z poligonu.
+; {{ gps_fix('LodowaMalolacka:31', 'MLW-0024') }}
+#flag	LodowaMalolacka:31	/Lodowa Malolacka - otwor gorny
+#flag	LodowaMalolacka:31	/ENTRANCE
+#note	LodowaMalolacka:31	/Lodowa Malolacka - otwor gorny
 
 {{ gps_fix('LodowaMietusia:0', 'MTZ-0022') }}
 #flag	LodowaMietusia:0	/Jaskinia Lodowa Mietusia

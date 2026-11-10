@@ -6,6 +6,25 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v1.4.15] - 2026-11-10
+
+### Dodane
+
+- Odzyskano źródła Lodowej Małołąckiej, Dziury i Mroźnej oraz
+  zarchiwizowano niewłączone pomiary dwóch schronów w Skale Kmietowicza
+  i materiał lokalizacyjny Pomarańczarni.
+
+### Naprawione
+
+- Lodowa Małołącka: przeliczono trzy kąty zenitalne w Janosikowych
+  Partiach, skorygowano datę odcinka 29–59 i dowiązano stację 0 do
+  dolnego otworu (MLW-0011). Górny otwór oznaczono na stacji 31.
+  Cztery odcinki między otworami oznaczono jako powierzchniowe.
+- Dziura i Mroźna: uzupełniono daty sesji z korespondencji w metadanych
+  bez przypisywania ich poszczególnym odcinkom.
+- Smocza Jama: dowiązano punkt GPS dolnego otworu (`KSW-0065`) do stacji
+  `1.0` i dołączono oryginalny `SMOCZAJA.SRV` Filipa Filara do `_RAW/01`.
+
 ## [v1.4.14] - 2026-11-09
 
 ### Dodane
