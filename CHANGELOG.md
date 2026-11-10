@@ -6,6 +6,11 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+### Naprawione
+
+- Smocza Jama: dowiązano punkt GPS dolnego otworu (`KSW-0065`) do stacji
+  `1.0` i dołączono oryginalny `SMOCZAJA.SRV` Filipa Filara do `_RAW/01`.
+
 ## [v1.4.14] - 2026-11-09
 
 ### Dodane
