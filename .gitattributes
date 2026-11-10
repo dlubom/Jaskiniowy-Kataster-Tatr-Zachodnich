@@ -6,3 +6,7 @@ tests/fixtures/pockettopo/** -text
 tests/fixtures/pockettopo/**/*.top binary
 tests/fixtures/pockettopo/**/*.dxf binary
 tests/fixtures/pockettopo/**/*.tsv binary
+
+# Zachowaj oryginalne CRLF i końcowe puste wiersze przekazanych plików.
+Poligony/D_Mietusia/Kazaln_Miet/Studnia_w_Kazaln/_RAW/01/*.SRV -text whitespace=cr-at-eol,-blank-at-eof
+Poligony/D_Mietusia/Kazaln_Miet/Studnia_w_Kazaln/_RAW/02/Studnia_wKM.wrl binary
