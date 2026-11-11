@@ -31,7 +31,7 @@
 
 | Karta | Wynik | Warunek startu | Stan |
 | --- | --- | --- | --- |
-| J01 | Pełne mapowanie i lista podziałów | Aktualny HEAD tej PR | do wykonania |
+| J01 | [Mapowanie i lista podziałów](MAPPING.md) | Aktualny HEAD tej PR | audyt zakończony, 11 otwartych rozstrzygnięć blokuje J04 |
 | J02 | Wspólny snapshot GPS i czytnik katalogu | G02 preview z sumami albo G04 release | do wykonania |
 | J03 | Testowalny kontrakt tożsamości i referencji | J02 | do wykonania |
 | J04 | Migracja SRV, CLI i podziały | J01 bez nierozstrzygniętych wierszy; J03; G04 | do wykonania |
@@ -55,18 +55,18 @@ Nie zmieniaj jeszcze SRV, WPJ ani kodu. Narzędzia jednorazowe trzymaj poza repo
 Statusy: `confirmed`, `needs_decision`, `missing_gps`. MAPPING.md dokumentuje
 podstawę, SHA obu repo, tag/snapshot GPS, sesje i bloki przenoszonych pomiarów.
 
-- [ ] Zapisz bazę: status Git/PR, pełny wykaz aktywnych SRV według
+- [x] Zapisz bazę: status Git/PR, pełny wykaz aktywnych SRV według
   `is_active_srv_path`, sumy materiałów RAW oraz wersje kompilatorów.
-- [ ] Rozlicz każdy aktywny SRV i wszystkie wystąpienia pomiarów powierzchniowych;
+- [x] Rozlicz każdy aktywny SRV i wszystkie wystąpienia pomiarów powierzchniowych;
   skontroluj także pliki, których nazwa nie sugeruje domiaru. Wypełnij mapowanie
   na podstawie źródeł, oznaczeń otworów i jawnych relacji GPS.
-- [ ] Rozpisz podziały, zaczynając od LODMAL i POW_ORM. Dla każdego określ
+- [x] Rozpisz podziały, zaczynając od LODMAL i POW_ORM. Dla każdego określ
   plik docelowy, sesje, prefixy, units, date/declination, segmenty i SOURCE_REF.
-- [ ] Zweryfikuj, że zbiór source_path dokładnie odpowiada inwentarzowi,
+- [x] Zweryfikuj, że zbiór source_path dokładnie odpowiada inwentarzowi,
   target_path są unikalne, hashe aktualne, a każdy `confirmed` ma dowód.
   Wszystkie luki pokaż użytkownikowi; karta może zakończyć audyt z lukami,
   lecz takie zakończenie nie odblokowuje J04.
-- [ ] Commit/push dokumentacji do tej PR, podaj liczbę źródeł, wyników i luk.
+- [x] Commit/push dokumentacji do tej PR, podaj liczbę źródeł, wyników i luk.
   Zatrzymaj się po J01.
 
 ## J02 — snapshot wydania GPS
