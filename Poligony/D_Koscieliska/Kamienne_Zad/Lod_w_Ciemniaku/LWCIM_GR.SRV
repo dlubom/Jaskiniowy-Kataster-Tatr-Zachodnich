@@ -3,7 +3,7 @@ CAVE_ID         "T.F-10.01"
 CAVE_NAME       "Jaskinia Lodowa w Ciemniaku"
 SURVEY_ID       "GR"
 SURVEY_NAME     "Partie gorne"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-11"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Pawel Gogolak"
 COORDINATOR_EMAIL "pafffel@gmail.com"
@@ -15,12 +15,12 @@ INSTRUMENT      "DistoX2, Qave"
 SURVEY_DATE     "2021-09-11"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "usunieto nieuzywane DECL=5.56; zachowano deklinacje z daty i geometrie; wartosc zrodlowa w _RAW/01"
 #]
 
 #prefix LodowaWCiemniaku
 #units meters order=DAV
 #units A=D V=D
-#units DECL=5.56
 #date 2021-09-11
 
 ; === Polaczenia z innymi cigami ===
