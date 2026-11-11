@@ -15,10 +15,13 @@ import os
 import re
 import tempfile
 import urllib.error
+import urllib.parse
 import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
+
+from jktz.metadata.io import atomic_write
 
 DEFAULT_TEMPLATE = Path("Poligony/OTWORY.SRV.j2")
 DEFAULT_OUTPUT = Path("Poligony/OTWORY.SRV")
@@ -76,7 +79,7 @@ def render_entrances(
         if check:
             _check_rendered_output(output_path, rendered)
         else:
-            output_path.write_text(rendered, encoding="utf-8")
+            atomic_write(output_path, rendered.encode("utf-8"))
 
     return RenderResult(
         output=output_path,
@@ -164,10 +167,12 @@ def _request(url: str) -> urllib.request.Request:
         "Accept": "application/vnd.github+json",
         "User-Agent": "JKTZ-release-renderer",
     }
+    request = urllib.request.Request(url, headers=headers)
+    parsed_url = urllib.parse.urlsplit(url)
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
-    if token:
-        headers["Authorization"] = f"Bearer {token}"
-    return urllib.request.Request(url, headers=headers)
+    if token and parsed_url.scheme == "https" and parsed_url.netloc.lower() == "api.github.com":
+        request.add_unredirected_header("Authorization", f"Bearer {token}")
+    return request
 
 
 def _load_best_measurements(path: Path) -> dict[str, dict[str, str]]:
@@ -210,6 +215,8 @@ def _render_template(
             raise RenderError(f"Invalid gps_fix arguments: {match.group(0)}") from exc
 
     rendered = GPS_FIX_RE.sub(replace, template)
+    if re.search(r"{{\s*gps_fix\b", rendered):
+        raise RenderError("Unclosed or invalid gps_fix template expression.")
     return rendered, stats
 
 
@@ -221,11 +228,11 @@ def _parse_gps_fix_args(source: str) -> tuple[list[Any], dict[str, Any]]:
     if not isinstance(expression, ast.Call) or not isinstance(expression.func, ast.Name):
         raise RenderError(f"Invalid gps_fix template expression: {source}")
     args = [_literal(node, source=source) for node in expression.args]
-    kwargs = {
-        keyword.arg: _literal(keyword.value, source=source)
-        for keyword in expression.keywords
-        if keyword.arg is not None
-    }
+    kwargs = {}
+    for keyword in expression.keywords:
+        if keyword.arg is None or keyword.arg in kwargs:
+            raise RenderError(f"Invalid gps_fix keyword arguments: {source}")
+        kwargs[keyword.arg] = _literal(keyword.value, source=source)
     return args, kwargs
 
 

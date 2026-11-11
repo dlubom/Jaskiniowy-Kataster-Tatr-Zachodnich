@@ -19,7 +19,7 @@ def check(root: Path = Path("Poligony")) -> None:
     for path in non_raw_paths(root):
         if not path.is_file():
             continue
-        if path.suffix == ".srv":
+        if path.suffix.lower() == ".srv" and path.suffix != ".SRV":
             lowercase_extensions.append(f"  {path.as_posix()}")
         elif path.suffix == ".SRV":
             base = path.stem

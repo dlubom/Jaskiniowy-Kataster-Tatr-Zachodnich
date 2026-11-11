@@ -34,7 +34,7 @@ logs/
 #Docker exports (anchored to repo root so src/jktz/exports/ is NOT ignored)
 /exports/
 
-#jktz-validate scratch outputs (cleaned up on success, kept on crash)
+#jktz-validate scratch outputs (owned outputs cleaned on success and failure)
 /validate-exports/
 
 #Python

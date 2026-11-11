@@ -93,7 +93,7 @@ def test_units_state_restores_orientation_and_keeps_rectangular_order_separate(t
     "prefix",
     [
         "\n; comment\n",
-        "#[#]\n",
+        "#[ #] is only annotation\n#]\n",
         "#date 2004-06-19\n#units reset\n",
         "#prefix Cave\n",
         "0 <1,2,3,4>\n",
@@ -107,3 +107,33 @@ def test_scanner_reaches_undeclared_shot_after_non_survey_or_zero_rows(prefix: s
 
 def test_fixed_coordinates_are_not_compass_measurements() -> None:
     assert has_dated_or_declared_active_shots("#fix A 10 20 30\n")
+
+
+@pytest.mark.parametrize("distance", ["1m", "10.5F", "10i6.5", "I6", "0i1"])
+@pytest.mark.parametrize("order", ["DAV", "AVD"])
+def test_explicit_distance_units_still_require_orientation(distance, order):
+    values = f"{distance} 90 0" if order == "DAV" else f"90 0 {distance}"
+    body = f"#units order={order}\n0 1 {values}\n"
+
+    assert not has_dated_or_declared_active_shots(body)
+    assert has_dated_or_declared_active_shots("#date 2004-06-19\n" + body)
+    assert has_dated_or_declared_active_shots("#units DECL=0\n" + body)
+
+
+@pytest.mark.parametrize("distance", ["0m", "0F", "0i0", "I0"])
+def test_zero_distance_with_explicit_units_does_not_require_orientation(distance):
+    assert has_dated_or_declared_active_shots(f"0 1 {distance} 0 0\n")
+
+
+def test_date_inside_nested_comment_cannot_orient_a_following_active_shot():
+    comment = "#[ outer\n#[ inner\n#]\n#date 2004-06-19\n#]\n"
+    shot = "0 1 1 90 0\n"
+
+    assert not has_dated_or_declared_active_shots(comment + shot)
+    assert has_dated_or_declared_active_shots(comment + "#date 2004-06-19\n" + shot)
+
+
+def test_close_marker_in_opening_annotation_does_not_expose_comment_date():
+    comment = "#[ opening text #]\n#date 2004-06-19\n#]\n"
+
+    assert not has_dated_or_declared_active_shots(comment + "0 1 1 90 0\n")

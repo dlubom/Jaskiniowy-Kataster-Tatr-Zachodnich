@@ -40,7 +40,7 @@ jobs:
           version: ${{ steps.survex.outputs.version }}
 
       - name: Compile with cavern
-        run: cavern KATASTER.wpj
+        run: cavern --warnings-are-errors KATASTER.wpj
 
       - name: Prepare public directory
         run: |
@@ -63,7 +63,7 @@ jobs:
           cp web/lang-pl.json public/CaveView/lib/
 
           # Set version string and Cesium ION token
-          VERSION=$(git describe --tags --abbrev=0 2>/dev/null || echo "master@$(git rev-parse --short HEAD)")
+          VERSION=$(git describe --tags --exact-match 2>/dev/null || echo "master@$(git rev-parse --short HEAD)")
           sed -i "s/__VERSION__/$VERSION/" public/index.html
           sed -i "s/__CESIUM_TOKEN__/${{ secrets.CESIUM_ION_TOKEN }}/" public/index.html
 

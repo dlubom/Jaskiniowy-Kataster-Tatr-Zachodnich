@@ -4,6 +4,7 @@ import re
 from pathlib import Path
 
 from jktz.reporting import CheckFailed
+from jktz.validation._utils import active_lines
 from jktz.validation.constants import (
     TATRA_ELEV_MAX,
     TATRA_ELEV_MIN,
@@ -13,7 +14,7 @@ from jktz.validation.constants import (
     TATRA_LON_MIN,
 )
 
-_FIX_RE = re.compile(r"^#fix[ \t]+(\S+)\s+(.*)$")
+_FIX_RE = re.compile(r"^\s*#fix[ \t]+(\S+)\s+(.*)$", re.IGNORECASE)
 _LON_RE = re.compile(r"^E(-?[0-9].*)$")
 _LAT_RE = re.compile(r"^N(-?[0-9].*)$")
 _ELEV_RE = re.compile(r"^(-?[0-9].*?)m$")
@@ -34,8 +35,7 @@ def check(otwory_path: Path = Path("Poligony/OTWORY.SRV")) -> None:
     """
     errors: list[str] = []
     text = otwory_path.read_text(encoding="latin-1")
-    for line_num, raw_line in enumerate(text.splitlines(), start=1):
-        line = raw_line.rstrip("\r")
+    for line_num, line in active_lines(text):
         m = _FIX_RE.match(line)
         if not m:
             continue

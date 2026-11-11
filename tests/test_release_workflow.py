@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pytest
 
-from jktz.cli import build_zip, release_metadata
+from jktz.cli import build_zip, release_metadata, render_otwory
 
 WORKFLOWS = Path(__file__).parents[1] / ".github" / "workflows"
 
@@ -65,7 +65,7 @@ def test_pr_package_keeps_version_render_upload_and_link_contract() -> None:
     ordered_steps = [
         "Compute package version",
         "Set version in INFO.txt",
-        "Render latest entrance fixes",
+        "Check rendered entrance snapshot",
         "Install Survex",
         "Build exports",
         "Build PR release ZIP",
@@ -82,7 +82,9 @@ def test_pr_package_keeps_version_render_upload_and_link_contract() -> None:
     assert 'echo "zip=JKTZ-${version}.zip" >> "$GITHUB_OUTPUT"' in compute
     version = "${{ steps.package.outputs.version }}"
     assert f"PACKAGE_VERSION: {version}" in _step(job, "Set version in INFO.txt")
-    assert _run_line(_step(job, "Render latest entrance fixes")) == "uv run jktz-render-otwory"
+    assert _run_line(_step(job, "Check rendered entrance snapshot")) == (
+        "uv run jktz-render-otwory --check"
+    )
     assert _run_line(_step(job, "Build exports")) == f"uv run jktz-exports {version}"
     assert _run_line(_step(job, "Build PR release ZIP")) == f"uv run jktz-build-zip {version}"
     upload = _step(job, "Upload PR release ZIP")
@@ -100,6 +102,37 @@ def test_pr_package_keeps_version_render_upload_and_link_contract() -> None:
     assert "if: github.event.pull_request.head.repo.full_name == github.repository" in comment
     assert "continue-on-error: true" in comment
     assert "action-gh-release" not in job
+
+
+@pytest.mark.parametrize("longitude,expected_exit", [("19.1", 0), ("19.2", 1)])
+def test_pr_package_checks_gps_without_changing_tested_snapshot(
+    tmp_path, monkeypatch, longitude, expected_exit
+):
+    import yaml
+
+    workflow = yaml.safe_load((WORKFLOWS / "validate.yml").read_text(encoding="utf-8"))
+    step = next(
+        step
+        for step in workflow["jobs"]["pr-release-package"]["steps"]
+        if step.get("run", "").startswith("uv run jktz-render-otwory")
+    )
+    command = shlex.split(step["run"])
+    monkeypatch.chdir(tmp_path)
+    (tmp_path / "Poligony").mkdir()
+    template = tmp_path / "Poligony/OTWORY.SRV.j2"
+    snapshot = tmp_path / "Poligony/OTWORY.SRV"
+    template.write_text("{{ gps_fix('Cave:0', 'OBJ-1') }}\n", encoding="utf-8")
+    tested_snapshot = b"#fix\tCave:0\tE19.1\tN49.2\t123.4m\n"
+    snapshot.write_bytes(tested_snapshot)
+    csv = tmp_path / "best-measurements.csv"
+    csv.write_text(
+        f"object_id,lon,lat,elevation_m\nOBJ-1,{longitude},49.2,123.4\n", encoding="utf-8"
+    )
+
+    result = render_otwory.main([*command[3:], "--csv", str(csv)])
+
+    assert result == expected_exit
+    assert snapshot.read_bytes() == tested_snapshot
 
 
 @pytest.mark.parametrize(

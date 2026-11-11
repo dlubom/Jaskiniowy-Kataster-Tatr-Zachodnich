@@ -124,9 +124,15 @@ def format_raw_metadata(
 def material_hashes(root: Path) -> list[MaterialHash]:
     hashes: list[MaterialHash] = []
     for path in sorted(root.rglob("*")):
-        if not path.is_file() or path.name == "README.md":
+        if not path.is_file():
             continue
         if "_RAW" not in path.parts:
+            continue
+        relative_parts = path.parts[path.parts.index("_RAW") + 1 :]
+        if path.name == "README.md" and (
+            len(relative_parts) == 1
+            or (len(relative_parts) == 2 and re.fullmatch(r"\d{2}", relative_parts[0]))
+        ):
             continue
         digest = hashlib.sha256(path.read_bytes()).hexdigest()
         hashes.append(MaterialHash(path=path, sha256=digest))

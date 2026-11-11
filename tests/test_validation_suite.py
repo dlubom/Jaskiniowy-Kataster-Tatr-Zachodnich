@@ -72,6 +72,22 @@ def test_run_validation_removes_exports_after_failure(tmp_path: Path, monkeypatc
     assert not exports_dir.exists()
 
 
+def test_validation_preserves_existing_export_directory(tmp_path, monkeypatch):
+    exports = tmp_path / "validate-exports"
+    exports.mkdir()
+    retained = exports / "previous-survey.shp"
+    retained.write_bytes(b"previous export")
+    monkeypatch.chdir(tmp_path)
+    steps = Mock(side_effect=CheckFailed("unrelated early failure"))
+    monkeypatch.setattr(suite, "validation_steps", steps)
+
+    with pytest.raises(CheckFailed):
+        run_validation()
+
+    assert retained.read_bytes() == b"previous export"
+    steps.assert_not_called()
+
+
 def test_rendered_entrances_check_uses_package_api(monkeypatch, capsys) -> None:
     def fake_render(*, check: bool) -> RenderResult:
         assert check is True

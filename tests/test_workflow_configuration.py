@@ -1,5 +1,9 @@
 import shlex
+import shutil
+import subprocess
 from pathlib import Path
+
+import pytest
 
 
 def test_validate_job_runs_windows_pytest_after_sync_before_external_tools() -> None:
@@ -76,3 +80,79 @@ def test_survex_duplicates_blocks_validation_and_preserves_failed_report() -> No
     assert upload["with"]["path"] == "logs/survex-duplicates/"
     assert "matrix.os" in upload["with"]["name"]
     assert upload["with"]["if-no-files-found"] == "error"
+
+
+@pytest.mark.parametrize("missing_source", [False, True])
+def test_pages_compile_rejects_missing_survey(tmp_path, missing_source):
+    import yaml
+
+    cavern = shutil.which("cavern")
+    if cavern is None:
+        pytest.skip("Survex is not installed")
+    root = Path(__file__).parents[1]
+    workflow = yaml.safe_load((root / ".github/workflows/deploy-pages.yml").read_text())
+    compile_step = next(
+        step
+        for step in workflow["jobs"]["deploy"]["steps"]
+        if step.get("name") == "Compile with cavern"
+    )
+    command = shlex.split(compile_step["run"])
+    assert command[0] == "cavern"
+    project = ".BOOK Fixture\n.NAME KATASTER\n.STATUS 3\n.SURVEY Data\n.NAME DATA\n.STATUS 8\n"
+    if missing_source:
+        project += ".SURVEY Missing\n.NAME ABSENT\n.STATUS 8\n"
+    (tmp_path / "KATASTER.wpj").write_text(project + ".ENDBOOK\n")
+    (tmp_path / "DATA.SRV").write_text("#units meters order=DAV\na b 1 0 0\n")
+
+    result = subprocess.run(
+        [cavern, *command[1:]], cwd=tmp_path, capture_output=True, text=True, timeout=15
+    )
+
+    assert (result.returncode == 0) is not missing_source, result.stdout + result.stderr
+    assert (tmp_path / "KATASTER.3d").exists() is not missing_source
+
+
+def test_pages_version_identifies_untagged_commit(tmp_path):
+    import yaml
+
+    bash = shutil.which("bash")
+    git = shutil.which("git")
+    if bash is None or git is None:
+        pytest.skip("Pages version command requires bash and git")
+    root = Path(__file__).parents[1]
+    workflow = yaml.safe_load((root / ".github/workflows/deploy-pages.yml").read_text())
+    step = next(
+        step
+        for step in workflow["jobs"]["deploy"]["steps"]
+        if step.get("name") == "Prepare public directory"
+    )
+    assignment = next(line.strip() for line in step["run"].splitlines() if "VERSION=" in line)
+    for arguments in (
+        ["init", "-q"],
+        ["config", "user.name", "Fixture"],
+        ["config", "user.email", "fixture@example.invalid"],
+        ["commit", "-q", "--allow-empty", "-m", "Tagged fixture"],
+        ["tag", "v1"],
+    ):
+        subprocess.run([git, *arguments], cwd=tmp_path, check=True, capture_output=True)
+
+    def version():
+        return subprocess.run(
+            [bash, "-c", assignment + "\nprintf '%s\\n' \"$VERSION\""],
+            cwd=tmp_path,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+
+    assert version() == "v1"
+    subprocess.run(
+        [git, "commit", "-q", "--allow-empty", "-m", "Newer fixture"],
+        cwd=tmp_path,
+        check=True,
+        capture_output=True,
+    )
+    short_sha = subprocess.check_output(
+        [git, "rev-parse", "--short", "HEAD"], cwd=tmp_path, text=True
+    ).strip()
+    assert version() == f"master@{short_sha}"

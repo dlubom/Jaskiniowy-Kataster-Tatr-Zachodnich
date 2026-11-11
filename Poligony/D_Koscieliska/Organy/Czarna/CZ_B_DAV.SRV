@@ -3,11 +3,11 @@ CAVE_ID         "T.E-09.12"
 CAVE_NAME       "Jaskinia Czarna"
 SURVEY_ID       "B1_DAV"
 SURVEY_NAME     "Ciag glowny - pomiary geodezyjne NKG AGH, azymuty magnetyczne"
-UPDATE_DATE     "2026-09-25"
+UPDATE_DATE     "2026-11-11"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
-SOURCE_REF      "_RAW/01"
+SOURCE_REF      "_RAW/02"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "Naukowe Kolo Geodetow AGH Krakow, kier. Wladyslaw Borowiec"
@@ -15,6 +15,7 @@ INSTRUMENT      "pomiar geodezyjny; lokalna siatka magnetyczna przeliczona na D/
 SURVEY_DATE     "1972-03-15"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "SOURCE_REF poprawiono na _RAW/02: czarna-borowiec.srv, zgodnosc 74 wektorow po konwersji ENU-DAV; pomiary bez zmian"
 #]
 
 ;Ciag glowny Jaskini Czarnej (otwor glowny -> Colorado)

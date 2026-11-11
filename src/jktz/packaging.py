@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import fnmatch
+import os
 import zipfile
 from pathlib import Path
 
@@ -11,6 +12,7 @@ from pathlib import Path
 # This is the canonical release-content contract. `src/*` and the other
 # tooling paths are intentionally excluded from the user-facing data archive.
 EXCLUDE_PATTERNS: tuple[str, ...] = (
+    ".git",
     ".git/*",
     ".github/*",
     ".claude/*",
@@ -92,7 +94,16 @@ def build_release_zip(
 
     included = 0
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
-        for file in sorted(root.rglob("*")):
+        files = []
+        for directory, dirs, names in os.walk(root):
+            parent = Path(directory)
+            dirs[:] = [
+                name
+                for name in dirs
+                if not is_excluded((parent / name).relative_to(root).as_posix() + "/")
+            ]
+            files.extend(parent / name for name in names)
+        for file in sorted(files):
             if not file.is_file() or file.resolve() == zip_path:
                 continue
             rel = file.relative_to(root).as_posix()

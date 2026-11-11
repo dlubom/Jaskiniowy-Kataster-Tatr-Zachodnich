@@ -25,13 +25,13 @@ def main() -> int:
         "outdir",
         nargs="?",
         default="exports",
-        help="Output directory (default: 'exports')",
+        help="New or empty output directory (default: 'exports')",
     )
     args = parser.parse_args()
 
     try:
         pipeline.run_exports(version=args.version, outdir=Path(args.outdir))
-    except ExternalToolError as exc:
+    except (ExternalToolError, OSError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
     return 0

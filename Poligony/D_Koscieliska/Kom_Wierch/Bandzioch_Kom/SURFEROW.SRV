@@ -3,11 +3,11 @@ CAVE_ID         "T.E-07.07"
 CAVE_NAME       "Jaskinia Bandzioch Kominiarski"
 SURVEY_ID       "SURFEROW"
 SURVEY_NAME     "Surferow"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-11"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
-SOURCE_REF      "_RAW/01"
+SOURCE_REF      "_RAW/02"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "Witold Hoffmann, Kuba Kujawski (Pajak)"
@@ -15,6 +15,7 @@ INSTRUMENT      "TopoDroid v 4.1.4f; instrument nieznany"
 SURVEY_DATE     "2019-11-02"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "SOURCE_REF poprawiono na _RAW/02: oryginal surferow.srv, zgodnosc 50 rekordow; pomiary bez zmian"
 #]
 
 #PREFIX BandziochKom

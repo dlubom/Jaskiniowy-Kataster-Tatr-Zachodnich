@@ -37,6 +37,8 @@ def prepare_release_metadata(version: str, root: Path, notes_path: Path | None =
         notes = extract_release_notes((root / "CHANGELOG.md").read_text(encoding="utf-8"), version)
         if notes_path.resolve() in {info_path.resolve(), (root / "CHANGELOG.md").resolve()}:
             raise ValueError("Release notes output must not overwrite INFO.txt or CHANGELOG.md")
+        if notes_path.exists() and not notes_path.is_file():
+            raise ValueError("Release notes output must be a file")
     atomic_write(info_path, info.replace(marker, version.encode("ascii")))
     if notes is not None:
         atomic_write(notes_path, notes.encode("utf-8"))

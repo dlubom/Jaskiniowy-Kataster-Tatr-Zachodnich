@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import zipfile
 from pathlib import Path
 
@@ -199,3 +200,38 @@ def test_local_verification_evidence_stays_out_of_release_zip(tmp_path):
         assert archive.namelist() == ["KATASTER.wpj"]
     assert (evidence / "README.md").read_text() == "local audit report"
     assert (exports / "survey.SRV").read_text() == "local comparison export"
+
+
+def test_worktree_git_pointer_stays_out_of_release_zip(tmp_path):
+    pointer = b"gitdir: /private/source/.git/worktrees/review\n"
+    (tmp_path / ".git").write_bytes(pointer)
+    (tmp_path / "KATASTER.wpj").write_text("project")
+
+    output = build_release_zip("test", root=tmp_path)
+
+    with zipfile.ZipFile(output) as archive:
+        assert archive.namelist() == ["KATASTER.wpj"]
+    assert (tmp_path / ".git").read_bytes() == pointer
+
+
+def test_release_zip_does_not_scan_excluded_directories(tmp_path, monkeypatch):
+    excluded = [tmp_path / name for name in (".git", ".venv", ".verification", "Poligony/_RAW")]
+    for directory in excluded:
+        directory.mkdir(parents=True)
+        (directory / "private.txt").write_text("excluded")
+    (tmp_path / "Poligony/KEEP.SRV").write_bytes(b"survey")
+    (tmp_path / "KATASTER.wpj").write_bytes(b"project")
+    scandir = os.scandir
+
+    def guarded_scandir(path):
+        assert Path(path) not in excluded, f"Scanned excluded directory: {path}"
+        return scandir(path)
+
+    monkeypatch.setattr(os, "scandir", guarded_scandir)
+
+    output = build_release_zip("test", root=tmp_path)
+
+    with zipfile.ZipFile(output) as archive:
+        assert archive.namelist() == ["KATASTER.wpj", "Poligony/KEEP.SRV"]
+        assert archive.read("KATASTER.wpj") == b"project"
+        assert archive.read("Poligony/KEEP.SRV") == b"survey"
