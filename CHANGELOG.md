@@ -10,6 +10,7 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 - Lodowa w Ciemniaku: usunięto nadpisywane deklaracje deklinacji;
   pozostawiono wyliczanie z daty, bez zmian pomiarów i geometrii.
+  Uzupełniono metadane paczki pomiarowej i bibliografię.
 - Czarna i Bańdzioch Kominiarski: poprawiono pięć odwołań `SOURCE_REF`
   na podstawie archiwów i historii importu, bez zmian pomiarów.
 - Walidacja i eksporty chronią istniejące pliki; eksport i Pages odrzucają

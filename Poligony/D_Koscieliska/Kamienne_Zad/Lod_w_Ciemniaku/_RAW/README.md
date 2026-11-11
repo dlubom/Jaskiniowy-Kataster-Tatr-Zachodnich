@@ -32,5 +32,10 @@ TODO: przeanalizować domniemane złe połączenie
 - `Pomiary/` — oryginalne pliki eksportu DistoX2 (.cave)
 
 ## Kompletność
-Częściowa. Pomiary nie obejmują wszystkich opisanych partii: brak Ssaka,
-Komory pod Lodem, partii górnych kominów ponad Wielkim Kominem.
+Częściowa. W starszej notatce wskazano brak Komory pod Lodem i partii górnych
+kominów ponad Wielkim Kominem.
+
+Na nałożeniu poligonu na plan z 2022 r. odcinki `gc17–gc24` biegną wzdłuż
+korytarza podpisanego jako Ssak. Identyfikacja ciągu i dowiązanie Partii górnych
+pozostają do potwierdzenia w materiale źródłowym.
+[Bibliografia paczki 01](01/README.md#bibliografia).
