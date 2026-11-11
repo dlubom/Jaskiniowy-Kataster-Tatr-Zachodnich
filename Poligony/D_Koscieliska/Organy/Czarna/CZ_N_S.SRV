@@ -3,11 +3,11 @@ CAVE_ID         "T.E-09.12"
 CAVE_NAME       "Jaskinia Czarna"
 SURVEY_ID       "N1"
 SURVEY_NAME     "Pomiary Jakuba Nowaka 2012-2015"
-UPDATE_DATE     "2026-09-25"
+UPDATE_DATE     "2026-11-11"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
-SOURCE_REF      "_RAW/01"
+SOURCE_REF      "_RAW/03"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "Jakub Nowak, Miroslaw Pindel, Sylwia Golosz-Romanska, Przemyslaw Styrna, Krzysztof Kukulka, Joanna Nowak, Kaja Fidzinska, Florian Malek, Bartosz Berdel"
@@ -19,6 +19,7 @@ SURVEY_DATE     "2015-12-31"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "Bezposrednie nawiazania do KujatGlowny:7, 17 i 37; pomiary bez zmian."
 PROCESSING      "B7-B9, B14 i B31 zachowuja numery zrodlowe w lokalnych prefiksach Nowaka."
+PROCESSING      "SOURCE_REF poprawiono na _RAW/03: arkusz Czarna 1979-2015.xls i Jaskinie 67, 69, 77, 81 wskazane w pierwotnym DATA_SOURCE; pomiary bez zmian"
 #]
 
 #prefix2 Czarna

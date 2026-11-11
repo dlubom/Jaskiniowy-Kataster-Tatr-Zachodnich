@@ -4,9 +4,9 @@ import re
 from pathlib import Path
 
 from jktz.reporting import CheckFailed
-from jktz.validation._utils import srv_files
+from jktz.validation._utils import active_lines, srv_files
 
-_PREFIX_DOT_RE = re.compile(r"^#prefix.*\.")
+_PREFIX_DOT_RE = re.compile(r"^\s*#prefix[123]?\s+\S*\.", re.IGNORECASE)
 
 
 def check(root: Path = Path("Poligony")) -> None:
@@ -17,7 +17,7 @@ def check(root: Path = Path("Poligony")) -> None:
     matches: list[str] = []
     for path in srv_files(root):
         text = path.read_text(encoding="latin-1")
-        for line_num, line in enumerate(text.splitlines(), start=1):
+        for line_num, line in active_lines(text):
             if _PREFIX_DOT_RE.match(line):
                 matches.append(f"{path.as_posix()}:{line_num}:{line}")
     if matches:

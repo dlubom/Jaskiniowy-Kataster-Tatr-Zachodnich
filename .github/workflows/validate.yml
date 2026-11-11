@@ -292,10 +292,10 @@ jobs:
           PACKAGE_VERSION: ${{ steps.package.outputs.version }}
         run: uv run jktz-release-metadata "$PACKAGE_VERSION"
 
-      - name: Render latest entrance fixes
+      - name: Check rendered entrance snapshot
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: uv run jktz-render-otwory
+        run: uv run jktz-render-otwory --check
 
       - name: Install Survex
         uses: ./.github/actions/install-survex

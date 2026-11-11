@@ -1,10 +1,34 @@
 from __future__ import annotations
 
+import shutil
 from pathlib import Path
+from unittest.mock import Mock
 
 import pytest
 
 from jktz.exports import pipeline
+from jktz.exports.tools import ExternalToolError
+
+
+def test_real_export_rejects_missing_survey_before_conversion(tmp_path, monkeypatch):
+    if shutil.which("cavern") is None:
+        pytest.skip("Survex cavern is not installed")
+    (tmp_path / "KATASTER.wpj").write_text(
+        ".BOOK Test\n.NAME TEST\n.STATUS 3\n"
+        ".SURVEY Present\n.NAME DATA\n.STATUS 8\n"
+        ".SURVEY Missing\n.NAME ABSENT\n.STATUS 8\n.ENDBOOK\n"
+    )
+    (tmp_path / "DATA.SRV").write_text("#units meters order=DAV decl=0\na b 1 0 0\n")
+    convert = Mock(side_effect=AssertionError("Incomplete model must not be exported"))
+    monkeypatch.setattr(pipeline.tools, "survexport", convert)
+    outdir = tmp_path / "exports"
+
+    with pytest.raises(ExternalToolError, match="exit code"):
+        pipeline.run_exports(outdir=outdir, cwd=tmp_path)
+
+    assert "ABSENT" in (outdir / "JKTZ-local-cavern-log.txt").read_text()
+    assert not list(outdir.glob("*.3d"))
+    convert.assert_not_called()
 
 
 @pytest.fixture
@@ -61,7 +85,7 @@ def test_pipeline_invokes_all_4_steps_in_order(call_log, tmp_path: Path) -> None
 def test_pipeline_passes_correct_cavern_args(call_log, tmp_path: Path) -> None:
     pipeline.run_exports(version="v1", outdir=Path("exports"))
     cavern_args = next(args for tool, args in call_log if tool == "cavern")
-    assert cavern_args == ["KATASTER.wpj"]
+    assert cavern_args == ["--warnings-are-errors", "KATASTER.wpj"]
 
 
 def test_pipeline_passes_correct_survexport_full_dxf_args(call_log, tmp_path: Path) -> None:
@@ -103,3 +127,26 @@ def test_pipeline_creates_outdir_and_caves_subdir(call_log, tmp_path: Path) -> N
     pipeline.run_exports(version="v1", outdir=outdir)
     assert outdir.is_dir()
     assert (outdir / "caves").is_dir()
+
+
+def test_exports_refuse_to_mix_with_existing_files(call_log, tmp_path):
+    outdir = tmp_path / "exports"
+    (outdir / "caves").mkdir(parents=True)
+    previous = outdir / "caves" / "RemovedCave.shp"
+    previous.write_bytes(b"previous geometry")
+
+    with pytest.raises(FileExistsError, match="output"):
+        pipeline.run_exports(outdir=outdir)
+
+    assert previous.read_bytes() == b"previous geometry"
+    assert list(outdir.rglob("*.shp")) == [previous]
+    assert not call_log
+
+
+def test_exports_accept_an_empty_existing_directory(call_log, tmp_path):
+    outdir = tmp_path / "exports"
+    outdir.mkdir()
+
+    pipeline.run_exports(outdir=outdir)
+
+    assert (outdir / "JKTZ-local.3d").read_bytes() == b"fake-3d"

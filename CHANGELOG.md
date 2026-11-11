@@ -6,6 +6,21 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+### Naprawione
+
+- Czarna i Bańdzioch Kominiarski: poprawiono pięć odwołań `SOURCE_REF`
+  na podstawie archiwów i historii importu, bez zmian pomiarów.
+- Walidacja i eksporty chronią istniejące pliki; eksport i Pages odrzucają
+  ostrzeżenia kompilatora. Paczka PR sprawdza zatwierdzony snapshot GPS.
+- Renderer GPS zapisuje atomowo, odrzuca błędne wyrażenia szablonu
+  i ogranicza przekazywanie tokena do API GitHub.
+- Walidatory prawidłowo rozpoznają komentarze, dyrektywy i długości
+  z jednostkami. Kontrole archiwów zachowują oryginalne README i poddrzewa.
+- Pakowanie pomija plik `.git` worktree i nie przegląda wykluczonych
+  katalogów. Ręczne wdrożenie Pages pokazuje SHA, jeśli commit nie ma taga.
+- Przygotowanie wydania odrzuca katalog jako cel release notes przed
+  zmianą wersji w `INFO.txt`.
+
 ## [v1.4.16] - 2026-11-10
 
 ### Dodane

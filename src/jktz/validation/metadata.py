@@ -242,7 +242,11 @@ def check(root: Path = Path("Poligony")) -> None:
     scan_root = root.resolve()
     poligony_root = _poligony_root(scan_root)
 
-    raw_dirs = [raw_dir for raw_dir in sorted(scan_root.rglob("_RAW")) if raw_dir.is_dir()]
+    raw_dirs = [
+        raw_dir
+        for raw_dir in sorted(scan_root.rglob("_RAW"))
+        if raw_dir.is_dir() and "_RAW" not in raw_dir.relative_to(scan_root).parts[:-1]
+    ]
     raw_root_material = [child for raw_dir in raw_dirs for child in _raw_root_material(raw_dir)]
     raw_packages = [
         child

@@ -59,11 +59,10 @@ def test_exports_cli_passes_requested_destination(monkeypatch, args, version, ou
     run.assert_called_once_with(version=version, outdir=outdir)
 
 
-def test_exports_cli_reports_external_failure(monkeypatch, capsys):
+@pytest.mark.parametrize("failure", [ExternalToolError("broken"), FileExistsError("broken")])
+def test_exports_cli_reports_external_failure(monkeypatch, capsys, failure):
     monkeypatch.setattr("sys.argv", ["jktz-exports"])
-    monkeypatch.setattr(
-        exports.pipeline, "run_exports", Mock(side_effect=ExternalToolError("broken"))
-    )
+    monkeypatch.setattr(exports.pipeline, "run_exports", Mock(side_effect=failure))
 
     assert exports.main() == 1
     assert capsys.readouterr().err == "ERROR: broken\n"

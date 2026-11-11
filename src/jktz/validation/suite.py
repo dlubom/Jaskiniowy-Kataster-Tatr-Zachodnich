@@ -191,6 +191,11 @@ def run_steps(steps: Sequence[ValidationStep]) -> None:
 def run_validation(context: ValidationContext | None = None) -> None:
     """Run the complete repository validation suite and remove temporary exports."""
     context = context or ValidationContext()
+    if context.exports_dir.exists():
+        raise CheckFailed(
+            f"ERROR: validation output already exists: {context.exports_dir}; "
+            "choose an unused directory or move the existing files first"
+        )
     try:
         run_steps(validation_steps(context))
     finally:

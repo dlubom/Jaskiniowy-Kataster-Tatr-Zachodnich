@@ -386,3 +386,19 @@ def test_metadata_check_excludes_package_gitignore_from_inventory(tmp_path: Path
     (raw / ".gitignore").write_text("*.err\n", encoding="utf-8")
 
     metadata.check(root=tmp_path / "Poligony")
+
+
+def test_nested_raw_directory_is_preserved_as_archival_material(tmp_path):
+    package = tmp_path / "Poligony" / "Cave" / "_RAW" / "01"
+    original = package / "original" / "_RAW"
+    (original / "01").mkdir(parents=True)
+    (package / "README.md").write_text(
+        _raw_readme(contents=["`original/` - unmodified source directory"]), encoding="utf-8"
+    )
+    (original / "notes.txt").write_bytes(b"original notes")
+    (original / "01" / "README.md").write_bytes(b"original README, not JKTZ metadata")
+    before = {path: path.read_bytes() for path in package.rglob("*") if path.is_file()}
+
+    metadata.check(root=tmp_path / "Poligony")
+
+    assert {path: path.read_bytes() for path in before} == before

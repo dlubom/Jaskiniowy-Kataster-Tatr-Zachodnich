@@ -51,6 +51,11 @@ uv run jktz-render-otwory --check
 uv run jktz-validate
 ```
 
+`uv run jktz-exports <wersja> <katalog>` wymaga nowego albo pustego katalogu,
+aby nie mieszać bieżących eksportów ze starszymi plikami. Walidacja wymaga,
+aby `validate-exports` nie istniał; wcześniejsze wyniki przenieś przed jej
+uruchomieniem. Błędy i ostrzeżenia kompilacji blokują eksport.
+
 Domyślnym agentem projektu jest Codex. Instrukcje w `AGENTS.md` opisują kontrakty
 danych Walls/Survex, `_RAW`, metadanych i publikacji wydań. Skille znajdują się
 w `.agents/skills/`; można wywołać je w poleceniu dla Codex, np.
@@ -110,6 +115,11 @@ uv run ruff check src scripts tests .agents/skills
 uv run jktz-render-otwory --check
 uv run jktz-validate
 ```
+
+`uv run jktz-exports <version> <directory>` requires a new or empty directory
+to avoid mixing current exports with stale files. Validation requires
+`validate-exports` not to exist; move previous results before running it.
+Compilation errors and warnings block export.
 
 Codex is the default project agent. Read `AGENTS.md`, which defines the Walls/Survex, `_RAW`,
 metadata, and release contracts for this repository. Skills live in

@@ -3,6 +3,8 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, replace
 
+from jktz.validation._utils import active_lines
+
 _DATE_DIRECTIVE_RE = re.compile(r"^\s*#date\b", re.IGNORECASE)
 _UNITS_DIRECTIVE_RE = re.compile(r"^\s*#units\b", re.IGNORECASE)
 _DECL_DIRECTIVE_RE = re.compile(r"^\s*#units\b.*\bDECL\s*=", re.IGNORECASE)
@@ -20,18 +22,7 @@ class _UnitsState:
 def has_dated_or_declared_active_shots(text: str) -> bool:
     state = _UnitsState()
     saved_states: list[_UnitsState] = []
-    in_block_comment = False
-    for raw_line in text.splitlines():
-        line = raw_line.split(";", 1)[0].strip()
-        if not line:
-            continue
-        if in_block_comment:
-            if line.startswith("#]"):
-                in_block_comment = False
-            continue
-        if line.startswith("#["):
-            in_block_comment = "#]" not in line[2:]
-            continue
+    for _line_num, line in active_lines(text):
         if _DATE_DIRECTIVE_RE.match(line):
             state = replace(state, has_orientation=True)
             continue
@@ -45,7 +36,7 @@ def has_dated_or_declared_active_shots(text: str) -> bool:
         tokens = line.split()
         if len(tokens) <= state.distance_index:
             continue
-        distance = _as_float(tokens[state.distance_index])
+        distance = _distance_value(tokens[state.distance_index])
         if distance is None:
             continue
         if distance == 0:
@@ -76,8 +67,14 @@ def _apply_units(line: str, state: _UnitsState, saved_states: list[_UnitsState])
     return state
 
 
-def _as_float(value: str) -> float | None:
+def _distance_value(value: str) -> float | None:
+    """Read enough of Walls length syntax to distinguish zero from active shots."""
     try:
+        if value[-1:].upper() in {"M", "F"}:
+            value = value[:-1]
+        if "i" in value.lower():
+            feet, inches = value.lower().split("i", 1)
+            return float(feet or "0") * 12 + float(inches or "0")
         return float(value)
     except ValueError:
         return None

@@ -79,6 +79,9 @@ def run_exports(
 ) -> None:
     """Compile KATASTER.wpj and write .3d, .dxf, .shp release artefacts.
 
+    The output directory must be new or empty, so a previous survey cannot
+    leave stale cave files in the resulting release.
+
     Implements the release export contract:
       1. cavern KATASTER.wpj                  → .3d, .err, cavern-log.txt
       2. survexport --legs --dxf              → JKTZ-<version>.dxf
@@ -90,6 +93,8 @@ def run_exports(
     # the Survex Windows launcher resolves some paths against argv[0]/cwd
     # inconsistently, and absolute paths sidestep the whole class of issues.
     outdir = Path(outdir).resolve()
+    if outdir.is_dir() and any(outdir.iterdir()):
+        raise FileExistsError(f"Export output is not empty: {outdir}; choose a new directory")
     outdir.mkdir(parents=True, exist_ok=True)
     (outdir / "caves").mkdir(exist_ok=True)
 
@@ -99,7 +104,7 @@ def run_exports(
 
     print("[1/4] cavern - compiling survey network")
     cavern_log = outdir / f"JKTZ-{version}-cavern-log.txt"
-    tools.cavern(["KATASTER.wpj"], cwd=cwd, log_to=cavern_log)
+    tools.cavern(["--warnings-are-errors", "KATASTER.wpj"], cwd=cwd, log_to=cavern_log)
     project_root = cwd if cwd else Path.cwd()
     shutil.copy(project_root / "KATASTER.3d", outdir / f"JKTZ-{version}.3d")
     shutil.copy(project_root / "KATASTER.err", outdir / f"JKTZ-{version}.err")

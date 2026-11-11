@@ -13,8 +13,9 @@ def test_passes_with_uppercase_basename_and_extension(tmp_path: Path) -> None:
     filenames.check(root=tmp_path)
 
 
-def test_fails_on_lowercase_extension(tmp_path: Path) -> None:
-    (tmp_path / "ANY.srv").write_text("")
+@pytest.mark.parametrize("extension", [".srv", ".Srv", ".sRv", ".srV", ".SRv", ".SrV", ".sRV"])
+def test_fails_on_non_uppercase_extension(tmp_path: Path, extension: str) -> None:
+    (tmp_path / f"ANY{extension}").write_text("")
     with pytest.raises(CheckFailed, match="SRV filename format"):
         filenames.check(root=tmp_path)
 
