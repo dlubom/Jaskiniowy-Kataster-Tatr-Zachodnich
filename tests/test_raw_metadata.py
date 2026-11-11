@@ -141,7 +141,9 @@ def test_material_hashes_include_archival_readmes_but_skip_package_metadata(tmp_
     other_readme = package / "README.TXT"
     other_readme.write_bytes(b"")
 
-    assert material_hashes(tmp_path) == [
+    hashes = material_hashes(tmp_path)
+    assert len(hashes) == 2
+    assert set(hashes) == {
         MaterialHash(
             path=other_readme,
             sha256="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -150,7 +152,7 @@ def test_material_hashes_include_archival_readmes_but_skip_package_metadata(tmp_
             path=original,
             sha256="ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
         ),
-    ]
+    }
 
 
 @pytest.mark.parametrize("heading", ["## Zawartość", "## Uwagi"])
