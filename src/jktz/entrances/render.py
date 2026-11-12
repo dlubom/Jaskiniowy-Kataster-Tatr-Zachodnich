@@ -133,17 +133,19 @@ def _download_latest_best_measurements(github_repo: str, tmp_dir: Path) -> Relea
 
     download_url = _required_str(asset, "browser_download_url")
     output_path = tmp_dir / BEST_MEASUREMENTS_ASSET
+    _download_release_asset(download_url, output_path)
+    return ReleaseAsset(
+        path=output_path, source=f"{github_repo}@{release.get('tag_name', 'latest')}"
+    )
+
+
+def _download_release_asset(download_url: str, output_path: Path) -> None:
     request = _request(download_url)
     try:
         with urllib.request.urlopen(request, timeout=60) as response:
             output_path.write_bytes(response.read())
     except urllib.error.URLError as exc:
-        raise RenderError(
-            f"Cannot download {BEST_MEASUREMENTS_ASSET} from {download_url}: {exc}"
-        ) from exc
-    return ReleaseAsset(
-        path=output_path, source=f"{github_repo}@{release.get('tag_name', 'latest')}"
-    )
+        raise RenderError(f"Cannot download {output_path.name} from {download_url}: {exc}") from exc
 
 
 def _read_json(url: str) -> dict[str, Any]:

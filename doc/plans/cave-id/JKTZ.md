@@ -32,7 +32,7 @@
 | Karta | Wynik | Warunek startu | Stan |
 | --- | --- | --- | --- |
 | J01 | [Mapowanie i lista podziałów](MAPPING.md) | Aktualny HEAD tej PR | audyt zakończony, 11 otwartych rozstrzygnięć blokuje J04 |
-| J02 | Wspólny snapshot GPS i czytnik katalogu | G02 preview z sumami albo G04 release | do wykonania |
+| J02 | Wspólny snapshot GPS i czytnik katalogu | G02 preview z sumami albo G04 release | wykonana, sprawdzona na podglądzie G03 |
 | J03 | Testowalny kontrakt tożsamości i referencji | J02 | do wykonania |
 | J04 | Migracja SRV, CLI i podziały | J01 bez nierozstrzygniętych wierszy; J03; G04 | do wykonania |
 | J05 | Włączenie pełnej bramki i dowody końcowe | J04 | do wykonania |
@@ -86,20 +86,39 @@ Lokalny `snapshot.json` zapisuje pochodzenie i sumy; jest artefaktem cache/CI,
 nie nowym plikiem wydania GPS. `render_entrances(..., csv_path=...)` pozostaje
 wejściem do renderu z tego snapshotu.
 
-- [ ] Dodaj testy: `test_catalogue_contains_system_without_object`,
+- [x] Dodaj testy: `test_catalogue_contains_system_without_object`,
   `test_snapshot_resolves_release_once`, `test_snapshot_rejects_hash_mismatch`,
   `test_catalogue_rejects_missing_tables`, `test_catalogue_rejects_dangling_or_cyclic_system`.
   Użyj fixture SQLite z całym wymaganym schematem; system C-0295 nie ma obiektu.
   Dwa kolejne wywołania API latest zwracają różne wydania; oczekiwane jest
   dokładnie jedno wywołanie i oba pliki z pierwszej odpowiedzi.
-- [ ] Uruchom `uv run --python 3.12 pytest -q tests/test_gps_catalog.py` i
+- [x] Uruchom `uv run --python 3.12 pytest -q tests/test_gps_catalog.py` i
   potwierdź niepowodzenie z powodu brakującego zachowania.
-- [ ] Zaimplementuj interfejsy, odczyt SQLite read-only, walidację wymaganych
+- [x] Zaimplementuj interfejsy, odczyt SQLite read-only, walidację wymaganych
   kolumn/ID/relacji oraz offline manifest. Błędy nie usuwają wcześniejszych
   wejść użytkownika. Token pozostaje ograniczony do api.github.com.
-- [ ] Uruchom testy obu modułów i `uv run --python 3.12 jktz-quality`.
+- [x] Uruchom testy obu modułów i `uv run --python 3.12 jktz-quality`.
   Odnotuj odczyt prawdziwego GPKG z dokładnego SHA preview/release GPS.
-- [ ] Commit/push, uaktualnij stan karty i zatrzymaj się po J02.
+- [x] Commit/push, uaktualnij stan karty i zatrzymaj się po J02.
+
+W próbie offline użyto [podglądu G03 z PR GPS #49](https://github.com/dlubom/gps-kataster-obiektow-tatr/actions/runs/43102249228/artifacts/13892347441)
+dla HEAD `881c96425514c1918253cb73516a3062f9b6a0ef`. Z jednego ZIP-a
+zweryfikowano `preview.json` oraz zgodność `SHA256SUMS` z oboma plikami
+i przypiętymi sumami.
+
+| Plik | SHA-256 |
+| --- | --- |
+| `katalog.gpkg` | `e2f2a01a94642f529203f2af3d377b0484f238b2d073d443a8fb0a45078f822c` |
+| `best-measurements.csv` | `c69c858f024a368852eb149bc4031db9f9e29d7cbfef121dcd35812c69d41568` |
+
+Lokalny `snapshot.json` zawiera `repo`, `tag`, `release_id` i mapę `assets`
+z polem `sha256` dla każdej nazwy pliku. Pobranie wydania zapisuje także
+`id` obu artefaktów. W próbie podgląd oznaczono tagiem
+`pr-preview-49-881c96425514c1918253cb73516a3062f9b6a0ef` i `release_id: null`.
+
+Odczyt dał 1026 jaskiń i 1029 obiektów. `C-0295` nie ma własnego obiektu.
+`MLZ-0068` należy do `C-0648`, której końcowym systemem jest `C-0295`.
+Render z tego CSV odtworzył 87 fixów zgodnie z wersjonowanym `OTWORY.SRV`.
 
 ## J03 — tożsamość pomiaru i referencje
 
