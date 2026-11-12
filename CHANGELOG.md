@@ -6,6 +6,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v2.0.0] - 2026-11-12
+
 ### Zmienione
 
 - Zmieniono kontrakt metadanych wszystkich 210 SRV: wymagane `SURVEY_KIND`
