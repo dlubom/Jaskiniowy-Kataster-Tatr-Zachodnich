@@ -1,6 +1,6 @@
 # Changelog
 
-Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowane w tym pliku.
+Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" są udokumentowane w tym pliku.
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
@@ -8,17 +8,27 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Zmienione
 
-- Pełna walidacja i pakowanie używają jednego snapshotu GPS dla współrzędnych,
-  tożsamości SRV i kontroli nazw stacji po kompilacji.
-- Metadane SRV rozdzielaja pomiary podziemne i powierzchniowe przez
-  `SURVEY_KIND`. `CAVE_ID` wskazuje jaskinie/system GPS, a `OBJECT_REF`
-  jawnie wiaze rozpoznane otwory ze stacjami, bez dodawania fixow.
-- Wydzielono domiary Lodowej Malolackiej, Mnichowej Studni Wyzniej i Koprowej;
-  sklasyfikowano powierzchniowe POW_ORM i 11A Ptasiej. Zachowano pomiary
-  i archiwa RAW. Nierozstrzygnieta transkrypcja DZX pozostaje w doc/robocze.
-- Fix gornego otworu Mnichowej wskazuje MLW-0054 z GPS v2.1.2;
-  wspolrzedne OTWORY pozostaly niezmienione. CLI wymaga nowego kontraktu.
-
+- Zmieniono kontrakt metadanych wszystkich 210 SRV: wymagane `SURVEY_KIND`
+  rozróżnia pomiary podziemne i powierzchniowe. Podziemne `CAVE_ID` wskazuje
+  jaskinię lub końcowy system GPS (`C-…`); numery PIG i identyfikatory `WPJ:*`
+  nie są już akceptowane. Domiary nie mają pól `CAVE_ID` ani `CAVE_NAME`.
+  Importery metadanych i wywołania CLI wymagają dostosowania do tego kontraktu.
+- `OBJECT_REF` jawnie wiąże rozpoznane otwory ze stacjami, także bez fixa.
+  Walidacja odrzuca nieznane ID, sprzeczne przypisania i referencje do stacji
+  nieobecnych w kompilacji.
+- Wydzielono domiary Lodowej Małołąckiej, Mnichowej Studni Wyżniej i
+  Koprowej–Świstaczej; `POW_ORM` i `11A` Ptasiej sklasyfikowano jako
+  powierzchniowe. Zachowano odczyty, geometrię i archiwa RAW; 26 odcinków
+  przestało być zaliczanych do długości podziemnej.
+- Fix górnego otworu Mnichowej wskazuje `MLW-0054` z katalogu GPS v2.1.2.
+  Współrzędne OTWORY pozostały niezmienione; dolny otwór zachowuje pozycję
+  z poligonu, bez dodatkowego fixa.
+- Nierozpoznaną, wykomentowaną transkrypcję Dziury X przeniesiono do
+  `doc/robocze/DZX_ROB.SRV.txt`, zachowując jej bajty i materiały źródłowe.
+- Pełna walidacja, joby CI i pakowanie korzystają z jednego wydania GPS:
+  Best CSV, katalogu GPKG i manifestu z sumami SHA-256. `--gps-snapshot`
+  pozwala odtworzyć sprawdzenie offline; `--csv` służy do podglądu renderu.
+  Zapis OTWORY sprawdza kandydata w tymczasowym projekcie przed podmianą.
 
 ### Naprawione
 
