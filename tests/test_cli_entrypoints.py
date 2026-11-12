@@ -25,9 +25,9 @@ def test_validation_cli_status_and_error_channel(
     run = Mock(side_effect=failure)
     monkeypatch.setattr(validate, "run_validation", run)
 
-    assert validate.main() == result
+    assert validate.main([]) == result
 
-    run.assert_called_once_with()
+    run.assert_called_once_with(validate.ValidationContext())
     output = capsys.readouterr()
     assert message in getattr(output, stream)
     assert ("Validation Passed" in output.out) == (failure is None)

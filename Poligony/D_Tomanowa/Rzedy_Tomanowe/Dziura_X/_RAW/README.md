@@ -2,4 +2,4 @@
 
 - [01](01/README.md) — pełny DOC, brak rozstrzygniętej tożsamości; hipoteza numeracji trzech otworów i problemy.
 
-[Wykomentowany poligon](../DZX_ROB.SRV) zachowuje dwa odcinki bez numeru PIG i bez fixa.
+[Transkrypcja w dokumentacji roboczej](../../../../../doc/robocze/DZX_ROB.SRV.txt) zachowuje dwa odcinki bez numeru PIG i bez fixa.

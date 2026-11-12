@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.D-08.07"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0267"
 CAVE_NAME       "Jaskinia Mrozna"
+OBJECT_REF      "Mrozna:0=KSW-0081"
 SURVEY_ID       "A1"
 SURVEY_NAME     "Ciag glowny"
-UPDATE_DATE     "2026-11-10"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -24,6 +26,7 @@ SURVEY_DATE     "2014-03-23"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
 PROCESSING      "daty sesji wedlug korespondencji; #date 2013-03-01 to historyczna wartosc obliczeniowa"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #date 2013-03-01

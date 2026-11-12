@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.G-11.01"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0291"
 CAVE_NAME       "Dziura w Stole"
+OBJECT_REF      "DziuraWStole:0=KSW-0088"
 SURVEY_ID       "DZWS"
 SURVEY_NAME     "Dziura w Stole"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -15,6 +17,7 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "2009-07-11"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix DziuraWStole

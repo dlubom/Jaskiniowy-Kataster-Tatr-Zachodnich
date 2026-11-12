@@ -6,19 +6,19 @@ description: Add a cave from source surveys, register its entrance through the G
 Add a new cave to the kataster project.
 
 Read the inputs from the user request; ask only for required values that cannot be established from the repository or supplied sources.
-Expected format: `<cave-id> "<valley/subdir/path>" [/path/to/source.zip]`
+Expected format: `<inventory-number> "<valley/subdir/path>" [/path/to/source.zip]`
 Example: `$add-cave T.D-08.07 "D_Koscieliska/Organy" /tmp/MROZN.SRV.zip`
 
 ---
 
 ## Step 1 — Look up cave data in PIG database (single call)
 
-The supplied cave ID is the inventory number (`inventory_number`, e.g.
+The supplied lookup value is the inventory number (`inventory_number`, e.g.
 `T.B-14.01`), not PIG's internal `cave_id` (`001018` for Dziura).
 Search for it directly with a fixed-string search:
 
 ```bash
-rg -F '"<cave-id>"' doc/jaskinie_polski_pig_dump.jsonl
+rg -F '"<inventory-number>"' doc/jaskinie_polski_pig_dump.jsonl
 ```
 
 Parse the returned JSON for:
@@ -47,6 +47,18 @@ or a station inferred from a convenient geometric fit.
 Read any supplied GNSS/source coordinates as provenance. If the object mapping
 or entrance station cannot be established, report the missing information and
 leave registration incomplete; do not invent a fix or an anchor shot.
+
+Resolve the object membership through the complete released GPS catalogue and
+use the terminal system `cave_id` for every underground section. PIG inventory
+numbers and GPS object IDs are not `CAVE_ID`. A matching name or an existing ID
+alone does not establish survey identity. If a record is missing, prepare it in
+GPS and wait for its authorized release before migrating active JKTZ data.
+
+For an unfixed entrance, use `OBJECT_REF` without adding `gps_fix`. Split surface
+measurements into separate files with `--survey-kind surface`, no `--cave-id` or
+`--cave-name`, and at least one `--object-ref`. Preserve all identified endpoints,
+measurement bytes, units, dates, prefixes and source references. Mark surface
+legs with the appropriate `P` segment while retaining existing classifications.
 
 ## Step 3 — Determine directory path
 
@@ -118,9 +130,9 @@ Add this block in cave-prefix order to `Poligony/OTWORY.SRV.j2`:
 
 Use the fully qualified station name, e.g. `Marmurowa:0` or
 `WielkaSniezna:Ciag:0`. Confirm it exists in the survey network.
-Run `uv run jktz-render-otwory`, inspect the complete diff, and include both
-the template and generated `Poligony/OTWORY.SRV` snapshot in the change.
-Do not edit the generated snapshot directly. Missing GPS rows are errors.
+Render after adding the survey and its WPJ entry (step 11), so the
+new station can be verified by the compiler. Do not edit the generated
+snapshot directly.
 
 ## Step 9 — Create the survey file (`CAVE.SRV` or `CAVE_<SECTION_SHORTNAME>.SRV`)
 
@@ -151,7 +163,9 @@ Then atomically prepend the validated metadata block:
 ```bash
 uv run jktz-srv-metadata srv-set \
   "Poligony/<valley-path>/<Cave_Directory_ASCII>/<CAVE_FILE>.SRV" \
-  --cave-id "T.X-NN.MM" \
+  --survey-kind underground \
+  --cave-id "<GPS terminal cave/system ID, C-NNNN>" \
+  --object-ref "<PREFIX>:<STATION>=<OBJECT-ID>" \
   --cave-name "<Cave Name ASCII>" \
   --survey-id "<SURVEY_ID>" \
   --survey-name "<Survey name>" \
@@ -226,9 +240,18 @@ Verify with: `grep -n "<CAVE_SHORT_ID>" KATASTER.wpj`
 
 ## Step 11 — Validate and document
 
+Use one published GPS snapshot for the render and full validation:
+
+```sh
+uv run jktz-gps-snapshot logs/gps-snapshot
+uv run jktz-render-otwory --gps-snapshot logs/gps-snapshot
+uv run jktz-validate --gps-snapshot logs/gps-snapshot
+```
+
+Inspect the diff and include both the template and generated OTWORY. Review
+metadata, source preservation, entrance mappings and compiler output.
 Update `LISTA_JASKIN.md` and add a short entry under `Unreleased` in
-`CHANGELOG.md`. Run `uv run jktz-validate` (or `$docker-validate`) and review
-metadata, source preservation, entrance mappings, and compile warnings.
+`CHANGELOG.md`.
 Commit/push only when included in the user request.
 
 ## Summary

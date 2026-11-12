@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.D-08.08"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0297"
 CAVE_NAME       "Jaskinia Zimna"
+OBJECT_REF      "Biala:0=KSW-0257"
 SURVEY_ID       "JBIALA"
 SURVEY_NAME     "Jaskinia Biala"
-UPDATE_DATE     "2026-11-02"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -20,6 +22,7 @@ SURVEY_DATE     "2003-06-20"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "2026-11-01: uzupelniono zespol z dokumentacji opisowej PDF, s. 17-18; pomiary i #date bez zmian"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #units meters order=DAV

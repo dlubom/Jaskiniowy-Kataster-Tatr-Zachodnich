@@ -17,7 +17,8 @@ from jktz.metadata.srv import (
 )
 
 VALID_BLOCK = """#[
-CAVE_ID         "T.D-04.01"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-1001"
 CAVE_NAME       "Zbojecka Dziura"
 SURVEY_ID       "ZBDZIU"
 SURVEY_NAME     "Zbojecka Dziura"
@@ -45,7 +46,7 @@ PROCESSING      "konwersja z arkusza"
 def test_parse_srv_metadata_with_repeated_fields() -> None:
     parsed = parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), VALID_BLOCK)
 
-    assert parsed.single["CAVE_ID"] == "T.D-04.01"
+    assert parsed.single["CAVE_ID"] == "C-1001"
     assert parsed.single["SURVEY_NAME"] == "Zbojecka Dziura"
     assert parsed.single["SURVEY_GRADE"] == "BCRA:5D"
     assert parsed.repeated["SOURCE_REF"] == ["_RAW/01", "../_RAW/02"]
@@ -56,7 +57,8 @@ def test_parse_srv_metadata_with_repeated_fields() -> None:
 def test_format_srv_metadata_is_canonical_and_parseable() -> None:
     metadata = SrvMetadata(
         single={
-            "CAVE_ID": "T.D-04.01",
+            "SURVEY_KIND": "underground",
+            "CAVE_ID": "C-1001",
             "CAVE_NAME": "Zbojecka Dziura",
             "SURVEY_ID": "ZBDZIU",
             "SURVEY_NAME": "Zbojecka Dziura",
@@ -80,14 +82,14 @@ def test_format_srv_metadata_is_canonical_and_parseable() -> None:
     text = format_srv_metadata(metadata)
 
     assert text.startswith("#[\n")
-    assert 'CAVE_ID         "T.D-04.01"' in text
+    assert 'CAVE_ID         "C-1001"' in text
     assert 'SOURCE_REF      "_RAW/01"' in text
     assert (
         'LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"\n\n'
         'TEAM            "J. Nowak"'
     ) in text
     assert text.endswith("#]\n\n")
-    assert parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), text).single["CAVE_ID"] == "T.D-04.01"
+    assert parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), text).single["CAVE_ID"] == "C-1001"
 
 
 def test_rejects_missing_opening_metadata_block() -> None:
@@ -107,8 +109,8 @@ def test_rejects_unknown_field_inside_block() -> None:
 
 def test_rejects_duplicate_single_field() -> None:
     text = VALID_BLOCK.replace(
-        'CAVE_ID         "T.D-04.01"',
-        'CAVE_ID         "T.D-04.01"\nCAVE_ID         "T.D-04.02"',
+        'CAVE_ID         "C-1001"',
+        'CAVE_ID         "C-1001"\nCAVE_ID         "C-1002"',
     )
 
     with pytest.raises(MetadataError, match="duplicate single field CAVE_ID"):
@@ -185,7 +187,7 @@ def test_parse_srv_metadata_accepts_crlf_block_delimiters() -> None:
 
     parsed = parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), text)
 
-    assert parsed.single["CAVE_ID"] == "T.D-04.01"
+    assert parsed.single["CAVE_ID"] == "C-1001"
     assert parsed.body.startswith("#prefix ZbojeckaDziura")
 
 
@@ -194,7 +196,7 @@ def test_parse_srv_metadata_accepts_closing_block_at_eof() -> None:
 
     parsed = parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), text)
 
-    assert parsed.single["CAVE_ID"] == "T.D-04.01"
+    assert parsed.single["CAVE_ID"] == "C-1001"
     assert parsed.body == ""
 
 
@@ -232,7 +234,8 @@ def test_active_srv_scope() -> None:
 def test_replace_or_insert_metadata_preserves_body() -> None:
     original = "#prefix Cave\n#date 2004-06-19\n0\t1\t1.0\t90\t0\n"
     metadata = default_metadata(
-        cave_id="T.X-00.00",
+        survey_kind="underground",
+        cave_id="C-1001",
         cave_name="Cave",
         survey_id="CAVE",
         survey_name="Cave",
@@ -249,7 +252,8 @@ def test_replace_or_insert_metadata_preserves_body() -> None:
 
 def test_append_processing_is_idempotent() -> None:
     metadata = default_metadata(
-        cave_id="T.X-00.00",
+        survey_kind="underground",
+        cave_id="C-1001",
         cave_name="Cave",
         survey_id="CAVE",
         survey_name="Cave",
@@ -262,3 +266,64 @@ def test_append_processing_is_idempotent() -> None:
 
     assert updated.repeated["PROCESSING"].count("usredniono pomiary przod/tyl") == 1
     assert updated_again == updated
+
+
+@pytest.mark.parametrize("kind", ["underground", "surface"])
+def test_identity_roundtrip_with_unfixed_references(kind):
+    metadata = default_metadata(
+        survey_kind=kind,
+        cave_id="C-1001" if kind == "underground" else None,
+        cave_name="Cave" if kind == "underground" else None,
+        object_refs=["Cave:0=MLW-0011", "Cave:31=MLW-0024"],
+        survey_id="CAVE",
+        survey_name="Survey",
+        source_refs=["_RAW/01"],
+        update_date="2026-11-12",
+    )
+    rendered = format_srv_metadata(metadata)
+    parsed = parse_srv_metadata(Path("CAVE.SRV"), rendered)
+    assert parsed.single["SURVEY_KIND"] == kind
+    assert parsed.repeated["OBJECT_REF"] == ["Cave:0=MLW-0011", "Cave:31=MLW-0024"]
+    assert ("CAVE_ID" in parsed.single) == (kind == "underground")
+    assert ("CAVE_NAME" in parsed.single) == (kind == "underground")
+    assert "#fix" not in rendered
+    assert format_srv_metadata(parsed) == rendered
+
+
+@pytest.mark.parametrize(
+    "old,new,field",
+    [
+        ('SURVEY_KIND     "underground"\n', "", "SURVEY_KIND"),
+        ('"underground"', '"mixed"', "SURVEY_KIND"),
+        ('"C-1001"', '"T.D-04.01"', "CAVE_ID"),
+        ('"C-1001"', '"WPJ:CAVE"', "CAVE_ID"),
+        ('"C-1001"', '"ROBOCZE"', "CAVE_ID"),
+        ('CAVE_NAME       "Zbojecka Dziura"\n', "", "CAVE_NAME"),
+        ('"underground"', '"surface"', "CAVE_ID"),
+    ],
+)
+def test_parser_and_formatter_reject_invalid_identity(old, new, field):
+    invalid = VALID_BLOCK.replace(old, new)
+    with pytest.raises(MetadataError, match=field):
+        parse_srv_metadata(Path("CAVE.SRV"), invalid)
+    valid = parse_srv_metadata(Path("CAVE.SRV"), VALID_BLOCK)
+    single = dict(valid.single)
+    if field == "CAVE_ID":
+        single[field] = new.strip('"')
+    elif new == '"surface"':
+        single["SURVEY_KIND"] = "surface"
+    elif new:
+        single[field] = new.strip('"')
+    else:
+        single.pop(field)
+    with pytest.raises(MetadataError, match=field):
+        format_srv_metadata(SrvMetadata(single, valid.repeated, ""))
+
+
+@pytest.mark.parametrize("refs", [[], ["Cave:0=MLW-0011"] * 2, ["Cave:0"]])
+def test_surface_formatter_rejects_missing_or_invalid_references(refs):
+    parsed = parse_srv_metadata(Path("CAVE.SRV"), VALID_BLOCK)
+    single = {k: v for k, v in parsed.single.items() if k not in {"CAVE_ID", "CAVE_NAME"}}
+    single["SURVEY_KIND"] = "surface"
+    with pytest.raises(MetadataError, match="OBJECT_REF"):
+        format_srv_metadata(SrvMetadata(single, {**parsed.repeated, "OBJECT_REF": refs}, ""))

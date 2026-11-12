@@ -1,9 +1,10 @@
 #[
-CAVE_ID         "T.F-09.01"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0005"
 CAVE_NAME       "Jaskinia Psia"
 SURVEY_ID       "PSIA_PP"
 SURVEY_NAME     "Partie Poznanskie 2018"
-UPDATE_DATE     "2026-09-19"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -15,6 +16,7 @@ INSTRUMENT      "DistoX, TopoDroid 3.4.5e"
 SURVEY_DATE     "2018-01-04"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "uzupelniono sklad zespolu wg P. Graczyka, Jaskinie 3(96)/2019, s. 29; pomiary bez zmian"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix Psia

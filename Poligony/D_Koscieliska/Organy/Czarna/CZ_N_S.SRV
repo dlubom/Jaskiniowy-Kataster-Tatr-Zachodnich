@@ -1,9 +1,10 @@
 #[
-CAVE_ID         "T.E-09.12"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0699"
 CAVE_NAME       "Jaskinia Czarna"
 SURVEY_ID       "N1"
 SURVEY_NAME     "Pomiary Jakuba Nowaka 2012-2015"
-UPDATE_DATE     "2026-11-11"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -20,6 +21,7 @@ SURVEY_GRADE    "nieznane"
 PROCESSING      "Bezposrednie nawiazania do KujatGlowny:7, 17 i 37; pomiary bez zmian."
 PROCESSING      "B7-B9, B14 i B31 zachowuja numery zrodlowe w lokalnych prefiksach Nowaka."
 PROCESSING      "SOURCE_REF poprawiono na _RAW/03: arkusz Czarna 1979-2015.xls i Jaskinie 67, 69, 77, 81 wskazane w pierwotnym DATA_SOURCE; pomiary bez zmian"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix2 Czarna

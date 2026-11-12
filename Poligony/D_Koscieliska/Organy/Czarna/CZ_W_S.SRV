@@ -1,9 +1,10 @@
 #[
-CAVE_ID         "T.E-09.12"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0699"
 CAVE_NAME       "Jaskinia Czarna"
 SURVEY_ID       "W1"
 SURVEY_NAME     "Partie Wawelskie"
-UPDATE_DATE     "2026-09-25"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -15,6 +16,7 @@ INSTRUMENT      "busola, tasma"
 SURVEY_DATE     "1981-01-01"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "Bezposrednie nawiazanie do KujatGlowny:55; pomiary bez zmian."
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix2 Czarna

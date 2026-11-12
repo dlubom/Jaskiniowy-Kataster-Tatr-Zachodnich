@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.F-09.01"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0005"
 CAVE_NAME       "Jaskinia Psia"
+OBJECT_REF      "Psia:p87_0=KSW-0002"
 SURVEY_ID       "PSIA_1987"
 SURVEY_NAME     "Pomiary 1987 (Kardas + Luty)"
-UPDATE_DATE     "2026-09-19"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -18,6 +20,7 @@ SURVEY_DATE     "1987-08-17"
 SURVEY_DATE     "1987-08-18"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zweryfikowano skany, datowanie i autorstwo; niepewnosci w komentarzach, wartosci pomiarow bez zmian"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix Psia

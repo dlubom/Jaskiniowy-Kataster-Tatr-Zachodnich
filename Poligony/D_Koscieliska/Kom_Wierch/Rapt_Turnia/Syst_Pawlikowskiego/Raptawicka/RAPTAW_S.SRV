@@ -1,9 +1,12 @@
 #[
-CAVE_ID         "T.E-08.03"
-CAVE_NAME       "Jaskinia Raptawicka"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0095"
+CAVE_NAME       "Jaskinie Pawlikowskiego"
+OBJECT_REF      "Pawlikowskiego:Raptawicka:1.0=KSZ-0047"
+OBJECT_REF      "Pawlikowskiego:Raptawicka:5.1=KSZ-0114"
 SURVEY_ID       "RAPTAW"
 SURVEY_NAME     "Raptawicka"
-UPDATE_DATE     "2026-10-25"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -22,6 +25,7 @@ PROCESSING      "zachowano istniejacy aktywny plik SRV"
 PROCESSING      "daty sesji wg tabeli F. Filara z 2015-07-20; brak przypisania dat do wektorow; pomiar polaczenia 2015-06 wydzielono do RAPT_MYL.SRV"
 PROCESSING      "zachowano historyczne przyblizenie #date dla pozostalych odczytow; nie przypisano niepotwierdzonych dni pomiaru"
 PROCESSING      "odcinki 1.48-1.150 i 1.150-1.151 maja nieustalone datowanie; SURVEY_DATE nieznane dotyczy tych dwoch rekordow"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix2 Pawlikowskiego

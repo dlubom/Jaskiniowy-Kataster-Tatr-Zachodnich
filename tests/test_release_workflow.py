@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pytest
 
-from jktz.cli import build_zip, release_metadata, render_otwory
+from jktz.cli import build_zip, release_metadata
 
 WORKFLOWS = Path(__file__).parents[1] / ".github" / "workflows"
 
@@ -35,9 +35,9 @@ def test_release_publishes_matching_version_notes_and_archive_after_validation()
         "Validate Python tooling",
         "Run mutation gate",
         "Prepare release metadata",
-        "Check rendered entrance snapshot",
+        "Download GPS snapshot",
         "Install Survex",
-        "Build exports",
+        "Validate GPS and build checked exports",
         "Build release ZIP",
         "Create GitHub Release",
     ]
@@ -46,10 +46,17 @@ def test_release_publishes_matching_version_notes_and_archive_after_validation()
     assert 'echo "VERSION=${GITHUB_REF_NAME}"' in _step(workflow, "Extract version from tag")
     version = "${{ steps.version.outputs.VERSION }}"
     assert f"RELEASE_VERSION: {version}" in _step(workflow, "Prepare release metadata")
-    assert _run_line(_step(workflow, "Check rendered entrance snapshot")) == (
-        "uv run jktz-render-otwory --check"
-    )
-    assert _run_line(_step(workflow, "Build exports")) == f"uv run jktz-exports {version}"
+    gate = _step(workflow, "Validate GPS and build checked exports")
+    assert f"RELEASE_VERSION: {version}" in gate
+    assert shlex.split(_run_line(gate)) == [
+        "uv",
+        "run",
+        "jktz-validate",
+        "--gps-snapshot",
+        "logs/gps-snapshot",
+        "--export-version",
+        "$RELEASE_VERSION",
+    ]
     assert _run_line(_step(workflow, "Build release ZIP")) == f"uv run jktz-build-zip {version}"
     publish = _step(workflow, "Create GitHub Release")
     assert "uses: softprops/action-gh-release@v2" in publish
@@ -61,13 +68,13 @@ def test_pr_package_keeps_version_render_upload_and_link_contract() -> None:
     workflow = (WORKFLOWS / "validate.yml").read_text(encoding="utf-8")
     job = workflow.split("\n  pr-release-package:\n", 1)[1]
     assert "if: github.event_name == 'pull_request'" in job
-    assert "needs: [python-tools, mutation-tests, validate, walls-windows]" in job
+    assert "needs: [gps-snapshot, python-tools, mutation-tests, validate, walls-windows]" in job
     ordered_steps = [
         "Compute package version",
         "Set version in INFO.txt",
-        "Check rendered entrance snapshot",
+        "Download GPS snapshot",
         "Install Survex",
-        "Build exports",
+        "Validate GPS and build checked exports",
         "Build PR release ZIP",
         "Upload PR release ZIP",
         "Add package link to job summary",
@@ -82,10 +89,17 @@ def test_pr_package_keeps_version_render_upload_and_link_contract() -> None:
     assert 'echo "zip=JKTZ-${version}.zip" >> "$GITHUB_OUTPUT"' in compute
     version = "${{ steps.package.outputs.version }}"
     assert f"PACKAGE_VERSION: {version}" in _step(job, "Set version in INFO.txt")
-    assert _run_line(_step(job, "Check rendered entrance snapshot")) == (
-        "uv run jktz-render-otwory --check"
-    )
-    assert _run_line(_step(job, "Build exports")) == f"uv run jktz-exports {version}"
+    gate = _step(job, "Validate GPS and build checked exports")
+    assert f"PACKAGE_VERSION: {version}" in gate
+    assert shlex.split(_run_line(gate)) == [
+        "uv",
+        "run",
+        "jktz-validate",
+        "--gps-snapshot",
+        "logs/gps-snapshot",
+        "--export-version",
+        "$PACKAGE_VERSION",
+    ]
     assert _run_line(_step(job, "Build PR release ZIP")) == f"uv run jktz-build-zip {version}"
     upload = _step(job, "Upload PR release ZIP")
     assert "uses: actions/upload-artifact@v4" in upload
@@ -102,37 +116,6 @@ def test_pr_package_keeps_version_render_upload_and_link_contract() -> None:
     assert "if: github.event.pull_request.head.repo.full_name == github.repository" in comment
     assert "continue-on-error: true" in comment
     assert "action-gh-release" not in job
-
-
-@pytest.mark.parametrize("longitude,expected_exit", [("19.1", 0), ("19.2", 1)])
-def test_pr_package_checks_gps_without_changing_tested_snapshot(
-    tmp_path, monkeypatch, longitude, expected_exit
-):
-    import yaml
-
-    workflow = yaml.safe_load((WORKFLOWS / "validate.yml").read_text(encoding="utf-8"))
-    step = next(
-        step
-        for step in workflow["jobs"]["pr-release-package"]["steps"]
-        if step.get("run", "").startswith("uv run jktz-render-otwory")
-    )
-    command = shlex.split(step["run"])
-    monkeypatch.chdir(tmp_path)
-    (tmp_path / "Poligony").mkdir()
-    template = tmp_path / "Poligony/OTWORY.SRV.j2"
-    snapshot = tmp_path / "Poligony/OTWORY.SRV"
-    template.write_text("{{ gps_fix('Cave:0', 'OBJ-1') }}\n", encoding="utf-8")
-    tested_snapshot = b"#fix\tCave:0\tE19.1\tN49.2\t123.4m\n"
-    snapshot.write_bytes(tested_snapshot)
-    csv = tmp_path / "best-measurements.csv"
-    csv.write_text(
-        f"object_id,lon,lat,elevation_m\nOBJ-1,{longitude},49.2,123.4\n", encoding="utf-8"
-    )
-
-    result = render_otwory.main([*command[3:], "--csv", str(csv)])
-
-    assert result == expected_exit
-    assert snapshot.read_bytes() == tested_snapshot
 
 
 @pytest.mark.parametrize(

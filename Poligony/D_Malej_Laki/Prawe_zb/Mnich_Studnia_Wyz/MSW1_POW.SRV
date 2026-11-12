@@ -1,0 +1,35 @@
+#[
+SURVEY_KIND     "surface"
+OBJECT_REF      "MnichStudniaWyz:0=MLW-0054"
+OBJECT_REF      "MnichStudniaWyz:11=MLW-0009"
+SURVEY_ID       "MSW1_POW"
+SURVEY_NAME     "Mnichowa Studnia Wyznia - domiar powierzchniowy"
+UPDATE_DATE     "2026-11-12"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "nieznane"
+COORDINATOR_EMAIL "nieznane"
+SOURCE_REF      "_RAW/01"
+SOURCE_REF      "_RAW/02"
+SOURCE_REF      "_RAW/03"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "K. Dudzinski"
+TEAM            "Z. Tabaczynski"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "2002-02-03"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+PROCESSING      "2026-11-01: uzupelniono zespol z dokumentacji opisowej PDF, s. 12-13; pomiary i #date bez zmian; zakres dolnego/powierzchniowego ciagu otwarty w #151"
+PROCESSING      "2026-11-12: wydzielono zatwierdzony domiar powierzchniowy; zachowano odczyty i kontekst dyrektyw"
+PROCESSING      "klasyfikacja surface wedlug decyzji koordynatora; OBJECT_REF nie dodaje fixa"
+#]
+
+#segment P
+#units meters order=DAV
+#units A=D V=D
+#prefix MnichStudniaWyz
+;K. Dudzinski i Z. Tabaczynski
+#DATE 2002-02-03
+; Otwor w tym pliku: MnichStudniaWyz:0 - fix/flag/note w Poligony/OTWORY.SRV
+0	B	16.38	27	-52
+B	11	13.32	272	-30

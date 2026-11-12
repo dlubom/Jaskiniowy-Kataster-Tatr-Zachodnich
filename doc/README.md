@@ -14,6 +14,8 @@ Instrukcje projektu i jego polityka przetwarzania są w [AGENTS.md](../AGENTS.md
 | Nazwy, numery i historia dokumentacji jaskiń | [JSONL PIG](jaskinie_polski_pig_dump.jsonl) |
 | PocketTopo: gotowe binarium, raporty i porównanie z SRV | [PocketTopo](pockettopo/README.md) |
 | Historyczne badania PocketTopo i próby natywne | [Pochodzenie wzorców](../tests/fixtures/pockettopo/README.md) |
+| Tożsamość SRV, katalog GPS i wspólny snapshot | [Kontrakt CAVE_ID](plans/cave-id/SPEC.md) |
+| Uzasadnienia przypisań i podziałów przy migracji CAVE_ID | [Historyczne mapowanie](plans/cave-id/MAPPING.md), [CSV](plans/cave-id/MAPPING.csv) |
 
 ## Walls
 

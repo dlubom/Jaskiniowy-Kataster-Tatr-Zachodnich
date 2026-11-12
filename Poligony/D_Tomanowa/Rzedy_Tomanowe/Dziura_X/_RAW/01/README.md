@@ -15,7 +15,7 @@
 
 ## Roboczy poligon i identyfikacja
 
-[DZX_ROB.SRV](../../DZX_ROB.SRV) zawiera 2/2 odcinki tabeli „Dziura X.”,
+[DZX_ROB.SRV.txt](../../../../../../doc/robocze/DZX_ROB.SRV.txt) zawiera 2/2 odcinki tabeli „Dziura X.”,
 z zachowaniem numeracji 0–1–2 i literalnych DAV. Wszystkie dyrektywy
 i pomiary są komentarzami; brak wpisu WPJ i fixa. `CAVE_ID`
 `ROBOCZE-TOMANOWE-DZIURA-X` jest wyłącznie lokalną etykietą roboczą,

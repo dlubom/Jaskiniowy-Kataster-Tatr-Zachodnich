@@ -47,8 +47,8 @@ Python >= 3.10; środowisko zgodne z CI: `uv sync --locked --python 3.12`).
 uv run pytest -q
 uv run ruff format --check src scripts tests .agents/skills
 uv run ruff check src scripts tests .agents/skills
-uv run jktz-render-otwory --check
-uv run jktz-validate
+uv run jktz-gps-snapshot logs/gps-snapshot
+uv run jktz-validate --gps-snapshot logs/gps-snapshot
 ```
 
 `uv run jktz-exports <wersja> <katalog>` wymaga nowego albo pustego katalogu,
@@ -112,14 +112,19 @@ Use `uv sync --locked --python 3.12` to match CI.
 uv run pytest -q
 uv run ruff format --check src scripts tests .agents/skills
 uv run ruff check src scripts tests .agents/skills
-uv run jktz-render-otwory --check
-uv run jktz-validate
+uv run jktz-gps-snapshot logs/gps-snapshot
+uv run jktz-validate --gps-snapshot logs/gps-snapshot
 ```
 
 `uv run jktz-exports <version> <directory>` requires a new or empty directory
 to avoid mixing current exports with stale files. Validation requires
 `validate-exports` not to exist; move previous results before running it.
 Compilation errors and warnings block export.
+
+The [CAVE_ID contract](doc/plans/cave-id/SPEC.md) defines survey identity,
+entrance references and the shared GPS snapshot. The
+[migration mapping](doc/plans/cave-id/MAPPING.md) preserves source evidence
+and coordinator decisions; maintain current identities in SRV headers.
 
 Codex is the default project agent. Read `AGENTS.md`, which defines the Walls/Survex, `_RAW`,
 metadata, and release contracts for this repository. Skills live in

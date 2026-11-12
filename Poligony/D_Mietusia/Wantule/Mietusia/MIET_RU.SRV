@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.D-11.01"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0305"
 CAVE_NAME       "Jaskinia Mietusia"
+OBJECT_REF      "Mietusia:ru_0=MTZ-0023"
 SURVEY_ID       "RU"
 SURVEY_NAME     "Rura"
-UPDATE_DATE     "2026-10-27"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Pawel Gogolak"
 COORDINATOR_EMAIL "pafffel@gmail.com"
@@ -16,6 +18,7 @@ SURVEY_DATE     "2022-10-21"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
 PROCESSING      "2026-10-27: #S L na ru_2-ru_3 wylacza powtorne liczenie dlugosci w Survex; szkic autora i trzy ponowne pomiary wspieraja decyzje; odczyty i stacje zachowano, tozsamosc ru_3/ru_4 niepotwierdzona"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix Mietusia
