@@ -8,6 +8,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Zmienione
 
+- Pełna walidacja i pakowanie używają jednego snapshotu GPS dla współrzędnych,
+  tożsamości SRV i kontroli nazw stacji po kompilacji.
 - Metadane SRV rozdzielaja pomiary podziemne i powierzchniowe przez
   `SURVEY_KIND`. `CAVE_ID` wskazuje jaskinie/system GPS, a `OBJECT_REF`
   jawnie wiaze rozpoznane otwory ze stacjami, bez dodawania fixow.

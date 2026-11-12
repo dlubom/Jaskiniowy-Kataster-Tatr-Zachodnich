@@ -35,12 +35,12 @@
 | J02 | Wspólny snapshot GPS i czytnik katalogu | G02 preview z sumami albo G04 release | wykonana, sprawdzona na podglądzie G03 |
 | J03 | Testowalny kontrakt tożsamości i referencji | J02 | wykonana |
 | J04 | Migracja SRV, CLI i podziały | J01 bez nierozstrzygniętych wierszy; J03; G04 | wykonana; wyniki i końcowe CI w PR #163 |
-| J05 | Włączenie pełnej bramki i dowody końcowe | J04 | do wykonania |
+| J05 | Włączenie pełnej bramki i dowody końcowe | J04 | bramka wdrożona; końcowe dowody CI i ZIP w opisie PR #163 |
 
 G01–G04 opisuje [plan GPS](GPS.md). J02/J03 nie przełączają jeszcze produkcyjnej
 bramki na nowy kontrakt, dzięki czemu każda karta może skończyć się zielonym
 commitem. J04 przełącza parser wraz ze wszystkimi aktywnymi danymi; J05
-obowiązkowo włącza walidację sieciową. Cała PR pozostaje draft do J05.
+obowiązkowo włącza walidację sieciową. PR #163 pozostaje draft po J05; scalenie wymaga osobnego polecenia.
 
 ## J01 — mapowanie wszystkich aktywnych plików
 
@@ -211,17 +211,31 @@ oraz renderu przyjmuje `--gps-snapshot DIR` dla odtworzenia; jednoczesne
 `--csv` i `--gps-snapshot` jest błędem. CI przygotowuje snapshot raz i przekazuje
 go jako artefakt między jobami. W wydaniu to samo wejście zasila kontrolę i eksport.
 
-- [ ] Dodaj regresje integracyjne: jedna odpowiedź release/latest na run,
+- [x] Dodaj regresje integracyjne: jedna odpowiedź release/latest na run,
   snapshot współdzielony przez render i metadata, brak tabel blokuje publikację,
   błąd ID nie nadpisuje OTWORY, brak stacji blokuje eksport po kompilacji.
   Uruchom i potwierdź oczekiwane niepowodzenia przed podłączeniem bramki.
-- [ ] Podłącz walidację wszystkich aktywnych SRV i referencji. Odczytaj nazwy
+- [x] Podłącz walidację wszystkich aktywnych SRV i referencji. Odczytaj nazwy
   stacji z wyniku `dump3d`/`survexport`, zgodnie z lokalną dokumentacją wersji;
   nie twórz konkurencyjnego parsera całego Walls. Obsłuż Windows i POSIX.
-- [ ] Uruchom quality, mutation, pełne jktz-validate i natywny Walls; ponownie
+- [x] Uruchom quality, mutation, pełne jktz-validate i natywny Walls; ponownie
   sprawdź kompletność mapowania, RAW oraz brak plików mieszanych.
-- [ ] Po push sprawdź terminalne CI dokładnego HEAD, pobierz paczkę PR,
-  potwierdź nowe nagłówki i komplet plików powierzchniowych oraz brak doc/RAW
-  w ZIP. Raportuj osobno SHA HEAD i SHA testowego merge, jeśli CI używa merge.
-- [ ] Zaktualizuj opis PR wokół gotowej implementacji, podaj dowody i ograniczenia.
-  Zatrzymaj się przed merge i wydaniem.
+- Końcowy dowód: [opis PR #163](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/pull/163)
+  wiąże terminalny CI i sprawdzony ZIP z dokładnym HEAD oraz osobnym SHA
+  testowego merge. W opisie są także wyniki lokalne i ograniczenia.
+  PR pozostaje draft.
+
+J05 korzysta z jednego snapshotu CSV/GPKG na przebieg. Tryb offline weryfikuje
+sumy z manifestu. Walidacja sprawdza wszystkie aktywne SRV i powiązania
+szablonu, a po kompilacji wczytuje pełne nazwy stacji z CSV Survex.
+Pakowanie PR i wydania używa eksportów zachowanych po pełnej walidacji.
+Dane SRV, WPJ, OTWORY, DZX, RAW i mapowanie zachowują stan J04.
+
+
+Lokalne dowody w głównym checkoutcie: `.verification/2026-11-12-cave-id-j05/`.
+Walidacja i pakiet lokalny użyły GPS v2.1.2 (release ID 442948071);
+mapowanie 207 → 210 (205 underground, 5 surface), 83 aktywne fixy,
+12 112 stacji, 18 554 odcinków, w tym 41 powierzchniowych.
+Workflow tagu nie został uruchomiony; ścieżkę pakowania sprawdzono lokalnie
+i przez paczkę PR. Przyjęcie snapshotu nie rozstrzyga tożsamości pliku bez
+jawnego otworu; przypisania tych plików wynikają z zatwierdzonego mapowania.

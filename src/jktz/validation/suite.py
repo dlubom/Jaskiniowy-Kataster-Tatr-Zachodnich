@@ -3,16 +3,25 @@ from __future__ import annotations
 import contextlib
 import shutil
 import sys
+import tempfile
 from collections.abc import Callable, Iterator, Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import TextIO
 
-from jktz.entrances.render import RenderError, render_entrances
+from jktz.entrances.render import (
+    DEFAULT_GITHUB_REPO,
+    DEFAULT_TEMPLATE,
+    RenderError,
+    render_entrances,
+)
 from jktz.exports import pipeline
 from jktz.exports import tools as exports_tools
+from jktz.gps_catalog import GpsSnapshot, download_snapshot, load_snapshot
+from jktz.metadata.identity import SurveyIdentity
 from jktz.reporting import CheckFailed
 from jktz.validation import (
+    catalogue,
     cavern_warnings,
     coordinates,
     decimal_format,
@@ -37,6 +46,8 @@ class ValidationContext:
     cavern_log: Path = Path("cavern_output.txt")
     exports_dir: Path = Path("validate-exports")
     exports_version: str = "validate"
+    gps_snapshot: Path | None = None
+    keep_exports: bool = False
 
 
 @dataclass(frozen=True)
@@ -85,9 +96,9 @@ def _indent_stdout(prefix: str = _EXPORTS_INDENT) -> Iterator[None]:
         sys.stdout = original
 
 
-def _check_rendered_entrances() -> None:
+def _check_rendered_entrances(snapshot: GpsSnapshot) -> None:
     try:
-        result = render_entrances(check=True)
+        result = render_entrances(check=True, csv_path=snapshot.csv_path)
     except (OSError, RenderError) as exc:
         raise CheckFailed(f"ERROR: entrance snapshot check failed: {exc}") from exc
 
@@ -112,8 +123,18 @@ def _check_exports(context: ValidationContext) -> None:
     )
 
 
-def validation_steps(context: ValidationContext) -> tuple[ValidationStep, ...]:
-    """Build the ordered validation contract from small, independently testable steps."""
+def validation_steps(
+    context: ValidationContext, snapshot: GpsSnapshot
+) -> tuple[ValidationStep, ...]:
+    """Build the checks around one release and one set of survey identities."""
+    identities: dict[Path, SurveyIdentity] = {}
+
+    def check_metadata() -> None:
+        identities.update(metadata.check())
+
+    def check_catalogue() -> None:
+        catalogue.check_catalogue(snapshot, DEFAULT_TEMPLATE, identities)
+
     return (
         ValidationStep(
             "Checking SRV filenames format",
@@ -123,7 +144,7 @@ def validation_steps(context: ValidationContext) -> tuple[ValidationStep, ...]:
         ValidationStep(
             "Checking SRV metadata contract",
             "SRV metadata contract",
-            metadata.check,
+            check_metadata,
         ),
         ValidationStep(
             "Checking for invalid directives",
@@ -146,9 +167,14 @@ def validation_steps(context: ValidationContext) -> tuple[ValidationStep, ...]:
             prefixes.check,
         ),
         ValidationStep(
+            "Checking GPS catalogue references",
+            "GPS catalogue references",
+            check_catalogue,
+        ),
+        ValidationStep(
             "Checking rendered entrances snapshot",
             "Rendered entrances snapshot",
-            _check_rendered_entrances,
+            lambda: _check_rendered_entrances(snapshot),
         ),
         ValidationStep(
             "Checking entrance coordinates are inside Tatras extent",
@@ -169,6 +195,11 @@ def validation_steps(context: ValidationContext) -> tuple[ValidationStep, ...]:
             "Checking cavern compile warnings",
             "Cavern compile warnings",
             lambda: cavern_warnings.check(log_path=context.cavern_log),
+        ),
+        ValidationStep(
+            "Checking compiled station references",
+            "Compiled station references",
+            lambda: catalogue.check_compiled_references(Path("KATASTER.3d"), identities),
         ),
         ValidationStep(
             "Checking exports",
@@ -196,8 +227,39 @@ def run_validation(context: ValidationContext | None = None) -> None:
             f"ERROR: validation output already exists: {context.exports_dir}; "
             "choose an unused directory or move the existing files first"
         )
+    with tempfile.TemporaryDirectory(prefix="jktz-validation-") as directory:
+        snapshot = _prepare_snapshot(context.gps_snapshot, Path(directory) / "gps")
+        if context.keep_exports:
+            _publish_checked_exports(context, snapshot)
+            return
+        try:
+            run_steps(validation_steps(context, snapshot))
+        finally:
+            if context.exports_dir.exists():
+                shutil.rmtree(context.exports_dir, ignore_errors=True)
+
+
+def _publish_checked_exports(context: ValidationContext, snapshot: GpsSnapshot) -> None:
+    # Stage beside the destination so a successful directory rename stays on
+    # the same filesystem. Failures leave no directory for the ZIP step.
+    with tempfile.TemporaryDirectory(
+        prefix=".jktz-exports-", dir=context.exports_dir.parent
+    ) as directory:
+        staging = Path(directory) / "checked"
+        run_steps(validation_steps(replace(context, exports_dir=staging), snapshot))
+        staging.rename(context.exports_dir)
+
+
+def _prepare_snapshot(source: Path | None, destination: Path) -> GpsSnapshot:
     try:
-        run_steps(validation_steps(context))
-    finally:
-        if context.exports_dir.exists():
-            shutil.rmtree(context.exports_dir, ignore_errors=True)
+        snapshot = (
+            load_snapshot(source)
+            if source is not None
+            else download_snapshot(DEFAULT_GITHUB_REPO, destination)
+        )
+    except (OSError, ValueError) as exc:
+        raise CheckFailed(f"ERROR: GPS snapshot: {exc}") from exc
+    print(f"GPS snapshot: {snapshot.repo}@{snapshot.tag} (release ID: {snapshot.release_id})")
+    print(f"  Best CSV SHA-256: {snapshot.csv_sha256}")
+    print(f"  Catalogue SHA-256: {snapshot.gpkg_sha256}")
+    return snapshot

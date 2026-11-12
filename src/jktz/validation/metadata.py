@@ -6,6 +6,7 @@ import subprocess
 from pathlib import Path, PurePosixPath
 
 from jktz.metadata.errors import MetadataError
+from jktz.metadata.identity import SurveyIdentity, parse_identity
 from jktz.metadata.raw import parse_raw_metadata
 from jktz.metadata.srv import (
     is_active_srv_path,
@@ -201,7 +202,9 @@ def _check_raw_package(
     _check_raw_inventory(package, parsed.content_items, material, errors)
 
 
-def _check_srv(path: Path, scan_root: Path, poligony_root: Path, errors: list[str]) -> None:
+def _check_srv(
+    path: Path, scan_root: Path, poligony_root: Path, errors: list[str]
+) -> tuple[Path, SurveyIdentity] | None:
     rel = _repo_relative(path, scan_root)
     if not is_active_srv_path(rel):
         return
@@ -224,6 +227,8 @@ def _check_srv(path: Path, scan_root: Path, poligony_root: Path, errors: list[st
             continue
         _check_source_ref_package(rel, source_ref, package, errors)
 
+    return rel, parse_identity(parsed.single, parsed.repeated)
+
 
 def _check_source_ref_package(rel: Path, source_ref: str, package: Path, errors: list[str]) -> None:
     if not package.exists():
@@ -236,8 +241,8 @@ def _check_source_ref_package(rel: Path, source_ref: str, package: Path, errors:
         errors.append(f"  {rel.as_posix()}: SOURCE_REF {source_ref!r} missing README.md")
 
 
-def check(root: Path = Path("Poligony")) -> None:
-    """Validate active SRV metadata blocks and normalized _RAW source packages."""
+def check(root: Path = Path("Poligony")) -> dict[Path, SurveyIdentity]:
+    """Validate metadata and return the identities of all active SRVs."""
     errors: list[str] = []
     scan_root = root.resolve()
     poligony_root = _poligony_root(scan_root)
@@ -264,8 +269,12 @@ def check(root: Path = Path("Poligony")) -> None:
     for raw_dir in raw_dirs:
         _check_raw_root(raw_dir, ignored_untracked, errors)
 
-    for path in sorted(scan_root.rglob("*.SRV")):
-        _check_srv(path, scan_root, poligony_root, errors)
+    identities = dict(
+        result
+        for path in sorted(scan_root.rglob("*.SRV"))
+        if (result := _check_srv(path, scan_root, poligony_root, errors)) is not None
+    )
 
     if errors:
         raise CheckFailed("ERROR: SRV metadata contract violation:\n" + "\n".join(errors))
+    return identities

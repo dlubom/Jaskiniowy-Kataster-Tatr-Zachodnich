@@ -68,7 +68,7 @@ def test_survex_duplicates_blocks_validation_and_preserves_failed_report() -> No
         s for s in steps if s.get("uses") == "./.github/actions/install-survex-duplicates"
     )
     gate = next(s for s in steps if "jktz-survex-duplicates" in s.get("run", ""))
-    full = next(s for s in steps if s.get("run") == "uv run jktz-validate")
+    full = next(s for s in steps if s.get("run", "").startswith("uv run jktz-validate "))
     assert steps.index(install) < steps.index(gate)
     assert steps.index(full) < steps.index(gate)
     assert not gate.get("continue-on-error")
@@ -169,3 +169,51 @@ def test_pages_version_identifies_untagged_commit(tmp_path, monkeypatch, inherit
         [git, "rev-parse", "--short", "HEAD"], cwd=tmp_path, env=git_env, text=True
     ).strip()
     assert version() == f"master@{short_sha}"
+
+
+def test_j05_workflows_share_one_snapshot_and_gate_package_exports():
+    import yaml
+
+    workflows = Path(__file__).parents[1] / ".github/workflows"
+    validation = yaml.safe_load((workflows / "validate.yml").read_text())["jobs"]
+    release = yaml.safe_load((workflows / "release.yml").read_text())["jobs"]
+
+    for jobs, consumers in (
+        (validation, ["python-tools", "validate", "walls-windows", "pr-release-package"]),
+        (release, ["release"]),
+    ):
+        assert [
+            job
+            for job, body in jobs.items()
+            for step in body["steps"]
+            if "jktz-gps-snapshot" in step.get("run", "")
+        ] == ["gps-snapshot"]
+        uploads = [
+            s["with"]["name"]
+            for s in jobs["gps-snapshot"]["steps"]
+            if s.get("uses", "").startswith("actions/upload-artifact@")
+        ]
+        assert uploads == ["gps-snapshot"]
+        for consumer in consumers:
+            job = jobs[consumer]
+            assert "gps-snapshot" in job["needs"]
+            download = next(
+                s["with"]
+                for s in job["steps"]
+                if s.get("uses", "").startswith("actions/download-artifact@")
+            )
+            assert download["name"] == "gps-snapshot"
+            checks = [
+                s["run"]
+                for s in job["steps"]
+                if s.get("run", "").startswith(
+                    ("uv run jktz-validate", "uv run jktz-render-otwory")
+                )
+            ]
+            assert checks and all("--gps-snapshot" in command for command in checks)
+
+        package = jobs[consumers[-1]]["steps"]
+        gate = next(s for s in package if s.get("run", "").startswith("uv run jktz-validate"))
+        build = next(s for s in package if s.get("run", "").startswith("uv run jktz-build-zip"))
+        assert "--export-version" in gate["run"]
+        assert package.index(gate) < package.index(build)

@@ -100,8 +100,8 @@ Walls project definition using directives: `.BOOK` (folder), `.SURVEY` (file ref
 - All entrance fixes (`#fix`, `#flag`, `#note`) for every cave live in
   `Poligony/OTWORY.SRV`, a versioned generated snapshot for reviewable diffs.
 - `Poligony/OTWORY.SRV.j2` is the source template for that snapshot.
-  `uv run jktz-render-otwory` renders it from the latest
-  `best-measurements.csv` asset in `dlubom/gps-kataster-obiektow-tatr`.
+  The versioned file is rendered from a full GPS snapshot: `best-measurements.csv`,
+  `katalog.gpkg` and `snapshot.json` with release provenance and both SHA-256 hashes.
   Each `gps_fix(...)` call embeds the GPS `object_id` directly in the template.
   Missing object rows or empty `lon`/`lat`/`elevation_m` values are
   release-blocking errors.
@@ -125,24 +125,27 @@ To preview a rendered entrances file without changing the versioned
 uv run jktz-render-otwory --output /tmp/OTWORY.SRV
 ```
 
-To reproduce the release input locally, render in place and compile:
+To pin one GPS release for render and full validation, run from the project root:
 
 ```
-uv run jktz-render-otwory
-cavern KATASTER.wpj
+uv run jktz-gps-snapshot logs/gps-snapshot
+uv run jktz-render-otwory --gps-snapshot logs/gps-snapshot
+uv run jktz-validate --gps-snapshot logs/gps-snapshot
 ```
 
-Before committing, check that the versioned `Poligony/OTWORY.SRV` snapshot
-matches the template rendered from the latest GPS release:
+Use a new or empty snapshot directory. Updating the versioned OTWORY checks
+the catalogue and SRV identities, compiles with the candidate in a temporary
+project, and checks the compiled station names before replacing the file.
+Use `--check` to compare without writing. The renderer also accepts
+`--csv FILE` for previews to a separate output; it cannot be combined with
+`--gps-snapshot` or used for full validation.
 
-```
-uv run jktz-render-otwory --check
-```
-
-The renderer downloads the latest GitHub release asset from
-`dlubom/gps-kataster-obiektow-tatr`. Any missing `object_id` mapping in the
-template, missing release asset, or empty coordinate/elevation field is an
-error.
+Without a snapshot argument, full validation downloads one release for all
+checks. It compares OTWORY without modifying it, checks every active SRV
+against the catalogue, and checks OBJECT_REF stations after compilation.
+Each PR and release workflow downloads once and passes the same snapshot
+to the jobs that use GPS. Packaging uses `jktz-validate --export-version`
+to keep the validated exports only after all checks pass.
 
 Entrance coordinates are maintained in
 [`dlubom/gps-kataster-obiektow-tatr`](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases)
@@ -356,9 +359,9 @@ Only release when explicitly requested. A draft PR request does not authorize me
 2. Commit, merge to master
 3. Create an annotated tag: `git tag -a vX.Y.Z -m "vX.Y.Z - description"`
 4. Push the tag: `git push origin vX.Y.Z`
-5. GitHub Actions verifies that `Poligony/OTWORY.SRV` matches the latest GPS
-   best measurements, then automatically creates a release with a ZIP archive
-   (`JKTZ-vX.Y.Z.zip`)
+5. GitHub Actions validates the SRVs and OTWORY against one GPS release and
+   checks compiled station references and exports before creating
+   `JKTZ-vX.Y.Z.zip` and publishing the release.
 
 The version in `INFO.txt` is set automatically — the `__VERSION__` placeholder is replaced with the tag name during the release build.
 
@@ -479,8 +482,9 @@ Use the `$add-cave` skill (see above) or follow these steps manually:
 1. **Research the cave** in `doc/jaskinie_polski_pig_dump.jsonl` — search by cave ID (see PIG section above) to find archival inventory context, dimensions, and documentation history; active entrance fixes come from the GPS project
 2. Create a directory under the appropriate valley in `Poligony/` (use underscores, no spaces, short names)
 3. Create the cave's survey `.SRV` body and run `uv run jktz-srv-metadata srv-set` for each file
-4. Append entrance fix/flag/note for the cave to `Poligony/OTWORY.SRV.j2` (fully-qualified station name, e.g. `Marmurowa:0`)
+4. Append entrance fix/flag/note for the cave to `Poligony/OTWORY.SRV.j2` (fully-qualified station name, e.g. `Marmurowa:0`).
 5. **Close Walls if it has this project open** before editing `KATASTER.wpj` — Walls overwrites the file on save, discarding any manually added entries
 6. Add `.BOOK`/`.SURVEY` entries to `KATASTER.wpj` referencing the new files
-7. Update `LISTA_JASKIN.md` and add a concise entry under `Unreleased` in `CHANGELOG.md`
-8. All new data should be coordinated through the project coordinator (darek.lubomski@gmail.com)
+7. Render OTWORY and run full validation with the same GPS snapshot as above.
+8. Update `LISTA_JASKIN.md` and add a concise entry under `Unreleased` in `CHANGELOG.md`.
+9. All new data should be coordinated through the project coordinator (darek.lubomski@gmail.com)

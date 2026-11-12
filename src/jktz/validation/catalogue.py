@@ -2,13 +2,19 @@
 
 from __future__ import annotations
 
+import csv
 import re
+import tempfile
 from collections import defaultdict
 from collections.abc import Mapping
 from pathlib import Path
 
-from jktz.gps_catalog import Catalogue, effective_cave_id
+from jktz.entrances.render import GPS_FIX_RE, RenderError, _parse_gps_fix_args
+from jktz.exports import tools
+from jktz.gps_catalog import Catalogue, GpsSnapshot, effective_cave_id, read_catalogue
 from jktz.metadata.identity import ObjectRef, SurveyIdentity
+from jktz.reporting import CheckFailed
+from jktz.validation._utils import active_lines
 
 _SURVEX_EMPTY_PREFIX = re.compile(r"(?<=:) (?=:)")
 
@@ -22,6 +28,8 @@ def validate_identities(
     errors: list[str] = []
     bindings: dict[str, set[tuple[str, str]]] = defaultdict(set)
     for station_id, object_id in entrance_bindings.items():
+        if error := _reference_error(ObjectRef(station_id, object_id), None, catalogue):
+            errors.append(f"OTWORY.SRV.j2: {error}")
         bindings[station_id.lstrip(":")].add((object_id, "OTWORY.SRV.j2"))
 
     for path, identity in identities.items():
@@ -86,3 +94,64 @@ def check_reference_stations(
         for ref in identity.object_refs
         if ref.station_id.lstrip(":") not in names
     )
+
+
+def _fix_binding(station_id: str, object_id: str, *, suffix: str = "") -> ObjectRef:
+    if not isinstance(station_id, str) or not isinstance(object_id, str):
+        raise RenderError("gps_fix station_id and object_id must be strings")
+    return ObjectRef(station_id.lstrip(":"), object_id)
+
+
+def _entrance_bindings(template: Path) -> dict[str, str]:
+    bindings: dict[str, str] = {}
+    text = template.read_text(encoding="utf-8")
+    lines = text.splitlines()
+    for number, _ in active_lines(text):
+        # Match on the original line: a quoted suffix can contain a semicolon.
+        if not (match := GPS_FIX_RE.match(lines[number - 1].lstrip())):
+            continue
+        args, kwargs = _parse_gps_fix_args(match.group(1))
+        try:
+            ref = _fix_binding(*args, **kwargs)
+        except TypeError as exc:
+            raise RenderError(f"Invalid gps_fix arguments: {match.group(0)}") from exc
+        previous = bindings.setdefault(ref.station_id, ref.object_id)
+        if previous != ref.object_id:
+            raise RenderError(
+                f"{template}: {ref.station_id}: conflicting object_ids {previous}, {ref.object_id}"
+            )
+    return bindings
+
+
+def check_catalogue(
+    snapshot: GpsSnapshot, template: Path, identities: Mapping[Path, SurveyIdentity]
+) -> None:
+    """Check the catalogue and all claimed station/object pairs before compiling."""
+    try:
+        catalogue = read_catalogue(snapshot)
+        bindings = _entrance_bindings(template)
+    except (OSError, ValueError) as exc:
+        raise CheckFailed(f"ERROR: GPS catalogue check failed: {exc}") from exc
+    if errors := validate_identities(identities, catalogue, bindings):
+        raise CheckFailed("ERROR: GPS catalogue references:\n" + "\n".join(errors))
+
+
+def read_station_names(three_d: Path) -> set[str]:
+    """Export all named stations using the pinned Survex CSV format."""
+    with tempfile.TemporaryDirectory(prefix="jktz-stations-") as directory:
+        output = Path(directory) / "stations.csv"
+        tools.survexport(["--station-names", "--csv", str(three_d.resolve()), str(output)])
+        with output.open(encoding="utf-8-sig", newline="") as stream:
+            reader = csv.DictReader(stream)
+            if not reader.fieldnames or "Station Name" not in reader.fieldnames:
+                raise ValueError(f"{three_d}: survexport CSV lacks the Station Name column")
+            return {row["Station Name"] for row in reader if row["Station Name"]}
+
+
+def check_compiled_references(three_d: Path, identities: Mapping[Path, SurveyIdentity]) -> None:
+    try:
+        stations = read_station_names(three_d)
+    except (OSError, ValueError) as exc:
+        raise CheckFailed(f"ERROR: cannot read compiled stations: {exc}") from exc
+    if errors := check_reference_stations(identities, stations):
+        raise CheckFailed("ERROR: compiled station references:\n" + "\n".join(errors))

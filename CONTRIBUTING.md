@@ -47,8 +47,8 @@ Python >= 3.10; środowisko zgodne z CI: `uv sync --locked --python 3.12`).
 uv run pytest -q
 uv run ruff format --check src scripts tests .agents/skills
 uv run ruff check src scripts tests .agents/skills
-uv run jktz-render-otwory --check
-uv run jktz-validate
+uv run jktz-gps-snapshot logs/gps-snapshot
+uv run jktz-validate --gps-snapshot logs/gps-snapshot
 ```
 
 `uv run jktz-exports <wersja> <katalog>` wymaga nowego albo pustego katalogu,
@@ -112,8 +112,8 @@ Use `uv sync --locked --python 3.12` to match CI.
 uv run pytest -q
 uv run ruff format --check src scripts tests .agents/skills
 uv run ruff check src scripts tests .agents/skills
-uv run jktz-render-otwory --check
-uv run jktz-validate
+uv run jktz-gps-snapshot logs/gps-snapshot
+uv run jktz-validate --gps-snapshot logs/gps-snapshot
 ```
 
 `uv run jktz-exports <version> <directory>` requires a new or empty directory

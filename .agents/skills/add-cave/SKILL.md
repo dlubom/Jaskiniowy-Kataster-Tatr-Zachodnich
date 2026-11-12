@@ -130,9 +130,9 @@ Add this block in cave-prefix order to `Poligony/OTWORY.SRV.j2`:
 
 Use the fully qualified station name, e.g. `Marmurowa:0` or
 `WielkaSniezna:Ciag:0`. Confirm it exists in the survey network.
-Run `uv run jktz-render-otwory`, inspect the complete diff, and include both
-the template and generated `Poligony/OTWORY.SRV` snapshot in the change.
-Do not edit the generated snapshot directly. Missing GPS rows are errors.
+Render after adding the survey and its WPJ entry (step 11), so the
+new station can be verified by the compiler. Do not edit the generated
+snapshot directly.
 
 ## Step 9 — Create the survey file (`CAVE.SRV` or `CAVE_<SECTION_SHORTNAME>.SRV`)
 
@@ -240,9 +240,18 @@ Verify with: `grep -n "<CAVE_SHORT_ID>" KATASTER.wpj`
 
 ## Step 11 — Validate and document
 
+Use one published GPS snapshot for the render and full validation:
+
+```sh
+uv run jktz-gps-snapshot logs/gps-snapshot
+uv run jktz-render-otwory --gps-snapshot logs/gps-snapshot
+uv run jktz-validate --gps-snapshot logs/gps-snapshot
+```
+
+Inspect the diff and include both the template and generated OTWORY. Review
+metadata, source preservation, entrance mappings and compiler output.
 Update `LISTA_JASKIN.md` and add a short entry under `Unreleased` in
-`CHANGELOG.md`. Run `uv run jktz-validate` (or `$docker-validate`) and review
-metadata, source preservation, entrance mappings, and compile warnings.
+`CHANGELOG.md`.
 Commit/push only when included in the user request.
 
 ## Summary

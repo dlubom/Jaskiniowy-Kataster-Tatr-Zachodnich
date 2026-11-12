@@ -10,7 +10,29 @@ permissions:
   contents: read
 
 jobs:
+  gps-snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: astral-sh/setup-uv@v5
+      - name: Download one GPS release
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: uv run --locked jktz-gps-snapshot logs/gps-snapshot
+      - name: Share GPS snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: gps-snapshot
+          path: logs/gps-snapshot/
+          if-no-files-found: error
+          retention-days: 14
+          overwrite: true
+
   python-tools:
+    needs: [gps-snapshot]
     runs-on: ubuntu-latest
 
     steps:
@@ -44,10 +66,14 @@ jobs:
           if-no-files-found: warn
           retention-days: 14
 
+      - name: Download GPS snapshot
+        uses: actions/download-artifact@v4
+        with:
+          name: gps-snapshot
+          path: logs/gps-snapshot
+
       - name: Check rendered entrance snapshot
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: uv run jktz-render-otwory --check
+        run: uv run jktz-render-otwory --check --gps-snapshot logs/gps-snapshot
 
   mutation-tests:
     name: mutation-tests
@@ -82,6 +108,7 @@ jobs:
           retention-days: 14
 
   validate:
+    needs: [gps-snapshot]
     strategy:
       fail-fast: false
       matrix:
@@ -172,10 +199,14 @@ jobs:
       - name: Check PocketTopo binary integration
         run: uv run pytest -q tests/test_pockettopo_binary.py
 
+      - name: Download GPS snapshot
+        uses: actions/download-artifact@v4
+        with:
+          name: gps-snapshot
+          path: logs/gps-snapshot
+
       - name: Run full validation
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: uv run jktz-validate
+        run: uv run jktz-validate --gps-snapshot logs/gps-snapshot
 
       - name: Install Survex Duplicates binary
         uses: ./.github/actions/install-survex-duplicates
@@ -198,6 +229,7 @@ jobs:
           retention-days: 14
 
   walls-windows:
+    needs: [gps-snapshot]
     name: walls-windows
     runs-on: windows-latest
     timeout-minutes: 15
@@ -211,6 +243,15 @@ jobs:
       - uses: astral-sh/setup-uv@v5
       - name: Sync Python tooling
         run: uv sync --locked
+      - name: Download GPS snapshot
+        uses: actions/download-artifact@v4
+        with:
+          name: gps-snapshot
+          path: logs/gps-snapshot
+
+      - name: Check rendered entrance snapshot
+        run: uv run jktz-render-otwory --check --gps-snapshot logs/gps-snapshot
+
       - uses: ./.github/actions/install-walls
       - name: Build native Walls driver
         shell: pwsh
@@ -251,7 +292,7 @@ jobs:
 
   pr-release-package:
     if: github.event_name == 'pull_request'
-    needs: [python-tools, mutation-tests, validate, walls-windows]
+    needs: [gps-snapshot, python-tools, mutation-tests, validate, walls-windows]
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -292,18 +333,22 @@ jobs:
           PACKAGE_VERSION: ${{ steps.package.outputs.version }}
         run: uv run jktz-release-metadata "$PACKAGE_VERSION"
 
-      - name: Check rendered entrance snapshot
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: uv run jktz-render-otwory --check
+      - name: Download GPS snapshot
+        uses: actions/download-artifact@v4
+        with:
+          name: gps-snapshot
+          path: logs/gps-snapshot
+
 
       - name: Install Survex
         uses: ./.github/actions/install-survex
         with:
           version: ${{ steps.survex.outputs.version }}
 
-      - name: Build exports
-        run: uv run jktz-exports ${{ steps.package.outputs.version }}
+      - name: Validate GPS and build checked exports
+        env:
+          PACKAGE_VERSION: ${{ steps.package.outputs.version }}
+        run: uv run jktz-validate --gps-snapshot logs/gps-snapshot --export-version "$PACKAGE_VERSION"
 
       - name: Build PR release ZIP
         run: uv run jktz-build-zip ${{ steps.package.outputs.version }}
