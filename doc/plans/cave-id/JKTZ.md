@@ -33,7 +33,7 @@
 | --- | --- | --- | --- |
 | J01 | [Mapowanie i lista podziałów](MAPPING.md) | Aktualny HEAD tej PR | audyt zakończony, 11 otwartych rozstrzygnięć blokuje J04 |
 | J02 | Wspólny snapshot GPS i czytnik katalogu | G02 preview z sumami albo G04 release | wykonana, sprawdzona na podglądzie G03 |
-| J03 | Testowalny kontrakt tożsamości i referencji | J02 | do wykonania |
+| J03 | Testowalny kontrakt tożsamości i referencji | J02 | wykonana |
 | J04 | Migracja SRV, CLI i podziały | J01 bez nierozstrzygniętych wierszy; J03; G04 | do wykonania |
 | J05 | Włączenie pełnej bramki i dowody końcowe | J04 | do wykonania |
 
@@ -137,7 +137,7 @@ identities: Mapping[Path, SurveyIdentity], station_names: set[str]) -> list[str]
 sprawdza nazwy uzyskane z kompilatora, z jego udokumentowaną normalizacją.
 Sprawdzenie wejść nie wymaga parsowania pełnej składni pomiarowej Walls.
 
-- [ ] Dodaj testy pozytywne Bańdziocha i systemu Śnieżnej oraz testy:
+- [x] Dodaj testy pozytywne Bańdziocha i systemu Śnieżnej oraz testy:
   `test_surface_links_same_or_different_caves`, `test_wrong_existing_cave_is_rejected`,
   `test_surface_requires_reference_and_forbids_cave_fields`,
   `test_conflicting_station_binding_is_rejected`, `test_missing_station_is_rejected`,
@@ -145,12 +145,19 @@ Sprawdzenie wejść nie wymaga parsowania pełnej składni pomiarowej Walls.
   `test_unfixed_reference_does_not_require_best_or_fix`,
   `test_unknown_kind_and_legacy_cave_ids_are_rejected`.
   Sprawdź brak SURVEY_KIND, puste ID, błędny separator i duplikaty OBJECT_REF.
-- [ ] Uruchom nowe testy i potwierdź brak implementowanego zachowania.
-- [ ] Zaimplementuj podane funkcje. Odróżnij walidację powiązań od geometrii;
+- [x] Uruchom nowe testy i potwierdź brak implementowanego zachowania.
+- [x] Zaimplementuj podane funkcje. Odróżnij walidację powiązań od geometrii;
   wynik nie dopisuje fixów i nie zmienia źródłowego przypisania obiektu w GPS.
   Nie wyprowadzaj referencji z samych nazw katalogów/prefiksów.
-- [ ] Uruchom nowe testy oraz `uv run --python 3.12 jktz-quality`.
-- [ ] Commit/push, uaktualnij stan i zatrzymaj się po J03.
+- [x] Uruchom nowe testy oraz `uv run --python 3.12 jktz-quality`.
+- [x] Commit/push, uaktualnij stan i zatrzymaj się po J03.
+
+Sprawdzono pięć referencji Bańdziocha, Wielkiej Śnieżnej i Lodowej
+Małołąckiej na tym samym podglądzie GPS co w J02 i na nazwach stacji z
+Survex 1.4.24. `LodowaMalolacka:31` występuje w wyniku kompilacji bez
+aktywnego fixu. Osobny test odczytuje `MLW-0024` z katalogu z pustym CSV
+Best. Porównanie nazw zachowuje wielkość liter i uwzględnia zapis pustych
+poziomów prefiksu opisany w instrukcji Survex.
 
 ## J04 — przełączenie metadanych i wydzielenie powierzchni
 
