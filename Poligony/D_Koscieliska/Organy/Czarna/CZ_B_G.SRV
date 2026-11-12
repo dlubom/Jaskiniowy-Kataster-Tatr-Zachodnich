@@ -1,9 +1,10 @@
 #[
-CAVE_ID         "T.E-09.12"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0699"
 CAVE_NAME       "Jaskinia Czarna"
 SURVEY_ID       "B_G1"
 SURVEY_NAME     "Gorna droga Borowca B52-B70"
-UPDATE_DATE     "2026-09-25"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -16,6 +17,7 @@ SURVEY_DATE     "1972-03-15"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "Gorna droga B52-B70 z CZ_B_DAV.SRV; pomiary, data i jednostki bez zmian."
 PROCESSING      "Prefiks BorowiecGorna; punkt 70 zastapiony bezposrednio przez KujatGlowny:74."
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 ; Gorna droga Borowca 52-70. Punkt 70: KujatGlowny:74.

@@ -1,9 +1,10 @@
 #[
-CAVE_ID         "T.E-07.07"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0078"
 CAVE_NAME       "Jaskinia Bandzioch Kominiarski"
 SURVEY_ID       "N3D_G"
 SURVEY_NAME     "Ciag Nowego 3 Dna"
-UPDATE_DATE     "2026-11-11"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -16,6 +17,7 @@ SURVEY_DATE     "2016-01-01"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
 PROCESSING      "SOURCE_REF poprawiono na _RAW/02: oryginal BK-N3D-G.SRV, zgodnosc 43 rekordow; pomiary bez zmian"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #PREFIX BandziochKom

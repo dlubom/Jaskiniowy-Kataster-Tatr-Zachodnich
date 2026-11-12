@@ -37,8 +37,10 @@ def _build_parser() -> argparse.ArgumentParser:
 
     srv_set = subparsers.add_parser("srv-set", help="Create or replace SRV metadata.")
     srv_set.add_argument("path", type=Path)
-    srv_set.add_argument("--cave-id", required=True)
-    srv_set.add_argument("--cave-name", required=True)
+    srv_set.add_argument("--survey-kind", choices=("underground", "surface"), required=True)
+    srv_set.add_argument("--object-ref", action="append")
+    srv_set.add_argument("--cave-id")
+    srv_set.add_argument("--cave-name")
     srv_set.add_argument("--survey-id", required=True)
     srv_set.add_argument("--survey-name", required=True)
     srv_set.add_argument("--source-ref", action="append", required=True)
@@ -103,6 +105,8 @@ def _poligony_root_for(path: Path) -> Path:
 
 def _run_srv_set(args: argparse.Namespace) -> None:
     metadata = default_metadata(
+        survey_kind=args.survey_kind,
+        object_refs=args.object_ref,
         cave_id=args.cave_id,
         cave_name=args.cave_name,
         survey_id=args.survey_id,

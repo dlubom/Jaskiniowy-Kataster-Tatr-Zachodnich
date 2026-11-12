@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "WPJ:SZMI"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0351"
 CAVE_NAME       "Szczelina Mietusia"
+OBJECT_REF      "SzczelinaMietusia:0=MTZ-0029"
 SURVEY_ID       "SZCZM"
 SURVEY_NAME     "Szczelina Mietusia"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -15,6 +17,7 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "2011-11-05"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #units meters order=DAV

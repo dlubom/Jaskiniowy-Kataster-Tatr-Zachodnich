@@ -112,8 +112,17 @@ def test_pages_compile_rejects_missing_survey(tmp_path, missing_source):
     assert (tmp_path / "KATASTER.3d").exists() is not missing_source
 
 
-def test_pages_version_identifies_untagged_commit(tmp_path):
+@pytest.mark.parametrize("inherited_hook_index", [False, True])
+def test_pages_version_identifies_untagged_commit(tmp_path, monkeypatch, inherited_hook_index):
+    if inherited_hook_index:
+        monkeypatch.setenv("GIT_INDEX_FILE", str(tmp_path / "parent-hook" / "index"))
+    import os
+
     import yaml
+
+    git_env = {
+        key: value for key, value in os.environ.items() if not key.upper().startswith("GIT_")
+    }
 
     bash = shutil.which("bash")
     git = shutil.which("git")
@@ -134,12 +143,15 @@ def test_pages_version_identifies_untagged_commit(tmp_path):
         ["commit", "-q", "--allow-empty", "-m", "Tagged fixture"],
         ["tag", "v1"],
     ):
-        subprocess.run([git, *arguments], cwd=tmp_path, check=True, capture_output=True)
+        subprocess.run(
+            [git, *arguments], cwd=tmp_path, env=git_env, check=True, capture_output=True
+        )
 
     def version():
         return subprocess.run(
             [bash, "-c", assignment + "\nprintf '%s\\n' \"$VERSION\""],
             cwd=tmp_path,
+            env=git_env,
             check=True,
             capture_output=True,
             text=True,
@@ -149,10 +161,11 @@ def test_pages_version_identifies_untagged_commit(tmp_path):
     subprocess.run(
         [git, "commit", "-q", "--allow-empty", "-m", "Newer fixture"],
         cwd=tmp_path,
+        env=git_env,
         check=True,
         capture_output=True,
     )
     short_sha = subprocess.check_output(
-        [git, "rev-parse", "--short", "HEAD"], cwd=tmp_path, text=True
+        [git, "rev-parse", "--short", "HEAD"], cwd=tmp_path, env=git_env, text=True
     ).strip()
     assert version() == f"master@{short_sha}"

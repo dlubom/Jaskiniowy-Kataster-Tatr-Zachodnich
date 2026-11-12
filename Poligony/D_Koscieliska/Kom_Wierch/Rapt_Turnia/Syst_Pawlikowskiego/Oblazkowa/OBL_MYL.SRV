@@ -1,9 +1,10 @@
 #[
-CAVE_ID         "T.E-08.05"
-CAVE_NAME       "Jaskinia Oblazkowa"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0095"
+CAVE_NAME       "Jaskinie Pawlikowskiego"
 SURVEY_ID       "OBL_MYL"
 SURVEY_NAME     "Polaczenie Oblazkowa-Mylna"
-UPDATE_DATE     "2026-10-25"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -16,6 +17,7 @@ SURVEY_DATE     "2015-06"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "wydzielono bez zmiany odczytow z ../_RAW/01/SJP/Dane/OBLAZK.SRV:91-98; zachowano kwalifikacje stacji Mylnej"
 PROCESSING      "bez daty dziennej; DECL=4.83 to srednia IGRF14 dla czerwca 2015 na pozycji .REF projektu; metoda w ../_RAW/01/README.md"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix2 Pawlikowskiego

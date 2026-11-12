@@ -1,9 +1,10 @@
 #[
-CAVE_ID         "T.F-10.19"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0335"
 CAVE_NAME       "Dziura pod Zawaliskiem"
 SURVEY_ID       "DPZ_ROB"
 SURVEY_NAME     "Robocza transkrypcja DOC: Dziura w Zawalisku"
-UPDATE_DATE     "2026-11-09"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -16,6 +17,7 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "wylacznie komentarze; literalne DAV; przypisanie obiektu robocze; bez WPJ, fixa i deklinacji"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 ; ROBOCZY POLIGON: WSZYSTKIE POMIARY I DYREKTYWY SA KOMENTARZAMI.

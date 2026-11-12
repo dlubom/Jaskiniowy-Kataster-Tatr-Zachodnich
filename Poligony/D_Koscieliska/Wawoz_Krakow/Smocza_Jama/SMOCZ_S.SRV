@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.E-08.07"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0219"
 CAVE_NAME       "Smocza Jama"
+OBJECT_REF      "SmoczaJama:0=KSW-0065"
 SURVEY_ID       "A1"
 SURVEY_NAME     "Ciag glowny"
-UPDATE_DATE     "2026-11-10"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -16,6 +18,7 @@ SURVEY_DATE     "2013-12-31"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
 PROCESSING      "dowiazano dolny otwor KSW-0065 do 1.0 wedlug planu Filipa Filara (PIG 760) i pomiarow z _RAW/01"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix SmoczaJama

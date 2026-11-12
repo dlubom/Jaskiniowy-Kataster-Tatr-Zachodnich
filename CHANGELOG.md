@@ -6,6 +6,18 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+### Zmienione
+
+- Metadane SRV rozdzielaja pomiary podziemne i powierzchniowe przez
+  `SURVEY_KIND`. `CAVE_ID` wskazuje jaskinie/system GPS, a `OBJECT_REF`
+  jawnie wiaze rozpoznane otwory ze stacjami, bez dodawania fixow.
+- Wydzielono domiary Lodowej Malolackiej, Mnichowej Studni Wyzniej i Koprowej;
+  sklasyfikowano powierzchniowe POW_ORM i 11A Ptasiej. Zachowano pomiary
+  i archiwa RAW. Nierozstrzygnieta transkrypcja DZX pozostaje w doc/robocze.
+- Fix gornego otworu Mnichowej wskazuje MLW-0054 z GPS v2.1.2;
+  wspolrzedne OTWORY pozostaly niezmienione. CLI wymaga nowego kontraktu.
+
+
 ### Naprawione
 
 - Lodowa w Ciemniaku: usunięto nadpisywane deklaracje deklinacji;

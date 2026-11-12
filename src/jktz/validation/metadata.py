@@ -210,7 +210,7 @@ def _check_srv(path: Path, scan_root: Path, poligony_root: Path, errors: list[st
     try:
         parsed = parse_srv_metadata(rel, text)
     except MetadataError as exc:
-        errors.append(f"  {exc}")
+        errors.append(f"  {rel.as_posix()}: {exc}")
         return
 
     if not has_dated_or_declared_active_shots(parsed.body):

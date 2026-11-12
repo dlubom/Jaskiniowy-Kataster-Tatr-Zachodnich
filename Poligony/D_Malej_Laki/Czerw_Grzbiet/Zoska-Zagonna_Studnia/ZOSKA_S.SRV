@@ -1,9 +1,12 @@
 #[
-CAVE_ID         "T.E-12.58"
-CAVE_NAME       "Jaskinia Zoska - Zagonna Studnia"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-1055"
+CAVE_NAME       "Jaskinia Zoska-Zagonna Studnia"
+OBJECT_REF      "Zoska:0=MLZ-0057"
+OBJECT_REF      "Zoska:1Z=MLZ-0055"
 SURVEY_ID       "POMIARY"
 SURVEY_NAME     "Pomiary 1996-2005"
-UPDATE_DATE     "2026-11-02"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -22,6 +25,7 @@ SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
 PROCESSING      "2026-11-01: odtworzono WYLICZONE dowiazanie 31G-32G do 31G z roznicy XYZ XLS pomiary J147:L147 i J154:L154; nie odczyt terenowy ani equate pomocniczych 0/1; #S L"
 PROCESSING      "2026-11-01: zachowano operacyjne #date i dotychczasowa magnetyczna interpretacje azymutow; doprecyzowano daty zrodla, instrument pozostaje nieznany wobec sprzecznych opisow kampanii"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix Zoska

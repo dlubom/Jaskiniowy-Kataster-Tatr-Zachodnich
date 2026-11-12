@@ -1,9 +1,10 @@
 #[
-CAVE_ID         "T.E-08.05; T.E-08.03"
-CAVE_NAME       "Powierzchnia Oblazkowa-Raptawicka"
+SURVEY_KIND     "surface"
+OBJECT_REF      "Pawlikowskiego:Oblazkowa:0.0=KSZ-0090"
+OBJECT_REF      "Pawlikowskiego:Raptawicka:1.0=KSZ-0047"
 SURVEY_ID       "POW_ORM"
 SURVEY_NAME     "Ciag powierzchniowy Oblazkowa-Raptawicka"
-UPDATE_DATE     "2026-10-27"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -17,6 +18,7 @@ SURVEY_GRADE    "nieznane"
 PROCESSING      "przywrocono 66 odczytow z ../_RAW/01/SJP_P/POW ORM.SRV bez usredniania; lokalny #fix zastapiono historycznymi dowiazaniami koncow"
 PROCESSING      "DECL=4.83 to zalozenie obliczeniowe dla czerwca 2015, nie potwierdzona data pomiaru; metoda i ograniczenia w ../_RAW/01/README.md"
 PROCESSING      "2026-10-27: usredniono 66 odczytow (11 grup po 3 przod i 3 tyl) do 11 DAV; odwrocono kierunek odczytow tyl, srednia kolowa azymutu; RAW bez zmian; rozbieznosci przod-tyl w komentarzach przy DAV"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix2 Pawlikowskiego

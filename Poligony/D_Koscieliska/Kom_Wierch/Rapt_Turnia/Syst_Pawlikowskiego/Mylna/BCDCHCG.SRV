@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.E-08.04"
-CAVE_NAME       "Jaskinia Mylna"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0095"
+CAVE_NAME       "Jaskinie Pawlikowskiego"
+OBJECT_REF      "Pawlikowskiego:Mylna:333=KSZ-0117"
 SURVEY_ID       "BCDCHCG"
 SURVEY_NAME     "Boczny Ciag do Chorow"
-UPDATE_DATE     "2026-10-24"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -16,6 +18,7 @@ SURVEY_DATE     "2009-03/2009-06"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
 PROCESSING      "zakres kampanii wg F. Filar, Jaskinie 3(56)/2009, s.22-23; instrumenty wg PIG T.E-08.04; brak dat poszczegolnych wektorow; #date pozostaje przyblizeniem z issue #10"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix2 Pawlikowskiego

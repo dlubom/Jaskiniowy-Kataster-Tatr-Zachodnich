@@ -60,7 +60,8 @@ def _raw_readme(status: str = "dostępny", contents: list[str] | None = None) ->
 def _srv(source_ref: str = "_RAW/01", body: str = "#date 2004-06-19\n0\t1\t1.0\t90\t0\n") -> str:
     return (
         "#[\n"
-        'CAVE_ID         "T.D-04.01"\n'
+        'SURVEY_KIND     "underground"\n'
+        'CAVE_ID         "C-1001"\n'
         'CAVE_NAME       "Zbojecka Dziura"\n'
         'SURVEY_ID       "ZBDZIU"\n'
         'SURVEY_NAME     "Zbojecka Dziura"\n'

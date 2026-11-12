@@ -1,9 +1,10 @@
 #[
-CAVE_ID         "WPJ:Czarna"
-CAVE_NAME       "Czarna"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0699"
+CAVE_NAME       "Jaskinia Czarna"
 SURVEY_ID       "CZ_B_S"
 SURVEY_NAME     "CZ_B_S"
-UPDATE_DATE     "2026-11-11"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -16,6 +17,7 @@ SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "SOURCE_REF poprawiono na _RAW/02: czarna-borowiec.srv, zgodnosc 74 wektorow ENU; komentarze i pomiary bez zmian"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 ;#[

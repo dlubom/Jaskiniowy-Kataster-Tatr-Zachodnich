@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.E-08.73"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0765"
 CAVE_NAME       "Zbojnicka Piwnica"
+OBJECT_REF      "ZbojnickaPiwnica:0=KSW-0215"
 SURVEY_ID       "ZP"
 SURVEY_NAME     "Zbojnicka Piwnica"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -15,6 +17,7 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "2007-07-15"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix ZbojnickaPiwnica

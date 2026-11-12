@@ -31,10 +31,10 @@
 
 | Karta | Wynik | Warunek startu | Stan |
 | --- | --- | --- | --- |
-| J01 | [Mapowanie i lista podziałów](MAPPING.md) | Aktualny HEAD tej PR | audyt zakończony, 11 otwartych rozstrzygnięć blokuje J04 |
+| J01 | [Mapowanie i lista podziałów](MAPPING.md) | Aktualny HEAD tej PR | 210 potwierdzonych wierszy; GPS v2.1.2 sprawdzone J02; migracja i podmiana ID fixa bez przesunięcia wykonane w J04 |
 | J02 | Wspólny snapshot GPS i czytnik katalogu | G02 preview z sumami albo G04 release | wykonana, sprawdzona na podglądzie G03 |
 | J03 | Testowalny kontrakt tożsamości i referencji | J02 | wykonana |
-| J04 | Migracja SRV, CLI i podziały | J01 bez nierozstrzygniętych wierszy; J03; G04 | do wykonania |
+| J04 | Migracja SRV, CLI i podziały | J01 bez nierozstrzygniętych wierszy; J03; G04 | wykonana; wyniki i końcowe CI w PR #163 |
 | J05 | Włączenie pełnej bramki i dowody końcowe | J04 | do wykonania |
 
 G01–G04 opisuje [plan GPS](GPS.md). J02/J03 nie przełączają jeszcze produkcyjnej
@@ -175,24 +175,24 @@ oddziel numer inwentarzowy używany do wyszukiwania PIG od nowego `--cave-id`.
 `--dry-run` oraz atomowy zapis zachowują kontrakt. Brak SURVEY_KIND w aktywnym
 pliku jest błędem; nie zostawiaj ścieżki zgodności dla WPJ/T./ROBOCZE.
 
-- [ ] Odśwież hashe źródeł z J01. Zmiana któregokolwiek wejścia wymaga
+- [x] Odśwież hashe źródeł z J01. Zmiana któregokolwiek wejścia wymaga
   ponownego przeglądu jego mapowania. Potwierdź G04 i wszystkie decyzje mapowania.
-- [ ] Dodaj regresje parsera/formatter/CLI dla obu rodzajów, zachowania bajtów
+- [x] Dodaj regresje parsera/formatter/CLI dla obu rodzajów, zachowania bajtów
   treści, niezmienionego pliku po błędzie i `--dry-run`. Uruchom je przed zmianą kodu.
-- [ ] Zaimplementuj nowy kontrakt i przygotuj całą migrację przed commitem.
+- [x] Zaimplementuj nowy kontrakt i przygotuj całą migrację przed commitem.
   Nie twórz commita z parserem odrzucającym niemigrowane aktywne dane.
-- [ ] Przenieś sesje powierzchniowe do osobnych plików, m.in. `LODMAL_POW.SRV`.
+- [x] Przenieś sesje powierzchniowe do osobnych plików, m.in. `LODMAL_POW.SRV`.
   Zachowaj skuteczny kontekst dyrektyw i zakresy SOURCE_REF, unikalny SURVEY_ID,
   kodowanie/EOL. Zamknij Walls przed zmianą WPJ. Górny otwór LODMAL pozostaje
   niefiksowany; samo OBJECT_REF nie upoważnia do zmiany OTWORY.
-- [ ] Użyj `$verify-cave-refactor` i `$walls-validate`: porównaj wszystkie
+- [x] Użyj `$verify-cave-refactor` i `$walls-validate`: porównaj wszystkie
   rekordy z krotnością, komplet nazwanych stacji/odcinków, geometrię i semantykę
   powierzchni przed/po na tym samym snapshotcie i wersjach narzędzi.
   Zachowaj dowody w `.verification/` i ich podsumowanie dostępne w PR.
-- [ ] Uruchom testy parsera/CLI/metadata, `uv run --python 3.12 jktz-quality`,
+- [x] Uruchom testy parsera/CLI/metadata, `uv run --python 3.12 jktz-quality`,
   `uv run --python 3.12 jktz-mutation`, `uv run --python 3.12 jktz-validate`.
   Brak danych do mapowania albo różnica geometrii blokuje zakończenie J04.
-- [ ] Commit/push całego spójnego przełączenia, rozlicz MAPPING.csv i zatrzymaj się.
+- [x] Commit/push całego spójnego przełączenia, rozlicz MAPPING.csv i zatrzymaj się.
 
 ## J05 — pełna bramka i zamknięcie wdrożenia
 

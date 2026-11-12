@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.E-09.12"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0699"
 CAVE_NAME       "Jaskinia Czarna"
+OBJECT_REF      "Czarna:KujatGlowny:0=KSW-0201"
 SURVEY_ID       "GL_K1"
 SURVEY_NAME     "Ciag glowny Ryszarda Kujata i Partie Tehuby"
-UPDATE_DATE     "2026-09-25"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -16,6 +18,7 @@ SURVEY_DATE     "1975-08-20"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "Transkrypcja 78 odcinkow z dziennika Kujata; nawiazanie punktu 0 do otworu glownego."
 PROCESSING      "#date 1975-08-20 przyjety do obliczen deklinacji; data dziennika nieustalona."
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 ; Ciag glowny 0-76 i Partie Tehuby 6-a-b.

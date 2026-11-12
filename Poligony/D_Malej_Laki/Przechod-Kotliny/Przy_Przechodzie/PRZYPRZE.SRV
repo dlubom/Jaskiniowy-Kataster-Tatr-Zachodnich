@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "WPJ:PPRZECHO"
-CAVE_NAME       "Przy Przechodzie"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0058"
+CAVE_NAME       "Jaskinia przy Przechodzie"
+OBJECT_REF      "PrzyPrzechodzie:jp0=MLZ-0007"
 SURVEY_ID       "PRZYPRZE"
 SURVEY_NAME     "Przy Przechodzie"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -16,6 +18,7 @@ SURVEY_DATE     "nieznane"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "Survex 1.4.24: historyczne DECL=0.819D zastapiono tymczasowym zalozeniem DECL=0; daty i pomiary bez zmian"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix PrzyPrzechodzie

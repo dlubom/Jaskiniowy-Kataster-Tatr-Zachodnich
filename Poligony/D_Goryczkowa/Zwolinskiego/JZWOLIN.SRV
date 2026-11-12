@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.D-16.14"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0269"
 CAVE_NAME       "Jaskinia Zwolinskiego"
+OBJECT_REF      "Zwolinskiego:0=BYW-0013"
 SURVEY_ID       "JZWOLIN"
 SURVEY_NAME     "Jaskinia Zwolinskiego"
-UPDATE_DATE     "2026-11-02"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -17,6 +19,7 @@ SURVEY_DATE     "2013-04-02"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "uzupelniono zespol wedlug naglowka CSP z 2013-04-02 i pochodzenie oryginalu od K. Dudzinskiego; pomiary, aktywnosc i historyczne wylaczenie bez zmian"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #units meters order=DAV

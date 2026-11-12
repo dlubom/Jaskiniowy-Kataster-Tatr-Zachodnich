@@ -1,9 +1,10 @@
 #[
-CAVE_ID         "T.D-11.01"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0305"
 CAVE_NAME       "Jaskinia Mietusia"
 SURVEY_ID       "MB"
 SURVEY_NAME     "Sala Matki Boskiej"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Pawel Gogolak"
 COORDINATOR_EMAIL "pafffel@gmail.com"
@@ -15,6 +16,7 @@ INSTRUMENT      "DistoX2 4027"
 SURVEY_DATE     "2024-02-10"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix Mietusia

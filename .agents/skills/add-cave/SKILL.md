@@ -6,19 +6,19 @@ description: Add a cave from source surveys, register its entrance through the G
 Add a new cave to the kataster project.
 
 Read the inputs from the user request; ask only for required values that cannot be established from the repository or supplied sources.
-Expected format: `<cave-id> "<valley/subdir/path>" [/path/to/source.zip]`
+Expected format: `<inventory-number> "<valley/subdir/path>" [/path/to/source.zip]`
 Example: `$add-cave T.D-08.07 "D_Koscieliska/Organy" /tmp/MROZN.SRV.zip`
 
 ---
 
 ## Step 1 — Look up cave data in PIG database (single call)
 
-The supplied cave ID is the inventory number (`inventory_number`, e.g.
+The supplied lookup value is the inventory number (`inventory_number`, e.g.
 `T.B-14.01`), not PIG's internal `cave_id` (`001018` for Dziura).
 Search for it directly with a fixed-string search:
 
 ```bash
-rg -F '"<cave-id>"' doc/jaskinie_polski_pig_dump.jsonl
+rg -F '"<inventory-number>"' doc/jaskinie_polski_pig_dump.jsonl
 ```
 
 Parse the returned JSON for:
@@ -47,6 +47,18 @@ or a station inferred from a convenient geometric fit.
 Read any supplied GNSS/source coordinates as provenance. If the object mapping
 or entrance station cannot be established, report the missing information and
 leave registration incomplete; do not invent a fix or an anchor shot.
+
+Resolve the object membership through the complete released GPS catalogue and
+use the terminal system `cave_id` for every underground section. PIG inventory
+numbers and GPS object IDs are not `CAVE_ID`. A matching name or an existing ID
+alone does not establish survey identity. If a record is missing, prepare it in
+GPS and wait for its authorized release before migrating active JKTZ data.
+
+For an unfixed entrance, use `OBJECT_REF` without adding `gps_fix`. Split surface
+measurements into separate files with `--survey-kind surface`, no `--cave-id` or
+`--cave-name`, and at least one `--object-ref`. Preserve all identified endpoints,
+measurement bytes, units, dates, prefixes and source references. Mark surface
+legs with the appropriate `P` segment while retaining existing classifications.
 
 ## Step 3 — Determine directory path
 
@@ -151,7 +163,9 @@ Then atomically prepend the validated metadata block:
 ```bash
 uv run jktz-srv-metadata srv-set \
   "Poligony/<valley-path>/<Cave_Directory_ASCII>/<CAVE_FILE>.SRV" \
-  --cave-id "T.X-NN.MM" \
+  --survey-kind underground \
+  --cave-id "<GPS terminal cave/system ID, C-NNNN>" \
+  --object-ref "<PREFIX>:<STATION>=<OBJECT-ID>" \
   --cave-name "<Cave Name ASCII>" \
   --survey-id "<SURVEY_ID>" \
   --survey-name "<Survey name>" \

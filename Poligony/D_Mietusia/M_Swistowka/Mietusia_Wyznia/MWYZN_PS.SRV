@@ -1,9 +1,10 @@
 #[
-CAVE_ID         "T.D-10.01"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0169"
 CAVE_NAME       "Jaskinia Mietusia Wyznia"
 SURVEY_ID       "PS"
 SURVEY_NAME     "Problem Speleoklubu"
-UPDATE_DATE     "2026-10-27"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Pawel Gogolak"
 COORDINATOR_EMAIL "pafffel@gmail.com"
@@ -16,6 +17,7 @@ SURVEY_DATE     "2024-02-13"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
 PROCESSING      "ponowne pomiary nog z jawnymi wiezami RAW zachowano jako segment L; Survex: dlugosc liczona w starszej sesji"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix MietusiaWyznia

@@ -1,9 +1,10 @@
 #[
-CAVE_ID         "T.E-11.12"
-CAVE_NAME       "Studnia w Kazalnicy"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-1054"
+CAVE_NAME       "Studnia w Kazalnicy-Jaskinia Lodowa Mietusia"
 SURVEY_ID       "BOKISK"
 SURVEY_NAME     "Jaskinia Studnia w Kazalnicy_2"
-UPDATE_DATE     "2026-11-10"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -17,6 +18,7 @@ SURVEY_DATE     "1996"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "odnaleziona wektoryzacja potwierdza zespol; korespondencja potwierdza rok pomiaru, a #DATE zachowano jako zalozenie obliczeniowe"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix StudniaWKazalnicy

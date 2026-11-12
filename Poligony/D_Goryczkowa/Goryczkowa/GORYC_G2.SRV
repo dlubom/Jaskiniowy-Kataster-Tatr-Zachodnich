@@ -1,9 +1,10 @@
 #[
-CAVE_ID         "T.D-16.01"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0594"
 CAVE_NAME       "Jaskinia Goryczkowa"
 SURVEY_ID       "G2"
 SURVEY_NAME     "Sekcja G2"
-UPDATE_DATE     "2026-11-10"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Pawel Gogolak"
 COORDINATOR_EMAIL "pafffel@gmail.com"
@@ -16,6 +17,7 @@ SURVEY_DATE     "2012-03-10"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
 PROCESSING      "uzgodniono zapis zespolu z projektem Therion i korespondencja"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix2 Goryczkowa

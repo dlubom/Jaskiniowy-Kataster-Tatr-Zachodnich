@@ -180,11 +180,14 @@ Create the Walls body, then use `uv run jktz-srv-metadata srv-set ...` to
 atomically prepend the canonical block shown below. Use
 `uv run jktz-srv-metadata srv-update ...` for later `UPDATE_DATE` or
 `PROCESSING` changes, and `raw-set` for `_RAW/NN/README.md`. All write commands
-support `--dry-run`.
+support `--dry-run`. `srv-set` requires `--survey-kind`; use `--cave-id` and
+`--cave-name` only for underground surveys. Surface surveys require explicit
+`--object-ref station=object_id` values and retain their surface segment tags.
 
 ```
 #[
-CAVE_ID         "T.X-00.00"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0001"
 CAVE_NAME       "Cave Name ASCII"
 SURVEY_ID       "SURVEY_ID"
 SURVEY_NAME     "Survey name"
@@ -225,7 +228,9 @@ PROCESSING      "utworzono aktywny plik SRV z materialow zrodlowych"
 
 ## Data Conventions
 
-- **Cave IDs** follow the pattern `T.{region}-{number}.{sub}` (e.g., `T.C-16.01` for Jaskinia Kalacka, `T.B-14.01` for Dziura)
+- **CAVE_ID** is the existing GPS `C-NNNN` identifier of the terminal cave/system. PIG inventory numbers (`T.B-14.01`) are lookup keys, not CAVE_ID. Confirm source identity and explicit GPS system membership before assigning the ID.
+- **SURVEY_KIND** is required: `underground` requires `CAVE_ID` and ASCII `CAVE_NAME`; `surface` forbids both and requires at least one `OBJECT_REF "Prefix:station=OBJECT-ID"`. Split mixed surveys, preserving measurements, source references, effective directives and geometry.
+- **OBJECT_REF** records every identified entrance in the survey, including unfixed entrances. Repeat the field/CLI `--object-ref` for multiple entrances. It does not create a fix or equate. A surface connection does not merge caves into a system.
 - **Station naming**: preserve source station identifiers; qualify them with the cave/section prefixes below. Do not infer station identity from matching measurements or geometry.
 - **`#prefix` / `#prefix2` convention**: see the **Prefix Convention** subsection below
 - **Directory hierarchy**: Valley → Mountain/Region → Cave → Survey files

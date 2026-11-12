@@ -1,9 +1,12 @@
 #[
-CAVE_ID         "WPJ:KOZIAA"
-CAVE_NAME       "Kozia"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0135"
+CAVE_NAME       "Jaskinia Kozia"
+OBJECT_REF      "Kozia:k001=MTW-0013"
+OBJECT_REF      "Kozia:k9619=MTW-0076"
 SURVEY_ID       "KOZIA"
 SURVEY_NAME     "Kozia"
-UPDATE_DATE     "2026-10-27"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -17,6 +20,7 @@ SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "Survex 1.4.24: historyczne DECL=0.819D zastapiono tymczasowym zalozeniem DECL=0; daty i pomiary bez zmian"
 PROCESSING      "2026-10-27: tymczasowe #S L na decyzje koordynatora dla nierozstrzygnietych par; TODO przy rekordach; odczyty i stacje bez zmian; Survex pomija ich dlugosc"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix Kozia

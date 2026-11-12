@@ -635,6 +635,9 @@
 .SURVEY	Mnichowa Studnia Wyznia
 .NAME	MSW1
 .STATUS	8
+.SURVEY	Mnichowa Studnia Wyznia - powierzchnia
+.NAME	MSW1_POW
+.STATUS	8
 .ENDBOOK
 .ENDBOOK
 .BOOK	Lewe zbocze
@@ -715,6 +718,9 @@
 .STATUS	8
 .SURVEY	Lodowa Malolacka
 .NAME	LODMAL
+.STATUS	8
+.SURVEY	Lodowa Malolacka - powierzchnia
+.NAME	LODMAL_POW
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -868,6 +874,9 @@
 .STATUS	8
 .SURVEY	Koprowa Studnia
 .NAME	KOPRSTUD
+.STATUS	8
+.SURVEY	Koprowa-Swistacza - powierzchnia
+.NAME	KOPR_POW
 .STATUS	8
 .ENDBOOK
 .ENDBOOK

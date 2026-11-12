@@ -1,9 +1,10 @@
 #[
-CAVE_ID         "T.F-10.01"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0590"
 CAVE_NAME       "Jaskinia Lodowa w Ciemniaku"
 SURVEY_ID       "NK"
 SURVEY_NAME     "Nowy Korytarz"
-UPDATE_DATE     "2026-11-11"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Pawel Gogolak"
 COORDINATOR_EMAIL "pafffel@gmail.com"
@@ -16,6 +17,7 @@ SURVEY_DATE     "2021-09-11"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
 PROCESSING      "usunieto nieuzywane DECL=5.56; zachowano deklinacje z daty i geometrie; wartosc zrodlowa w _RAW/01"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix LodowaWCiemniaku
