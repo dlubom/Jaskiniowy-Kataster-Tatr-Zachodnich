@@ -2,7 +2,7 @@
 #units meters order=ENU
 
 ; Wspolrzedne #fix sa automatycznie wstrzykiwane z release'ow:
-; https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.2
+; https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v2.1.3
 ; Szczegoly pomiarow i wyboru najlepszych wartosci sa w tamtym projekcie.
 
 {{ gps_fix('BandziochKom:000', 'KSZ-0112', suffix=' (R0.01,R0.01)') }}
@@ -399,25 +399,22 @@
 #flag	WilczySchron:wsn0	/ENTRANCE
 #note	WilczySchron:wsn0	/Wilczy Schron
 
-; Wysoka7Progow: aktywny #fix opieramy tylko na source: unknown - GNSS dla W7-0.
-; To najdokladniejszy pomiar; pozostale powiazania GPS sa niepewne, wiec
-; renderujemy je nizej tylko jako zakomentowane wartosci kontrolne.
-; Brak gps_fix: w gps-kataster-obiektow-tatr nie ma osobnego object_id dla tego lokalnego otworu.
+; Wysoka7Progow: jedyna kotwica to W7-0 (KSW-0189).
+; Pozostale otwory maja OBJECT_REF w plikach SRV; ich polozenie wynika z poligonu.
+; KSW-0264--KSW-0267 w GPS v2.1.3 przeliczono z tej samej kotwicy.
 #flag	Wysoka7Progow:W-300	/ENTRANCE
 #note	Wysoka7Progow:W-300	/Wysoka Gorny Otwor
 
-; source: unknown - GNSS
+; GPS v2.1.3: KSW-0189/m-004, wynik skorygowanego domiaru.
 {{ gps_fix('Wysoka7Progow:W7-0', 'KSW-0189') }}
 #flag	Wysoka7Progow:W7-0	/Otwor
 #flag	Wysoka7Progow:W7-0	/Wysoka-Za7 Progami
 #flag	Wysoka7Progow:W7-0	/ENTRANCE
 #note	Wysoka7Progow:W7-0	/Wysoka-Za7 Progami
 
-; {{ gps_fix('Wysoka7Progow:W7-200', 'KSW-0153') }}
 #flag	Wysoka7Progow:W7-200	/ENTRANCE
 #note	Wysoka7Progow:W7-200	/Za7Progami Dolny Otwor
 
-; {{ gps_fix('Wysoka7Progow:W7-500', 'KSW-0123') }}
 #flag	Wysoka7Progow:W7-500	/ENTRANCE
 #note	Wysoka7Progow:W7-500	/Za7Progami Gorny Otwor
 

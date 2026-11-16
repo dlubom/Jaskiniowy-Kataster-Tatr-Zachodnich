@@ -212,7 +212,7 @@ def test_project_template_embeds_unique_object_ids_for_gps_fixes() -> None:
     assert "fallback" not in template.lower()
 
 
-def test_project_template_uses_only_reviewed_gnss_for_active_wysoka_fix() -> None:
+def test_project_template_uses_w7_0_as_the_only_wysoka_anchor() -> None:
     template = PROJECT_TEMPLATE.read_text(encoding="utf-8")
     active_wysoka_calls = [
         call
@@ -226,10 +226,7 @@ def test_project_template_uses_only_reviewed_gnss_for_active_wysoka_fix() -> Non
     }
 
     assert active_wysoka_calls == [("Wysoka7Progow:W7-0", "KSW-0189")]
-    assert commented_wysoka_calls == {
-        ("Wysoka7Progow:W7-200", "KSW-0153"),
-        ("Wysoka7Progow:W7-500", "KSW-0123"),
-    }
+    assert not commented_wysoka_calls
 
 
 def test_project_template_keeps_ziobrowa_second_entrance_unconstrained() -> None:
