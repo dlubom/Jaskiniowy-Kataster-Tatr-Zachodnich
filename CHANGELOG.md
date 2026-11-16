@@ -6,6 +6,20 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v2.0.1] - 2026-11-16
+
+### Naprawione
+
+- Zaktualizowano 11 punktów dowiązania na podstawie
+  [GPS v2.1.3](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v2.1.3):
+  dolny otwór Bańdziocha Kominiarskiego, oba otwory Koziej, Lejbusiową,
+  Małą w Mułowej, Marmurową, Miętusią Wyżnią, Lodową Litworową, Jaskinię
+  nad Dachem, Wielką Litworową i kotwicę systemu Wysoka–Za Siedmiu
+  Progami–Pośrednia.
+- Kotwicę `W7-0` przesunięto o 8,19 m w poziomie. Położenie czterech
+  otworów przeliczonych w GPS z tej kotwicy nadal wynika z poligonu JKTZ.
+  Zachowano ich powiązania `OBJECT_REF` i surowe odczyty pomiarowe.
+
 ## [v2.0.0] - 2026-11-12
 
 ### Zmienione
