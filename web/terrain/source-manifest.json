@@ -1,6 +1,5 @@
 {
   "created": "2026-11-17",
-  "status": "review draft; separate preview; not released in JKTZ",
   "model": {
     "release": "v2.0.1",
     "file": "KATASTER.3d",
@@ -80,7 +79,6 @@
     ],
     "global_independent_height_acceptance": "INCOMPLETE"
   },
-  "local_evidence": ".verification/2026-11-17-full-terrain/RAPORT.md",
   "transform_inputs": [
     {
       "file": "gugik-evrf2007.txt",

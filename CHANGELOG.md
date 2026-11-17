@@ -8,8 +8,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Zmienione
 
-- Lokalny draft terenu widoku 3D: statyczne kafle NMT GUGiK 2012 i DMR 5.0
-  w PL-EVRF2007-NH, jeden poziom z14, bez dopasowania do otworów.
+- Zastąpiono Cesium World Terrain statycznymi kaflami NMT GUGiK 2012 i DMR 5.0
+  w PL-EVRF2007-NH dla pełnego widoku 3D, bez dopasowania do otworów.
 
 ## [v2.0.1] - 2026-11-16
 
