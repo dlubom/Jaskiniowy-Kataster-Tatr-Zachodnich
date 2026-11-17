@@ -6,6 +6,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v2.0.2] - 2026-11-17
+
 ### Zmienione
 
 - Zastąpiono Cesium World Terrain statycznymi kaflami NMT GUGiK 2012 i DMR 5.0
