@@ -60,4 +60,8 @@ python3 .verification/2026-11-17-full-terrain/serve.py
 Otwórz <http://127.0.0.1:8767/>. Serwer korzysta z gotowej lokalnej kopii strony,
 CaveView i niezmienionego modelu v2.0.1. Po edycji `web/index.html` odśwież kopię
 według instrukcji w `.verification/2026-11-17-full-terrain/README.md`.
-Zestaw nie pobiera terenu z Cesium. Draft nie został opublikowany.
+Zestaw nie pobiera terenu z Cesium. Osobny
+[podgląd internetowy](https://jktz-teren-z14.white-tern-1434.chatgpt.site)
+wymaga konta właściciela w ChatGPT. Zmiany są w
+[draft PR #165](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/pull/165);
+główny publiczny widok JKTZ pozostaje bez zmian.

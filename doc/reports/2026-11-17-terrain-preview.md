@@ -3,7 +3,8 @@
 Draft z 2026-11-17: CaveView 2.9.0, niezmieniony KATASTER.3d v2.0.1,
 NMT GUGiK ALS2012 + DMR 5.0 GKÚ Bratislava. Podgląd internetowy działa jako
 osobna witryna; główny widok GitHub Pages nie został podmieniony.
-Aktualny adres jest w opisie draft PR.
+[Otwórz podgląd](https://jktz-teren-z14.white-tern-1434.chatgpt.site)
+(wymaga konta właściciela w ChatGPT).
 
 ![Pełny model z lokalnym terenem](2026-11-17-terrain-preview.png)
 
