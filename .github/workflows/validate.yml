@@ -199,6 +199,9 @@ jobs:
       - name: Check PocketTopo binary integration
         run: uv run pytest -q tests/test_pockettopo_binary.py
 
+      - name: Test SHP exports with Survex and GDAL
+        run: uv run pytest -v tests/test_exports_pipeline.py -k test_real_
+
       - name: Download GPS snapshot
         uses: actions/download-artifact@v4
         with:

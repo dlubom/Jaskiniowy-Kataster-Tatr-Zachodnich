@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import pyogrio
 import pyproj
 
 from jktz.reporting import CheckFailed
@@ -12,6 +11,7 @@ from jktz.validation.constants import (
     TATRA_LON_MAX,
     TATRA_LON_MIN,
 )
+from jktz.validation.shapefile import read_local_info
 
 # Survex compiles to UTM zone 34N (EPSG:32634); we reproject to geographic
 # WGS84 (EPSG:4326) and compare to the Tatra Mountains bounding box.
@@ -20,7 +20,7 @@ _UTM34N_TO_WGS84 = pyproj.Transformer.from_crs("EPSG:32634", "EPSG:4326", always
 
 def _wgs84_bbox_of_shapefile(shp: Path) -> tuple[float, float, float, float] | None:
     """Return (lon_min, lat_min, lon_max, lat_max) or None for empty shapefiles."""
-    info = pyogrio.read_info(shp)
+    info = read_local_info(shp)
     # pyogrio reports total_bounds=(0,0,0,0) for empty layers - use the feature
     # count as the real "is empty" signal instead.
     if int(info.get("features", 0)) == 0:

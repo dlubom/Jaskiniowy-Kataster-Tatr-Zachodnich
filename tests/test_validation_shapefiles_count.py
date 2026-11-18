@@ -42,7 +42,8 @@ def test_fails_on_count_mismatch(tmp_path: Path, make_point_shapefile) -> None:
     assert "Sum of per-cave shapefiles:" in msg
     assert "CaveA: 1" in msg
     assert "CaveB: 1" in msg
-    assert "Check that each survey prefix with underground legs" in msg
+    assert "top-level cave or system prefix" in msg
+    assert "caves/WielkaSniezna.shp" in msg
     assert "Poligony/OTWORY.SRV.j2" in msg
 
 

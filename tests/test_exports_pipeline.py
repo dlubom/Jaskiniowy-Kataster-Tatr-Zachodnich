@@ -38,26 +38,44 @@ def test_real_exports_cli_fails_when_entrance_flag_is_missing(tmp_path, monkeypa
     (tmp_path / "KATASTER.wpj").write_text(
         ".BOOK Test\n.NAME TEST\n.STATUS 3\n.SURVEY Connected\n.NAME DATA\n.STATUS 8\n.ENDBOOK\n"
     )
-    (tmp_path / "DATA.SRV").write_text(
+    survey = tmp_path / "DATA.SRV"
+    survey.write_text(
         "#units meters order=DAV decl=0\n"
-        "#fix Known:a 425000 5454000 1250\n"
-        "#flag Known:a /ENTRANCE\n"
-        "#prefix Known\na b 1 90 0\n"
-        "#prefix NoEntrance\nKnown:b c 1 90 0\nc d 1 90 0\n"
+        "#fix Known:Entry:a 425000 5454000 1250\n"
+        "#flag Known:Entry:a /ENTRANCE\n"
+        "#prefix2 Known\n#prefix Entry\na b 1 90 0\n"
+        "#prefix Inner\nEntry:b c 1 90 0\nc d 1 90 0\n"
     )
     monkeypatch.chdir(tmp_path)
     monkeypatch.setattr("sys.argv", ["jktz-exports"])
+    assert exports.main() == 0
+    assert list(Path("exports/caves").glob("*.shp")) == [Path("exports/caves/Known.shp")]
+    capsys.readouterr()
+
+    with survey.open("a") as stream:
+        stream.write("#prefix2 Missing\n#prefix Inner\nKnown:Inner:d x 1 90 0\nx y 1 90 0\n")
+    # An old valid export is reachable if the reader drops everything up to '!'.
+    monkeypatch.setattr("sys.argv", ["jktz-exports", "local", "new!exports"])
 
     assert exports.main() == 1
     output = capsys.readouterr()
     assert "Feature count mismatch" in output.err
+    assert "Whole-project (JKTZ-local-all.shp): 5" in output.err
+    assert "Known: 4" in output.err
     assert "#flag ... /ENTRANCE" in output.err
     assert "Poligony/OTWORY.SRV.j2" in output.err
     assert "=== Done ===" not in output.out
 
 
 @pytest.fixture
-def call_log(monkeypatch, tmp_path: Path, make_point_shapefile) -> list[tuple[str, list[str]]]:
+def cave_points():
+    return {"CaveA": [(420000.0, 5454000.0)], "CaveB": [(421000.0, 5455000.0)]}
+
+
+@pytest.fixture
+def call_log(
+    monkeypatch, tmp_path: Path, make_point_shapefile, cave_points
+) -> list[tuple[str, list[str]]]:
     """Capture every cavern/survexport/ogr2ogr invocation as (tool, args)."""
     calls: list[tuple[str, list[str]]] = []
 
@@ -86,12 +104,10 @@ def call_log(monkeypatch, tmp_path: Path, make_point_shapefile) -> list[tuple[st
     def fake_ogr2ogr(args, cwd=None):
         calls.append(("ogr2ogr", list(args)))
         target = Path(args[-2])
-        points = {
-            "CaveA": [(420000.0, 5454000.0)],
-            "CaveB": [(421000.0, 5455000.0)],
-        }
         features = (
-            points[target.stem] if target.parent.name == "caves" else sum(points.values(), [])
+            cave_points[target.stem]
+            if target.parent.name == "caves"
+            else sum(cave_points.values(), [])
         )
         make_point_shapefile(target, features)
 
@@ -100,6 +116,23 @@ def call_log(monkeypatch, tmp_path: Path, make_point_shapefile) -> list[tuple[st
     monkeypatch.setattr(pipeline.tools, "ogr2ogr", fake_ogr2ogr)
     monkeypatch.chdir(tmp_path)
     return calls
+
+
+@pytest.mark.parametrize(
+    ("points", "message"),
+    [([], "Detected empty Shapefiles"), ([(200000.0, 5454000.0)], "outside the Tatra Mountains")],
+)
+def test_exports_cli_rejects_invalid_layers(
+    call_log, cave_points, points, message, monkeypatch, capsys
+):
+    cave_points["CaveA"] = points
+    monkeypatch.setattr("sys.argv", ["jktz-exports"])
+
+    assert exports.main() == 1
+    output = capsys.readouterr()
+    assert message in output.err
+    assert "CaveA.shp" in output.err
+    assert "=== Done ===" not in output.out
 
 
 def test_pipeline_invokes_all_4_steps_in_order(call_log, tmp_path: Path) -> None:
