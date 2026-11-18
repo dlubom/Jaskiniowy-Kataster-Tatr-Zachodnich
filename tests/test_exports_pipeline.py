@@ -6,6 +6,7 @@ from unittest.mock import Mock
 
 import pytest
 
+from jktz.cli import exports
 from jktz.exports import pipeline
 from jktz.exports.tools import ExternalToolError
 
@@ -31,8 +32,32 @@ def test_real_export_rejects_missing_survey_before_conversion(tmp_path, monkeypa
     convert.assert_not_called()
 
 
+def test_real_exports_cli_fails_when_entrance_flag_is_missing(tmp_path, monkeypatch, capsys):
+    if any(shutil.which(tool) is None for tool in ("cavern", "survexport", "ogr2ogr")):
+        pytest.skip("Survex and GDAL executables are required")
+    (tmp_path / "KATASTER.wpj").write_text(
+        ".BOOK Test\n.NAME TEST\n.STATUS 3\n.SURVEY Connected\n.NAME DATA\n.STATUS 8\n.ENDBOOK\n"
+    )
+    (tmp_path / "DATA.SRV").write_text(
+        "#units meters order=DAV decl=0\n"
+        "#fix Known:a 425000 5454000 1250\n"
+        "#flag Known:a /ENTRANCE\n"
+        "#prefix Known\na b 1 90 0\n"
+        "#prefix NoEntrance\nKnown:b c 1 90 0\nc d 1 90 0\n"
+    )
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr("sys.argv", ["jktz-exports"])
+
+    assert exports.main() == 1
+    output = capsys.readouterr()
+    assert "Feature count mismatch" in output.err
+    assert "#flag ... /ENTRANCE" in output.err
+    assert "Poligony/OTWORY.SRV.j2" in output.err
+    assert "=== Done ===" not in output.out
+
+
 @pytest.fixture
-def call_log(monkeypatch, tmp_path: Path) -> list[tuple[str, list[str]]]:
+def call_log(monkeypatch, tmp_path: Path, make_point_shapefile) -> list[tuple[str, list[str]]]:
     """Capture every cavern/survexport/ogr2ogr invocation as (tool, args)."""
     calls: list[tuple[str, list[str]]] = []
 
@@ -60,6 +85,15 @@ def call_log(monkeypatch, tmp_path: Path) -> list[tuple[str, list[str]]]:
 
     def fake_ogr2ogr(args, cwd=None):
         calls.append(("ogr2ogr", list(args)))
+        target = Path(args[-2])
+        points = {
+            "CaveA": [(420000.0, 5454000.0)],
+            "CaveB": [(421000.0, 5455000.0)],
+        }
+        features = (
+            points[target.stem] if target.parent.name == "caves" else sum(points.values(), [])
+        )
+        make_point_shapefile(target, features)
 
     monkeypatch.setattr(pipeline.tools, "cavern", fake_cavern)
     monkeypatch.setattr(pipeline.tools, "survexport", fake_survexport)

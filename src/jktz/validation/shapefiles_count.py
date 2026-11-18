@@ -26,14 +26,28 @@ def check(outdir: Path, version: str) -> None:
         sum_count += count
         breakdown.append(f"    {cave}: {count}")
 
-    if all_count != sum_count:
-        lines = [
-            "ERROR: Feature count mismatch between whole-project and per-cave shapefiles:",
-            f"  Whole-project (JKTZ-{version}-all.shp): {all_count}",
-            f"  Sum of per-cave shapefiles:                      {sum_count}",
-            f"  Difference (all - sum):                          {all_count - sum_count}",
-            "",
-            "  Per-cave breakdown:",
-        ]
-        lines.extend(breakdown)
-        raise CheckFailed("\n".join(lines))
+    difference = all_count - sum_count
+    if difference == 0:
+        return
+
+    if difference > 0:
+        hint = (
+            "  Check that each survey prefix with underground legs has a compiled ENTRANCE "
+            "station and a matching caves/<prefix>.shp.\n"
+            "  Review #prefix/#prefix2 in survey SRVs and #flag ... /ENTRANCE in "
+            "Poligony/OTWORY.SRV.j2."
+        )
+    else:
+        hint = "  Check for overlapping --survey filters or repeated geometry in caves/*.shp."
+
+    lines = [
+        "ERROR: Feature count mismatch between whole-project and per-cave shapefiles:",
+        f"  Whole-project (JKTZ-{version}-all.shp): {all_count}",
+        f"  Sum of per-cave shapefiles:                      {sum_count}",
+        f"  Difference (all - sum):                          {difference}",
+        hint,
+        "",
+        "  Per-cave breakdown:",
+        *breakdown,
+    ]
+    raise CheckFailed("\n".join(lines))

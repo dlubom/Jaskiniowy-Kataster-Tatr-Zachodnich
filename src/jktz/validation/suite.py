@@ -26,13 +26,10 @@ from jktz.validation import (
     coordinates,
     decimal_format,
     directives,
-    empty_shapefiles,
     filenames,
     metadata,
     non_ascii,
     prefixes,
-    shapefiles_count,
-    shapefiles_extent,
     unattached,
 )
 
@@ -112,15 +109,6 @@ def _check_exports(context: ValidationContext) -> None:
             version=context.exports_version,
             outdir=context.exports_dir,
         )
-    empty_shapefiles.check(outdir=context.exports_dir)
-    shapefiles_count.check(
-        outdir=context.exports_dir,
-        version=context.exports_version,
-    )
-    shapefiles_extent.check(
-        outdir=context.exports_dir,
-        version=context.exports_version,
-    )
 
 
 def validation_steps(

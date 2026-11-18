@@ -6,6 +6,7 @@ from pathlib import Path
 
 from jktz.exports import pipeline
 from jktz.exports.tools import ExternalToolError
+from jktz.reporting import CheckFailed
 
 
 def main() -> int:
@@ -31,6 +32,9 @@ def main() -> int:
 
     try:
         pipeline.run_exports(version=args.version, outdir=Path(args.outdir))
+    except CheckFailed as exc:
+        print(str(exc), file=sys.stderr)
+        return 1
     except (ExternalToolError, OSError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1

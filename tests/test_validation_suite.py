@@ -153,7 +153,7 @@ def test_indentation_restores_stdout_when_export_fails():
     assert sys.stdout is original
 
 
-def test_exports_run_before_artifact_checks_with_shared_destination(tmp_path, monkeypatch, capsys):
+def test_exports_use_shared_destination_with_indented_output(tmp_path, monkeypatch, capsys):
     context = ValidationContext(exports_dir=tmp_path / "artifacts", exports_version="custom")
     calls = []
 
@@ -162,20 +162,11 @@ def test_exports_run_before_artifact_checks_with_shared_destination(tmp_path, mo
         print("compiler output")
 
     monkeypatch.setattr(suite.pipeline, "run_exports", export)
-    for name in ("empty_shapefiles", "shapefiles_count", "shapefiles_extent"):
-        monkeypatch.setattr(
-            getattr(suite, name),
-            "check",
-            lambda _name=name, **kwargs: calls.append((_name, kwargs)),
-        )
 
     suite._check_exports(context)
 
     assert calls == [
         ("export", {"version": "custom", "outdir": context.exports_dir}),
-        ("empty_shapefiles", {"outdir": context.exports_dir}),
-        ("shapefiles_count", {"outdir": context.exports_dir, "version": "custom"}),
-        ("shapefiles_extent", {"outdir": context.exports_dir, "version": "custom"}),
     ]
     assert capsys.readouterr().out == "                   compiler output\n"
 

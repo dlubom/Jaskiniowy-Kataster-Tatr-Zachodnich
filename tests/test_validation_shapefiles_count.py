@@ -42,6 +42,18 @@ def test_fails_on_count_mismatch(tmp_path: Path, make_point_shapefile) -> None:
     assert "Sum of per-cave shapefiles:" in msg
     assert "CaveA: 1" in msg
     assert "CaveB: 1" in msg
+    assert "Check that each survey prefix with underground legs" in msg
+    assert "Poligony/OTWORY.SRV.j2" in msg
+
+
+def test_surplus_reports_overlapping_survey_filters(tmp_path: Path, make_point_shapefile) -> None:
+    outdir, all_shp, caves_dir = _layout(tmp_path)
+    make_point_shapefile(all_shp, [_P1, _P2])
+    make_point_shapefile(caves_dir / "CaveA.shp", [_P1, _P2])
+    make_point_shapefile(caves_dir / "CaveB.shp", [_P2])
+
+    with pytest.raises(CheckFailed, match="Check for overlapping --survey filters"):
+        shapefiles_count.check(outdir=outdir, version="v1")
 
 
 def test_passes_with_zero_caves_and_zero_features(tmp_path: Path, make_point_shapefile) -> None:
