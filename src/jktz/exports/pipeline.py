@@ -7,6 +7,7 @@ import time
 from pathlib import Path
 
 from jktz.exports import tools
+from jktz.validation import empty_shapefiles, shapefiles_count, shapefiles_extent
 
 
 def _wait_for_readable(path: Path, timeout: float = 30.0, interval: float = 0.1) -> None:
@@ -88,6 +89,7 @@ def run_exports(
       3. ogr2ogr DXF → ESRI Shapefile         → JKTZ-<version>-all.shp
       4. survexport --entrances → cave list
          per cave: survexport --survey filter + ogr2ogr → caves/<cave>.shp
+      5. Validate non-empty shapefiles, feature counts and geographic extent.
     """
     # Resolve to absolute paths so every arg passed to subprocess is absolute -
     # the Survex Windows launcher resolves some paths against argv[0]/cwd
@@ -102,7 +104,7 @@ def run_exports(
     print(f"    output: {outdir.as_posix()}/")
     print()
 
-    print("[1/4] cavern - compiling survey network")
+    print("[1/5] cavern - compiling survey network")
     cavern_log = outdir / f"JKTZ-{version}-cavern-log.txt"
     tools.cavern(["--warnings-are-errors", "KATASTER.wpj"], cwd=cwd, log_to=cavern_log)
     project_root = cwd if cwd else Path.cwd()
@@ -110,7 +112,7 @@ def run_exports(
     shutil.copy(project_root / "KATASTER.err", outdir / f"JKTZ-{version}.err")
     compiled_3d = outdir / f"JKTZ-{version}.3d"
 
-    print("[2/4] survexport - full DXF")
+    print("[2/5] survexport - full DXF")
     full_dxf = outdir / f"JKTZ-{version}.dxf"
     tools.survexport(
         ["--legs", "--full-coordinates", "--dxf", str(compiled_3d), str(full_dxf)],
@@ -118,7 +120,7 @@ def run_exports(
     )
     _wait_for_readable(full_dxf)
 
-    print("[3/4] ogr2ogr - shapefile (all caves)")
+    print("[3/5] ogr2ogr - shapefile (all caves)")
     all_shp = outdir / f"JKTZ-{version}-all.shp"
     tools.ogr2ogr(
         [
@@ -136,7 +138,7 @@ def run_exports(
         cwd=cwd,
     )
 
-    print("[4/4] survexport - per-cave DXF + shapefiles")
+    print("[4/5] survexport - per-cave DXF + shapefiles")
     with tempfile.TemporaryDirectory(prefix="jktz-exports-", dir=outdir) as tmp_str:
         tmp = Path(tmp_str)
         entrances_csv = tmp / "entrances.csv"
@@ -175,6 +177,10 @@ def run_exports(
                 ],
                 cwd=cwd,
             )
+    print("[5/5] Validating shapefiles")
+    empty_shapefiles.check(outdir=outdir)
+    shapefiles_count.check(outdir=outdir, version=version)
+    shapefiles_extent.check(outdir=outdir, version=version)
     print()
     print("=== Done ===")
     print(f"    {outdir.as_posix()}/")

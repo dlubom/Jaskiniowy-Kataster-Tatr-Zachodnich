@@ -6,6 +6,14 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+### Naprawione
+
+- Lokalny eksport SHP sprawdza puste warstwy, zgodność liczby odcinków
+  z plikiem zbiorczym i zasięg współrzędnych, tak jak podczas pakowania wydania.
+  Sprawdza pliki z wybranego katalogu także wtedy, gdy ścieżka zawiera `!`.
+  Przy rozbieżności liczby odcinków komunikat wskazuje, gdzie szukać braków
+  lub powielonych odcinków.
+
 ## [v2.0.2] - 2026-11-17
 
 ### Zmienione
