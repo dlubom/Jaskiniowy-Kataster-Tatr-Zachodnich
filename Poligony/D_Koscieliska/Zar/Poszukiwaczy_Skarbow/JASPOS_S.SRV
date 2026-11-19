@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.E-08.18"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0196"
 CAVE_NAME       "Jaskinia Poszukiwaczy Skarbow"
+OBJECT_REF      "PoszukiwaczySkarbow:0=KSW-0057"
 SURVEY_ID       "JASPOS"
 SURVEY_NAME     "Jaskinia Poszukiwaczy Skarbow"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -16,6 +18,7 @@ SURVEY_DATE     "2006-12-16"
 SURVEY_DATE     "2011-05-29"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix PoszukiwaczySkarbow

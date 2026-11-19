@@ -19,8 +19,9 @@ def test_passes_with_in_extent_fix(tmp_path: Path) -> None:
     coordinates.check(otwory_path=p)
 
 
-def test_fails_on_lon_outside_extent(tmp_path: Path) -> None:
-    p = _write_otwory(tmp_path, "#fix\tCave:0\tE21.0\tN49.25\t1500m\n")
+@pytest.mark.parametrize("directive", ["#fix", "#FIX", " #Fix", "\t#fix"])
+def test_fails_on_lon_outside_extent(tmp_path: Path, directive: str) -> None:
+    p = _write_otwory(tmp_path, f"{directive}\tCave:0\tE21.0\tN49.25\t1500m\n")
     with pytest.raises(CheckFailed, match="lon 21.000000 outside"):
         coordinates.check(otwory_path=p)
 
@@ -47,3 +48,20 @@ def test_ignores_non_fix_lines(tmp_path: Path) -> None:
     body = ";this is a comment\n#flag\tCave:0\t/ENTRANCE\n#fix\tCave:0\tE19.9\tN49.25\t1500m\n"
     p = _write_otwory(tmp_path, body)
     coordinates.check(otwory_path=p)
+
+
+def test_ignores_fix_inside_block_comment_but_checks_after_block(tmp_path):
+    text = "#[\n#fix Cave:0 E1 N1 0m\n#]\n"
+    path = _write_otwory(tmp_path, text)
+    coordinates.check(path)
+
+    path.write_text(text + "#fix Cave:0 E1 N1 0m\n")
+    with pytest.raises(CheckFailed, match=r"OTWORY.SRV:4"):
+        coordinates.check(path)
+
+
+def test_elevation_in_comment_does_not_supply_missing_fix_coordinate(tmp_path):
+    path = _write_otwory(tmp_path, "#fix Cave:0 E19.9 N49.25 ; previous elevation 1500m\n")
+
+    with pytest.raises(CheckFailed, match="missing elevation"):
+        coordinates.check(path)

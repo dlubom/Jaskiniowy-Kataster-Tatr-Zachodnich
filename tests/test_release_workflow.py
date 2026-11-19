@@ -35,9 +35,9 @@ def test_release_publishes_matching_version_notes_and_archive_after_validation()
         "Validate Python tooling",
         "Run mutation gate",
         "Prepare release metadata",
-        "Check rendered entrance snapshot",
+        "Download GPS snapshot",
         "Install Survex",
-        "Build exports",
+        "Validate GPS and build checked exports",
         "Build release ZIP",
         "Create GitHub Release",
     ]
@@ -46,10 +46,17 @@ def test_release_publishes_matching_version_notes_and_archive_after_validation()
     assert 'echo "VERSION=${GITHUB_REF_NAME}"' in _step(workflow, "Extract version from tag")
     version = "${{ steps.version.outputs.VERSION }}"
     assert f"RELEASE_VERSION: {version}" in _step(workflow, "Prepare release metadata")
-    assert _run_line(_step(workflow, "Check rendered entrance snapshot")) == (
-        "uv run jktz-render-otwory --check"
-    )
-    assert _run_line(_step(workflow, "Build exports")) == f"uv run jktz-exports {version}"
+    gate = _step(workflow, "Validate GPS and build checked exports")
+    assert f"RELEASE_VERSION: {version}" in gate
+    assert shlex.split(_run_line(gate)) == [
+        "uv",
+        "run",
+        "jktz-validate",
+        "--gps-snapshot",
+        "logs/gps-snapshot",
+        "--export-version",
+        "$RELEASE_VERSION",
+    ]
     assert _run_line(_step(workflow, "Build release ZIP")) == f"uv run jktz-build-zip {version}"
     publish = _step(workflow, "Create GitHub Release")
     assert "uses: softprops/action-gh-release@v2" in publish
@@ -61,13 +68,13 @@ def test_pr_package_keeps_version_render_upload_and_link_contract() -> None:
     workflow = (WORKFLOWS / "validate.yml").read_text(encoding="utf-8")
     job = workflow.split("\n  pr-release-package:\n", 1)[1]
     assert "if: github.event_name == 'pull_request'" in job
-    assert "needs: [python-tools, mutation-tests, validate, walls-windows]" in job
+    assert "needs: [gps-snapshot, python-tools, mutation-tests, validate, walls-windows]" in job
     ordered_steps = [
         "Compute package version",
         "Set version in INFO.txt",
-        "Render latest entrance fixes",
+        "Download GPS snapshot",
         "Install Survex",
-        "Build exports",
+        "Validate GPS and build checked exports",
         "Build PR release ZIP",
         "Upload PR release ZIP",
         "Add package link to job summary",
@@ -82,8 +89,17 @@ def test_pr_package_keeps_version_render_upload_and_link_contract() -> None:
     assert 'echo "zip=JKTZ-${version}.zip" >> "$GITHUB_OUTPUT"' in compute
     version = "${{ steps.package.outputs.version }}"
     assert f"PACKAGE_VERSION: {version}" in _step(job, "Set version in INFO.txt")
-    assert _run_line(_step(job, "Render latest entrance fixes")) == "uv run jktz-render-otwory"
-    assert _run_line(_step(job, "Build exports")) == f"uv run jktz-exports {version}"
+    gate = _step(job, "Validate GPS and build checked exports")
+    assert f"PACKAGE_VERSION: {version}" in gate
+    assert shlex.split(_run_line(gate)) == [
+        "uv",
+        "run",
+        "jktz-validate",
+        "--gps-snapshot",
+        "logs/gps-snapshot",
+        "--export-version",
+        "$PACKAGE_VERSION",
+    ]
     assert _run_line(_step(job, "Build PR release ZIP")) == f"uv run jktz-build-zip {version}"
     upload = _step(job, "Upload PR release ZIP")
     assert "uses: actions/upload-artifact@v4" in upload

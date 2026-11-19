@@ -2,10 +2,10 @@
 #units meters order=ENU
 
 ; Wspolrzedne #fix sa automatycznie wstrzykiwane z release'ow:
-; https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.0.0
+; https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v2.1.3
 ; Szczegoly pomiarow i wyboru najlepszych wartosci sa w tamtym projekcie.
 
-#fix	BandziochKom:000	E19.8495785	N49.24258746	1451.06m (R0.01,R0.01)
+#fix	BandziochKom:000	E19.8495335649	N49.2425735116	1451.06380929m (R0.01,R0.01)
 #flag	BandziochKom:000	/Bandzioch Kom. Dolny
 #flag	BandziochKom:000	/ENTRANCE
 #note	BandziochKom:000	/Bandzioch Kom. Dolny
@@ -85,17 +85,17 @@
 #flag	Kalacka:0	/ENTRANCE
 #note	Kalacka:0	/Jaskinia Kalacka
 
-#fix	KamienneMleko:0	E19.8108454857	N49.2454016643	1103.902233m
-#flag	KamienneMleko:0	/Kamienne Mleko
-#flag	KamienneMleko:0	/ENTRANCE
-#note	KamienneMleko:0	/Kamienne Mleko
+#fix	KamienneMleko:0'	E19.8108454857	N49.2454016643	1103.902233m
+#flag	KamienneMleko:0'	/Kamienne Mleko
+#flag	KamienneMleko:0'	/ENTRANCE
+#note	KamienneMleko:0'	/Kamienne Mleko
 
 #fix	KasprowaNiznia:0	E19.9784804959	N49.2541341286	1216.555032m
 #flag	KasprowaNiznia:0	/Kasprowa Niznia
 #flag	KasprowaNiznia:0	/ENTRANCE
 #note	KasprowaNiznia:0	/Kasprowa Niznia
 
-#fix	KoprowaStudnia:ks0	E19.9302480672	N49.2393472935	1808.930858m
+#fix	KoprowaStudnia:ks0	E19.9302498382	N49.2393580914	1808.589966m
 #flag	KoprowaStudnia:ks0	/Koprowa Studnia
 #flag	KoprowaStudnia:ks0	/ENTRANCE
 #note	KoprowaStudnia:ks0	/Koprowa Studnia
@@ -105,20 +105,32 @@
 #flag	Koszowa:0	/ENTRANCE
 #note	Koszowa:0	/Jaskinia Koszowa
 
-#fix	Kozia:k001	E19.9080642201	N49.2388387835	1835.745891m
-#flag	Kozia:k001	/Kozia
+#fix	Kozia:k001	E19.9081342835	N49.2388037899	1836.99207226m
+#flag	Kozia:k001	/Kozia - otwor I
 #flag	Kozia:k001	/ENTRANCE
-#note	Kozia:k001	/Kozia
+#note	Kozia:k001	/Kozia - otwor I
 
-#fix	Lejbusiowa:A1	E19.9004138726	N49.2385606103	1838.365497m
+#fix	Kozia:k9619	E19.9094329999	N49.238806742	1839.46868225m
+#flag	Kozia:k9619	/Kozia - otwor II
+#flag	Kozia:k9619	/ENTRANCE
+#note	Kozia:k9619	/Kozia - otwor II
+
+#fix	Lejbusiowa:A1	E19.9008042777	N49.2384894954	1834.98101805m
 #flag	Lejbusiowa:A1	/Jaskinia Lejbusiowa
 #flag	Lejbusiowa:A1	/ENTRANCE
 #note	Lejbusiowa:A1	/Jaskinia Lejbusiowa
 
-#fix	LodowaMalolacka:0	E19.9285195	N49.2431332993	1637.100508m
-#flag	LodowaMalolacka:0	/Lodowa Malolacka
+; Lodowa Malolacka: 0 to otwor dolny, 31 to gorny (z poligonu).
+#fix	LodowaMalolacka:0	E19.9285111001	N49.2430444655	1634.403178m
+#flag	LodowaMalolacka:0	/Lodowa Malolacka - otwor dolny
 #flag	LodowaMalolacka:0	/ENTRANCE
-#note	LodowaMalolacka:0	/Lodowa Malolacka
+#note	LodowaMalolacka:0	/Lodowa Malolacka - otwor dolny
+
+; MLW-0024 do ponownej weryfikacji wysokosci. Polozenie stacji 31 wynika z poligonu.
+; #fix	LodowaMalolacka:31	E19.9285195	N49.2431332993	1637.100508m
+#flag	LodowaMalolacka:31	/Lodowa Malolacka - otwor gorny
+#flag	LodowaMalolacka:31	/ENTRANCE
+#note	LodowaMalolacka:31	/Lodowa Malolacka - otwor gorny
 
 #fix	LodowaMietusia:0	E19.9017112761	N49.2399201817	1586.427564m
 #flag	LodowaMietusia:0	/Jaskinia Lodowa Mietusia
@@ -135,7 +147,7 @@
 #flag	LustrzanyKorytarz:0	/ENTRANCE
 #note	LustrzanyKorytarz:0	/Lustrzany Korytarz
 
-#fix	MalaWMulowej:1	E19.9022258853	N49.2382581726	1753.068244m
+#fix	MalaWMulowej:1	E19.9022169601	N49.2382561419	1752.74137589m
 #flag	MalaWMulowej:1	/Jaskinia Mala w Mulowej
 #flag	MalaWMulowej:1	/ENTRANCE
 #note	MalaWMulowej:1	/Jaskinia Mala w Mulowej
@@ -145,7 +157,7 @@
 #flag	Malolacka:ma0	/ENTRANCE
 #note	Malolacka:ma0	/Malolacka
 
-#fix	Marmurowa:0	E19.9008006292	N49.2393721035	1767.702373m
+#fix	Marmurowa:0	E19.9008174593	N49.2393655848	1767.35018365m
 #flag	Marmurowa:0	/Marmurowa
 #flag	Marmurowa:0	/ENTRANCE
 #note	Marmurowa:0	/Marmurowa
@@ -160,7 +172,7 @@
 #flag	Mietusia:ru_0	/ENTRANCE
 #note	Mietusia:ru_0	/Jaskinia Mietusia
 
-#fix	MietusiaWyznia:ot_0	E19.8948992419	N49.2454610045	1383.993046m
+#fix	MietusiaWyznia:ot_0	E19.8947565319	N49.2454007979	1392.9460172m
 #flag	MietusiaWyznia:ot_0	/Jaskinia Mietusia Wyznia
 #flag	MietusiaWyznia:ot_0	/ENTRANCE
 #note	MietusiaWyznia:ot_0	/Jaskinia Mietusia Wyznia
@@ -169,6 +181,10 @@
 #flag	MnichStudniaWyz:0	/Mnichowa Studnia Wyznia
 #flag	MnichStudniaWyz:0	/ENTRANCE
 #note	MnichStudniaWyz:0	/Mnichowa Studnia Wyznia
+
+#flag	MnichStudniaWyz:11	/Mnichowa Studnia Wyznia - otwor dolny
+#flag	MnichStudniaWyz:11	/ENTRANCE
+#note	MnichStudniaWyz:11	/Mnichowa Studnia Wyznia - otwor dolny
 
 #fix	Mrozna:0	E19.8672300982	N49.2498018833	1111.121897m
 #flag	Mrozna:0	/Jaskinia Mrozna
@@ -195,20 +211,42 @@
 #flag	ObcasnaVyv:A1:o1	/ENTRANCE
 #note	ObcasnaVyv:A1:o1	/Obcasna Vyvieracka
 
-#fix	Pawlikowskiego:Mylna:0	E19.8622047217	N49.2393861277	1098m
+; System Pawlikowskiego: jedyny #fix to Raptawicka. Pozostale otwory wyznacza siec.
+; Stacje otworow wg _RAW/01/SJP/Dane/Mylna/CG.SRV:43-50.
+; To polozenia stacji; znaki wzgledem progow otworow nie sa ustalone.
 #flag	Pawlikowskiego:Mylna:0	/Mylna
 #flag	Pawlikowskiego:Mylna:0	/ENTRANCE
 #note	Pawlikowskiego:Mylna:0	/Mylna
 
-#fix	Pawlikowskiego:Oblazkowa:0.0	E19.8625797302	N49.239561635	1096.62m
+#flag	Pawlikowskiego:Mylna:39	/Mylna - otwor polnocny
+#flag	Pawlikowskiego:Mylna:39	/ENTRANCE
+#note	Pawlikowskiego:Mylna:39	/Mylna - otwor polnocny
+
+; Nazwy okien: zrodlowe BOKI_CG.SRV:27-31 i BCDCHCG.SRV:27-32.
+#flag	Pawlikowskiego:Mylna:52	/Mylna - I Okno Pawlikowskiego
+#flag	Pawlikowskiego:Mylna:52	/ENTRANCE
+#note	Pawlikowskiego:Mylna:52	/Mylna - I Okno Pawlikowskiego
+
+#flag	Pawlikowskiego:Mylna:53	/Mylna - II Okno Pawlikowskiego
+#flag	Pawlikowskiego:Mylna:53	/ENTRANCE
+#note	Pawlikowskiego:Mylna:53	/Mylna - II Okno Pawlikowskiego
+
+#flag	Pawlikowskiego:Mylna:333	/Mylna - III Okno Pawlikowskiego
+#flag	Pawlikowskiego:Mylna:333	/ENTRANCE
+#note	Pawlikowskiego:Mylna:333	/Mylna - III Okno Pawlikowskiego
+
 #flag	Pawlikowskiego:Oblazkowa:0.0	/Oblazkowa
 #flag	Pawlikowskiego:Oblazkowa:0.0	/ENTRANCE
 #note	Pawlikowskiego:Oblazkowa:0.0	/Oblazkowa
 
-#fix	Pawlikowskiego:Raptawicka:1.0	E19.8622197642	N49.2398675351	1141.31m
+#fix	Pawlikowskiego:Raptawicka:1.0	E19.8620426566	N49.2398375402	1140.8m
 #flag	Pawlikowskiego:Raptawicka:1.0	/Raptawicka
 #flag	Pawlikowskiego:Raptawicka:1.0	/ENTRANCE
 #note	Pawlikowskiego:Raptawicka:1.0	/Raptawicka
+
+#flag	Pawlikowskiego:Raptawicka:5.1	/Raptawicka - otwor gorny
+#flag	Pawlikowskiego:Raptawicka:5.1	/ENTRANCE
+#note	Pawlikowskiego:Raptawicka:5.1	/Raptawicka - otwor gorny
 
 #fix	PodProgiem:0	E19.9158398884	N49.2451308705	1760.029097m
 #flag	PodProgiem:0	/Jaskinia pod Progiem
@@ -235,12 +273,12 @@
 #flag	PrzyPrzechodzie:jp0	/ENTRANCE
 #note	PrzyPrzechodzie:jp0	/Przy Przechodzie
 
-#fix	PtasiaStudnia:a14	E19.9055153249	N49.2407775482	1574.186504m
+#fix	PtasiaStudnia:a14	E19.905507022	N49.2407642487	1575.208386m
 #flag	PtasiaStudnia:a14	/Lodowa Litworowa
 #flag	PtasiaStudnia:a14	/ENTRANCE
 #note	PtasiaStudnia:a14	/Lodowa Litworowa
 
-#fix	PtasiaStudnia:a22	E19.9050742888	N49.2408583882	1525.858298m
+#fix	PtasiaStudnia:a22	E19.9050784368	N49.2408537873	1520.4333843m
 #flag	PtasiaStudnia:a22	/Jaskinia nad Dachem
 #flag	PtasiaStudnia:a22	/ENTRANCE
 #note	PtasiaStudnia:a22	/Jaskinia nad Dachem
@@ -300,12 +338,12 @@
 #flag	StudniaWKazalnicy:SwK0	/ENTRANCE
 #note	StudniaWKazalnicy:SwK0	/Studnia w Kazalnicy
 
-#fix	Swistacza:24	E19.930667961	N49.2393143075	1814.340872m
+#fix	Swistacza:24	E19.9306858233	N49.2393099527	1815.22998m
 #flag	Swistacza:24	/Jaskinia Swistacza
 #flag	Swistacza:24	/ENTRANCE
 #note	Swistacza:24	/Jaskinia Swistacza
 
-#fix	SzaraStudnia:0	E19.9123722601	N49.2441361256	1751.160829m
+#fix	SzaraStudnia:0	E19.9123671007	N49.2441403169	1749.420044m
 #flag	SzaraStudnia:0	/Szara Studnia
 #flag	SzaraStudnia:0	/ENTRANCE
 #note	SzaraStudnia:0	/Szara Studnia
@@ -350,7 +388,7 @@
 #flag	WielkaSniezna:Jasna:j0	/ENTRANCE
 #note	WielkaSniezna:Jasna:j0	/Jasny Awen
 
-#fix	WielkaSniezna:Litworowa:LT58	E19.9147636451	N49.238511573	1905.290951m
+#fix	WielkaSniezna:Litworowa:LT58	E19.9147586436	N49.2385157324	1904.73177469m
 #flag	WielkaSniezna:Litworowa:LT58	/Wielka Litworowa
 #flag	WielkaSniezna:Litworowa:LT58	/ENTRANCE
 #note	WielkaSniezna:Litworowa:LT58	/Wielka Litworowa
@@ -365,34 +403,43 @@
 #flag	WilczySchron:wsn0	/ENTRANCE
 #note	WilczySchron:wsn0	/Wilczy Schron
 
-; Wysoka7Progow: aktywny #fix opieramy tylko na source: unknown - GNSS dla W7-0.
-; To najdokladniejszy pomiar; pozostale powiazania GPS sa niepewne, wiec
-; renderujemy je nizej tylko jako zakomentowane wartosci kontrolne.
-; Brak gps_fix: w gps-kataster-obiektow-tatr nie ma osobnego object_id dla tego lokalnego otworu.
+; Wysoka7Progow: jedyna kotwica to W7-0 (KSW-0189).
+; Pozostale otwory maja OBJECT_REF w plikach SRV; ich polozenie wynika z poligonu.
+; KSW-0264--KSW-0267 w GPS v2.1.3 przeliczono z tej samej kotwicy.
 #flag	Wysoka7Progow:W-300	/ENTRANCE
 #note	Wysoka7Progow:W-300	/Wysoka Gorny Otwor
 
-; source: unknown - GNSS
-#fix	Wysoka7Progow:W7-0	E19.88454604	N49.2336413	1486.69m
+; GPS v2.1.3: KSW-0189/m-004, wynik skorygowanego domiaru.
+#fix	Wysoka7Progow:W7-0	E19.8846039325	N49.2335781361	1486.69145451m
 #flag	Wysoka7Progow:W7-0	/Otwor
 #flag	Wysoka7Progow:W7-0	/Wysoka-Za7 Progami
 #flag	Wysoka7Progow:W7-0	/ENTRANCE
 #note	Wysoka7Progow:W7-0	/Wysoka-Za7 Progami
 
-; #fix	Wysoka7Progow:W7-200	E19.8844821579	N49.233618932	1471.854856m
 #flag	Wysoka7Progow:W7-200	/ENTRANCE
 #note	Wysoka7Progow:W7-200	/Za7Progami Dolny Otwor
 
-; #fix	Wysoka7Progow:W7-500	E19.884345891	N49.2337135556	1460.720658m
 #flag	Wysoka7Progow:W7-500	/ENTRANCE
 #note	Wysoka7Progow:W7-500	/Za7Progami Gorny Otwor
+
+; Posrednia: otwory wg rekonstrukcji numeracji, bez oryginalnego protokolu.
+; Bez #fix; polozenie wynika z poligonu.
+; W7-PD to jawny alias W7-505/1 w III.SRV; #flag nie obsluguje "/" w nazwie w Survex 1.4.24.
+#flag	Wysoka7Progow:W7-PD	/ENTRANCE
+#note	Wysoka7Progow:W7-PD	/Posrednia Dolny Otwor
+
+#flag	Wysoka7Progow:W7-P500	/ENTRANCE
+#note	Wysoka7Progow:W7-P500	/Posrednia Srodkowy Otwor
+
+#flag	Wysoka7Progow:W7-P507	/ENTRANCE
+#note	Wysoka7Progow:W7-P507	/Posrednia Gorny Otwor
 
 #fix	WyzKoszowaDziura:0	E20.0586945001	N49.248722182	1794.824636m
 #flag	WyzKoszowaDziura:0	/Wyznia Koszowa Dziura
 #flag	WyzKoszowaDziura:0	/ENTRANCE
 #note	WyzKoszowaDziura:0	/Wyznia Koszowa Dziura
 
-#fix	ZaspalkowaSzczel:zss0	E19.9277110763	N49.2386194128	1742.045049m
+#fix	ZaspalkowaSzczel:zss0	E19.9277153683	N49.2385997097	1745.400024m
 #flag	ZaspalkowaSzczel:zss0	/Zaspalkowa
 #flag	ZaspalkowaSzczel:zss0	/ENTRANCE
 #note	ZaspalkowaSzczel:zss0	/Zaspalkowa

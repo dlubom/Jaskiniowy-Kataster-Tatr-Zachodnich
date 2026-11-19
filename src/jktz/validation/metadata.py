@@ -6,6 +6,7 @@ import subprocess
 from pathlib import Path, PurePosixPath
 
 from jktz.metadata.errors import MetadataError
+from jktz.metadata.identity import SurveyIdentity, parse_identity
 from jktz.metadata.raw import parse_raw_metadata
 from jktz.metadata.srv import (
     is_active_srv_path,
@@ -61,7 +62,7 @@ def _lexical_absolute(path: Path) -> Path:
     return Path(os.path.abspath(os.fspath(path)))
 
 
-def _git_ignored_untracked(paths: list[Path], scan_root: Path) -> set[Path]:
+def _git_ignored_untracked(paths: list[Path], project_root: Path) -> set[Path]:
     absolute_paths = [_lexical_absolute(path) for path in paths]
     if not absolute_paths:
         return set()
@@ -70,8 +71,17 @@ def _git_ignored_untracked(paths: list[Path], scan_root: Path) -> set[Path]:
     env = {key: value for key, value in os.environ.items() if not key.upper().startswith("GIT_")}
     env.update({"LANG": "C", "LC_ALL": "C"})
     try:
+        # A standalone survey copy can sit inside another repository's ignored directory.
         result = subprocess.run(
-            ["git", "-C", os.fspath(scan_root), "check-ignore", "--stdin", "-z"],
+            [
+                "git",
+                "-C",
+                os.fspath(project_root),
+                "--git-dir=.git",
+                "check-ignore",
+                "--stdin",
+                "-z",
+            ],
             input=stdin,
             capture_output=True,
             check=False,
@@ -201,7 +211,9 @@ def _check_raw_package(
     _check_raw_inventory(package, parsed.content_items, material, errors)
 
 
-def _check_srv(path: Path, scan_root: Path, poligony_root: Path, errors: list[str]) -> None:
+def _check_srv(
+    path: Path, scan_root: Path, poligony_root: Path, errors: list[str]
+) -> tuple[Path, SurveyIdentity] | None:
     rel = _repo_relative(path, scan_root)
     if not is_active_srv_path(rel):
         return
@@ -210,7 +222,7 @@ def _check_srv(path: Path, scan_root: Path, poligony_root: Path, errors: list[st
     try:
         parsed = parse_srv_metadata(rel, text)
     except MetadataError as exc:
-        errors.append(f"  {exc}")
+        errors.append(f"  {rel.as_posix()}: {exc}")
         return
 
     if not has_dated_or_declared_active_shots(parsed.body):
@@ -224,6 +236,8 @@ def _check_srv(path: Path, scan_root: Path, poligony_root: Path, errors: list[st
             continue
         _check_source_ref_package(rel, source_ref, package, errors)
 
+    return rel, parse_identity(parsed.single, parsed.repeated)
+
 
 def _check_source_ref_package(rel: Path, source_ref: str, package: Path, errors: list[str]) -> None:
     if not package.exists():
@@ -236,13 +250,17 @@ def _check_source_ref_package(rel: Path, source_ref: str, package: Path, errors:
         errors.append(f"  {rel.as_posix()}: SOURCE_REF {source_ref!r} missing README.md")
 
 
-def check(root: Path = Path("Poligony")) -> None:
-    """Validate active SRV metadata blocks and normalized _RAW source packages."""
+def check(root: Path = Path("Poligony")) -> dict[Path, SurveyIdentity]:
+    """Validate metadata and return the identities of all active SRVs."""
     errors: list[str] = []
     scan_root = root.resolve()
     poligony_root = _poligony_root(scan_root)
 
-    raw_dirs = [raw_dir for raw_dir in sorted(scan_root.rglob("_RAW")) if raw_dir.is_dir()]
+    raw_dirs = [
+        raw_dir
+        for raw_dir in sorted(scan_root.rglob("_RAW"))
+        if raw_dir.is_dir() and "_RAW" not in raw_dir.relative_to(scan_root).parts[:-1]
+    ]
     raw_root_material = [child for raw_dir in raw_dirs for child in _raw_root_material(raw_dir)]
     raw_packages = [
         child
@@ -255,13 +273,17 @@ def check(root: Path = Path("Poligony")) -> None:
     ]
     ignored_untracked = _git_ignored_untracked(
         raw_root_material + raw_package_material,
-        scan_root,
+        poligony_root.parent if poligony_root.name == "Poligony" else scan_root,
     )
     for raw_dir in raw_dirs:
         _check_raw_root(raw_dir, ignored_untracked, errors)
 
-    for path in sorted(scan_root.rglob("*.SRV")):
-        _check_srv(path, scan_root, poligony_root, errors)
+    identities = dict(
+        result
+        for path in sorted(scan_root.rglob("*.SRV"))
+        if (result := _check_srv(path, scan_root, poligony_root, errors)) is not None
+    )
 
     if errors:
         raise CheckFailed("ERROR: SRV metadata contract violation:\n" + "\n".join(errors))
+    return identities

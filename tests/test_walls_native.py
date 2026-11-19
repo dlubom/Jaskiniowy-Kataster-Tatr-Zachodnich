@@ -18,6 +18,7 @@ pytestmark = pytest.mark.skipif(
     ("body", "duplicates", "expected", "message"),
     [
         ("a b 1 0 0\n", False, "PASS", "COMPILE_COMPLETE"),
+        ("a b 1 0 0\n", True, "PASS", "COMPILE_COMPLETE"),
         ("a b invalid 0 0\n", False, "FAIL", "Compile aborted:  DATA"),
         ("#fix a 0 0 0\n#fix a 0 0 0\na b 1 0 0\n", False, "FAIL", "non-fatal errors"),
         ("a b 1 0 0\na b 1 0 0\n", True, "FAIL", "Duplicate Name Pair"),
@@ -28,7 +29,7 @@ def test_native_walls_accepts_valid_and_rejects_errors_and_warnings(
 ):
     source = tmp_path / "source"
     source.mkdir()
-    project = source / "TEST.wpj"
+    project = source / "Fixture.wpj"
     project.write_text(
         ".BOOK Fixture\n.NAME TEST\n.STATUS 3\n.SURVEY Data\n.NAME DATA\n.STATUS 8\n.ENDBOOK\n"
     )
@@ -47,9 +48,12 @@ def test_native_walls_accepts_valid_and_rejects_errors_and_warnings(
     assert report["inputs_unchanged"]
     # Negative fixtures must fail because Walls rejected them, not because the runner broke.
     log = (tmp_path / "evidence" / "driver.log").read_text()
-    assert ("COMPILE_COMPLETE" if expected == "PASS" else "WALLS_DIALOG") in log, log
+    _, started, after_recompile = log.partition("RECOMPILE_ROOT")
+    assert started and message in after_recompile, log
+    if expected == "FAIL":
+        assert "WALLS_DIALOG" in after_recompile, log
+        assert "#32770: Tip of the Day" not in after_recompile, log
     assert "INFRA:" not in log, log
-    assert message in log, log
 
 
 def test_native_timeout_fails_and_releases_its_session(tmp_path):

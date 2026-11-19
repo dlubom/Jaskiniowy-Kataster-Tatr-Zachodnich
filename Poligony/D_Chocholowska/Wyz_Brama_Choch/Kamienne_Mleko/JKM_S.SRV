@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.D-04.03"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0408"
 CAVE_NAME       "Kamienne Mleko"
+OBJECT_REF      "KamienneMleko:0'=CHZ-0014"
 SURVEY_ID       "JKM"
 SURVEY_NAME     "Kamienne Mleko"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -16,6 +18,7 @@ SURVEY_DATE     "2008-12-01"
 SURVEY_DATE     "2008-12-20"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix KamienneMleko
@@ -23,7 +26,7 @@ PROCESSING      "zachowano istniejacy aktywny plik SRV"
 #units meters order=DAV
 #units A=D V=D
 
-; Otwor w tym pliku: KamienneMleko:0 - fix/flag/note w Poligony/OTWORY.SRV
+; Otwor w tym pliku: KamienneMleko:0' - fix/flag/note w Poligony/OTWORY.SRV
 0	0'	6.56	242	0
 0	0''	7.00	273	0
 0	0'''	3.20	81	0

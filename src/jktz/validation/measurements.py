@@ -3,10 +3,20 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, replace
 
+from jktz.validation._utils import (
+    LRUD_RE,
+    UNITS_DIRECTIVE_RE,
+    active_lines,
+    without_inline_comment,
+)
+
 _DATE_DIRECTIVE_RE = re.compile(r"^\s*#date\b", re.IGNORECASE)
-_UNITS_DIRECTIVE_RE = re.compile(r"^\s*#units\b", re.IGNORECASE)
-_DECL_DIRECTIVE_RE = re.compile(r"^\s*#units\b.*\bDECL\s*=", re.IGNORECASE)
-_ORDER_RE = re.compile(r"\border\s*=\s*([A-Z]+)", re.IGNORECASE)
+_MACRO_REFERENCE_RE = re.compile(r"\$\(([^)]+)\)")
+_MACRO_DEFINITION_RE = re.compile(
+    r'(?<![^\s,])\$([^\s,=;]+)(?:\s*=\s*(?:"((?:[^"]|"")*)"|([^\s,;]+)))?'
+)
+_DECL_OPTION_RE = re.compile(r"(?<!\S)DECL\s*=", re.IGNORECASE)
+_ORDER_RE = re.compile(r"(?<!\S)O(?:RDER)?\s*=\s*([A-Z]+)", re.IGNORECASE)
 _UNITS_KEYWORD_RE = re.compile(r"(?<!\S)(SAVE|RESET|RESTORE|CT|RECT)(?!\S)", re.IGNORECASE)
 
 
@@ -20,32 +30,23 @@ class _UnitsState:
 def has_dated_or_declared_active_shots(text: str) -> bool:
     state = _UnitsState()
     saved_states: list[_UnitsState] = []
-    in_block_comment = False
-    for raw_line in text.splitlines():
-        line = raw_line.split(";", 1)[0].strip()
-        if not line:
-            continue
-        if in_block_comment:
-            if line.startswith("#]"):
-                in_block_comment = False
-            continue
-        if line.startswith("#["):
-            in_block_comment = "#]" not in line[2:]
-            continue
+    macros: dict[str, str] = {}
+    for _line_num, line in active_lines(text):
         if _DATE_DIRECTIVE_RE.match(line):
             state = replace(state, has_orientation=True)
             continue
-        if _UNITS_DIRECTIVE_RE.match(line):
-            state = _apply_units(line, state, saved_states)
+        if UNITS_DIRECTIVE_RE.match(line):
+            state = _apply_units(_units_options(line, macros), state, saved_states)
             continue
         if line.startswith("#"):
             continue
         if state.rectangular:
             continue
-        tokens = line.split()
+        readings = LRUD_RE.split(line, maxsplit=1)[0]
+        tokens = readings.replace(",", " ").split()
         if len(tokens) <= state.distance_index:
             continue
-        distance = _as_float(tokens[state.distance_index])
+        distance = _distance_value(tokens[state.distance_index])
         if distance is None:
             continue
         if distance == 0:
@@ -53,6 +54,15 @@ def has_dated_or_declared_active_shots(text: str) -> bool:
         if not state.has_orientation:
             return False
     return True
+
+
+def _units_options(line: str, macros: dict[str, str]) -> str:
+    # Walls expands references before processing any definitions on this line.
+    expanded = _MACRO_REFERENCE_RE.sub(lambda ref: macros.get(ref[1], ""), line)
+    options = without_inline_comment(expanded)
+    for name, quoted, bare in _MACRO_DEFINITION_RE.findall(options):
+        macros[name] = quoted.replace('""', '"') or bare
+    return _MACRO_DEFINITION_RE.sub("", options).replace(",", " ")
 
 
 def _apply_units(line: str, state: _UnitsState, saved_states: list[_UnitsState]) -> _UnitsState:
@@ -64,7 +74,7 @@ def _apply_units(line: str, state: _UnitsState, saved_states: list[_UnitsState])
         state = _UnitsState()
     if "RESTORE" in keywords and saved_states:
         state = saved_states.pop()
-    if _DECL_DIRECTIVE_RE.match(line):
+    if _DECL_OPTION_RE.search(line):
         state = replace(state, has_orientation=True)
     for keyword in keywords:
         if keyword in {"CT", "RECT"}:
@@ -76,8 +86,14 @@ def _apply_units(line: str, state: _UnitsState, saved_states: list[_UnitsState])
     return state
 
 
-def _as_float(value: str) -> float | None:
+def _distance_value(value: str) -> float | None:
+    """Read enough of Walls length syntax to distinguish zero from active shots."""
     try:
+        if value[-1:].upper() in {"M", "F"}:
+            value = value[:-1]
+        if "i" in value.lower():
+            feet, inches = value.lower().split("i", 1)
+            return float(feet or "0") * 12 + float(inches or "0")
         return float(value)
     except ValueError:
         return None

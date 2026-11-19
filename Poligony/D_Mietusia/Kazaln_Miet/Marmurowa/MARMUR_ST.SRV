@@ -1,9 +1,10 @@
 #[
-CAVE_ID         "T.E-11.05"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0184"
 CAVE_NAME       "Jaskinia Marmurowa"
 SURVEY_ID       "ST"
 SURVEY_NAME     "Z dna II Studni do starego dna"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -15,6 +16,7 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "1990-04-01"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix Marmurowa

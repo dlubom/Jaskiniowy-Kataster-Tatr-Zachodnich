@@ -1,13 +1,15 @@
 <!--
-    Lokalny test:
-    mkdir -p /tmp/caveview-test
-    cp web/index.html /tmp/caveview-test/
-    cp KATASTER.3d /tmp/caveview-test/
-    cd /tmp/caveview-test
-    wget https://github.com/aardgoose/CaveView.js/releases/download/2.9.0/CaveView.zip
-    unzip CaveView.zip
-    python3 -m http.server 8080
-    # Otworz http://localhost:8080
+    Podgląd lokalny z głównego katalogu repozytorium
+    preview=$(mktemp -d)
+    cavern --warnings-are-errors -o "$preview/KATASTER.3d" KATASTER.wpj
+    sed 's/__VERSION__/podgląd lokalny/' web/index.html > "$preview/index.html"
+    cp -R web/terrain "$preview/"
+    curl -fsSL https://github.com/aardgoose/CaveView.js/releases/download/2.9.0/CaveView.zip -o "$preview/CaveView.zip"
+    unzip -q "$preview/CaveView.zip" -d "$preview"
+    python3 web/patch-caveview.py "$preview/CaveView"
+    cp web/lang-pl.json "$preview/CaveView/lib/"
+    uv run --python 3.12 python -m http.server 8080 --bind 127.0.0.1 --protocol HTTP/1.1 --directory "$preview"
+    # Otwórz http://127.0.0.1:8080
 -->
 <!DOCTYPE html>
 <html lang="pl">
@@ -79,7 +81,10 @@
         <div style="margin-top: 6px; font-size: 12px; color: #aaa;">
             Dane pomiarowe w formacie Walls/Survex<br>
             Układ współrzędnych: WGS 84, UTM zona 34N<br>
-            Teren: Cesium World Terrain
+            Teren: <a href="https://www.geoportal.gov.pl/pl/dane/numeryczny-model-terenu-nmt/" target="_blank" rel="noopener">NMT GUGiK 2012</a>
+            + <a href="https://www.skgeodesy.sk/gku/produkty-sluzby/na-stiahnutie/zbgis.html" target="_blank" rel="noopener">DMR 5.0, GKÚ Bratislava</a><br>
+            Wysokości terenu: PL-EVRF2007-NH<br>
+            DMR i modele transformacji GUGiK: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>
         </div>
         <div style="margin-top: 6px;">
             <a href="https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich" target="_blank" rel="noopener">GitHub</a>
@@ -100,8 +105,8 @@
             var viewer = new CV2.CaveViewer( 'viewer', {
                 home: 'CaveView/',
                 surveyDirectory: './',
-                cesiumAccessToken: '__CESIUM_TOKEN__',
-                displayCRS: 'ORIGINAL',
+                terrainDirectory: new URL( 'terrain', document.baseURI ).href,
+                displayCRS: 'EPSG:3857',
                 showEditPage: false,
                 showExportPage: true,
                 saturatedGradient: true,
@@ -118,7 +123,7 @@
                     walls: false,
                     surface: true,
                     terrain: true,
-                    terrainDatumShift: false // default: 42.70
+                    terrainDatumShift: false
                 }
             } );
 

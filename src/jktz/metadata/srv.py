@@ -7,8 +7,10 @@ from datetime import date
 from pathlib import Path
 
 from jktz.metadata.errors import MetadataError
+from jktz.metadata.identity import parse_identity
 
 SINGLE_FIELDS = (
+    "SURVEY_KIND",
     "CAVE_ID",
     "CAVE_NAME",
     "SURVEY_ID",
@@ -21,6 +23,7 @@ SINGLE_FIELDS = (
     "SURVEY_GRADE",
 )
 REPEATED_FIELDS = (
+    "OBJECT_REF",
     "SOURCE_REF",
     "TEAM",
     "INSTRUMENT",
@@ -31,8 +34,9 @@ STRUCTURAL_FIELDS = {"CAVE_ID", "CAVE_NAME", "SURVEY_ID", "SURVEY_NAME", "SOURCE
 ALL_FIELDS = set(SINGLE_FIELDS) | set(REPEATED_FIELDS)
 
 _FIELD_RE = re.compile(r'^([A-Z][A-Z0-9_]*)\s+"([^"]*)"$')
-_METADATA_OPEN_RE = re.compile(r"#\[\r?\n")
-_METADATA_CLOSE_RE = re.compile(r"(?m)^#\](?:\r?\n|$)")
+_NEWLINE = r"\r\n?|\n"
+_METADATA_OPEN_RE = re.compile(rf"#\[(?:{_NEWLINE})")
+_METADATA_CLOSE_RE = re.compile(rf"(?<![^\r\n])#\](?:{_NEWLINE}|\Z)")
 _DATE_RE = re.compile(r"^\d{4}(-\d{2})?(-\d{2})?$")
 _UPDATE_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 _GRADE_RE = re.compile(
@@ -73,8 +77,8 @@ def _is_valid_contract_date(value: str) -> bool:
 
 
 def _validate_field(name: str, value: str) -> None:
-    if name in STRUCTURAL_FIELDS and value == "nieznane":
-        raise MetadataError(f"{name} cannot be nieznane")
+    if name in STRUCTURAL_FIELDS and value.strip() in {"", "nieznane"}:
+        raise MetadataError(f"{name} cannot be nieznane or blank")
     if name == "UPDATE_DATE" and value != "nieznane":
         if not _UPDATE_DATE_RE.fullmatch(value) or not _is_valid_contract_date(value):
             raise MetadataError(f"UPDATE_DATE has invalid date {value!r}")
@@ -116,19 +120,33 @@ def parse_srv_metadata(path: Path, text: str) -> SrvMetadata:
         else:
             repeated[name].append(value)
 
-    missing = [name for name in SINGLE_FIELDS if name not in single]
-    missing.extend(name for name in REPEATED_FIELDS if not repeated[name])
+    parse_identity(single, repeated)
+    missing = [
+        name
+        for name in SINGLE_FIELDS
+        if name not in {"CAVE_ID", "CAVE_NAME"} and name not in single
+    ]
+    missing.extend(name for name in REPEATED_FIELDS if name != "OBJECT_REF" and not repeated[name])
     if missing:
         raise MetadataError(f"{path.as_posix()} missing metadata field(s): {', '.join(missing)}")
 
-    return SrvMetadata(single=single, repeated=repeated, body=body.lstrip("\r\n"))
+    return SrvMetadata(
+        single=single, repeated=repeated, body=re.sub(rf"^(?:{_NEWLINE})", "", body, count=1)
+    )
 
 
-def format_srv_metadata(metadata: SrvMetadata) -> str:
+def format_srv_metadata(metadata: SrvMetadata, *, original_text: str = "") -> str:
+    """Use the original survey's first line ending for the new header."""
+    parse_identity(metadata.single, metadata.repeated)
     lines = ["#["]
     for name in SINGLE_FIELDS:
-        if name == "SURVEY_GRADE":
+        if name == "SURVEY_GRADE" or (
+            name in {"CAVE_ID", "CAVE_NAME"} and name not in metadata.single
+        ):
             continue
+        if name == "SURVEY_ID":
+            for value in metadata.repeated.get("OBJECT_REF", []):
+                lines.append(_format_field("OBJECT_REF", value))
         if name == "LICENSE":
             for value in metadata.repeated["SOURCE_REF"]:
                 lines.append(_format_field("SOURCE_REF", value))
@@ -142,7 +160,9 @@ def format_srv_metadata(metadata: SrvMetadata) -> str:
         lines.append(_format_field("PROCESSING", value))
     lines.append("#]")
     lines.append("")
-    return "\n".join(lines) + "\n"
+    first_break = re.search(_NEWLINE, original_text)
+    newline = first_break.group() if first_break else "\n"
+    return newline.join(lines) + newline
 
 
 def _format_field(name: str, value: str) -> str:
@@ -152,8 +172,10 @@ def _format_field(name: str, value: str) -> str:
 
 def default_metadata(
     *,
-    cave_id: str,
-    cave_name: str,
+    survey_kind: str,
+    cave_id: str | None = None,
+    cave_name: str | None = None,
+    object_refs: list[str] | None = None,
     survey_id: str,
     survey_name: str,
     source_refs: list[str],
@@ -170,8 +192,9 @@ def default_metadata(
 ) -> SrvMetadata:
     return SrvMetadata(
         single={
-            "CAVE_ID": cave_id,
-            "CAVE_NAME": cave_name,
+            "SURVEY_KIND": survey_kind,
+            **({"CAVE_ID": cave_id} if cave_id is not None else {}),
+            **({"CAVE_NAME": cave_name} if cave_name is not None else {}),
             "SURVEY_ID": survey_id,
             "SURVEY_NAME": survey_name,
             "UPDATE_DATE": update_date,
@@ -182,6 +205,7 @@ def default_metadata(
             "SURVEY_GRADE": survey_grade,
         },
         repeated={
+            "OBJECT_REF": object_refs or [],
             "SOURCE_REF": source_refs,
             "TEAM": team or ["nieznane"],
             "INSTRUMENT": instruments or ["nieznane"],
@@ -197,8 +221,8 @@ def replace_or_insert_metadata(text: str, metadata: SrvMetadata) -> str:
         existing = parse_srv_metadata(Path("Poligony/MEMORY.SRV"), text)
         body = existing.body
     else:
-        body = text.lstrip("\r\n")
-    return format_srv_metadata(metadata) + body
+        body = text
+    return format_srv_metadata(metadata, original_text=text) + body
 
 
 def append_processing(metadata: SrvMetadata, note: str) -> SrvMetadata:

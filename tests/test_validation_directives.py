@@ -25,3 +25,14 @@ def test_ignores_raw_subtree(tmp_path: Path) -> None:
     source.write_text("#<source syntax\n")
 
     directives.check(root=tmp_path)
+
+
+def test_ignores_commented_directives_but_checks_after_block(tmp_path):
+    path = tmp_path / "CAVE.SRV"
+    text = "; #< example\n#[\n#< example\n#]\n"
+    path.write_text(text)
+    directives.check(root=tmp_path)
+
+    path.write_text(text + "#<bogus\n")
+    with pytest.raises(CheckFailed, match="Invalid #< directive"):
+        directives.check(root=tmp_path)

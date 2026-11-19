@@ -52,7 +52,7 @@ def test_renderer_cli_prints_portable_output_path(monkeypatch, capsys) -> None:
 
     assert return_code == 0
     assert capsys.readouterr().out == (
-        "Checked Poligony/OTWORY.SRV from gps-kataster@v1\nGPS fixes: 87\n"
+        "Checked Poligony/OTWORY.SRV from gps-kataster@v1\nRendered gps_fix calls: 87\n"
     )
 
 
@@ -80,7 +80,7 @@ def test_renderer_writes_fix_from_template_object_id(tmp_path: Path, capsys) -> 
 
     assert return_code == 0, captured.err
     assert output.read_text(encoding="utf-8") == "#fix\tCave:0\tE19.1\tN49.2\t123.4m\n"
-    assert "GPS fixes: 1" in captured.out
+    assert "Rendered gps_fix calls: 1" in captured.out
 
 
 def test_renderer_fails_when_required_measurement_value_is_empty(tmp_path: Path, capsys) -> None:
@@ -212,7 +212,7 @@ def test_project_template_embeds_unique_object_ids_for_gps_fixes() -> None:
     assert "fallback" not in template.lower()
 
 
-def test_project_template_uses_only_reviewed_gnss_for_active_wysoka_fix() -> None:
+def test_project_template_uses_w7_0_as_the_only_wysoka_anchor() -> None:
     template = PROJECT_TEMPLATE.read_text(encoding="utf-8")
     active_wysoka_calls = [
         call
@@ -226,10 +226,7 @@ def test_project_template_uses_only_reviewed_gnss_for_active_wysoka_fix() -> Non
     }
 
     assert active_wysoka_calls == [("Wysoka7Progow:W7-0", "KSW-0189")]
-    assert commented_wysoka_calls == {
-        ("Wysoka7Progow:W7-200", "KSW-0153"),
-        ("Wysoka7Progow:W7-500", "KSW-0123"),
-    }
+    assert not commented_wysoka_calls
 
 
 def test_project_template_keeps_ziobrowa_second_entrance_unconstrained() -> None:
@@ -291,6 +288,27 @@ def test_renderer_rejects_missing_source_data(tmp_path, csv_text, error):
     assert not output.exists()
 
 
+@pytest.mark.parametrize("column", ["object_id", "lon", "lat", "elevation_m"])
+def test_renderer_rejects_ambiguous_csv_before_replacing_output(tmp_path, capsys, column):
+    template = tmp_path / "template"
+    measurements = tmp_path / "measurements.csv"
+    output = tmp_path / "OTWORY.SRV"
+    template.write_text("{{ gps_fix('Cave:0', 'OBJ-1') }}")
+    measurements.write_text(
+        f"object_id,lon,lat,elevation_m,{column}\nOBJ-1,19.81,49.25,1200,19.98\n"
+    )
+    output.write_bytes(b"previously reviewed")
+
+    assert (
+        render_otwory.main(
+            ["--template", str(template), "--csv", str(measurements), "--output", str(output)]
+        )
+        == 1
+    )
+    assert f"duplicate column {column}" in capsys.readouterr().err
+    assert output.read_bytes() == b"previously reviewed"
+
+
 @pytest.mark.parametrize(
     "expression",
     [
@@ -303,6 +321,9 @@ def test_renderer_rejects_missing_source_data(tmp_path, csv_text, error):
         "'Cave:0', 'OBJ-1', suffix=unknown_name",
         "'Cave:0', 'OBJ-1', suffix=",
         "'Cave:0', 'OBJ-1', suffix=str('bad')",
+        "'Cave:0', 'OBJ-1', **unknown()",
+        "'Cave:0', 'OBJ-1', **{'suffix': ' /gps'}",
+        "'Cave:0', 'OBJ-1', suffix=' /first', suffix=' /second'",
     ],
 )
 def test_renderer_rejects_invalid_or_executable_template_arguments(tmp_path, expression):
@@ -316,6 +337,61 @@ def test_renderer_rejects_invalid_or_executable_template_arguments(tmp_path, exp
         render.render_entrances(template_path=template, csv_path=measurements, output_path=output)
 
     assert not output.exists()
+
+
+def test_renderer_rejects_unclosed_gps_fix_without_replacing_snapshot(tmp_path):
+    template = tmp_path / "template"
+    measurements = tmp_path / "measurements.csv"
+    output = tmp_path / "output"
+    template.write_text("{{ gps_fix('Cave:0', 'OBJ-1' }}")
+    measurements.write_text("object_id,lon,lat,elevation_m\nOBJ-1,19.1,49.2,1000\n")
+    output.write_bytes(b"reviewed snapshot")
+
+    with pytest.raises(RenderError):
+        render.render_entrances(template_path=template, csv_path=measurements, output_path=output)
+
+    assert output.read_bytes() == b"reviewed snapshot"
+
+
+def test_renderer_partial_write_failure_preserves_reviewed_snapshot(tmp_path, monkeypatch):
+    template = tmp_path / "template"
+    measurements = tmp_path / "measurements.csv"
+    output = tmp_path / "output"
+    template.write_text("{{ gps_fix('Cave:0', 'OBJ-1') }}")
+    measurements.write_text("object_id,lon,lat,elevation_m\nOBJ-1,19.1,49.2,1000\n")
+    output.write_bytes(b"reviewed snapshot")
+    original_open = io.open
+
+    class InterruptedWriter:
+        def __init__(self, stream):
+            self.stream = stream
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            self.stream.close()
+
+        def write(self, value):
+            self.stream.write(value[:5])
+            self.stream.flush()
+            raise OSError("disk full")
+
+    def interrupted_open(file, mode="r", *args, **kwargs):
+        stream = original_open(file, mode, *args, **kwargs)
+        return InterruptedWriter(stream) if "w" in mode else stream
+
+    monkeypatch.setattr(io, "open", interrupted_open)
+
+    with pytest.raises(OSError, match="disk full"):
+        render.render_entrances(template_path=template, csv_path=measurements, output_path=output)
+
+    assert output.read_bytes() == b"reviewed snapshot"
+    assert sorted(path.name for path in tmp_path.iterdir()) == [
+        "measurements.csv",
+        "output",
+        "template",
+    ]
 
 
 @pytest.mark.parametrize("value", ["nan", "inf", "1e3", "49,2"])
@@ -372,9 +448,8 @@ def test_renderer_downloads_named_release_asset_and_reports_provenance(tmp_path,
         "https://example.test/best.csv",
     ]
     assert all(timeout == 60 for _, timeout in requests)
-    assert all(
-        request.get_header("Authorization") == "Bearer test-token" for request, _ in requests
-    )
+    assert requests[0][0].get_header("Authorization") == "Bearer test-token"
+    assert requests[1][0].get_header("Authorization") is None
 
 
 @pytest.mark.parametrize(
@@ -457,6 +532,34 @@ def test_release_request_headers_support_both_token_sources(
     assert request.get_header("Authorization") == expected_auth
     assert request.get_header("Accept") == "application/vnd.github+json"
     assert request.get_header("User-agent")
+
+
+@pytest.mark.parametrize(
+    "url",
+    [
+        "https://example.test/best.csv",
+        "https://github.com/owner/gps/releases/download/v1/best.csv",
+        "http://api.github.com/repos/owner/gps/releases/latest",
+        "https://api.github.com.example.test/best.csv",
+        "https://api.github.com@other.test/best.csv",
+    ],
+)
+def test_release_token_is_only_sent_to_https_github_api(monkeypatch, url):
+    monkeypatch.setenv("GITHUB_TOKEN", "test-token")
+
+    assert render._request(url).get_header("Authorization") is None
+
+
+def test_release_token_is_not_forwarded_by_redirect_handler(monkeypatch):
+    monkeypatch.setenv("GITHUB_TOKEN", "test-token")
+    request = render._request("https://api.github.com/repos/owner/gps/releases/latest")
+
+    redirected = render.urllib.request.HTTPRedirectHandler().redirect_request(
+        request, None, 302, "Found", {}, "https://example.test/best.csv"
+    )
+
+    assert request.get_header("Authorization") == "Bearer test-token"
+    assert redirected.get_header("Authorization") is None
 
 
 def test_local_csv_keeps_provenance_and_skips_unidentified_rows(tmp_path):

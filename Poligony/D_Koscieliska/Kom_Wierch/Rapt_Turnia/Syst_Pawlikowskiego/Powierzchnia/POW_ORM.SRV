@@ -1,0 +1,47 @@
+#[
+SURVEY_KIND     "surface"
+OBJECT_REF      "Pawlikowskiego:Oblazkowa:0.0=KSZ-0090"
+OBJECT_REF      "Pawlikowskiego:Raptawicka:1.0=KSZ-0047"
+SURVEY_ID       "POW_ORM"
+SURVEY_NAME     "Ciag powierzchniowy Oblazkowa-Raptawicka"
+UPDATE_DATE     "2026-11-12"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "Dariusz Lubomski"
+COORDINATOR_EMAIL "darek.lubomski@gmail.com"
+SOURCE_REF      "../_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "F. Filar, B. Chlipala"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "nieznane"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "przywrocono 66 odczytow z ../_RAW/01/SJP_P/POW ORM.SRV bez usredniania; lokalny #fix zastapiono historycznymi dowiazaniami koncow"
+PROCESSING      "DECL=4.83 to zalozenie obliczeniowe dla czerwca 2015, nie potwierdzona data pomiaru; metoda i ograniczenia w ../_RAW/01/README.md"
+PROCESSING      "2026-10-27: usredniono 66 odczytow (11 grup po 3 przod i 3 tyl) do 11 DAV; odwrocono kierunek odczytow tyl, srednia kolowa azymutu; RAW bez zmian; rozbieznosci przod-tyl w komentarzach przy DAV"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
+#]
+
+#prefix2 Pawlikowskiego
+#prefix PawlikowskiegoPow
+#units meters order=DAV
+#units A=D V=D
+; Data pomiaru nieznana; czerwiec 2015 przyjeto tylko do obliczenia DECL.
+#units DECL=4.83
+; P oznacza pomiary powierzchniowe w Survex, grupe segmentow w Walls.
+#segment P
+
+; Dowiazania koncow jak w aktywnym pliku przed usunieciem w 5021fd9.
+Oblazkowa:0.0	p1.0	0	0	0
+; P=przod, T=tyl po odwroceniu; roznice srednich T-P: dD[mm], dA/dV[deg].
+p1.0	p1.1	11.522	68.82	4.72 ; srednia 6 odczytow (3P+3T); RAW 6-11; dD=+7.333, dA=+0.260, dV=-0.003
+p1.1	p1.2	16.546	56.04	-10.02 ; srednia 6 odczytow (3P+3T); RAW 12-17; dD=+8.667, dA=+0.543, dV=-0.050
+p1.2	p1.3	11.150	344.59	27.06 ; srednia 6 odczytow (3P+3T); RAW 18-23; dD=-24.667, dA=-0.337, dV=-0.107
+p1.3	p1.4	12.900	326.30	29.67 ; srednia 6 odczytow (3P+3T); RAW 24-29; dD=-6.333, dA=-0.337, dV=-0.167
+p1.4	p1.5	13.425	246.87	28.74 ; srednia 6 odczytow (3P+3T); RAW 30-35; dD=+12.667, dA=-0.430, dV=-0.020
+p1.5	p1.6	9.143	224.81	29.65 ; srednia 6 odczytow (3P+3T); RAW 36-41; dD=+8.333, dA=-0.793, dV=-0.067
+p1.6	p1.7	5.919	246.80	29.35 ; srednia 6 odczytow (3P+3T); RAW 42-47; dD=-2.000, dA=+0.140, dV=+0.010
+p1.7	p1.8	6.904	265.88	28.91 ; srednia 6 odczytow (3P+3T); RAW 48-53; dD=-10.667, dA=-0.420, dV=+0.103
+p1.8	p1.9	26.098	304.47	43.50 ; srednia 6 odczytow (3P+3T); RAW 54-59; dD=-19.333, dA=-0.493, dV=-0.150
+p1.9	p1.10	1.435	292.64	35.37 ; srednia 6 odczytow (3P+3T); RAW 60-65; dD=-3.667, dA=+0.450, dV=+0.963
+p1.10	p1.11	0.878	302.92	-47.22 ; srednia 6 odczytow (3P+3T); RAW 66-71; dD=+17.333, dA=+0.717, dV=+3.187; roznica V niewyjasniona
+p1.11	Raptawicka:1.0	0	0	0

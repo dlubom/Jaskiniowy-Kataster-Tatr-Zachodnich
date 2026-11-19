@@ -4,4 +4,9 @@
 - **Autor pomiaru**: K. Dudziński, Z. Tabaczyński
 - **Data pozyskania**: 2014-04-14 / 2014-04-17
 - **Dodał**: Dariusz Lubomski
-- **Kompletność**: pojedynczy plik .csp z pełnym pomiarem jaskini
+- **Kompletność**: jeden nowszy CSP z 14 rekordami. Domiar 0–B–11 prowadzi po powierzchni, a odcinki 11–12–13 należą do podziemia. [Paczka 01](01/README.md) opisuje źródła tego podziału i otwarte pytanie o daty pomiarów.
+
+Dokumentacja opisowa potwierdzająca zespół i datę znajduje się w [lokalnej paczce dokumentacji](03/README.md), PDF s. 12-13.
+Wcześniejszy załącznik zachowano oddzielnie w [paczce 02](02/README.md); jego rola i relacja do nowszego CSP są opisane w metadanych paczek.
+
+- [03](03/README.md) — lokalna kopia dokumentacji opisowej.

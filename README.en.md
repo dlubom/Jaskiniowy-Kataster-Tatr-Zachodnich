@@ -2,8 +2,8 @@
 
 # Tatra Cave Registry
 
-![Walls 2D screen](doc/walls_2d_screen.png)
-![Walls 2D screen](doc/walls_3d_screen.png)
+![Walls 2D view](doc/walls_2d_screen.png)
+![Walls 3D view](doc/walls_3d_screen.png)
 ![Survex Aven](doc/Survex.jpeg)
 
 [![Latest Release](https://img.shields.io/github/v/release/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich)](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
@@ -22,7 +22,7 @@ The registry contains objects for which cave survey data is available. Two relat
 - [GPS Kataster Obiektów Tatr](https://github.com/dlubom/gps-kataster-obiektow-tatr) — a database of GPS locations for cave entrances and other field objects. This project uses its published best GPS measurements to determine entrance coordinates. Ready-to-use GIS and field data can be downloaded from the [latest release](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/latest).
 - [Georeferencer](https://github.com/dlubom/Georeferencer) — georeferenced scans of cave plans in GeoTIFF format, including objects without survey data in this registry. A ready-to-use GeoTIFF package can be downloaded from the [latest release](https://github.com/dlubom/Georeferencer/releases/latest).
 
-The project is based on the Walls software – you can find the [latest version of the program and its manual here](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
+The project uses Walls. Download the [latest release](https://github.com/wallscavesurvey/walls/releases) or read the [user manual (PDF)](https://texasspeleologicalsurvey.org/software/walls/Walls_manual.pdf).
 
 The project also works with [Survex](https://survex.com/) — just install the latest version and open `KATASTER.wpj` in Aven, or compile from the command line: `cavern KATASTER.wpj`. In Aven you can also load the terrain model `Powierzchnia/Survex/N49E019_VF1.hgt`.
 

@@ -82,16 +82,16 @@ def average_shots(srv_file):
     i = 0
     stats = {"groups": 0, "shots_before": 0, "shots_after": 0}
 
-    in_metadata = False
+    comment_depth = 0
     while i < len(lines):
         line = lines[i]
         if line.strip().startswith("#["):
-            in_metadata = True
-        if in_metadata:
+            comment_depth += 1
+        if comment_depth:
             result.append(line)
             i += 1
             if line.strip().startswith("#]"):
-                in_metadata = False
+                comment_depth -= 1
             continue
 
         if not is_shot_line(line):

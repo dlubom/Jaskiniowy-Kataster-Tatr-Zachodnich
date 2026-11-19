@@ -130,6 +130,31 @@ def test_material_hashes_skip_readmes(tmp_path: Path) -> None:
     assert hashes[0].path.as_posix().endswith("source.srv")
 
 
+def test_material_hashes_include_archival_readmes_but_skip_package_metadata(tmp_path):
+    raw = tmp_path / "_RAW"
+    package = raw / "01"
+    original = package / "archive" / "README.md"
+    original.parent.mkdir(parents=True)
+    (raw / "README.md").write_text("index")
+    (package / "README.md").write_text("package metadata")
+    original.write_bytes(b"abc")
+    other_readme = package / "README.TXT"
+    other_readme.write_bytes(b"")
+
+    hashes = material_hashes(tmp_path)
+    assert len(hashes) == 2
+    assert set(hashes) == {
+        MaterialHash(
+            path=other_readme,
+            sha256="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        ),
+        MaterialHash(
+            path=original,
+            sha256="ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+        ),
+    }
+
+
 @pytest.mark.parametrize("heading", ["## Zawartość", "## Uwagi"])
 def test_only_first_inventory_section_can_supply_contents_or_metadata(heading):
     text = RAW_README + (

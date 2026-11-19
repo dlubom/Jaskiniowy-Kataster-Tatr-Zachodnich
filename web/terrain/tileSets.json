@@ -1,0 +1,20 @@
+[
+  {
+    "title": "NMT GUGiK 2012 + DMR 5.0 / EVRF2007",
+    "subdirectory": "/dtm",
+    "minZoom": 14,
+    "maxZoom": 14,
+    "initialZoom": 15,
+    "overlayMaxZoom": 14,
+    "divisions": 128,
+    "dtmScale": 16,
+    "minX": 9093,
+    "minY": 5607,
+    "maxX": 9105,
+    "maxY": 5611,
+    "attributions": [
+      "GUGiK: NMT ALS 2012, modele dH i PL-geoid2021; GKÚ Bratislava: DMR 5.0 (CC BY 4.0). Transformacja wysokości do PL-EVRF2007-NH."
+    ],
+    "log": false
+  }
+]

@@ -6,3 +6,7 @@
 - **Dodał**: Dariusz Lubomski
 - **Kompletność**: pojedynczy plik .csp z pełnym pomiarem jaskini
 - **Współrzędne otworu (wg Z. Tabaczyńskiego)**: N 49°14'41.2", E 19°54'50.03"
+
+Dokumentacja opisowa potwierdzająca zespół i datę znajduje się w [lokalnej paczce dokumentacji](02/README.md), PDF s. 5.
+
+- [02](02/README.md) — lokalna kopia dokumentacji i historycznych zestawień współrzędnych i wysokości.

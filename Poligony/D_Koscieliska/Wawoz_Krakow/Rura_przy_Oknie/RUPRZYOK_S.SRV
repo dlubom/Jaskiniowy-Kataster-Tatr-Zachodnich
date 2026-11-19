@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.E-09.39"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0830"
 CAVE_NAME       "Rura przy Oknie"
+OBJECT_REF      "RuraPrzyOknie:0=KSW-0227"
 SURVEY_ID       "RUPRZYOK"
 SURVEY_NAME     "Rura przy Oknie"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -15,6 +17,7 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "2006-09-09"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix RuraPrzyOknie

@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "WPJ:JSR"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0537"
 CAVE_NAME       "Jaskinia Spiacych Rycerzy"
+OBJECT_REF      "SpiacychRycerzy:1=MLW-0023"
 SURVEY_ID       "JASSR"
 SURVEY_NAME     "Jaskinia Spiacych Rycerzy"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -15,6 +17,7 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "2009-01-01"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #units meters order=DAV

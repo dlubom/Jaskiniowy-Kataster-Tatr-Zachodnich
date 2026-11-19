@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.C-16.01"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0604"
 CAVE_NAME       "Jaskinia Kalacka"
+OBJECT_REF      "Kalacka:0=BYZ-0031"
 SURVEY_ID       "A1"
 SURVEY_NAME     "Ciag glowny"
-UPDATE_DATE     "2026-10-14"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -17,6 +19,7 @@ SURVEY_DATE     "2013-11-09"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
 PROCESSING      "uzupelniono dwa splaje z _RAW/01/kalacka.srv (rekordy TOP 69 i 82)"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #date 2013-11-09

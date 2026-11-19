@@ -1,6 +1,6 @@
 # Changelog
 
-Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" sa udokumentowane w tym pliku.
+Wszystkie istotne zmiany w projekcie "Jaskiniowy Kataster Tatr" są udokumentowane w tym pliku.
 
 Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjonowanie stosuje [Semantic Versioning](https://semver.org/).
 
@@ -8,8 +8,253 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Dodano
 
-- Miętusia: przywrócono 45 rekordów przekrojów LRUD z pomiarów
-  Rury i Sali Matki Boskiej, z odnośnikami do źródłowych wierszy SVX.
+- W Miętusiej przywrócono ze źródłowych SVX 22 przekroje LRUD w Rurze
+  i 23 w Sali Matki Boskiej.
+- Do archiwum Novej Kresanicy dodano model z 2009 r. Zawiera odpowiedniki
+  155 odcinków katastrowych. Datę pomiaru w siedmiu plikach SRV oznaczono
+  jako nieustaloną. Historyczna data do obliczeń deklinacji pozostała w plikach.
+
+## [v2.0.3] - 2026-11-19
+
+### Naprawione
+
+- Dolny otwór Mnichowej Studni Wyżniej (`MnichStudniaWyz:11`) jest widoczny
+  w eksporcie otworów. Jego współrzędne nadal wynikają z domiaru. Walidacja
+  sprawdza teraz oznaczenie każdego otworu wskazanego przez `OBJECT_REF`.
+- Skorygowano pochodzenie ciągów Kujata i Partii Wawelskich w Czarnej oraz
+  opisy dat pomiarów Czarnej, Mnichowej Studni Wyżniej i Ptasiej Studni.
+- Walidacja kompiluje model raz i z tej samej kopii tworzy eksporty.
+  Sprawdza geometrię i pola atrybutów w warstwach SHP oraz deklarowany układ
+  EPSG:32634.
+  Walidator Walls zamyka wskazówkę startową także podczas rekompilacji
+  i odnajduje wynik, gdy nazwa pliku WPJ różni się od nazwy jego głównej księgi.
+- Renderer wykrywa powtórzone kolumny GPS. Polecenie `jktz-gps-snapshot`
+  sprawdza katalog i nagłówki współrzędnych przed zapisem snapshotu.
+  Narzędzia SRV zachowują końce wierszy i zagnieżdżone komentarze Walls.
+  Walidator rozpoznaje skrócone dyrektywy jednostek, odróżnia definicję makra
+  od jego użycia i poprawnie odczytuje samodzielne przekroje LRUD.
+- Błąd odczytu materiału zatrzymuje tworzenie ZIP i zachowuje poprzednią
+  paczkę. ZIP pomija katalogi robocze trwającej lub przerwanej walidacji.
+  Przygotowanie wersji można ponowić po błędzie zapisu notatek.
+  Git rozpoznaje pliki wyjściowe kompilatorów niezależnie od wielkości liter
+  w rozszerzeniu i pozwala dołączyć oryginały w tych formatach do `_RAW`,
+  zachowując lokalne wykluczenia dla pozostałych plików.
+- Widok 3D korzysta z wbudowanej definicji EPSG:32634. Teren wczytuje się
+  także przy niedostępności epsg.io. Poprawiono instrukcję podglądu lokalnego.
+- Lokalny eksport SHP sprawdza puste warstwy, zgodność liczby odcinków
+  z plikiem zbiorczym i zasięg współrzędnych, tak jak podczas pakowania wydania.
+  Sprawdza pliki z wybranego katalogu także wtedy, gdy ścieżka zawiera `!`.
+  Przy rozbieżności liczby odcinków komunikat wskazuje, gdzie szukać braków
+  lub powielonych odcinków.
+
+## [v2.0.2] - 2026-11-17
+
+### Zmienione
+
+- Zastąpiono Cesium World Terrain statycznymi kaflami NMT GUGiK 2012 i DMR 5.0
+  w PL-EVRF2007-NH dla pełnego widoku 3D, bez dopasowania do otworów.
+
+## [v2.0.1] - 2026-11-16
+
+### Naprawione
+
+- Zaktualizowano 11 punktów dowiązania na podstawie
+  [GPS v2.1.3](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v2.1.3):
+  dolny otwór Bańdziocha Kominiarskiego, oba otwory Koziej, Lejbusiową,
+  Małą w Mułowej, Marmurową, Miętusią Wyżnią, Lodową Litworową, Jaskinię
+  nad Dachem, Wielką Litworową i kotwicę systemu Wysoka–Za Siedmiu
+  Progami–Pośrednia.
+- Kotwicę `W7-0` przesunięto o 8,19 m w poziomie. Położenie czterech
+  otworów przeliczonych w GPS z tej kotwicy nadal wynika z poligonu JKTZ.
+  Zachowano ich powiązania `OBJECT_REF` i surowe odczyty pomiarowe.
+
+## [v2.0.0] - 2026-11-12
+
+### Zmienione
+
+- Zmieniono kontrakt metadanych wszystkich 210 SRV: wymagane `SURVEY_KIND`
+  rozróżnia pomiary podziemne i powierzchniowe. Podziemne `CAVE_ID` wskazuje
+  jaskinię lub końcowy system GPS (`C-…`); numery PIG i identyfikatory `WPJ:*`
+  nie są już akceptowane. Domiary nie mają pól `CAVE_ID` ani `CAVE_NAME`.
+  Importery metadanych i wywołania CLI wymagają dostosowania do tego kontraktu.
+- `OBJECT_REF` jawnie wiąże rozpoznane otwory ze stacjami, także bez fixa.
+  Walidacja odrzuca nieznane ID, sprzeczne przypisania i referencje do stacji
+  nieobecnych w kompilacji.
+- Wydzielono domiary Lodowej Małołąckiej, Mnichowej Studni Wyżniej i
+  Koprowej–Świstaczej; `POW_ORM` i `11A` Ptasiej sklasyfikowano jako
+  powierzchniowe. Zachowano odczyty, geometrię i archiwa RAW; 26 odcinków
+  przestało być zaliczanych do długości podziemnej.
+- Fix górnego otworu Mnichowej wskazuje `MLW-0054` z katalogu GPS v2.1.2.
+  Współrzędne OTWORY pozostały niezmienione; dolny otwór zachowuje pozycję
+  z poligonu, bez dodatkowego fixa.
+- Nierozpoznaną, wykomentowaną transkrypcję Dziury X przeniesiono do
+  `doc/robocze/DZX_ROB.SRV.txt`, zachowując jej bajty i materiały źródłowe.
+- Pełna walidacja, joby CI i pakowanie korzystają z jednego wydania GPS:
+  Best CSV, katalogu GPKG i manifestu z sumami SHA-256. `--gps-snapshot`
+  pozwala odtworzyć sprawdzenie offline; `--csv` służy do podglądu renderu.
+  Zapis OTWORY sprawdza kandydata w tymczasowym projekcie przed podmianą.
+
+### Naprawione
+
+- Lodowa w Ciemniaku: usunięto nadpisywane deklaracje deklinacji;
+  pozostawiono wyliczanie z daty, bez zmian pomiarów i geometrii.
+  Uzupełniono metadane paczki pomiarowej i bibliografię.
+- Czarna i Bańdzioch Kominiarski: poprawiono pięć odwołań `SOURCE_REF`
+  na podstawie archiwów i historii importu, bez zmian pomiarów.
+- Walidacja i eksporty chronią istniejące pliki; eksport i Pages odrzucają
+  ostrzeżenia kompilatora. Paczka PR sprawdza zatwierdzony snapshot GPS.
+- Renderer GPS zapisuje atomowo, odrzuca błędne wyrażenia szablonu
+  i ogranicza przekazywanie tokena do API GitHub.
+- Walidatory prawidłowo rozpoznają komentarze, dyrektywy i długości
+  z jednostkami. Kontrole archiwów zachowują oryginalne README i poddrzewa.
+- Pakowanie pomija plik `.git` worktree i nie przegląda wykluczonych
+  katalogów. Ręczne wdrożenie Pages pokazuje SHA, jeśli commit nie ma taga.
+- Przygotowanie wydania odrzuca katalog jako cel release notes przed
+  zmianą wersji w `INFO.txt`.
+
+## [v1.4.16] - 2026-11-10
+
+### Dodane
+
+- Studnia w Kazalnicy: odzyskano wektoryzację poligonu, przekroje i
+  historyczne modele z korespondencji.
+- Goryczkowa: zachowano wariant opracowania Therion z 2016 r.
+
+### Naprawione
+
+- Studnia w Kazalnicy: uzupełniono numer inwentarzowy, skład zespołu i
+  doprecyzowano datowanie sesji. Oddzielono autorstwo pomiarów od wektoryzacji.
+- Goryczkowa: uzgodniono metadane zespołów G2 i G3 ze źródłem.
+
+## [v1.4.15] - 2026-11-10
+
+### Dodane
+
+- Odzyskano źródła Lodowej Małołąckiej, Dziury i Mroźnej oraz
+  zarchiwizowano niewłączone pomiary dwóch schronów w Skale Kmietowicza
+  i materiał lokalizacyjny Pomarańczarni.
+
+### Naprawione
+
+- Lodowa Małołącka: przeliczono trzy kąty zenitalne w Janosikowych
+  Partiach, skorygowano datę odcinka 29–59 i dowiązano stację 0 do
+  dolnego otworu (MLW-0011). Górny otwór oznaczono na stacji 31.
+  Cztery odcinki między otworami oznaczono jako powierzchniowe.
+- Dziura i Mroźna: uzupełniono daty sesji z korespondencji w metadanych
+  bez przypisywania ich poszczególnym odcinkom.
+- Smocza Jama: dowiązano punkt GPS dolnego otworu (`KSW-0065`) do stacji
+  `1.0` i dołączono oryginalny `SMOCZAJA.SRV` Filipa Filara do `_RAW/01`.
+
+## [v1.4.14] - 2026-11-09
+
+### Dodane
+
+- Trzy całkowicie wykomentowane SRV z Rzędów Tomanowych (12 odcinków):
+  roboczo Dziura pod Zawaliskiem, Dziura nad Zawaliskiem i nierozpoznana
+  Dziura X. Zachowano literalne odczyty oraz opis hipotez identyfikacji,
+  niezgodności obliczeń, numeracji otworów i ograniczeń GPS.
+- Odzyskane oryginały SVX, PDF, XLS, DOC, SVG i zdjęcia z korespondencji
+  dotyczącej pomiarów Z. Tabaczyńskiego; uzupełniono paczki _RAW oraz
+  rozdzielono role autorów pomiarów i osób przekazujących materiały.
+- Dokumentacja i zestawienia współrzędnych są przechowywane w _RAW
+  właściwych jaskiń, z pełnymi kopiami źródeł wieloobiektowych.
+  Materiały trzech obiektów Rzędów Tomanowych zachowano także przy nazwach
+  roboczych, bez włączania pomiarów do projektu.
+- Uzupełniono wcześniejszy CSP Białej oraz lokalne kopie dokumentacji
+  Dziury przy Piargu, Szczeliny w Kopie, Łamanej Dziury, Dziury nad
+  Zawaliskiem, Dziury pod Zawaliskiem i Lodowej Małołąckiej. Metadane
+  wskazują źródłowe daty, zespoły, numery PIG i obiekty katalogu GPS.
+
+### Naprawione
+
+- Meander w Małołąckim Siodle: przywrócono źródłową kalibrację kompasu
+  INCA=-2.37 bez zmiany odczytów DAV; znak potwierdzono izolowaną próbą
+  w natywnym Walls. Zapisano sumy SHA-256 trzech odzyskanych oryginałów.
+- Koszowa, Wyżnia Koszowa Dziura i Szczelina nad Lejem: oddzielono
+  autorstwo i datę dokumentacji od nieustalonych autorów i dat pomiarów.
+  Zachowano roboczą datę deklinacji i wszystkie odczyty.
+- Dziurka w Trawce: przywrócono źródłowe stacje 5a i 12b zamiast
+  nieudokumentowanych utożsamień z 5 i 12.
+- Zośka: zastąpiono zerowe dowiązanie podstawy kominów przesunięciem
+  wyliczonym z nazwanych pozycji w źródłowym XLS; oznaczono je jako
+  dowiązanie obliczeniowe w segmencie L.
+- Uzupełniono potwierdzone metadane i opisy źródeł, w tym zakres partii
+  Białej, zmiany wariantu Pod Progiem i historyczny zapis Wielkiej Turni.
+- Zweryfikowano metadane z PIG; zastąpiono 10 zastępczych identyfikatorów `WPJ:*`
+  numerami inwentarzowymi i skrócono zapis pochodzenia pliku Zwolińskiego.
+- Wyjaśniono pominięcie 2,30 m w formule podsumowania źródłowego XLS
+  Zośki; odcinek jest zachowany w SRV, a oryginalny arkusz pozostaje bez zmian.
+
+## [v1.4.13] - 2026-11-04
+
+### Dodano
+
+- Otwór II Jaskini Koziej (`Kozia:k9619`, `MTW-0076`), rozpoznany
+  na planie Stanisława Kotarby przy wylocie ciągu nad pięciometrową kaskadą.
+  Przed wyrównaniem różnica między poligonem a pomiarem otworów wynosi
+  15,46 m w 3D, w tym 15,45 m w pionie.
+  [Inwentarz PIG T.E-11.11](https://jaskiniepolski.pgi.gov.pl/Details/Information/1478)
+
+### Zmienione
+
+- Zaktualizowano współrzędne kotwic z pomiarów Marka Jędrzejczaka
+  opublikowanych w [GPS v1.3.3](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.3).
+
+## [v1.4.12] - 2026-10-28
+
+### Naprawione
+
+- Kamienne Mleko: przeniesiono fix i oznaczenia otworu ze stacji `0` na `0'`
+  po porównaniu z planem i pomiarami J. Nowaka; odczyty i orientacja bez zmian.
+
+## [v1.4.11] - 2026-10-27
+
+### Zmienione
+
+- Usunięto wtórny import Miętusiej Wyżniej i powtórzony pień Marmurowej;
+  POW_ORM uśredniono z 66 do 11 DAV. Rozdzielono numerację Pośredniej
+  jako rekonstrukcję wspartą planem, bez pierwotnego protokołu.
+- Oznaczono trzy otwory Pośredniej flagą `ENTRANCE` i nazwami, bez
+  dodawania `#fix`; położenie pozostaje wyliczane z poligonu.
+  Dolny otwór ma alias `W7-PD = W7-505/1` dla zgodności flag z Survex.
+- Segmentem L wyłączono w Survex ponowne liczenie długości ośmiu pomiarów
+  Miętusiej Wyżniej/Goryczkowej oraz odcinka Rury; zachowano odczyty.
+  Dalsze 11 rekordów w Wysokiej, Bańdziochu, Koziej i Litworowej ma
+  tymczasowe L na decyzję koordynatora, z konkretnymi TODO przy danych.
+- CI blokuje duplikaty par stacji w natywnym Walls oraz pary geometryczne
+  Survex przy progu 5%, z pominięciem SPLAY i DUPLICATE; zachowuje raport CSV.
+
+## [v1.4.10] - 2026-10-25
+
+### Zmienione
+
+- Kotwicę Raptawickiej zaktualizowano z opublikowanego GPS v1.3.2
+  (H1140,8 m PL-KRON86-NH). Pozostałe siedem otworów jest wynikiem sieci.
+  Dokładność kotwicy i sieci pozostaje nieznana.
+
+### Naprawione
+
+- System Pawlikowskiego: przywrócono źródłowe wyłączenie Mylnej `638–639`
+  (4,60 m), doprecyzowano daty i instrumenty. Trzynaście pomiarów połączeń
+  z czerwca 2015 wydzielono bez zmiany odczytów i bez wymyślonego dnia.
+- Przywrócono 66 odczytów powierzchniowych Obłazkowa–Raptawicka.
+  Jedynym fixem systemu jest Raptawicka z GPS Katastra; oznaczono osiem
+  otworów, pozostałe współrzędne wynikają z wyrównania sieci.
+  `DECL=4.83` odpowiada czerwcu 2015; dla powierzchni jest założeniem,
+  ponieważ data pomiaru pozostaje nieznana. Dokładność wyników jest nieznana.
+
+## [v1.4.9] - 2026-10-24
+
+### Zmienione
+
+- Zaktualizowano współrzędne i wysokości sześciu otworów według
+  [wydania GPS v1.3.1](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.1):
+  Koprowej Studni, Małej w Mułowej, Marmurowej, Świstaczej,
+  Szarej Studni i Zaspałkowej Szczeliny. Przesunięcia poziome wynoszą
+  od 0,60 do 2,21 m, a zmiany wysokości od -1,74 do +3,35 m.
+- Przyjęto nowszy stan tych samych rekordów TPN. Wysokości pochodzą
+  z NMT TPN i opisują grunt w położeniu punktu; nie potwierdzają
+  wysokości progu otworu. Datum pionowe i dokładność pozostają nieznane.
 
 ## [v1.4.8] - 2026-10-16
 

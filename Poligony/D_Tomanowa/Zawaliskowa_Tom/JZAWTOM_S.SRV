@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.F-10.21"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0281"
 CAVE_NAME       "Jaskinia Zawaliskowa Tomanowa"
+OBJECT_REF      "ZawaliskawaTom:0=KSW-0085"
 SURVEY_ID       "JZAWTOM"
 SURVEY_NAME     "Jaskinia Zawaliskowa Tomanowa"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -15,6 +17,7 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "2009-07-12"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix ZawaliskawaTom

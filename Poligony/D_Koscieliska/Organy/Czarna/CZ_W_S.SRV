@@ -1,20 +1,23 @@
 #[
-CAVE_ID         "T.E-09.12"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0699"
 CAVE_NAME       "Jaskinia Czarna"
 SURVEY_ID       "W1"
 SURVEY_NAME     "Partie Wawelskie"
-UPDATE_DATE     "2026-09-25"
+UPDATE_DATE     "2026-11-18"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
-SOURCE_REF      "_RAW/01"
+SOURCE_REF      "_RAW/03"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "Stanislaw Kotarba i odkrywcy Partii Wawelskich"
 INSTRUMENT      "busola, tasma"
-SURVEY_DATE     "1981-01-01"
+SURVEY_DATE     "1978/1981"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "Bezposrednie nawiazanie do KujatGlowny:55; pomiary bez zmian."
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
+PROCESSING      "99 czynnych odcinkow oraz jedno wykreslone polaczenie odpowiadaja arkuszowi Wawelskie w Czarna 1979-2015.xls. Pomiary z lat 1978-1981; #date 1981-01-01 sluzy do obliczenia deklinacji."
 #]
 
 #prefix2 Czarna

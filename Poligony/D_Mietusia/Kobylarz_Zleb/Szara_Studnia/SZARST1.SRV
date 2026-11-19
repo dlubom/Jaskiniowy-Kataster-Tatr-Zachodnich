@@ -1,20 +1,28 @@
 #[
-CAVE_ID         "WPJ:SZARSTD"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0201"
 CAVE_NAME       "Szara Studnia"
+OBJECT_REF      "SzaraStudnia:0=MTW-0020"
 SURVEY_ID       "SZARST1"
 SURVEY_NAME     "Szara Studnia"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
 SOURCE_REF      "_RAW/01"
+SOURCE_REF      "_RAW/02"
+SOURCE_REF      "_RAW/03"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
-TEAM            "nieznane"
-INSTRUMENT      "nieznane"
+TEAM            "D. Fuja"
+TEAM            "Z. Tabaczynski"
+TEAM            "M. Parczewski"
+INSTRUMENT      "Topo-Vulcan"
 SURVEY_DATE     "1999-05-28"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+PROCESSING      "uzupelniono zespol i instrument wedlug zrodlowej dokumentacji PDF s.27 (_RAW/03); zarchiwizowano osobne historyczne zdjecia GPS; 25 wektorow i aktywne fixy bez zmian"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #units meters order=DAV

@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.D-11.01"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0305"
 CAVE_NAME       "Jaskinia Mietusia"
+OBJECT_REF      "Mietusia:ru_0=MTZ-0023"
 SURVEY_ID       "RU"
 SURVEY_NAME     "Rura"
-UPDATE_DATE     "2026-10-18"
+UPDATE_DATE     "2026-11-19"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Pawel Gogolak"
 COORDINATOR_EMAIL "pafffel@gmail.com"
@@ -15,7 +17,9 @@ INSTRUMENT      "DistoX"
 SURVEY_DATE     "2022-10-21"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
-PROCESSING      "przywrocono 22 rekordy LRUD z _RAW/01/rura.svx z kierunkami przekrojow"
+PROCESSING      "2026-10-27: #S L na ru_2-ru_3 wylacza powtorne liczenie dlugosci w Survex; szkic autora i trzy ponowne pomiary wspieraja decyzje; odczyty i stacje zachowano, tozsamosc ru_3/ru_4 niepotwierdzona"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
+PROCESSING      "2026-11-19: dodano 22 przekrojow LRUD z rura.svx"
 #]
 
 #prefix Mietusia
@@ -29,7 +33,10 @@ PROCESSING      "przywrocono 22 rekordy LRUD z _RAW/01/rura.svx z kierunkami prz
 ; Otwor w tym pliku: Mietusia:ru_0 - fix/flag/note w Poligony/OTWORY.SRV
 ru_0	ru_1	2.68	238.9	-14.3
 ru_1	ru_2	3.61	232.4	-28.5
-ru_2	ru_3	4.44	266.6	-21.3	; odgalezienie slepe
+; Szkic autora pokazuje 3/4 w jednym korytarzu; RAW rura_res_a/b/c.svx maja tu jedna noge ~4.45 m.
+; Szkic: https://github.com/RadostW/jaskinie/blob/1628dd63d6ad8ad12e51867684875d8ffd13bfdf/Drawings/Jaskinia_Mietusia/Scraps/PDFs/rura_top_plan.pdf
+; Dawny opis "odgalezienie slepe" nie ma potwierdzenia w szkicu; brak formalnego equate 3=4.
+ru_2	ru_3	4.44	266.6	-21.3	#S L	; Survex: dlugosc liczona w ru_2-ru_4; TODO(PR146): potwierdzic z autorami relacje ru_3/ru_4; stacji nie scalono.
 ru_2	ru_4	4.46	265.5	-21.4
 ru_4	ru_5	3.55	233.0	-22.3
 ru_5	ru_6	1.30	269.8	-39.1
@@ -782,22 +789,19 @@ ru_19	-	0.62	58.7	35.5
 ru_19	-	1.36	61.9	41.8
 ru_19	-	0.70	141.7	-35.2
 
-; === Przekroje LRUD ze zrodla ===
-; L/R/U/D zachowane doslownie; piata wartosc = azymut siatkowy przekroju.
-; Kierunek: konce z osi bloku PASSAGE, srodek z dwusiecznej poziomej (Aven).
-; Azymuty obliczone z geometrii bazowego poligonu JKTZ; nie sa odczytami kompasu.
+; Piata wartosc przekroju to azymut siatkowy obliczony z osi poligonu.
 #units LRUD=F:LRUD
 
-; _RAW/01/rura.svx, PASSAGE 1: 1 -> 0 -> 2
+; Blok PASSAGE 1
 ru_1	<0.51,0.41,0.45,2.26,65.61>	; _RAW/01/rura.svx:777
 ru_0	<0.67,0.56,0.50,1.81,153.77>	; _RAW/01/rura.svx:778
 ru_2	<0.00,2.26,1.42,2.26,241.92>	; _RAW/01/rura.svx:779
 
-; _RAW/01/rura.svx, PASSAGE 2: 2 -> 3
+; Blok PASSAGE 2
 ru_2	<0.45,1.58,1.42,2.26,273.33>	; _RAW/01/rura.svx:782
 ru_3	<0.00,0.00,0.00,0.00,273.33>	; _RAW/01/rura.svx:783
 
-; _RAW/01/rura.svx, PASSAGE 3: 2 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13 -> 14 -> 15 -> 16 -> 17 -> 18 -> 19
+; Blok PASSAGE 3
 ru_2	<0.37,1.55,1.42,2.26,272.21>	; _RAW/01/rura.svx:786
 ru_4	<1.18,0.31,0.99,0.89,255.91>	; _RAW/01/rura.svx:787
 ru_5	<0.47,1.00,1.27,0.90,257.94>	; _RAW/01/rura.svx:788

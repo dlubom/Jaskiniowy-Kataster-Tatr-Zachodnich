@@ -3,7 +3,7 @@ from __future__ import annotations
 import io
 import subprocess
 from pathlib import Path
-from unittest.mock import Mock
+from unittest.mock import MagicMock, Mock
 
 import pytest
 
@@ -27,8 +27,9 @@ def test_cavern_streams_combined_output_and_keeps_raw_log(
 ):
     executable = str(tmp_path / "Survex tools" / "cavern.exe")
     monkeypatch.setattr(tools.shutil, "which", lambda name: executable)
-    process = Mock(stdout=io.BytesIO(b"station\nlegacy \xff\n"))
-    process.wait.return_value = returncode
+    data = b"x" * 4095 + "ł\nlegacy ".encode() + b"\xff\n"
+    process = MagicMock(stdout=io.BytesIO(data), returncode=returncode)
+    process.__enter__.return_value = process
     start = Mock(return_value=process)
     monkeypatch.setattr(tools.subprocess, "Popen", start)
     logfile = tmp_path / "cavern.log"
@@ -46,9 +47,18 @@ def test_cavern_streams_combined_output_and_keeps_raw_log(
         cwd=str(tmp_path),
         bufsize=0,
     )
-    process.wait.assert_called_once_with()
-    assert capsys.readouterr().out == "station\nlegacy \ufffd\n"
-    assert logfile.read_bytes() == b"station\nlegacy \xff\n"
+    process.__exit__.assert_called_once()
+    assert capsys.readouterr().out == data.decode("utf-8", errors="replace")
+    assert logfile.read_bytes() == data
+
+
+def test_unwritable_log_does_not_start_compilation(tmp_path, monkeypatch):
+    monkeypatch.setattr(tools.shutil, "which", lambda name: name)
+    start = Mock()
+    monkeypatch.setattr(tools.subprocess, "Popen", start)
+    with pytest.raises(OSError):
+        tools.cavern(["KATASTER.wpj"], log_to=tmp_path / "absent" / "output.log")
+    start.assert_not_called()
 
 
 @pytest.mark.parametrize("name", ["survexport", "ogr2ogr"])
@@ -56,8 +66,8 @@ def test_export_wrappers_resolve_the_binary_and_forward_arguments(monkeypatch, c
     executable = str(Path("/tools") / name)
     which = Mock(return_value=executable)
     monkeypatch.setattr(tools.shutil, "which", which)
-    process = Mock(stdout=io.BytesIO(b"done\n"))
-    process.wait.return_value = 0
+    process = MagicMock(stdout=io.BytesIO(b"done\n"), returncode=0)
+    process.__enter__.return_value = process
     start = Mock(return_value=process)
     monkeypatch.setattr(tools.subprocess, "Popen", start)
 

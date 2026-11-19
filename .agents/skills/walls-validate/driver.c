@@ -115,7 +115,8 @@ int main(int argc, char **argv) {
         EnumWindows(scan_top, 0);
         if (dialog) {
             GetWindowTextA(dialog, title, sizeof(title));
-            if (!sent && !strcmp(title, "Tip of the Day")) {
+            if (!strcmp(title, "Tip of the Day")) {
+                puts("DISMISSED_STARTUP_TIP"); stable = 0;
                 PostMessageA(dialog, WM_COMMAND, IDOK, 0); Sleep(250); continue;
             }
             puts("WALLS_DIALOG"); dump(dialog); result = 20; break;

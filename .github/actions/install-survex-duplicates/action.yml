@@ -1,0 +1,54 @@
+name: Install Survex Duplicates binary
+description: Download the pinned v1.0.0 executable and verify its archive, version and revision.
+
+runs:
+  using: composite
+  steps:
+    - name: Download, verify and smoke-test binary distribution
+      shell: python
+      run: |
+        import hashlib
+        import os
+        import pathlib
+        import subprocess
+        import urllib.request
+        import zipfile
+
+        version = "v1.0.0"
+        revision = "c1e59ebd15ff41aef46f453d57100e58772c8c71"
+        distributions = {
+            ("Linux", "X64"): ("linux_amd64", "82a300abd021e81613c9319dc2378e1fba756fc50682c87e262a788e6e84f503"),
+            ("Linux", "ARM64"): ("linux_arm64", "3f55957c808885bca1a1283832983f6420d6993f2cf04c4ff96c9190f181286b"),
+            ("Windows", "X64"): ("windows_amd64", "d073786c82513f7c0598189dfd16eb62e88a5b1c74d5c73d726f6d80290ff22b"),
+            ("Windows", "ARM64"): ("windows_arm64", "df4ec4ed592e1122776b2ea9584cd83808248638c193594d3fc6c5d5b038d041"),
+            ("macOS", "X64"): ("darwin_amd64", "721d1ab6359dbcac726d52e4f8afe1d44a6911be8ef344d0190f0050a057f8ff"),
+            ("macOS", "ARM64"): ("darwin_arm64", "ade65593c02bb090c1e7f404d5e63fb1a4034b1aedb7707b2c6a2b16eb8cb848"),
+        }
+        runner = os.environ["RUNNER_OS"]
+        target, expected_sha = distributions[(runner, os.environ["RUNNER_ARCH"])]
+        directory = (pathlib.Path(os.environ["RUNNER_TEMP"]) / f"jktz-survex-duplicates-{version}").resolve()
+        directory.mkdir()
+        name = f"survex-duplicates_{version}_{target}.zip"
+        url = f"https://github.com/dlubom/survex-duplicates/releases/download/{version}/{name}"
+        archive = directory / name
+        with urllib.request.urlopen(url, timeout=60) as response:
+            archive.write_bytes(response.read())
+        actual_sha = hashlib.sha256(archive.read_bytes()).hexdigest()
+        if actual_sha != expected_sha:
+            raise RuntimeError(f"SHA-256 mismatch for {name}: {actual_sha}")
+        executable_name = "survex-duplicates.exe" if runner == "Windows" else "survex-duplicates"
+        executable = directory / executable_name
+        with zipfile.ZipFile(archive) as package:
+            executable.write_bytes(package.read(executable_name))
+        if runner != "Windows":
+            executable.chmod(0o755)
+        result = subprocess.run(
+            [str(executable), "--version"],
+            check=True, capture_output=True, text=True, timeout=30,
+        )
+        expected_version = f"survex-duplicates {version} ({revision})"
+        if result.stdout.strip() != expected_version:
+            raise RuntimeError(f"Unexpected survex-duplicates version: {result.stdout!r}")
+        print(result.stdout.strip())
+        with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as environment:
+            environment.write(f"SURVEX_DUPLICATES={executable}\n")

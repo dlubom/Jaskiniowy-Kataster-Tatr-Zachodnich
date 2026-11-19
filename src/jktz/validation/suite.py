@@ -1,29 +1,33 @@
 from __future__ import annotations
 
 import contextlib
-import shutil
 import sys
+import tempfile
 from collections.abc import Callable, Iterator, Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import TextIO
 
-from jktz.entrances.render import RenderError, render_entrances
+from jktz.entrances.render import (
+    DEFAULT_GITHUB_REPO,
+    DEFAULT_TEMPLATE,
+    RenderError,
+    render_entrances,
+)
 from jktz.exports import pipeline
-from jktz.exports import tools as exports_tools
+from jktz.gps_catalog import GpsSnapshot, download_snapshot, load_snapshot
+from jktz.metadata.identity import SurveyIdentity
 from jktz.reporting import CheckFailed
 from jktz.validation import (
+    catalogue,
     cavern_warnings,
     coordinates,
     decimal_format,
     directives,
-    empty_shapefiles,
     filenames,
     metadata,
     non_ascii,
     prefixes,
-    shapefiles_count,
-    shapefiles_extent,
     unattached,
 )
 
@@ -37,6 +41,8 @@ class ValidationContext:
     cavern_log: Path = Path("cavern_output.txt")
     exports_dir: Path = Path("validate-exports")
     exports_version: str = "validate"
+    gps_snapshot: Path | None = None
+    keep_exports: bool = False
 
 
 @dataclass(frozen=True)
@@ -85,35 +91,38 @@ def _indent_stdout(prefix: str = _EXPORTS_INDENT) -> Iterator[None]:
         sys.stdout = original
 
 
-def _check_rendered_entrances() -> None:
+def _check_rendered_entrances(snapshot: GpsSnapshot) -> None:
     try:
-        result = render_entrances(check=True)
+        result = render_entrances(check=True, csv_path=snapshot.csv_path)
     except (OSError, RenderError) as exc:
         raise CheckFailed(f"ERROR: entrance snapshot check failed: {exc}") from exc
 
     print(f"Checked {result.output.as_posix()} from {result.source}")
-    print(f"GPS fixes: {result.gps_fixes}")
+    print(f"Rendered gps_fix calls: {result.gps_fixes}")
 
 
 def _check_exports(context: ValidationContext) -> None:
     with _indent_stdout():
-        pipeline.run_exports(
+        pipeline.export_formats(
             version=context.exports_version,
             outdir=context.exports_dir,
         )
-    empty_shapefiles.check(outdir=context.exports_dir)
-    shapefiles_count.check(
-        outdir=context.exports_dir,
-        version=context.exports_version,
-    )
-    shapefiles_extent.check(
-        outdir=context.exports_dir,
-        version=context.exports_version,
-    )
 
 
-def validation_steps(context: ValidationContext) -> tuple[ValidationStep, ...]:
-    """Build the ordered validation contract from small, independently testable steps."""
+def validation_steps(
+    context: ValidationContext, snapshot: GpsSnapshot
+) -> tuple[ValidationStep, ...]:
+    """Build the checks around one release and one set of survey identities."""
+    identities: dict[Path, SurveyIdentity] = {}
+    compiled = context.exports_dir / f"JKTZ-{context.exports_version}.3d"
+    compile_log = context.exports_dir / f"JKTZ-{context.exports_version}-cavern-log.txt"
+
+    def check_metadata() -> None:
+        identities.update(metadata.check())
+
+    def check_catalogue() -> None:
+        catalogue.check_catalogue(snapshot, DEFAULT_TEMPLATE, identities)
+
     return (
         ValidationStep(
             "Checking SRV filenames format",
@@ -123,7 +132,7 @@ def validation_steps(context: ValidationContext) -> tuple[ValidationStep, ...]:
         ValidationStep(
             "Checking SRV metadata contract",
             "SRV metadata contract",
-            metadata.check,
+            check_metadata,
         ),
         ValidationStep(
             "Checking for invalid directives",
@@ -146,9 +155,14 @@ def validation_steps(context: ValidationContext) -> tuple[ValidationStep, ...]:
             prefixes.check,
         ),
         ValidationStep(
+            "Checking GPS catalogue references",
+            "GPS catalogue references",
+            check_catalogue,
+        ),
+        ValidationStep(
             "Checking rendered entrances snapshot",
             "Rendered entrances snapshot",
-            _check_rendered_entrances,
+            lambda: _check_rendered_entrances(snapshot),
         ),
         ValidationStep(
             "Checking entrance coordinates are inside Tatras extent",
@@ -158,17 +172,24 @@ def validation_steps(context: ValidationContext) -> tuple[ValidationStep, ...]:
         ValidationStep(
             "Compiling with cavern",
             None,
-            lambda: exports_tools.cavern(["KATASTER.wpj"], log_to=context.cavern_log),
+            lambda: pipeline.compile_model(
+                context.exports_version, context.exports_dir, log_to=context.cavern_log
+            ),
         ),
         ValidationStep(
             "Checking for unattached stations",
             "Unattached stations",
-            lambda: unattached.check(log_path=context.cavern_log),
+            lambda: unattached.check(log_path=compile_log),
         ),
         ValidationStep(
             "Checking cavern compile warnings",
             "Cavern compile warnings",
-            lambda: cavern_warnings.check(log_path=context.cavern_log),
+            lambda: cavern_warnings.check(log_path=compile_log),
+        ),
+        ValidationStep(
+            "Checking compiled station references",
+            "Compiled station references",
+            lambda: catalogue.check_compiled_references(compiled, identities),
         ),
         ValidationStep(
             "Checking exports",
@@ -191,8 +212,31 @@ def run_steps(steps: Sequence[ValidationStep]) -> None:
 def run_validation(context: ValidationContext | None = None) -> None:
     """Run the complete repository validation suite and remove temporary exports."""
     context = context or ValidationContext()
+    if context.exports_dir.exists():
+        raise CheckFailed(
+            f"ERROR: validation output already exists: {context.exports_dir}; "
+            "choose an unused directory or move the existing files first"
+        )
+    # Only publish after all checks. A discarded run only cleans its own directory.
+    parent = context.exports_dir.parent if context.keep_exports else None
+    with tempfile.TemporaryDirectory(prefix=".jktz-validation-", dir=parent) as directory:
+        snapshot = _prepare_snapshot(context.gps_snapshot, Path(directory) / "gps")
+        staging = Path(directory) / "checked"
+        run_steps(validation_steps(replace(context, exports_dir=staging), snapshot))
+        if context.keep_exports:
+            staging.rename(context.exports_dir)
+
+
+def _prepare_snapshot(source: Path | None, destination: Path) -> GpsSnapshot:
     try:
-        run_steps(validation_steps(context))
-    finally:
-        if context.exports_dir.exists():
-            shutil.rmtree(context.exports_dir, ignore_errors=True)
+        snapshot = (
+            load_snapshot(source)
+            if source is not None
+            else download_snapshot(DEFAULT_GITHUB_REPO, destination)
+        )
+    except (OSError, ValueError) as exc:
+        raise CheckFailed(f"ERROR: GPS snapshot: {exc}") from exc
+    print(f"GPS snapshot: {snapshot.repo}@{snapshot.tag} (release ID: {snapshot.release_id})")
+    print(f"  Best CSV SHA-256: {snapshot.csv_sha256}")
+    print(f"  Catalogue SHA-256: {snapshot.gpkg_sha256}")
+    return snapshot

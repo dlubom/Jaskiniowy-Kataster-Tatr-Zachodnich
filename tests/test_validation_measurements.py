@@ -58,6 +58,61 @@ def test_active_shot_scanner_preserves_order_across_units_without_order() -> Non
 
 
 @pytest.mark.parametrize(
+    ("body", "oriented"),
+    [
+        ("#u DECL=1\nA B 13 0 0\n", True),
+        ("#units O=AVD\nA B 0 0 13\n", False),
+        ("#u o=AVD\nA B 90 0 0\n", True),
+        ("A, B, 13, 0, 0\n", False),
+        ("#units rect,meters\nA B 13 0 0\n", True),
+    ],
+)
+def test_compass_shot_scanner_accepts_walls_abbreviations_and_separators(body, oriented):
+    assert has_dated_or_declared_active_shots(body) is oriented
+
+
+@pytest.mark.parametrize("value", ["CT O=AVD", "meters DECL=6", "meters,RECT,feet"])
+def test_unused_units_macro_leaves_the_next_shot_undated(value):
+    assert not has_dated_or_declared_active_shots(f'#u $s="{value}"\nA B 10 90 0\n')
+
+
+def test_referenced_units_macros_apply_settings_and_respect_case_and_redefinition():
+    definitions = '#u $s=6,$S = "CT O=AVD"\n#u $setup="meters DECL=$(s)"\n'
+    shot = "A B 90 0 10\n"
+    assert not has_dated_or_declared_active_shots(definitions + "#u $(S)\n" + shot)
+    assert has_dated_or_declared_active_shots(definitions + "#u $(S),$(setup)\n" + shot)
+    assert not has_dated_or_declared_active_shots(
+        definitions + "#u $setup\n#u $(S) $(setup)\n" + shot
+    )
+
+
+def test_semicolon_in_quoted_macro_starts_a_comment_only_after_expansion():
+    definition = '#u $s="meters; DECL=6"'
+    shot = "A B 10 90 0\n"
+    assert has_dated_or_declared_active_shots(definition + " DECL=6\n" + shot)
+    assert not has_dated_or_declared_active_shots(definition + "\n#u $(s) DECL=6\n" + shot)
+
+
+@pytest.mark.parametrize(
+    "lrud",
+    ["<1,2,3,4,90>", "*1,2,3,4,90*", "*1 2 3 4 90*", "<1,2,3,4,90> #s 5"],
+)
+def test_lrud_dimensions_before_date_do_not_make_a_compass_leg(lrud):
+    assert has_dated_or_declared_active_shots(f"A, {lrud}\n#date 2004-06-19\nA B 10 90 0\n")
+
+
+@pytest.mark.parametrize("lrud", ["<1,2,3,4>", "*1,2,3,4*"])
+def test_distance_before_attached_lrud_still_requires_orientation(lrud):
+    survey = f"#u O=AVD\nA, B, 90, 0, 10{lrud}\n"
+    assert not has_dated_or_declared_active_shots(survey)
+    assert has_dated_or_declared_active_shots("#date 2004-06-19\n" + survey)
+
+
+def test_to_station_starting_with_an_asterisk_keeps_its_traverse():
+    assert not has_dated_or_declared_active_shots("A *8 10 90 0 * 1,2,3,4 *\n")
+
+
+@pytest.mark.parametrize(
     "text",
     [
         "#units rect order=NEU\n0 1 1 2 3\n#units CT\n1 2 10 90 0\n",
@@ -93,7 +148,7 @@ def test_units_state_restores_orientation_and_keeps_rectangular_order_separate(t
     "prefix",
     [
         "\n; comment\n",
-        "#[#]\n",
+        "#[ #] is only annotation\n#]\n",
         "#date 2004-06-19\n#units reset\n",
         "#prefix Cave\n",
         "0 <1,2,3,4>\n",
@@ -107,3 +162,33 @@ def test_scanner_reaches_undeclared_shot_after_non_survey_or_zero_rows(prefix: s
 
 def test_fixed_coordinates_are_not_compass_measurements() -> None:
     assert has_dated_or_declared_active_shots("#fix A 10 20 30\n")
+
+
+@pytest.mark.parametrize("distance", ["1m", "10.5F", "10i6.5", "I6", "0i1"])
+@pytest.mark.parametrize("order", ["DAV", "AVD"])
+def test_explicit_distance_units_still_require_orientation(distance, order):
+    values = f"{distance} 90 0" if order == "DAV" else f"90 0 {distance}"
+    body = f"#units order={order}\n0 1 {values}\n"
+
+    assert not has_dated_or_declared_active_shots(body)
+    assert has_dated_or_declared_active_shots("#date 2004-06-19\n" + body)
+    assert has_dated_or_declared_active_shots("#units DECL=0\n" + body)
+
+
+@pytest.mark.parametrize("distance", ["0m", "0F", "0i0", "I0"])
+def test_zero_distance_with_explicit_units_does_not_require_orientation(distance):
+    assert has_dated_or_declared_active_shots(f"0 1 {distance} 0 0\n")
+
+
+def test_date_inside_nested_comment_cannot_orient_a_following_active_shot():
+    comment = "#[ outer\n#[ inner\n#]\n#date 2004-06-19\n#]\n"
+    shot = "0 1 1 90 0\n"
+
+    assert not has_dated_or_declared_active_shots(comment + shot)
+    assert has_dated_or_declared_active_shots(comment + "#date 2004-06-19\n" + shot)
+
+
+def test_close_marker_in_opening_annotation_does_not_expose_comment_date():
+    comment = "#[ opening text #]\n#date 2004-06-19\n#]\n"
+
+    assert not has_dated_or_declared_active_shots(comment + "0 1 1 90 0\n")

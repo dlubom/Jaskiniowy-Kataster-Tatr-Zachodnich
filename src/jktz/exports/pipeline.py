@@ -2,11 +2,13 @@ from __future__ import annotations
 
 import csv
 import shutil
+import sys
 import tempfile
 import time
 from pathlib import Path
 
 from jktz.exports import tools
+from jktz.validation import empty_shapefiles, shapefiles_count, shapefiles_extent
 
 
 def _wait_for_readable(path: Path, timeout: float = 30.0, interval: float = 0.1) -> None:
@@ -16,7 +18,7 @@ def _wait_for_readable(path: Path, timeout: float = 30.0, interval: float = 0.1)
     newly-written file accessible to other processes, so a subsequent ogr2ogr
     call may see ``Unable to open datasource``. We wait for two consecutive
     stable-size readings + a successful open before declaring the file ready.
-    On Linux/Docker the first iteration succeeds, so this is essentially a no-op.
+    On POSIX a completed writer's nonempty, readable output is ready immediately.
     """
     deadline = time.monotonic() + timeout
     last_size = -1
@@ -24,19 +26,13 @@ def _wait_for_readable(path: Path, timeout: float = 30.0, interval: float = 0.1)
     while time.monotonic() < deadline:
         try:
             size = path.stat().st_size
-            if size > 0 and size == last_size:
-                stable += 1
-                if stable >= 2:
-                    try:
-                        with path.open("rb") as f:
-                            f.read(1)
-                        return
-                    except OSError:
-                        pass
-            else:
-                stable = 0
+            stable = stable + 1 if size == last_size else 0
             last_size = size
-        except FileNotFoundError:
+            if size and (sys.platform != "win32" or stable >= 2):
+                with path.open("rb") as stream:
+                    if stream.read(1):
+                        return
+        except OSError:
             pass
         time.sleep(interval)
     raise TimeoutError(f"file not settled within {timeout}s: {path}")
@@ -79,33 +75,59 @@ def run_exports(
 ) -> None:
     """Compile KATASTER.wpj and write .3d, .dxf, .shp release artefacts.
 
+    The output directory must be new or empty, so a previous survey cannot
+    leave stale cave files in the resulting release.
+
     Implements the release export contract:
       1. cavern KATASTER.wpj                  → .3d, .err, cavern-log.txt
       2. survexport --legs --dxf              → JKTZ-<version>.dxf
       3. ogr2ogr DXF → ESRI Shapefile         → JKTZ-<version>-all.shp
       4. survexport --entrances → cave list
          per cave: survexport --survey filter + ogr2ogr → caves/<cave>.shp
+      5. Read back geometries and attributes, check feature counts and geographic extent.
     """
+    compile_model(version, outdir, cwd)
+    export_formats(version, outdir, cwd)
+
+
+def compile_model(
+    version: str, outdir: Path, cwd: Path | None = None, *, log_to: Path | None = None
+) -> None:
+    """Compile directly into this run's directory and retain the customary root outputs."""
     # Resolve to absolute paths so every arg passed to subprocess is absolute -
     # the Survex Windows launcher resolves some paths against argv[0]/cwd
     # inconsistently, and absolute paths sidestep the whole class of issues.
     outdir = Path(outdir).resolve()
+    if outdir.is_dir() and any(outdir.iterdir()):
+        raise FileExistsError(f"Export output is not empty: {outdir}; choose a new directory")
     outdir.mkdir(parents=True, exist_ok=True)
-    (outdir / "caves").mkdir(exist_ok=True)
 
     print(f"=== JKTZ exports - version: {version} ===")
     print(f"    output: {outdir.as_posix()}/")
     print()
 
-    print("[1/4] cavern - compiling survey network")
+    print("[1/5] cavern - compiling survey network")
     cavern_log = outdir / f"JKTZ-{version}-cavern-log.txt"
-    tools.cavern(["KATASTER.wpj"], cwd=cwd, log_to=cavern_log)
-    project_root = cwd if cwd else Path.cwd()
-    shutil.copy(project_root / "KATASTER.3d", outdir / f"JKTZ-{version}.3d")
-    shutil.copy(project_root / "KATASTER.err", outdir / f"JKTZ-{version}.err")
     compiled_3d = outdir / f"JKTZ-{version}.3d"
+    try:
+        tools.cavern(
+            ["--warnings-are-errors", "-o", str(compiled_3d), "KATASTER.wpj"],
+            cwd=cwd,
+            log_to=cavern_log,
+        )
+    finally:
+        if log_to is not None and cavern_log.is_file():
+            shutil.copyfile(cavern_log, log_to)
+    for artifact in (compiled_3d, compiled_3d.with_suffix(".err")):
+        shutil.copyfile(artifact, (cwd or Path.cwd()) / ("KATASTER" + artifact.suffix))
 
-    print("[2/4] survexport - full DXF")
+
+def export_formats(version: str, outdir: Path, cwd: Path | None = None) -> None:
+    """Convert the model produced by compile_model and validate all its shapefiles."""
+    outdir = outdir.resolve()
+    compiled_3d = outdir / f"JKTZ-{version}.3d"
+    (outdir / "caves").mkdir()
+    print("[2/5] survexport - full DXF")
     full_dxf = outdir / f"JKTZ-{version}.dxf"
     tools.survexport(
         ["--legs", "--full-coordinates", "--dxf", str(compiled_3d), str(full_dxf)],
@@ -113,7 +135,7 @@ def run_exports(
     )
     _wait_for_readable(full_dxf)
 
-    print("[3/4] ogr2ogr - shapefile (all caves)")
+    print("[3/5] ogr2ogr - shapefile (all caves)")
     all_shp = outdir / f"JKTZ-{version}-all.shp"
     tools.ogr2ogr(
         [
@@ -131,7 +153,7 @@ def run_exports(
         cwd=cwd,
     )
 
-    print("[4/4] survexport - per-cave DXF + shapefiles")
+    print("[4/5] survexport - per-cave DXF + shapefiles")
     with tempfile.TemporaryDirectory(prefix="jktz-exports-", dir=outdir) as tmp_str:
         tmp = Path(tmp_str)
         entrances_csv = tmp / "entrances.csv"
@@ -170,6 +192,10 @@ def run_exports(
                 ],
                 cwd=cwd,
             )
+    print("[5/5] Validating shapefiles")
+    empty_shapefiles.check(outdir=outdir)
+    shapefiles_count.check(outdir=outdir, version=version, verify_export=True)
+    shapefiles_extent.check(outdir=outdir, version=version)
     print()
     print("=== Done ===")
     print(f"    {outdir.as_posix()}/")

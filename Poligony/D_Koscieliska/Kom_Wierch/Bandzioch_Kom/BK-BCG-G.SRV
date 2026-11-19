@@ -1,9 +1,10 @@
 #[
-CAVE_ID         "WPJ:BK-CGM"
-CAVE_NAME       "Ciag Glowny Miedzyotworowy"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0078"
+CAVE_NAME       "Jaskinia Bandzioch Kominiarski"
 SURVEY_ID       "BK-BCG-G"
 SURVEY_NAME     "Boki Ciagu Glownego - Grady"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -28,6 +29,7 @@ SURVEY_DATE     "1981-10-10"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "Survex 1.4.24: historyczne DECL=0.819D zastapiono tymczasowym zalozeniem DECL=0; daty i pomiary bez zmian"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix BandziochKom

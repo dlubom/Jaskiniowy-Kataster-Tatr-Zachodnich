@@ -60,7 +60,8 @@ def _raw_readme(status: str = "dostępny", contents: list[str] | None = None) ->
 def _srv(source_ref: str = "_RAW/01", body: str = "#date 2004-06-19\n0\t1\t1.0\t90\t0\n") -> str:
     return (
         "#[\n"
-        'CAVE_ID         "T.D-04.01"\n'
+        'SURVEY_KIND     "underground"\n'
+        'CAVE_ID         "C-1001"\n'
         'CAVE_NAME       "Zbojecka Dziura"\n'
         'SURVEY_ID       "ZBDZIU"\n'
         'SURVEY_NAME     "Zbojecka Dziura"\n'
@@ -177,6 +178,25 @@ def test_metadata_check_allows_ignored_untracked_material_under_raw(tmp_path: Pa
     (raw / "generated.err").write_text("generated", encoding="utf-8")
 
     metadata.check(root=tmp_path / "Poligony")
+
+
+@pytest.mark.parametrize("scan_poligony", [True, False])
+def test_metadata_check_uses_the_project_copy_own_git_context(tmp_path, scan_poligony):
+    _git(tmp_path, "init")
+    (tmp_path / ".gitignore").write_text("/.verification/\n")
+    project = tmp_path / ".verification" / "candidate"
+    poligony = project / "Poligony"
+    package = poligony / "Cave" / "_RAW" / "01"
+    package.mkdir(parents=True)
+    (package / "README.md").write_text(_raw_readme(), encoding="utf-8")
+    (package / "source.xlsx").write_bytes(b"source")
+    scan_root = poligony if scan_poligony else project
+
+    metadata.check(root=scan_root)
+
+    (package / "unlisted.svx").write_bytes(b"extra survey")
+    with pytest.raises(CheckFailed, match="material missing from RAW inventory: unlisted.svx"):
+        metadata.check(root=scan_root)
 
 
 def test_metadata_check_rejects_ignored_tracked_material_under_raw(tmp_path: Path) -> None:
@@ -386,3 +406,19 @@ def test_metadata_check_excludes_package_gitignore_from_inventory(tmp_path: Path
     (raw / ".gitignore").write_text("*.err\n", encoding="utf-8")
 
     metadata.check(root=tmp_path / "Poligony")
+
+
+def test_nested_raw_directory_is_preserved_as_archival_material(tmp_path):
+    package = tmp_path / "Poligony" / "Cave" / "_RAW" / "01"
+    original = package / "original" / "_RAW"
+    (original / "01").mkdir(parents=True)
+    (package / "README.md").write_text(
+        _raw_readme(contents=["`original/` - unmodified source directory"]), encoding="utf-8"
+    )
+    (original / "notes.txt").write_bytes(b"original notes")
+    (original / "01" / "README.md").write_bytes(b"original README, not JKTZ metadata")
+    before = {path: path.read_bytes() for path in package.rglob("*") if path.is_file()}
+
+    metadata.check(root=tmp_path / "Poligony")
+
+    assert {path: path.read_bytes() for path in before} == before

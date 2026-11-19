@@ -2,7 +2,7 @@
 #units meters order=ENU
 
 ; Wspolrzedne #fix sa automatycznie wstrzykiwane z release'ow:
-; https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.0.0
+; https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v2.1.3
 ; Szczegoly pomiarow i wyboru najlepszych wartosci sa w tamtym projekcie.
 
 {{ gps_fix('BandziochKom:000', 'KSZ-0112', suffix=' (R0.01,R0.01)') }}
@@ -85,10 +85,10 @@
 #flag	Kalacka:0	/ENTRANCE
 #note	Kalacka:0	/Jaskinia Kalacka
 
-{{ gps_fix('KamienneMleko:0', 'CHZ-0014') }}
-#flag	KamienneMleko:0	/Kamienne Mleko
-#flag	KamienneMleko:0	/ENTRANCE
-#note	KamienneMleko:0	/Kamienne Mleko
+{{ gps_fix("KamienneMleko:0'", 'CHZ-0014') }}
+#flag	KamienneMleko:0'	/Kamienne Mleko
+#flag	KamienneMleko:0'	/ENTRANCE
+#note	KamienneMleko:0'	/Kamienne Mleko
 
 {{ gps_fix('KasprowaNiznia:0', 'BYW-0018') }}
 #flag	KasprowaNiznia:0	/Kasprowa Niznia
@@ -106,19 +106,31 @@
 #note	Koszowa:0	/Jaskinia Koszowa
 
 {{ gps_fix('Kozia:k001', 'MTW-0013') }}
-#flag	Kozia:k001	/Kozia
+#flag	Kozia:k001	/Kozia - otwor I
 #flag	Kozia:k001	/ENTRANCE
-#note	Kozia:k001	/Kozia
+#note	Kozia:k001	/Kozia - otwor I
+
+{{ gps_fix('Kozia:k9619', 'MTW-0076') }}
+#flag	Kozia:k9619	/Kozia - otwor II
+#flag	Kozia:k9619	/ENTRANCE
+#note	Kozia:k9619	/Kozia - otwor II
 
 {{ gps_fix('Lejbusiowa:A1', 'MTZ-0013') }}
 #flag	Lejbusiowa:A1	/Jaskinia Lejbusiowa
 #flag	Lejbusiowa:A1	/ENTRANCE
 #note	Lejbusiowa:A1	/Jaskinia Lejbusiowa
 
-{{ gps_fix('LodowaMalolacka:0', 'MLW-0024') }}
-#flag	LodowaMalolacka:0	/Lodowa Malolacka
+; Lodowa Malolacka: 0 to otwor dolny, 31 to gorny (z poligonu).
+{{ gps_fix('LodowaMalolacka:0', 'MLW-0011') }}
+#flag	LodowaMalolacka:0	/Lodowa Malolacka - otwor dolny
 #flag	LodowaMalolacka:0	/ENTRANCE
-#note	LodowaMalolacka:0	/Lodowa Malolacka
+#note	LodowaMalolacka:0	/Lodowa Malolacka - otwor dolny
+
+; MLW-0024 do ponownej weryfikacji wysokosci. Polozenie stacji 31 wynika z poligonu.
+; {{ gps_fix('LodowaMalolacka:31', 'MLW-0024') }}
+#flag	LodowaMalolacka:31	/Lodowa Malolacka - otwor gorny
+#flag	LodowaMalolacka:31	/ENTRANCE
+#note	LodowaMalolacka:31	/Lodowa Malolacka - otwor gorny
 
 {{ gps_fix('LodowaMietusia:0', 'MTZ-0022') }}
 #flag	LodowaMietusia:0	/Jaskinia Lodowa Mietusia
@@ -165,10 +177,14 @@
 #flag	MietusiaWyznia:ot_0	/ENTRANCE
 #note	MietusiaWyznia:ot_0	/Jaskinia Mietusia Wyznia
 
-{{ gps_fix('MnichStudniaWyz:0', 'MLW-0009') }}
+{{ gps_fix('MnichStudniaWyz:0', 'MLW-0054') }}
 #flag	MnichStudniaWyz:0	/Mnichowa Studnia Wyznia
 #flag	MnichStudniaWyz:0	/ENTRANCE
 #note	MnichStudniaWyz:0	/Mnichowa Studnia Wyznia
+
+#flag	MnichStudniaWyz:11	/Mnichowa Studnia Wyznia - otwor dolny
+#flag	MnichStudniaWyz:11	/ENTRANCE
+#note	MnichStudniaWyz:11	/Mnichowa Studnia Wyznia - otwor dolny
 
 {{ gps_fix('Mrozna:0', 'KSW-0081') }}
 #flag	Mrozna:0	/Jaskinia Mrozna
@@ -195,12 +211,30 @@
 #flag	ObcasnaVyv:A1:o1	/ENTRANCE
 #note	ObcasnaVyv:A1:o1	/Obcasna Vyvieracka
 
-{{ gps_fix('Pawlikowskiego:Mylna:0', 'KSZ-0064') }}
+; System Pawlikowskiego: jedyny #fix to Raptawicka. Pozostale otwory wyznacza siec.
+; Stacje otworow wg _RAW/01/SJP/Dane/Mylna/CG.SRV:43-50.
+; To polozenia stacji; znaki wzgledem progow otworow nie sa ustalone.
 #flag	Pawlikowskiego:Mylna:0	/Mylna
 #flag	Pawlikowskiego:Mylna:0	/ENTRANCE
 #note	Pawlikowskiego:Mylna:0	/Mylna
 
-{{ gps_fix('Pawlikowskiego:Oblazkowa:0.0', 'KSZ-0090') }}
+#flag	Pawlikowskiego:Mylna:39	/Mylna - otwor polnocny
+#flag	Pawlikowskiego:Mylna:39	/ENTRANCE
+#note	Pawlikowskiego:Mylna:39	/Mylna - otwor polnocny
+
+; Nazwy okien: zrodlowe BOKI_CG.SRV:27-31 i BCDCHCG.SRV:27-32.
+#flag	Pawlikowskiego:Mylna:52	/Mylna - I Okno Pawlikowskiego
+#flag	Pawlikowskiego:Mylna:52	/ENTRANCE
+#note	Pawlikowskiego:Mylna:52	/Mylna - I Okno Pawlikowskiego
+
+#flag	Pawlikowskiego:Mylna:53	/Mylna - II Okno Pawlikowskiego
+#flag	Pawlikowskiego:Mylna:53	/ENTRANCE
+#note	Pawlikowskiego:Mylna:53	/Mylna - II Okno Pawlikowskiego
+
+#flag	Pawlikowskiego:Mylna:333	/Mylna - III Okno Pawlikowskiego
+#flag	Pawlikowskiego:Mylna:333	/ENTRANCE
+#note	Pawlikowskiego:Mylna:333	/Mylna - III Okno Pawlikowskiego
+
 #flag	Pawlikowskiego:Oblazkowa:0.0	/Oblazkowa
 #flag	Pawlikowskiego:Oblazkowa:0.0	/ENTRANCE
 #note	Pawlikowskiego:Oblazkowa:0.0	/Oblazkowa
@@ -209,6 +243,10 @@
 #flag	Pawlikowskiego:Raptawicka:1.0	/Raptawicka
 #flag	Pawlikowskiego:Raptawicka:1.0	/ENTRANCE
 #note	Pawlikowskiego:Raptawicka:1.0	/Raptawicka
+
+#flag	Pawlikowskiego:Raptawicka:5.1	/Raptawicka - otwor gorny
+#flag	Pawlikowskiego:Raptawicka:5.1	/ENTRANCE
+#note	Pawlikowskiego:Raptawicka:5.1	/Raptawicka - otwor gorny
 
 {{ gps_fix('PodProgiem:0', 'MLZ-0070') }}
 #flag	PodProgiem:0	/Jaskinia pod Progiem
@@ -365,27 +403,36 @@
 #flag	WilczySchron:wsn0	/ENTRANCE
 #note	WilczySchron:wsn0	/Wilczy Schron
 
-; Wysoka7Progow: aktywny #fix opieramy tylko na source: unknown - GNSS dla W7-0.
-; To najdokladniejszy pomiar; pozostale powiazania GPS sa niepewne, wiec
-; renderujemy je nizej tylko jako zakomentowane wartosci kontrolne.
-; Brak gps_fix: w gps-kataster-obiektow-tatr nie ma osobnego object_id dla tego lokalnego otworu.
+; Wysoka7Progow: jedyna kotwica to W7-0 (KSW-0189).
+; Pozostale otwory maja OBJECT_REF w plikach SRV; ich polozenie wynika z poligonu.
+; KSW-0264--KSW-0267 w GPS v2.1.3 przeliczono z tej samej kotwicy.
 #flag	Wysoka7Progow:W-300	/ENTRANCE
 #note	Wysoka7Progow:W-300	/Wysoka Gorny Otwor
 
-; source: unknown - GNSS
+; GPS v2.1.3: KSW-0189/m-004, wynik skorygowanego domiaru.
 {{ gps_fix('Wysoka7Progow:W7-0', 'KSW-0189') }}
 #flag	Wysoka7Progow:W7-0	/Otwor
 #flag	Wysoka7Progow:W7-0	/Wysoka-Za7 Progami
 #flag	Wysoka7Progow:W7-0	/ENTRANCE
 #note	Wysoka7Progow:W7-0	/Wysoka-Za7 Progami
 
-; {{ gps_fix('Wysoka7Progow:W7-200', 'KSW-0153') }}
 #flag	Wysoka7Progow:W7-200	/ENTRANCE
 #note	Wysoka7Progow:W7-200	/Za7Progami Dolny Otwor
 
-; {{ gps_fix('Wysoka7Progow:W7-500', 'KSW-0123') }}
 #flag	Wysoka7Progow:W7-500	/ENTRANCE
 #note	Wysoka7Progow:W7-500	/Za7Progami Gorny Otwor
+
+; Posrednia: otwory wg rekonstrukcji numeracji, bez oryginalnego protokolu.
+; Bez #fix; polozenie wynika z poligonu.
+; W7-PD to jawny alias W7-505/1 w III.SRV; #flag nie obsluguje "/" w nazwie w Survex 1.4.24.
+#flag	Wysoka7Progow:W7-PD	/ENTRANCE
+#note	Wysoka7Progow:W7-PD	/Posrednia Dolny Otwor
+
+#flag	Wysoka7Progow:W7-P500	/ENTRANCE
+#note	Wysoka7Progow:W7-P500	/Posrednia Srodkowy Otwor
+
+#flag	Wysoka7Progow:W7-P507	/ENTRANCE
+#note	Wysoka7Progow:W7-P507	/Posrednia Gorny Otwor
 
 {{ gps_fix('WyzKoszowaDziura:0', 'PL-0031') }}
 #flag	WyzKoszowaDziura:0	/Wyznia Koszowa Dziura

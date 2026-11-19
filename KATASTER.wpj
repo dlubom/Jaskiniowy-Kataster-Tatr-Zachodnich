@@ -479,6 +479,9 @@
 .SURVEY	Oblazkowa
 .NAME	OBLAZK_S
 .STATUS	8
+.SURVEY	Polaczenie Oblazkowa-Mylna
+.NAME	OBL_MYL
+.STATUS	8
 .ENDBOOK
 .BOOK	Raptawicka
 .NAME	RAPT
@@ -486,6 +489,17 @@
 .STATUS	8
 .SURVEY	Raptawicka
 .NAME	RAPTAW_S
+.STATUS	8
+.SURVEY	Polaczenie Raptawicka-Mylna
+.NAME	RAPT_MYL
+.STATUS	8
+.ENDBOOK
+.BOOK	Powierzchnia Oblazkowa-Raptawicka
+.NAME	PAWPOW
+.PATH	Powierzchnia
+.STATUS	8
+.SURVEY	Ciag powierzchniowy Oblazkowa-Raptawicka
+.NAME	POW_ORM
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -621,6 +635,9 @@
 .SURVEY	Mnichowa Studnia Wyznia
 .NAME	MSW1
 .STATUS	8
+.SURVEY	Mnichowa Studnia Wyznia - powierzchnia
+.NAME	MSW1_POW
+.STATUS	8
 .ENDBOOK
 .ENDBOOK
 .BOOK	Lewe zbocze
@@ -701,6 +718,9 @@
 .STATUS	8
 .SURVEY	Lodowa Malolacka
 .NAME	LODMAL
+.STATUS	8
+.SURVEY	Lodowa Malolacka - powierzchnia
+.NAME	LODMAL_POW
 .STATUS	8
 .ENDBOOK
 .ENDBOOK
@@ -855,6 +875,9 @@
 .SURVEY	Koprowa Studnia
 .NAME	KOPRSTUD
 .STATUS	8
+.SURVEY	Koprowa-Swistacza - powierzchnia
+.NAME	KOPR_POW
+.STATUS	8
 .ENDBOOK
 .ENDBOOK
 .ENDBOOK
@@ -948,9 +971,6 @@
 .STATUS	8
 .SURVEY	MWYZN_PE
 .NAME	MWYZN_PE
-.STATUS	8
-.SURVEY	MWYZN_MRS
-.NAME	MWYZN_MRS
 .STATUS	8
 .ENDBOOK
 .ENDBOOK

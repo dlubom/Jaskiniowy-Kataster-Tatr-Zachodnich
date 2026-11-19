@@ -1,0 +1,42 @@
+#[
+SURVEY_KIND     "surface"
+OBJECT_REF      "KoprowaStudnia:ks0=MLW-0020"
+OBJECT_REF      "Swistacza:24=MLW-0028"
+SURVEY_ID       "KOPR_POW"
+SURVEY_NAME     "Koprowa Studnia - domiar powierzchniowy"
+UPDATE_DATE     "2026-11-12"
+PROJECT_NAME    "Kataster jaskin tatrzanskich"
+COORDINATOR     "nieznane"
+COORDINATOR_EMAIL "nieznane"
+SOURCE_REF      "_RAW/01"
+LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
+
+TEAM            "nieznane"
+INSTRUMENT      "nieznane"
+SURVEY_DATE     "2011-09-09"
+SURVEY_GRADE    "nieznane"
+PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
+PROCESSING      "2026-11-12: wydzielono zatwierdzony domiar powierzchniowy; zachowano odczyty i kontekst dyrektyw"
+PROCESSING      "klasyfikacja surface wedlug decyzji koordynatora; OBJECT_REF nie dodaje fixa"
+#]
+
+#segment P
+#prefix KoprowaStudnia
+;Koprowa Studnia
+;pomiary Soja E. Szczygiel J. 9.9.2011
+;wektoryzacja Szczygiel J.
+#UNITS D=M A=D V=D Order=DAV
+#DATE 2011-09-09
+;LRUD: L,R,U,D
+; Otwory w tym pliku: KoprowaStudnia:ks0, Swistacza:24 - fix/flag/note w Poligony/OTWORY.SRV
+;TODO ciag prawdopodobnie po pow do otworu j. Swistaczej
+ks0	ks1	2.10	226	0
+ks1	ks2	4.98	172	-80.9	<0,0.4,0.5,8,2>
+ks3	ks2	3.24	80.9	20.2	<0.66,0.72,4.15,4.96>
+ks4	ks3	4.74	73.4	17.7
+ks5	ks4	3.99	74	4.9
+ks6	ks5	2.45	39.9	1.6
+ks6	ks7	2.13	263.4	31
+ks8	ks7	1.76	38.2	-50.2
+ks8	ks9	1.55	270.1	26.2
+ks9	Swistacza:24	0	0	0

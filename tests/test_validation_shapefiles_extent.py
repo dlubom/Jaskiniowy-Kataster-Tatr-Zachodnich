@@ -40,10 +40,17 @@ def test_passes_when_all_extents_inside_tatras(tmp_path: Path, make_point_shapef
     shapefiles_extent.check(outdir=outdir, version="v1")
 
 
-def test_fails_when_a_cave_extends_too_far_west(tmp_path: Path, make_point_shapefile) -> None:
-    outdir, all_shp, caves_dir = _layout(tmp_path)
+def test_fails_when_a_cave_extends_too_far_west(tmp_path: Path, make_point_shapefile, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    Path("staging").mkdir()
+    outdir, all_shp, caves_dir = _layout(Path("staging"))
     make_point_shapefile(all_shp, [_INSIDE_A, _INSIDE_B])
     make_point_shapefile(caves_dir / "BadCave.shp", [_OUTSIDE_LON])
+    outdir = outdir.rename("new!exports")
+    Path("exports").mkdir()
+    _, old_all, old_caves = _layout(Path("exports"))
+    make_point_shapefile(old_all, [_INSIDE_A, _INSIDE_B])
+    make_point_shapefile(old_caves / "BadCave.shp", [_INSIDE_A])
     with pytest.raises(CheckFailed, match=r"lon .* outside"):
         shapefiles_extent.check(outdir=outdir, version="v1")
 
@@ -63,3 +70,22 @@ def test_skips_empty_shapefile(tmp_path: Path, make_point_shapefile) -> None:
     make_point_shapefile(all_shp, [_INSIDE_A])
     make_point_shapefile(caves_dir / "Empty.shp", [])
     shapefiles_extent.check(outdir=outdir, version="v1")
+
+
+def test_rejects_valid_coordinates_with_the_wrong_declared_crs(tmp_path, make_point_shapefile):
+    outdir, all_shp, caves_dir = _layout(tmp_path)
+    make_point_shapefile(all_shp, [_INSIDE_A])
+    make_point_shapefile(caves_dir / "Cave.shp", [_INSIDE_A], crs="EPSG:32633")
+
+    with pytest.raises(CheckFailed, match=r"Cave\.shp.*32633.*32634"):
+        shapefiles_extent.check(outdir, "v1")
+
+
+@pytest.mark.parametrize("extension", [".dbf", ".prj", ".shx"])
+def test_rejects_incomplete_shapefile(tmp_path, make_point_shapefile, extension):
+    outdir, all_shp, _ = _layout(tmp_path)
+    make_point_shapefile(all_shp, [_INSIDE_A])
+    all_shp.with_suffix(extension).unlink()
+
+    with pytest.raises(CheckFailed, match=rf"JKTZ-v1-all.*\{extension}"):
+        shapefiles_extent.check(outdir, "v1")

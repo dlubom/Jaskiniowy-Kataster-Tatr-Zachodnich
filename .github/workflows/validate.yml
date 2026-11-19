@@ -10,7 +10,29 @@ permissions:
   contents: read
 
 jobs:
+  gps-snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: astral-sh/setup-uv@v5
+      - name: Download one GPS release
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: uv run --locked jktz-gps-snapshot logs/gps-snapshot
+      - name: Share GPS snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: gps-snapshot
+          path: logs/gps-snapshot/
+          if-no-files-found: error
+          retention-days: 14
+          overwrite: true
+
   python-tools:
+    needs: [gps-snapshot]
     runs-on: ubuntu-latest
 
     steps:
@@ -44,10 +66,14 @@ jobs:
           if-no-files-found: warn
           retention-days: 14
 
+      - name: Download GPS snapshot
+        uses: actions/download-artifact@v4
+        with:
+          name: gps-snapshot
+          path: logs/gps-snapshot
+
       - name: Check rendered entrance snapshot
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: uv run jktz-render-otwory --check
+        run: uv run jktz-render-otwory --check --gps-snapshot logs/gps-snapshot
 
   mutation-tests:
     name: mutation-tests
@@ -82,6 +108,7 @@ jobs:
           retention-days: 14
 
   validate:
+    needs: [gps-snapshot]
     strategy:
       fail-fast: false
       matrix:
@@ -156,7 +183,7 @@ jobs:
           EXPECTED_SURVEX_VERSION: ${{ steps.survex.outputs.version }}
         run: |
           $expected = [regex]::Escape($env:EXPECTED_SURVEX_VERSION)
-          foreach ($tool in @('cavern', 'survexport')) {
+          foreach ($tool in @('cavern', 'survexport', 'dump3d')) {
             $toolPath = (Get-Command $tool -ErrorAction Stop).Source
             $banner = & $toolPath --version
             if ($LASTEXITCODE -ne 0) { throw "$tool --version failed" }
@@ -172,12 +199,40 @@ jobs:
       - name: Check PocketTopo binary integration
         run: uv run pytest -q tests/test_pockettopo_binary.py
 
+      - name: Test SHP exports with Survex and GDAL
+        run: uv run pytest -v tests/test_exports_pipeline.py -k test_real_
+
+      - name: Download GPS snapshot
+        uses: actions/download-artifact@v4
+        with:
+          name: gps-snapshot
+          path: logs/gps-snapshot
+
       - name: Run full validation
+        run: uv run jktz-validate --gps-snapshot logs/gps-snapshot
+
+      - name: Install Survex Duplicates binary
+        uses: ./.github/actions/install-survex-duplicates
+
+      - name: Test Survex duplicate gate with published binary
         env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: uv run jktz-validate
+          JKTZ_REQUIRE_SURVEX_DUPLICATES: "1"
+        run: uv run pytest -q tests/test_survex_duplicates.py
+
+      - name: Reject Survex geometric duplicates
+        run: uv run jktz-survex-duplicates --output logs/survex-duplicates/pairs.csv
+
+      - name: Upload Survex duplicate report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: survex-duplicates-${{ matrix.os }}
+          path: logs/survex-duplicates/
+          if-no-files-found: error
+          retention-days: 14
 
   walls-windows:
+    needs: [gps-snapshot]
     name: walls-windows
     runs-on: windows-latest
     timeout-minutes: 15
@@ -191,6 +246,15 @@ jobs:
       - uses: astral-sh/setup-uv@v5
       - name: Sync Python tooling
         run: uv sync --locked
+      - name: Download GPS snapshot
+        uses: actions/download-artifact@v4
+        with:
+          name: gps-snapshot
+          path: logs/gps-snapshot
+
+      - name: Check rendered entrance snapshot
+        run: uv run jktz-render-otwory --check --gps-snapshot logs/gps-snapshot
+
       - uses: ./.github/actions/install-walls
       - name: Build native Walls driver
         shell: pwsh
@@ -205,10 +269,10 @@ jobs:
         run: |
           New-Item -ItemType Directory -Force logs/walls | Out-Null
           uv run pytest -q tests/test_walls_native.py --basetemp=logs/walls/fixtures
-      - name: Recompile Kataster in Walls
+      - name: Recompile Kataster in Walls and reject duplicates
         shell: pwsh
         run: |
-          uv run jktz-walls-validate --walls "$env:WALLS_EXE" --driver "$env:WALLS_DRIVER" --scratch-root "$env:WALLS_SCRATCH_ROOT" --output logs/walls/kataster
+          uv run jktz-walls-validate --duplicates --walls "$env:WALLS_EXE" --driver "$env:WALLS_DRIVER" --scratch-root "$env:WALLS_SCRATCH_ROOT" --output logs/walls/kataster
       - name: Record tested revision
         if: always()
         shell: pwsh
@@ -231,7 +295,7 @@ jobs:
 
   pr-release-package:
     if: github.event_name == 'pull_request'
-    needs: [python-tools, mutation-tests, validate, walls-windows]
+    needs: [gps-snapshot, python-tools, mutation-tests, validate, walls-windows]
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -272,18 +336,22 @@ jobs:
           PACKAGE_VERSION: ${{ steps.package.outputs.version }}
         run: uv run jktz-release-metadata "$PACKAGE_VERSION"
 
-      - name: Render latest entrance fixes
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: uv run jktz-render-otwory
+      - name: Download GPS snapshot
+        uses: actions/download-artifact@v4
+        with:
+          name: gps-snapshot
+          path: logs/gps-snapshot
+
 
       - name: Install Survex
         uses: ./.github/actions/install-survex
         with:
           version: ${{ steps.survex.outputs.version }}
 
-      - name: Build exports
-        run: uv run jktz-exports ${{ steps.package.outputs.version }}
+      - name: Validate GPS and build checked exports
+        env:
+          PACKAGE_VERSION: ${{ steps.package.outputs.version }}
+        run: uv run jktz-validate --gps-snapshot logs/gps-snapshot --export-version "$PACKAGE_VERSION"
 
       - name: Build PR release ZIP
         run: uv run jktz-build-zip ${{ steps.package.outputs.version }}

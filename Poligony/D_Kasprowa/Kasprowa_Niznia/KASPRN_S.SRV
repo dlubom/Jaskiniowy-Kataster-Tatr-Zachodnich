@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.D-16.03"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0405"
 CAVE_NAME       "Jaskinia Kasprowa Niznia"
+OBJECT_REF      "KasprowaNiznia:0=BYW-0018"
 SURVEY_ID       "td1603"
 SURVEY_NAME     "Jaskinia Kasprowa Niznia"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Pawel Gogolak"
 COORDINATOR_EMAIL "pafffel@gmail.com"
@@ -15,6 +17,7 @@ INSTRUMENT      "DistoX"
 SURVEY_DATE     "2019-01-09"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix KasprowaNiznia

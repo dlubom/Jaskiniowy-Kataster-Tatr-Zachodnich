@@ -15,15 +15,19 @@ import os
 import re
 import tempfile
 import urllib.error
+import urllib.parse
 import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from jktz.metadata.io import atomic_write
+
 DEFAULT_TEMPLATE = Path("Poligony/OTWORY.SRV.j2")
 DEFAULT_OUTPUT = Path("Poligony/OTWORY.SRV")
 DEFAULT_GITHUB_REPO = "dlubom/gps-kataster-obiektow-tatr"
 BEST_MEASUREMENTS_ASSET = "best-measurements.csv"
+BEST_COORDINATE_COLUMNS = {"object_id", "lon", "lat", "elevation_m"}
 GPS_FIX_RE = re.compile(r"{{\s*gps_fix\((.*?)\)\s*}}")
 
 
@@ -76,7 +80,7 @@ def render_entrances(
         if check:
             _check_rendered_output(output_path, rendered)
         else:
-            output_path.write_text(rendered, encoding="utf-8")
+            atomic_write(output_path, rendered.encode("utf-8"))
 
     return RenderResult(
         output=output_path,
@@ -130,17 +134,19 @@ def _download_latest_best_measurements(github_repo: str, tmp_dir: Path) -> Relea
 
     download_url = _required_str(asset, "browser_download_url")
     output_path = tmp_dir / BEST_MEASUREMENTS_ASSET
+    _download_release_asset(download_url, output_path)
+    return ReleaseAsset(
+        path=output_path, source=f"{github_repo}@{release.get('tag_name', 'latest')}"
+    )
+
+
+def _download_release_asset(download_url: str, output_path: Path) -> None:
     request = _request(download_url)
     try:
         with urllib.request.urlopen(request, timeout=60) as response:
             output_path.write_bytes(response.read())
     except urllib.error.URLError as exc:
-        raise RenderError(
-            f"Cannot download {BEST_MEASUREMENTS_ASSET} from {download_url}: {exc}"
-        ) from exc
-    return ReleaseAsset(
-        path=output_path, source=f"{github_repo}@{release.get('tag_name', 'latest')}"
-    )
+        raise RenderError(f"Cannot download {output_path.name} from {download_url}: {exc}") from exc
 
 
 def _read_json(url: str) -> dict[str, Any]:
@@ -164,19 +170,18 @@ def _request(url: str) -> urllib.request.Request:
         "Accept": "application/vnd.github+json",
         "User-Agent": "JKTZ-release-renderer",
     }
+    request = urllib.request.Request(url, headers=headers)
+    parsed_url = urllib.parse.urlsplit(url)
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
-    if token:
-        headers["Authorization"] = f"Bearer {token}"
-    return urllib.request.Request(url, headers=headers)
+    if token and parsed_url.scheme == "https" and parsed_url.netloc.lower() == "api.github.com":
+        request.add_unredirected_header("Authorization", f"Bearer {token}")
+    return request
 
 
 def _load_best_measurements(path: Path) -> dict[str, dict[str, str]]:
     with path.open(encoding="utf-8-sig", newline="") as csv_file:
         reader = csv.DictReader(csv_file)
-        required = {"object_id", "lon", "lat", "elevation_m"}
-        if reader.fieldnames is None or not required.issubset(reader.fieldnames):
-            missing = ", ".join(sorted(required.difference(reader.fieldnames or ())))
-            raise RenderError(f"{path} is missing required columns: {missing}")
+        require_csv_columns(path, reader.fieldnames, BEST_COORDINATE_COLUMNS)
         rows = {}
         for row in reader:
             object_id = row.get("object_id")
@@ -188,6 +193,15 @@ def _load_best_measurements(path: Path) -> dict[str, dict[str, str]]:
     if not rows:
         raise RenderError(f"{path} has no best-measurements rows.")
     return rows
+
+
+def require_csv_columns(path: Path, fieldnames: list[str] | None, required: set[str]) -> None:
+    fields = fieldnames or []
+    if missing := required.difference(fields):
+        raise RenderError(f"{path}: missing required columns: {', '.join(sorted(missing))}.")
+    for field in sorted(required):
+        if fields.count(field) > 1:
+            raise RenderError(f"{path}: duplicate column {field}.")
 
 
 def _render_template(
@@ -210,6 +224,8 @@ def _render_template(
             raise RenderError(f"Invalid gps_fix arguments: {match.group(0)}") from exc
 
     rendered = GPS_FIX_RE.sub(replace, template)
+    if re.search(r"{{\s*gps_fix\b", rendered):
+        raise RenderError("Unclosed or invalid gps_fix template expression.")
     return rendered, stats
 
 
@@ -221,11 +237,11 @@ def _parse_gps_fix_args(source: str) -> tuple[list[Any], dict[str, Any]]:
     if not isinstance(expression, ast.Call) or not isinstance(expression.func, ast.Name):
         raise RenderError(f"Invalid gps_fix template expression: {source}")
     args = [_literal(node, source=source) for node in expression.args]
-    kwargs = {
-        keyword.arg: _literal(keyword.value, source=source)
-        for keyword in expression.keywords
-        if keyword.arg is not None
-    }
+    kwargs = {}
+    for keyword in expression.keywords:
+        if keyword.arg is None or keyword.arg in kwargs:
+            raise RenderError(f"Invalid gps_fix keyword arguments: {source}")
+        kwargs[keyword.arg] = _literal(keyword.value, source=source)
     return args, kwargs
 
 

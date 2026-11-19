@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.F-08.06"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0377"
 CAVE_NAME       "Jaskinia Ciepla"
+OBJECT_REF      "Ciepla:0=KSW-0114"
 SURVEY_ID       "JCIEPLA"
 SURVEY_NAME     "Jaskinia Ciepla"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -15,6 +17,7 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "2007-12-01"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix Ciepla

@@ -12,7 +12,7 @@ When new cave survey data arrives in Survex format (`.svx` files) and needs to b
 ## Usage
 
 ```
-$svx-to-srv <cave-id> <path/to/source.svx> [or ZIP with multiple .svx files]
+$svx-to-srv <inventory-number> <path/to/source.svx> [or ZIP with multiple .svx files]
 ```
 
 Example:
@@ -160,12 +160,25 @@ Register the entrance in `Poligony/OTWORY.SRV.j2`, then render the shared snapsh
 
 ## Metadata requirements
 
+The input inventory number is for source/PIG lookup. Resolve the source-backed
+GPS cave membership and terminal system before supplying `--cave-id`; an object
+ID or a PIG inventory number cannot replace it. Wait for a published GPS record
+when the required identity is missing.
+
+Each output has one `SURVEY_KIND`. Put surface measurements in a separate SRV
+with `--survey-kind surface`, no cave fields, and explicit `--object-ref` for
+all identified entrances (at least one). Preserve source readings and effective
+directives, `P` surface segments and source package references. `OBJECT_REF`
+does not add a fix; unfixed entrances remain unfixed.
+
 After writing each converted Walls body, create its metadata through the CLI:
 
 ```bash
 uv run jktz-srv-metadata srv-set \
   "<path/to/OUTPUT.SRV>" \
-  --cave-id "<cave-id>" \
+  --survey-kind underground \
+  --cave-id "<GPS terminal cave/system ID, C-NNNN>" \
+  --object-ref "<PREFIX>:<STATION>=<OBJECT-ID>" \
   --cave-name "<Cave Name ASCII>" \
   --survey-id "<SURVEY_ID>" \
   --survey-name "<Survey name>" \
@@ -206,7 +219,7 @@ Required conversion metadata:
 Once all `.SRV` files are ready, use the `$add-cave` skill to register the cave in the project:
 
 ```
-$add-cave <cave-id> "<valley/subdir/path>"
+$add-cave <inventory-number> "<valley/subdir/path>"
 ```
 
 The `$add-cave` skill handles:

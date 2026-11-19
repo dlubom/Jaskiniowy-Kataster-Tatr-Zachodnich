@@ -1,9 +1,11 @@
 #[
-CAVE_ID         "T.F-09.43"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-0643"
 CAVE_NAME       "Jaskinia nad Beczka"
+OBJECT_REF      "NadBeczka:0=KSW-0183"
 SURVEY_ID       "JASNADB"
 SURVEY_NAME     "Jaskinia nad Beczka"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -15,6 +17,7 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "2005-07-23"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix NadBeczka

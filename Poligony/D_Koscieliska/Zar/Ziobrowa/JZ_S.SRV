@@ -1,9 +1,12 @@
 #[
-CAVE_ID         "T.E-08.25"
-CAVE_NAME       "Jaskinia Ziobrowa"
+SURVEY_KIND     "underground"
+CAVE_ID         "C-1052"
+CAVE_NAME       "System Jaskini Ziobrowej"
+OBJECT_REF      "Ziobrowa:0=KSW-0075"
+OBJECT_REF      "Ziobrowa:5.24=KSW-0177"
 SURVEY_ID       "JZ"
 SURVEY_NAME     "Jaskinia Ziobrowa"
-UPDATE_DATE     "2026-06-05"
+UPDATE_DATE     "2026-11-12"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "Dariusz Lubomski"
 COORDINATOR_EMAIL "darek.lubomski@gmail.com"
@@ -15,6 +18,7 @@ INSTRUMENT      "nieznane"
 SURVEY_DATE     "2007-06-24"
 SURVEY_GRADE    "nieznane"
 PROCESSING      "zachowano istniejacy aktywny plik SRV"
+PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
 #]
 
 #prefix Ziobrowa

@@ -1,9 +1,28 @@
 from __future__ import annotations
 
+import shutil
 from pathlib import Path
+
+import pytest
 
 from jktz.cli import survex_stats
 from jktz.exports.tools import ExternalToolError
+
+
+def test_stats_can_inspect_source_with_compile_warnings(tmp_path, capsys):
+    if shutil.which("cavern") is None:
+        pytest.skip("Survex cavern is not installed")
+    source = tmp_path / "survey.svx"
+    original = b"*fix a 0 0 0\n*fix unused 10 10 10\na b 1 0 0\n"
+    source.write_bytes(original)
+
+    assert survex_stats.main([str(source)]) == 0
+
+    output = capsys.readouterr().out
+    assert "warning" in output.lower()
+    assert "Total length" in output
+    assert list(tmp_path.iterdir()) == [source]
+    assert source.read_bytes() == original
 
 
 def test_survex_stats_runs_cavern_from_source_directory(tmp_path: Path, monkeypatch) -> None:

@@ -25,9 +25,9 @@ def test_validation_cli_status_and_error_channel(
     run = Mock(side_effect=failure)
     monkeypatch.setattr(validate, "run_validation", run)
 
-    assert validate.main() == result
+    assert validate.main([]) == result
 
-    run.assert_called_once_with()
+    run.assert_called_once_with(validate.ValidationContext())
     output = capsys.readouterr()
     assert message in getattr(output, stream)
     assert ("Validation Passed" in output.out) == (failure is None)
@@ -59,11 +59,13 @@ def test_exports_cli_passes_requested_destination(monkeypatch, args, version, ou
     run.assert_called_once_with(version=version, outdir=outdir)
 
 
-def test_exports_cli_reports_external_failure(monkeypatch, capsys):
+@pytest.mark.parametrize(
+    "failure",
+    [ExternalToolError("broken"), FileExistsError("broken"), CheckFailed("ERROR: broken")],
+)
+def test_exports_cli_reports_failure(monkeypatch, capsys, failure):
     monkeypatch.setattr("sys.argv", ["jktz-exports"])
-    monkeypatch.setattr(
-        exports.pipeline, "run_exports", Mock(side_effect=ExternalToolError("broken"))
-    )
+    monkeypatch.setattr(exports.pipeline, "run_exports", Mock(side_effect=failure))
 
     assert exports.main() == 1
     assert capsys.readouterr().err == "ERROR: broken\n"

@@ -33,6 +33,45 @@ def test_scripts_directory_contains_only_pre_install_bootstrap() -> None:
     assert scripts == {"initial-setup.py"}
 
 
+def test_git_ignores_compiler_outputs_but_keeps_archival_originals(tmp_path: Path) -> None:
+    user_excludes = tmp_path / "user-excludes"
+    user_excludes.write_text("Thumbs.db\n")
+    compiled = [
+        "KATASTER/model.NTA",
+        "Poligony/model.nTv",
+        "survey.LOG",
+        "survey.3D",
+        "survey.NTW",
+        "survey.ntAC",
+        "survey.NTAD",
+        "survey.ntae",
+        "survey.NtAs",
+    ]
+    raw = "Poligony/example/_RAW/01"
+    originals = [f"{raw}/original/{Path(path).name}" for path in compiled]
+    ignored = subprocess.check_output(
+        [
+            "git",
+            "-c",
+            "core.ignorecase=false",
+            "-c",
+            f"core.excludesFile={user_excludes}",
+            "check-ignore",
+            "--no-index",
+            "--",
+            *compiled,
+            *originals,
+            "Poligony/example.SRV",
+            "KATASTER/model.log",
+            f"{raw}/Thumbs.db",
+        ],
+        cwd=REPO_ROOT,
+        text=True,
+    ).splitlines()
+
+    assert ignored == [*compiled, "KATASTER/model.log", f"{raw}/Thumbs.db"]
+
+
 def test_contributor_docs_explain_bootstrap_and_installed_tools_boundary() -> None:
     contributing = (REPO_ROOT / "CONTRIBUTING.md").read_text(encoding="utf-8")
 

@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import importlib.util
+import shutil
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -27,6 +29,43 @@ def test_crs_patch_is_case_insensitive_and_idempotent(tmp_path, patches, flags):
 
     assert path.read_text() == "const crs = /(epsg|esri):([0-9]+)/i;\n"
     assert path.read_bytes() == once
+
+
+def test_project_crs_uses_builtin_utm_and_other_codes_keep_their_lookup(tmp_path, patches):
+    node = shutil.which("node")
+    if node is None:
+        pytest.skip("JavaScript runtime unavailable")
+    path = tmp_path / "CaveView2.js"
+    path.write_text(
+        "const viewer = {\n"
+        "  async lookupCRS(code) { return `remote:${code}`; },\n"
+        "  async resolve(sourceCRS) {\n"
+        "    const code = sourceCRS.match( /(epsg|esri):([0-9]+)/ );\n"
+        "    sourceCRS = await this.lookupCRS( code[ 2 ] );\n"
+        "    return sourceCRS;\n"
+        "  }\n"
+        "};\n"
+        "(async () => {\n"
+        "  for (const code of process.argv.slice(2)) console.log(await viewer.resolve(code));\n"
+        "})();\n"
+    )
+    patches.patch_crs_regex(path)
+    once = path.read_bytes()
+    patches.patch_crs_regex(path)
+    assert path.read_bytes() == once
+
+    result = subprocess.run(
+        [node, path, "EPSG:32634", "epsg:32634", "ESRI:32634", "EPSG:27701"],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    assert result.stdout.splitlines() == [
+        "EPSG:32634",
+        "EPSG:32634",
+        "remote:32634",
+        "remote:27701",
+    ]
 
 
 @pytest.mark.parametrize(
