@@ -1,14 +1,18 @@
 from __future__ import annotations
 
 import shutil
+import struct
 from pathlib import Path
 from unittest.mock import Mock
 
+import numpy as np
+import pyogrio.raw
 import pytest
 
 from jktz.cli import exports
 from jktz.exports import pipeline
 from jktz.exports.tools import ExternalToolError
+from jktz.validation import suite
 
 
 def test_real_export_rejects_missing_survey_before_conversion(tmp_path, monkeypatch):
@@ -72,10 +76,26 @@ def cave_points():
     return {"CaveA": [(420000.0, 5454000.0)], "CaveB": [(421000.0, 5455000.0)]}
 
 
+def _write_export_layer(target, points):
+    # Each survey leg has a 3D linestring and DXF attributes, including nulls.
+    legs = [struct.pack("<BIIdddddd", 1, 1002, 2, x, y, 1300, x + 1, y, 1301) for x, y in points]
+    count = len(legs)
+    pyogrio.raw.write(
+        target,
+        geometry=np.array(legs, dtype=object),
+        geometry_type="LineString Z",
+        fields=["Layer", "PaperSpace", "SubClasses", "Linetype", "EntHandle", "Text"],
+        field_data=[
+            np.full(count, "CentreLine", dtype=object),
+            np.zeros(count, dtype=np.int32),
+            *[np.full(count, None, dtype=object) for _ in range(4)],
+        ],
+        crs="EPSG:32634",
+    )
+
+
 @pytest.fixture
-def call_log(
-    monkeypatch, tmp_path: Path, make_point_shapefile, cave_points
-) -> list[tuple[str, list[str]]]:
+def call_log(monkeypatch, tmp_path: Path, cave_points) -> list[tuple[str, list[str]]]:
     """Capture every cavern/survexport/ogr2ogr invocation as (tool, args)."""
     calls: list[tuple[str, list[str]]] = []
 
@@ -83,10 +103,9 @@ def call_log(
         calls.append(("cavern", list(args)))
         if log_to is not None:
             log_to.write_text("fake cavern log\n")
-        # Simulate cavern's KATASTER.3d / KATASTER.err side effects.
-        root = Path(cwd) if cwd else Path.cwd()
-        (root / "KATASTER.3d").write_bytes(b"fake-3d")
-        (root / "KATASTER.err").write_bytes(b"fake-err")
+        model = Path(args[args.index("-o") + 1])
+        model.write_bytes(b"fake-3d")
+        model.with_suffix(".err").write_bytes(b"fake-err")
 
     def fake_survexport(args, cwd=None):
         calls.append(("survexport", list(args)))
@@ -109,7 +128,7 @@ def call_log(
             if target.parent.name == "caves"
             else sum(cave_points.values(), [])
         )
-        make_point_shapefile(target, features)
+        _write_export_layer(target, features)
 
     monkeypatch.setattr(pipeline.tools, "cavern", fake_cavern)
     monkeypatch.setattr(pipeline.tools, "survexport", fake_survexport)
@@ -135,6 +154,61 @@ def test_exports_cli_rejects_invalid_layers(
     assert "=== Done ===" not in output.out
 
 
+@pytest.mark.parametrize(
+    "damage",
+    ["empty_dbf", "short_dbf", "wrong_dbf_name", "wrong_dbf_type", "wrong_row_count", "deleted"],
+)
+def test_exports_cli_rejects_damaged_attributes(call_log, damage, monkeypatch, capsys):
+    convert = pipeline.tools.ogr2ogr
+
+    def corrupt_dbf(args, cwd=None):
+        convert(args, cwd)
+        shp = Path(args[-2])
+        if shp.stem == "CaveA":
+            dbf = shp.with_suffix(".dbf")
+            data = bytearray(dbf.read_bytes())
+            if damage == "empty_dbf":
+                data.clear()
+            elif damage == "short_dbf":
+                del data[-20:]
+            elif damage == "wrong_dbf_name":
+                data[32:37] = b"Other"
+            elif damage == "wrong_dbf_type":
+                data[64 + 11] = ord("C")  # PaperSpace field descriptor
+            elif damage == "wrong_row_count":
+                struct.pack_into("<I", data, 4, 2)  # one shape, two declared DBF rows
+            else:
+                header_size = struct.unpack_from("<H", data, 8)[0]
+                data[header_size] = ord("*")  # GDAL skips deleted rows during readback
+            dbf.write_bytes(data)
+
+    monkeypatch.setattr(pipeline.tools, "ogr2ogr", corrupt_dbf)
+    monkeypatch.setattr("sys.argv", ["jktz-exports"])
+    assert exports.main() == 1
+    assert "CaveA.dbf" in capsys.readouterr().err
+
+
+@pytest.mark.parametrize("damage", ["truncated", "null_shape"])
+def test_exports_cli_rejects_unreadable_geometry(call_log, damage, monkeypatch, capsys):
+    convert = pipeline.tools.ogr2ogr
+
+    def corrupt_shape(args, cwd=None):
+        convert(args, cwd)
+        shp = Path(args[-2])
+        if shp.stem == "CaveA":
+            with shp.open("r+b") as stream:
+                if damage == "truncated":
+                    stream.truncate(112)  # leave the header, index and extent intact
+                else:
+                    stream.seek(108)
+                    stream.write(struct.pack("<I", 0))  # ESRI null shape
+
+    monkeypatch.setattr(pipeline.tools, "ogr2ogr", corrupt_shape)
+    monkeypatch.setattr("sys.argv", ["jktz-exports"])
+    assert exports.main() == 1
+    assert "CaveA.shp" in capsys.readouterr().err
+
+
 def test_pipeline_invokes_all_4_steps_in_order(call_log, tmp_path: Path) -> None:
     pipeline.run_exports(version="v1", outdir=Path("exports"))
 
@@ -152,7 +226,45 @@ def test_pipeline_invokes_all_4_steps_in_order(call_log, tmp_path: Path) -> None
 def test_pipeline_passes_correct_cavern_args(call_log, tmp_path: Path) -> None:
     pipeline.run_exports(version="v1", outdir=Path("exports"))
     cavern_args = next(args for tool, args in call_log if tool == "cavern")
-    assert cavern_args == ["--warnings-are-errors", "KATASTER.wpj"]
+    model = tmp_path / "exports/JKTZ-v1.3d"
+    assert cavern_args == ["--warnings-are-errors", "-o", str(model), "KATASTER.wpj"]
+    assert model.read_bytes() == (tmp_path / "KATASTER.3d").read_bytes()
+    assert model.with_suffix(".err").read_bytes() == (tmp_path / "KATASTER.err").read_bytes()
+
+
+def test_validation_exports_the_exact_model_it_checked_once(call_log, tmp_path, monkeypatch):
+    context = suite.ValidationContext(exports_dir=tmp_path / "stage", exports_version="v2.0.2")
+    staged = context.exports_dir / "JKTZ-v2.0.2.3d"
+
+    def check_references(model, identities):
+        assert model == staged
+        assert model.read_bytes() == b"fake-3d"
+        Path("KATASTER.3d").write_bytes(b"another run")
+
+    monkeypatch.setattr(suite.catalogue, "check_compiled_references", check_references)
+    steps = suite.validation_steps(context, Mock())
+    suite.run_steps(
+        steps[next(i for i, step in enumerate(steps) if step.heading == "Compiling with cavern") :]
+    )
+
+    assert sum(tool == "cavern" for tool, _ in call_log) == 1
+    assert all(Path(args[-2]) == staged for tool, args in call_log if tool == "survexport")
+    assert staged.read_bytes() == b"fake-3d"
+    assert (
+        context.cavern_log.read_bytes()
+        == (staged.parent / "JKTZ-v2.0.2-cavern-log.txt").read_bytes()
+    )
+
+
+@pytest.mark.parametrize(("platform", "sleeps"), [("win32", 2), ("linux", 0)])
+def test_wait_only_polls_stable_size_on_windows(tmp_path, monkeypatch, platform, sleeps):
+    finished = tmp_path / "finished.dxf"
+    finished.write_bytes(b"written")
+    sleep = Mock()
+    monkeypatch.setattr(pipeline.sys, "platform", platform)
+    monkeypatch.setattr(pipeline.time, "sleep", sleep)
+    pipeline._wait_for_readable(finished)
+    assert sleep.call_count == sleeps
 
 
 def test_pipeline_passes_correct_survexport_full_dxf_args(call_log, tmp_path: Path) -> None:

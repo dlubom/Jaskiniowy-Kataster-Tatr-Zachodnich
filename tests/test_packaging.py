@@ -215,7 +215,17 @@ def test_worktree_git_pointer_stays_out_of_release_zip(tmp_path):
 
 
 def test_release_zip_does_not_scan_excluded_directories(tmp_path, monkeypatch):
-    excluded = [tmp_path / name for name in (".git", ".venv", ".verification", "Poligony/_RAW")]
+    excluded = [
+        tmp_path / name
+        for name in (
+            ".git",
+            ".venv",
+            ".verification",
+            "Poligony/_RAW",
+            ".jktz-validation-running",
+            "output/.jktz-validation-interrupted",
+        )
+    ]
     for directory in excluded:
         directory.mkdir(parents=True)
         (directory / "private.txt").write_text("excluded")
@@ -224,7 +234,8 @@ def test_release_zip_does_not_scan_excluded_directories(tmp_path, monkeypatch):
     scandir = os.scandir
 
     def guarded_scandir(path):
-        assert Path(path) not in excluded, f"Scanned excluded directory: {path}"
+        if not isinstance(path, int):
+            assert Path(path) not in excluded, f"Scanned excluded directory: {path}"
         return scandir(path)
 
     monkeypatch.setattr(os, "scandir", guarded_scandir)
@@ -235,3 +246,75 @@ def test_release_zip_does_not_scan_excluded_directories(tmp_path, monkeypatch):
         assert archive.namelist() == ["KATASTER.wpj", "Poligony/KEEP.SRV"]
         assert archive.read("KATASTER.wpj") == b"project"
         assert archive.read("Poligony/KEEP.SRV") == b"survey"
+
+
+def test_compiled_walls_files_are_excluded_regardless_of_letter_case(tmp_path):
+    survey = tmp_path / "Cave"
+    survey.mkdir()
+    (survey / "DATA.SRV").write_bytes(b"survey")
+    for extension in (
+        "LOG",
+        "Lst",
+        "WrL",
+        "nTa",
+        "NTn",
+        "NtP",
+        "ntS",
+        "nTv",
+        "NtW",
+        "NTAC",
+        "ntad",
+        "NtaE",
+        "ntaS",
+    ):
+        (survey / f"DATA.{extension}").write_bytes(b"compiler output")
+
+    with zipfile.ZipFile(build_release_zip("test", root=tmp_path)) as archive:
+        assert archive.namelist() == ["Cave/DATA.SRV"]
+
+
+def test_zip_failure_preserves_existing_archive_and_can_be_retried(tmp_path, monkeypatch):
+    data = tmp_path / "Poligony"
+    data.mkdir()
+    survey = data / "CAVE.SRV"
+    survey.write_bytes(b"previous survey")
+    (tmp_path / "KATASTER.wpj").write_bytes(b"project")
+    archive = build_release_zip("test", root=tmp_path)
+    previous = archive.read_bytes()
+    write = zipfile.ZipFile.write
+
+    def remove_next_input(zf, filename, arcname):
+        if arcname == "KATASTER.wpj":
+            survey.unlink()
+        return write(zf, filename, arcname)
+
+    with monkeypatch.context() as patch:
+        patch.setattr(zipfile.ZipFile, "write", remove_next_input)
+        with pytest.raises(FileNotFoundError):
+            build_release_zip("test", root=tmp_path)
+
+    assert archive.read_bytes() == previous
+    assert {path.name for path in tmp_path.iterdir()} == {archive.name, "KATASTER.wpj", "Poligony"}
+    survey.write_bytes(b"revised survey")
+    with zipfile.ZipFile(build_release_zip("test", root=tmp_path)) as revised:
+        assert revised.namelist() == ["KATASTER.wpj", "Poligony/CAVE.SRV"]
+        assert revised.read("Poligony/CAVE.SRV") == b"revised survey"
+
+
+def test_unreadable_survey_directory_fails_packaging(tmp_path, monkeypatch):
+    (tmp_path / "KATASTER.wpj").write_bytes(b"project")
+    data = tmp_path / "Poligony"
+    data.mkdir()
+    (data / "CAVE.SRV").write_bytes(b"survey")
+    scandir = os.scandir
+
+    def guarded_scandir(path):
+        if path == str(data):
+            raise PermissionError("Cannot list surveys")
+        return scandir(path)
+
+    monkeypatch.setattr(os, "scandir", guarded_scandir)
+
+    with pytest.raises(PermissionError, match="Cannot list surveys"):
+        build_release_zip("test", root=tmp_path)
+    assert not (tmp_path / "JKTZ-test.zip").exists()

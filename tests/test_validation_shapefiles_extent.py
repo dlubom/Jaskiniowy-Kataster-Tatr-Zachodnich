@@ -70,3 +70,22 @@ def test_skips_empty_shapefile(tmp_path: Path, make_point_shapefile) -> None:
     make_point_shapefile(all_shp, [_INSIDE_A])
     make_point_shapefile(caves_dir / "Empty.shp", [])
     shapefiles_extent.check(outdir=outdir, version="v1")
+
+
+def test_rejects_valid_coordinates_with_the_wrong_declared_crs(tmp_path, make_point_shapefile):
+    outdir, all_shp, caves_dir = _layout(tmp_path)
+    make_point_shapefile(all_shp, [_INSIDE_A])
+    make_point_shapefile(caves_dir / "Cave.shp", [_INSIDE_A], crs="EPSG:32633")
+
+    with pytest.raises(CheckFailed, match=r"Cave\.shp.*32633.*32634"):
+        shapefiles_extent.check(outdir, "v1")
+
+
+@pytest.mark.parametrize("extension", [".dbf", ".prj", ".shx"])
+def test_rejects_incomplete_shapefile(tmp_path, make_point_shapefile, extension):
+    outdir, all_shp, _ = _layout(tmp_path)
+    make_point_shapefile(all_shp, [_INSIDE_A])
+    all_shp.with_suffix(extension).unlink()
+
+    with pytest.raises(CheckFailed, match=rf"JKTZ-v1-all.*\{extension}"):
+        shapefiles_extent.check(outdir, "v1")

@@ -41,7 +41,11 @@ def prepare_release_metadata(version: str, root: Path, notes_path: Path | None =
             raise ValueError("Release notes output must be a file")
     atomic_write(info_path, info.replace(marker, version.encode("ascii")))
     if notes is not None:
-        atomic_write(notes_path, notes.encode("utf-8"))
+        try:
+            atomic_write(notes_path, notes.encode("utf-8"))
+        except OSError:
+            atomic_write(info_path, info)
+            raise
 
 
 def main(argv: list[str] | None = None) -> int:

@@ -2,8 +2,8 @@
 
 # Tatranský kataster jaskýň
 
-![Walls 2D screen](doc/walls_2d_screen.png)
-![Walls 2D screen](doc/walls_3d_screen.png)
+![2D zobrazenie v programe Walls](doc/walls_2d_screen.png)
+![3D zobrazenie v programe Walls](doc/walls_3d_screen.png)
 ![Survex Aven](doc/Survex.jpeg)
 
 [![Latest Release](https://img.shields.io/github/v/release/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich)](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
@@ -22,7 +22,7 @@ Kataster obsahuje objekty, pre ktoré sú k dispozícii údaje z jaskynných mer
 - [GPS Kataster Obiektów Tatr](https://github.com/dlubom/gps-kataster-obiektow-tatr) — databáza GPS polôh vchodov do jaskýň a ďalších terénnych objektov. Tento projekt používa zverejnené najlepšie GPS merania na určenie súradníc vchodov. Hotové údaje pre GIS a prácu v teréne si môžete stiahnuť z [najnovšieho vydania](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/latest).
 - [Georeferencer](https://github.com/dlubom/Georeferencer) — georeferencované skeny plánov jaskýň vo formáte GeoTIFF, ktoré zahŕňajú aj objekty bez údajov z meraní v tomto katastri. Hotový balík GeoTIFF si môžete stiahnuť z [najnovšieho vydania](https://github.com/dlubom/Georeferencer/releases/latest).
 
-Projekt je založený na softvéri Walls – [tu nájdete najnovšiu verziu programu a návod na použitie](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
+Projekt používa program Walls. Stiahnite si [najnovšie vydanie](https://github.com/wallscavesurvey/walls/releases) alebo si prečítajte [používateľskú príručku (PDF)](https://texasspeleologicalsurvey.org/software/walls/Walls_manual.pdf).
 
 Projekt funguje aj v programe [Survex](https://survex.com/) — stačí nainštalovať najnovšiu verziu a otvoriť súbor `KATASTER.wpj` v programe Aven alebo skompilovať z príkazového riadku: `cavern KATASTER.wpj`. V programe Aven je možné načítať aj model terénu `Powierzchnia/Survex/N49E019_VF1.hgt`.
 

@@ -180,6 +180,25 @@ def test_metadata_check_allows_ignored_untracked_material_under_raw(tmp_path: Pa
     metadata.check(root=tmp_path / "Poligony")
 
 
+@pytest.mark.parametrize("scan_poligony", [True, False])
+def test_metadata_check_uses_the_project_copy_own_git_context(tmp_path, scan_poligony):
+    _git(tmp_path, "init")
+    (tmp_path / ".gitignore").write_text("/.verification/\n")
+    project = tmp_path / ".verification" / "candidate"
+    poligony = project / "Poligony"
+    package = poligony / "Cave" / "_RAW" / "01"
+    package.mkdir(parents=True)
+    (package / "README.md").write_text(_raw_readme(), encoding="utf-8")
+    (package / "source.xlsx").write_bytes(b"source")
+    scan_root = poligony if scan_poligony else project
+
+    metadata.check(root=scan_root)
+
+    (package / "unlisted.svx").write_bytes(b"extra survey")
+    with pytest.raises(CheckFailed, match="material missing from RAW inventory: unlisted.svx"):
+        metadata.check(root=scan_root)
+
+
 def test_metadata_check_rejects_ignored_tracked_material_under_raw(tmp_path: Path) -> None:
     _git(tmp_path, "init")
     (tmp_path / ".gitignore").write_text("*.err\n", encoding="utf-8")

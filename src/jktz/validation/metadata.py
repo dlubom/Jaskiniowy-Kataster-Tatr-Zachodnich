@@ -62,7 +62,7 @@ def _lexical_absolute(path: Path) -> Path:
     return Path(os.path.abspath(os.fspath(path)))
 
 
-def _git_ignored_untracked(paths: list[Path], scan_root: Path) -> set[Path]:
+def _git_ignored_untracked(paths: list[Path], project_root: Path) -> set[Path]:
     absolute_paths = [_lexical_absolute(path) for path in paths]
     if not absolute_paths:
         return set()
@@ -71,8 +71,17 @@ def _git_ignored_untracked(paths: list[Path], scan_root: Path) -> set[Path]:
     env = {key: value for key, value in os.environ.items() if not key.upper().startswith("GIT_")}
     env.update({"LANG": "C", "LC_ALL": "C"})
     try:
+        # A standalone survey copy can sit inside another repository's ignored directory.
         result = subprocess.run(
-            ["git", "-C", os.fspath(scan_root), "check-ignore", "--stdin", "-z"],
+            [
+                "git",
+                "-C",
+                os.fspath(project_root),
+                "--git-dir=.git",
+                "check-ignore",
+                "--stdin",
+                "-z",
+            ],
             input=stdin,
             capture_output=True,
             check=False,
@@ -264,7 +273,7 @@ def check(root: Path = Path("Poligony")) -> dict[Path, SurveyIdentity]:
     ]
     ignored_untracked = _git_ignored_untracked(
         raw_root_material + raw_package_material,
-        scan_root,
+        poligony_root.parent if poligony_root.name == "Poligony" else scan_root,
     )
     for raw_dir in raw_dirs:
         _check_raw_root(raw_dir, ignored_untracked, errors)

@@ -14,10 +14,12 @@ from pathlib import Path
 from typing import Any
 
 from jktz.entrances.render import (
+    BEST_COORDINATE_COLUMNS,
     BEST_MEASUREMENTS_ASSET,
     _download_release_asset,
     _read_json,
     _required_str,
+    require_csv_columns,
 )
 
 CATALOGUE_ASSET = "katalog.gpkg"
@@ -60,8 +62,10 @@ class Catalogue:
     objects: dict[str, CatalogueObject]
 
 
-def download_snapshot(repo: str, destination: Path) -> GpsSnapshot:
-    """Fetch both assets from one release into a new or empty directory."""
+def download_snapshot(
+    repo: str, destination: Path, *, validate_catalogue: bool = False
+) -> GpsSnapshot:
+    """Fetch one release, optionally verifying its catalogue before publishing the files."""
     if destination.is_symlink() or (destination.exists() and any(destination.iterdir())):
         raise FileExistsError(f"GPS snapshot destination is occupied: {destination}")
 
@@ -80,6 +84,10 @@ def download_snapshot(repo: str, destination: Path) -> GpsSnapshot:
         (staging / MANIFEST_NAME).write_text(
             json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
         )
+        if validate_catalogue:
+            read_catalogue(
+                _snapshot(staging, repo, tag, release_id, manifest_assets), require_coordinates=True
+            )
         if destination.exists():
             destination.rmdir()  # Refuses to remove files or a directory with existing inputs.
         staging.rename(destination)
@@ -182,8 +190,8 @@ def _check_digest(path: Path, expected: object, actual: str) -> None:
         raise ValueError(f"{path}: SHA-256 mismatch, expected {expected!r}, got {actual}.")
 
 
-def read_catalogue(snapshot: GpsSnapshot) -> Catalogue:
-    """Read the complete catalogue, then validate its links and the Best CSV."""
+def read_catalogue(snapshot: GpsSnapshot, *, require_coordinates: bool = False) -> Catalogue:
+    """Read catalogue links, optionally requiring the coordinate columns used for rendering."""
     path = snapshot.gpkg_path
     try:
         # A snapshot is a standalone, immutable file. SQLite must not create
@@ -200,7 +208,10 @@ def read_catalogue(snapshot: GpsSnapshot) -> Catalogue:
     except (sqlite3.Error, ValueError) as exc:
         raise ValueError(f"{path}: {exc}") from exc
 
-    _check_best_links(snapshot.csv_path, catalogue)
+    columns = {"object_id", "cave_id", "system_cave_id"}
+    if require_coordinates:
+        columns.update(BEST_COORDINATE_COLUMNS)
+    _check_best_links(snapshot.csv_path, catalogue, columns)
     return catalogue
 
 
@@ -270,17 +281,11 @@ def effective_cave_id(cave_id: str, catalogue: Catalogue) -> str:
     raise ValueError(f"system_cave_id cycle from {start} at {cave_id}.")
 
 
-def _check_best_links(path: Path, catalogue: Catalogue) -> None:
-    required = {"object_id", "cave_id", "system_cave_id"}
+def _check_best_links(path: Path, catalogue: Catalogue, columns: set[str]) -> None:
     seen = set()
     with path.open(encoding="utf-8-sig", newline="") as file:
         reader = csv.DictReader(file)
-        fieldnames = reader.fieldnames or []
-        if missing := required.difference(fieldnames):
-            raise ValueError(f"{path}: missing required columns: {', '.join(sorted(missing))}.")
-        for field in sorted(required):
-            if fieldnames.count(field) > 1:
-                raise ValueError(f"{path}: duplicate column {field}.")
+        require_csv_columns(path, reader.fieldnames, columns)
         for row in reader:
             location = f"{path}:{reader.line_num}"
             object_id = row["object_id"]

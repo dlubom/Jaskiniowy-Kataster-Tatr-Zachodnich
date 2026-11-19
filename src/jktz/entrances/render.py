@@ -27,6 +27,7 @@ DEFAULT_TEMPLATE = Path("Poligony/OTWORY.SRV.j2")
 DEFAULT_OUTPUT = Path("Poligony/OTWORY.SRV")
 DEFAULT_GITHUB_REPO = "dlubom/gps-kataster-obiektow-tatr"
 BEST_MEASUREMENTS_ASSET = "best-measurements.csv"
+BEST_COORDINATE_COLUMNS = {"object_id", "lon", "lat", "elevation_m"}
 GPS_FIX_RE = re.compile(r"{{\s*gps_fix\((.*?)\)\s*}}")
 
 
@@ -180,10 +181,7 @@ def _request(url: str) -> urllib.request.Request:
 def _load_best_measurements(path: Path) -> dict[str, dict[str, str]]:
     with path.open(encoding="utf-8-sig", newline="") as csv_file:
         reader = csv.DictReader(csv_file)
-        required = {"object_id", "lon", "lat", "elevation_m"}
-        if reader.fieldnames is None or not required.issubset(reader.fieldnames):
-            missing = ", ".join(sorted(required.difference(reader.fieldnames or ())))
-            raise RenderError(f"{path} is missing required columns: {missing}")
+        require_csv_columns(path, reader.fieldnames, BEST_COORDINATE_COLUMNS)
         rows = {}
         for row in reader:
             object_id = row.get("object_id")
@@ -195,6 +193,15 @@ def _load_best_measurements(path: Path) -> dict[str, dict[str, str]]:
     if not rows:
         raise RenderError(f"{path} has no best-measurements rows.")
     return rows
+
+
+def require_csv_columns(path: Path, fieldnames: list[str] | None, required: set[str]) -> None:
+    fields = fieldnames or []
+    if missing := required.difference(fields):
+        raise RenderError(f"{path}: missing required columns: {', '.join(sorted(missing))}.")
+    for field in sorted(required):
+        if fields.count(field) > 1:
+            raise RenderError(f"{path}: duplicate column {field}.")
 
 
 def _render_template(

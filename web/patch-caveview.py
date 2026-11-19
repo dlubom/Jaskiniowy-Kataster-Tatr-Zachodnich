@@ -3,40 +3,34 @@
 Patch CaveView.js 2.9.0 bugs for Cesium terrain support.
 Remove this script when CaveView releases a fixed version.
 
-Bug 1: CRS regex is case-sensitive — EPSG:32634 (uppercase from Survex) not matched.
+Bug 1: Uppercase CRS codes are missed and EPSG:32634 triggers an unnecessary remote lookup.
 Bug 2: webMeshWorker sends raw ArrayBuffer instead of typed arrays, crashing hydrateGeometry.
 Bug 3: Tree traversal is recursive and overflows the browser stack on large/deep surveys.
 Bug 4: StationPosition lacks own tree fields when a station is also a path prefix.
 """
 
 import os
+import re
 import sys
 
 
 def patch_crs_regex(path):
-    """Add case-insensitive flag to EPSG/ESRI regex in CaveView2.js."""
+    """Recognize EPSG/ESRI and use bundled Proj4's UTM 34N definition for JKTZ."""
     with open(path) as f:
-        c = f.read()
-    old = "/(epsg|esri):([0-9]+)/"
-    new = "/(epsg|esri):([0-9]+)/i"
-    double = "/(epsg|esri):([0-9]+)/ii"
-    if double in c:
-        while double in c:
-            c = c.replace(double, new)
-        with open(path, "w") as f:
-            f.write(c)
-        print(f"  OK: normalized CRS regex in {path}")
+        source = f.read()
+    pattern = "/(epsg|esri):([0-9]+)/"
+    patched = re.sub(re.escape(pattern) + "i*", pattern + "i", source)
+    patched = patched.replace(
+        "sourceCRS = await this.lookupCRS( code[ 2 ] );",
+        "sourceCRS = code[ 0 ].toUpperCase() === 'EPSG:32634' "
+        "? 'EPSG:32634' : await this.lookupCRS( code[ 2 ] );",
+    )
+    if patched == source:
+        print(f"  SKIP: CRS handling already patched or not found in {path}")
         return
-    if new in c:
-        print(f"  SKIP: CRS regex already patched in {path}")
-        return
-    if old not in c:
-        print(f"  SKIP: CRS regex not found in {path}")
-        return
-    c = c.replace(old, new)
     with open(path, "w") as f:
-        f.write(c)
-    print(f"  OK: patched CRS regex in {path}")
+        f.write(patched)
+    print(f"  OK: patched CRS handling in {path}")
 
 
 def patch_web_mesh_worker(path):

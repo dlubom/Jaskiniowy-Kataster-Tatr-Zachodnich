@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import shutil
+import sys
 import tempfile
 import time
 from pathlib import Path
@@ -17,7 +18,7 @@ def _wait_for_readable(path: Path, timeout: float = 30.0, interval: float = 0.1)
     newly-written file accessible to other processes, so a subsequent ogr2ogr
     call may see ``Unable to open datasource``. We wait for two consecutive
     stable-size readings + a successful open before declaring the file ready.
-    On Linux/Docker the first iteration succeeds, so this is essentially a no-op.
+    On POSIX a completed writer's nonempty, readable output is ready immediately.
     """
     deadline = time.monotonic() + timeout
     last_size = -1
@@ -25,19 +26,13 @@ def _wait_for_readable(path: Path, timeout: float = 30.0, interval: float = 0.1)
     while time.monotonic() < deadline:
         try:
             size = path.stat().st_size
-            if size > 0 and size == last_size:
-                stable += 1
-                if stable >= 2:
-                    try:
-                        with path.open("rb") as f:
-                            f.read(1)
-                        return
-                    except OSError:
-                        pass
-            else:
-                stable = 0
+            stable = stable + 1 if size == last_size else 0
             last_size = size
-        except FileNotFoundError:
+            if size and (sys.platform != "win32" or stable >= 2):
+                with path.open("rb") as stream:
+                    if stream.read(1):
+                        return
+        except OSError:
             pass
         time.sleep(interval)
     raise TimeoutError(f"file not settled within {timeout}s: {path}")
@@ -89,8 +84,16 @@ def run_exports(
       3. ogr2ogr DXF → ESRI Shapefile         → JKTZ-<version>-all.shp
       4. survexport --entrances → cave list
          per cave: survexport --survey filter + ogr2ogr → caves/<cave>.shp
-      5. Validate non-empty shapefiles, feature counts and geographic extent.
+      5. Read back geometries and attributes, check feature counts and geographic extent.
     """
+    compile_model(version, outdir, cwd)
+    export_formats(version, outdir, cwd)
+
+
+def compile_model(
+    version: str, outdir: Path, cwd: Path | None = None, *, log_to: Path | None = None
+) -> None:
+    """Compile directly into this run's directory and retain the customary root outputs."""
     # Resolve to absolute paths so every arg passed to subprocess is absolute -
     # the Survex Windows launcher resolves some paths against argv[0]/cwd
     # inconsistently, and absolute paths sidestep the whole class of issues.
@@ -98,7 +101,6 @@ def run_exports(
     if outdir.is_dir() and any(outdir.iterdir()):
         raise FileExistsError(f"Export output is not empty: {outdir}; choose a new directory")
     outdir.mkdir(parents=True, exist_ok=True)
-    (outdir / "caves").mkdir(exist_ok=True)
 
     print(f"=== JKTZ exports - version: {version} ===")
     print(f"    output: {outdir.as_posix()}/")
@@ -106,12 +108,25 @@ def run_exports(
 
     print("[1/5] cavern - compiling survey network")
     cavern_log = outdir / f"JKTZ-{version}-cavern-log.txt"
-    tools.cavern(["--warnings-are-errors", "KATASTER.wpj"], cwd=cwd, log_to=cavern_log)
-    project_root = cwd if cwd else Path.cwd()
-    shutil.copy(project_root / "KATASTER.3d", outdir / f"JKTZ-{version}.3d")
-    shutil.copy(project_root / "KATASTER.err", outdir / f"JKTZ-{version}.err")
     compiled_3d = outdir / f"JKTZ-{version}.3d"
+    try:
+        tools.cavern(
+            ["--warnings-are-errors", "-o", str(compiled_3d), "KATASTER.wpj"],
+            cwd=cwd,
+            log_to=cavern_log,
+        )
+    finally:
+        if log_to is not None and cavern_log.is_file():
+            shutil.copyfile(cavern_log, log_to)
+    for artifact in (compiled_3d, compiled_3d.with_suffix(".err")):
+        shutil.copyfile(artifact, (cwd or Path.cwd()) / ("KATASTER" + artifact.suffix))
 
+
+def export_formats(version: str, outdir: Path, cwd: Path | None = None) -> None:
+    """Convert the model produced by compile_model and validate all its shapefiles."""
+    outdir = outdir.resolve()
+    compiled_3d = outdir / f"JKTZ-{version}.3d"
+    (outdir / "caves").mkdir()
     print("[2/5] survexport - full DXF")
     full_dxf = outdir / f"JKTZ-{version}.dxf"
     tools.survexport(
@@ -179,7 +194,7 @@ def run_exports(
             )
     print("[5/5] Validating shapefiles")
     empty_shapefiles.check(outdir=outdir)
-    shapefiles_count.check(outdir=outdir, version=version)
+    shapefiles_count.check(outdir=outdir, version=version, verify_export=True)
     shapefiles_extent.check(outdir=outdir, version=version)
     print()
     print("=== Done ===")

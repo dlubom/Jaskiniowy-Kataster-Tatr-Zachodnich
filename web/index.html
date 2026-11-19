@@ -1,14 +1,15 @@
 <!--
-    Lokalny test:
-    mkdir -p /tmp/caveview-test
-    cp web/index.html /tmp/caveview-test/
-    cp -R web/terrain /tmp/caveview-test/
-    cp KATASTER.3d /tmp/caveview-test/
-    cd /tmp/caveview-test
-    wget https://github.com/aardgoose/CaveView.js/releases/download/2.9.0/CaveView.zip
-    unzip CaveView.zip
-    python3 -m http.server 8080
-    # Otworz http://localhost:8080
+    Podgląd lokalny z głównego katalogu repozytorium
+    preview=$(mktemp -d)
+    cavern --warnings-are-errors -o "$preview/KATASTER.3d" KATASTER.wpj
+    sed 's/__VERSION__/podgląd lokalny/' web/index.html > "$preview/index.html"
+    cp -R web/terrain "$preview/"
+    curl -fsSL https://github.com/aardgoose/CaveView.js/releases/download/2.9.0/CaveView.zip -o "$preview/CaveView.zip"
+    unzip -q "$preview/CaveView.zip" -d "$preview"
+    python3 web/patch-caveview.py "$preview/CaveView"
+    cp web/lang-pl.json "$preview/CaveView/lib/"
+    uv run --python 3.12 python -m http.server 8080 --bind 127.0.0.1 --protocol HTTP/1.1 --directory "$preview"
+    # Otwórz http://127.0.0.1:8080
 -->
 <!DOCTYPE html>
 <html lang="pl">

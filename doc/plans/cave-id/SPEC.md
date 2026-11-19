@@ -118,9 +118,10 @@ efektywnych ID z referencji, bez zapisywania go drugi raz w metadanych.
    tylko do odczytu przez standardowe `sqlite3`. Brak tabel to błąd kontraktu.
 3. Zweryfikuj ID/relacje oraz zgodność pól `cave_id` i `system_cave_id` CSV
    z katalogiem. Nie odtwarzaj brakujących jaskiń z wierszy Best.
-4. Sprawdź metadane i jawne referencje; po kompilacji sprawdź istnienie
-   wskazanych stacji w wyniku kompilatora. Literówka nie może tworzyć
-   referencji do nieistniejącego punktu.
+4. Sprawdź metadane i jawne referencje. Po kompilacji sprawdź każdą stację
+   `OBJECT_REF` na liście `survexport --entrances`. Dotyczy to również
+   otworów, których położenie wyznacza poligon. Wystarcza flaga
+   `/ENTRANCE` na istniejącej stacji.
 5. Zapisz źródło snapshotu i błędy z nazwą pliku, polem, zastanym ID oraz
    oczekiwanym powiązaniem. Błąd nie może nadpisywać wersjonowanego OTWORY.
 

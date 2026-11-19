@@ -1,17 +1,24 @@
 #Walls
-*.nta
-*.ntn
-*.ntv
-*.nts
-*.ntp
-*.wrl
-*.log
-*.lst
+*.[Nn][Tt][AaNnPpSsVvWw]
+*.[Nn][Tt][Aa][CcDdEeSs]
+*.[Ww][Rr][Ll]
+*.[Ll][Oo][Gg]
+*.[Ll][Ss][Tt]
 
 #Survex
-*.3d
-*.err
+*.3[Dd]
+*.[Ee][Rr][Rr]
 cavern_output.txt
+
+# Original material received from survey authors can include compiled files.
+!Poligony/**/_RAW/**/*.[Nn][Tt][AaNnPpSsVvWw]
+!Poligony/**/_RAW/**/*.[Nn][Tt][Aa][CcDdEeSs]
+!Poligony/**/_RAW/**/*.[Ww][Rr][Ll]
+!Poligony/**/_RAW/**/*.[Ll][Oo][Gg]
+!Poligony/**/_RAW/**/*.[Ll][Ss][Tt]
+!Poligony/**/_RAW/**/*.3[Dd]
+!Poligony/**/_RAW/**/*.[Ee][Rr][Rr]
+!Poligony/**/_RAW/**/cavern_output.txt
 
 #Local Claude settings retained after migration
 .claude/settings.local.json
@@ -36,6 +43,7 @@ logs/
 
 #jktz-validate scratch outputs (owned outputs cleaned on success and failure)
 /validate-exports/
+.jktz-validation-*/
 
 #Python
 __pycache__/

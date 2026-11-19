@@ -2,12 +2,12 @@
 
 - **Status materiału:** dostępny
 - **Pochodzenie danych:** plik pomiarowy w formacie Speleoliti (https://speleoliti.speleo.net/index-en.html), przesłany mailem przez Z. Tabaczyńskiego 14-17.04.2014
-- **Autorzy pomiarów:** K. Dudziński, Z. Tabaczyński (pomiary od górnego otworu z 03.02.2002); zakres i datowanie ciągu dolnego/powierzchniowego pozostają otwarte w #151
-- **Daty pomiarów:** 2002-02-03
+- **Autorzy pomiarów:** K. Dudziński i Z. Tabaczyński według opisu pomiarów od górnego otworu i podpisu planu w „Jaskiniach” 3(28)/2002, s. 20.
+- **Daty pomiarów:** 2002-02-03 od górnego otworu. Domiar powierzchniowy ukończono wiosną 2002 r.; wtedy też ponowiono pomiar dolnej części. Brak dat dziennych tych odcinków.
 - **Data pozyskania:** 2014-04-14 / 2014-04-17
 - **Dodał do _RAW:** Dariusz Lubomski
 - **Licencja źródłowa:** nieznane
-- **Kompletność:** Jeden nowszy CSP z 14 rekordami pomiarowymi. Wcześniejszy XLS jest w _RAW/02; relacja daty 12.06.2002 i klasyfikacja dolnego/powierzchniowego ciągu pozostają nierozstrzygnięte w #151.
+- **Kompletność:** Jeden nowszy CSP z 14 rekordami pomiarowymi. Wcześniejszy XLS znajduje się w paczce 02. Zakres daty 12.06.2002 pozostaje otwarty w #151.
 
 ## Zawartość
 
@@ -15,4 +15,6 @@
 
 ## Pochodzenie metadanych i rola materiału
 
-Zespół i datę pomiarów od górnego otworu potwierdza PDF, s. 12–13, w [lokalnej paczce dokumentacji](../03/README.md). Wcześniejszy XLS jest w [paczce 02](../02/README.md); zakres daty 12.06.2002 i klasyfikacja ciągu dolnego/powierzchniowego pozostają otwarte w #151. Daty operacyjnej SRV nie zmieniono.
+Zespół i datę pomiarów od górnego otworu potwierdza PDF, s. 12–13, w [lokalnej paczce dokumentacji](../03/README.md). Autor opisuje dokończenie domiaru powierzchniowego i ponowny pomiar dolnej części wiosną 2002 r. Na podstawie jego planu koordynator przyjął przebieg powierzchniowy 0–B–11 i podziemny 11–12–13. [„Jaskinie” 3(28)/2002, s. 20](http://jaskinie.org.pl/files/Jaskinie__28_2002.pdf#page=20)
+
+Zakres daty 12.06.2002 z [wcześniejszego XLS](../02/README.md) nadal wymaga wyjaśnienia. W obu aktywnych SRV do obliczenia deklinacji służy 03.02.2002. [Zgłoszenie #151](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/issues/151)

@@ -3,7 +3,7 @@
 - **Status materiału:** dostępny
 - **Pochodzenie danych:** Szymon Kostka
 - **Autorzy pomiarów:** Szymon Kostka
-- **Daty pomiarów:** 1972-03-15
+- **Daty pomiarów:** 2011-10-02 według daty tripu w Czarna-zimna.top; dzień pomiaru niepotwierdzony niezależnie.
 - **Data pozyskania:** 2014-10-23
 - **Dodał do _RAW:** Dariusz Lubomski, 2026-03-10
 - **Licencja źródłowa:** nieznane

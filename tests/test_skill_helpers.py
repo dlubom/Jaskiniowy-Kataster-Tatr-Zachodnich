@@ -46,6 +46,16 @@ def test_average_keeps_groups_separated_by_directives_and_annotations(tmp_path, 
     assert path.read_bytes() == data
 
 
+def test_average_leaves_nested_walls_comments_byte_identical(tmp_path, average):
+    path = tmp_path / "CAVE.SRV"
+    disabled = b"#[ original readings\r\n#[ notes\r\n#]\r\na b 2 40 10\r\na b 4 50 12\r\n#]\r\n"
+    path.write_bytes(disabled + b"a b 8 40 10\r\na b 6 50 12\r\n")
+
+    average.average_shots(path)
+
+    assert path.read_bytes() == disabled + b"a\tb\t7.000\t45.00\t11.00\r\n"
+
+
 @pytest.mark.parametrize("newline", [b"\r", b"\n", b"\r\n"])
 def test_average_preserves_legacy_line_boundaries(tmp_path, average, newline):
     path = tmp_path / "CAVE.SRV"

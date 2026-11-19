@@ -126,7 +126,14 @@ def test_rejects_linked_source(tmp_path, monkeypatch):
         source_files(source.parent)
 
 
-@pytest.mark.parametrize("content", ["", ".BOOK Root\n.NAME one/two\n"])
+@pytest.mark.parametrize(
+    "content",
+    [
+        "",
+        ".BOOK Root\n.NAME one/two\n",
+        ".BOOK Root\n.SURVEY Leaf\n.NAME DATA\n.ENDBOOK\n.NAME ROOT\n",
+    ],
+)
 def test_invalid_root_name(tmp_path, content):
     from jktz.walls import project_name
 

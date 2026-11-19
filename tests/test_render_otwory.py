@@ -52,7 +52,7 @@ def test_renderer_cli_prints_portable_output_path(monkeypatch, capsys) -> None:
 
     assert return_code == 0
     assert capsys.readouterr().out == (
-        "Checked Poligony/OTWORY.SRV from gps-kataster@v1\nGPS fixes: 87\n"
+        "Checked Poligony/OTWORY.SRV from gps-kataster@v1\nRendered gps_fix calls: 87\n"
     )
 
 
@@ -80,7 +80,7 @@ def test_renderer_writes_fix_from_template_object_id(tmp_path: Path, capsys) -> 
 
     assert return_code == 0, captured.err
     assert output.read_text(encoding="utf-8") == "#fix\tCave:0\tE19.1\tN49.2\t123.4m\n"
-    assert "GPS fixes: 1" in captured.out
+    assert "Rendered gps_fix calls: 1" in captured.out
 
 
 def test_renderer_fails_when_required_measurement_value_is_empty(tmp_path: Path, capsys) -> None:
@@ -286,6 +286,27 @@ def test_renderer_rejects_missing_source_data(tmp_path, csv_text, error):
         render.render_entrances(template_path=template, csv_path=measurements, output_path=output)
 
     assert not output.exists()
+
+
+@pytest.mark.parametrize("column", ["object_id", "lon", "lat", "elevation_m"])
+def test_renderer_rejects_ambiguous_csv_before_replacing_output(tmp_path, capsys, column):
+    template = tmp_path / "template"
+    measurements = tmp_path / "measurements.csv"
+    output = tmp_path / "OTWORY.SRV"
+    template.write_text("{{ gps_fix('Cave:0', 'OBJ-1') }}")
+    measurements.write_text(
+        f"object_id,lon,lat,elevation_m,{column}\nOBJ-1,19.81,49.25,1200,19.98\n"
+    )
+    output.write_bytes(b"previously reviewed")
+
+    assert (
+        render_otwory.main(
+            ["--template", str(template), "--csv", str(measurements), "--output", str(output)]
+        )
+        == 1
+    )
+    assert f"duplicate column {column}" in capsys.readouterr().err
+    assert output.read_bytes() == b"previously reviewed"
 
 
 @pytest.mark.parametrize(

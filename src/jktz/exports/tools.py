@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import codecs
 import shutil
 import subprocess
 import sys
+from contextlib import nullcontext
 from pathlib import Path
 
 
@@ -46,29 +48,24 @@ def _stream_subprocess(
     cavern log that the unattached-station check later greps).
     """
     cmd = [_resolve(cmd[0]), *cmd[1:]]
-    proc = subprocess.Popen(
-        cmd,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-        cwd=str(cwd) if cwd else None,
-        bufsize=0,
-    )
-    assert proc.stdout is not None
-
-    logf = log_to.open("wb") if log_to is not None else None
-    try:
-        for chunk in iter(lambda: proc.stdout.read(4096), b""):
-            if logf is not None:
-                logf.write(chunk)
-            sys.stdout.write(chunk.decode("utf-8", errors="replace"))
-            sys.stdout.flush()
-    finally:
-        if logf is not None:
-            logf.close()
-
-    ret = proc.wait()
-    if ret != 0:
-        raise ExternalToolError(f"{Path(cmd[0]).name} failed with exit code {ret}")
+    with log_to.open("wb") if log_to is not None else nullcontext() as logf:
+        with subprocess.Popen(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            cwd=str(cwd) if cwd else None,
+            bufsize=0,
+        ) as proc:
+            assert proc.stdout is not None
+            decoder = codecs.getincrementaldecoder("utf-8")(errors="replace")
+            for chunk in iter(lambda: proc.stdout.read(4096), b""):
+                if logf is not None:
+                    logf.write(chunk)
+                sys.stdout.write(decoder.decode(chunk))
+                sys.stdout.flush()
+            sys.stdout.write(decoder.decode(b"", final=True))
+    if proc.returncode:
+        raise ExternalToolError(f"{Path(cmd[0]).name} failed with exit code {proc.returncode}")
 
 
 def cavern(

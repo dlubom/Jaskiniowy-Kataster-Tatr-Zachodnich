@@ -21,13 +21,15 @@ _UTM34N_TO_WGS84 = pyproj.Transformer.from_crs("EPSG:32634", "EPSG:4326", always
 def _wgs84_bbox_of_shapefile(shp: Path) -> tuple[float, float, float, float] | None:
     """Return (lon_min, lat_min, lon_max, lat_max) or None for empty shapefiles."""
     info = read_local_info(shp)
+    if not _UTM34N_TO_WGS84.source_crs.equals(info["crs"]):
+        raise CheckFailed(f"ERROR: {shp} declares {info['crs']}; expected EPSG:32634.")
     # pyogrio reports total_bounds=(0,0,0,0) for empty layers - use the feature
     # count as the real "is empty" signal instead.
     if int(info.get("features", 0)) == 0:
         return None
     bounds = info.get("total_bounds")
     if bounds is None or any(b is None for b in bounds):
-        return None
+        raise CheckFailed(f"ERROR: Nonempty shapefile has no extent: {shp}")
     xmin, ymin, xmax, ymax = bounds
     # The shapefile extent is an axis-aligned rectangle in UTM, but after
     # reprojection to WGS84 it is no longer axis-aligned. Transform all four
@@ -53,12 +55,12 @@ def check(outdir: Path, version: str) -> None:
             # Empty shapefile - reported separately by empty_shapefiles.check.
             continue
         lon_min, lat_min, lon_max, lat_max = bbox
-        if lon_min < TATRA_LON_MIN or lon_max > TATRA_LON_MAX:
+        if not TATRA_LON_MIN <= lon_min <= lon_max <= TATRA_LON_MAX:
             errors.append(
                 f"    {shp.as_posix()}: lon {lon_min:.6f} .. {lon_max:.6f} "
                 f"outside [{TATRA_LON_MIN:.2f}, {TATRA_LON_MAX:.2f}]"
             )
-        if lat_min < TATRA_LAT_MIN or lat_max > TATRA_LAT_MAX:
+        if not TATRA_LAT_MIN <= lat_min <= lat_max <= TATRA_LAT_MAX:
             errors.append(
                 f"    {shp.as_posix()}: lat {lat_min:.6f} .. {lat_max:.6f} "
                 f"outside [{TATRA_LAT_MIN:.2f}, {TATRA_LAT_MAX:.2f}]"
