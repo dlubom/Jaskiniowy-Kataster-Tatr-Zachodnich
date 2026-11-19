@@ -27,6 +27,7 @@ DEFAULT_TEMPLATE = Path("Poligony/OTWORY.SRV.j2")
 DEFAULT_OUTPUT = Path("Poligony/OTWORY.SRV")
 DEFAULT_GITHUB_REPO = "dlubom/gps-kataster-obiektow-tatr"
 BEST_MEASUREMENTS_ASSET = "best-measurements.csv"
+BEST_COORDINATE_COLUMNS = {"object_id", "lon", "lat", "elevation_m"}
 GPS_FIX_RE = re.compile(r"{{\s*gps_fix\((.*?)\)\s*}}")
 
 
@@ -180,7 +181,7 @@ def _request(url: str) -> urllib.request.Request:
 def _load_best_measurements(path: Path) -> dict[str, dict[str, str]]:
     with path.open(encoding="utf-8-sig", newline="") as csv_file:
         reader = csv.DictReader(csv_file)
-        require_csv_columns(path, reader.fieldnames, {"object_id", "lon", "lat", "elevation_m"})
+        require_csv_columns(path, reader.fieldnames, BEST_COORDINATE_COLUMNS)
         rows = {}
         for row in reader:
             object_id = row.get("object_id")

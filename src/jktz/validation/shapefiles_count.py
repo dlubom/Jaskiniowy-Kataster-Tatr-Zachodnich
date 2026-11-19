@@ -6,22 +6,21 @@ from jktz.reporting import CheckFailed
 from jktz.validation.shapefile import read_local_info
 
 
-def check(outdir: Path, version: str) -> None:
+def check(outdir: Path, version: str, *, verify_export: bool = False) -> None:
     """The whole-project shapefile's feature count must equal the sum across caves.
 
-    Reads ``<outdir>/JKTZ-<version>-all.shp`` and ``<outdir>/caves/*.shp`` using
-    ``pyogrio.read_info`` and compares the totals. A mismatch means the
-    per-cave split lost or duplicated features in the export pipeline.
+    A mismatch means the per-cave split lost or duplicated features. The
+    exporter also requests readback of the DXF fields and every geometry.
     """
     all_shp = outdir / f"JKTZ-{version}-all.shp"
-    all_count = int(read_local_info(all_shp)["features"])
+    all_count = int(read_local_info(all_shp, verify_export=verify_export)["features"])
 
     caves_dir = outdir / "caves"
     sum_count = 0
     breakdown: list[str] = []
     for shp in sorted(caves_dir.glob("*.shp")):
         cave = shp.stem
-        count = int(read_local_info(shp)["features"])
+        count = int(read_local_info(shp, verify_export=verify_export)["features"])
         sum_count += count
         breakdown.append(f"    {cave}: {count}")
 

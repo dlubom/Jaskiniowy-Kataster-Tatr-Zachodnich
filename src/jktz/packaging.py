@@ -57,6 +57,8 @@ EXCLUDE_PATTERNS: tuple[str, ...] = (
     "web/*",
     "survex-src/*",
     "validate-exports/*",
+    ".jktz-validation-*/*",
+    "*/.jktz-validation-*/*",
     "cavern_output.txt",
     "release_notes.md",
     "JKTZ-*.zip",

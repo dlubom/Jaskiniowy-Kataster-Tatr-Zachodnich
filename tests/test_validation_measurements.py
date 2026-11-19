@@ -71,6 +71,47 @@ def test_compass_shot_scanner_accepts_walls_abbreviations_and_separators(body, o
     assert has_dated_or_declared_active_shots(body) is oriented
 
 
+@pytest.mark.parametrize("value", ["CT O=AVD", "meters DECL=6", "meters,RECT,feet"])
+def test_unused_units_macro_leaves_the_next_shot_undated(value):
+    assert not has_dated_or_declared_active_shots(f'#u $s="{value}"\nA B 10 90 0\n')
+
+
+def test_referenced_units_macros_apply_settings_and_respect_case_and_redefinition():
+    definitions = '#u $s=6,$S = "CT O=AVD"\n#u $setup="meters DECL=$(s)"\n'
+    shot = "A B 90 0 10\n"
+    assert not has_dated_or_declared_active_shots(definitions + "#u $(S)\n" + shot)
+    assert has_dated_or_declared_active_shots(definitions + "#u $(S),$(setup)\n" + shot)
+    assert not has_dated_or_declared_active_shots(
+        definitions + "#u $setup\n#u $(S) $(setup)\n" + shot
+    )
+
+
+def test_semicolon_in_quoted_macro_starts_a_comment_only_after_expansion():
+    definition = '#u $s="meters; DECL=6"'
+    shot = "A B 10 90 0\n"
+    assert has_dated_or_declared_active_shots(definition + " DECL=6\n" + shot)
+    assert not has_dated_or_declared_active_shots(definition + "\n#u $(s) DECL=6\n" + shot)
+
+
+@pytest.mark.parametrize(
+    "lrud",
+    ["<1,2,3,4,90>", "*1,2,3,4,90*", "*1 2 3 4 90*", "<1,2,3,4,90> #s 5"],
+)
+def test_lrud_dimensions_before_date_do_not_make_a_compass_leg(lrud):
+    assert has_dated_or_declared_active_shots(f"A, {lrud}\n#date 2004-06-19\nA B 10 90 0\n")
+
+
+@pytest.mark.parametrize("lrud", ["<1,2,3,4>", "*1,2,3,4*"])
+def test_distance_before_attached_lrud_still_requires_orientation(lrud):
+    survey = f"#u O=AVD\nA, B, 90, 0, 10{lrud}\n"
+    assert not has_dated_or_declared_active_shots(survey)
+    assert has_dated_or_declared_active_shots("#date 2004-06-19\n" + survey)
+
+
+def test_to_station_starting_with_an_asterisk_keeps_its_traverse():
+    assert not has_dated_or_declared_active_shots("A *8 10 90 0 * 1,2,3,4 *\n")
+
+
 @pytest.mark.parametrize(
     "text",
     [

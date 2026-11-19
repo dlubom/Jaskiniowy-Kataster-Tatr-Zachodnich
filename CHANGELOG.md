@@ -14,17 +14,21 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 - Skorygowano pochodzenie ciągów Kujata i Partii Wawelskich w Czarnej oraz
   opisy dat pomiarów Czarnej, Mnichowej Studni Wyżniej i Ptasiej Studni.
 - Walidacja kompiluje model raz i z tej samej kopii tworzy eksporty.
-  Sprawdza kompletność plików SHP i ich deklarowany układ EPSG:32634.
+  Sprawdza geometrię i pola atrybutów w warstwach SHP oraz deklarowany układ
+  EPSG:32634.
   Walidator Walls zamyka wskazówkę startową także podczas rekompilacji
   i odnajduje wynik, gdy nazwa pliku WPJ różni się od nazwy jego głównej księgi.
 - Renderer wykrywa powtórzone kolumny GPS. Polecenie `jktz-gps-snapshot`
-  sprawdza katalog przed zapisem. Narzędzia SRV zachowują końce wierszy
-  i zagnieżdżone komentarze Walls, a walidator rozpoznaje skróty jednostek
-  i kolejności pomiarów.
+  sprawdza katalog i nagłówki współrzędnych przed zapisem snapshotu.
+  Narzędzia SRV zachowują końce wierszy i zagnieżdżone komentarze Walls.
+  Walidator rozpoznaje skrócone dyrektywy jednostek, odróżnia definicję makra
+  od jego użycia i poprawnie odczytuje samodzielne przekroje LRUD.
 - Błąd odczytu materiału zatrzymuje tworzenie ZIP i zachowuje poprzednią
-  paczkę. Przygotowanie wersji można ponowić po błędzie zapisu notatek.
+  paczkę. ZIP pomija katalogi robocze trwającej lub przerwanej walidacji.
+  Przygotowanie wersji można ponowić po błędzie zapisu notatek.
   Git rozpoznaje pliki wyjściowe kompilatorów niezależnie od wielkości liter
-  w rozszerzeniu i pozwala dołączyć oryginały otrzymane do `_RAW`.
+  w rozszerzeniu i pozwala dołączyć oryginały w tych formatach do `_RAW`,
+  zachowując lokalne wykluczenia dla pozostałych plików.
 - Widok 3D korzysta z wbudowanej definicji EPSG:32634. Teren wczytuje się
   także przy niedostępności epsg.io. Poprawiono instrukcję podglądu lokalnego.
 - Lokalny eksport SHP sprawdza puste warstwy, zgodność liczby odcinków

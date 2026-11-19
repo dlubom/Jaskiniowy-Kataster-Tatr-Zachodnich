@@ -84,7 +84,7 @@ def run_exports(
       3. ogr2ogr DXF → ESRI Shapefile         → JKTZ-<version>-all.shp
       4. survexport --entrances → cave list
          per cave: survexport --survey filter + ogr2ogr → caves/<cave>.shp
-      5. Validate non-empty shapefiles, feature counts and geographic extent.
+      5. Read back geometries and attributes, check feature counts and geographic extent.
     """
     compile_model(version, outdir, cwd)
     export_formats(version, outdir, cwd)
@@ -194,7 +194,7 @@ def export_formats(version: str, outdir: Path, cwd: Path | None = None) -> None:
             )
     print("[5/5] Validating shapefiles")
     empty_shapefiles.check(outdir=outdir)
-    shapefiles_count.check(outdir=outdir, version=version)
+    shapefiles_count.check(outdir=outdir, version=version, verify_export=True)
     shapefiles_extent.check(outdir=outdir, version=version)
     print()
     print("=== Done ===")

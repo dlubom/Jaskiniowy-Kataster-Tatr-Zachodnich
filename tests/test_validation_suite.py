@@ -521,8 +521,16 @@ def test_j05_checked_render_and_offline_validation_do_not_access_network(gps_pro
 
 
 @pytest.mark.parametrize("existing_directory", [False, True])
-def test_j05_snapshot_command_checks_downloaded_catalogue(
-    gps_project, monkeypatch, capsys, existing_directory
+@pytest.mark.parametrize(
+    ("coordinate_header", "error"),
+    [
+        (None, "Missing catalogue tables: objects"),
+        (b"lon,lon,lat,elevation_m", "duplicate column lon"),
+        (b"lon,elevation_m", "missing required columns: lat"),
+    ],
+)
+def test_j05_snapshot_command_rejects_invalid_assets_before_publishing(
+    gps_project, monkeypatch, capsys, existing_directory, coordinate_header, error
 ):
     import shutil
 
@@ -549,17 +557,25 @@ def test_j05_snapshot_command_checks_downloaded_catalogue(
         destination.mkdir()
     gpkg = directory / gps_catalog.CATALOGUE_ASSET
     valid_gpkg = gpkg.read_bytes()
-    update_database(directory, "DROP TABLE objects")
+    csv = directory / gps_catalog.BEST_MEASUREMENTS_ASSET
+    valid_csv = csv.read_bytes()
+    if coordinate_header is None:
+        update_database(directory, "DROP TABLE objects")
+    else:
+        csv.write_bytes(valid_csv.replace(b"lon,lat,elevation_m", coordinate_header, 1))
 
     assert render_otwory.snapshot_main([str(destination)]) == 1
-    assert "Missing catalogue tables: objects" in capsys.readouterr().err
+    assert error in capsys.readouterr().err
     assert destination.exists() is existing_directory
     assert not list(destination.glob("*"))
 
     gpkg.write_bytes(valid_gpkg)
+    csv.write_bytes(valid_csv)
     assert render_otwory.snapshot_main([str(destination)]) == 0
     assert "@v1 (release 10)" in capsys.readouterr().out
-    assert gps_catalog.load_snapshot(destination).gpkg_path.read_bytes() == valid_gpkg
+    snapshot = gps_catalog.load_snapshot(destination)
+    assert snapshot.gpkg_path.read_bytes() == valid_gpkg
+    assert snapshot.csv_path.read_bytes() == valid_csv
 
 
 def test_j05_invalid_manifest_is_reported_before_metadata(gps_project, monkeypatch, capsys):

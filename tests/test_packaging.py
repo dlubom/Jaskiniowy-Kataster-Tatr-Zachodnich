@@ -215,7 +215,17 @@ def test_worktree_git_pointer_stays_out_of_release_zip(tmp_path):
 
 
 def test_release_zip_does_not_scan_excluded_directories(tmp_path, monkeypatch):
-    excluded = [tmp_path / name for name in (".git", ".venv", ".verification", "Poligony/_RAW")]
+    excluded = [
+        tmp_path / name
+        for name in (
+            ".git",
+            ".venv",
+            ".verification",
+            "Poligony/_RAW",
+            ".jktz-validation-running",
+            "output/.jktz-validation-interrupted",
+        )
+    ]
     for directory in excluded:
         directory.mkdir(parents=True)
         (directory / "private.txt").write_text("excluded")
