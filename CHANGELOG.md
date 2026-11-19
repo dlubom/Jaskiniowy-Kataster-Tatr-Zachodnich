@@ -6,6 +6,16 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v2.0.4] - 2026-11-19
+
+### Dodano
+
+- W Miętusiej przywrócono ze źródłowych SVX 22 przekroje LRUD w Rurze
+  i 23 w Sali Matki Boskiej.
+- Do archiwum Novej Kresanicy dodano model z 2009 r. Zawiera odpowiedniki
+  155 odcinków katastrowych. Datę pomiaru w siedmiu plikach SRV oznaczono
+  jako nieustaloną. Historyczna data do obliczeń deklinacji pozostała w plikach.
+
 ## [v2.0.3] - 2026-11-19
 
 ### Naprawione
