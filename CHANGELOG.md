@@ -6,6 +6,14 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v2.0.5] - 2026-11-19
+
+### Dodane
+
+- Zarchiwizowano paczkę Walls od Marka Lorczyka dla Małej w Mułowej,
+  Lejbusiowej i Ptasiej Studni oraz opisano pochodzenie pomiarów
+  powierzchniowych między otworami (#28).
+
 ## [v2.0.4] - 2026-11-19
 
 ### Dodano
