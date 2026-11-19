@@ -9,7 +9,7 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 ### Dodane
 
 - Zarchiwizowano paczkę Walls od Marka Lorczyka dla Małej w Mułowej,
-  Łejbusiowej i Ptasiej Studni oraz opisano pochodzenie pomiarów
+  Lejbusiowej i Ptasiej Studni oraz opisano pochodzenie pomiarów
   powierzchniowych między otworami (#28).
 
 ## [v2.0.3] - 2026-11-19
