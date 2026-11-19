@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import contextlib
-import shutil
 import sys
 import tempfile
 from collections.abc import Callable, Iterator, Sequence
@@ -16,7 +15,6 @@ from jktz.entrances.render import (
     render_entrances,
 )
 from jktz.exports import pipeline
-from jktz.exports import tools as exports_tools
 from jktz.gps_catalog import GpsSnapshot, download_snapshot, load_snapshot
 from jktz.metadata.identity import SurveyIdentity
 from jktz.reporting import CheckFailed
@@ -100,12 +98,12 @@ def _check_rendered_entrances(snapshot: GpsSnapshot) -> None:
         raise CheckFailed(f"ERROR: entrance snapshot check failed: {exc}") from exc
 
     print(f"Checked {result.output.as_posix()} from {result.source}")
-    print(f"GPS fixes: {result.gps_fixes}")
+    print(f"Rendered gps_fix calls: {result.gps_fixes}")
 
 
 def _check_exports(context: ValidationContext) -> None:
     with _indent_stdout():
-        pipeline.run_exports(
+        pipeline.export_formats(
             version=context.exports_version,
             outdir=context.exports_dir,
         )
@@ -116,6 +114,8 @@ def validation_steps(
 ) -> tuple[ValidationStep, ...]:
     """Build the checks around one release and one set of survey identities."""
     identities: dict[Path, SurveyIdentity] = {}
+    compiled = context.exports_dir / f"JKTZ-{context.exports_version}.3d"
+    compile_log = context.exports_dir / f"JKTZ-{context.exports_version}-cavern-log.txt"
 
     def check_metadata() -> None:
         identities.update(metadata.check())
@@ -172,22 +172,24 @@ def validation_steps(
         ValidationStep(
             "Compiling with cavern",
             None,
-            lambda: exports_tools.cavern(["KATASTER.wpj"], log_to=context.cavern_log),
+            lambda: pipeline.compile_model(
+                context.exports_version, context.exports_dir, log_to=context.cavern_log
+            ),
         ),
         ValidationStep(
             "Checking for unattached stations",
             "Unattached stations",
-            lambda: unattached.check(log_path=context.cavern_log),
+            lambda: unattached.check(log_path=compile_log),
         ),
         ValidationStep(
             "Checking cavern compile warnings",
             "Cavern compile warnings",
-            lambda: cavern_warnings.check(log_path=context.cavern_log),
+            lambda: cavern_warnings.check(log_path=compile_log),
         ),
         ValidationStep(
             "Checking compiled station references",
             "Compiled station references",
-            lambda: catalogue.check_compiled_references(Path("KATASTER.3d"), identities),
+            lambda: catalogue.check_compiled_references(compiled, identities),
         ),
         ValidationStep(
             "Checking exports",
@@ -215,27 +217,14 @@ def run_validation(context: ValidationContext | None = None) -> None:
             f"ERROR: validation output already exists: {context.exports_dir}; "
             "choose an unused directory or move the existing files first"
         )
-    with tempfile.TemporaryDirectory(prefix="jktz-validation-") as directory:
+    # Only publish after all checks. A discarded run only cleans its own directory.
+    parent = context.exports_dir.parent if context.keep_exports else None
+    with tempfile.TemporaryDirectory(prefix=".jktz-validation-", dir=parent) as directory:
         snapshot = _prepare_snapshot(context.gps_snapshot, Path(directory) / "gps")
-        if context.keep_exports:
-            _publish_checked_exports(context, snapshot)
-            return
-        try:
-            run_steps(validation_steps(context, snapshot))
-        finally:
-            if context.exports_dir.exists():
-                shutil.rmtree(context.exports_dir, ignore_errors=True)
-
-
-def _publish_checked_exports(context: ValidationContext, snapshot: GpsSnapshot) -> None:
-    # Stage beside the destination so a successful directory rename stays on
-    # the same filesystem. Failures leave no directory for the ZIP step.
-    with tempfile.TemporaryDirectory(
-        prefix=".jktz-exports-", dir=context.exports_dir.parent
-    ) as directory:
         staging = Path(directory) / "checked"
         run_steps(validation_steps(replace(context, exports_dir=staging), snapshot))
-        staging.rename(context.exports_dir)
+        if context.keep_exports:
+            staging.rename(context.exports_dir)
 
 
 def _prepare_snapshot(source: Path | None, destination: Path) -> GpsSnapshot:

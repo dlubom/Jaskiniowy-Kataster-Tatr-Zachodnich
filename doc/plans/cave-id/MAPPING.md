@@ -82,9 +82,9 @@ rozbieżność dat pozostaje do osobnego wyjaśnienia.
 
 Koordynator 2026-11-12 przyjął powierzchnię `0–B–11` (2 nogi, 29,70 m),
 dolny otwór na `11` i podziemie `11–12–13` (2 nogi, 9,27 m).
-Podstawą było porównanie poligonu z autorskim planem Z. Tabaczyńskiego,
-„Jaskinie” 3(28)/2002, s. 20, zachowanym w
-[_RAW/03](../../../Poligony/D_Malej_Laki/Prawe_zb/Mnich_Studnia_Wyz/_RAW/03/README.md).
+Podstawą było porównanie poligonu z planem Z. Tabaczyńskiego
+opublikowanym w [„Jaskiniach” 3(28)/2002, s. 20](http://jaskinie.org.pl/files/Jaskinie__28_2002.pdf#page=20).
+Opis jaskini i pomiarów zachowano w [paczce _RAW/03](../../../Poligony/D_Malej_Laki/Prawe_zb/Mnich_Studnia_Wyz/_RAW/03/README.md).
 Autor narysował domiar z jednym załamaniem i wskazał dolny otwór odkryty
 w 1959 r., ale nie podał numerów stacji. Numerowane przypisanie jest
 zatem decyzją koordynatora. Podpis „GÓRNY OTWÓR” przy północnym wejściu

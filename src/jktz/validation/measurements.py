@@ -6,9 +6,9 @@ from dataclasses import dataclass, replace
 from jktz.validation._utils import active_lines
 
 _DATE_DIRECTIVE_RE = re.compile(r"^\s*#date\b", re.IGNORECASE)
-_UNITS_DIRECTIVE_RE = re.compile(r"^\s*#units\b", re.IGNORECASE)
-_DECL_DIRECTIVE_RE = re.compile(r"^\s*#units\b.*\bDECL\s*=", re.IGNORECASE)
-_ORDER_RE = re.compile(r"\border\s*=\s*([A-Z]+)", re.IGNORECASE)
+_UNITS_DIRECTIVE_RE = re.compile(r"^\s*#u(?:nits)?\b", re.IGNORECASE)
+_DECL_OPTION_RE = re.compile(r"(?<!\S)DECL\s*=", re.IGNORECASE)
+_ORDER_RE = re.compile(r"(?<!\S)O(?:RDER)?\s*=\s*([A-Z]+)", re.IGNORECASE)
 _UNITS_KEYWORD_RE = re.compile(r"(?<!\S)(SAVE|RESET|RESTORE|CT|RECT)(?!\S)", re.IGNORECASE)
 
 
@@ -23,6 +23,7 @@ def has_dated_or_declared_active_shots(text: str) -> bool:
     state = _UnitsState()
     saved_states: list[_UnitsState] = []
     for _line_num, line in active_lines(text):
+        line = line.replace(",", " ")
         if _DATE_DIRECTIVE_RE.match(line):
             state = replace(state, has_orientation=True)
             continue
@@ -55,7 +56,7 @@ def _apply_units(line: str, state: _UnitsState, saved_states: list[_UnitsState])
         state = _UnitsState()
     if "RESTORE" in keywords and saved_states:
         state = saved_states.pop()
-    if _DECL_DIRECTIVE_RE.match(line):
+    if _DECL_OPTION_RE.search(line):
         state = replace(state, has_orientation=True)
     for keyword in keywords:
         if keyword in {"CT", "RECT"}:

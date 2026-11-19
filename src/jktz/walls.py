@@ -36,14 +36,18 @@ def source_files(root: Path) -> list[Path]:
 def project_name(project: Path) -> str:
     """Reject paths escaping the isolated tree, including Windows paths on POSIX."""
     name = ""
+    in_root = None  # The first BOOK opens the root. A later node takes over its properties.
     for line in project.read_text(encoding="cp1250").splitlines():
         fields = line.split(maxsplit=1)
-        if len(fields) == 2 and fields[0].upper() in (".NAME", ".PATH"):
+        directive = fields[0].upper() if fields else ""
+        if directive in (".BOOK", ".SURVEY", ".ENDBOOK"):
+            in_root = in_root is None and directive == ".BOOK"
+        if len(fields) == 2 and directive in (".NAME", ".PATH"):
             value = fields[1]
             path = PureWindowsPath(value)
             if path.drive or path.root or ".." in path.parts or '"' in value:
                 raise ValueError(f"Unsafe project path: {value}")
-            if not name and fields[0].upper() == ".NAME":
+            if in_root and directive == ".NAME":
                 name = value
     if not name or len(PureWindowsPath(name).parts) != 1:
         raise ValueError("Missing or unsupported root .NAME")
@@ -82,13 +86,15 @@ def windows_path(path: Path, wine: str | None) -> str:
     return "Z:" + str(path.resolve()).replace("/", "\\") if wine else str(path.resolve())
 
 
-def inspect_result(work: Path, name: str, before: dict, completed) -> tuple[dict, list[str]]:
+def inspect_result(
+    work: Path, output_base: Path, before: dict, completed
+) -> tuple[dict, list[str]]:
     artifacts = {}
     errors = []
     if completed.returncode or "COMPILE_COMPLETE\n" not in completed.stdout.replace("\r\n", "\n"):
         errors.append(f"driver did not confirm completion (exit {completed.returncode})")
     for extension in EXTENSIONS:
-        path = work / name / f"{name}.{extension}"
+        path = output_base.with_name(f"{output_base.name}.{extension}")
         if path.is_file() and path.stat().st_size:
             artifacts[path.relative_to(work).as_posix()] = digest(path)
         else:
@@ -137,6 +143,7 @@ def validate(
     )
     with tempfile.TemporaryDirectory(prefix="w", dir=scratch_root) as directory:
         work = Path(directory)
+        output_base = work / project.stem / name
         for relative in before:
             target = work / relative
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -145,7 +152,7 @@ def validate(
             str(driver),
             windows_path(walls, wine),
             windows_path(work / project.name, wine),
-            windows_path(work / name / name, wine),
+            windows_path(output_base, wine),
             str(timeout),
             str(int(duplicates)),
             BUILD,
@@ -163,7 +170,9 @@ def validate(
             (output / "driver.log").write_text(
                 completed.stdout + completed.stderr, encoding="utf-8"
             )
-            report["artifacts"], report["reason"] = inspect_result(work, name, before, completed)
+            report["artifacts"], report["reason"] = inspect_result(
+                work, output_base, before, completed
+            )
         except (OSError, subprocess.TimeoutExpired) as exc:
             report["reason"] = [str(exc)]
             details = str(exc)

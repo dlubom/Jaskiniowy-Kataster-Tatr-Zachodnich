@@ -58,6 +58,20 @@ def test_active_shot_scanner_preserves_order_across_units_without_order() -> Non
 
 
 @pytest.mark.parametrize(
+    ("body", "oriented"),
+    [
+        ("#u DECL=1\nA B 13 0 0\n", True),
+        ("#units O=AVD\nA B 0 0 13\n", False),
+        ("#u o=AVD\nA B 90 0 0\n", True),
+        ("A, B, 13, 0, 0\n", False),
+        ("#units rect,meters\nA B 13 0 0\n", True),
+    ],
+)
+def test_compass_shot_scanner_accepts_walls_abbreviations_and_separators(body, oriented):
+    assert has_dated_or_declared_active_shots(body) is oriented
+
+
+@pytest.mark.parametrize(
     "text",
     [
         "#units rect order=NEU\n0 1 1 2 3\n#units CT\n1 2 10 90 0\n",

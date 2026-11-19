@@ -77,6 +77,7 @@ Poligony/                 # SOURCE DATA: .SRV survey files organized by valley
   D_Bystra/
   D_Chocholowska/
   D_Goryczkowa/
+  D_Kasprowa/
   D_Koscieliska/          # Largest region (Bandzioch, System Pawlikowskiego, etc.)
   D_ku_Dziurze/
   D_Malej_Laki/           # Contains System Wielkiej Snieznej
@@ -84,11 +85,12 @@ Poligony/                 # SOURCE DATA: .SRV survey files organized by valley
   D_Panszczyca/
   D_Tomanowa/
   J_Slowacji/
-  _Domiary_Pow_/          # Surface measurement connections between caves
 Powierzchnia/             # Terrain model (DEM from contour lines)
 KATASTER/                 # COMPILED OUTPUT (git-ignored .NT* files)
 .github/workflows/        # GitHub Actions: PR validation/packages, releases, Pages
 ```
+
+Surface surveys are stored alongside their caves in the regional directories.
 
 ## Key File Formats
 
@@ -336,7 +338,7 @@ The `_RAW/` contents are not processed by Walls but are tracked in git for refer
 
 ## .gitignore
 
-Compiled Walls outputs are git-ignored: `*.nta`, `*.ntn`, `*.ntv`, `*.nts`, `*.ntp`, `*.wrl`, `*.log`, `*.lst`. The `logs/` directory is also ignored. Source archives, documentation, templates, and tooling are also tracked.
+Git ignores compiled Walls databases (`.nta`, `.ntn`, `.ntv`, `.nts`, `.ntp`, `.ntw`), gradient files (`.ntac`, `.ntad`, `.ntae`, `.ntas`), and `.wrl`, `.log` and `.lst` outputs regardless of letter case. Original material inside `Poligony/**/_RAW/` can include these formats. The `logs/` directory is also ignored. Source archives, documentation, templates, and tooling are also tracked.
 Audit evidence defaults to `<project-root>/.verification/<YYYY-MM-DD>-<cave>/`,
 resolved from the audited project containing `KATASTER.wpj`, regardless of
 the terminal's working directory. An explicit user destination takes precedence,

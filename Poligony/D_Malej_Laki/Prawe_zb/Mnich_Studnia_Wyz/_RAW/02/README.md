@@ -15,6 +15,6 @@
 
 ## Rola i relacja do nowszych źródeł
 
-Arkusz1!J1 zawiera 3.II.2002, a J3 — 12.VI.2002 przy nagłówku ciągu powierzchniowego i dolnego otworu. Nie przeniesiono tej drugiej daty do #date aktywnego SRV; zakres dat i powierzchni rozlicza #151. Wariant XLS ma m.in. 0→1 14.21/260/+63 bez odpowiednika w nowszym CSP oraz C8=12.67, podczas gdy późniejszy CSP ma B→11 13.32/272/−30. Te różnice pozostają zachowanymi wariantami źródłowymi, nie podstawą korekty SRV.
+Arkusz1!J1 zawiera 3.II.2002, a J3 — 12.VI.2002 przy nagłówku ciągu powierzchniowego i dolnego otworu. Zakres tej drugiej daty dla poszczególnych odcinków pozostaje otwarty w #151. Podział na domiar 0–B–11 i odcinki podziemne 11–12–13 opisano w [paczce 01](../01/README.md). Wariant XLS ma m.in. 0→1 14.21/260/+63 bez odpowiednika w nowszym CSP oraz C8=12.67, podczas gdy późniejszy CSP ma B→11 13.32/272/−30. Te różnice pozostają zachowanymi wariantami źródłowymi, nie podstawą korekty SRV.
 
 Dokumentacja opisowa jest zachowana w [lokalnej paczce dokumentacji](../03/README.md). Oryginał załącznika pozostaje bez zmian.

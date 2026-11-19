@@ -1,17 +1,17 @@
 #Walls
-*.nta
-*.ntn
-*.ntv
-*.nts
-*.ntp
-*.wrl
-*.log
-*.lst
+*.[Nn][Tt][AaNnPpSsVvWw]
+*.[Nn][Tt][Aa][CcDdEeSs]
+*.[Ww][Rr][Ll]
+*.[Ll][Oo][Gg]
+*.[Ll][Ss][Tt]
 
 #Survex
-*.3d
-*.err
+*.3[Dd]
+*.[Ee][Rr][Rr]
 cavern_output.txt
+
+# Original material received from survey authors can include compiled files.
+!Poligony/**/_RAW/**
 
 #Local Claude settings retained after migration
 .claude/settings.local.json

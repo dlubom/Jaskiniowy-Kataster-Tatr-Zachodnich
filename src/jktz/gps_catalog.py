@@ -18,6 +18,7 @@ from jktz.entrances.render import (
     _download_release_asset,
     _read_json,
     _required_str,
+    require_csv_columns,
 )
 
 CATALOGUE_ASSET = "katalog.gpkg"
@@ -60,8 +61,10 @@ class Catalogue:
     objects: dict[str, CatalogueObject]
 
 
-def download_snapshot(repo: str, destination: Path) -> GpsSnapshot:
-    """Fetch both assets from one release into a new or empty directory."""
+def download_snapshot(
+    repo: str, destination: Path, *, validate_catalogue: bool = False
+) -> GpsSnapshot:
+    """Fetch one release, optionally verifying its catalogue before publishing the files."""
     if destination.is_symlink() or (destination.exists() and any(destination.iterdir())):
         raise FileExistsError(f"GPS snapshot destination is occupied: {destination}")
 
@@ -80,6 +83,8 @@ def download_snapshot(repo: str, destination: Path) -> GpsSnapshot:
         (staging / MANIFEST_NAME).write_text(
             json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
         )
+        if validate_catalogue:
+            read_catalogue(_snapshot(staging, repo, tag, release_id, manifest_assets))
         if destination.exists():
             destination.rmdir()  # Refuses to remove files or a directory with existing inputs.
         staging.rename(destination)
@@ -271,16 +276,10 @@ def effective_cave_id(cave_id: str, catalogue: Catalogue) -> str:
 
 
 def _check_best_links(path: Path, catalogue: Catalogue) -> None:
-    required = {"object_id", "cave_id", "system_cave_id"}
     seen = set()
     with path.open(encoding="utf-8-sig", newline="") as file:
         reader = csv.DictReader(file)
-        fieldnames = reader.fieldnames or []
-        if missing := required.difference(fieldnames):
-            raise ValueError(f"{path}: missing required columns: {', '.join(sorted(missing))}.")
-        for field in sorted(required):
-            if fieldnames.count(field) > 1:
-                raise ValueError(f"{path}: duplicate column {field}.")
+        require_csv_columns(path, reader.fieldnames, {"object_id", "cave_id", "system_cave_id"})
         for row in reader:
             location = f"{path}:{reader.line_num}"
             object_id = row["object_id"]

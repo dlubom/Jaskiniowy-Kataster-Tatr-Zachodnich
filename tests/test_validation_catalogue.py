@@ -1,15 +1,22 @@
 from __future__ import annotations
 
 import hashlib
+import shutil
 import sqlite3
 from contextlib import closing
 from pathlib import Path
 
 import pytest
 
+from jktz.exports import tools
 from jktz.gps_catalog import Catalogue, CatalogueObject, Cave, GpsSnapshot, read_catalogue
 from jktz.metadata.identity import parse_identity
-from jktz.validation.catalogue import check_reference_stations, validate_identities
+from jktz.reporting import CheckFailed
+from jktz.validation.catalogue import (
+    check_compiled_references,
+    check_reference_stations,
+    validate_identities,
+)
 
 
 @pytest.fixture
@@ -218,6 +225,24 @@ def test_reference_stations_match_survex_empty_prefix_normalization():
     identity = _surface(":LodowaMalolacka::31=MLW-0024")
 
     assert check_reference_stations({Path("POW.SRV"): identity}, {"LodowaMalolacka: :31"}) == []
+
+
+def test_unfixed_entrance_must_appear_in_the_compiled_entrance_export(tmp_path):
+    if not all(shutil.which(tool) for tool in ("cavern", "survexport")):
+        pytest.skip("Survex is required")
+    survey = tmp_path / "CAVE.SRV"
+    survey.write_text("#units meters order=DAV decl=0\n#prefix Cave\n0 11 10 0 0\n")
+    identities = {Path("CAVE.SRV"): _surface("Cave:11=MLW-0009")}
+    model = tmp_path / "survey.3d"
+    compile_args = ["--warnings-are-errors", "-o", str(model), str(survey)]
+    tools.cavern(compile_args)
+    with pytest.raises(CheckFailed, match=r"Cave:11=MLW-0009.*ENTRANCE"):
+        check_compiled_references(model, identities)
+
+    with survey.open("a") as stream:
+        stream.write("#flag 11 /ENTRANCE\n")
+    tools.cavern(compile_args)
+    check_compiled_references(model, identities)
 
 
 def test_unfixed_reference_does_not_require_best_or_fix(tmp_path):

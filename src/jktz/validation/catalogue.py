@@ -89,7 +89,7 @@ def check_reference_stations(
     names = {_SURVEX_EMPTY_PREFIX.sub("", name) for name in station_names}
     return sorted(
         f"{path.as_posix()}: OBJECT_REF {ref.station_id}={ref.object_id}: "
-        "station is missing from compiler output"
+        "station is missing from compiler output for /ENTRANCE"
         for path, identity in identities.items()
         for ref in identity.object_refs
         if ref.station_id.lstrip(":") not in names
@@ -136,11 +136,11 @@ def check_catalogue(
         raise CheckFailed("ERROR: GPS catalogue references:\n" + "\n".join(errors))
 
 
-def read_station_names(three_d: Path) -> set[str]:
-    """Export all named stations using the pinned Survex CSV format."""
+def read_entrance_names(three_d: Path) -> set[str]:
+    """Read stations exported as entrances, including those positioned by a traverse."""
     with tempfile.TemporaryDirectory(prefix="jktz-stations-") as directory:
         output = Path(directory) / "stations.csv"
-        tools.survexport(["--station-names", "--csv", str(three_d.resolve()), str(output)])
+        tools.survexport(["--entrances", "--csv", str(three_d.resolve()), str(output)])
         with output.open(encoding="utf-8-sig", newline="") as stream:
             reader = csv.DictReader(stream)
             if not reader.fieldnames or "Station Name" not in reader.fieldnames:
@@ -150,7 +150,7 @@ def read_station_names(three_d: Path) -> set[str]:
 
 def check_compiled_references(three_d: Path, identities: Mapping[Path, SurveyIdentity]) -> None:
     try:
-        stations = read_station_names(three_d)
+        stations = read_entrance_names(three_d)
     except (OSError, ValueError) as exc:
         raise CheckFailed(f"ERROR: cannot read compiled stations: {exc}") from exc
     if errors := check_reference_stations(identities, stations):

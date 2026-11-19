@@ -182,6 +182,10 @@
 #flag	MnichStudniaWyz:0	/ENTRANCE
 #note	MnichStudniaWyz:0	/Mnichowa Studnia Wyznia
 
+#flag	MnichStudniaWyz:11	/Mnichowa Studnia Wyznia - otwor dolny
+#flag	MnichStudniaWyz:11	/ENTRANCE
+#note	MnichStudniaWyz:11	/Mnichowa Studnia Wyznia - otwor dolny
+
 #fix	Mrozna:0	E19.8672300982	N49.2498018833	1111.121897m
 #flag	Mrozna:0	/Jaskinia Mrozna
 #flag	Mrozna:0	/ENTRANCE

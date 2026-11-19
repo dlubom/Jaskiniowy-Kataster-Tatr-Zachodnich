@@ -43,6 +43,18 @@ PROCESSING      "konwersja z arkusza"
 """
 
 
+@pytest.mark.parametrize(
+    ("field", "value"), [("SURVEY_ID", ""), ("SURVEY_NAME", "  "), ("LICENSE", "")]
+)
+def test_required_survey_identity_and_license_cannot_be_blank(field, value):
+    lines = [
+        f'{field} "{value}"' if line.startswith(field + " ") else line
+        for line in VALID_BLOCK.splitlines()
+    ]
+    with pytest.raises(MetadataError, match=field):
+        parse_srv_metadata(Path("CAVE.SRV"), "\n".join(lines))
+
+
 def test_parse_srv_metadata_with_repeated_fields() -> None:
     parsed = parse_srv_metadata(Path("Poligony/Cave/CAVE.SRV"), VALID_BLOCK)
 

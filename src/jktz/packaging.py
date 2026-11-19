@@ -2,7 +2,10 @@ from __future__ import annotations
 
 import fnmatch
 import os
+import stat
+import tempfile
 import zipfile
+from collections.abc import Iterator
 from pathlib import Path
 
 # Single source of truth for what stays out of the release ZIP. Patterns use
@@ -46,25 +49,18 @@ EXCLUDE_PATTERNS: tuple[str, ...] = (
     "*/_RAW/*",
     "*.DS_Store",
     "KATASTER/*",
-    "*.nta",
-    "*.ntn",
-    "*.ntv",
-    "*.nts",
-    "*.ntp",
-    "*.NTA",
-    "*.NTN",
-    "*.NTV",
-    "*.NTS",
-    "*.NTP",
-    "*.wrl",
-    "*.log",
-    "*.lst",
+    "*.[Nn][Tt][AaNnPpSsVvWw]",
+    "*.[Nn][Tt][Aa][CcDdEeSs]",
+    "*.[Ww][Rr][Ll]",
+    "*.[Ll][Oo][Gg]",
+    "*.[Ll][Ss][Tt]",
     "web/*",
     "survex-src/*",
     "validate-exports/*",
     "cavern_output.txt",
     "release_notes.md",
     "JKTZ-*.zip",
+    "*/JKTZ-*.zip",
 )
 
 
@@ -74,6 +70,20 @@ def is_excluded(rel_path: str, patterns: tuple[str, ...] = EXCLUDE_PATTERNS) -> 
     return any(fnmatch.fnmatch(rel_path, p) for p in patterns)
 
 
+def _raise_walk_error(error: OSError) -> None:
+    raise error
+
+
+def _release_files(root: Path) -> Iterator[Path]:
+    for directory, dirs, names in os.walk(root, onerror=_raise_walk_error):
+        parent = Path(directory).relative_to(root)
+        dirs[:] = [name for name in dirs if not is_excluded((parent / name).as_posix() + "/")]
+        for name in names:
+            relative = parent / name
+            if not is_excluded(relative.as_posix()):
+                yield relative
+
+
 def build_release_zip(
     version: str,
     zip_path: Path | None = None,
@@ -81,36 +91,24 @@ def build_release_zip(
 ) -> Path:
     """Build the user-facing JKTZ release ZIP from the workspace at ``root``.
 
-    Returns the absolute path of the produced ZIP. Overwrites any existing file
-    at the target path.
+    Returns the absolute path of the produced ZIP. Replaces the target only
+    after every input has been archived and the ZIP has been closed.
     """
     root = Path(root).resolve()
     if zip_path is None:
         zip_path = root / f"JKTZ-{version}.zip"
     else:
         zip_path = Path(zip_path).resolve()
-    if zip_path.exists():
-        zip_path.unlink()
 
-    included = 0
-    with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
-        files = []
-        for directory, dirs, names in os.walk(root):
-            parent = Path(directory)
-            dirs[:] = [
-                name
-                for name in dirs
-                if not is_excluded((parent / name).relative_to(root).as_posix() + "/")
-            ]
-            files.extend(parent / name for name in names)
-        for file in sorted(files):
-            if not file.is_file() or file.resolve() == zip_path:
-                continue
-            rel = file.relative_to(root).as_posix()
-            if is_excluded(rel):
-                continue
-            zf.write(file, arcname=rel)
-            included += 1
+    files = sorted(_release_files(root))
+    with tempfile.TemporaryDirectory(dir=zip_path.parent) as directory:
+        staged = Path(directory) / "JKTZ-pending.zip"
+        with zipfile.ZipFile(staged, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+            for relative in files:
+                file = root / relative
+                if file.resolve() != zip_path and stat.S_ISREG(file.stat().st_mode):
+                    archive.write(file, arcname=relative.as_posix())
+        staged.replace(zip_path)
 
-    print(f"=== Built {zip_path.as_posix()} with {included} files ===")
+    print(f"=== Built {zip_path.as_posix()} with {len(archive.infolist())} files ===")
     return zip_path

@@ -8,6 +8,7 @@ from unittest.mock import Mock
 import pytest
 
 from jktz.entrances.render import RenderError, RenderResult
+from jktz.exports import tools
 from jktz.gps_catalog import GpsSnapshot
 from jktz.reporting import CheckFailed
 from jktz.validation import suite
@@ -62,12 +63,18 @@ def test_run_validation_removes_exports_after_failure(
         exports_dir=exports_dir,
     )
 
+    staged = []
+
     def failing_steps(
-        _context: ValidationContext, _snapshot: GpsSnapshot
+        context: ValidationContext, _snapshot: GpsSnapshot
     ) -> tuple[ValidationStep, ...]:
         def fail() -> None:
+            staged.append(context.exports_dir)
+            context.exports_dir.mkdir()
+            (context.exports_dir / "partial.shp").write_bytes(b"partial")
+            # A concurrent invocation can create a directory after preflight.
             exports_dir.mkdir()
-            (exports_dir / "partial.shp").write_bytes(b"partial")
+            (exports_dir / "other.shp").write_bytes(b"other run")
             raise RuntimeError("boom")
 
         return (ValidationStep("Fail", None, fail),)
@@ -81,7 +88,8 @@ def test_run_validation_removes_exports_after_failure(
     else:
         raise AssertionError("run_validation should propagate validation failures")
 
-    assert not exports_dir.exists()
+    assert not staged[0].exists()
+    assert (exports_dir / "other.shp").read_bytes() == b"other run"
 
 
 def test_validation_preserves_existing_export_directory(tmp_path, monkeypatch):
@@ -115,7 +123,7 @@ def test_rendered_entrances_check_uses_package_api(monkeypatch, capsys, fake_sna
     suite._check_rendered_entrances(fake_snapshot)
 
     assert capsys.readouterr().out == (
-        "Checked Poligony/OTWORY.SRV from gps-kataster@v1\nGPS fixes: 87\n"
+        "Checked Poligony/OTWORY.SRV from gps-kataster@v1\nRendered gps_fix calls: 87\n"
     )
 
 
@@ -161,7 +169,7 @@ def test_exports_use_shared_destination_with_indented_output(tmp_path, monkeypat
         calls.append(("export", kwargs))
         print("compiler output")
 
-    monkeypatch.setattr(suite.pipeline, "run_exports", export)
+    monkeypatch.setattr(suite.pipeline, "export_formats", export)
 
     suite._check_exports(context)
 
@@ -180,7 +188,7 @@ def test_validation_contract_compiles_then_checks_the_same_log(
     warnings = Mock()
     exports = Mock()
     references = Mock()
-    monkeypatch.setattr(suite.exports_tools, "cavern", compile_project)
+    monkeypatch.setattr(suite.pipeline, "compile_model", compile_project)
     monkeypatch.setattr(suite.unattached, "check", unattached)
     monkeypatch.setattr(suite.cavern_warnings, "check", warnings)
     monkeypatch.setattr(suite, "_check_exports", exports)
@@ -190,10 +198,13 @@ def test_validation_contract_compiles_then_checks_the_same_log(
     for step in validation_steps(context, fake_snapshot)[9:]:
         step.check()
 
-    compile_project.assert_called_once_with(["KATASTER.wpj"], log_to=context.cavern_log)
-    unattached.assert_called_once_with(log_path=context.cavern_log)
-    warnings.assert_called_once_with(log_path=context.cavern_log)
-    references.assert_called_once_with(Path("KATASTER.3d"), {})
+    compile_project.assert_called_once_with(
+        "validate", context.exports_dir, log_to=context.cavern_log
+    )
+    staged_log = context.exports_dir / "JKTZ-validate-cavern-log.txt"
+    unattached.assert_called_once_with(log_path=staged_log)
+    warnings.assert_called_once_with(log_path=staged_log)
+    references.assert_called_once_with(context.exports_dir / "JKTZ-validate.3d", {})
     exports.assert_called_once_with(context)
 
 
@@ -220,7 +231,8 @@ def test_successful_default_validation_cleans_only_its_temporary_exports(
 
     run_validation()
 
-    assert contexts == [ValidationContext()]
+    assert len(contexts) == 1
+    assert not contexts[0].exports_dir.exists()
     assert not (tmp_path / "validate-exports").exists()
     assert retained.read_text() == "keep"
 
@@ -299,20 +311,20 @@ def gps_project(tmp_path, monkeypatch):
     )
     compiler = Mock()
     export = Mock()
-    monkeypatch.setattr(suite.exports_tools, "cavern", compiler)
+    monkeypatch.setattr(suite.pipeline, "compile_model", compiler)
     monkeypatch.setattr(suite, "_check_exports", export)
     monkeypatch.setattr(suite.unattached, "check", Mock())
     monkeypatch.setattr(suite.cavern_warnings, "check", Mock())
 
     def export_stations(args):
         assert compiler.called
-        assert Path(args[-2]).name == "KATASTER.3d"
+        assert Path(args[-2]).name.startswith("JKTZ-")
         assert "--csv" in args
         Path(args[-1]).write_bytes(
             b"Easting,Northing,Altitude,Station Name\r\n0,0,0,Fixture:0\r\n0,0,0,Fixture:1\r\n"
         )
 
-    monkeypatch.setattr(suite.exports_tools, "survexport", Mock(side_effect=export_stations))
+    monkeypatch.setattr(tools, "survexport", Mock(side_effect=export_stations))
     return directory, survey, DEFAULT_OUTPUT, compiler, export
 
 
@@ -392,7 +404,7 @@ def test_j05_bad_snapshot_or_reference_never_publishes(
         entrances.write_bytes(b"previous OTWORY")
     elif error == "station_csv":
         monkeypatch.setattr(
-            suite.exports_tools, "survexport", lambda args: Path(args[-1]).write_text("invalid\n")
+            tools, "survexport", lambda args: Path(args[-1]).write_text("invalid\n")
         )
     else:
         old, new = ("C-0001", "C-9999") if error == "id" else ("Fixture:1", "Fixture:missing")
@@ -476,7 +488,7 @@ def test_j05_versioned_render_replaces_entrances_only_after_checks(
             encoding="utf-8",
         )
     )
-    monkeypatch.setattr(suite.exports_tools, "survexport", station_export)
+    monkeypatch.setattr(tools, "survexport", station_export)
 
     assert render_otwory.main(["--gps-snapshot", str(directory)]) == int(fault is not None)
     out = capsys.readouterr()
@@ -508,24 +520,46 @@ def test_j05_checked_render_and_offline_validation_do_not_access_network(gps_pro
     request.assert_not_called()
 
 
-@pytest.mark.parametrize("bad_input", [False, True])
+@pytest.mark.parametrize("existing_directory", [False, True])
 def test_j05_snapshot_command_checks_downloaded_catalogue(
-    gps_project, monkeypatch, capsys, bad_input
+    gps_project, monkeypatch, capsys, existing_directory
 ):
+    import shutil
+
     from test_gps_catalog import update_database
 
+    from jktz import gps_catalog
     from jktz.cli import render_otwory
-    from jktz.gps_catalog import load_snapshot
 
     directory, *_ = gps_project
-    if bad_input:
-        update_database(directory, "DROP TABLE objects")
-    download = Mock(return_value=load_snapshot(directory))
-    monkeypatch.setattr(render_otwory, "download_snapshot", download)
-    assert render_otwory.snapshot_main(["new snapshot"]) == int(bad_input)
-    download.assert_called_once()
-    captured = capsys.readouterr()
-    assert "Missing catalogue tables" in captured.err if bad_input else "preview-49" in captured.out
+    assets = [
+        {"name": name, "id": index, "browser_download_url": "https://example.invalid/" + name}
+        for index, name in enumerate(gps_catalog.ASSET_NAMES, start=1)
+    ]
+    monkeypatch.setattr(
+        gps_catalog, "_read_json", lambda _: {"tag_name": "v1", "id": 10, "assets": assets}
+    )
+    monkeypatch.setattr(
+        gps_catalog,
+        "_download_release_asset",
+        lambda _, path: shutil.copyfile(directory / path.name, path),
+    )
+    destination = Path("new snapshot")
+    if existing_directory:
+        destination.mkdir()
+    gpkg = directory / gps_catalog.CATALOGUE_ASSET
+    valid_gpkg = gpkg.read_bytes()
+    update_database(directory, "DROP TABLE objects")
+
+    assert render_otwory.snapshot_main([str(destination)]) == 1
+    assert "Missing catalogue tables: objects" in capsys.readouterr().err
+    assert destination.exists() is existing_directory
+    assert not list(destination.glob("*"))
+
+    gpkg.write_bytes(valid_gpkg)
+    assert render_otwory.snapshot_main([str(destination)]) == 0
+    assert "@v1 (release 10)" in capsys.readouterr().out
+    assert gps_catalog.load_snapshot(destination).gpkg_path.read_bytes() == valid_gpkg
 
 
 def test_j05_invalid_manifest_is_reported_before_metadata(gps_project, monkeypatch, capsys):

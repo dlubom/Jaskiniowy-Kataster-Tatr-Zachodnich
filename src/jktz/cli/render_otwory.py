@@ -15,7 +15,7 @@ from jktz.entrances.render import (
     render_entrances,
 )
 from jktz.exports.tools import ExternalToolError, cavern
-from jktz.gps_catalog import download_snapshot, load_snapshot, read_catalogue
+from jktz.gps_catalog import download_snapshot, load_snapshot
 from jktz.metadata.identity import SurveyIdentity
 from jktz.metadata.io import atomic_write
 from jktz.reporting import CheckFailed
@@ -51,8 +51,7 @@ def snapshot_main(argv: list[str] | None = None) -> int:
     parser.add_argument("directory", type=Path)
     args = parser.parse_args(argv)
     try:
-        snapshot = download_snapshot(DEFAULT_GITHUB_REPO, args.directory)
-        read_catalogue(snapshot)
+        snapshot = download_snapshot(DEFAULT_GITHUB_REPO, args.directory, validate_catalogue=True)
     except (OSError, ValueError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
@@ -100,7 +99,7 @@ def main(argv: list[str] | None = None) -> int:
 
     action = "Checked" if args.check else "Rendered"
     print(f"{action} {result.output.as_posix()} from {result.source}")
-    print(f"GPS fixes: {result.gps_fixes}")
+    print(f"Rendered gps_fix calls: {result.gps_fixes}")
     return 0
 
 

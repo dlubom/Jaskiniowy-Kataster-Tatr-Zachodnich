@@ -9,6 +9,7 @@ import pytest
 from jktz.cli import exports
 from jktz.exports import pipeline
 from jktz.exports.tools import ExternalToolError
+from jktz.validation import suite
 
 
 def test_real_export_rejects_missing_survey_before_conversion(tmp_path, monkeypatch):
@@ -83,10 +84,9 @@ def call_log(
         calls.append(("cavern", list(args)))
         if log_to is not None:
             log_to.write_text("fake cavern log\n")
-        # Simulate cavern's KATASTER.3d / KATASTER.err side effects.
-        root = Path(cwd) if cwd else Path.cwd()
-        (root / "KATASTER.3d").write_bytes(b"fake-3d")
-        (root / "KATASTER.err").write_bytes(b"fake-err")
+        model = Path(args[args.index("-o") + 1])
+        model.write_bytes(b"fake-3d")
+        model.with_suffix(".err").write_bytes(b"fake-err")
 
     def fake_survexport(args, cwd=None):
         calls.append(("survexport", list(args)))
@@ -152,7 +152,45 @@ def test_pipeline_invokes_all_4_steps_in_order(call_log, tmp_path: Path) -> None
 def test_pipeline_passes_correct_cavern_args(call_log, tmp_path: Path) -> None:
     pipeline.run_exports(version="v1", outdir=Path("exports"))
     cavern_args = next(args for tool, args in call_log if tool == "cavern")
-    assert cavern_args == ["--warnings-are-errors", "KATASTER.wpj"]
+    model = tmp_path / "exports/JKTZ-v1.3d"
+    assert cavern_args == ["--warnings-are-errors", "-o", str(model), "KATASTER.wpj"]
+    assert model.read_bytes() == (tmp_path / "KATASTER.3d").read_bytes()
+    assert model.with_suffix(".err").read_bytes() == (tmp_path / "KATASTER.err").read_bytes()
+
+
+def test_validation_exports_the_exact_model_it_checked_once(call_log, tmp_path, monkeypatch):
+    context = suite.ValidationContext(exports_dir=tmp_path / "stage", exports_version="v2.0.2")
+    staged = context.exports_dir / "JKTZ-v2.0.2.3d"
+
+    def check_references(model, identities):
+        assert model == staged
+        assert model.read_bytes() == b"fake-3d"
+        Path("KATASTER.3d").write_bytes(b"another run")
+
+    monkeypatch.setattr(suite.catalogue, "check_compiled_references", check_references)
+    steps = suite.validation_steps(context, Mock())
+    suite.run_steps(
+        steps[next(i for i, step in enumerate(steps) if step.heading == "Compiling with cavern") :]
+    )
+
+    assert sum(tool == "cavern" for tool, _ in call_log) == 1
+    assert all(Path(args[-2]) == staged for tool, args in call_log if tool == "survexport")
+    assert staged.read_bytes() == b"fake-3d"
+    assert (
+        context.cavern_log.read_bytes()
+        == (staged.parent / "JKTZ-v2.0.2-cavern-log.txt").read_bytes()
+    )
+
+
+@pytest.mark.parametrize(("platform", "sleeps"), [("win32", 2), ("linux", 0)])
+def test_wait_only_polls_stable_size_on_windows(tmp_path, monkeypatch, platform, sleeps):
+    finished = tmp_path / "finished.dxf"
+    finished.write_bytes(b"written")
+    sleep = Mock()
+    monkeypatch.setattr(pipeline.sys, "platform", platform)
+    monkeypatch.setattr(pipeline.time, "sleep", sleep)
+    pipeline._wait_for_readable(finished)
+    assert sleep.call_count == sleeps
 
 
 def test_pipeline_passes_correct_survexport_full_dxf_args(call_log, tmp_path: Path) -> None:

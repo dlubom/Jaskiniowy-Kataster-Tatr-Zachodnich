@@ -8,6 +8,25 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ### Naprawione
 
+- Dolny otwór Mnichowej Studni Wyżniej (`MnichStudniaWyz:11`) jest widoczny
+  w eksporcie otworów. Jego współrzędne nadal wynikają z domiaru. Walidacja
+  sprawdza teraz oznaczenie każdego otworu wskazanego przez `OBJECT_REF`.
+- Skorygowano pochodzenie ciągów Kujata i Partii Wawelskich w Czarnej oraz
+  opisy dat pomiarów Czarnej, Mnichowej Studni Wyżniej i Ptasiej Studni.
+- Walidacja kompiluje model raz i z tej samej kopii tworzy eksporty.
+  Sprawdza kompletność plików SHP i ich deklarowany układ EPSG:32634.
+  Walidator Walls zamyka wskazówkę startową także podczas rekompilacji
+  i odnajduje wynik, gdy nazwa pliku WPJ różni się od nazwy jego głównej księgi.
+- Renderer wykrywa powtórzone kolumny GPS. Polecenie `jktz-gps-snapshot`
+  sprawdza katalog przed zapisem. Narzędzia SRV zachowują końce wierszy
+  i zagnieżdżone komentarze Walls, a walidator rozpoznaje skróty jednostek
+  i kolejności pomiarów.
+- Błąd odczytu materiału zatrzymuje tworzenie ZIP i zachowuje poprzednią
+  paczkę. Przygotowanie wersji można ponowić po błędzie zapisu notatek.
+  Git rozpoznaje pliki wyjściowe kompilatorów niezależnie od wielkości liter
+  w rozszerzeniu i pozwala dołączyć oryginały otrzymane do `_RAW`.
+- Widok 3D korzysta z wbudowanej definicji EPSG:32634. Teren wczytuje się
+  także przy niedostępności epsg.io. Poprawiono instrukcję podglądu lokalnego.
 - Lokalny eksport SHP sprawdza puste warstwy, zgodność liczby odcinków
   z plikiem zbiorczym i zasięg współrzędnych, tak jak podczas pakowania wydania.
   Sprawdza pliki z wybranego katalogu także wtedy, gdy ścieżka zawiera `!`.

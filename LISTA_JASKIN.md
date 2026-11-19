@@ -72,5 +72,5 @@
 - Zawalony Schron
 - Zbójecka Dziura
 - Zbójnicka Piwnica
-- Zoska - Zagonna Studnia
+- Zośka–Zagonna Studnia
 - Zwolińskiego

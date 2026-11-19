@@ -108,6 +108,24 @@ def test_notes_directory_is_rejected_before_changing_info(tmp_path: Path) -> Non
     assert notes.is_dir()
 
 
+def test_notes_write_error_preserves_info_for_retry(tmp_path: Path) -> None:
+    info = tmp_path / "INFO.txt"
+    original = b"Title __VERSION__\r\n"
+    info.write_bytes(original)
+    (tmp_path / "CHANGELOG.md").write_text("## [v1]\nNotes\n", encoding="utf-8")
+    occupied = tmp_path / "occupied"
+    occupied.write_bytes(b"regular file")
+
+    assert main(["v1", "--root", str(tmp_path), "--notes", str(occupied / "notes.md")]) == 1
+    assert info.read_bytes() == original
+    assert occupied.read_bytes() == b"regular file"
+
+    notes = tmp_path / "release_notes.md"
+    assert main(["v1", "--root", str(tmp_path), "--notes", str(notes)]) == 0
+    assert info.read_bytes() == b"Title v1\r\n"
+    assert notes.read_bytes() == b"Notes\n"
+
+
 def test_cli_prepares_info_and_notes(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     (tmp_path / "INFO.txt").write_bytes(b"Version: __VERSION__\n")
     (tmp_path / "CHANGELOG.md").write_text("## [v1]\n\nRelease notes\n", encoding="utf-8")

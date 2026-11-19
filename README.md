@@ -2,8 +2,8 @@
 
 # Jaskiniowy Kataster Tatr
 
-![Walls 2D screen](doc/walls_2d_screen.png)
-![Walls 2D screen](doc/walls_3d_screen.png)
+![Widok 2D w Walls](doc/walls_2d_screen.png)
+![Widok 3D w Walls](doc/walls_3d_screen.png)
 ![Survex Aven](doc/Survex.jpeg)
 
 [![Latest Release](https://img.shields.io/github/v/release/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich)](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/latest)
@@ -22,7 +22,7 @@ Kataster obejmuje obiekty, dla których dostępne są dane pomiarowe. Uzupełnia
 - [GPS Kataster Obiektów Tatr](https://github.com/dlubom/gps-kataster-obiektow-tatr) — baza lokalizacji GPS otworów jaskiń i innych obiektów terenowych. Ten projekt korzysta z publikowanych w niej najlepszych pomiarów GPS do wyznaczania współrzędnych wejść. Gotowe dane GIS i terenowe można pobrać z [najnowszego wydania](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/latest).
 - [Georeferencer](https://github.com/dlubom/Georeferencer) — georeferencjonowane skany planów jaskiń w formacie GeoTIFF, obejmujące również obiekty bez danych pomiarowych w tym katastrze. Gotową paczkę GeoTIFF można pobrać z [najnowszego wydania](https://github.com/dlubom/Georeferencer/releases/latest).
 
-Projekt oparty jest o oprogramowanie Walls – tutaj znajdziesz [najnowszą wersję programu](https://github.com/wallscavesurvey/walls/releases)  oraz [instrukcję obsługi](http://texasspeleologicalsurvey.org/Walls/tsswalls.htm).
+Projekt korzysta z programu Walls. Pobierz [najnowsze wydanie](https://github.com/wallscavesurvey/walls/releases) lub przeczytaj [instrukcję obsługi (PDF)](https://texasspeleologicalsurvey.org/software/walls/Walls_manual.pdf).
 
 Projekt działa również w [Survex](https://survex.com/) — wersja używana w CI to **1.4.24**. Po instalacji wczytaj plik `KATASTER.wpj` w programie Aven lub skompiluj z linii poleceń: `cavern KATASTER.wpj`. W Aven można też wczytać model terenu `Powierzchnia/Survex/N49E019_VF1.hgt`.
 

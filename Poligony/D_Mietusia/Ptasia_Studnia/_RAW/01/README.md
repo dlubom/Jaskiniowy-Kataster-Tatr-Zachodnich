@@ -3,7 +3,7 @@
 - **Status materiału:** dostępny
 - **Pochodzenie danych:** projekt Walls (autor nieznany)
 - **Autorzy pomiarów:** nieznane
-- **Daty pomiarów:** 2004-07-01
+- **Daty pomiarów:** 2004-06-30, 2004-07-01 i 2004-07-02 według dyrektyw #DATE w przekazanych plikach SRV
 - **Data pozyskania:** nieznane
 - **Dodał do _RAW:** Dariusz Lubomski
 - **Licencja źródłowa:** nieznane

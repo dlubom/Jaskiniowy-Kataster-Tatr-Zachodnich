@@ -153,7 +153,7 @@ def _run_srv_update(args: argparse.Namespace) -> None:
         updated = append_processing(updated, note)
 
     _encode_metadata_block(updated)
-    rendered = format_srv_metadata(updated) + updated.body
+    rendered = format_srv_metadata(updated, original_text=current) + updated.body
     parse_srv_metadata(args.path, rendered)
     _write_or_print(args.path, encode_srv(rendered), dry_run=args.dry_run)
 

@@ -334,3 +334,20 @@ def test_metadata_cli_preserves_leading_body_blank_lines(tmp_path):
     assert first.endswith(body)
     assert main(["srv-update", str(path), "--add-processing", "update"]) == 0
     assert path.read_bytes().endswith(body)
+
+
+@pytest.mark.parametrize("newline", [b"\n", b"\r\n", b"\r"])
+def test_srv_set_and_update_preserve_line_endings_and_unterminated_body(tmp_path, newline):
+    path = tmp_path / "CAVE.SRV"
+    body = newline.join((b"; legacy \x9c", b"#prefix Cave", b"0 1 3 90 0"))
+    path.write_bytes(body)
+    create = _srv_set_args(path)
+    update = ["srv-update", str(path), "--add-processing", "review"]
+    for command in (create, create, update):
+        assert main(command) == 0
+        written = path.read_bytes()
+        header, divider, saved_body = written.partition(b"#]" + newline + newline)
+        assert divider and saved_body == body
+        assert header.startswith(b"#[" + newline)
+        assert not {10, 13}.intersection(header.replace(newline, b""))
+    assert parse_srv_metadata(path, written.decode("latin-1")).body.encode("latin-1") == body
