@@ -6,6 +6,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v2.0.3] - 2026-11-19
+
 ### Naprawione
 
 - Dolny otwór Mnichowej Studni Wyżniej (`MnichStudniaWyz:11`) jest widoczny
