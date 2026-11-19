@@ -1,14 +1,14 @@
-# Lejbusiowa - paczka zrodlowa 01
+# Łejbusiowa — paczka źródłowa 01
 
-- **Status materiału:** niedostępny
-- **Pochodzenie danych:** nieznane
+- **Status materiału:** dostępny
+- **Pochodzenie danych:** Projekt Walls przekazany przez Marka Lorczyka. Pełne archiwum z [issue #28](https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/issues/28) zachowano w [paczce Małej w Mułowej](../../../Mala_w_Mulowej/_RAW/01/README.md).
 - **Autorzy pomiarów:** nieznane
-- **Daty pomiarów:** 2003-08-01
-- **Data pozyskania:** nieznane
-- **Dodał do _RAW:** nieznane
+- **Daty pomiarów:** nieznane. Przekazany 1.SRV nie zawiera #DATE. Datę 2003-08-01 przyjęto podczas opracowania w 2014 r.
+- **Data pozyskania:** 2014-05-13
+- **Dodał do _RAW:** Dariusz Lubomski
 - **Licencja źródłowa:** nieznane
-- **Kompletność:** brak materialow zrodlowych w repozytorium
+- **Kompletność:** Cyfrowe źródło 20 odcinków aktywnego LB1.SRV. Oryginalne tabelki terenowe nie są dostępne w paczce.
 
 ## Zawartość
 
-- Brak materiałów źródłowych.
+- `mała/1.SRV` — plik z archiwum zachowany pod oryginalną ścieżką. Projekt Walls i domiar powierzchniowy z Małej do Łejbusiowej znajdują się w pełnym ZIP-ie.
