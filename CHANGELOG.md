@@ -6,6 +6,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v2.0.4] - 2026-11-19
+
 ### Dodano
 
 - W Miętusiej przywrócono ze źródłowych SVX 22 przekroje LRUD w Rurze
