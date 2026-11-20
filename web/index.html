@@ -100,6 +100,19 @@
     <script type="text/javascript" src="CaveView/lib/OSMProvider.js"></script>
 
     <script type="text/javascript">
+        var popup = document.getElementById( 'info-popup' );
+        var infoButton = document.querySelector( '.info-btn' );
+
+        function closeInfoPopupOutside( event ) {
+            if ( !popup.contains( event.target ) && !infoButton.contains( event.target ) ) {
+                popup.classList.remove( 'visible' );
+            }
+        }
+
+        document.addEventListener( 'click', closeInfoPopupOutside );
+        // CaveView anuluje touchstart na płótnie, więc przeglądarka nie generuje click.
+        document.addEventListener( 'touchstart', closeInfoPopupOutside, { capture: true, passive: true } );
+
         window.onload = function () {
 
             var viewer = new CV2.CaveViewer( 'viewer', {
@@ -133,14 +146,6 @@
 
             viewer.addEventListener( 'newCave', function () {
                 viewer.polarAngle = 55 * Math.PI / 180;
-            } );
-
-            document.addEventListener( 'click', function ( e ) {
-                var popup = document.getElementById( 'info-popup' );
-                var btn = document.querySelector( '.info-btn' );
-                if ( popup.classList.contains( 'visible' ) && !popup.contains( e.target ) && e.target !== btn ) {
-                    popup.classList.remove( 'visible' );
-                }
             } );
 
         };

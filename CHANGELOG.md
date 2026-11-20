@@ -6,6 +6,10 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+### Naprawione
+
+- Na telefonie stuknięcie w model 3D zamyka okno informacyjne.
+
 ## [v2.0.5] - 2026-11-19
 
 ### Dodane
