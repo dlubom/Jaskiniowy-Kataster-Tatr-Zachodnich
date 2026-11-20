@@ -6,6 +6,16 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v2.0.8] - 2026-11-20
+
+### Zmienione
+
+- Widok 3D pokazuje domyślnie białe, przerywane odcinki powierzchniowe
+  oraz małe, poziome podpisy otworów. Podziemia zachowują kolorowanie
+  według wysokości.
+- Bliskie otwory są grupowane według rozstawu na ekranie. Obłazkowa ma
+  podpis, a dwa otwory o tych samych współrzędnych zachowują obie nazwy.
+
 ## [v2.0.7] - 2026-11-20
 
 ### Dodane

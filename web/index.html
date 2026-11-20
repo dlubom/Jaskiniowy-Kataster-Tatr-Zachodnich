@@ -4,6 +4,7 @@
     cavern --warnings-are-errors -o "$preview/KATASTER.3d" KATASTER.wpj
     sed 's/__VERSION__/podgląd lokalny/' web/index.html > "$preview/index.html"
     cp -R web/terrain "$preview/"
+    python3 web/entrance-labels.py Poligony/OTWORY.SRV "$preview/KATASTER.json"
     curl -fsSL https://github.com/aardgoose/CaveView.js/releases/download/2.9.0/CaveView.zip -o "$preview/CaveView.zip"
     unzip -q "$preview/CaveView.zip" -d "$preview"
     python3 web/patch-caveview.py "$preview/CaveView"
@@ -120,10 +121,22 @@
                 surveyDirectory: './',
                 terrainDirectory: new URL( 'terrain', document.baseURI ).href,
                 displayCRS: 'EPSG:3857',
+                loadMetadata: true,
                 showEditPage: false,
                 showExportPage: true,
                 saturatedGradient: true,
                 avenControls: true,
+                theme: {
+                    shading: { surface: '#ffffff' },
+                    stations: {
+                        entrances: {
+                            fontsize: 11,
+                            angle: 0,
+                            text: '#eef1ee',
+                            background: 'rgba(28, 32, 31, 0.4)'
+                        }
+                    }
+                },
                 view: {
                     cameraType: CV2.CAMERA_PERSPECTIVE,
                     shadingMode: CV2.SHADING_HEIGHT,
@@ -131,10 +144,11 @@
                     HUD: true,
                     stations: false,
                     stationLabels: true,
-                    entrances: false,
+                    entrances: true,
                     splays: false,
                     walls: false,
-                    surface: true,
+                    surfaceLegs: true,
+                    surfaceShading: CV2.SHADING_SURFACE,
                     terrain: true,
                     terrainDatumShift: false
                 }
