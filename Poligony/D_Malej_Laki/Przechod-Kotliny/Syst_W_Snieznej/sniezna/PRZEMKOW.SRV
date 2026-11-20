@@ -4,11 +4,12 @@ CAVE_ID         "C-0295"
 CAVE_NAME       "Jaskinia Wielka Sniezna"
 SURVEY_ID       "PRZEMKOW"
 SURVEY_NAME     "Biala Woda"
-UPDATE_DATE     "2026-11-12"
+UPDATE_DATE     "2026-11-20"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
 SOURCE_REF      "_RAW/01"
+SOURCE_REF      "_RAW/04"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "nieznane"
@@ -18,6 +19,7 @@ SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "Survex 1.4.24: historyczne DECL=0.819D zastapiono tymczasowym zalozeniem DECL=0; daty i pomiary bez zmian"
 PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
+PROCESSING      "2026-11-20: opisano role eksploratorow w CDI i warianty jednostki upadu w dwoch seriach wg _RAW/04."
 #]
 
 ;Biala Woda
@@ -68,6 +70,10 @@ b34	b35	0	90	2.00
 ;
 ;
 ;
+; Malolaczniak.cdi, sekcja Przemkowe Partie: Duty=Exploration dla D. Bartoszewskiego,
+; R. Matei, R. Paternogi i M. Mieszkowskiego. Autorzy odczytow nieustaleni.
+; b27-P1: w PRZEMP.POM azymut deg, upad gra. PRZEMKOW.ASC odpowiada upadom
+; przeliczonym z gradow. CDI i ten SRV interpretuja te same liczby jako stopnie.
 b27	P26	252	-12.00	7.60
 P26	P25	258	5.00	6.28
 P25	P24	252	12.00	7.95
@@ -99,6 +105,8 @@ P5	P4	261	10.00	2.75
 P4	P3	291	-26.00	3.80
 P3	P2	251	-8.00	1.15
 P2	P1	290	-2.00	3.25
+; PA-PH: na szesciu ukosnych odcinkach SYSTEM5.ASC daje upady ok. 0.9 razy
+; wartosc z CDI. Pion P29-P30 i poziom P30-P31 sa zgodne. Por. doc/malolaczniak/PLANY.md.
 PA	P28	340	75.56	5.17
 P28	PG	335	54.44	6.20
 PG	P29	80	-76.67	1.84

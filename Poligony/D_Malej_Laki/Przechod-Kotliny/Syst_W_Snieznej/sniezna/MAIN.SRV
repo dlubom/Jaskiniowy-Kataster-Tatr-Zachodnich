@@ -6,11 +6,12 @@ OBJECT_REF      "WielkaSniezna:Ciag:0=MLZ-0031"
 OBJECT_REF      "WielkaSniezna:Ciag:s68=MLZ-0068"
 SURVEY_ID       "MAIN"
 SURVEY_NAME     "Ciag Glowny"
-UPDATE_DATE     "2026-11-12"
+UPDATE_DATE     "2026-11-20"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
 SOURCE_REF      "_RAW/01"
+SOURCE_REF      "_RAW/04"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "nieznane"
@@ -20,6 +21,9 @@ SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "Survex 1.4.24: historyczne DECL=0.819D zastapiono tymczasowym zalozeniem DECL=0; daty i pomiary bez zmian"
 PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
+PROCESSING      "2026-11-19: dodano 16 odcinkow Partii Glodnych i 12 Sali Piotrusia z Kartow3 (_RAW/04)."
+PROCESSING      "2026-11-19: uzupelniono ciagi NK24, WL, K20, KXX i BC z _RAW/04; identyfikacja dowiazan w doc/malolaczniak/PLANY.md."
+PROCESSING      "2026-11-20: uzupelniono nazwy ciagow SF, WDS, SO i CW ze slownika Kartow3."
 #]
 
 #Units Meters Order=avd
@@ -377,6 +381,7 @@ bl22a	bl23a	71	-2	6.00
 bl25	bl25a	18	30	10.00
 bl25a	bl25b	330	60	7.00
 bl25b	bl25c	10	60	2.00
+; SF - Syfony (NAZ_CP.TXT, _RAW/04). W CDI od BL35 do SF064.
 bl35	bl064	63.94	-12.91	22.065
 bl064	bl063	49.94	-6.69	13.156
 bl063	bl062	44.77	-23.90	17.302
@@ -399,6 +404,7 @@ bl012	bl013	330.98	6.65	17.269
 bl013	bl014	31.65	-61.91	7.935
 bl014	bl015	46.42	-12.00	28.860
 ;	ciag przez I wodospad do sali pod wanta
+; WDS - Wodospady (NAZ_CP.TXT, _RAW/04). W CDI od WD98 do WDS1.
 g98	I1	277	6	14.80
 ;I1 zejscie z drogi normalnej
 I1	I2	270	-13	4.90
@@ -435,6 +441,7 @@ I28	g75	230	-37	2.60
 ;
 ;
 ;		stare obejscie I wodospadu
+; SO - Suche Obejscie (NAZ_CP.TXT, _RAW/04). W CDI od WD91 do SO16.
 ;
 ;
 ;
@@ -461,6 +468,7 @@ o11	i9	109	-47	5.50
 ;
 ;
 ;		Wodociag od salki zakopianczykow do korkociagu
+; CW - Ciag Wodny (NAZ_CP.TXT, _RAW/04). W CDI CW1-CW9, tutaj 2o1-2o9.
 ;
 g73	2o1	100	-6	5.40
 2o1	2o2	145	-59	7.60
@@ -505,3 +513,108 @@ sc124	sc125	168	-15	3.70
 sc125	sc126	205	-2	2.80
 sc126	sc127	254	-6	1.80
 sc126	g98	105	-3	2.10
+
+; Kartow3, _RAW/04. Naglowki POM: azymut i upad w stopniach.
+
+; Partie Glodnych - P_GLOD.POM
+53	pg2	342	47	10.52
+pg2	pg3	262	40	8.50
+pg3	pg4	23	2	9.02
+pg5	pg4	326	28	2.50
+pg5	pg6	90	82	6.00
+pg6	pg7	40	68	4.60
+pg7	pg8	128	8	4.46
+pg8	pg9	134	30	2.23
+pg9	pg10	58	80	20.08
+pg10	pg11	332	32	8.82
+pg11	pg12	42	0	5.00
+pg11	pg13	310	38	6.50
+pg13	pg14	280	44	2.85
+pg14	pg15	350	45	3.00
+pg14	pg16	28	18	4.10
+pg16	pg17	339	40	5.80
+
+; Sala Piotrusia - S_PIOTR.POM
+sp2	52	200	34	6.60
+sp2	sp3	311	0	1.10
+sp3	sp4	84	32	5.75
+sp4	sp5	114	-30	3.05
+sp5	sp6	197	-21	3.33
+sp6	sp7	138	-46	6.40
+sp7	sp8	115	22	2.00
+sp8	sp9	178	-41	6.87
+sp9	sp10	144	-36	3.62
+sp10	sp11	185	-42	4.95
+sp11	sp12	105	-42	6.35
+sp11	sp13	170	-30	5.00
+
+; Nad Kotlinami: odgalezienie od 24. Malolaczniak.cdi 98-100.
+24	NK24A	212.99	-36.01	4.20
+NK24A	NK24B	244.96	-11.87	3.60
+NK24B	NK24C	302.06	25.61	1.30
+
+; Wegierski Labirynt. Malolaczniak.cdi 976-984: WD96 = g96, W$10 = w10.
+g96	WL0	252.69	47.29	3.32
+WL0	WL1	85.48	11.01	17.60
+WL1	WL2	88.25	-22.02	5.65
+WL2	WL200	9.89	-9.99	6.92
+WL2	WL3	89.08	11.01	8.90
+WL3	WL4	179.33	11.09	2.60
+WL4	WL5	82.83	51.93	7.41
+WL5	WL6	42.30	61.06	5.59
+WL6	w10	252.90	4.57	3.14
+
+; Krucha Dwudziestka. Malolaczniak.cdi 1019-1028: WD80 = g80.
+K20.0	K20.1	56.00	0.00	7.71
+K20.1	K20.2	0.00	-90.00	4.70
+K20.2	K20.3	139.98	0.00	3.50
+K20.3	K20.4	94.09	-24.07	4.00
+K20.4	K20.5	52.98	-10.73	1.50
+K20.5	K20.6	140.07	-54.99	6.41
+K20.6	K20.7	172.01	-43.97	6.50
+K20.7	K20.8	122.96	-41.03	10.65
+K20.8	K20.9	43.98	32.01	15.00
+K20.9	g80	0.00	0.00	2.20
+
+; Krucha Dwudziestka. KXX.POM: azymut w stopniach, upad w gradach.
+; Upady przeliczono na stopnie. KXX0 -> K20.2 to pion 2.50 m.
+KXX0	KXX1	80.0	14.4	3.0
+KXX1	KXX2	105.0	-15.0	3.4
+KXX2	KXX3	114.0	-27.0	4.4
+KXX3	KXX4	47.0	47.0	3.85
+KXX4	KXX5	55.0	-4.0	3.15
+KXX5	KXX6	185.0	20.0	4.1
+KXX6	KXX7	304.0	0.0	2.85
+KXX6	KXX8	108.0	-5.0	5.0
+KXX8	KXX9	102.0	-8.0	3.75
+KXX0	K20.2	0.0	90.0	2.5
+
+; Boczny Ciag. Malolaczniak.cdi 1050-1077: WD69 = g69, CW4 = 2o4.
+g69	BC0	317.01	0.00	0.81
+BC0	BC100	237.68	-27.04	6.01
+BC0	BC200	279.44	-5.87	8.70
+BC0	BC300	98.96	39.16	6.54
+BC300	BC301	115.67	2.72	4.00
+BC0	BC1	133.62	47.88	9.21
+BC1	BC2	124.35	3.99	8.63
+BC2	BC3	249.82	-29.32	1.43
+BC3	BC4	240.76	10.33	3.12
+BC4	BC5	233.47	29.67	2.71
+BC5	BC6	201.75	22.35	2.13
+BC6	BC7	172.75	33.88	3.53
+BC6	BC60	116.99	40.53	4.00
+BC7	BC70	31.40	4.35	2.50
+BC7	BC8	272.14	-49.49	2.88
+BC8	BC9	282.95	-63.43	11.17
+BC9	BC10	287.01	-26.77	5.97
+BC10	BC11	272.64	-47.70	5.80
+BC11	BC12	292.66	-35.87	2.59
+BC12	BC13	276.67	-39.83	3.03
+BC13	BC14	279.30	-21.04	1.92
+BC14	BC15	312.63	-51.34	4.92
+BC15	BC500	330.46	-84.54	3.63
+BC500	BC600	330.95	84.00	0.99
+BC600	BC601	46.82	26.79	3.00
+BC500	BC501	168.32	-49.51	11.79
+BC600	BC602	53.15	28.79	6.15
+2o4	BC601	255.96	-0.53	1.07
