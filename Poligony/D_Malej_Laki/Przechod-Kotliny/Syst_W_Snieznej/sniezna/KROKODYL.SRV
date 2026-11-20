@@ -4,11 +4,12 @@ CAVE_ID         "C-0295"
 CAVE_NAME       "Jaskinia Wielka Sniezna"
 SURVEY_ID       "KROKODYL"
 SURVEY_NAME     "Galeria Krokodyla"
-UPDATE_DATE     "2026-11-12"
+UPDATE_DATE     "2026-11-20"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
 SOURCE_REF      "_RAW/01"
+SOURCE_REF      "_RAW/04"
 LICENSE         "http://creativecommons.org/licenses/by-sa/4.0/"
 
 TEAM            "nieznane"
@@ -18,6 +19,7 @@ SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "Survex 1.4.24: historyczne DECL=0.819D zastapiono tymczasowym zalozeniem DECL=0; daty i pomiary bez zmian"
 PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
+PROCESSING      "2026-11-20: dodano nazwy pieciu ciagow wg NAZ_CP.TXT z Kartow3."
 #]
 
 ;Galeria Krokodyla
@@ -86,6 +88,7 @@ gk43	gk44	250.2	63	6.80
 gk44	gk45	189	14	2.80
 gk45	gk46	196.2	60	7.40
 ;		z danych Darka Bartoszewskiego
+; X - Male Blotko (nazwy ciagow wg _RAW/04, KARTOW.ARJ/NAZ_CP.TXT).
 gk46	gkX30	274.60	18.45	2.50
 gkX30	gkX29	160.02	-73.49	0.82
 gkX29	gkX28	223.33	35.97	7.49
@@ -121,6 +124,7 @@ X3	X2	207.81	-13.32	1.48
 X2	X2.1	92.00	-12.61	4.99
 X2	X1	138.06	-49.10	7.70
 X1	X0	40.73	-80.88	3.00
+; Y - Ciagi Przykrosci.
 gkX52	gkY48	91.86	-18.22	2.59
 gkY48	gkY47	283.43	70.59	19.18
 gkY47	gkY46	206.04	2.18	3.42
@@ -179,6 +183,7 @@ Y4	Y3	25.04	-3.03	3.03
 Y3	Y2	241.04	1.01	13.03
 Y2	Y2.1	270.00	1.03	5.00
 Y2	Y1	240.00	-2.01	14.85
+; PW - Problem Wodny.
 Y1	PW38	127.78	-39.01	0.65
 PW38	PW37	259.99	-3.59	4.96
 PW37	PW36	229.96	9.92	2.90
@@ -272,6 +277,7 @@ EVD3	EVD2	48.31	55.05	2.78
 EVD2	EVD1	357.92	65.89	4.04
 EVD1	dziup	230.93	2.06	5.00
 EV1	gkEV1	312.31	74.72	4.00
+; E - Ekstaza.
 gkZ1	gkE24	304.98	68.10	15.57
 gkE24	gkE23	339.18	58.74	9.38
 gkE23	gkE22	281.31	45.53	2.98
@@ -297,6 +303,7 @@ gkE4	gkE3	246.24	2.60	4.85
 gkE3	gkE2	201.54	5.77	3.28
 gkE2	gkE1	247.93	18.25	2.52
 gkE1	gkR	278.84	53.55	2.30
+; M - Ciagi Bolesci.
 gkR	gkM9	158.20	2.66	0.43
 gkM9	gkM8	229.35	7.07	3.57
 gkM8	gkM7	201.51	2.33	2.95

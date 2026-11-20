@@ -6,6 +6,17 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v2.0.7] - 2026-11-20
+
+### Dodane
+
+- Zarchiwizowano projekt On Station Małołączniaka i dane Kartow3. Uzupełniono 88 odcinków Wielkiej Śnieżnej i końcowy odcinek w Sieni Jaskini przy Przechodzie, łącznie 459,83 m pomiarów. [Weryfikacja źródeł](doc/malolaczniak/README.md)
+- W Wielkiej Śnieżnej uzupełniono komentarze o nazwy dziewięciu ciągów ze słownika Kartow3. Przy dwóch seriach Przemkowych Partii opisano rozbieżne upady.
+
+### Poprawione
+
+- W Novej Kresanicy przywrócono kolejność góra, dół, lewo, prawo z On Station. Zmiana dotyczy 141 przekrojów w siedmiu plikach pomiarowych. [Przykłady na planach i przekrojach](doc/malolaczniak/PLANY.md)
+
 ## [v2.0.6] - 2026-11-20
 
 ### Naprawione

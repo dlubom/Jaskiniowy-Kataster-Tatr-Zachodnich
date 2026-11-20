@@ -1,0 +1,853 @@
+Członek	Offset	Od	Do	D m	A °	V ° przy interpretacji porównawczej	Sekcja CDI	Wiersz CDI	Różnica końca wektora m	Znaleziono zgodne DAV w CDI	Porównywany SRV bazy	Wiersze o parze nazw	Wiersze z nazwami i DAV	Wiersze wg samych DAV	Ustalenie po sprawdzeniu	Jednostka A nagłówka	Jednostka V nagłówka	Oryginalne D	Oryginalne A	Oryginalne V
+Bolek/NASZE_PO.POM	30	1	2	17.45	40.0	-4.0	Amoki1	2046	21.1071	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	17.45	40	-4
+Bolek/NASZE_PO.POM	60	2	3	3.14	358.0	2.0	Amoki1	2045	6.0038	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	3.14	358	2
+Bolek/NASZE_PO.POM	90	3	4	6.56	84.0	0.0	Amoki1	2044	14.4074	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	6.56	84	0
+Bolek/NASZE_PO.POM	120	4	5	6.57	12.0	4.0	Amoki1	2043	21.2688	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	6.57	12	4
+Bolek/NASZE_PO.POM	150	5	6	4.26	59.0	35.0	Amoki1	2056	5.6217	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	4.26	59	35
+Bolek/NASZE_PO.POM	180	6	7	5.35	321.0	-20.0	Amoki1	2055	6.5355	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	5.35	321	-20
+Bolek/NASZE_PO.POM	210	7	8	1.88	154.0	-51.0	Amoki1	2054	2.9538	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	1.88	154	-51
+Bolek/NASZE_PO.POM	240	8	9	2.8	338.0	-2.0	Amoki1	2053	3.6604	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	2.8	338	-2
+Bolek/NASZE_PO.POM	270	9	10	2.4	14.0	-1.0	Amoki1	2052	2.5724	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	2.4	14	-1
+Bolek/NASZE_PO.POM	300	10	11	4.13	315.0	49.0	Amoki1	2051	1.7840	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	4.13	315	49
+Bolek/NASZE_PO.POM	330	11	12	3.09	355.0	-18.0	Amoki1	2050	3.9035	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	3.09	355	-18
+Bolek/NASZE_PO.POM	360	12	13	10.1	14.0	-16.0	Amoki1	2049	11.2709	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	10.1	14	-16
+Bolek/NASZE_PO.POM	390	13	14	2.73	144.0	62.0	Amoki1	2048	6.2330	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	2.73	144	62
+Bolek/NASZE_PO.POM	420	14	15	1.59	98.0	38.0	Amoki1	2057	7.1261	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	1.59	98	38
+Bolek/NASZE_PO.POM	450	15	16	2.17	82.0	15.0	Amoki1	2058	5.5732	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	2.17	82	15
+Bolek/NASZE_PO.POM	480	16	17	7.88	90.0	-14.0	Amoki1	2059	9.5976	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	7.88	90	-14
+Bolek/NASZE_PO.POM	510	17	18	3.04	114.0	-35.0	Amoki1	2060	5.1115	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	3.04	114	-35
+Bolek/NASZE_PO.POM	540	18	19	4.73	219.0	20.0	Amoki1	2061	5.3113	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	4.73	219	20
+Bolek/NASZE_PO.POM	570	19	20	4.94	226.0	-2.0	Amoki1	2062	4.6541	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	4.94	226	-2
+Bolek/NASZE_PO.POM	600	20	21	7.49	166.0	-28.0	Amoki1	2063	9.5300	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	7.49	166	-28
+Bolek/NASZE_PO.POM	630	21	22	14.15	182.0	7.0	Amoki1	2064	17.5800	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	14.15	182	7
+Bolek/NASZE_PO.POM	660	22	23	7.15	139.0	-12.0	Amoki1	2068	11.1378	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	7.15	139	-12
+Bolek/NASZE_PO.POM	690	23	24	6.25	268.0	24.0	Amoki1	2067	18.8287	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	6.25	268	24
+Bolek/NASZE_PO.POM	720	24	25	8.37	257.0	2.0	Amoki1	2066	8.8994	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	8.37	257	2
+Bolek/NASZE_PO.POM	750	25	26	5.05	205.0	-14.0	Amoki1	2065	9.7924	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	5.05	205	-14
+Bolek/NASZE_PO.POM	780	26	27	15.85	236.0	-5.0	Amoki1	2069	20.4701	False	—	—	—	—	test na bunkrze; zgodność nazw z CDI przypadkowa	deg	deg	15.85	236	-5
+Bolek/PP_M.POM	30	SZ1	SZ2	3.77	87.0	31.0	Przemkowe Partie	2632	0.0000	True	PRZEMKOW	245	245	245	porównano w Przemkowych	deg	deg	3.77	87	31
+Bolek/PP_M.POM	60	SZ2	SZ3	4.64	172.0	32.0	Przemkowe Partie	2631	0.0000	True	PRZEMKOW	244	244	244	porównano w Przemkowych	deg	deg	4.64	172	32
+Bolek/PP_M.POM	90	SZ3	SZ4	7.94	103.0	6.0	Przemkowe Partie	2630	0.0200	False	PRZEMKOW	243	—	—	próba pętli opisana w PLANY.md	deg	deg	7.94	103	6
+Bolek/PP_M.POM	120	SZ4	SZ5	5.83	124.0	20.0	Przemkowe Partie	2629	0.0000	True	PRZEMKOW	242	242	242	porównano w Przemkowych	deg	deg	5.83	124	20
+Bolek/PP_M.POM	150	SZ5	SZ6	3.29	94.0	13.0	Przemkowe Partie	2628	0.0000	True	PRZEMKOW	241	241	241	porównano w Przemkowych	deg	deg	3.29	94	13
+Bolek/PP_M.POM	180	SZ6	SZ7	1.75	228.0	12.0	Przemkowe Partie	2627	0.0000	True	PRZEMKOW	240	240	240	porównano w Przemkowych	deg	deg	1.75	228	12
+Bolek/PP_M.POM	210	SZ7	SZ8	6.9	194.0	-10.0	Przemkowe Partie	2626	0.0000	True	PRZEMKOW	239	239	239	porównano w Przemkowych	deg	deg	6.9	194	-10
+Bolek/PP_M.POM	240	SZ8	SZ9	1.59	30.0	-80.0	Przemkowe Partie	2625	0.0000	True	PRZEMKOW	238	238	238	porównano w Przemkowych	deg	deg	1.59	30	-80
+Bolek/PP_M.POM	270	SZ9	SZ10	4.11	185.0	1.0	Przemkowe Partie	2624	0.0000	True	PRZEMKOW	237	237	237	porównano w Przemkowych	deg	deg	4.11	185	1
+Bolek/PP_M.POM	300	SZ9	SZ11	5.23	170.0	-16.0	Przemkowe Partie	2623	7.7024	False	PRZEMKOW	236	—	—	próba pętli opisana w PLANY.md	deg	deg	5.23	170	-16
+Bolek/PP_M.POM	330	—	—	0	0	0	—	—	—	—	—	—	—	—	pusty rekord w archiwum	deg	deg	0	0	0
+Bolek/SG1_1'93.POM	30	206'	206	0.45	94.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.45	94	0
+Bolek/SG1_1'93.POM	60	206'	"206"""	1.1	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.1	0	-100
+Bolek/SG1_1'93.POM	90	R	"206"""	7.5	16.0	2.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	7.5	16	3
+Bolek/SG1_1'93.POM	120	"A"""	B	4.91	224.0	34.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.91	224	37.777778
+Bolek/SG1_1'93.POM	150	A	A'	9.7	0.0	90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	9.7	0	100
+Bolek/SG1_1'93.POM	180	A'	"A"""	0.5	0.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.5	0	0
+Bolek/SG1_1'93.POM	210	B	C	5.1	0.0	90.0	Galeria Krokodyla	1812	9.1800	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.1	0	100
+Bolek/SG1_1'93.POM	240	C	D	5.56	24.0	15.0	Galeria Krokodyla	1811	5.1683	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.56	24	16.666667
+Bolek/SG1_1'93.POM	270	D	D'	1.65	0.0	90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.65	0	100
+Bolek/SG1_1'93.POM	300	D'	E	10.25	15.0	62.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	10.25	15	68.888889
+Bolek/SG1_1'93.POM	330	E	F	8.7	5.0	82.0	Galeria Krokodyla	1809	11.0238	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.7	5	91.111111
+Bolek/SG1_1'93.POM	360	F	G	20.0	2.0	-8.0	Galeria Krokodyla	1808	18.7748	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	20	2	-8.8888889
+Bolek/SG1_1'93.POM	390	G	H	6.6	348.0	2.0	Galeria Krokodyla	1807	5.7183	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6.6	348	2.2222222
+Bolek/SG1_1'93.POM	420	H	I	1.28	43.0	17.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.28	43	18.888889
+Bolek/SG1_1'93.POM	450	I	J	8.9	355.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.9	355	0
+Bolek/SG1_1'93.POM	480	J	K	4.9	354.0	10.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.9	354	11.111111
+Bolek/SG1_1'93.POM	510	K	L	4.75	12.0	-6.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.75	12	-6.6666667
+Bolek/SG1_1'93.POM	540	L	M	8.2	0.0	-4.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.2	0	-4.4444444
+Bolek/SG1_1'93.POM	570	M	N	19.4	22.0	1.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	19.4	22	1.1111111
+Bolek/SG1_1'93.POM	600	N	O	4.9	36.0	-40.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.9	36	-44.444444
+Bolek/SG1_1'93.POM	630	O	P	13.25	12.0	-8.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	13.25	12	-8.8888889
+Bolek/SG1_1'93.POM	660	P	P'	1.06	12.0	20.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.06	12	22.222222
+Bolek/SG1_1'93.POM	690	P'	R	11.05	16.0	52.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	11.05	16	57.777778
+Bolek/SG1_1'93.POM	720	P1	P2	16.83	147.0	40.05	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	16.83	147	44.5
+Bolek/SG1_1'93.POM	750	P2	P3	12.01	197.0	45.0	Amoki2	2252	3.5189	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	12.01	197	50
+Bolek/SG1_1'93.POM	780	P3	P4	15.3	244.0	57.15	Amoki2	2253	6.3572	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	15.3	244	63.5
+Bolek/SG1_1'93.POM	810	P3	P5	16.07	212.0	55.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	16.07	212	62
+Bolek/SG1_1'93.POM	840	P2	P6	4.21	310.0	7.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.21	310	8
+Bolek/SG1_1'93.POM	870	P6	P7	9.2	248.0	55.35	Amoki2	2256	12.7335	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	9.2	248	61.5
+Bolek/SG1_1'93.POM	900	P7	P8	6.73	207.0	54.45	Amoki2	2257	11.6678	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6.73	207	60.5
+Bolek/SG1_1'93.POM	930	P1	"A"""	9.03	38.0	-46.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	9.03	38	-52
+Bolek/SG1_1'93.POM	960	"A"""	Z2	4.22	354.0	-38.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.22	354	-43
+Bolek/SG1_1'93.POM	990	Z2	Z3	1.84	62.0	-16.65	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.84	62	-18.5
+Bolek/SG1_1'93.POM	1020	Z3	Z4	3.97	40.0	27.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.97	40	30
+Bolek/SG1_1'93.POM	1050	Z4	Z5	6.94	0.0	-9.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6.94	0	-10
+Bolek/SG1_1'93.POM	1080	N4	N4'	11.0	5.0	-65.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	11	5	-73
+Bolek/SG1_1'93.POM	1110	N1	N2	7.8	192.0	-19.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	7.8	192	-22
+Bolek/SG1_1'93.POM	1140	N3	N4	2.6	10.0	-22.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.6	10	-25
+Bolek/SG1_1'93.POM	1170	N3	N5	5.9	198.0	2.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.9	198	3
+Bolek/SG1_1'93.POM	1200	N5	N6	2.5	194.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.5	194	0
+Bolek/SG1_1'93.POM	1230	N6	N6'	0.7	314.0	10.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.7	314	12
+Bolek/SG1_1'93.POM	1260	N6'	N7	4.5	196.0	1.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.5	196	2
+Bolek/SG1_1'93.POM	1290	N7	N7'	0.3	286.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.3	286	0
+Bolek/SG1_1'93.POM	1320	N9	S2	5.86	302.0	64.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.86	302	72
+Bolek/SG1_1'93.POM	1350	S2	S3	17.16	310.0	84.6	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	17.16	310	94
+Bolek/SG1_1'93.POM	1380	S3	R	12.37	28.0	80.1	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	12.37	28	89
+Bolek/SG1_1'93.POM	1410	N9	N8	4.3	10.0	-28.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.3	10	-31.111111
+Bolek/SG1_1'93.POM	1440	N1	N9	1.5	0.0	90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.5	0	100
+Bolek/SG1_1'93.POM	1470	N8	N7'	3.5	10.0	-6.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.5	10	-6.6666667
+Bolek/SG1_1'93.POM	1500	P1	P9	8.35	244.0	18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.35	244	20
+Bolek/SG1_1.POM	30	0	1	17.7	10.0	-59.4	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	17.7	10	-66
+Bolek/SG1_1.POM	60	1	2	10.5	30.0	-56.7	Amoki1	2046	12.9734	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	10.5	30	-63
+Bolek/SG1_1.POM	90	2	2.1	8.4	327.0	-40.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.4	327	-45
+Bolek/SG1_1.POM	120	2	3	4.25	155.0	0.0	Amoki1	2045	2.0953	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.25	155	0
+Bolek/SG1_1.POM	150	3	4	11.4	170.0	-63.0	Amoki1	2044	4.0589	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	11.4	170	-70
+Bolek/SG1_1.POM	180	4	5	17.0	30.0	-83.7	Amoki1	2043	13.6641	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	17	30	-93
+Bolek/SG1_1.POM	210	5	5.1	6.3	215.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6.3	215	0
+Bolek/SG1_1.POM	240	5	6	11.2	40.0	-54.9	Amoki1	2056	10.7730	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	11.2	40	-61
+Bolek/SG1_1.POM	270	6	6'	1.15	140.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.15	140	0
+Bolek/SG1_1.POM	300	6'	7	19.5	40.0	-72.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	19.5	40	-80
+Bolek/SG1_1.POM	330	7	8	19.3	45.0	-62.1	Amoki1	2054	19.2877	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	19.3	45	-69
+Bolek/SG1_1.POM	360	8	8.1	7.7	164.0	28.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	7.7	164	32
+Bolek/SG1_1.POM	390	8	9	5.65	357.0	-27.9	Amoki1	2053	6.0911	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.65	357	-31
+Bolek/SG1_1.POM	420	9	10	16.5	36.0	-71.1	Amoki1	2052	17.9105	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	16.5	36	-79
+Bolek/SG1_1.POM	450	10	11	12.1	50.0	-62.1	Amoki1	2051	15.2435	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	12.1	50	-69
+Bolek/SG1_1.POM	480	11	12	9.5	354.0	-27.9	Amoki1	2050	9.8055	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	9.5	354	-31
+Bolek/SG1_1.POM	510	12	13	34.3	0.0	-90.0	Amoki1	2049	37.3023	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	34.3	0	-100
+Bolek/SG1_1.POM	540	13	14	3.75	26.0	-13.5	Amoki1	2048	7.3955	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.75	26	-15
+Bolek/SG1_1.POM	570	14	15	7.2	42.0	-13.5	Amoki1	2057	11.3622	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	7.2	42	-15
+Bolek/SG1_1.POM	600	15	15'	0.67	132.0	-26.1	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.67	132	-29
+Bolek/SG1_1.POM	630	15'	16	4.0	5.0	-15.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4	5	-17
+Bolek/SG1_1.POM	660	16	17	4.0	7.0	-27.0	Amoki1	2059	4.6753	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4	7	-30
+Bolek/SG1_1.POM	690	17	18	23.45	315.0	-80.1	Amoki1	2060	24.5278	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	23.45	315	-89
+Bolek/SG1_1.POM	720	18	19	4.1	208.0	-28.35	Amoki1	2061	7.8389	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.1	208	-31.5
+Bolek/SG1_1.POM	750	19	20	6.8	192.0	-19.8	Amoki1	2062	7.7563	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6.8	192	-22
+Bolek/SG1_1.POM	780	20	20'	0.3	102.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.3	102	0
+Bolek/SG1_1.POM	810	20'	21	6.9	212.0	5.85	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6.9	212	6.5
+Bolek/SG1_1.POM	840	21	22	4.1	205.0	-27.9	Amoki1	2064	7.1050	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.1	205	-31
+Bolek/SG1_1.POM	870	22	23	3.3	242.0	-12.15	Amoki1	2068	7.9770	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.3	242	-13.5
+Bolek/SG1_1.POM	900	23	24	3.5	188.0	-10.8	Amoki1	2067	15.1397	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.5	188	-12
+Bolek/SG1_1.POM	930	25	24	10.65	12.0	-0.9	Amoki1	2066	6.0336	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	10.65	12	-1
+Bolek/SG1_1.POM	960	25	26	4.7	185.0	-4.5	Amoki1	2065	10.4416	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.7	185	-5
+Bolek/SG1_1.POM	990	26	27	5.65	184.0	4.5	Amoki1	2069	8.0266	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.65	184	5
+Bolek/SG1_1.POM	1020	27	28	3.25	185.0	-14.4	Amoki1	2070	6.8293	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.25	185	-16
+Bolek/SG1_1.POM	1050	28	29	1.9	142.0	-16.2	Amoki1	2071	3.8791	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.9	142	-18
+Bolek/SG1_1.POM	1080	29	30	3.25	192.0	15.3	Amoki1	2072	18.6668	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.25	192	17
+Bolek/SG1_1.POM	1110	30	31	1.7	318.0	-16.65	Amoki1	2073	4.6102	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.7	318	-18.5
+Bolek/SG1_1.POM	1140	31	32	5.85	228.0	4.5	Amoki1	2075	8.7728	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.85	228	5
+Bolek/SG1_1.POM	1170	32	33	4.2	215.0	-15.3	Amoki1	2076	7.4671	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.2	215	-17
+Bolek/SG1_1.POM	1200	33	34	4.8	266.0	-28.8	Amoki1	2077	21.7095	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.8	266	-32
+Bolek/SG1_1.POM	1230	34	35	10.1	220.0	-7.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	10.1	220	-8
+Bolek/SG1_1.POM	1260	35	36	5.0	188.0	10.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5	188	12
+Bolek/SG1_1.POM	1290	36	37	11.4	230.0	-41.85	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	11.4	230	-46.5
+Bolek/SG1_1.POM	1320	37	38	6.95	190.0	-18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6.95	190	-20
+Bolek/SG1_1.POM	1350	38	39	1.8	234.0	-15.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.8	234	-17
+Bolek/SG1_1.POM	1380	39	40	5.6	187.0	-3.6	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.6	187	-4
+Bolek/SG1_1.POM	1410	40	41	3.25	224.0	-54.45	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.25	224	-60.5
+Bolek/SG1_1.POM	1440	35	42	2.7	232.0	-21.6	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.7	232	-24
+Bolek/SG1_1.POM	1470	42	43	3.35	338.0	-67.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.35	338	-75
+Bolek/SG1_1.POM	1500	43	44	6.0	350.0	-50.4	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6	350	-56
+Bolek/SG1_1.POM	1530	44	45	3.0	205.0	-13.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3	205	-15
+Bolek/SG1_1.POM	1560	45	46	2.3	290.0	-45.9	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.3	290	-51
+Bolek/SG1_1.POM	1590	46	47	19.45	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	19.45	0	-100
+Bolek/SG1_1.POM	1620	47	48	7.0	18.0	-34.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	7	18	-38
+Bolek/SG1_1.POM	1650	48	49	3.19	40.0	-16.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.19	40	-18
+Bolek/SG1_1.POM	1680	50	49	3.3	184.0	63.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.3	184	70
+Bolek/SG1_1.POM	1710	50	51	3.66	35.0	-38.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.66	35	-43
+Bolek/SG1_1.POM	1740	51	51'	0.45	125.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.45	125	0
+Bolek/SG1_1.POM	1770	51'	52	19.42	42.0	-83.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	19.42	42	-93
+Bolek/SG1_1.POM	1800	52	53	4.2	44.0	-36.9	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.2	44	-41
+Bolek/SG1_1.POM	1830	53	54	8.35	42.0	-13.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.35	42	-15
+Bolek/SG1_1.POM	1860	54	55	17.3	32.0	-60.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	17.3	32	-67
+Bolek/SG1_1.POM	1890	55	55d	0.65	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.65	0	-100
+Bolek/SG1_1.POM	1920	17	56	7.42	24.0	-72.9	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	7.42	24	-81
+Bolek/SG1_1.POM	1950	56	57	3.4	38.0	-59.4	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.4	38	-66
+Bolek/SG1_1.POM	1980	57	58	11.53	88.0	-81.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	11.53	88	-90
+Bolek/SG1_1.POM	2010	58	59	9.81	158.0	-2.25	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	9.81	158	-2.5
+Bolek/SG1_1.POM	2040	59	59'	1.0	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1	0	-100
+Bolek/SG1_1.POM	2070	59'	60	4.12	160.0	-8.1	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.12	160	-9
+Bolek/SG1_1.POM	2100	60	60'	0.9	0.0	90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.9	0	100
+Bolek/SG1_1.POM	2130	60'	61	7.49	150.0	-2.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	7.49	150	-3
+Bolek/SG1_1.POM	2160	61	61'	0.85	240.0	-69.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.85	240	-77
+Bolek/SG1_1.POM	2190	61'	62	2.89	160.0	-13.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.89	160	-15
+Bolek/SG1_1.POM	2220	62	62'	1.25	0.0	90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.25	0	100
+Bolek/SG1_1.POM	2250	63	62'	4.6	348.0	-18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.6	348	-20
+Bolek/SG1_1.POM	2280	63	63'	0.4	258.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.4	258	0
+Bolek/SG1_1.POM	2310	200	201	13.9	42.0	68.4	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	13.9	42	76
+Bolek/SG1_1.POM	2340	201	202	5.7	3.0	18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.7	3	20
+Bolek/SG1_1.POM	2370	202	203	4.3	10.0	40.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.3	10	45
+Bolek/SG1_1.POM	2400	203	204	7.2	355.0	-5.4	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	7.2	355	-6
+Bolek/SG1_1.POM	2430	204	41	3.9	28.0	-16.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.9	28	-18
+Bolek/SG1_1.POM	2460	206	207	11.2	17.0	38.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	11.2	17	43
+Bolek/SG1_1.POM	2490	207	208	6.05	346.0	0.9	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6.05	346	1
+Bolek/SG1_1.POM	2520	208	209	8.8	34.0	63.9	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.8	34	71
+Bolek/SG1_1.POM	2550	209	210	3.5	356.0	-36.9	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.5	356	-41
+Bolek/SG1_1.POM	2580	210	211	2.8	4.0	73.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.8	4	82
+Bolek/SG1_1.POM	2610	211	212	2.1	15.0	45.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.1	15	50
+Bolek/SG1_1.POM	2640	212	213	2.5	304.0	18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.5	304	20
+Bolek/SG1_1.POM	2670	213	214	3.25	22.0	26.1	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.25	22	29
+Bolek/SG1_1.POM	2700	214	215	8.45	24.0	19.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.45	24	22
+Bolek/SG1_1.POM	2730	215	200	10.35	356.0	-3.6	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	10.35	356	-4
+Bolek/SG1_1.POM	2760	63'	64	8.35	158.0	6.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.35	158	7
+Bolek/SG1_1.POM	2790	100'	100	16.65	330.0	-5.4	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	16.65	330	-6
+Bolek/SG1_1.POM	2820	100	99	9.52	333.0	-6.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	9.52	333	-7
+Bolek/SG1_1.POM	2850	99	98	4.68	351.0	-12.6	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.68	351	-14
+Bolek/SG1_1.POM	2880	98	97	8.8	334.0	-2.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.8	334	-3
+Bolek/SG1_1.POM	2910	97	96	6.0	323.0	-4.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6	323	-5
+Bolek/SG1_1.POM	2940	96	95	1.7	326.0	-43.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.7	326	-48
+Bolek/SG1_1.POM	2970	95	94	1.75	308.0	9.9	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.75	308	11
+Bolek/SG1_1.POM	3000	94	93	7.7	331.0	16.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	7.7	331	18
+Bolek/SG1_1.POM	3030	93	92	8.85	337.0	-7.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.85	337	-8
+Bolek/SG1_1.POM	3060	92	91	1.1	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.1	0	-100
+Bolek/SG1_1.POM	3090	91	90	6.25	330.0	3.6	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6.25	330	4
+Bolek/SG1_1.POM	3120	90	89	0.5	0.0	90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.5	0	100
+Bolek/SG1_1.POM	3150	89	64	5.05	324.0	6.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.05	324	7
+Bolek/SG1_1.POM	3180	100	101	20.9	134.0	-72.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	20.9	134	-80
+Bolek/SG1_1.POM	3210	101	101.1	8.2	328.0	18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.2	328	20
+Bolek/SG1_1.POM	3240	101	102	3.6	135.0	-34.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.6	135	-38
+Bolek/SG1_1.POM	3270	102	103	2.85	173.0	-35.1	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.85	173	-39
+Bolek/SG1_1.POM	3300	103	104	5.0	136.0	-22.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5	136	-25
+Bolek/SG1_1.POM	3330	104	105	9.3	150.0	-17.1	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	9.3	150	-19
+Bolek/SG1_1.POM	3360	105	106	5.0	138.0	-22.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5	138	-25
+Bolek/SG1_1.POM	3390	106	107	3.0	112.0	-54.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3	112	-60
+Bolek/SG1_1.POM	3420	107	108	3.85	152.0	-2.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.85	152	-3
+Bolek/SG1_1.POM	3450	108	109	2.0	76.0	9.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2	76	10
+Bolek/SG1_1.POM	3480	109	110	6.4	130.0	-10.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6.4	130	-12
+Bolek/SG1_1.POM	3510	110	111	4.2	159.0	-18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.2	159	-20
+Bolek/SG1_1.POM	3540	111	112	9.3	159.0	-3.6	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	9.3	159	-4
+Bolek/SG1_1.POM	3570	112	113	3.4	185.0	5.4	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.4	185	6
+Bolek/SG1_1.POM	3600	113	114	2.65	172.0	-8.1	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.65	172	-9
+Bolek/SG1_1.POM	3630	114	115	4.2	284.0	-9.9	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.2	284	-11
+Bolek/SG1_1.POM	3660	115	116	3.6	252.0	-2.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.6	252	-3
+Bolek/SG1_1.POM	3690	116	117	0.95	212.0	-16.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.95	212	-18
+Bolek/SG1_1.POM	3720	117	118	1.4	272.0	-19.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.4	272	-22
+Bolek/SG1_1.POM	3750	118	119	1.4	212.0	-5.4	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.4	212	-6
+Bolek/SG1_1.POM	3780	119	120	1.2	270.0	-6.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.2	270	-7
+Bolek/SG1_1.POM	3810	120	121	1.11	298.0	-16.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.11	298	-18
+Bolek/SG1_1.POM	3840	121	122	1.8	272.0	-16.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.8	272	-18
+Bolek/SG1_1.POM	3870	122	123	4.7	328.0	-24.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.7	328	-27
+Bolek/SG1_1.POM	3900	123	124	2.3	232.0	-20.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.3	232	-23
+Bolek/SG1_1.POM	3930	124	125	5.4	252.0	-7.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.4	252	-8
+Bolek/SG1_1.POM	3960	125	126	0.85	298.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.85	298	0
+Bolek/SG1_1.POM	3990	126	127	16.4	232.0	-19.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	16.4	232	-22
+Bolek/SG1_1.POM	4020	127	128	3.8	82.0	-1.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.8	82	-2
+Bolek/SG1_1.POM	4050	128	129	2.3	198.0	-20.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.3	198	-23
+Bolek/SG1_1.POM	4080	129	130	8.5	248.0	-22.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.5	248	-25
+Bolek/SG1_1.POM	4110	130	131	9.3	178.0	-18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	9.3	178	-20
+Bolek/W1.POM	30	1	2	5.6	185.0	39.0	Amoki1	2046	3.8657	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.6	185	39
+Bolek/W1.POM	60	2	3	7.9	0.0	90.0	Amoki1	2045	8.3507	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.9	0	90
+Bolek/W1.POM	90	3	4	5.43	349.0	28.0	Amoki1	2044	16.8101	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.43	349	28
+Bolek/W1.POM	120	4	otwor	18.62	204.0	80.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	18.62	204	80
+Bolek/W21.POM	30	0	1	3.65	145.0	40.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	3.65	145	40
+Bolek/W21.POM	60	1	2	5.35	169.0	55.0	Amoki1	2046	4.9889	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.35	169	55
+Bolek/W21.POM	90	2	3	2.8	10.0	19.0	Amoki1	2045	5.2950	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.8	10	19
+Bolek/W21.POM	120	3	4	7.05	150.0	86.0	Amoki1	2044	17.2786	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.05	150	86
+Bolek/W21.POM	150	4	5	6.75	110.0	0.0	Amoki1	2043	15.8882	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	6.75	110	0
+Bolek/W21.POM	180	4	6	2.2	149.0	-42.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.2	149	-42
+Bolek/W21.POM	210	6	7	12.5	255.0	80.0	Amoki1	2055	14.4166	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	12.5	255	80
+Bolek/W21.POM	240	7	8	17.3	80.0	76.0	Amoki1	2054	18.3335	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	17.3	80	76
+Bolek/W21.POM	270	8	9	5.15	193.0	24.0	Amoki1	2053	8.1865	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.15	193	24
+Bolek/W21.POM	300	9	10	4.3	270.0	20.0	Amoki1	2052	3.3211	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4.3	270	20
+Bolek/W21.POM	330	10	11	4.1	143.0	66.0	Amoki1	2051	3.3096	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4.1	143	66
+Bolek/W21.POM	360	11	12	1.7	343.0	60.0	Amoki1	2050	2.9233	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1.7	343	60
+Bolek/W21.POM	390	12	13	1.46	138.0	33.0	Amoki1	2049	3.7053	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1.46	138	33
+Bolek/W21.POM	420	13	14	6.57	0.0	90.0	Amoki1	2048	4.6735	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	6.57	0	90
+Bolek/W21.POM	450	14	15	5.555	5.0	1.0	Amoki1	2057	7.8795	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.555	5	1
+Bolek/W21.POM	480	15	16	4.0	0.0	90.0	Amoki1	2058	3.3562	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4	0	90
+Bolek/W21.POM	510	16	17	1.27	10.0	15.0	Amoki1	2059	1.9942	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1.27	10	15
+Bolek/W21.POM	540	17	18	2.37	234.0	62.0	Amoki1	2060	1.4517	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.37	234	62
+Bolek/W21.POM	570	18	19	9.25	0.0	90.0	Amoki1	2061	5.4683	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	9.25	0	90
+Bolek/W7.POM	30	W&0'	W&0	1.95	298.0	-40.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1.95	298	-40
+Bolek/W7.POM	60	W&0	W&1	11.52	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	11.52	0	-90
+Bolek/W7.POM	90	W&1	W&2	5.3	132.0	-49.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.3	132	-49
+Bolek/W7.POM	120	W&2	W&3	8.04	171.0	-60.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	8.04	171	-60
+Bolek/W7.POM	150	W&3	W&4	3.82	138.0	-28.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	3.82	138	-28
+Bolek/W7.POM	180	W&4	W&5	2.46	168.0	2.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.46	168	2
+Bolek/W7.POM	210	W&5	W&6	1.33	140.0	-33.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1.33	140	-33
+Bolek/W7.POM	240	W&6	W&7	3.26	86.0	-66.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	3.26	86	-66
+Bolek/W7.POM	270	W&7	W&8	3.64	354.0	-82.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	3.64	354	-82
+Bolek/W7.POM	300	W&8	W&9	3.02	26.0	-38.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	3.02	26	-38
+Bolek/W7.POM	330	W&9	W&10	4.96	108.0	-60.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4.96	108	-60
+Bolek/W7.POM	360	W&10	W&11	7.28	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.28	0	-90
+Bolek/W7.POM	390	W&11	W&12	1.4	36.0	6.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1.4	36	6
+Bolek/W7.POM	420	W&12	W&13	2.35	348.0	-8.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.35	348	-8
+Bolek/W7.POM	450	W&13	W&14	11.14	68.0	-78.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	11.14	68	-78
+Bolek/W7.POM	480	W&14	W&14'	1.0	212.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1	212	0
+Bolek/W7.POM	510	W&14'	W&15	1.86	144.0	-6.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1.86	144	-6
+Bolek/W7.POM	540	W&15	W&16	12.06	72.0	-84.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	12.06	72	-84
+Bolek/W7.POM	570	W&16	W&17	0.95	258.0	8.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	0.95	258	8
+Bolek/W7.POM	600	W&17	W&18	45.15	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	45.15	0	-90
+Bolek/W7.POM	630	W&18	W&18'	0.9	200.0	4.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	0.9	200	4
+Bolek/W7.POM	660	W&18'	W&19	7.04	620.0	-56.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.04	620	-56
+Bolek/W7.POM	690	W&19	W&20	23.9	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	23.9	0	-90
+Bolek/W7.POM	720	W&20	W&21	19.38	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.38	0	-90
+Bolek/W7.POM	750	W&21	W&22	5.1	60.0	-62.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.1	60	-62
+Bolek/W7.POM	780	W&22	W&23	25.8	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	25.8	0	-90
+Bolek/W7.POM	810	W&23	W&24	14.52	50.0	-86.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	14.52	50	-86
+Bolek/W7.POM	840	W&24	W&25	18.25	288.0	-73.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	18.25	288	-73
+Bolek/W7.POM	870	W&25	W&26	7.4	248.0	-72.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.4	248	-72
+Bolek/W7.POM	900	W&26	W&27	19.95	218.0	-69.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.95	218	-69
+Bolek/W7.POM	930	W&27	W&28	26.94	208.0	-84.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	26.94	208	-84
+Bolek/W7.POM	960	W&28	W&29	4.83	276.0	-2.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4.83	276	-2
+Bolek/W7.POM	990	W&29	W&30	12.83	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	12.83	0	-90
+Bolek/W7.POM	1020	W&30	W&31	4.85	242.0	3.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4.85	242	3
+Bolek/W7.POM	1050	W&31	W&32	13.8	208.0	-58.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	13.8	208	-58
+Bolek/W7.POM	1080	W&32	W&33	11.58	229.0	-79.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	11.58	229	-79
+Bolek/W7.POM	1110	W&33	W&34	10.42	297.0	-70.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.42	297	-70
+Bolek/W7.POM	1140	W&34	W&35	11.55	21.0	-88.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	11.55	21	-88
+Bolek/W7.POM	1170	W&35	W&36	27.87	316.0	-82.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	27.87	316	-82
+Bolek/W7.POM	1200	W&36	W&37	9.54	187.0	-67.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	9.54	187	-67
+Bolek/W7.POM	1230	W&37	W&38	4.02	294.0	-67.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4.02	294	-67
+Bolek/W7.POM	1260	W&38	W&39	31.59	145.0	-75.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	31.59	145	-75
+Bolek/W7.POM	1290	W&39	W&40	10.54	297.0	-23.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.54	297	-23
+Bolek/W7.POM	1320	W&40	W&41	6.77	260.0	-52.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	6.77	260	-52
+Bolek/W7.POM	1350	W&41	W&42	6.76	214.0	17.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	6.76	214	17
+Bolek/W7.POM	1380	W&42	W&43	7.66	358.0	21.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.66	358	21
+Bolek/W7.POM	1410	W&43	W&44	2.65	340.0	-18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.65	340	-18
+Bolek/W7.POM	1440	W&44	W&44A	13.43	339.0	-50.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	13.43	339	-50
+Bolek/W7.POM	1470	W&44A	W&45	15.48	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	15.48	0	-90
+Bolek/W7.POM	1500	W&45	W&46	51.05	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	51.05	0	-90
+Bolek/W7.POM	1530	W&46	W&46'	12.0	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	12	0	-90
+Bolek/W7.POM	1560	W&46'	"W&46"""	3.43	249.0	11.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	3.43	249	11
+Bolek/W7.POM	1590	"W&46"""	W&47	5.86	256.0	-27.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.86	256	-27
+Bolek/W7.POM	1620	W&47	W&48	2.47	157.0	-19.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.47	157	-19
+Bolek/W7SKRZAT.POM	30	W7	1	19.5	4.0	-28.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.5	4	-28
+Bolek/W7SKRZAT.POM	60	1	2	19.43	4.0	-30.0	Amoki1	2046	23.1463	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.43	4	-30
+Bolek/W7SKRZAT.POM	90	2	3	10.53	338.0	-2.0	Amoki1	2045	13.6679	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.53	338	-2
+Bolek/W7SKRZAT.POM	120	3	4	11.65	8.0	-18.0	Amoki1	2044	19.8120	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	11.65	8	-18
+Bolek/W7SKRZAT.POM	150	4	5	13.93	3.7999999999992724	12.0	Amoki1	2043	28.6036	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	13.93	3.8	12
+Bolek/W7SKRZAT.POM	180	5	W1	5.43	222.0	22.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.43	222	22
+Bolek/W7SKRZAT.POM	210	5	6	15.43	354.0	-20.0	Amoki1	2056	15.2418	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	15.43	354	-20
+Bolek/W7SKRZAT.POM	240	6	W4	7.85	290.0	-14.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.85	290	-14
+Bolek/W7SKRZAT.POM	270	6	W6	17.86	347.0	-22.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	17.86	347	-22
+Bolek/W7SKRZAT.POM	300	6	7	12.82	6.0	-20.0	Amoki1	2055	14.6060	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	12.82	6	-20
+Bolek/W7SKRZAT.POM	330	7	8	8.66	81.0	-38.0	Amoki1	2054	9.7647	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	8.66	81	-38
+Bolek/W7SKRZAT.POM	360	8	9	20.0	44.0	-43.0	Amoki1	2053	20.7971	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	20	44	-43
+Bolek/W7SKRZAT.POM	390	9	10	19.3	48.0	-41.0	Amoki1	2052	20.3935	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.3	48	-41
+Bolek/W7SKRZAT.POM	420	10	11	9.7	87.0	-22.0	Amoki1	2051	11.8662	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	9.7	87	-22
+Bolek/W7SKRZAT.POM	450	11	12	19.95	30.0	-28.0	Amoki1	2050	21.0986	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.95	30	-28
+Bolek/W7SKRZAT.POM	480	12	13	12.8	44.0	-18.0	Amoki1	2049	14.7711	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	12.8	44	-18
+Bolek/W7SKRZAT.POM	510	13	14	18.24	26.0	-36.0	Amoki1	2048	20.8327	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	18.24	26	-36
+Bolek/W7SKRZAT.POM	540	14	15	10.04	108.0	-24.0	Amoki1	2057	16.2746	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.04	108	-24
+Bolek/W7SKRZAT.POM	570	15	16	2.8	177.0	8.0	Amoki1	2058	5.9099	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.8	177	8
+Bolek/W7SKRZAT.POM	600	16	W5	2.33	254.0	-20.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.33	254	-20
+Bolek/W7SKRZAT.POM	630	4	17	10.56	111.0	-32.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.56	111	-32
+Bolek/W7SKRZAT.POM	660	17	18	2.72	210.0	2.0	Amoki1	2060	2.8805	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.72	210	2
+Bolek/W7SKRZAT.POM	690	18	W2	2.15	248.0	9.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.15	248	9
+Bolek/W7SKRZAT.POM	720	17	19	8.9	112.0	-35.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	8.9	112	-35
+Bolek/W7SKRZAT.POM	750	19	W3	4.2	217.0	-21.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4.2	217	-21
+Bolek/W7SKRZAT.POM	780	19	20	16.17	90.0	-42.0	Amoki1	2062	18.6386	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	16.17	90	-42
+Bolek/W7SKRZAT.POM	810	20	21	20.05	84.0	-34.0	Amoki1	2063	23.3630	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	20.05	84	-34
+Bolek/W7SKRZAT.POM	840	21	22	19.2	80.0	-9.0	Amoki1	2064	23.5371	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.2	80	-9
+Bolek/W7SKRZAT.POM	870	22	23	9.12	45.0	-23.0	Amoki1	2068	8.8404	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	9.12	45	-23
+Bolek/W7SKRZAT.POM	900	23	24	14.8	118.0	-14.0	Amoki1	2067	18.5990	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	14.8	118	-14
+Bolek/W7SKRZAT.POM	930	24	25	19.25	124.0	-16.0	Amoki1	2066	17.0305	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.25	124	-16
+Bolek/W7SKRZAT.POM	960	25	26	19.9	138.0	-8.0	Amoki1	2065	20.8895	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.9	138	-8
+Bolek/W7SKRZAT.POM	990	26	27	17.5	94.0	-8.0	Amoki1	2069	14.4792	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	17.5	94	-8
+Bolek/W7SKRZAT.POM	1020	27	28	10.05	64.0	6.0	Amoki1	2070	17.4898	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.05	64	6
+Bolek/W7SKRZAT.POM	1050	28	29	20.7	72.0	6.0	Amoki1	2071	20.6295	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	20.7	72	6
+Bolek/W7SKRZAT.POM	1080	29	30	13.45	92.0	9.0	Amoki1	2072	23.9964	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	13.45	92	9
+Bolek/W7SKRZAT.POM	1110	30	31	13.48	110.0	8.0	Amoki1	2073	14.9252	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	13.48	110	8
+Bolek/W7SKRZAT.POM	1140	31	32	19.05	90.0	-24.0	Amoki1	2075	17.2339	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.05	90	-24
+Bolek/W7SKRZAT.POM	1170	32	33	18.82	87.0	-20.0	Amoki1	2076	15.4679	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	18.82	87	-20
+Bolek/W7SKRZAT.POM	1200	33	34	11.6	98.0	-12.0	Amoki1	2077	24.0277	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	11.6	98	-12
+Bolek/W7SKRZAT.POM	1230	34	35	19.25	62.0	-18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.25	62	-18
+Bolek/W7SKRZAT.POM	1260	35	35'	1.65	56.0	8.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1.65	56	8
+Bolek/W7SKRZAT.POM	1290	35'	36	17.47	50.0	-19.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	17.47	50	-19
+Bolek/W7SKRZAT.POM	1320	36	37	17.35	38.0	-14.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	17.35	38	-14
+Bolek/W7SKRZAT.POM	1350	37	38	10.55	68.0	-38.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.55	68	-38
+Bolek/W7SKRZAT.POM	1380	38	39	19.13	25.0	-34.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.13	25	-34
+Bolek/W7SKRZAT.POM	1410	39	40	7.68	50.0	-20.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.68	50	-20
+Bolek/W7SKRZAT.POM	1440	40	41	19.82	112.0	-10.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.82	112	-10
+Bolek/W7SKRZAT.POM	1470	41	42	6.24	90.0	8.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	6.24	90	8
+Bolek/W7SKRZAT.POM	1500	42	43	6.1	62.0	-33.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	6.1	62	-33
+Bolek/W7SKRZAT.POM	1530	43	44	17.6	145.0	12.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	17.6	145	12
+Bolek/W7SKRZAT.POM	1560	44	45	10.4	94.0	10.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.4	94	10
+Bolek/W7SKRZAT.POM	1590	45	46	19.03	170.0	18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.03	170	18
+Bolek/W7SKRZAT.POM	1620	46	47	10.65	268.0	12.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.65	268	12
+Bolek/W7SKRZAT.POM	1650	47	K42	3.88	156.0	-3.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	3.88	156	-3
+Bolek/W80.POM	30	—	—	0	0	0	—	—	—	—	—	—	—	—	pusty rekord w archiwum	deg	deg	0	0	0
+Bolek/W80.POM	60	1	0	5.0	10.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5	10	0
+Bolek/W80.POM	90	1	2	7.0	260.0	68.0	Amoki1	2046	8.1645	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7	260	68
+Bolek/W80.POM	120	2	3	7.5	198.0	54.0	Amoki1	2045	7.4276	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.5	198	54
+Bolek/W80.POM	150	3	4	6.5	182.0	50.0	Amoki1	2044	13.9743	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	6.5	182	50
+Bolek/W80.POM	180	4	5	4.6	218.0	78.0	Amoki1	2043	19.1700	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4.6	218	78
+Bolek/W80.POM	210	5	6	13.3	210.0	70.0	Amoki1	2056	14.1954	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	13.3	210	70
+Bolek/W80.POM	240	6	7	5.0	200.0	52.0	Amoki1	2055	5.9388	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5	200	52
+Bolek/W80.POM	270	7	8	3.4	214.0	72.0	Amoki1	2054	4.2416	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	3.4	214	72
+Bolek/W80.POM	300	8	9	5.8	228.0	48.0	Amoki1	2053	6.8764	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.8	228	48
+Bolek/W80.POM	330	9	10	7.0	230.0	78.0	Amoki1	2052	5.6352	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7	230	78
+Bolek/W80.POM	360	10	10'	0.7	100.0	6.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	0.7	100	6
+Bolek/W80.POM	390	10'	11	5.6	286.0	72.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.6	286	72
+Bolek/W80.POM	420	11	12	13.5	278.0	84.0	Amoki1	2050	13.9158	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	13.5	278	84
+Bolek/W80.POM	450	12	13	31.0	0.0	90.0	Amoki1	2049	28.1075	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	31	0	90
+GOLL.ARJ/W1.POM	30	1	2	5.6	185.0	39.0	Amoki1	2046	3.8657	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.6	185	39
+GOLL.ARJ/W1.POM	60	2	3	7.9	0.0	90.0	Amoki1	2045	8.3507	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.9	0	90
+GOLL.ARJ/W1.POM	90	3	4	5.43	349.0	28.0	Amoki1	2044	16.8101	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.43	349	28
+GOLL.ARJ/W1.POM	120	4	otwor	18.62	204.0	80.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	18.62	204	80
+GOLL.ARJ/W21.POM	30	0	1	3.65	145.0	40.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	3.65	145	40
+GOLL.ARJ/W21.POM	60	1	2	5.35	169.0	55.0	Amoki1	2046	4.9889	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.35	169	55
+GOLL.ARJ/W21.POM	90	2	3	2.8	10.0	19.0	Amoki1	2045	5.2950	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.8	10	19
+GOLL.ARJ/W21.POM	120	3	4	7.05	150.0	86.0	Amoki1	2044	17.2786	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.05	150	86
+GOLL.ARJ/W21.POM	150	4	5	6.75	110.0	0.0	Amoki1	2043	15.8882	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	6.75	110	0
+GOLL.ARJ/W21.POM	180	4	6	2.2	149.0	-42.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.2	149	-42
+GOLL.ARJ/W21.POM	210	6	7	12.5	255.0	80.0	Amoki1	2055	14.4166	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	12.5	255	80
+GOLL.ARJ/W21.POM	240	7	8	17.3	80.0	76.0	Amoki1	2054	18.3335	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	17.3	80	76
+GOLL.ARJ/W21.POM	270	8	9	5.15	193.0	24.0	Amoki1	2053	8.1865	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.15	193	24
+GOLL.ARJ/W21.POM	300	9	10	4.3	270.0	20.0	Amoki1	2052	3.3211	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4.3	270	20
+GOLL.ARJ/W21.POM	330	10	11	4.1	143.0	66.0	Amoki1	2051	3.3096	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4.1	143	66
+GOLL.ARJ/W21.POM	360	11	12	1.7	343.0	60.0	Amoki1	2050	2.9233	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1.7	343	60
+GOLL.ARJ/W21.POM	390	12	13	1.46	138.0	33.0	Amoki1	2049	3.7053	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1.46	138	33
+GOLL.ARJ/W21.POM	420	13	14	6.57	0.0	90.0	Amoki1	2048	4.6735	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	6.57	0	90
+GOLL.ARJ/W21.POM	450	14	15	5.555	5.0	1.0	Amoki1	2057	7.8795	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.555	5	1
+GOLL.ARJ/W21.POM	480	15	16	4.0	0.0	90.0	Amoki1	2058	3.3562	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4	0	90
+GOLL.ARJ/W21.POM	510	16	17	1.27	10.0	15.0	Amoki1	2059	1.9942	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1.27	10	15
+GOLL.ARJ/W21.POM	540	17	18	2.37	234.0	62.0	Amoki1	2060	1.4517	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.37	234	62
+GOLL.ARJ/W21.POM	570	18	19	9.25	0.0	90.0	Amoki1	2061	5.4683	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	9.25	0	90
+GOLL.ARJ/W7.POM	30	W&0'	W&0	1.95	298.0	-40.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1.95	298	-40
+GOLL.ARJ/W7.POM	60	W&0	W&1	11.52	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	11.52	0	-90
+GOLL.ARJ/W7.POM	90	W&1	W&2	5.3	132.0	-49.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.3	132	-49
+GOLL.ARJ/W7.POM	120	W&2	W&3	8.04	171.0	-60.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	8.04	171	-60
+GOLL.ARJ/W7.POM	150	W&3	W&4	3.82	138.0	-28.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	3.82	138	-28
+GOLL.ARJ/W7.POM	180	W&4	W&5	2.46	168.0	2.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.46	168	2
+GOLL.ARJ/W7.POM	210	W&5	W&6	1.33	140.0	-33.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1.33	140	-33
+GOLL.ARJ/W7.POM	240	W&6	W&7	3.26	86.0	-66.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	3.26	86	-66
+GOLL.ARJ/W7.POM	270	W&7	W&8	3.64	354.0	-82.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	3.64	354	-82
+GOLL.ARJ/W7.POM	300	W&8	W&9	3.02	26.0	-38.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	3.02	26	-38
+GOLL.ARJ/W7.POM	330	W&9	W&10	4.96	108.0	-60.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4.96	108	-60
+GOLL.ARJ/W7.POM	360	W&10	W&11	7.28	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.28	0	-90
+GOLL.ARJ/W7.POM	390	W&11	W&12	1.4	36.0	6.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1.4	36	6
+GOLL.ARJ/W7.POM	420	W&12	W&13	2.35	348.0	-8.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.35	348	-8
+GOLL.ARJ/W7.POM	450	W&13	W&14	11.14	68.0	-78.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	11.14	68	-78
+GOLL.ARJ/W7.POM	480	W&14	W&14'	1.0	212.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1	212	0
+GOLL.ARJ/W7.POM	510	W&14'	W&15	1.86	144.0	-6.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1.86	144	-6
+GOLL.ARJ/W7.POM	540	W&15	W&16	12.06	72.0	-84.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	12.06	72	-84
+GOLL.ARJ/W7.POM	570	W&16	W&17	0.95	258.0	8.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	0.95	258	8
+GOLL.ARJ/W7.POM	600	W&17	W&18	45.15	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	45.15	0	-90
+GOLL.ARJ/W7.POM	630	W&18	W&18'	0.9	200.0	4.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	0.9	200	4
+GOLL.ARJ/W7.POM	660	W&18'	W&19	7.04	620.0	-56.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.04	620	-56
+GOLL.ARJ/W7.POM	690	W&19	W&20	23.9	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	23.9	0	-90
+GOLL.ARJ/W7.POM	720	W&20	W&21	19.38	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.38	0	-90
+GOLL.ARJ/W7.POM	750	W&21	W&22	5.1	60.0	-62.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.1	60	-62
+GOLL.ARJ/W7.POM	780	W&22	W&23	25.8	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	25.8	0	-90
+GOLL.ARJ/W7.POM	810	W&23	W&24	14.52	50.0	-86.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	14.52	50	-86
+GOLL.ARJ/W7.POM	840	W&24	W&25	18.25	288.0	-73.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	18.25	288	-73
+GOLL.ARJ/W7.POM	870	W&25	W&26	7.4	248.0	-72.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.4	248	-72
+GOLL.ARJ/W7.POM	900	W&26	W&27	19.95	218.0	-69.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.95	218	-69
+GOLL.ARJ/W7.POM	930	W&27	W&28	26.94	208.0	-84.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	26.94	208	-84
+GOLL.ARJ/W7.POM	960	W&28	W&29	4.83	276.0	-2.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4.83	276	-2
+GOLL.ARJ/W7.POM	990	W&29	W&30	12.83	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	12.83	0	-90
+GOLL.ARJ/W7.POM	1020	W&30	W&31	4.85	242.0	3.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4.85	242	3
+GOLL.ARJ/W7.POM	1050	W&31	W&32	13.8	208.0	-58.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	13.8	208	-58
+GOLL.ARJ/W7.POM	1080	W&32	W&33	11.58	229.0	-79.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	11.58	229	-79
+GOLL.ARJ/W7.POM	1110	W&33	W&34	10.42	297.0	-70.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.42	297	-70
+GOLL.ARJ/W7.POM	1140	W&34	W&35	11.55	21.0	-88.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	11.55	21	-88
+GOLL.ARJ/W7.POM	1170	W&35	W&36	27.87	316.0	-82.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	27.87	316	-82
+GOLL.ARJ/W7.POM	1200	W&36	W&37	9.54	187.0	-67.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	9.54	187	-67
+GOLL.ARJ/W7.POM	1230	W&37	W&38	4.02	294.0	-67.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4.02	294	-67
+GOLL.ARJ/W7.POM	1260	W&38	W&39	31.59	145.0	-75.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	31.59	145	-75
+GOLL.ARJ/W7.POM	1290	W&39	W&40	10.54	297.0	-23.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.54	297	-23
+GOLL.ARJ/W7.POM	1320	W&40	W&41	6.77	260.0	-52.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	6.77	260	-52
+GOLL.ARJ/W7.POM	1350	W&41	W&42	6.76	214.0	17.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	6.76	214	17
+GOLL.ARJ/W7.POM	1380	W&42	W&43	7.66	358.0	21.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.66	358	21
+GOLL.ARJ/W7.POM	1410	W&43	W&44	2.65	340.0	-18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.65	340	-18
+GOLL.ARJ/W7.POM	1440	W&44	W&44A	13.43	339.0	-50.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	13.43	339	-50
+GOLL.ARJ/W7.POM	1470	W&44A	W&45	15.48	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	15.48	0	-90
+GOLL.ARJ/W7.POM	1500	W&45	W&46	51.05	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	51.05	0	-90
+GOLL.ARJ/W7.POM	1530	W&46	W&46'	12.0	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	12	0	-90
+GOLL.ARJ/W7.POM	1560	W&46'	"W&46"""	3.43	249.0	11.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	3.43	249	11
+GOLL.ARJ/W7.POM	1590	"W&46"""	W&47	5.86	256.0	-27.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.86	256	-27
+GOLL.ARJ/W7.POM	1620	W&47	W&48	2.47	157.0	-19.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.47	157	-19
+GOLL.ARJ/W7SKRZAT.POM	30	W7	1	19.5	4.0	-28.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.5	4	-28
+GOLL.ARJ/W7SKRZAT.POM	60	1	2	19.43	4.0	-30.0	Amoki1	2046	23.1463	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.43	4	-30
+GOLL.ARJ/W7SKRZAT.POM	90	2	3	10.53	338.0	-2.0	Amoki1	2045	13.6679	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.53	338	-2
+GOLL.ARJ/W7SKRZAT.POM	120	3	4	11.65	8.0	-18.0	Amoki1	2044	19.8120	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	11.65	8	-18
+GOLL.ARJ/W7SKRZAT.POM	150	4	5	13.93	3.7999999999992724	12.0	Amoki1	2043	28.6036	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	13.93	3.8	12
+GOLL.ARJ/W7SKRZAT.POM	180	5	W1	5.43	222.0	22.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.43	222	22
+GOLL.ARJ/W7SKRZAT.POM	210	5	6	15.43	354.0	-20.0	Amoki1	2056	15.2418	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	15.43	354	-20
+GOLL.ARJ/W7SKRZAT.POM	240	6	W4	7.85	290.0	-14.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.85	290	-14
+GOLL.ARJ/W7SKRZAT.POM	270	6	W6	17.86	347.0	-22.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	17.86	347	-22
+GOLL.ARJ/W7SKRZAT.POM	300	6	7	12.82	6.0	-20.0	Amoki1	2055	14.6060	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	12.82	6	-20
+GOLL.ARJ/W7SKRZAT.POM	330	7	8	8.66	81.0	-38.0	Amoki1	2054	9.7647	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	8.66	81	-38
+GOLL.ARJ/W7SKRZAT.POM	360	8	9	20.0	44.0	-43.0	Amoki1	2053	20.7971	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	20	44	-43
+GOLL.ARJ/W7SKRZAT.POM	390	9	10	19.3	48.0	-41.0	Amoki1	2052	20.3935	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.3	48	-41
+GOLL.ARJ/W7SKRZAT.POM	420	10	11	9.7	87.0	-22.0	Amoki1	2051	11.8662	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	9.7	87	-22
+GOLL.ARJ/W7SKRZAT.POM	450	11	12	19.95	30.0	-28.0	Amoki1	2050	21.0986	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.95	30	-28
+GOLL.ARJ/W7SKRZAT.POM	480	12	13	12.8	44.0	-18.0	Amoki1	2049	14.7711	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	12.8	44	-18
+GOLL.ARJ/W7SKRZAT.POM	510	13	14	18.24	26.0	-36.0	Amoki1	2048	20.8327	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	18.24	26	-36
+GOLL.ARJ/W7SKRZAT.POM	540	14	15	10.04	108.0	-24.0	Amoki1	2057	16.2746	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.04	108	-24
+GOLL.ARJ/W7SKRZAT.POM	570	15	16	2.8	177.0	8.0	Amoki1	2058	5.9099	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.8	177	8
+GOLL.ARJ/W7SKRZAT.POM	600	16	W5	2.33	254.0	-20.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.33	254	-20
+GOLL.ARJ/W7SKRZAT.POM	630	4	17	10.56	111.0	-32.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.56	111	-32
+GOLL.ARJ/W7SKRZAT.POM	660	17	18	2.72	210.0	2.0	Amoki1	2060	2.8805	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.72	210	2
+GOLL.ARJ/W7SKRZAT.POM	690	18	W2	2.15	248.0	9.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	2.15	248	9
+GOLL.ARJ/W7SKRZAT.POM	720	17	19	8.9	112.0	-35.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	8.9	112	-35
+GOLL.ARJ/W7SKRZAT.POM	750	19	W3	4.2	217.0	-21.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4.2	217	-21
+GOLL.ARJ/W7SKRZAT.POM	780	19	20	16.17	90.0	-42.0	Amoki1	2062	18.6386	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	16.17	90	-42
+GOLL.ARJ/W7SKRZAT.POM	810	20	21	20.05	84.0	-34.0	Amoki1	2063	23.3630	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	20.05	84	-34
+GOLL.ARJ/W7SKRZAT.POM	840	21	22	19.2	80.0	-9.0	Amoki1	2064	23.5371	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.2	80	-9
+GOLL.ARJ/W7SKRZAT.POM	870	22	23	9.12	45.0	-23.0	Amoki1	2068	8.8404	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	9.12	45	-23
+GOLL.ARJ/W7SKRZAT.POM	900	23	24	14.8	118.0	-14.0	Amoki1	2067	18.5990	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	14.8	118	-14
+GOLL.ARJ/W7SKRZAT.POM	930	24	25	19.25	124.0	-16.0	Amoki1	2066	17.0305	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.25	124	-16
+GOLL.ARJ/W7SKRZAT.POM	960	25	26	19.9	138.0	-8.0	Amoki1	2065	20.8895	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.9	138	-8
+GOLL.ARJ/W7SKRZAT.POM	990	26	27	17.5	94.0	-8.0	Amoki1	2069	14.4792	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	17.5	94	-8
+GOLL.ARJ/W7SKRZAT.POM	1020	27	28	10.05	64.0	6.0	Amoki1	2070	17.4898	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.05	64	6
+GOLL.ARJ/W7SKRZAT.POM	1050	28	29	20.7	72.0	6.0	Amoki1	2071	20.6295	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	20.7	72	6
+GOLL.ARJ/W7SKRZAT.POM	1080	29	30	13.45	92.0	9.0	Amoki1	2072	23.9964	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	13.45	92	9
+GOLL.ARJ/W7SKRZAT.POM	1110	30	31	13.48	110.0	8.0	Amoki1	2073	14.9252	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	13.48	110	8
+GOLL.ARJ/W7SKRZAT.POM	1140	31	32	19.05	90.0	-24.0	Amoki1	2075	17.2339	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.05	90	-24
+GOLL.ARJ/W7SKRZAT.POM	1170	32	33	18.82	87.0	-20.0	Amoki1	2076	15.4679	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	18.82	87	-20
+GOLL.ARJ/W7SKRZAT.POM	1200	33	34	11.6	98.0	-12.0	Amoki1	2077	24.0277	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	11.6	98	-12
+GOLL.ARJ/W7SKRZAT.POM	1230	34	35	19.25	62.0	-18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.25	62	-18
+GOLL.ARJ/W7SKRZAT.POM	1260	35	35'	1.65	56.0	8.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	1.65	56	8
+GOLL.ARJ/W7SKRZAT.POM	1290	35'	36	17.47	50.0	-19.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	17.47	50	-19
+GOLL.ARJ/W7SKRZAT.POM	1320	36	37	17.35	38.0	-14.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	17.35	38	-14
+GOLL.ARJ/W7SKRZAT.POM	1350	37	38	10.55	68.0	-38.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.55	68	-38
+GOLL.ARJ/W7SKRZAT.POM	1380	38	39	19.13	25.0	-34.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.13	25	-34
+GOLL.ARJ/W7SKRZAT.POM	1410	39	40	7.68	50.0	-20.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.68	50	-20
+GOLL.ARJ/W7SKRZAT.POM	1440	40	41	19.82	112.0	-10.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.82	112	-10
+GOLL.ARJ/W7SKRZAT.POM	1470	41	42	6.24	90.0	8.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	6.24	90	8
+GOLL.ARJ/W7SKRZAT.POM	1500	42	43	6.1	62.0	-33.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	6.1	62	-33
+GOLL.ARJ/W7SKRZAT.POM	1530	43	44	17.6	145.0	12.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	17.6	145	12
+GOLL.ARJ/W7SKRZAT.POM	1560	44	45	10.4	94.0	10.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.4	94	10
+GOLL.ARJ/W7SKRZAT.POM	1590	45	46	19.03	170.0	18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	19.03	170	18
+GOLL.ARJ/W7SKRZAT.POM	1620	46	47	10.65	268.0	12.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	10.65	268	12
+GOLL.ARJ/W7SKRZAT.POM	1650	47	K42	3.88	156.0	-3.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	3.88	156	-3
+GOLL.ARJ/W80.POM	30	—	—	0	0	0	—	—	—	—	—	—	—	—	pusty rekord w archiwum	deg	deg	0	0	0
+GOLL.ARJ/W80.POM	60	1	0	5.0	10.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5	10	0
+GOLL.ARJ/W80.POM	90	1	2	7.0	260.0	68.0	Amoki1	2046	8.1645	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7	260	68
+GOLL.ARJ/W80.POM	120	2	3	7.5	198.0	54.0	Amoki1	2045	7.4276	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7.5	198	54
+GOLL.ARJ/W80.POM	150	3	4	6.5	182.0	50.0	Amoki1	2044	13.9743	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	6.5	182	50
+GOLL.ARJ/W80.POM	180	4	5	4.6	218.0	78.0	Amoki1	2043	19.1700	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	4.6	218	78
+GOLL.ARJ/W80.POM	210	5	6	13.3	210.0	70.0	Amoki1	2056	14.1954	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	13.3	210	70
+GOLL.ARJ/W80.POM	240	6	7	5.0	200.0	52.0	Amoki1	2055	5.9388	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5	200	52
+GOLL.ARJ/W80.POM	270	7	8	3.4	214.0	72.0	Amoki1	2054	4.2416	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	3.4	214	72
+GOLL.ARJ/W80.POM	300	8	9	5.8	228.0	48.0	Amoki1	2053	6.8764	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.8	228	48
+GOLL.ARJ/W80.POM	330	9	10	7.0	230.0	78.0	Amoki1	2052	5.6352	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	7	230	78
+GOLL.ARJ/W80.POM	360	10	10'	0.7	100.0	6.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	0.7	100	6
+GOLL.ARJ/W80.POM	390	10'	11	5.6	286.0	72.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	5.6	286	72
+GOLL.ARJ/W80.POM	420	11	12	13.5	278.0	84.0	Amoki1	2050	13.9158	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	13.5	278	84
+GOLL.ARJ/W80.POM	450	12	13	31.0	0.0	90.0	Amoki1	2049	28.1075	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	deg	31	0	90
+KARTOW.ARJ/KROKOD_2.POM	30	EV1	EV1'	4.0	312.0	74.7	Galeria Krokodyla	1927	0.0059	False	KROKODYL	—	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	4	312	83
+KARTOW.ARJ/KROKOD_2.POM	60	EV1	EV2	4.06	98.0	-18.0	Galeria Krokodyla	1920	0.0067	False	KROKODYL	267	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	4.06	98	-20
+KARTOW.ARJ/KROKOD_2.POM	90	EV2	EV3	6.9	0.0	-90.0	Galeria Krokodyla	1919	0.0000	False	KROKODYL	266	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	6.9	0	-100
+KARTOW.ARJ/KROKOD_2.POM	120	EV3	EV4	5.02	116.0	14.4	Galeria Krokodyla	1918	0.0079	False	KROKODYL	265	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	5.02	116	16
+KARTOW.ARJ/KROKOD_2.POM	150	EV4	EV5	3.93	91.0	-6.3	Galeria Krokodyla	1917	0.0102	False	KROKODYL	264	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.93	91	-7
+KARTOW.ARJ/KROKOD_2.POM	180	EV5	EV6	5.83	118.0	-39.6	Galeria Krokodyla	1916	0.0072	False	KROKODYL	263	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	5.83	118	-44
+KARTOW.ARJ/KROKOD_2.POM	210	EV6	EV7	2.22	102.0	13.5	Galeria Krokodyla	1915	0.0079	False	KROKODYL	262	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.22	102	15
+KARTOW.ARJ/KROKOD_2.POM	240	EV7	EV8	9.27	88.0	-64.8	Galeria Krokodyla	1914	0.0104	False	KROKODYL	261	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	9.27	88	-72
+KARTOW.ARJ/KROKOD_2.POM	270	EV8	EV9	12.97	75.0	-23.4	Galeria Krokodyla	1913	0.0031	False	KROKODYL	260	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	12.97	75	-26
+KARTOW.ARJ/KROKOD_2.POM	300	EV9	EV10	8.33	80.0	-12.6	Galeria Krokodyla	1912	0.0032	False	KROKODYL	259	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	8.33	80	-14
+KARTOW.ARJ/KROKOD_2.POM	330	EV10	EV11	3.74	100.0	-28.8	Galeria Krokodyla	1911	0.0094	False	KROKODYL	258	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.74	100	-32
+KARTOW.ARJ/KROKOD_2.POM	360	EV11	EV12	1.66	138.0	0.0	Galeria Krokodyla	1910	0.0049	False	KROKODYL	257	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	1.66	138	0
+KARTOW.ARJ/KROKOD_2.POM	390	EV12	EV13	5.77	233.0	-45.9	Galeria Krokodyla	1909	0.0086	False	KROKODYL	256	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	5.77	233	-51
+KARTOW.ARJ/KROKOD_2.POM	420	EV13	EV14	1.88	174.0	-16.2	Galeria Krokodyla	1908	0.0057	False	KROKODYL	255	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	1.88	174	-18
+KARTOW.ARJ/KROKOD_2.POM	450	EV14	EV15	15.3	133.0	-49.5	Galeria Krokodyla	1907	0.0100	False	KROKODYL	254	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	15.3	133	-55
+KARTOW.ARJ/KROKOD_2.POM	480	EV15	EV16	6.05	45.0	0.9	Galeria Krokodyla	1906	0.0091	False	KROKODYL	253	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	6.05	45	1
+KARTOW.ARJ/KROKOD_2.POM	510	EV16	EV17	6.63	64.0	-11.7	Galeria Krokodyla	1905	0.0116	False	KROKODYL	252	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	6.63	64	-13
+KARTOW.ARJ/KROKOD_2.POM	540	EV17	EV18	7.14	90.0	-24.3	Galeria Krokodyla	1904	0.0000	True	KROKODYL	251	251	251	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	7.14	90	-27
+KARTOW.ARJ/KROKOD_2.POM	570	EV18	EV19	2.1	102.0	-13.5	Galeria Krokodyla	1903	0.0121	False	KROKODYL	250	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.1	102	-15
+KARTOW.ARJ/KROKOD_2.POM	600	EV19	EV20	3.02	93.0	-20.7	Galeria Krokodyla	1902	0.0033	False	KROKODYL	249	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.02	93	-23
+KARTOW.ARJ/KROKOD_2.POM	630	EV20	EV21	7.28	92.0	-81.0	Galeria Krokodyla	1901	0.0013	False	KROKODYL	248	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	7.28	92	-90
+KARTOW.ARJ/KROKOD_2.POM	660	EV21	EV22	3.42	65.0	-12.6	Galeria Krokodyla	1900	0.0108	False	KROKODYL	247	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.42	65	-14
+KARTOW.ARJ/KROKOD_2.POM	690	EV22	Z1	10.03	123.0	-65.7	Galeria Krokodyla	1899	0.0078	False	KROKODYL	246	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	10.03	123	-73
+KARTOW.ARJ/KROKOD_3.POM	30	R	R'	10.0	205.0	0.0	—	—	—	False	KROKODYL	—	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	10	205	0
+KARTOW.ARJ/KROKOD_3.POM	60	E1	R	2.35	278.0	55.8	Galeria Krokodyla	1952	0.1059	False	KROKODYL	299	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.35	278	62
+KARTOW.ARJ/KROKOD_3.POM	90	E1	E2	2.55	64.0	-18.9	Galeria Krokodyla	1951	0.1699	False	KROKODYL	298	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.55	64	-21
+KARTOW.ARJ/KROKOD_3.POM	120	E2	E3	3.78	18.0	-5.4	Galeria Krokodyla	1950	0.5453	False	KROKODYL	297	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.78	18	-6
+KARTOW.ARJ/KROKOD_3.POM	150	E3	E4	4.9	62.0	-2.7	Galeria Krokodyla	1949	0.3638	False	KROKODYL	296	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	4.9	62	-3
+KARTOW.ARJ/KROKOD_3.POM	180	E4	E4'	7.0	160.0	72.0	—	—	—	False	KROKODYL	—	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	7	160	80
+KARTOW.ARJ/KROKOD_3.POM	210	E4	E5	3.35	44.0	-1.8	Galeria Krokodyla	1948	0.3639	False	KROKODYL	295	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.35	44	-2
+KARTOW.ARJ/KROKOD_3.POM	240	E4	E6	2.6	318.0	-79.2	Galeria Krokodyla	1947	0.1351	False	KROKODYL	294	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.6	318	-88
+KARTOW.ARJ/KROKOD_3.POM	270	E6	E7	2.36	46.0	-3.6	Galeria Krokodyla	1946	0.2512	False	KROKODYL	293	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.36	46	-4
+KARTOW.ARJ/KROKOD_3.POM	300	E7	E7'	10.0	170.0	-54.9	—	—	—	False	KROKODYL	—	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	10	170	-61
+KARTOW.ARJ/KROKOD_3.POM	330	E7	"E7"""	5.0	346.0	10.8	—	—	—	False	KROKODYL	—	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	5	346	12
+KARTOW.ARJ/KROKOD_3.POM	360	E7	E8	5.8	65.0	18.0	Galeria Krokodyla	1945	0.3854	False	KROKODYL	292	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	5.8	65	20
+KARTOW.ARJ/KROKOD_3.POM	390	E8	E9	3.55	76.0	3.6	Galeria Krokodyla	1944	0.1566	False	KROKODYL	291	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.55	76	4
+KARTOW.ARJ/KROKOD_3.POM	420	E9	E10	4.35	68.0	-45.0	Galeria Krokodyla	1943	0.2458	False	KROKODYL	290	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	4.35	68	-50
+KARTOW.ARJ/KROKOD_3.POM	450	E10	E11	1.75	0.0	-90.0	Galeria Krokodyla	1942	0.0800	False	KROKODYL	289	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	1.75	0	-100
+KARTOW.ARJ/KROKOD_3.POM	480	E11	E12	3.63	148.0	-61.2	Galeria Krokodyla	1941	0.2790	False	KROKODYL	288	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.63	148	-68
+KARTOW.ARJ/KROKOD_3.POM	510	E12	E13	3.4	37.0	-62.1	Galeria Krokodyla	1940	0.2407	False	KROKODYL	287	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.4	37	-69
+KARTOW.ARJ/KROKOD_3.POM	540	E13	E14	3.7	23.0	-79.2	Galeria Krokodyla	1939	0.2122	False	KROKODYL	286	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.7	23	-88
+KARTOW.ARJ/KROKOD_3.POM	570	E14	E15	3.5	22.0	9.0	Galeria Krokodyla	1938	0.4767	False	KROKODYL	285	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.5	22	10
+KARTOW.ARJ/KROKOD_3.POM	600	E16	E15	6.5	242.0	-0.9	Galeria Krokodyla	1937	0.4847	False	KROKODYL	284	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	6.5	242	-1
+KARTOW.ARJ/KROKOD_3.POM	630	E16	E17	3.38	40.0	11.7	Galeria Krokodyla	1936	0.3817	False	KROKODYL	283	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.38	40	13
+KARTOW.ARJ/KROKOD_3.POM	660	E17	E17'	10.0	312.0	65.7	—	—	—	False	KROKODYL	—	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	10	312	73
+KARTOW.ARJ/KROKOD_3.POM	690	E17	E18	3.95	64.0	-20.7	Galeria Krokodyla	1935	0.2729	False	KROKODYL	282	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.95	64	-23
+KARTOW.ARJ/KROKOD_3.POM	720	E18	E19	15.45	152.0	-58.5	Galeria Krokodyla	1934	1.2551	False	KROKODYL	281	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	15.45	152	-65
+KARTOW.ARJ/KROKOD_3.POM	750	E19	E20	7.78	65.0	-43.2	Galeria Krokodyla	1933	0.4619	False	KROKODYL	280	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	7.78	65	-48
+KARTOW.ARJ/KROKOD_3.POM	780	E20	E21	7.9	94.0	-37.8	Galeria Krokodyla	1932	0.3050	False	KROKODYL	279	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	7.9	94	-42
+KARTOW.ARJ/KROKOD_3.POM	810	E21	E22	5.7	146.0	-49.5	Galeria Krokodyla	1931	0.5091	False	KROKODYL	278	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	5.7	146	-55
+KARTOW.ARJ/KROKOD_3.POM	840	E22	E23	3.02	100.0	-47.7	Galeria Krokodyla	1930	0.1293	False	KROKODYL	277	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.02	100	-53
+KARTOW.ARJ/KROKOD_3.POM	870	E23	E24	9.47	157.0	-63.0	Galeria Krokodyla	1929	0.7275	False	KROKODYL	276	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	9.47	157	-70
+KARTOW.ARJ/KROKOD_3.POM	900	E24	Z1	16.15	122.0	-70.2	Galeria Krokodyla	1928	0.8718	False	KROKODYL	275	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	16.15	122	-78
+KARTOW.ARJ/KROKOD_4.POM	30	EVD5	EV1	0.0	0.0	0.0	Galeria Krokodyla	1921	0.0000	False	KROKODYL	268	—	268	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	0	0	0
+KARTOW.ARJ/KROKOD_4.POM	60	EVD1	dziup	5.0	231.0	2.0	Galeria Krokodyla	1926	0.0080	False	KROKODYL	273	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	5	231	2.2222222
+KARTOW.ARJ/KROKOD_4.POM	90	EVD1	EVD2	4.04	178.0	-66.0	Galeria Krokodyla	1925	0.0081	False	KROKODYL	272	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	4.04	178	-73.333333
+KARTOW.ARJ/KROKOD_4.POM	120	EVD2	EVD3	2.78	228.0	-55.0	Galeria Krokodyla	1924	0.0090	False	KROKODYL	271	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.78	228	-61.111111
+KARTOW.ARJ/KROKOD_4.POM	150	EVD3	EVD4	3.8	96.0	-38.0	Galeria Krokodyla	1923	0.0115	False	KROKODYL	270	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.8	96	-42.222222
+KARTOW.ARJ/KROKOD_4.POM	180	EVD5	EVD4	1.63	252.0	30.0	Galeria Krokodyla	1922	0.0066	False	KROKODYL	269	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	1.63	252	33.333333
+KARTOW.ARJ/KROKOD_5.POM	30	M1	M2	5.52	35.0	-8.0	Galeria Krokodyla	1961	0.6755	False	KROKODYL	308	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	5.52	35	-8.8888889
+KARTOW.ARJ/KROKOD_5.POM	60	M1	M1'	3.0	210.0	-22.0	—	—	—	False	KROKODYL	—	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3	210	-24.444444
+KARTOW.ARJ/KROKOD_5.POM	90	M1	"M1"""	15.0	0.0	90.0	—	—	—	False	KROKODYL	—	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	15	0	100
+KARTOW.ARJ/KROKOD_5.POM	120	M2	M3	2.2	38.0	-52.0	Galeria Krokodyla	1960	0.1832	False	KROKODYL	307	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.2	38	-57.777778
+KARTOW.ARJ/KROKOD_5.POM	150	M3	M4	2.65	52.0	-18.0	Galeria Krokodyla	1959	0.2415	False	KROKODYL	306	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.65	52	-20
+KARTOW.ARJ/KROKOD_5.POM	180	M4	M5	2.2	24.0	0.0	Galeria Krokodyla	1958	0.3133	False	KROKODYL	305	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.2	24	0
+KARTOW.ARJ/KROKOD_5.POM	210	M5	M6	4.35	26.0	-18.0	Galeria Krokodyla	1957	0.5669	False	KROKODYL	304	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	4.35	26	-20
+KARTOW.ARJ/KROKOD_5.POM	240	M6	M7	4.2	50.0	-37.0	Galeria Krokodyla	1956	0.3501	False	KROKODYL	303	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	4.2	50	-41.111111
+KARTOW.ARJ/KROKOD_5.POM	270	M7	M8	3.4	18.0	-2.0	Galeria Krokodyla	1955	0.4903	False	KROKODYL	302	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.4	18	-2.2222222
+KARTOW.ARJ/KROKOD_5.POM	300	M8	M9	3.8	44.0	-7.0	Galeria Krokodyla	1954	0.4115	False	KROKODYL	301	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.8	44	-7.7777778
+KARTOW.ARJ/KROKOD_5.POM	330	M9	R	0.5	342.0	-3.0	Galeria Krokodyla	1953	0.0765	False	KROKODYL	300	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	0.5	342	-3.3333333
+KARTOW.ARJ/KROKOD_5.POM	360	Z15	KMK2	2.65	193.0	40.0	Galeria Krokodyla	1875	0.0076	False	KROKODYL	222	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.65	193	44.444444
+KARTOW.ARJ/KROKOD_5.POM	390	KMK2	KMK3	5.1	214.0	35.0	Galeria Krokodyla	1876	0.0068	False	KROKODYL	223	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	5.1	214	38.888889
+KARTOW.ARJ/KROKOD_5.POM	420	KMK3	KMK4	3.4	199.0	8.0	Galeria Krokodyla	1877	0.0090	False	KROKODYL	224	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.4	199	8.8888889
+KARTOW.ARJ/KROKOD_5.POM	450	KMK4	KMK5	4.5	194.0	17.0	Galeria Krokodyla	1878	0.0108	False	KROKODYL	225	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	4.5	194	18.888889
+KARTOW.ARJ/KROKOD_5.POM	480	KMK5	"KMK5"""	1.55	300.0	8.0	Galeria Krokodyla	1879	0.0109	False	KROKODYL	—	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	1.55	300	8.8888889
+KARTOW.ARJ/KROKOD_5.POM	510	"KMK5"""	KMK6	7.5	263.0	73.0	Galeria Krokodyla	1880	0.0081	False	KROKODYL	—	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	7.5	263	81.111111
+KARTOW.ARJ/KROKOD_5.POM	540	KMK6	KMK7	3.5	285.0	58.0	Galeria Krokodyla	1881	0.0025	False	KROKODYL	228	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.5	285	64.444444
+KARTOW.ARJ/KROKOD_5.POM	570	KMK7	KMK8	2.25	200.0	18.0	Galeria Krokodyla	1883	0.0053	False	KROKODYL	230	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.25	200	20
+KARTOW.ARJ/KROKOD_5.POM	600	KMK8	KMK9	1.85	235.0	29.0	Galeria Krokodyla	1884	0.0085	False	KROKODYL	231	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	1.85	235	32.222222
+KARTOW.ARJ/KROKOD_5.POM	630	KMK7	KMK10	2.25	12.0	5.0	Galeria Krokodyla	1882	0.0070	False	KROKODYL	229	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.25	12	5.5555556
+KARTOW.ARJ/KROKOD_5.POM	660	PW2	PW1	9.5	290.0	-3.6	Galeria Krokodyla	1872	0.0074	False	KROKODYL	219	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	9.5	290	-4
+KARTOW.ARJ/KROKOD_5.POM	690	PW3	PW2	3.1	260.0	1.8	Galeria Krokodyla	1871	0.0079	False	KROKODYL	218	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.1	260	2
+KARTOW.ARJ/KROKOD_5.POM	720	PW4	PW3	2.7	280.0	-25.2	Galeria Krokodyla	1870	0.0055	False	KROKODYL	217	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.7	280	-28
+KARTOW.ARJ/KROKOD_5.POM	750	PW5	PW4	3.3	270.0	0.9	Galeria Krokodyla	1869	0.0081	False	KROKODYL	216	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.3	270	1
+KARTOW.ARJ/KROKOD_5.POM	780	PW6	PW5	2.6	269.0	89.1	Galeria Krokodyla	1868	0.0011	False	KROKODYL	215	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.6	269	99
+KARTOW.ARJ/KROKOD_5.POM	810	PW7	PW6	2.0	272.0	4.5	Galeria Krokodyla	1867	0.0066	False	KROKODYL	214	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2	272	5
+KARTOW.ARJ/KROKOD_5.POM	840	PW8	PW7	2.7	290.0	-4.5	Galeria Krokodyla	1866	0.0021	False	KROKODYL	213	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.7	290	-5
+KARTOW.ARJ/KROKOD_5.POM	870	PW9	PW8	5.43	280.0	17.1	Galeria Krokodyla	1865	0.0039	False	KROKODYL	212	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	5.43	280	19
+KARTOW.ARJ/KROKOD_5.POM	900	PW10	PW9	1.7	286.0	45.0	Galeria Krokodyla	1864	0.0104	False	KROKODYL	211	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	1.7	286	50
+KARTOW.ARJ/KROKOD_5.POM	930	PW11	PW10	1.7	28.0	32.4	Galeria Krokodyla	1846	0.0049	False	KROKODYL	193	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	1.7	28	36
+KARTOW.ARJ/KROKOD_5.POM	960	PW12	PW11	1.45	350.0	-4.5	Galeria Krokodyla	1847	0.0036	False	KROKODYL	194	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	1.45	350	-5
+KARTOW.ARJ/KROKOD_5.POM	990	PW13	PW12	2.3	10.0	-2.7	Galeria Krokodyla	1848	0.0023	False	KROKODYL	195	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.3	10	-3
+KARTOW.ARJ/KROKOD_5.POM	1020	PW14	PW13	2.4	70.0	-13.5	Galeria Krokodyla	1849	0.0029	False	KROKODYL	196	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.4	70	-15
+KARTOW.ARJ/KROKOD_5.POM	1050	PW15	PW14	1.95	70.0	39.6	Galeria Krokodyla	1850	0.0067	False	KROKODYL	197	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	1.95	70	44
+KARTOW.ARJ/KROKOD_5.POM	1080	PW16	PW15	2.6	118.0	-9.9	Galeria Krokodyla	1851	0.0077	False	KROKODYL	198	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.6	118	-11
+KARTOW.ARJ/KROKOD_5.POM	1110	PW17	PW16	6.5	119.0	-61.2	Galeria Krokodyla	1863	0.0047	False	KROKODYL	210	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	6.5	119	-68
+KARTOW.ARJ/KROKOD_5.POM	1140	PW18	PW16	3.29	119.0	-58.5	Galeria Krokodyla	1852	0.0087	False	KROKODYL	199	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.29	119	-65
+KARTOW.ARJ/KROKOD_5.POM	1170	PW19	PW18	2.7	20.0	-2.7	Galeria Krokodyla	1853	0.0030	False	KROKODYL	200	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.7	20	-3
+KARTOW.ARJ/KROKOD_5.POM	1200	PW20	PW19	4.7	40.0	1.8	Galeria Krokodyla	1854	0.0026	False	KROKODYL	201	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	4.7	40	2
+KARTOW.ARJ/KROKOD_5.POM	1230	PW21	PW20	3.1	33.0	31.5	Galeria Krokodyla	1855	0.0018	False	KROKODYL	202	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.1	33	35
+KARTOW.ARJ/KROKOD_5.POM	1260	PW22	PW21	3.1	5.0	54.9	Galeria Krokodyla	1856	0.0086	False	KROKODYL	203	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.1	5	61
+KARTOW.ARJ/KROKOD_5.POM	1290	PW23	PW22	3.22	55.0	-10.8	Galeria Krokodyla	1857	0.0083	False	KROKODYL	204	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.22	55	-12
+KARTOW.ARJ/KROKOD_5.POM	1320	PW24	PW23	3.5	40.0	11.7	Galeria Krokodyla	1858	0.0090	False	KROKODYL	205	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.5	40	13
+KARTOW.ARJ/KROKOD_5.POM	1350	PW24	PW25	4.4	219.0	21.6	Galeria Krokodyla	1859	0.0044	False	KROKODYL	206	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	4.4	219	24
+KARTOW.ARJ/KROKOD_5.POM	1380	PW25	PW26	4.4	210.0	-35.1	Galeria Krokodyla	1860	0.0020	False	KROKODYL	207	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	4.4	210	-39
+KARTOW.ARJ/KROKOD_5.POM	1410	PW26	PW27	1.4	240.0	-61.2	Galeria Krokodyla	1861	0.0109	False	KROKODYL	208	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	1.4	240	-68
+KARTOW.ARJ/KROKOD_5.POM	1440	PW27	PW28	3.6	240.0	-8.1	Galeria Krokodyla	1862	0.0108	False	KROKODYL	209	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.6	240	-9
+KARTOW.ARJ/KROKOD_5.POM	1470	PW29	PW10	3.65	160.0	-37.8	Galeria Krokodyla	1845	0.0071	False	KROKODYL	192	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.65	160	-42
+KARTOW.ARJ/KROKOD_5.POM	1500	PW30	PW29	4.55	240.0	-4.5	Galeria Krokodyla	1844	0.0072	False	KROKODYL	191	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	4.55	240	-5
+KARTOW.ARJ/KROKOD_5.POM	1530	PW31	PW30	2.1	220.0	5.4	Galeria Krokodyla	1843	0.0076	False	KROKODYL	190	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.1	220	6
+KARTOW.ARJ/KROKOD_5.POM	1560	PW32	PW31	3.1	270.0	-1.8	Galeria Krokodyla	1842	0.0076	False	KROKODYL	189	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.1	270	-2
+KARTOW.ARJ/KROKOD_5.POM	1590	PW32	PW33	3.4	70.0	-30.6	Galeria Krokodyla	1841	0.0012	False	KROKODYL	188	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3.4	70	-34
+KARTOW.ARJ/KROKOD_5.POM	1620	PW33	PW34	5.65	70.0	2.7	Galeria Krokodyla	1840	0.0041	False	KROKODYL	187	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	5.65	70	3
+KARTOW.ARJ/KROKOD_5.POM	1650	PW34	PW35	6.55	80.0	3.6	Galeria Krokodyla	1839	0.0047	False	KROKODYL	186	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	6.55	80	4
+KARTOW.ARJ/KROKOD_5.POM	1680	PW35	PW36	3.0	74.0	1.8	Galeria Krokodyla	1838	0.0081	False	KROKODYL	185	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	3	74	2
+KARTOW.ARJ/KROKOD_5.POM	1710	PW36	PW37	2.9	50.0	-9.9	Galeria Krokodyla	1837	0.0022	False	KROKODYL	184	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	2.9	50	-11
+KARTOW.ARJ/KROKOD_5.POM	1740	PW38	PW37	4.95	260.0	-3.6	Galeria Krokodyla	1836	0.0101	False	KROKODYL	183	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	4.95	260	-4
+KARTOW.ARJ/KROKOD_5.POM	1770	PW38	Y1	0.65	308.0	39.6	Galeria Krokodyla	1835	0.0070	False	KROKODYL	182	—	—	wariant Galerii Krokodyla; szczegóły w tabeli	deg	grad	0.65	308	44
+KARTOW.ARJ/KXX.POM	30	KXX0	KXX1	3.0	80.0	14.4	—	—	—	False	MAIN	—	—	—	włączony; K20.2 przez CDI 1019–1028 do g80	deg	grad	3	80	16
+KARTOW.ARJ/KXX.POM	60	KXX1	KXX2	3.4	105.0	-15.0	—	—	—	False	MAIN	—	—	—	włączony; K20.2 przez CDI 1019–1028 do g80	deg	grad	3.4	105	-16.666667
+KARTOW.ARJ/KXX.POM	90	KXX2	KXX3	4.4	114.0	-27.0	—	—	—	False	MAIN	—	—	—	włączony; K20.2 przez CDI 1019–1028 do g80	deg	grad	4.4	114	-30
+KARTOW.ARJ/KXX.POM	120	KXX3	KXX4	3.85	47.0	47.0	—	—	—	False	MAIN	—	—	—	włączony; K20.2 przez CDI 1019–1028 do g80	deg	grad	3.85	47	52.222222
+KARTOW.ARJ/KXX.POM	150	KXX4	KXX5	3.15	55.0	-4.0	—	—	—	False	MAIN	—	—	—	włączony; K20.2 przez CDI 1019–1028 do g80	deg	grad	3.15	55	-4.4444444
+KARTOW.ARJ/KXX.POM	180	KXX5	KXX6	4.1	185.0	20.0	—	—	—	False	MAIN	—	—	—	włączony; K20.2 przez CDI 1019–1028 do g80	deg	grad	4.1	185	22.222222
+KARTOW.ARJ/KXX.POM	210	KXX6	KXX7	2.85	304.0	0.0	—	—	—	False	MAIN	—	—	—	włączony; K20.2 przez CDI 1019–1028 do g80	deg	grad	2.85	304	0
+KARTOW.ARJ/KXX.POM	240	KXX6	KXX8	5.0	108.0	-5.0	—	—	—	False	MAIN	—	—	—	włączony; K20.2 przez CDI 1019–1028 do g80	deg	grad	5	108	-5.5555556
+KARTOW.ARJ/KXX.POM	270	KXX8	KXX9	3.75	102.0	-8.0	—	—	—	False	MAIN	—	—	—	włączony; K20.2 przez CDI 1019–1028 do g80	deg	grad	3.75	102	-8.8888889
+KARTOW.ARJ/KXX.POM	300	KXX0	K20.2	2.5	0.0	90.0	—	—	—	False	MAIN	—	—	—	włączony; K20.2 przez CDI 1019–1028 do g80	deg	grad	2.5	0	100
+KARTOW.ARJ/MPK.POM	30	MPK0	MPK1	1.52	184.0	-6.75	—	—	—	False	KOLANKO	—	—	—	PK23 ustalone tylko w układzie Bolka	deg	grad	1.52	184	-7.5
+KARTOW.ARJ/MPK.POM	60	MPK1	MPK2	3.55	255.0	-27.0	—	—	—	False	KOLANKO	—	—	—	PK23 ustalone tylko w układzie Bolka	deg	grad	3.55	255	-30
+KARTOW.ARJ/MPK.POM	90	MPK2	MPK3	2.05	239.0	-14.4	—	—	—	False	KOLANKO	—	—	—	PK23 ustalone tylko w układzie Bolka	deg	grad	2.05	239	-16
+KARTOW.ARJ/MPK.POM	120	MPK3	MPK4	1.8	266.0	-17.1	—	—	—	False	KOLANKO	—	—	—	PK23 ustalone tylko w układzie Bolka	deg	grad	1.8	266	-19
+KARTOW.ARJ/MPK.POM	150	MPK4	MPK5	1.92	270.0	16.2	—	—	—	False	KOLANKO	—	—	—	PK23 ustalone tylko w układzie Bolka	deg	grad	1.92	270	18
+KARTOW.ARJ/MPK.POM	180	MPK5	MPK6	2.95	290.0	19.8	—	—	—	False	KOLANKO	—	—	—	PK23 ustalone tylko w układzie Bolka	deg	grad	2.95	290	22
+KARTOW.ARJ/MPK.POM	210	MPK6	MPK7	2.63	227.0	-27.9	—	—	—	False	KOLANKO	—	—	—	PK23 ustalone tylko w układzie Bolka	deg	grad	2.63	227	-31
+KARTOW.ARJ/MPK.POM	240	MPK7	MPK8	1.55	302.0	1.8	—	—	—	False	KOLANKO	—	—	—	PK23 ustalone tylko w układzie Bolka	deg	grad	1.55	302	2
+KARTOW.ARJ/MPK.POM	270	MPK8	MPK9	5.0	320.0	18.0	—	—	—	False	KOLANKO	—	—	—	PK23 ustalone tylko w układzie Bolka	deg	grad	5	320	20
+KARTOW.ARJ/MPK.POM	300	MPK0	PK23	0.0	0.0	0.0	—	—	—	False	KOLANKO	—	—	—	PK23 ustalone tylko w układzie Bolka	deg	grad	0	0	0
+KARTOW.ARJ/PRZEMP.POM	30	BW27	PP26	7.6	252.0	-12.0	Przemkowe Partie	2458	0.0000	True	PRZEMKOW	71	71	71	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	7.6	252	-12
+KARTOW.ARJ/PRZEMP.POM	60	PP26	PP25	6.28	258.0	5.0	Przemkowe Partie	2459	0.0000	True	PRZEMKOW	72	72	72	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	6.28	258	5
+KARTOW.ARJ/PRZEMP.POM	90	PP25	PP24	7.95	252.0	12.0	Przemkowe Partie	2460	0.0000	True	PRZEMKOW	73	73	73	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	7.95	252	12
+KARTOW.ARJ/PRZEMP.POM	120	PP24	PP23	2.88	144.0	-34.0	Przemkowe Partie	2461	0.0000	True	PRZEMKOW	74	74	74	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	2.88	144	-34
+KARTOW.ARJ/PRZEMP.POM	150	PP23	PP22	3.8	139.0	21.0	Przemkowe Partie	2462	0.0000	True	PRZEMKOW	75	75	75	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	3.8	139	21
+KARTOW.ARJ/PRZEMP.POM	180	PP22	PP21	7.43	248.0	-1.0	Przemkowe Partie	2463	0.0000	True	PRZEMKOW	76	76	76	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	7.43	248	-1
+KARTOW.ARJ/PRZEMP.POM	210	PP21	PP20	4.76	276.0	75.0	Przemkowe Partie	2464	0.0000	True	PRZEMKOW	77	77	77	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	4.76	276	75
+KARTOW.ARJ/PRZEMP.POM	240	PP20	PP19	3.85	278.0	15.0	Przemkowe Partie	2465	0.0000	True	PRZEMKOW	78	78	78	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	3.85	278	15
+KARTOW.ARJ/PRZEMP.POM	270	PP19	PP18	3.6	242.0	3.0	Przemkowe Partie	2466	0.0000	True	PRZEMKOW	79	79	79	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	3.6	242	3
+KARTOW.ARJ/PRZEMP.POM	300	PP18	PP17	3.2	320.0	68.0	Przemkowe Partie	2467	0.0000	True	PRZEMKOW	80	80	80	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	3.2	320	68
+KARTOW.ARJ/PRZEMP.POM	330	PP17	PP16	4.95	272.0	-45.0	Przemkowe Partie	2468	0.0000	True	PRZEMKOW	81	81	81	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	4.95	272	-45
+KARTOW.ARJ/PRZEMP.POM	360	PP16	PP15	4.1	269.0	24.0	Przemkowe Partie	2469	0.0000	True	PRZEMKOW	82	82	82	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	4.1	269	24
+KARTOW.ARJ/PRZEMP.POM	390	PP15	PP14	2.95	288.0	-34.0	Przemkowe Partie	2470	0.0000	True	PRZEMKOW	83	83	83	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	2.95	288	-34
+KARTOW.ARJ/PRZEMP.POM	420	PP14	PP13	4.3	240.0	29.0	Przemkowe Partie	2471	0.0000	True	PRZEMKOW	84	84	84	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	4.3	240	29
+KARTOW.ARJ/PRZEMP.POM	450	PP13	PP12	6.85	279.0	-34.0	Przemkowe Partie	2472	0.0000	True	PRZEMKOW	85	85	85	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	6.85	279	-34
+KARTOW.ARJ/PRZEMP.POM	480	PP12	PP11	0.9	47.0	5.0	Przemkowe Partie	2473	0.0000	True	PRZEMKOW	86	86	86	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	0.9	47	5
+KARTOW.ARJ/PRZEMP.POM	510	PP11	PP_F	4.5	219.0	-53.0	Przemkowe Partie	2474	0.0000	True	PRZEMKOW	87	87	87	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	4.5	219	-53
+KARTOW.ARJ/PRZEMP.POM	540	PP_F	PP_E	8.3	233.0	-7.0	Przemkowe Partie	2475	0.0000	True	PRZEMKOW	88	88	88	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	8.3	233	-7
+KARTOW.ARJ/PRZEMP.POM	570	PP_E	PP_D	9.55	271.0	19.0	Przemkowe Partie	2476	0.0000	True	PRZEMKOW	89	89	89	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	9.55	271	19
+KARTOW.ARJ/PRZEMP.POM	600	PP_D	PP_C	0.7	325.0	30.0	Przemkowe Partie	2477	0.0000	True	PRZEMKOW	90	90	90	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	0.7	325	30
+KARTOW.ARJ/PRZEMP.POM	630	PP_C	PP10	7.15	286.0	57.0	Przemkowe Partie	2478	0.0000	True	PRZEMKOW	91	91	91	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	7.15	286	57
+KARTOW.ARJ/PRZEMP.POM	660	PP10	PP_B	5.97	272.0	-25.0	Przemkowe Partie	2479	0.0000	True	PRZEMKOW	92	92	92	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	5.97	272	-25
+KARTOW.ARJ/PRZEMP.POM	690	PP_B	PP_A	5.1	277.0	-1.0	Przemkowe Partie	2480	0.0000	True	PRZEMKOW	93	93	93	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	5.1	277	-1
+KARTOW.ARJ/PRZEMP.POM	720	PP_A	PP8	2.17	4.0	-59.0	Przemkowe Partie	2481	0.0000	True	PRZEMKOW	94	94	94	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	2.17	4	-59
+KARTOW.ARJ/PRZEMP.POM	750	PP8	PP7	3.17	254.0	-30.0	Przemkowe Partie	2482	0.0000	True	PRZEMKOW	95	95	95	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	3.17	254	-30
+KARTOW.ARJ/PRZEMP.POM	780	PP7	PP6	1.98	312.0	-21.0	Przemkowe Partie	2483	0.0000	True	PRZEMKOW	96	96	96	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	1.98	312	-21
+KARTOW.ARJ/PRZEMP.POM	810	PP6	PP5	2.35	294.0	1.0	Przemkowe Partie	2484	0.0000	True	PRZEMKOW	97	97	97	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	2.35	294	1
+KARTOW.ARJ/PRZEMP.POM	840	PP5	PP4	2.75	261.0	10.0	Przemkowe Partie	2485	0.0000	True	PRZEMKOW	98	98	98	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	2.75	261	10
+KARTOW.ARJ/PRZEMP.POM	870	PP4	PP3	3.8	291.0	-26.0	Przemkowe Partie	2486	0.0000	True	PRZEMKOW	99	99	99	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	3.8	291	-26
+KARTOW.ARJ/PRZEMP.POM	900	PP3	PP2	1.15	251.0	-8.0	Przemkowe Partie	2487	0.0000	True	PRZEMKOW	100	100	100	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	1.15	251	-8
+KARTOW.ARJ/PRZEMP.POM	930	PP2	PP1	3.25	290.0	-2.0	Przemkowe Partie	2488	0.0000	True	PRZEMKOW	101	101	101	SRV w stopniach; ASC odtwarza upad w gradach	deg	gra	3.25	290	-2
+KARTOW.ARJ/P_GLOD.POM	30	NK53	pg2	10.52	342.0	47.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	10.52	342	47
+KARTOW.ARJ/P_GLOD.POM	60	pg2	pg3	8.5	262.0	40.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	8.5	262	40
+KARTOW.ARJ/P_GLOD.POM	90	pg3	pg4	9.02	23.0	2.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	9.02	23	2
+KARTOW.ARJ/P_GLOD.POM	120	pg5	pg4	2.5	326.0	28.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	2.5	326	28
+KARTOW.ARJ/P_GLOD.POM	150	pg5	pg6	6.0	90.0	82.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	6	90	82
+KARTOW.ARJ/P_GLOD.POM	180	pg6	pg7	4.6	40.0	68.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	4.6	40	68
+KARTOW.ARJ/P_GLOD.POM	210	pg7	pg8	4.46	128.0	8.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	4.46	128	8
+KARTOW.ARJ/P_GLOD.POM	240	pg8	pg9	2.23	134.0	30.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	2.23	134	30
+KARTOW.ARJ/P_GLOD.POM	270	pg9	pg10	20.08	58.0	80.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	20.08	58	80
+KARTOW.ARJ/P_GLOD.POM	300	pg10	pg11	8.82	332.0	32.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	8.82	332	32
+KARTOW.ARJ/P_GLOD.POM	330	pg11	pg12	5.0	42.0	0.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	5	42	0
+KARTOW.ARJ/P_GLOD.POM	360	pg11	pg13	6.5	310.0	38.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	6.5	310	38
+KARTOW.ARJ/P_GLOD.POM	390	pg13	pg14	2.85	280.0	44.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	2.85	280	44
+KARTOW.ARJ/P_GLOD.POM	420	pg14	pg15	3.0	350.0	45.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	3	350	45
+KARTOW.ARJ/P_GLOD.POM	450	pg14	pg16	4.1	28.0	18.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	4.1	28	18
+KARTOW.ARJ/P_GLOD.POM	480	pg16	pg17	5.8	339.0	40.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	5.8	339	40
+KARTOW.ARJ/SG1_1.POM	30	0	1	17.7	10.0	-59.4	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	17.7	10	-66
+KARTOW.ARJ/SG1_1.POM	60	1	2	10.5	30.0	-56.7	Amoki1	2046	12.9734	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	10.5	30	-63
+KARTOW.ARJ/SG1_1.POM	90	2	2.1	8.4	327.0	-40.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.4	327	-45
+KARTOW.ARJ/SG1_1.POM	120	2	3	4.25	155.0	0.0	Amoki1	2045	2.0953	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.25	155	0
+KARTOW.ARJ/SG1_1.POM	150	3	4	11.4	170.0	-63.0	Amoki1	2044	4.0589	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	11.4	170	-70
+KARTOW.ARJ/SG1_1.POM	180	4	5	17.0	30.0	-83.7	Amoki1	2043	13.6641	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	17	30	-93
+KARTOW.ARJ/SG1_1.POM	210	5	5.1	6.3	215.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6.3	215	0
+KARTOW.ARJ/SG1_1.POM	240	5	6	11.2	40.0	-54.9	Amoki1	2056	10.7730	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	11.2	40	-61
+KARTOW.ARJ/SG1_1.POM	270	6	6'	1.15	140.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.15	140	0
+KARTOW.ARJ/SG1_1.POM	300	6'	7	19.5	40.0	-72.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	19.5	40	-80
+KARTOW.ARJ/SG1_1.POM	330	7	8	19.3	45.0	-62.1	Amoki1	2054	19.2877	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	19.3	45	-69
+KARTOW.ARJ/SG1_1.POM	360	8	8.1	7.7	164.0	28.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	7.7	164	32
+KARTOW.ARJ/SG1_1.POM	390	8	9	5.65	357.0	-27.9	Amoki1	2053	6.0911	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.65	357	-31
+KARTOW.ARJ/SG1_1.POM	420	9	10	16.5	36.0	-71.1	Amoki1	2052	17.9105	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	16.5	36	-79
+KARTOW.ARJ/SG1_1.POM	450	10	11	12.1	50.0	-62.1	Amoki1	2051	15.2435	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	12.1	50	-69
+KARTOW.ARJ/SG1_1.POM	480	11	12	9.5	354.0	-27.9	Amoki1	2050	9.8055	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	9.5	354	-31
+KARTOW.ARJ/SG1_1.POM	510	12	13	34.3	0.0	-90.0	Amoki1	2049	37.3023	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	34.3	0	-100
+KARTOW.ARJ/SG1_1.POM	540	13	14	3.75	26.0	-13.5	Amoki1	2048	7.3955	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.75	26	-15
+KARTOW.ARJ/SG1_1.POM	570	14	15	7.2	42.0	-13.5	Amoki1	2057	11.3622	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	7.2	42	-15
+KARTOW.ARJ/SG1_1.POM	600	15	15'	0.67	132.0	-26.1	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.67	132	-29
+KARTOW.ARJ/SG1_1.POM	630	15'	16	4.0	5.0	-15.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4	5	-17
+KARTOW.ARJ/SG1_1.POM	660	16	17	4.0	7.0	-27.0	Amoki1	2059	4.6753	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4	7	-30
+KARTOW.ARJ/SG1_1.POM	690	17	18	23.45	315.0	-80.1	Amoki1	2060	24.5278	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	23.45	315	-89
+KARTOW.ARJ/SG1_1.POM	720	18	19	4.1	208.0	-28.35	Amoki1	2061	7.8389	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.1	208	-31.5
+KARTOW.ARJ/SG1_1.POM	750	19	20	6.8	192.0	-19.8	Amoki1	2062	7.7563	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6.8	192	-22
+KARTOW.ARJ/SG1_1.POM	780	20	20'	0.3	102.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.3	102	0
+KARTOW.ARJ/SG1_1.POM	810	20'	21	6.9	212.0	5.85	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6.9	212	6.5
+KARTOW.ARJ/SG1_1.POM	840	21	22	4.1	205.0	-27.9	Amoki1	2064	7.1050	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.1	205	-31
+KARTOW.ARJ/SG1_1.POM	870	22	23	3.3	242.0	-12.15	Amoki1	2068	7.9770	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.3	242	-13.5
+KARTOW.ARJ/SG1_1.POM	900	23	24	3.5	188.0	-10.8	Amoki1	2067	15.1397	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.5	188	-12
+KARTOW.ARJ/SG1_1.POM	930	25	24	10.65	12.0	-0.9	Amoki1	2066	6.0336	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	10.65	12	-1
+KARTOW.ARJ/SG1_1.POM	960	25	26	4.7	185.0	-4.5	Amoki1	2065	10.4416	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.7	185	-5
+KARTOW.ARJ/SG1_1.POM	990	26	27	5.65	184.0	4.5	Amoki1	2069	8.0266	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.65	184	5
+KARTOW.ARJ/SG1_1.POM	1020	27	28	3.25	185.0	-14.4	Amoki1	2070	6.8293	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.25	185	-16
+KARTOW.ARJ/SG1_1.POM	1050	28	29	1.9	142.0	-16.2	Amoki1	2071	3.8791	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.9	142	-18
+KARTOW.ARJ/SG1_1.POM	1080	29	30	3.25	192.0	15.3	Amoki1	2072	18.6668	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.25	192	17
+KARTOW.ARJ/SG1_1.POM	1110	30	31	1.7	318.0	-16.65	Amoki1	2073	4.6102	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.7	318	-18.5
+KARTOW.ARJ/SG1_1.POM	1140	31	32	5.85	228.0	4.5	Amoki1	2075	8.7728	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.85	228	5
+KARTOW.ARJ/SG1_1.POM	1170	32	33	4.2	215.0	-15.3	Amoki1	2076	7.4671	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.2	215	-17
+KARTOW.ARJ/SG1_1.POM	1200	33	34	4.8	266.0	-28.8	Amoki1	2077	21.7095	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.8	266	-32
+KARTOW.ARJ/SG1_1.POM	1230	34	35	10.1	220.0	-7.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	10.1	220	-8
+KARTOW.ARJ/SG1_1.POM	1260	35	36	5.0	188.0	10.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5	188	12
+KARTOW.ARJ/SG1_1.POM	1290	36	37	11.4	230.0	-41.85	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	11.4	230	-46.5
+KARTOW.ARJ/SG1_1.POM	1320	37	38	6.95	190.0	-18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6.95	190	-20
+KARTOW.ARJ/SG1_1.POM	1350	38	39	1.8	234.0	-15.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.8	234	-17
+KARTOW.ARJ/SG1_1.POM	1380	39	40	5.6	187.0	-3.6	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.6	187	-4
+KARTOW.ARJ/SG1_1.POM	1410	40	41	3.25	224.0	-54.45	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.25	224	-60.5
+KARTOW.ARJ/SG1_1.POM	1440	35	42	2.7	232.0	-21.6	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.7	232	-24
+KARTOW.ARJ/SG1_1.POM	1470	42	43	3.35	338.0	-67.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.35	338	-75
+KARTOW.ARJ/SG1_1.POM	1500	43	44	6.0	350.0	-50.4	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6	350	-56
+KARTOW.ARJ/SG1_1.POM	1530	44	45	3.0	205.0	-13.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3	205	-15
+KARTOW.ARJ/SG1_1.POM	1560	45	46	2.3	290.0	-45.9	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.3	290	-51
+KARTOW.ARJ/SG1_1.POM	1590	46	47	19.45	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	19.45	0	-100
+KARTOW.ARJ/SG1_1.POM	1620	47	48	7.0	18.0	-34.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	7	18	-38
+KARTOW.ARJ/SG1_1.POM	1650	48	49	3.19	40.0	-16.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.19	40	-18
+KARTOW.ARJ/SG1_1.POM	1680	50	49	3.3	184.0	63.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.3	184	70
+KARTOW.ARJ/SG1_1.POM	1710	50	51	3.66	35.0	-38.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.66	35	-43
+KARTOW.ARJ/SG1_1.POM	1740	51	51'	0.45	125.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.45	125	0
+KARTOW.ARJ/SG1_1.POM	1770	51'	52	19.42	42.0	-83.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	19.42	42	-93
+KARTOW.ARJ/SG1_1.POM	1800	52	53	4.2	44.0	-36.9	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.2	44	-41
+KARTOW.ARJ/SG1_1.POM	1830	53	54	8.35	42.0	-13.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.35	42	-15
+KARTOW.ARJ/SG1_1.POM	1860	54	55	17.3	32.0	-60.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	17.3	32	-67
+KARTOW.ARJ/SG1_1.POM	1890	55	55d	0.65	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.65	0	-100
+KARTOW.ARJ/SG1_1.POM	1920	17	56	7.42	24.0	-72.9	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	7.42	24	-81
+KARTOW.ARJ/SG1_1.POM	1950	56	57	3.4	38.0	-59.4	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.4	38	-66
+KARTOW.ARJ/SG1_1.POM	1980	57	58	11.53	88.0	-81.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	11.53	88	-90
+KARTOW.ARJ/SG1_1.POM	2010	58	59	9.81	158.0	-2.25	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	9.81	158	-2.5
+KARTOW.ARJ/SG1_1.POM	2040	59	59'	1.0	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1	0	-100
+KARTOW.ARJ/SG1_1.POM	2070	59'	60	4.12	160.0	-8.1	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.12	160	-9
+KARTOW.ARJ/SG1_1.POM	2100	60	60'	0.9	0.0	90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.9	0	100
+KARTOW.ARJ/SG1_1.POM	2130	60'	61	7.49	150.0	-2.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	7.49	150	-3
+KARTOW.ARJ/SG1_1.POM	2160	61	61'	0.85	240.0	-69.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.85	240	-77
+KARTOW.ARJ/SG1_1.POM	2190	61'	62	2.89	160.0	-13.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.89	160	-15
+KARTOW.ARJ/SG1_1.POM	2220	62	62'	1.25	0.0	90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.25	0	100
+KARTOW.ARJ/SG1_1.POM	2250	63	62'	4.6	348.0	-18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.6	348	-20
+KARTOW.ARJ/SG1_1.POM	2280	63	63'	0.4	258.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.4	258	0
+KARTOW.ARJ/SG1_1.POM	2310	200	201	13.9	42.0	68.4	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	13.9	42	76
+KARTOW.ARJ/SG1_1.POM	2340	201	202	5.7	3.0	18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.7	3	20
+KARTOW.ARJ/SG1_1.POM	2370	202	203	4.3	10.0	40.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.3	10	45
+KARTOW.ARJ/SG1_1.POM	2400	203	204	7.2	355.0	-5.4	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	7.2	355	-6
+KARTOW.ARJ/SG1_1.POM	2430	204	41	3.9	28.0	-16.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.9	28	-18
+KARTOW.ARJ/SG1_1.POM	2460	206	207	11.2	17.0	38.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	11.2	17	43
+KARTOW.ARJ/SG1_1.POM	2490	207	208	6.05	346.0	0.9	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6.05	346	1
+KARTOW.ARJ/SG1_1.POM	2520	208	209	8.8	34.0	63.9	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.8	34	71
+KARTOW.ARJ/SG1_1.POM	2550	209	210	3.5	356.0	-36.9	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.5	356	-41
+KARTOW.ARJ/SG1_1.POM	2580	210	211	2.8	4.0	73.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.8	4	82
+KARTOW.ARJ/SG1_1.POM	2610	211	212	2.1	15.0	45.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.1	15	50
+KARTOW.ARJ/SG1_1.POM	2640	212	213	2.5	304.0	18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.5	304	20
+KARTOW.ARJ/SG1_1.POM	2670	213	214	3.25	22.0	26.1	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.25	22	29
+KARTOW.ARJ/SG1_1.POM	2700	214	215	8.45	24.0	19.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.45	24	22
+KARTOW.ARJ/SG1_1.POM	2730	215	200	10.35	356.0	-3.6	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	10.35	356	-4
+KARTOW.ARJ/SG1_1.POM	2760	63'	64	8.35	158.0	6.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.35	158	7
+KARTOW.ARJ/SG1_1.POM	2790	100'	100	16.65	330.0	-5.4	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	16.65	330	-6
+KARTOW.ARJ/SG1_1.POM	2820	100	99	9.52	333.0	-6.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	9.52	333	-7
+KARTOW.ARJ/SG1_1.POM	2850	99	98	4.68	351.0	-12.6	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.68	351	-14
+KARTOW.ARJ/SG1_1.POM	2880	98	97	8.8	334.0	-2.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.8	334	-3
+KARTOW.ARJ/SG1_1.POM	2910	97	96	6.0	323.0	-4.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6	323	-5
+KARTOW.ARJ/SG1_1.POM	2940	96	95	1.7	326.0	-43.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.7	326	-48
+KARTOW.ARJ/SG1_1.POM	2970	95	94	1.75	308.0	9.9	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.75	308	11
+KARTOW.ARJ/SG1_1.POM	3000	94	93	7.7	331.0	16.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	7.7	331	18
+KARTOW.ARJ/SG1_1.POM	3030	93	92	8.85	337.0	-7.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.85	337	-8
+KARTOW.ARJ/SG1_1.POM	3060	92	91	1.1	0.0	-90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.1	0	-100
+KARTOW.ARJ/SG1_1.POM	3090	91	90	6.25	330.0	3.6	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6.25	330	4
+KARTOW.ARJ/SG1_1.POM	3120	90	89	0.5	0.0	90.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.5	0	100
+KARTOW.ARJ/SG1_1.POM	3150	89	64	5.05	324.0	6.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.05	324	7
+KARTOW.ARJ/SG1_1.POM	3180	100	101	20.9	134.0	-72.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	20.9	134	-80
+KARTOW.ARJ/SG1_1.POM	3210	101	101.1	8.2	328.0	18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.2	328	20
+KARTOW.ARJ/SG1_1.POM	3240	101	102	3.6	135.0	-34.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.6	135	-38
+KARTOW.ARJ/SG1_1.POM	3270	102	103	2.85	173.0	-35.1	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.85	173	-39
+KARTOW.ARJ/SG1_1.POM	3300	103	104	5.0	136.0	-22.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5	136	-25
+KARTOW.ARJ/SG1_1.POM	3330	104	105	9.3	150.0	-17.1	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	9.3	150	-19
+KARTOW.ARJ/SG1_1.POM	3360	105	106	5.0	138.0	-22.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5	138	-25
+KARTOW.ARJ/SG1_1.POM	3390	106	107	3.0	112.0	-54.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3	112	-60
+KARTOW.ARJ/SG1_1.POM	3420	107	108	3.85	152.0	-2.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.85	152	-3
+KARTOW.ARJ/SG1_1.POM	3450	108	109	2.0	76.0	9.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2	76	10
+KARTOW.ARJ/SG1_1.POM	3480	109	110	6.4	130.0	-10.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	6.4	130	-12
+KARTOW.ARJ/SG1_1.POM	3510	110	111	4.2	159.0	-18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.2	159	-20
+KARTOW.ARJ/SG1_1.POM	3540	111	112	9.3	159.0	-3.6	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	9.3	159	-4
+KARTOW.ARJ/SG1_1.POM	3570	112	113	3.4	185.0	5.4	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.4	185	6
+KARTOW.ARJ/SG1_1.POM	3600	113	114	2.65	172.0	-8.1	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.65	172	-9
+KARTOW.ARJ/SG1_1.POM	3630	114	115	4.2	284.0	-9.9	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.2	284	-11
+KARTOW.ARJ/SG1_1.POM	3660	115	116	3.6	252.0	-2.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.6	252	-3
+KARTOW.ARJ/SG1_1.POM	3690	116	117	0.95	212.0	-16.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.95	212	-18
+KARTOW.ARJ/SG1_1.POM	3720	117	118	1.4	272.0	-19.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.4	272	-22
+KARTOW.ARJ/SG1_1.POM	3750	118	119	1.4	212.0	-5.4	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.4	212	-6
+KARTOW.ARJ/SG1_1.POM	3780	119	120	1.2	270.0	-6.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.2	270	-7
+KARTOW.ARJ/SG1_1.POM	3810	120	121	1.11	298.0	-16.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.11	298	-18
+KARTOW.ARJ/SG1_1.POM	3840	121	122	1.8	272.0	-16.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	1.8	272	-18
+KARTOW.ARJ/SG1_1.POM	3870	122	123	4.7	328.0	-24.3	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	4.7	328	-27
+KARTOW.ARJ/SG1_1.POM	3900	123	124	2.3	232.0	-20.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.3	232	-23
+KARTOW.ARJ/SG1_1.POM	3930	124	125	5.4	252.0	-7.2	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	5.4	252	-8
+KARTOW.ARJ/SG1_1.POM	3960	125	126	0.85	298.0	0.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	0.85	298	0
+KARTOW.ARJ/SG1_1.POM	3990	126	127	16.4	232.0	-19.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	16.4	232	-22
+KARTOW.ARJ/SG1_1.POM	4020	127	128	3.8	82.0	-1.8	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	3.8	82	-2
+KARTOW.ARJ/SG1_1.POM	4050	128	129	2.3	198.0	-20.7	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	2.3	198	-23
+KARTOW.ARJ/SG1_1.POM	4080	129	130	8.5	248.0	-22.5	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	8.5	248	-25
+KARTOW.ARJ/SG1_1.POM	4110	130	131	9.3	178.0	-18.0	—	—	—	False	—	—	—	—	nieustalona jaskinia lub tożsamość stacji w aktywnym SRV	deg	grad	9.3	178	-20
+KARTOW.ARJ/S_PIOTR.POM	30	sp2	NK52	6.6	200.0	34.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	6.6	200	34
+KARTOW.ARJ/S_PIOTR.POM	60	sp2	sp3	1.1	311.0	0.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	1.1	311	0
+KARTOW.ARJ/S_PIOTR.POM	90	sp3	sp4	5.75	84.0	32.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	5.75	84	32
+KARTOW.ARJ/S_PIOTR.POM	120	sp4	sp5	3.05	114.0	-30.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	3.05	114	-30
+KARTOW.ARJ/S_PIOTR.POM	150	sp5	sp6	3.33	197.0	-21.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	3.33	197	-21
+KARTOW.ARJ/S_PIOTR.POM	180	sp6	sp7	6.4	138.0	-46.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	6.4	138	-46
+KARTOW.ARJ/S_PIOTR.POM	210	sp7	sp8	2.0	115.0	22.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	2	115	22
+KARTOW.ARJ/S_PIOTR.POM	240	sp8	sp9	6.87	178.0	-41.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	6.87	178	-41
+KARTOW.ARJ/S_PIOTR.POM	270	sp9	sp10	3.62	144.0	-36.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	3.62	144	-36
+KARTOW.ARJ/S_PIOTR.POM	300	sp10	sp11	4.95	185.0	-42.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	4.95	185	-42
+KARTOW.ARJ/S_PIOTR.POM	330	sp11	sp12	6.35	105.0	-42.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	6.35	105	-42
+KARTOW.ARJ/S_PIOTR.POM	360	sp11	sp13	5.0	170.0	-30.0	—	—	—	False	MAIN	—	—	—	włączony; wstawka Mokrej Czterdziestki	deg	deg	5	170	-30

@@ -18,9 +18,7 @@
 Po przypisaniu końcówek nazw stacji (np. `NK_03.28` do `nvk28`) wszystkie
 155 odcinków modelu ma odpowiednik w siedmiu SRV. W pętli
 `nvk111–112–113–114–115–116–111` współrzędne modelu uwzględniają wyrównanie.
-Format v4 nie przechowuje przekrojów LRUD. Najstarszym odnalezionym zapisem
-142 zestawów LRUD są pliki SRV z 2014 r. Bez pierwotnych obserwacji nie można
-sprawdzić odczytów długości, azymutu i nachylenia ani wymiarów przekrojów.
+Format v4 nie przechowuje przekrojów LRUD. W 2011 r. przekazano też projekt On Station ze wszystkimi 142 przekrojami. Kolejność kierunków w SRV skorygowano po sprawdzeniu pól CDI i opublikowanych rysunków z numerami stacji. [Porównanie z CDI](../01/README.md)
 
 Plan z 1990 r. i profil partii odkrytych w 2002 r. dokumentują daty prac,
 ale nie pozwalają przypisać dnia pomiaru poszczególnym wierszom SRV.

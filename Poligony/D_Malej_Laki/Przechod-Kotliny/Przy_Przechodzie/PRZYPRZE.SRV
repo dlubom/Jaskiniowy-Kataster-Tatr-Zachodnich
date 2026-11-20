@@ -5,7 +5,7 @@ CAVE_NAME       "Jaskinia przy Przechodzie"
 OBJECT_REF      "PrzyPrzechodzie:jp0=MLZ-0007"
 SURVEY_ID       "PRZYPRZE"
 SURVEY_NAME     "Przy Przechodzie"
-UPDATE_DATE     "2026-11-12"
+UPDATE_DATE     "2026-11-19"
 PROJECT_NAME    "Kataster jaskin tatrzanskich"
 COORDINATOR     "nieznane"
 COORDINATOR_EMAIL "nieznane"
@@ -19,6 +19,7 @@ SURVEY_GRADE    "nieznane"
 PROCESSING      "dodano metadane do istniejacego aktywnego pliku SRV"
 PROCESSING      "Survex 1.4.24: historyczne DECL=0.819D zastapiono tymczasowym zalozeniem DECL=0; daty i pomiary bez zmian"
 PROCESSING      "2026-11-12: migracja CAVE_ID i jawnych referencji wedlug zatwierdzonego MAPPING.csv"
+PROCESSING      "2026-11-19: uzupelniono odcinek jp20-jp0' z projektu On Station w _RAW/01."
 #]
 
 #prefix PrzyPrzechodzie
@@ -92,3 +93,7 @@ jp90	jp91	4.44	65.77	9.07
 jp19	jp20	8.57	140.71	5.43
 jp20	jp1'	1.75	206.57	26.78
 ;jp0	jp1	5.55	243.95	25.51
+
+; jp0' wraca przez Sien do otworu 1: 0.014 m od jp0 w rzucie, ta sama wysokosc do 0.01 m.
+; Malolaczniak.cdi, wiersz 4750. jp0' zachowuje nazwe z projektu On Station.
+jp20	jp0'	4.20	78.11	-22.39
