@@ -13,7 +13,11 @@ async function withViewer(options, check) {
     });
     try {
         const page = await browser.newPage(options);
-        await page.goto(url);
+        // CaveView zaczyna pobierać teren po wczytaniu modelu i włączeniu sterowania.
+        await Promise.all([
+            page.waitForRequest('**/terrain/tileSets.json'),
+            page.goto(url),
+        ]);
         await check(page);
     } finally {
         await browser.close();
