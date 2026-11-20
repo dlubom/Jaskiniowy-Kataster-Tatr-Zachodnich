@@ -107,7 +107,7 @@ Nad Kotlinami	154	NK73 NK74 13.95 132.29 3.12 NAN NAN ()	wariant wartości	MAIN	
 Nad Kotlinami	155	NK74 NK75 10.20 254.23 -17.75 NAN NAN ()	wariant wartości	MAIN	124	wprost	—	10.20 / 258.00 / -18.00	0.640	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
 Nad Kotlinami	156	NK75 NK76 10.74 276.45 34.81 NAN NAN ()	wariant wartości	MAIN	125	wprost	—	10.90 / 280.00 / 34.00	0.596	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
 Nad Kotlinami	157	NK76 NK77 9.55 227.73 -58.04 NAN NAN ()	wariant wartości	MAIN	126	wprost	—	9.50 / 231.00 / -59.00	0.329	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
-Nad Kotlinami	158	NK77 PK0 13.70 19.83 -55.99 NAN NAN ()	tylko wartości	—	—	—	KOLANKO:31	13.70 / 19.83 / -55.99	0.000	drugie oznaczenie dowiązania z wiersza 223 (PK0 / KO000) (KOLANKO:31)
+Nad Kotlinami	158	NK77 PK0 13.70 19.83 -55.99 NAN NAN ()	tylko wartości	—	—	—	KOLANKO:31	—	—	Drugie oznaczenie dowiązania z CDI 223. KOLANKO:31 (Ciag:w1 → KO000), 13,70 m / 19,83° / -55,99°, różnica 0,000 m.
 Partie za Kolankiem	223	NK77 KO000 13.70 19.83 -55.99 NAN NAN ()	zgodny po mapowaniu	KOLANKO	31	wprost	—	13.70 / 19.83 / -55.99	0.000	zgodny po mapowaniu
 Partie za Kolankiem	224	O$000 O$001 0.99 331.62 0.00 NAN NAN ()	zgodny po mapowaniu	KOLANKO	32	wprost	—	0.99 / 331.62 / 0.00	0.000	zgodny po mapowaniu
 Partie za Kolankiem	225	O$001 O$002 2.07 199.96 12.82 NAN NAN ()	zgodny po mapowaniu	KOLANKO	33	wprost	—	2.07 / 199.96 / 12.82	0.000	zgodny po mapowaniu
@@ -708,7 +708,7 @@ Wodociąg	1011	WD88 WD87 8.60 244.95 1.00 NAN NAN ()	wariant wartości	MAIN	221	
 Wodociąg	1012	WD87 WD86 2.56 29.88 4.04 NAN NAN ()	wariant wartości	MAIN	222	wprost	—	2.55 / 30.00 / 4.00	0.011	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
 Wodociąg	1013	WD86 WD85 11.00 287.01 6.00 NAN NAN ()	wariant wartości	MAIN	223	wprost	—	11.00 / 287.00 / 6.00	0.002	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
 Wodociąg	1014	WD85 WD83 5.40 235.96 2.02 NAN NAN ()	wariant wartości	MAIN	224	wprost	—	5.40 / 236.00 / 2.00	0.004	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
-Wodociąg	1015	WD83 WR0 7.00 190.03 -21.99 NAN NAN ()	bez dopasowania	—	—	—	—	7.00 / 190.00 / -22.00	0.004	WD83–WR0 = Ciag:g83–Wrocl:z0 (WROCL) (WROCL:33)
+Wodociąg	1015	WD83 WR0 7.00 190.03 -21.99 NAN NAN ()	bez dopasowania	—	—	—	—	—	—	WROCL:33 (Ciag:g83 → Wrocl:z0), 7,00 m / 190,00° / -22,00°, różnica 0,004 m.
 Wodociąg	1016	WD83 WD82 2.80 339.83 -20.96 NAN NAN ()	wariant wartości	MAIN	225	wprost	—	2.80 / 340.00 / -21.00	0.008	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
 Wodociąg	1017	WD82 WD81 13.10 295.02 -82.01 NAN NAN ()	wariant wartości	MAIN	227	wprost	—	13.10 / 295.00 / -82.00	0.002	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
 Wodociąg	1018	WD81 WD80 6.26 302.13 -71.97 NAN NAN ()	wariant wartości	MAIN	228	wprost	—	6.25 / 302.00 / -72.00	0.011	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
@@ -729,16 +729,16 @@ Wodociąg	1032	WD77 WD76 16.81 124.99 -31.02 NAN NAN ()	wariant wartości	MAIN	2
 Wodociąg	1033	WD76 WD75 13.30 109.01 -40.98 NAN NAN ()	wariant wartości	MAIN	233	wprost	—	13.30 / 109.00 / -41.00	0.005	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
 Wodociąg	1034	WD75 WD74 9.40 221.98 -30.99 NAN NAN ()	wariant wartości	MAIN	234	wprost	—	9.40 / 222.00 / -31.00	0.003	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
 Wodociąg	1035	WD74 WD73 13.50 139.97 -43.01 NAN NAN ()	wariant wartości	MAIN	236	wprost	—	13.50 / 140.00 / -43.00	0.006	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
-Wodociąg	1036	WD73 CW1 5.12 100.27 -4.59 NAN NAN ()	bez dopasowania	—	—	—	—	5.40 / 100.00 / -6.00	0.309	CW1…CW9 = 2o1…2o9; ten sam ciąg g73…g58 (MAIN:465)
-Wodociąg	1037	CW1 CW2 7.35 147.15 -58.88 NAN NAN ()	bez dopasowania	—	—	—	—	7.60 / 145.00 / -59.00	0.289	CW1…CW9 = 2o1…2o9; ten sam ciąg g73…g58 (MAIN:466)
-Wodociąg	1038	CW2 CW3 9.29 192.77 -53.87 NAN NAN ()	bez dopasowania	—	—	—	—	9.50 / 190.00 / -55.00	0.385	CW1…CW9 = 2o1…2o9; ten sam ciąg g73…g58 (MAIN:467)
-Wodociąg	1039	CW3 CW4 10.33 149.33 -49.69 NAN NAN ()	bez dopasowania	—	—	—	—	10.70 / 147.00 / -50.00	0.465	CW1…CW9 = 2o1…2o9; ten sam ciąg g73…g58 (MAIN:468)
-Wodociąg	1040	CW4 CW5 5.24 166.66 -43.35 NAN NAN ()	bez dopasowania	—	—	—	—	5.40 / 164.00 / -44.00	0.247	CW1…CW9 = 2o1…2o9; ten sam ciąg g73…g58 (MAIN:469)
-Wodociąg	1041	CW5 CW6 11.47 222.19 -38.86 NAN NAN ()	bez dopasowania	—	—	—	—	11.50 / 220.00 / -41.00	0.546	CW1…CW9 = 2o1…2o9; ten sam ciąg g73…g58 (MAIN:470)
-Wodociąg	1042	CW6 CW7 3.82 229.99 -31.73 NAN NAN ()	bez dopasowania	—	—	—	—	3.80 / 262.00 / -34.00	1.771	CW1…CW9 = 2o1…2o9; ten sam ciąg g73…g58 (MAIN:471)
-Wodociąg	1043	CW7 CW8 2.91 165.89 -46.38 NAN NAN ()	bez dopasowania	—	—	—	—	3.00 / 167.00 / -47.00	0.103	CW1…CW9 = 2o1…2o9; ten sam ciąg g73…g58 (MAIN:472)
-Wodociąg	1044	CW8 CW9 6.47 253.92 -2.22 NAN NAN ()	bez dopasowania	—	—	—	—	6.20 / 253.00 / -4.00	0.349	CW1…CW9 = 2o1…2o9; ten sam ciąg g73…g58 (MAIN:473)
-Wodociąg	1045	CW9 WD58 1.33 356.26 36.03 NAN NAN ()	bez dopasowania	—	—	—	—	1.30 / 359.00 / 35.00	0.064	CW1…CW9 = 2o1…2o9; ten sam ciąg g73…g58 (MAIN:474)
+Wodociąg	1036	WD73 CW1 5.12 100.27 -4.59 NAN NAN ()	bez dopasowania	—	—	—	—	—	—	Ciąg Wodny. MAIN:465 (g73 → 2o1), 5,40 m / 100,00° / -6,00°, różnica 0,309 m.
+Wodociąg	1037	CW1 CW2 7.35 147.15 -58.88 NAN NAN ()	bez dopasowania	—	—	—	—	—	—	Ciąg Wodny. MAIN:466 (2o1 → 2o2), 7,60 m / 145,00° / -59,00°, różnica 0,289 m.
+Wodociąg	1038	CW2 CW3 9.29 192.77 -53.87 NAN NAN ()	bez dopasowania	—	—	—	—	—	—	Ciąg Wodny. MAIN:467 (2o2 → 2o3), 9,50 m / 190,00° / -55,00°, różnica 0,385 m.
+Wodociąg	1039	CW3 CW4 10.33 149.33 -49.69 NAN NAN ()	bez dopasowania	—	—	—	—	—	—	Ciąg Wodny. MAIN:468 (2o3 → 2o4), 10,70 m / 147,00° / -50,00°, różnica 0,465 m.
+Wodociąg	1040	CW4 CW5 5.24 166.66 -43.35 NAN NAN ()	bez dopasowania	—	—	—	—	—	—	Ciąg Wodny. MAIN:469 (2o4 → 2o5), 5,40 m / 164,00° / -44,00°, różnica 0,247 m.
+Wodociąg	1041	CW5 CW6 11.47 222.19 -38.86 NAN NAN ()	bez dopasowania	—	—	—	—	—	—	Ciąg Wodny. MAIN:470 (2o5 → 2o6), 11,50 m / 220,00° / -41,00°, różnica 0,546 m.
+Wodociąg	1042	CW6 CW7 3.82 229.99 -31.73 NAN NAN ()	bez dopasowania	—	—	—	—	—	—	Ciąg Wodny. MAIN:471 (2o6 → 2o7), 3,80 m / 262,00° / -34,00°, różnica 1,771 m. Azymut CDI pozostaje niepotwierdzony.
+Wodociąg	1043	CW7 CW8 2.91 165.89 -46.38 NAN NAN ()	bez dopasowania	—	—	—	—	—	—	Ciąg Wodny. MAIN:472 (2o7 → 2o8), 3,00 m / 167,00° / -47,00°, różnica 0,103 m.
+Wodociąg	1044	CW8 CW9 6.47 253.92 -2.22 NAN NAN ()	bez dopasowania	—	—	—	—	—	—	Ciąg Wodny. MAIN:473 (2o8 → 2o9), 6,20 m / 253,00° / -4,00°, różnica 0,349 m.
+Wodociąg	1045	CW9 WD58 1.33 356.26 36.03 NAN NAN ()	bez dopasowania	—	—	—	—	—	—	Ciąg Wodny. MAIN:474 (2o9 → g58), 1,30 m / 359,00° / 35,00°, różnica 0,064 m.
 Wodociąg	1046	WD73 WD72 6.45 113.05 5.97 NAN NAN ()	wariant wartości	MAIN	237	wprost	—	6.45 / 113.00 / 6.00	0.007	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
 Wodociąg	1047	WD72 WD71 5.60 90.00 -40.95 NAN NAN ()	wariant wartości	MAIN	239	wprost	—	5.60 / 90.00 / -41.00	0.005	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
 Wodociąg	1048	WD71 WD70 10.65 113.00 -25.01 NAN NAN ()	wariant wartości	MAIN	240	wprost	—	10.65 / 113.00 / -25.00	0.002	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
@@ -955,12 +955,12 @@ Wrocławskie Kominy	1321	WR80 WR81 35.50 0.00 90.00 NAN NAN ()	zgodny po mapowan
 Wrocławskie Kominy	1322	WR81 WR801 5.00 199.99 0.00 NAN NAN ()	bez dopasowania	—	—	—	—	—	—	brak ustalonego odpowiednika rekordu
 Wrocławskie Kominy	1323	WR801 WR82 4.50 270.00 0.00 NAN NAN ()	tylko wartości	—	—	—	WROCL:166	—	—	zgodność liczb bez potwierdzonej tożsamości stacji
 Wrocławskie Kominy	1324	WR82 WR83 4.00 279.06 0.00 NAN NAN ()	wariant wartości	WROCL	166	wprost	—	4.50 / 270.00 / 0.00	0.836	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
-Wrocławskie Kominy	1325	WR83 WR84 12.05 0.00 90.00 NAN NAN ()	wariant wartości	WROCL	167	wprost	—	21.00 / 0.00 / 90.00	8.950	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
-Wrocławskie Kominy	1326	WR84 WR85 5.34 288.85 10.02 NAN NAN ()	wariant wartości	WROCL	168	wprost	—	10.00 / 50.00 / 0.00	13.525	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
+Wrocławskie Kominy	1325	WR83 WR84 12.05 0.00 90.00 NAN NAN ()	wariant wartości	WROCL	167	wprost	—	21.00 / 0.00 / 90.00	8.950	Kandydat po nazwach. Tożsamość odcinka niepotwierdzona. Dla WROCL:167 audyt wskazuje CDI 1347.
+Wrocławskie Kominy	1326	WR84 WR85 5.34 288.85 10.02 NAN NAN ()	wariant wartości	WROCL	168	wprost	—	10.00 / 50.00 / 0.00	13.525	Kandydat po nazwach. Tożsamość odcinka niepotwierdzona. Dla WROCL:168 audyt wskazuje CDI 1348.
 Wrocławskie Kominy	1327	WR85 WR86 4.10 0.00 0.00 NAN NAN ()	bez dopasowania	—	—	—	—	—	—	brak ustalonego odpowiednika rekordu
-Wrocławskie Kominy	1328	WR86 WR87 2.60 318.81 65.84 NAN NAN ()	wariant wartości	WROCL	170	wprost	—	5.30 / 230.00 / 0.00	5.884	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
-Wrocławskie Kominy	1329	WR87 WR88 3.70 291.57 -2.94 NAN NAN ()	wariant wartości	WROCL	171	wprost	—	5.80 / 350.00 / -34.00	5.244	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
-Wrocławskie Kominy	1330	WR88 WR89 20.48 0.00 90.00 NAN NAN ()	wariant wartości	WROCL	172	wprost	—	26.00 / 0.00 / 90.00	5.520	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
+Wrocławskie Kominy	1328	WR86 WR87 2.60 318.81 65.84 NAN NAN ()	wariant wartości	WROCL	170	wprost	—	5.30 / 230.00 / 0.00	5.884	Kandydat po nazwach. Tożsamość odcinka niepotwierdzona. Dla WROCL:170 audyt wskazuje CDI 1350.
+Wrocławskie Kominy	1329	WR87 WR88 3.70 291.57 -2.94 NAN NAN ()	wariant wartości	WROCL	171	wprost	—	5.80 / 350.00 / -34.00	5.244	Kandydat po nazwach. Tożsamość odcinka niepotwierdzona. Dla WROCL:171 audyt wskazuje CDI 1351.
+Wrocławskie Kominy	1330	WR88 WR89 20.48 0.00 90.00 NAN NAN ()	wariant wartości	WROCL	172	wprost	—	26.00 / 0.00 / 90.00	5.520	Kandydat po nazwach. Tożsamość odcinka niepotwierdzona. Dla WROCL:172 audyt wskazuje CDI 1352.
 Wrocławskie Kominy	1331	WR89 WR90 4.90 331.12 49.06 NAN NAN ()	wariant wartości	WROCL	173	wprost	—	17.65 / 34.00 / 80.00	14.067	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
 Wrocławskie Kominy	1332	WR90 WR91 6.10 293.45 -4.04 NAN NAN ()	wariant wartości	WROCL	174	wprost	—	8.16 / 293.00 / 45.00	6.208	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
 Wrocławskie Kominy	1333	WR91 WR92 8.00 0.00 90.00 NAN NAN ()	wariant wartości	WROCL	175	wprost	—	1.10 / 23.00 / 0.00	8.075	porównanie przy wskazanym mapowaniu; zachowano wartości SRV
