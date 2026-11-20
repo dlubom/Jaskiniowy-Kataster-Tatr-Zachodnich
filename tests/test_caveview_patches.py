@@ -75,7 +75,6 @@ def test_project_crs_uses_builtin_utm_and_other_codes_keep_their_lookup(tmp_path
         "patch_web_mesh_worker",
         "patch_tree_traversal",
         "patch_station_position_tree_fields",
-        "patch_entrance_clusters",
     ],
 )
 def test_missing_vendor_pattern_does_not_change_file(tmp_path, patches, function, capsys):
@@ -247,3 +246,212 @@ def test_entrance_labels_render_above_terrain_at_their_projected_position(tmp_pa
     assert "marker.renderOrder = 2;" in once
     assert "marker.position.copy( node );" in once
     assert path.read_text() == once
+
+
+def test_mismatched_label_material_fails_without_writing_partial_patch(tmp_path, patches):
+    path = tmp_path / "CaveView2.js"
+    original = (
+        "const material = ctx.materials.getLabelMaterial( 'stations.entrances' );"
+        " // vendor comment\n"
+        "\n\t\t\tmaterial.depthTest = true;\n\t\t\tmaterial.transparent = false;\n"
+        "\t\t\tmarker.layers.set( FEATURE_ENTRANCES );\n"
+        "\t\t\tmarker.position.copy( node );\n"
+    )
+    path.write_text(original)
+
+    with pytest.raises(ValueError, match="entrance label material"):
+        patches.patch_entrance_labels(path)
+
+    assert path.read_text() == original
+
+
+def test_walls_station_name_with_dots_is_kept_as_one_leaf(tmp_path, patches):
+    path = tmp_path / "CaveView2.js"
+    path.write_text(
+        "function parseStation(header, label) {\n"
+        "\t\t\tconst auxInfo = readNSLF();\n"
+        "\t\t\tfunction readNSLF() { return header; }\n"
+        "\t\t\tconst xGroups    = [];\n"
+        "\t\t\tconst stationMap = this.stationMap;\n\n"
+        "\t\t\t// init cmd handler\n"
+        "\t\t\t\tconst coords = readCoordinates();\n"
+        "\t\t\t\tconst path = label.split( '.' );\n"
+        "\t\t\tfunction readCoordinates() {}\n"
+        "return path;\n}\n"
+        "const loader = {parseStation};\n"
+        "const station = 'Pawlikowskiego:Oblazkowa:0.0';\n"
+        "console.log(JSON.stringify(loader.parseStation(['title', 'EPSG:32634', ':'], station)));\n"
+        "console.log(JSON.stringify(loader.parseStation(['title'], 'survey.0')));\n"
+    )
+
+    patches.patch_walls_station_paths(path)
+    node = shutil.which("node")
+    if node is None:
+        pytest.skip("JavaScript runtime unavailable")
+    result = subprocess.check_output([node, path], text=True)
+
+    assert result.splitlines() == ['["Pawlikowskiego:Oblazkowa:0.0"]', '["survey","0"]']
+
+
+def test_colocated_named_entrances_share_one_label(tmp_path, patches):
+    path = tmp_path / "CaveView2.js"
+    path.write_text(
+        """\
+const STATION_ENTRANCE = 2;
+const vertices = [];
+const self = { addMarker(node, name) { console.log(node.id, name.trim()); } };
+const entrances = { a: {name: 'Turnia'}, b: {name: 'Piwnica'}, c: {name: '-skip'} };
+			function _addEntrance ( node ) {
+
+				if ( ! ( ( node.ownType ?? node.type ) & STATION_ENTRANCE ) ) return;
+
+				if ( node.next ) {
+
+					let next = node.next;
+
+					// skip labels for all expect lowest id station
+					while ( next !== node ) {
+
+						if ( ( next.ownType & STATION_ENTRANCE ) && node.id > next.id ) return;
+						next = next.next;
+
+					}
+
+				}
+
+				vertices.push( node );
+
+				let name;
+
+				const entranceInfo = entrances[ node.getPath() ];
+
+				if ( entranceInfo?.name !== undefined ) {
+
+					name = entranceInfo.name;
+					if ( name === '-skip' ) return;
+
+				} else if ( node.comment !== undefined ) {
+
+					name = node.comment;
+
+				} else {
+
+					name = node.getPath( endNode );
+
+				}
+
+				self.addMarker( node, ` ${name} ` );
+
+			}
+const a = { id: 1, ownType: 2, getPath: () => 'a' };
+const b = { id: 2, ownType: 2, getPath: () => 'b' };
+const c = { id: 3, ownType: 2, getPath: () => 'c' };
+a.next = b;
+b.next = c;
+c.next = a;
+for (const entrance of [b, a, c]) _addEntrance(entrance);
+console.log(vertices.length);
+"""
+    )
+
+    patches.patch_entrance_aliases(path)
+    node = shutil.which("node")
+    if node is None:
+        pytest.skip("JavaScript runtime unavailable")
+    result = subprocess.check_output([node, path], text=True)
+
+    assert result.splitlines() == ["1 Turnia / Piwnica", "1"]
+
+
+def test_entrance_groups_fit_the_badge_in_screen_pixels(tmp_path, patches):
+    path = tmp_path / "CaveView2.js"
+    path.write_text(
+        """\
+class Vector3 {
+    copy(point) { Object.assign(this, point); return this; }
+    applyMatrix4() { return this; }
+    project() { return this; }
+}
+class Vector2 {}
+class Box2 {
+    points = [];
+    expandByPoint(point) { this.points.push({...point}); }
+    getSize() {
+        const span = axis => Math.max(...this.points.map(p => p[axis]))
+            - Math.min(...this.points.map(p => p[axis]));
+        return {x: span('x'), y: span('y')};
+    }
+}
+\t// preallocated objects for projected area calculation and cluster visibility checks
+\tconst __a$1 = new Vector3();
+\tconst __v = new Vector3();
+
+\tclass QuadTree {
+\t\tcheck ( cluster, target, angleFactor, selection ) {
+\t\t\tfor (const subQuad of this.nodes) {
+\t\t\t\tconst area = subQuad.projectedArea( cluster );
+\t\t\t\tif (area < 10 * angleFactor) subQuad.clusterMarkers();
+\t\t\t}
+\t\t}
+
+\t\tprojectedArea ( cluster ) {
+\t\t\treturn 0.05;
+\t\t}
+\t}
+
+function runGrouping(dx, dy, width, height) {
+    const tree = new QuadTree();
+    const subQuad = new QuadTree();
+    tree.nodes = [subQuad];
+    subQuad.nodes = [];
+    subQuad.count = 2;
+    subQuad.markers = [{position: {x: 0, y: 0, z: 0}}, {position: {x: dx, y: dy, z: 0}}];
+    subQuad.clusterMarkers = () => console.log('cluster');
+    subQuad.showMarkers = () => console.log('labels');
+    const selection = {};
+    const selectedStationSet = selection;
+    const target = {};
+    this.quadTree = tree;
+    const cluster = this;
+    cluster.camera = {getWorldDirection: () => ({dot: () => 0}), updateWorldMatrix() {}};
+    cluster.ctx = {container: {clientWidth: width, clientHeight: height}};
+    const Object3D = {};
+\t\t\tconst angle = this.camera.getWorldDirection( __v ).dot( Object3D.DEFAULT_UP );
+
+\t\t\tthis.quadTree.check( this, target, Math.max( 0.05, 1 - Math.cos( angle ) ), """
+        """selectedStationSet );
+}
+runGrouping(0.025, 0.01, 1280, 720);
+runGrouping(0.35, 0.01, 1280, 720);
+runGrouping(0.01, 0.08, 1280, 720);
+runGrouping(0.025, 0.01, 1920, 720);
+runGrouping(0.03, 0.05, 1280, 720);
+"""
+    )
+
+    patches.patch_entrance_grouping(path)
+    node = shutil.which("node")
+    if node is None:
+        pytest.skip("JavaScript runtime unavailable")
+    result = subprocess.check_output([node, path], text=True)
+
+    assert result.splitlines() == ["cluster", "labels", "labels", "labels", "labels"]
+
+
+@pytest.mark.parametrize("double_patch", [False, True])
+def test_cluster_badge_match_is_scoped_and_unambiguous(tmp_path, patches, double_patch):
+    path = tmp_path / "CaveView2.js"
+    badge = "map: texture, size: 20, " if double_patch else "map: texture, size: 31, "
+    original = (
+        "class ClusterMaterial extends PointsMaterial {\n"
+        "\t\tctx.fillStyle = '#232928';\n"
+        "\t\tctx.fillStyle = '#f1f3f2';\n"
+        f"\t\tsuper( {{ {badge}depthTest: false }} );\n"
+        + ("\t\t// map: texture, size: 32,\n" if double_patch else "")
+        + "\t}\n"
+        "const unrelated = { map: texture, size: 32, depthTest: true };\n"
+    )
+    path.write_text(original)
+    with pytest.raises(ValueError, match="cluster badge size"):
+        patches.patch_entrance_clusters(path)
+    assert path.read_text() == original

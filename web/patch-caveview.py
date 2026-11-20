@@ -12,6 +12,9 @@ import os
 import re
 import sys
 from pathlib import Path
+from textwrap import indent
+
+ENTRANCE_CLUSTER_SIZE = 20
 
 
 def patch_crs_regex(path):
@@ -277,10 +280,97 @@ def patch_station_position_tree_fields(path):
     print(f"  OK: patched StationPosition tree fields in {path}")
 
 
-def patch_entrance_labels(path):
-    """Keep labels legible against the terrain at the surveyed entrance positions."""
+def patch_required(path, replacements, *, section=None):
+    """Apply all required substitutions before writing a vendor file."""
     js = Path(path)
     source = js.read_text(encoding="utf-8")
+    start, end = 0, len(source)
+    if section is not None:
+        matches = list(re.finditer(section, source, re.S))
+        if len(matches) != 1:
+            raise ValueError(f"{path}: expected one vendor section matching {section}")
+        start, end = matches[0].span()
+
+    original = source[start:end]
+    patched = original
+    for label, old, new in replacements:
+        pattern = re.escape(old) if isinstance(old, str) else old
+        without_patch = patched.replace(new, "", 1)
+        if without_patch != patched:
+            if new in without_patch or re.search(pattern, without_patch):
+                raise ValueError(f"{path}: ambiguous {label} match")
+            continue
+
+        patched, count = re.subn(pattern, lambda _, replacement=new: replacement, patched)
+        if count != 1:
+            raise ValueError(f"{path}: expected one {label} match, found {count}")
+
+    if patched != original:
+        js.write_text(source[:start] + patched + source[end:], encoding="utf-8")
+
+
+def patch_walls_station_paths(path):
+    """Keep non-dot Survex station names intact in the CaveView tree."""
+    header = "\t\t\tconst auxInfo = readNSLF();"
+    station_map = "\t\t\tconst xGroups    = [];\n\t\t\tconst stationMap = this.stationMap;"
+    coords = "\t\t\t\tconst coords = readCoordinates();\n"
+    patch_required(
+        path,
+        [
+            (
+                "Survex auxiliary header",
+                header,
+                header + "\n\t\t\tthis.stationSeparator = auxInfo[ 2 ]?.charAt( 0 ) || '.';",
+            ),
+            (
+                "Survex loader separator",
+                station_map,
+                station_map + "\n\t\t\tconst stationSeparator = this.stationSeparator;",
+            ),
+            (
+                "Survex station path",
+                coords + "\t\t\t\tconst path = label.split( '.' );",
+                coords
+                + "\t\t\t\tconst path = stationSeparator === '.' ? label.split( '.' ) : [ label ];",
+            ),
+        ],
+    )
+
+
+def patch_entrance_aliases(path):
+    """Keep distinct entrance names together when they share one location."""
+    old = re.compile(r"\t{3}function _addEntrance \( node \) \{.*?\n\t{3}\}", re.S)
+    new = indent(
+        """\
+function _addEntrance ( node ) {
+
+\tif ( ! ( ( node.ownType ?? node.type ) & STATION_ENTRANCE ) ) return;
+
+\tconst name = entrances[ node.getPath() ]?.name ?? node.comment ?? node.getPath( endNode );
+\tconst names = new Set( [ name ] );
+
+\t// Draw one label for the lowest-ID entrance at this position.
+\tfor ( let next = node.next; next && next !== node; next = next.next ) {
+\t\tif ( ! ( next.ownType & STATION_ENTRANCE ) ) continue;
+\t\tif ( Math.abs( node.id ) > Math.abs( next.id ) ) return;
+
+\t\tconst otherName = entrances[ next.getPath() ]?.name;
+\t\tif ( otherName !== undefined ) names.add( otherName );
+\t}
+
+\tvertices.push( node );
+\tnames.delete( '-skip' );
+
+\tif ( names.size > 0 ) self.addMarker( node, ` ${[ ...names ].join( ' / ' )} ` );
+
+}""",
+        "\t" * 3,
+    )
+    patch_required(path, [("co-located entrance labels", old, new)])
+
+
+def patch_entrance_labels(path):
+    """Keep labels legible against the terrain at the surveyed entrance positions."""
     material = "const material = ctx.materials.getLabelMaterial( 'stations.entrances' );"
     depth = "\n\n\t\t\tmaterial.depthTest = "
     old = material + depth + "true;\n\t\t\tmaterial.transparent = false;"
@@ -294,43 +384,123 @@ def patch_entrance_labels(path):
         "\n\t\t\tmaterial.transparent = true;"
     )
     layer = "marker.layers.set( FEATURE_ENTRANCES );"
-    patched = source.replace(old, new).replace(
-        layer + "\n\t\t\tmarker.position.copy( node );",
-        layer + "\n\t\t\tmarker.renderOrder = 2;\n\t\t\tmarker.position.copy( node );",
+    patch_required(
+        path,
+        [
+            ("entrance label material", old, new),
+            (
+                "entrance label render order",
+                layer + "\n\t\t\tmarker.position.copy( node );",
+                layer + "\n\t\t\tmarker.renderOrder = 2;\n\t\t\tmarker.position.copy( node );",
+            ),
+        ],
     )
-    if patched == source:
-        print(f"  SKIP: entrance label styling already applied or not found in {path}")
-        return
-
-    js.write_text(patched, encoding="utf-8")
-    print(f"  OK: styled entrance labels in {path}")
 
 
 def patch_entrance_clusters(path):
     """Use smaller, neutral markers for groups of nearby entrances."""
-    js = Path(path)
-    source = js.read_text(encoding="utf-8")
-    cluster = re.search(r"class ClusterMaterial extends PointsMaterial \{.*?\n\t\}", source, re.S)
-    if cluster is None:
-        print(f"  SKIP: entrance cluster material not found in {path}")
-        return
-
-    material = re.sub(
-        r"const gradient = ctx\.createRadialGradient.*?ctx\.fillStyle = gradient;",
-        "ctx.fillStyle = '#232928';",
-        cluster[0],
-        flags=re.S,
+    patch_required(
+        path,
+        [
+            (
+                "cluster background",
+                re.compile(
+                    r"const gradient = ctx\.createRadialGradient.*?ctx\.fillStyle = gradient;",
+                    re.S,
+                ),
+                "ctx.fillStyle = '#232928';",
+            ),
+            (
+                "cluster text",
+                "ctx.fillStyle = 'rgba( 0, 0, 0, 255 )';",
+                "ctx.fillStyle = '#f1f3f2';",
+            ),
+            (
+                "cluster badge size",
+                "map: texture, size: 32,",
+                f"map: texture, size: {ENTRANCE_CLUSTER_SIZE},",
+            ),
+        ],
+        section=r"class ClusterMaterial extends PointsMaterial \{.*?\n\t\}",
     )
-    material = material.replace(
-        "ctx.fillStyle = 'rgba( 0, 0, 0, 255 )';", "ctx.fillStyle = '#f1f3f2';"
-    )
-    material = material.replace("map: texture, size: 32,", "map: texture, size: 20,")
-    if material == cluster[0]:
-        print(f"  SKIP: entrance cluster styling already applied or not found in {path}")
-        return
 
-    js.write_text(source[: cluster.start()] + material + source[cluster.end() :], encoding="utf-8")
-    print(f"  OK: styled entrance clusters in {path}")
+
+def patch_entrance_grouping(path):
+    """Group entrances only when their positions fit within one badge on screen."""
+    check = indent(
+        f"""\
+check ( cluster, selection ) {{
+\tfor ( let i = 0; i < this.nodes.length; i++ ) {{
+\t\tconst subQuad = this.nodes[ i ];
+\t\tif ( subQuad === undefined ) continue;
+
+\t\tif ( subQuad.count < 2 ) {{
+\t\t\tthis.nodes[ i ] = undefined;
+\t\t\tcontinue;
+\t\t}}
+
+\t\tif ( subQuad.projectedSpan( cluster ) <= {ENTRANCE_CLUSTER_SIZE} ) {{
+\t\t\tsubQuad.clusterMarkers( cluster );
+\t\t}} else {{
+\t\t\tsubQuad.showMarkers( selection );
+\t\t\tsubQuad.check( cluster, selection );
+\t\t}}
+\t}}
+}}""",
+        "\t" * 2,
+    )
+    span = indent(
+        """\
+projectedSpan ( cluster ) {
+\tconst bounds = new Box2();
+\tfor ( const marker of this.markers ) {
+\t\tprojectedEntrance.copy( marker.position ).applyMatrix4( cluster.matrixWorld )
+\t\t\t.project( cluster.camera );
+\t\tif ( Math.abs( projectedEntrance.z ) > 1 ) return Infinity;
+\t\tbounds.expandByPoint( projectedEntrance );
+\t}
+
+\tconst size = bounds.getSize( new Vector2() );
+\tconst { clientWidth, clientHeight } = cluster.ctx.container;
+\treturn Math.hypot( size.x * clientWidth, size.y * clientHeight ) / 2;
+}""",
+        "\t" * 2,
+    )
+    patch_required(
+        path,
+        [
+            (
+                "cluster projection variables",
+                re.compile(
+                    r"\t// preallocated objects for projected area calculation"
+                    r".*?(?=\n\n\tclass QuadTree \{)",
+                    re.S,
+                ),
+                "\tconst projectedEntrance = new Vector3();",
+            ),
+            (
+                "QuadTree grouping",
+                re.compile(
+                    r"\t{2}check \( cluster, target, angleFactor, selection \) \{.*?\n\t{2}\}",
+                    re.S,
+                ),
+                check,
+            ),
+            (
+                "QuadTree projection",
+                re.compile(r"\t{2}projectedArea \( cluster \) \{.*?\n\t{2}\}", re.S),
+                span,
+            ),
+            (
+                "entrance grouping call",
+                "const angle = this.camera.getWorldDirection( __v ).dot( Object3D.DEFAULT_UP );"
+                "\n\n\t\t\tthis.quadTree.check( this, target, "
+                "Math.max( 0.05, 1 - Math.cos( angle ) ), selectedStationSet );",
+                "this.camera.updateWorldMatrix( true, false );\n\t\t\t"
+                "this.quadTree.check( this, selectedStationSet );",
+            ),
+        ],
+    )
 
 
 if __name__ == "__main__":
@@ -340,6 +510,9 @@ if __name__ == "__main__":
     patch_crs_regex(caveview_js)
     patch_station_position_tree_fields(caveview_js)
     patch_tree_traversal(caveview_js)
+    patch_walls_station_paths(caveview_js)
     patch_entrance_labels(caveview_js)
+    patch_entrance_aliases(caveview_js)
     patch_entrance_clusters(caveview_js)
+    patch_entrance_grouping(caveview_js)
     patch_web_mesh_worker(os.path.join(caveview_dir, "js", "workers", "webMeshWorker.js"))
