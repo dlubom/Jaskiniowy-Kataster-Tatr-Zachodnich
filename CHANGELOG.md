@@ -6,6 +6,12 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+### Zmienione
+
+- Widok 3D pokazuje domyślnie białe, przerywane odcinki powierzchniowe
+  oraz małe, poziome podpisy otworów. Podziemia zachowują kolorowanie
+  według wysokości.
+
 ## [v2.0.6] - 2026-11-20
 
 ### Naprawione

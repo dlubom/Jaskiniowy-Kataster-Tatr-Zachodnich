@@ -75,6 +75,7 @@ def test_project_crs_uses_builtin_utm_and_other_codes_keep_their_lookup(tmp_path
         "patch_web_mesh_worker",
         "patch_tree_traversal",
         "patch_station_position_tree_fields",
+        "patch_entrance_clusters",
     ],
 )
 def test_missing_vendor_pattern_does_not_change_file(tmp_path, patches, function, capsys):
@@ -194,3 +195,55 @@ def test_recursive_traversals_become_iterative_and_remain_idempotent(tmp_path, p
     assert result.count("let i = children.length - 1; i >= 0; i--") == 2
     assert "{ node: node, visited: true }" in result
     assert path.read_bytes() == once
+
+
+def test_entrance_clusters_use_small_neutral_badges(tmp_path, patches):
+    path = tmp_path / "CaveView2.js"
+    path.write_text(
+        "class ClusterMaterial extends PointsMaterial {\n"
+        "\t\tconstructor ( count ) {\n"
+        "\t\t\tconst gradient = ctx.createRadialGradient( halfSize, halfSize, 30, "
+        "halfSize, halfSize, 0 );\n"
+        "\t\t\tgradient.addColorStop( 1.0, 'rgba( 255, 255, 0, 255 )' );\n"
+        "\t\t\tctx.fillStyle = gradient;\n"
+        "\t\t\tctx.fillStyle = 'rgba( 0, 0, 0, 255 )';\n"
+        "\t\t\tsuper( { map: texture, size: 32, depthTest: false } );\n"
+        "\t\t}\n"
+        "\t}\n"
+        "const unrelated = { size: 32 };\n"
+    )
+
+    patches.patch_entrance_clusters(path)
+    once = path.read_text()
+    patches.patch_entrance_clusters(path)
+
+    assert "createRadialGradient" not in once
+    assert "ctx.fillStyle = '#232928';" in once
+    assert "ctx.fillStyle = '#f1f3f2';" in once
+    assert "map: texture, size: 20, depthTest: false" in once
+    assert "const unrelated = { size: 32 };" in once
+    assert path.read_text() == once
+
+
+def test_entrance_labels_render_above_terrain_at_their_projected_position(tmp_path, patches):
+    path = tmp_path / "CaveView2.js"
+    path.write_text(
+        "const material = ctx.materials.getLabelMaterial( 'stations.entrances' );\n"
+        "\n"
+        "\t\t\tmaterial.depthTest = true;\n"
+        "\t\t\tmaterial.transparent = false;\n"
+        "\t\t\tmaterial.alphaTest = 0;\n"
+        "\t\t\tmarker.layers.set( FEATURE_ENTRANCES );\n"
+        "\t\t\tmarker.position.copy( node );\n",
+    )
+    patches.patch_entrance_labels(path)
+    once = path.read_text()
+    patches.patch_entrance_labels(path)
+
+    assert "material.scaleFactor / material.toScreenSpace.x" in once
+    assert "material.depthTest = false;" in once
+    assert "material.depthWrite = false;" in once
+    assert "material.transparent = true;" in once
+    assert "marker.renderOrder = 2;" in once
+    assert "marker.position.copy( node );" in once
+    assert path.read_text() == once

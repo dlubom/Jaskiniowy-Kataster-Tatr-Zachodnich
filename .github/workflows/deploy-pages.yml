@@ -52,12 +52,13 @@ jobs:
 
           # 3D model
           cp KATASTER.3d public/
+          python3 web/entrance-labels.py Poligony/OTWORY.SRV public/KATASTER.json
 
           # CaveView.js from GitHub Release
           wget -q https://github.com/aardgoose/CaveView.js/releases/download/${{ env.CAVEVIEW_VERSION }}/CaveView.zip
           unzip -q CaveView.zip -d public/
 
-          # Patch CaveView 2.9.0 bugs (CRS regex + Cesium terrain worker)
+          # Apply local fixes and entrance marker styling
           python3 web/patch-caveview.py public/CaveView
 
           # Polish language file for CaveView UI

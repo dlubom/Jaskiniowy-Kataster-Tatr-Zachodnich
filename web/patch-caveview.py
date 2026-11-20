@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-Patch CaveView.js 2.9.0 bugs for Cesium terrain support.
-Remove this script when CaveView releases a fixed version.
+Apply JKTZ compatibility fixes and entrance marker styling to CaveView.js 2.9.0.
 
 Bug 1: Uppercase CRS codes are missed and EPSG:32634 triggers an unnecessary remote lookup.
 Bug 2: webMeshWorker sends raw ArrayBuffer instead of typed arrays, crashing hydrateGeometry.
@@ -12,6 +11,7 @@ Bug 4: StationPosition lacks own tree fields when a station is also a path prefi
 import os
 import re
 import sys
+from pathlib import Path
 
 
 def patch_crs_regex(path):
@@ -277,6 +277,62 @@ def patch_station_position_tree_fields(path):
     print(f"  OK: patched StationPosition tree fields in {path}")
 
 
+def patch_entrance_labels(path):
+    """Keep labels legible against the terrain at the surveyed entrance positions."""
+    js = Path(path)
+    source = js.read_text(encoding="utf-8")
+    material = "const material = ctx.materials.getLabelMaterial( 'stations.entrances' );"
+    depth = "\n\n\t\t\tmaterial.depthTest = "
+    old = material + depth + "true;\n\t\t\tmaterial.transparent = false;"
+    # Match the glyph's rendered size to its collision box before the first resize.
+    new = (
+        material + "\n\t\t\tmaterial.uniforms.scale.value.set( "
+        "material.scaleFactor / material.toScreenSpace.x, "
+        "material.scaleFactor / material.toScreenSpace.y );"
+        + depth
+        + "false;\n\t\t\tmaterial.depthWrite = false;"
+        "\n\t\t\tmaterial.transparent = true;"
+    )
+    layer = "marker.layers.set( FEATURE_ENTRANCES );"
+    patched = source.replace(old, new).replace(
+        layer + "\n\t\t\tmarker.position.copy( node );",
+        layer + "\n\t\t\tmarker.renderOrder = 2;\n\t\t\tmarker.position.copy( node );",
+    )
+    if patched == source:
+        print(f"  SKIP: entrance label styling already applied or not found in {path}")
+        return
+
+    js.write_text(patched, encoding="utf-8")
+    print(f"  OK: styled entrance labels in {path}")
+
+
+def patch_entrance_clusters(path):
+    """Use smaller, neutral markers for groups of nearby entrances."""
+    js = Path(path)
+    source = js.read_text(encoding="utf-8")
+    cluster = re.search(r"class ClusterMaterial extends PointsMaterial \{.*?\n\t\}", source, re.S)
+    if cluster is None:
+        print(f"  SKIP: entrance cluster material not found in {path}")
+        return
+
+    material = re.sub(
+        r"const gradient = ctx\.createRadialGradient.*?ctx\.fillStyle = gradient;",
+        "ctx.fillStyle = '#232928';",
+        cluster[0],
+        flags=re.S,
+    )
+    material = material.replace(
+        "ctx.fillStyle = 'rgba( 0, 0, 0, 255 )';", "ctx.fillStyle = '#f1f3f2';"
+    )
+    material = material.replace("map: texture, size: 32,", "map: texture, size: 20,")
+    if material == cluster[0]:
+        print(f"  SKIP: entrance cluster styling already applied or not found in {path}")
+        return
+
+    js.write_text(source[: cluster.start()] + material + source[cluster.end() :], encoding="utf-8")
+    print(f"  OK: styled entrance clusters in {path}")
+
+
 if __name__ == "__main__":
     caveview_dir = sys.argv[1] if len(sys.argv) > 1 else "public/CaveView"
     print(f"Patching CaveView in {caveview_dir}...")
@@ -284,4 +340,6 @@ if __name__ == "__main__":
     patch_crs_regex(caveview_js)
     patch_station_position_tree_fields(caveview_js)
     patch_tree_traversal(caveview_js)
+    patch_entrance_labels(caveview_js)
+    patch_entrance_clusters(caveview_js)
     patch_web_mesh_worker(os.path.join(caveview_dir, "js", "workers", "webMeshWorker.js"))
