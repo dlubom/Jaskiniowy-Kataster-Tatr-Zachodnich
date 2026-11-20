@@ -6,6 +6,8 @@ Format oparty jest o [Keep a Changelog](https://keepachangelog.com/), a wersjono
 
 ## [Unreleased]
 
+## [v2.0.7] - 2026-11-20
+
 ### Dodane
 
 - Zarchiwizowano projekt On Station Małołączniaka i dane Kartow3. Uzupełniono 88 odcinków Wielkiej Śnieżnej i końcowy odcinek w Sieni Jaskini przy Przechodzie, łącznie 459,83 m pomiarów. [Weryfikacja źródeł](doc/malolaczniak/README.md)
