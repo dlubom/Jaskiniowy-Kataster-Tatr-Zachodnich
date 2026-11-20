@@ -1,0 +1,93 @@
+Członek	Bajty	SHA-256	Rola	Identyczna kopia wcześniej w spisie
+Malolaczniak.cdi	248837	ab0bb9e1c715ace3a2d4f31b3afb0f140f5c87c9b6adfa5b3f287d2d7fdfad65	wielojaskiniowy projekt On Station	—
+Bolek/$ST.BEZ	420	cfe000fe51f51c095cf555db5fdff882bc73a7f071f8c146318478a1d10a14a6	obliczone współrzędne punktów i nazwy poprzedników	—
+Bolek/$STUD.ASC	35101	ffae5c5af6c7e18eae06391e38189f60a953817a7d941212ef66b018e8af2695	tekstowy eksport współrzędnych	—
+Bolek/$STUD.BEZ	22290	75da91ac7dc71e7a3df031d520ce226bdae6a0bfaf60fd43b99dbe6bc0e63988	obliczone współrzędne punktów i nazwy poprzedników	—
+Bolek/BOLEK.COD	349394	fcc480c46d705635408355e9f3da9aca5d234974e8c29ddc43966f239d684a35	archiwum ARJ zapisane w uuencode	—
+Bolek/BOLEK2.COD	292066	21f79dbe26f5d752554370b15d8c0bf8525a92a9b74f98caaeb92e826445e698	archiwum ARJ zapisane w uuencode	—
+Bolek/CGA.BGI	6332	cb08a380a59039d2bb81c8ce8ac4b3d833d7692c8b79a73b614b0e6b740dd40f	sterownik grafiki DOS	—
+Bolek/CHKLIST.MS	135	a2780dbb9e263c5f2f54f92a859cfc0830b3903ffa4d9c7e0ba76f9c582704fa	plik pomocniczy CHKLIST.MS	—
+Bolek/EGAVGA.BGI	5554	7ae39c91fc70ca387209ee3c7b407df4d0a8354ab3e6cbf2db1af0c7fc463c97	sterownik grafiki DOS	—
+Bolek/F.ASC	9063	cd337fb9e6203bf8dc3dabcd1f7737945b9fb7ad5416f930452f2bec3343e287	tekstowy eksport współrzędnych	—
+Bolek/GOLLSYST.BEZ	11340	13ff23ee69f2e4293c027528272e7ce5c2b84d09813bdb74ec55b883b6f1073b	obliczone współrzędne punktów i nazwy poprzedników	—
+Bolek/HERC.BGI	6204	6c603cfd4a86906b478172232266a814b8bb363002fb12ef6f0445ba1469686e	sterownik grafiki DOS	—
+Bolek/KARTOW3.EXE	68544	dc8ad28083548f2341f7041f1ebc0576767eaca4169cc900a78ea044b21800e1	program DOS	—
+Bolek/KARTOW3.OVR	13136	68682268cde2f5f38c4cc508021c13dd57b960fd7de61faaefbbf26f261f3f3c	moduł programu Kartow3	—
+Bolek/KOLANKO.ASC	1643	ab1ea35ea63734f4329ca602fc7251d2337370feea48578ed6444bcb23efb98b	fragment listy współrzędnych PK, bez nagłówka	—
+Bolek/KROKOD_1.ASC	5776	5764d6bb8e2b260fea167c624c1d4ba80a71610aa47a07f909be639db10fa28b	tekstowy eksport współrzędnych	—
+Bolek/KROKOD_1.BEZ	3570	cbf8153903f38b568517e24ca69c37094682fca560a87acf462f2823cd799c66	obliczone współrzędne punktów i nazwy poprzedników	—
+Bolek/KROKOD_2.ASC	1358	8854cfd3e7e1f8923704a6906e4cccb5c0e8360c0c47f50e89c251d9df9f71a2	tekstowy eksport współrzędnych	—
+Bolek/KROKOD_2.BEZ	750	4a9735326a2f61055b007e0d6909e8f15d0ebfef32d3f0a6de72114df109ff64	obliczone współrzędne punktów i nazwy poprzedników	—
+Bolek/MAL5.POZ	40772	c976f5dcbe7d2a0f5ac41ed08590f78519c89e96a20858724cbc6438ebe75e01	warstwice terenu dla PRZEST1	—
+Bolek/NASZE_PO.ASC	1447	28873eca677c798150ff00555a07f6af9c9c02076ccd30eac91aaf4e100cb249	eksport pomiarów testowych NASZE_PO.POM	—
+Bolek/NASZE_PO.BEZ	840	4b86a9f690ebdbca8a36432674d08f75168651b63dd8ace907934db368d799ef	obliczone współrzędne punktów i nazwy poprzedników	—
+Bolek/NASZE_PO.POM	810	2ce23ad6601bb63bc4b72f0d6ce0faca351903f8d13f411807a48c1c073cad4a	obserwacje ciągu Kartow3	—
+Bolek/PP_M.POM	360	7dc149dd4d5e6cee392fd37b38f04a5587539b51946e792cc24e50536fee5744	obserwacje ciągu Kartow3	—
+Bolek/PRZEMKOW.ASC	1729	b1bc2b15477302d3b86a4e582100bfafcbea230f956a1a77e114249d5a820611	tekstowy eksport współrzędnych	—
+Bolek/PRZEST1.EXE	56480	be26d066c46addb4ff38e129196aa5e92637ebf653767c8196ed19614d128d09	program DOS	—
+Bolek/QQQ.BEZ	44370	0080b0e1fab403a662a558be5c02dda8c3b5e78d294af6c4b57724b5734e0534	obliczone współrzędne punktów i nazwy poprzedników	—
+Bolek/R	11340	13ff23ee69f2e4293c027528272e7ce5c2b84d09813bdb74ec55b883b6f1073b	kopia GOLLSYST.BEZ	Bolek/GOLLSYST.BEZ
+Bolek/S1.BEZ	26730	5038442806573bf63a62f1cc56e6bd39b4acf524c79d12f942c7f97b1c8f94ec	obliczone współrzędne punktów i nazwy poprzedników	—
+Bolek/SG1_1'93.POM	1530	e0941a80df03d6ae8a3ea275cc25a76ec724ae57568b9dce42203afd5d32bfda	obserwacje ciągu Kartow3	—
+Bolek/SG1_1.ASC	9063	f38708d7dbc54cfd183c6eeb70d2e3d06f68b6e1d962f5d618b0a1bcdc1a87f8	tekstowy eksport współrzędnych	—
+Bolek/SG1_1.BEZ	5670	84a4066f85d6a3a5d8d07bbef1e72efd02ff09642376194c2d0aa07abcd9d8fa	obliczone współrzędne punktów i nazwy poprzedników	—
+Bolek/SG1_1.POM	4140	91680eee8bdaea165fb4a4a4cc9adb2b6a9ff152144729b46a391a5bde671f36	obserwacje ciągu Kartow3	—
+Bolek/SKRZAT1.BEZ	9690	0800c8d8cee58ec2cc8a815f70d28e669522225b3df0a5fa4660c51749b01093	obliczone współrzędne punktów i nazwy poprzedników	—
+Bolek/SYST4.ASC	64431	b7405a692c00fe83c60cb39133279f0ca9659fd05945d7229a802830cecda5d3	tekstowy eksport współrzędnych	—
+Bolek/SYST4.BEZ	41010	e03e0e07fb1b204adf12fb4297f8bc3c868ae4a3cc44775e153a1fb6904a8b35	obliczone współrzędne punktów i nazwy poprzedników	—
+Bolek/SYST5.ASC	64713	9582e48b9658662852f4726e8d47769663b41783d5e893cab7143c7c1c839acf	tekstowy eksport współrzędnych	—
+Bolek/SYST5.BEZ	41190	35d847cf30e870d472e93cd6427b10d28cb963e5ecb0b8110fa57ac3290a8541	obliczone współrzędne punktów i nazwy poprzedników	—
+Bolek/SYSTEM.ASC	48828	a206d6f8b5a7de13149cc320924503f7930d732fa45a1f053e5c46615a95c0da	tekstowy eksport współrzędnych	—
+Bolek/SYSTEM.BEZ	31050	084b3e2bd9c2c05dde0f907152d2aa8e424108655a779c149aaf25ca7fb4d3fe	obliczone współrzędne punktów i nazwy poprzedników	—
+Bolek/SYSTEM5.ASC	69693	ab33a206e58f68e37ba744cddb372e21f6cd352c24c559164f3fc989b64a719d	tekstowy eksport współrzędnych	—
+Bolek/VVDECODE.EXE	93101	f73a6c928ea29ddd5b36eb258017d76017498a93e35504a3c6d9bc18638246ca	program DOS	—
+Bolek/VVENCODE.EXE	80192	667c5ac33ac831120a45183bd07676d71f2aeb5fbd7b4e1fef40b155a3198523	program DOS	—
+Bolek/W.ASC	1680	75dbd08dbbda9ded27e50d0ce25395f7723ac9472bc8935b7b8b4e0a97bd78aa	35 par PK w innym układzie lub skali niż KOLANKO.ASC, bez nagłówka	—
+Bolek/W1.POM	150	253c1dbaf439e2fd1d4c32c74f1ea6f184f05e456c2d1e272aed5ca1da6ce6d2	obserwacje ciągu Kartow3	—
+Bolek/W21.POM	600	61cbea8b3e518ce61dcfef3872649c70de03b6cf19d3fa98920382ce8810b954	obserwacje ciągu Kartow3	—
+Bolek/W7.BEZ	1680	22cad5adf0aba9246e6ccc8647edfa77b377b8daa283d2c6cb51da0e3b86ae42	obliczone współrzędne punktów i nazwy poprzedników	—
+Bolek/W7.POM	1650	8bd8a56349573bbb9f89c1735c8cc5baedcf1ef88f7772dc1d040bdf398ad100	obserwacje ciągu Kartow3	—
+Bolek/W7SKRZAT.POM	1680	2eb5d6b71d8b3cfba7b972496e5d180a3ed351a9a553b9be455ccff048433db1	obserwacje ciągu Kartow3	—
+Bolek/W80.ASC	930	be605dfe57d6a5892bca9292259ca0cbf6a6557ee062ed96fce757db6c167a64	tekstowy eksport współrzędnych	—
+Bolek/W80.BEZ	480	befc624d807bc677ca9f9811a78d1f0adf6f034284f5ae8dfe20d71f3d2321a6	obliczone współrzędne punktów i nazwy poprzedników	—
+Bolek/W80.POM	480	5a730362d76a4912435fc429ca73edaf73066e18ea5b59dd57e0b70df7610271	obserwacje ciągu Kartow3	—
+Bolek/WL.ASC	11880	6f6cc31165c15c687fafcbffe1db3c96660948ff2518637ac987fdb8efc635cd	tekstowy eksport współrzędnych	—
+Bolek/WL.BEZ	7470	c723b487ac40915be59dc35212686b9e52f2b6e52b749f481f9ce62985a001fa	obliczone współrzędne punktów i nazwy poprzedników	—
+Bolek/WLKLIT.BEZ	840	119c888622f0a34a2e67962599df22bc1e0b6ba4a395329b518f26831788a183	obliczone współrzędne punktów i nazwy poprzedników	—
+Bolek/WLKSNIEZ.ASC	47559	d794c335dd8181a0104b10494b97c7234c9fc981afb014c03f0faed1849bbc93	tekstowy eksport współrzędnych	—
+Bolek/WLKSNIEZ.BEZ	30240	e10e4ff0b898a46b6cc01a0c16f608c6e7bc7d07cdd9b9b4119deffcc741eb16	obliczone współrzędne punktów i nazwy poprzedników	—
+GOLL.ARJ/GOLLSYST.BEZ	11340	13ff23ee69f2e4293c027528272e7ce5c2b84d09813bdb74ec55b883b6f1073b	obliczone współrzędne punktów i nazwy poprzedników	Bolek/GOLLSYST.BEZ
+GOLL.ARJ/SKRZAT1.BEZ	9690	0800c8d8cee58ec2cc8a815f70d28e669522225b3df0a5fa4660c51749b01093	obliczone współrzędne punktów i nazwy poprzedników	Bolek/SKRZAT1.BEZ
+GOLL.ARJ/W7.BEZ	1680	22cad5adf0aba9246e6ccc8647edfa77b377b8daa283d2c6cb51da0e3b86ae42	obliczone współrzędne punktów i nazwy poprzedników	Bolek/W7.BEZ
+GOLL.ARJ/W80.BEZ	480	befc624d807bc677ca9f9811a78d1f0adf6f034284f5ae8dfe20d71f3d2321a6	obliczone współrzędne punktów i nazwy poprzedników	Bolek/W80.BEZ
+GOLL.ARJ/W1.POM	150	253c1dbaf439e2fd1d4c32c74f1ea6f184f05e456c2d1e272aed5ca1da6ce6d2	obserwacje ciągu Kartow3	Bolek/W1.POM
+GOLL.ARJ/W21.POM	600	61cbea8b3e518ce61dcfef3872649c70de03b6cf19d3fa98920382ce8810b954	obserwacje ciągu Kartow3	Bolek/W21.POM
+GOLL.ARJ/W7.POM	1650	8bd8a56349573bbb9f89c1735c8cc5baedcf1ef88f7772dc1d040bdf398ad100	obserwacje ciągu Kartow3	Bolek/W7.POM
+GOLL.ARJ/W7SKRZAT.POM	1680	2eb5d6b71d8b3cfba7b972496e5d180a3ed351a9a553b9be455ccff048433db1	obserwacje ciągu Kartow3	Bolek/W7SKRZAT.POM
+GOLL.ARJ/W80.POM	480	5a730362d76a4912435fc429ca73edaf73066e18ea5b59dd57e0b70df7610271	obserwacje ciągu Kartow3	Bolek/W80.POM
+GOLL.ARJ/GOLL2.POZ	20820	edc7ee8a68ac77d7595dfb111d42fc18ffb47224edfeb7158b2f97ae94ad00e0	warstwice terenu dla PRZEST1	—
+KARTOW.ARJ/README	2698	a2278d4fbfde64b7d77d7997694dfa20c5315cc6ad03bdc9fbda7eb80e6570cd	opis programów i przykładowych danych, Wiktor Bolek 1995	—
+KARTOW.ARJ/$STUD.BEZ	22290	62409a2afb21dfeea6fe88146d8993f75396277b3e87b722ed0c0568ab62c5d0	obliczone współrzędne punktów i nazwy poprzedników	—
+KARTOW.ARJ/SG1_1.BEZ	5670	84a4066f85d6a3a5d8d07bbef1e72efd02ff09642376194c2d0aa07abcd9d8fa	obliczone współrzędne punktów i nazwy poprzedników	Bolek/SG1_1.BEZ
+KARTOW.ARJ/SYST5.BEZ	41190	35d847cf30e870d472e93cd6427b10d28cb963e5ecb0b8110fa57ac3290a8541	obliczone współrzędne punktów i nazwy poprzedników	Bolek/SYST5.BEZ
+KARTOW.ARJ/WLKLIT.BEZ	840	119c888622f0a34a2e67962599df22bc1e0b6ba4a395329b518f26831788a183	obliczone współrzędne punktów i nazwy poprzedników	Bolek/WLKLIT.BEZ
+KARTOW.ARJ/WLKSNIEZ.BEZ	30240	e10e4ff0b898a46b6cc01a0c16f608c6e7bc7d07cdd9b9b4119deffcc741eb16	obliczone współrzędne punktów i nazwy poprzedników	Bolek/WLKSNIEZ.BEZ
+KARTOW.ARJ/CGA.BGI	6332	39f62d350c5d08402f719716a39fc2b9a5b883d8f5b5d426583c3f4708d50d31	sterownik grafiki DOS	—
+KARTOW.ARJ/EGAVGA.BGI	5554	7ae39c91fc70ca387209ee3c7b407df4d0a8354ab3e6cbf2db1af0c7fc463c97	sterownik grafiki DOS	Bolek/EGAVGA.BGI
+KARTOW.ARJ/HERC.BGI	6204	6c603cfd4a86906b478172232266a814b8bb363002fb12ef6f0445ba1469686e	sterownik grafiki DOS	Bolek/HERC.BGI
+KARTOW.ARJ/KARTOW3.EXE	71152	8dcebdd59c8fc8f65346ed24a195104af9109828a2460f42657b52c3237ba484	program DOS	—
+KARTOW.ARJ/PRZEST1.EXE	56480	be26d066c46addb4ff38e129196aa5e92637ebf653767c8196ed19614d128d09	program DOS	Bolek/PRZEST1.EXE
+KARTOW.ARJ/KARTOW3.HLP	1206	42e0ce855ae233b0f961d1ab04e68c91a61a7ce975bb7fd929ed3c9f30601c0d	pomoc Kartow3	—
+KARTOW.ARJ/KARTOW3.OVR	13136	11e0ec8bc64240603fa1fb096a6d49d5d29c779b999ab53abfde8f75c7977aca	moduł programu Kartow3	—
+KARTOW.ARJ/KROKOD_2.POM	720	a8ca2236d1706f2730f3bb57e2160998a31844c025fcb18491bc52c1ed216e70	obserwacje ciągu Kartow3	—
+KARTOW.ARJ/KROKOD_3.POM	930	10374506b7a3a5a92695db42e97e1e86939b9d36102aa5e6373ca899d9e649fb	obserwacje ciągu Kartow3	—
+KARTOW.ARJ/KROKOD_4.POM	210	4877ffdd9b435b2849a10f68f7f2b0b77b03fab3c1232091269f33c39467592d	obserwacje ciągu Kartow3	—
+KARTOW.ARJ/KROKOD_5.POM	1800	1b9112993b13f5057de4e5784ab2a3705f41f19f5252ac899c6334f13672a3e2	obserwacje ciągu Kartow3	—
+KARTOW.ARJ/KXX.POM	330	5f0f5b77b2293f3c3455ff552c8d6ea5b6c54f3324b70783dc3953fd7a15875c	obserwacje ciągu Kartow3	—
+KARTOW.ARJ/MPK.POM	330	43ecf28ce73cc611f581fc2e177770aee9d73ce593ae7ba602ba73c137f734dc	obserwacje ciągu Kartow3	—
+KARTOW.ARJ/P_GLOD.POM	510	fbd5f33b5ea0afa96fd78e10c93fade3b79fc2b4ec67f6fd018b0144d5b18031	obserwacje ciągu Kartow3	—
+KARTOW.ARJ/PRZEMP.POM	960	41fb7a4370640f0f607a760a1cf8a324169c3461da1a4d52231d1b2505ec1746	obserwacje ciągu Kartow3	—
+KARTOW.ARJ/S_PIOTR.POM	390	3f84099fca63897c02d5fe0b03634f85632a47568878aef3a6eaf8e6d4bb3d9d	obserwacje ciągu Kartow3	—
+KARTOW.ARJ/SG1_1.POM	4140	91680eee8bdaea165fb4a4a4cc9adb2b6a9ff152144729b46a391a5bde671f36	obserwacje ciągu Kartow3	Bolek/SG1_1.POM
+KARTOW.ARJ/MAL5.POZ	40772	c976f5dcbe7d2a0f5ac41ed08590f78519c89e96a20858724cbc6438ebe75e01	warstwice terenu dla PRZEST1	Bolek/MAL5.POZ
+KARTOW.ARJ/NAZ_CP.TXT	695	e114676f9d7a58af708878dfc65b9706111eb57bc2e45efe855c94861e0ab3f9	słownik nazw ciągów Małołączniaka	—

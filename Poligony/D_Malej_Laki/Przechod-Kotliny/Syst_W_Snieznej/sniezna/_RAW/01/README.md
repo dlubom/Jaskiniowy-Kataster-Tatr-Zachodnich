@@ -7,7 +7,7 @@
 - **Data pozyskania:** nieznane
 - **Dodał do _RAW:** nieznane
 - **Licencja źródłowa:** nieznane
-- **Kompletność:** Brak materiałów źródłowych dla pozostałych historycznych SRV.
+- **Kompletność:** Brak pierwotnych dzienników dla historycznych SRV. Odnalezione opracowania On Station i Kartow3 oraz trzy wydzielone pliki POM są w paczce [04](../04/README.md).
 
 ## Zawartość
 
