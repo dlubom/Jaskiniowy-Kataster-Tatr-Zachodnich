@@ -208,11 +208,13 @@ figure > img { display:block; width:100%; }
 .close-layout { display:grid; grid-template-columns:1fr 1fr; gap:3.4cqw; margin-top:1.35cqw; }
 .close-layout .item { border-top:1px solid var(--dark-line); padding-top:.9cqw; }
 .close-layout p { color:var(--mist); font-size:1.61cqw; margin:.47cqw 0 0; }
-.action { display:flex; justify-content:space-between; align-items:flex-end; gap:2cqw; border-top:1px solid var(--dark-line); padding-top:1.55cqw; margin-top:4.4cqw; }
+.action { border-top:1px solid var(--dark-line); padding-top:1.55cqw; margin-top:2.3cqw; }
 .action .pitch { font:3.30cqw/1.16 var(--serif); color:var(--bright); letter-spacing:-.024em; }
-.action .support { font-size:1.32cqw; color:var(--mist); margin-top:.55cqw; }
-.action blockquote { margin-top:.7cqw; padding-left:.8cqw; border-left:.15cqw solid var(--bright); color:var(--paper); font-size:1.48cqw; line-height:1.4; }
-.action .contact { white-space:nowrap; color:var(--paper); font-size:1.3cqw; }
+.prompt-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.15cqw 3.4cqw; margin-top:1.15cqw; }
+.prompt-list article { padding-left:.8cqw; border-left:.15cqw solid var(--bright); }
+.prompt-list h3 { font-size:1.55cqw; }
+.prompt-list blockquote { margin-top:.27cqw; color:var(--paper); font-size:1.48cqw; line-height:1.36; }
+.action .support { font-size:1.32cqw; color:var(--mist); margin-top:1.2cqw; }
 .future-slide h2 { font-size:4.29cqw; }
 .future-slide header p { font-size:1.55cqw; margin-top:.28cqw; }
 .future-columns { display:grid; grid-template-columns:.95fr 1.05fr; gap:3.25cqw; align-items:start; }
@@ -347,9 +349,15 @@ dialog::backdrop { background:rgba(2,9,7,.72); }
   .case-readings { margin:1.9cqw 0; padding-top:1.77cqw; }
   .case-result { padding-top:1.7cqw; }
   .case-result strong { font-size:7cqw; }
-  .action blockquote { font-size:3.6cqw; margin-top:2cqw; padding-left:2cqw; }
-  .action { align-items:flex-start; flex-direction:column; gap:2cqw; margin-top:4.4cqw; padding-top:2.85cqw; }
+  .action { margin-top:4.4cqw; padding-top:2.85cqw; }
   .action .pitch { font-size:6.3cqw; }
+  .prompt-list { grid-template-columns:1fr; gap:3.1cqw; margin-top:3.1cqw; }
+  .prompt-list article { padding-left:2cqw; }
+  .prompt-list h3 { font-size:4.1cqw; }
+  .prompt-list blockquote,.action .support { font-size:3.6cqw; }
+  .prompt-list blockquote { margin-top:.8cqw; }
+  .action .support { margin-top:3cqw; }
+  .close-layout p { font-size:3.6cqw; }
   .future-slide h2 { font-size:8.7cqw; }
   .future-slide header p,.future-columns article > p,.future-case .result { font-size:3.48cqw; }
   .future-columns { grid-template-columns:1fr; gap:4cqw; }
@@ -755,14 +763,28 @@ dialog::backdrop { background:rgba(2,9,7,.72); }
     <div class="item"><h3>Odszukajcie materiały archiwalne</h3><p>Notatniki, stare plany i pliki projektów pomagają sprawdzić odczyty oraz dowiązania.</p></div>
   </div>
   <div class="action">
-    <div>
-      <p class="pitch">Włączcie agentów do dokumentacji klubu</p>
-      <blockquote>„Odczytaj tabelę ze skanu i porównaj ją z SRV. Przy każdej różnicy podaj arkusz, wiersz i stacje. Oznacz pola, które trzeba sprawdzić.”</blockquote>
-      <p class="support">Zespół rozstrzyga rozbieżności na podstawie źródeł. Zatwierdzone poprawki przechodzą kontrole projektu.</p>
+    <p class="pitch">Włącz agenta do pracy nad dokumentacją wyprawową</p>
+    <div class="prompt-list">
+      <article>
+        <h3>Import z Qave do Survexa</h3>
+        <blockquote>„Dodaj pomiary z eksportu Qave do projektu Survex. Zachowaj plik źródłowy, nazwy stacji i strzały boczne. Skompiluj cały projekt.”</blockquote>
+      </article>
+      <article>
+        <h3>Błąd domknięcia pętli</h3>
+        <blockquote>„Znajdź w całym projekcie pętlę z największym błędem domknięcia w metrach. Sprawdź duplikaty, jednostki i dowiązania. Pokaż, co potwierdza poprawkę i jak zmienia ona błąd.”</blockquote>
+      </article>
+      <article>
+        <h3>Dowiązanie sesji</h3>
+        <blockquote>„Sprawdź na szkicu i w notatkach, czy nową sesję dowiązano do właściwej stacji. Wskaż zapis, który to potwierdza, albo miejsce do sprawdzenia w terenie.”</blockquote>
+      </article>
+      <article>
+        <h3>Przepisane pomiary z zeszytu</h3>
+        <blockquote>„Porównaj plik pomiarowy ze skanem zeszytu. Przy każdej rozbieżności podaj stronę, wiersz, stacje i obie wartości. Oznacz nieczytelne odczyty.”</blockquote>
+      </article>
     </div>
-    <a class="contact" href="mailto:darek.lubomski@gmail.com">darek.lubomski@gmail.com</a>
+    <p class="support">Zespół sprawdza proponowane poprawki w materiałach źródłowych przed ich zatwierdzeniem.</p>
   </div>
-  <footer class="slide-footer"><span>Kontakt do koordynatora JKTZ</span><span>15 / 15</span></footer>
+  <footer class="slide-footer"><a href="mailto:darek.lubomski@gmail.com">darek.lubomski@gmail.com</a><span>15 / 15</span></footer>
 </section>
 
 </div>
@@ -947,8 +969,8 @@ dialog::backdrop { background:rgba(2,9,7,.72); }
   <p class="duration">1 min 30 s</p>
   <p>Jeśli macie pomiar z ostatniej akcji, przyda się eksport z instrumentu, szkic albo projekt w formacie, w którym pracowaliście. Dla otworu warto dopisać, jakie miejsce rzeczywiście mierzyliście. Pomagają opis, zdjęcie, data, metoda i znana dokładność. Dla poligonu podajcie stację lub wcześniejszy ciąg, do którego go dowiązaliście.</p>
   <p>Druga prośba dotyczy klubowych segregatorów, korespondencji i starych dysków. Surowy plik, skan notatnika, szkic albo opis stacji może wyjaśnić, skąd pochodzi linia, którą od lat oglądamy w modelu. Czasem jedna strona pozwala rozpoznać, które wejście oznaczono na planie. Czasem data sesji pomaga sprawdzić deklinację. Prześlijcie plik w takim stanie, w jakim go znaleźliście, z informacją, skąd pochodzi i co wiadomo o autorach oraz warunkach udostępnienia. Jeśli pamiętacie okoliczności kartowania, dopiszcie je.</p>
-  <p>Spróbujcie w klubie zlecić Codexowi pierwszy przegląd jednej teczki. Dajcie mu skan i plik pomiarowy. Poproście o tabelę, w której każdy odczyt ma wskazany arkusz i wiersz, odnaleziony rekord SRV oraz opis różnicy. Nieczytelne pola niech zbierze do sprawdzenia. Macie wtedy listę konkretnych miejsc do obejrzenia z oryginałem i możecie ocenić pracę według tych samych zasad w następnym archiwum.</p>
-  <p>Właśnie tak wyobrażam sobie przyszłość tej pracy w klubach. Agenty przejmą wiele godzin porównywania dawnych zapisów. Kartujący i opiekunowie dokumentacji rozstrzygną to, co decyduje o przebiegu poligonu. Gdy zapisujemy źródło decyzji i sprawdzamy poprawki przed wydaniem, kolejna osoba może powtórzyć cały przegląd.</p>
+  <p>Po powrocie z wyprawy można zlecić agentowi włączenie nowej sesji do projektu i sprawdzenie jej dowiązania. W Kasprowej Niżniej surowy plik Qave zawiera trzy odczyty DistoX tej samej strzały. Przy imporcie trzeba rozpoznać takie serie, żeby odróżnić je od przypadkowego powielenia pomiaru.</p>
+  <p>Przy analizie pętli warto poprosić o listę stacji i odchyłkę przed wyrównaniem. Raport <code>.err</code> Survexa opisuje ciągi należące do pętli. Pomaga znaleźć podejrzane odcinki. Jeśli korekta zmienia błąd domknięcia, porównajcie tę samą pętlę tą samą metodą i sprawdźcie przesłankę w źródłach. Przy transkrypcji zeszytu można zacząć od jednej strony i porównać wskazane wiersze ze skanem.</p>
   <section class="sources"><h3>Kontakt</h3><ul><li><a href="mailto:darek.lubomski@gmail.com">Dariusz Lubomski · koordynator JKTZ</a></li><li><a href="https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich" target="_blank" rel="noopener">Jaskiniowy Kataster Tatr Zachodnich</a></li></ul></section>
 </template>
 
